@@ -1,0 +1,31 @@
+{
+  "name": "smart-a-ghost-theme-for-academics",
+  "version": "1.0.0",
+  "description": "A Smart Theme for Smart People",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Ghost",
+    "Theme",
+    "Academics",
+    "Humanities",
+    "Social",
+    "Science",
+    "Science",
+    "Professor",
+    "Doctorate",
+    "Masters",
+    "Profile"
+  ],
+  "author": "Ryan Feigenbaum",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^6.1.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
+  }
+}
