@@ -1,0 +1,22 @@
+//reset 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.shark {
+    display: flex;
+    flex: 1 1 1;
+    flex-flow: row wrap;
+    box-shadow: 1 1 1 black;
+}
+
+.sharkAttack {
+    font-size: 1em;
+    display: grid;
+    grid-auto-flow: dense;
+    display: flex;
+    flex-basis: 1;
+    flex-flow: column;
+}
