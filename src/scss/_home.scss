@@ -1,0 +1,24 @@
+.st-hero-wrapper {
+    height: 75vh;
+}
+
+.st-hero-overlay {
+    height: 100%;
+    padding: 1em;
+
+    background: rgba(0, 0, 0, .75);
+}
+
+.st-hero-image {
+    height: 100%;
+
+// Shift to HBS inline variable
+    background-image: url(../img/madurai.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.st-site-title {
+    margin: 1em 0;
+    text-align: center;
+}
