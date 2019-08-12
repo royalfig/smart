@@ -1,0 +1,29 @@
+.st-nav-container {
+    max-width: $tablet;
+    margin: 25px auto;
+}
+
+
+
+
+.st-extras {
+    font-size: smaller;
+
+    &>* {
+        margin: 10px;
+    }
+
+
+
+    
+}
+
+.st-nav-right {
+    margin-left: auto;
+  
+}
+
+.st-main-nav {
+    justify-content: space-around;
+
+}

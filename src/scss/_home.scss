@@ -1,24 +1,41 @@
 .st-hero-wrapper {
-    height: 75vh;
+    height: 60vh;
 }
 
 .st-hero-overlay {
     height: 100%;
     padding: 1em;
+    align-items: center;
+    justify-content: space-around;
 
-    background: rgba(0, 0, 0, .75);
+    background: rgba(0, 0, 0, .85);
+    
 }
 
 .st-hero-image {
     height: 100%;
+    
 
 // Shift to HBS inline variable
     background-image: url(../img/madurai.jpg);
     background-position: center;
     background-size: cover;
 }
+.st-hero-container {
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
 
 .st-site-title {
-    margin: 1em 0;
+    margin: 15px 0;
     text-align: center;
+}
+
+.st-site-description {
+  color: $yellow;
+}
+
+.st-site-description-text {
+    font-size: 1.5em;
 }

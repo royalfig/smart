@@ -19,11 +19,30 @@ html {
     background: $white;
     color: $black;
     font-family: $sans;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: normal;
     line-height: 1.5;
-
 }
+
+@media screen and (min-width: $tablet) and (max-width: $laptop) {
+    html {
+        font-size: 17px;
+    }
+}
+
+@media screen and (min-width: $laptop) and (max-width: $desktop) {
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: $desktop) {
+    html {
+        font-size: 19px;
+    }
+}
+
+
 
 // Headings GRT 
 h1,
@@ -64,56 +83,6 @@ h5,
     line-height: 1.52941176em;
     margin-top: 1.52941176em;
     margin-bottom: 0em;
-}
-
-p,
-ul,
-ol,
-pre,
-table,
-blockquote {
-    margin-top: 0em;
-    margin-bottom: 1.52941176em;
-}
-
-ul ul,
-ol ol,
-ul ol,
-ol ul {
-    margin-top: 0em;
-    margin-bottom: 0em;
-}
-
-/* Let's make sure all's aligned */
-hr,
-.hr {
-    border: 1px solid;
-    margin: -1px 0;
-}
-
-a,
-b,
-i,
-strong,
-em,
-small,
-code {
-    line-height: 0;
-}
-
-sub,
-sup {
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
-}
-
-sup {
-    top: -0.5em;
-}
-
-sub {
-    bottom: -0.25em;
 }
 
 :link {

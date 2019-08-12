@@ -39,9 +39,15 @@ Cantarell,
 'Open Sans',
 'Helvetica Neue',
 sans-serif;
+
 $serif: 'Crimson Text',
 Georgia,
 Times,
 serif;
 
 
+// Breakpoints 
+
+$tablet: 640px;
+$laptop: 1024px;
+$desktop: 1280px;
