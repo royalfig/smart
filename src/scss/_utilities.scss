@@ -1,7 +1,9 @@
+// Typography
 .st-serif {
     font-family: $serif;
 }
 
+// Display
 .st-flex-row {
     display: flex;
     flex-direction: row;
@@ -12,6 +14,19 @@
     flex-direction: column;
 }
 
+.st-grid-container {
+    display: grid;
+}
+
+.st-main {
+    margin: 0 auto;
+    max-width: $laptop;
+    padding: 1em;
+}
+
+// Spacing
+
+// Links
 /* Underline From Left */
 .hvr-underline-from-left {
     display: inline-block;
