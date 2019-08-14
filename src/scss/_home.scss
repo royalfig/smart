@@ -81,6 +81,25 @@
 
 }
 
+.st-home-wrapper {
+    background: $black;
+    
+    .st-home-post {
+        color: $white;
+    } 
+}
+
+.st-home-post {
+    color: $black;
+    
+
+    
+
+    &:hover .st-featured-title:after {
+        background: $pink;
+    }
+}
+
 .st-featured-post-image,
 .st-latest-post-image {
     display: block;
@@ -126,6 +145,8 @@
         left: 25%;
         // right: 50%;
     }
+
+    
 }
 
 // Latest 
