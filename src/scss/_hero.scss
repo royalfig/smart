@@ -1,6 +1,14 @@
-.st-hero-wrapper {
-    // height: 60vh;
+.st-hero-image {
+    height: 100%;
 
+
+    // Shift to HBS inline variable
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
 }
 
 .st-hero-overlay {
@@ -11,17 +19,20 @@
 
     background: rgba(0, 0, 0, .75);
 
-}
+    position: relative;
+    z-index: 1;
 
-.st-hero-image {
-    height: 100%;
+    &:after {
+        height: 50px;
+        width: 50px;
+        bottom: 0;
+        left: 0;
+        background: red;
+        position: absolute;
+        z-index: 2;
+    }
 
 
-    // Shift to HBS inline variable
-    
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .st-hero-container {
@@ -38,7 +49,7 @@
 }
 
 .st-site-description {
-    color: $acc1;
+    color: $acc2;
 }
 
 .st-site-description-text {
