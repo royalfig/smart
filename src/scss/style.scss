@@ -16,8 +16,8 @@ button {
 
 // Responsive typography
 html {
-    background: $white;
-    color: $black;
+    background: $light;
+    color: $dark;
     font-family: $sans;
     font-size: 16px;
     font-weight: normal;
@@ -86,14 +86,15 @@ h5,
 }
 
 :link {
-    color: $white;
+    color: $light;
     text-decoration: none;
 }
 
 :visited {
-    color: $white;
+    color: $light;
 }
 
 // Import styles
 @import 'nav';
+@import 'hero';
 @import 'home';

@@ -1,0 +1,43 @@
+.st-hero-wrapper {
+    height: 60vh;
+}
+
+.st-hero-overlay {
+    height: 100%;
+    padding: 1em;
+    align-items: center;
+    justify-content: space-around;
+
+    background: rgba(0, 0, 0, .75);
+
+}
+
+.st-hero-image {
+    height: 100%;
+
+
+    // Shift to HBS inline variable
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.st-hero-container {
+    align-items: center;
+    height: 100%;
+    justify-content: space-around;
+}
+
+.st-site-title {
+    margin: 15px 0 0;
+    text-align: center;
+}
+
+.st-site-description {
+    color: $acc1;
+}
+
+.st-site-description-text {
+    font-size: 1.5em;
+}

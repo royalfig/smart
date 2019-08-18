@@ -16,17 +16,20 @@
 
 .st-grid-container {
     display: grid;
+    grid-gap: 4em;
+    justify-content: stretch;
 }
 
 .st-main {
     margin: 0 auto;
-    max-width: $laptop;
-    padding: 1em;
+    width: 100%;
+    // padding: 1em;
 }
 
 // Spacing
 
 // Links
+
 /* Underline From Left */
 .hvr-underline-from-left {
     display: inline-block;
@@ -44,9 +47,9 @@
     z-index: -1;
     left: 0;
     right: 100%;
-    bottom: 1px;
-    background: $pink;
-    height: 2px;
+    bottom: -7px;
+    background: $prim;
+    height: 12px;
     -webkit-transition-property: right;
     transition-property: right;
     -webkit-transition-duration: 0.3s;
@@ -58,3 +61,14 @@
   .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
     right: 0;
   }
+
+//   Borders 
+.st-home-post-border-bottom {
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+
+    border-bottom: 2px solid transparent;
+}
