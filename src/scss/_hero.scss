@@ -1,12 +1,13 @@
 .st-hero-wrapper {
-    height: 60vh;
+    // height: 60vh;
+
 }
 
 .st-hero-overlay {
-    height: 100%;
-    padding: 1em;
     align-items: center;
+    height: 100%;
     justify-content: space-around;
+    padding: 1em;
 
     background: rgba(0, 0, 0, .75);
 
@@ -25,7 +26,9 @@
 
 .st-hero-container {
     align-items: center;
-    height: 100%;
+    height: 60vh;
+    // Test min height 
+    min-height: 200px;
     justify-content: space-around;
 }
 
