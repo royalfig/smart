@@ -31,5 +31,8 @@
   },
   "browserslist": [
     "last 2 versions"
-  ]
+  ],
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }

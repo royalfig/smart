@@ -37,7 +37,7 @@
                         <img aria-hidden="true" src="icons/send.svg">&nbsp;<span>Subscribe</span>
                     </div>
                 </a>
-                <button href="/" class="st-nav-item st-nav-right hvr-underline-from-left">
+                <button id="st-search-button" href="/" class="st-nav-item st-nav-right hvr-underline-from-left">
                     <div class="st-flex-row">
                         <img aria-hidden="true" src="icons/search.svg">&nbsp;<span>Search</span>
                     </div>
@@ -427,10 +427,11 @@
     </footer>
 
     <div class="st-search-box">
-        <form action="post">
-            <input type="text">
+        <div class="st-search-bar">
+            <input type="text" autofocus>
             <button class="st-submit">Search</button>
-        </form>
+            <button class="st-cancel">Close</button>
+        </div>
     </div>
 
 
@@ -442,7 +443,7 @@
 
 
 
-
+    <script src="js/main.js"></script>
 
 </body>
 

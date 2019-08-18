@@ -72,7 +72,7 @@
 .st-home-post-header {
     display: inline;
     position: relative;
-    z-index: 1;
+    // z-index: 1;
 
     &:before {
         background: scale-color($prim, $alpha: -75%);

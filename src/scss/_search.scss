@@ -1,43 +1,64 @@
 .st-search-box {
     display: none;
-    height: 4rem;
+    max-height: 0;
     left: 0;
-    padding: 1rem;
     position: fixed;
+    overflow: hidden;
     top: 0;
     width: 100%;
+    height: 100%;
+
+    background: scale-color($dark, $alpha: -5%);
+
+    transition-property: all;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+
+
+}
+
+.st-search-bar {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 1.5em 3em; 
+    width: 100%;
     
+
     background: $dark;
-    
-    form {
-        align-items: center;
-        display: flex;
-        height: 100%;
-        justify-content: center;
 
-        input {
+    input {
 
-            height: 3rem;
-            margin-right: 1rem;
-            padding: 1rem 1rem .5rem;
-            width: 80%;
+        margin-right: 1em;
+        padding: 1em 1em .5em;
+        width: calc(80% - 1em);
 
-            background: scale-color($dark, $lightness: -50%);
-            border: none;
-            color: $light;
-            font-size: 1.25rem;
-            outline: none;
-            border-bottom: 1px solid $prim;
-        }
+        background: scale-color($dark, $lightness: -50%);
+        border: none;
+        color: $light;
+        font-size: 1.25em;
+        outline: none;
+        border-bottom: 1px solid $prim;
+    }
 
-        button {
-            // height: 1.5rem;
-            
-            color: $light;
-            cursor: pointer;
-            font-size: 1.25rem;
-            background: $prim;
-            padding: .5rem;
+    button {
+        height: 2em;
+        margin-right: 1em;
+        width: calc(10% - .5em);
+
+        color: $light;
+        cursor: pointer;
+        font-size: 1em;
+        background: $prim;
+        padding: .5em;
+
+        &:last-child {
+            margin-right: 0;
         }
     }
+}
+
+.st-search-box-max-height {
+    display: block;
+    max-height: 100vh;
 }
