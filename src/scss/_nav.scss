@@ -7,7 +7,9 @@
 
 
 .st-extras {
-    font-size: smaller;
+    
+
+    
 
     &>* {
         margin: 10px;
@@ -15,19 +17,23 @@
 
 
 
-    
+
+}
+
+.st-nav-item {
+    color: $light;
 }
 
 .st-nav-item img {
     height: 24px;
 }
+
 .st-nav-right {
     margin-left: auto;
-  
+
 }
 
 .st-main-nav {
     justify-content: space-between;
 
 }
-

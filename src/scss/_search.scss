@@ -1,0 +1,43 @@
+.st-search-box {
+    display: none;
+    height: 4rem;
+    left: 0;
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    
+    background: $dark;
+    
+    form {
+        align-items: center;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+
+        input {
+
+            height: 3rem;
+            margin-right: 1rem;
+            padding: 1rem 1rem .5rem;
+            width: 80%;
+
+            background: scale-color($dark, $lightness: -50%);
+            border: none;
+            color: $light;
+            font-size: 1.25rem;
+            outline: none;
+            border-bottom: 1px solid $prim;
+        }
+
+        button {
+            // height: 1.5rem;
+            
+            color: $light;
+            cursor: pointer;
+            font-size: 1.25rem;
+            background: $prim;
+            padding: .5rem;
+        }
+    }
+}

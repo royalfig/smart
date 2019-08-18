@@ -19,20 +19,6 @@
 
     background: rgba(0, 0, 0, .75);
 
-    position: relative;
-    z-index: 1;
-
-    &:after {
-        height: 50px;
-        width: 50px;
-        bottom: 0;
-        left: 0;
-        background: red;
-        position: absolute;
-        z-index: 2;
-    }
-
-
 }
 
 .st-hero-container {
@@ -41,6 +27,12 @@
     // Test min height 
     min-height: 200px;
     justify-content: space-around;
+}
+
+.st-nav-container {
+    justify-content: center;
+    height: 80%;
+
 }
 
 .st-site-title {

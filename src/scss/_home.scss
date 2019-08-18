@@ -17,6 +17,13 @@
 
         .st-home-post-title {
             color: $light;
+
+        }
+
+        .st-home-post-title-link:active .st-home-post-title,
+        .st-home-post-title-link:focus .st-home-post-title,
+        .st-home-post-title-link:hover .st-home-post-title {
+            color: $acc1;
         }
 
         .st-home-post-border-bottom {
@@ -142,6 +149,12 @@
 
 .st-home-post-title-link {
     color: $dark;
+
+    &:active .st-home-post-title,
+    &:focus .st-home-post-title,
+    &:hover .st-home-post-title {
+        color: $prim;
+    }
 }
 
 
