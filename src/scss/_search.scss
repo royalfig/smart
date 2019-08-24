@@ -1,6 +1,6 @@
 .st-search-box {
     display: none;
-    max-height: 0;
+    
     left: 0;
     position: fixed;
     overflow: hidden;
@@ -10,11 +10,8 @@
 
     background: scale-color($dark, $alpha: -5%);
 
-    transition-property: all;
-    transition-duration: .2s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
-
-
+    opacity: 0;
+    
 }
 
 .st-search-bar {
@@ -27,6 +24,11 @@
 
     background: $dark;
 
+    transform: translateY(-100%);
+    transition-property: transform;
+    transition-duration: .2s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    
     input {
 
         margin-right: 1em;
@@ -60,5 +62,6 @@
 
 .st-search-box-max-height {
     display: block;
-    max-height: 100vh;
+    height: 100vh;
+    opacity: 1;
 }
