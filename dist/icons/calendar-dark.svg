@@ -3,8 +3,8 @@
     aria-labelledby="calendarIconTitle" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
     
     <title id="calendarIconTitle">Calendar</title>
-    <path class="calendar" d="M3 5H21V21H3V5Z" />
-    <path class="calendar" d="M21 9H3" />
-    <path class="calendar" d="M7 5V3" />
-    <path class="calendar" d="M17 5V3" />
+    <path class="calendar-dark" d="M3 5H21V21H3V5Z" />
+    <path class="calendar-dark" d="M21 9H3" />
+    <path class="calendar-dark" d="M7 5V3" />
+    <path class="calendar-dark" d="M17 5V3" />
 </svg>
