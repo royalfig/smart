@@ -30,16 +30,21 @@
             border-color: scale-color($acc1, $alpha: -75%);
         }
 
-        .st-home-post-date-and-topic,
-        .st-home-post-date-and-topic>a {
-            color: scale-color($acc1, $alpha: -10%);
+        .st-date,
+        .st-tag {
+
+            p,
+            a {
+                color: scale-color($light, $alpha: -10%);
+            }
         }
 
-        .st-home-post-date-and-topic>a:active,
-        .st-home-post-date-and-topic>a:focus,
-        .st-home-post-date-and-topic>a:hover {
+        .st-tag>a:active,
+        .st-tag>a:focus,
+        .st-tag>a:hover {
             color: $acc1;
         }
+
     }
 
     &:last-child {
@@ -60,7 +65,6 @@
 
 
 // Featured
-
 .st-home-post-header-container {
     margin: .5em 0 1.5em;
 }
@@ -109,24 +113,53 @@
 
 .st-home-post-body {
     margin: .75em 0 1.5em;
-
-
 }
 
-.st-home-post-date-and-topic,
-.st-home-post-date-and-topic>a {
+.st-home-post-date-and-tag,
+.st-home-post-date-and-tag>a {
+    align-items: center;
+    display: flex;
     margin: .5em 0 .25em;
 
-    color: scale-color($prim, $alpha: -10%);
+    color: scale-color($dark, $alpha: -10%);
     font-size: .8rem;
     font-weight: 300;
-    text-align: center;
 }
 
-.st-home-post-date-and-topic>a:active,
-.st-home-post-date-and-topic>a:focus,
-.st-home-post-date-and-topic>a:hover {
+.st-home-post-date-and-tag>a:active,
+.st-home-post-date-and-tag>a:focus,
+.st-home-post-date-and-tag>a:hover {
     color: $prim;
+}
+
+.st-date,
+.st-tag {
+    align-items: center;
+    display: flex;
+    line-height: 1;
+
+    p,
+    a {
+        color: scale-color($dark, $alpha: -10%);
+    }
+
+    object {
+        height: 1rem;
+        margin-right: .2rem;
+
+        &:last-child {
+            margin-left: .5em;
+        }
+    }
+}
+
+.calendar,
+.tag {
+    stroke: scale-color($dark, $alpha: -10%);
+}
+
+.st-date {
+    margin-right: .5em;
 }
 
 .st-home-post-title {
@@ -170,7 +203,7 @@
     }
 
     .st-grid-container-home-3 {
-        grid-template: "one one"
+        grid-template-areas: "one one"
             "two three";
         grid-template-columns: 1fr 1fr;
 
@@ -193,7 +226,7 @@
     }
 
     .st-grid-container-home-5 {
-        grid-template: "one one"
+        grid-template-areas: "one one"
             "two three"
             "four five";
 
@@ -242,7 +275,7 @@
     }
 
     .st-grid-container-home-3 {
-        grid-template: "one one"
+        grid-template-areas: "one one"
             "two three";
         grid-template-columns: 1fr 1fr;
 
@@ -265,7 +298,7 @@
     }
 
     .st-grid-container-home-5 {
-        grid-template: "one one"
+        grid-template-areas: "one one"
             "two three"
             "four five";
         grid-template-columns: 1fr 1fr;
@@ -317,7 +350,7 @@
     }
 
     .st-grid-container-home-4 {
-        grid-template: "one one one"
+        grid-template-areas: "one one one"
             "two three four";
         grid-template-columns: 1fr 1fr 1fr;
 
@@ -349,7 +382,7 @@
     }
 
     .st-grid-container-home-5 {
-        grid-template: "one one one two two two"
+        grid-template-areas: "one one one two two two"
             "three three four four five five";
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
