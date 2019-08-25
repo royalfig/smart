@@ -1,7 +1,8 @@
 .st-outer-container {
     width: 100%;
     margin: 2.5em auto;
-    padding: 2.5em;
+    padding: 2em;
+
 
     &:nth-child(even) {
         background: $dark;
@@ -10,8 +11,7 @@
             color: $light;
 
             &:before {
-                background: scale-color($acc1, $alpha: -75%);
-                z-index: -1;
+                background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
             }
         }
 
@@ -47,6 +47,12 @@
     }
 }
 
+@media all and (min-width: $tablet) {
+    .st-outer-container {
+        padding: 2.5em;
+    }
+}
+
 .st-inner-container {
     margin: 1em auto;
     max-width: $laptop;
@@ -62,10 +68,11 @@
 .st-home-post-header {
     display: inline;
     position: relative;
-    // z-index: 1;
+    z-index: 1;
 
     &:before {
-        background: scale-color($prim, $alpha: -75%);
+        background: linear-gradient(to right, scale-color($prim, $alpha: -75%), scale-color($prim, $alpha: -100%));
+
         content: "";
         bottom: 5px;
         position: absolute;
@@ -73,6 +80,7 @@
         left: 0;
         z-index: -1;
         width: 100%;
+
     }
 
 }
@@ -164,6 +172,7 @@
     .st-grid-container-home-3 {
         grid-template: "one one"
             "two three";
+        grid-template-columns: 1fr 1fr;
 
         .st-home-post-1 {
             grid-area: one;
@@ -188,6 +197,8 @@
             "two three"
             "four five";
 
+        grid-template-columns: 1fr 1fr;
+
         .st-home-post-1 {
             grid-area: one;
 
@@ -209,7 +220,7 @@
             grid-area: four;
         }
 
-        .st-home-post-4 {
+        .st-home-post-5 {
             grid-area: five;
         }
     }
@@ -233,6 +244,7 @@
     .st-grid-container-home-3 {
         grid-template: "one one"
             "two three";
+        grid-template-columns: 1fr 1fr;
 
         .st-home-post-1 {
             grid-area: one;
@@ -256,6 +268,7 @@
         grid-template: "one one"
             "two three"
             "four five";
+        grid-template-columns: 1fr 1fr;
 
         .st-home-post-1 {
             grid-area: one;
@@ -306,7 +319,7 @@
     .st-grid-container-home-4 {
         grid-template: "one one one"
             "two three four";
-
+        grid-template-columns: 1fr 1fr 1fr;
 
         .st-home-post-1 {
             grid-area: one;
@@ -336,8 +349,9 @@
     }
 
     .st-grid-container-home-5 {
-        grid-template: "one one one two two two" 
+        grid-template: "one one one two two two"
             "three three four four five five";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
         .st-home-post-1 {
             grid-area: one;
