@@ -48,7 +48,7 @@
 .st-fixed-navbar {
     align-items: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     padding: .25em 1em;
     position: fixed;
     width: 100%;
@@ -64,22 +64,27 @@
     font-family: $serif;
     font-size: 1.25em;
     font-weight: 900;
-    flex: 1;
+    flex: auto;
 }
 
 .st-fixed-center {
     display: flex;
-    flex: 2;
+    flex: auto;
+    
     justify-content: space-around;
     max-width: $tablet;
-   
+    
     font-size: .8em;
 }
 
 .st-fixed-right {
     display: flex;
-    flex: 1;
-    justify-content: flex-end;
-    font-size: .75em;
+    
+    flex: auto;
+    
+    // justify-content: flex-end;
+    font-size: .8em;
+    margin-right: 0;
+    line-height: 1;
     
 }
