@@ -1,21 +1,21 @@
 // dEV
-const dev = document.querySelector('.dev');
+// const dev = document.querySelector('.dev');
 
-function viewPort() {
-  if (window.innerWidth < 640) {
-    dev.textContent = `${window.innerWidth}px, PHONE`;
-  } else if (window.innerWidth > 639 && window.innerWidth < 1024) {
-    dev.textContent = `${window.innerWidth}px, TABLET`;
-  } else if (window.innerWidth > 1023 && window.innerWidth < 1280) {
-    dev.textContent = `${window.innerWidth}px, LAPTOP`;
-  } else {
-    dev.textContent = `${window.innerWidth}px, DESKTOP`;
-  }
-}
+// function viewPort() {
+//   if (window.innerWidth < 640) {
+//     dev.textContent = `${window.innerWidth}px, PHONE`;
+//   } else if (window.innerWidth > 639 && window.innerWidth < 1024) {
+//     dev.textContent = `${window.innerWidth}px, TABLET`;
+//   } else if (window.innerWidth > 1023 && window.innerWidth < 1280) {
+//     dev.textContent = `${window.innerWidth}px, LAPTOP`;
+//   } else {
+//     dev.textContent = `${window.innerWidth}px, DESKTOP`;
+//   }
+// }
 
-viewPort();
+// viewPort();
 
-window.addEventListener('resize', viewPort);
+// window.addEventListener('resize', viewPort);
 
 // Show and hide search bar
 const searchBoxBtn = document.getElementById('st-search-button');
@@ -84,3 +84,20 @@ gridContainers.forEach((element) => {
 
   element.classList.add(`st-grid-container-home-${gridItems.length}`);
 });
+
+
+// Fly in fixed navbar
+// Will have to add padding to offset content
+const fixedNavbar = document.querySelector('.st-fixed-navbar');
+const heroImage = document.querySelector('.st-hero-image');
+
+function scroller() {
+  if (heroImage.offsetHeight < window.pageYOffset + 50) {
+    fixedNavbar.style.transform = 'translateY(0)';
+  } else {
+    fixedNavbar.style.transform = 'translateY(-100%)';
+  }
+}
+
+window.addEventListener('scroll', scroller);
+
