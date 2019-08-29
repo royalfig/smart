@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{meta_title}}</title>
+
+    {{!-- CSS  --}}
+    <link rel="stylesheet" href="{{asset "css/style.css"}}">
+
+    {{!-- Output SEO + Meta data and other settings by Ghost --}}
+    {{ghost_head}}
+
+</head>
+
+<body>
+    
+    {{!-- All the main content is inserted here --}}
+    {{{body}}}
+
+    {{!-- Ghost footer required, right before the closing body tag --}}
+    {{ghost_foot}}
+    
+</body>
+</html>

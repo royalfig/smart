@@ -91,13 +91,28 @@ gridContainers.forEach((element) => {
 const fixedNavbar = document.querySelector('.st-fixed-navbar');
 const heroImage = document.querySelector('.st-hero-image');
 
-function scroller() {
-  if (heroImage.offsetHeight < window.pageYOffset + 50) {
+let lastKnownScrollPos = 0;
+let ticking = false;
+
+function scroller(scrollPos) {
+  if (heroImage.offsetHeight < scrollPos) {
     fixedNavbar.style.transform = 'translateY(0)';
   } else {
     fixedNavbar.style.transform = 'translateY(-100%)';
   }
 }
 
-window.addEventListener('scroll', scroller);
+window.addEventListener('scroll', () => {
+  lastKnownScrollPos = window.scrollY;
 
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      scroller(lastKnownScrollPos);
+      ticking = false;
+    });
+
+    ticking = true;
+  }
+});
+
+console.log(ticking)

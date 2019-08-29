@@ -4,7 +4,8 @@
   "description": "A Smart Theme for Smart People",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "browser-sync start --server --files dist/** --startPath dist/home.html"
   },
   "keywords": [
     "Ghost",
