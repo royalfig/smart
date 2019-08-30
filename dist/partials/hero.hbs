@@ -1,0 +1,112 @@
+{{#if background}}
+
+<style type="text/css">
+.hero-img {
+    background-image: url({{img_url background size='xl'}});
+}
+@media(max-width: 1000px) {
+    .hero-img {
+        background-image: url({{img_url background size='l'}});
+        background-image: -webkit-image-set(
+                url({{img_url background size='l'}}) 1x,
+                url({{img_url background size='xl'}}) 2x
+        );
+        background-image: image-set(
+                url({{img_url background size='l'}}) 1x,
+                url({{img_url background size='xl'}}) 2x
+        );
+    }
+}
+@media(max-width: 600px) {
+    .hero-img {
+        background-image: url({{img_url background size='m'}});
+        background-image: -webkit-image-set(
+                url({{img_url background size='m'}}) 1x,
+                url({{img_url background size='l'}}) 2x
+        );
+        background-image: image-set(
+                url({{img_url background size='m'}}) 1x,
+                url({{img_url background size='l'}}) 2x
+        );
+    }
+}
+</style>
+
+<div class="hero-img">
+
+{{else}}
+
+{{!-- Devise nonbg class  --}}
+<div class="hero-no-img">
+
+{{/if}}
+
+        <div class="st-hero-overlay ">
+
+            <aside class="st-extras st-flex-row">
+
+                <a href="{{@site.url}}" class="st-nav-item st-nav-left hvr-underline-from-left">
+                    <div class="st-flex-row">
+                        <p>Subscribe</p>
+                    </div>
+                </a>
+
+                <div class="st-nav-right">
+
+                    <a href="{{@site.twitter}}" class="st-nav-item hvr-underline-from-left">
+                        <div class="st-flex-row">
+                            <object aria-hidden="true" type="image/svg+xml" data="icons/twitter.svg"></object></span>
+                        </div>
+                    </a>
+                    <a href="{{@site.facebook}}" class="st-nav-item hvr-underline-from-left">
+                        <div class="st-flex-row">
+                            <object aria-hidden="true" type="image/svg+xml" data="icons/fb.svg"></object>
+                        </div>
+                    </a>
+                    <button id="st-search-button" href="/" class="st-nav-item hvr-underline-from-left">
+                        <div class="st-flex-row">
+                            <object aria-hidden="true" type="image/svg+xml" data="icons/search.svg"></object></span>
+                        </div>
+                    </button>
+
+
+                </div>
+            </aside>
+
+            <div class="st-hero-container st-flex-col">
+
+                <section class="st-nav-container st-flex-col">
+
+                    <h1 class="st-site-title st-serif">
+                        <a href="{{@site.url}}" class="st-site-title-link">{{@site.title}}</a>
+                    </h1>
+
+                    <nav class="st-main-nav st-flex-row">
+                        <a href="{{url}}" class="st-nav-item hvr-underline-from-left">About</a>
+                        <a href="{{url}}" class="st-nav-item hvr-underline-from-left">Writing</a>
+                        <a href="{{url}}" class="st-nav-item hvr-underline-from-left">Teaching</a>
+                        <a href="{{url}}" class="st-nav-item hvr-underline-from-left">Research</a>
+                        <a href="{{url}}" class="st-nav-item hvr-underline-from-left">Workshops</a>
+
+                    </nav>
+
+                    <!-- End Nav Container Section -->
+                </section>
+
+                <section class="st-site-description">
+
+                    <h2 class="st-site-description-text">{{@site.description}}</h2>
+
+                    <!-- End Site Description -->
+                </section>
+
+                <!-- End Hero Container  -->
+            </div>
+
+            <!-- End Hero Overlay -->
+        </div>
+
+        <!-- End Hero Image -->
+    </div>
+
+    <!-- End Hero Wrapper -->
