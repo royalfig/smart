@@ -12,11 +12,13 @@
 </head>
 
 <body>
-    <!-- <div class="dev"></div> -->
 
+    <!-- Fixed Navbar (to be moved into partial)  -->
     <nav class="st-fixed-navbar">
         <div class="st-fixed-left">
-            <a href="/"><p>Madeline Chera</p></a>
+            <a href="/">
+                <p>Madeline Chera</p>
+            </a>
         </div>
         <div class="st-fixed-center">
             <a href="/" class="st-nav-item hvr-underline-from-left">About</a>
@@ -25,41 +27,56 @@
             <a href="/" class="st-nav-item hvr-underline-from-left">Research</a>
             <a href="/" class="st-nav-item hvr-underline-from-left">Workshops</a>
         </div>
-        <div class="st-fixed-right">
-        <button id="st-search-button" href="/" class="st-nav-item st-nav-right hvr-underline-from-left">
-            <div class="st-flex-row">
-                <img aria-hidden="true" src="icons/search.svg">&nbsp;<span>Search</span>
-            </div>
-        </button></div>
+        <div class="st-fixed-right st-nav-right">
+            <a href="/" class="st-nav-item hvr-underline-from-left">
+                <div class="st-flex-row">
+                    <object aria-hidden="true" type="image/svg+xml" data="icons/twitter.svg"></object></span>
+                </div>
+            </a>
+            <a href="/" class="st-nav-item hvr-underline-from-left">
+                <div class="st-flex-row">
+                    <object aria-hidden="true" type="image/svg+xml" data="icons/fb.svg"></object>
+                </div>
+            </a>
+            <button href="/" class="st-search-button st-nav-item hvr-underline-from-left">
+                <object aria-hidden="true" type="image/svg+xml" data="icons/search.svg"></object>
+            </button>
+        </div>
     </nav>
-    <!-- <div class="st-hero-wrapper"> -->
+
 
     <div class="st-hero-image" style="background-image: url(img/madurai.jpg)">
 
         <div class="st-hero-overlay ">
 
             <aside class="st-extras st-flex-row" style="position:relative">
-                <a href="/" class="st-nav-item st-nav-left hvr-underline-from-left">
-                    <div class="st-flex-row">
-                        <img aria-hidden="true" src="icons/twitter.svg">&nbsp;<span>Twitter</span>
-                    </div>
-                </a>
-                <a href="/" class="st-nav-item st-nav-left hvr-underline-from-left">
-                    <div class="st-flex-row">
-                        <img aria-hidden="true" src="icons/fb.png">&nbsp;<span>Facebook</span>
-                    </div>
-                </a>
 
                 <a href="/" class="st-nav-item st-nav-left hvr-underline-from-left">
                     <div class="st-flex-row">
-                        <img aria-hidden="true" src="icons/clipboard.svg">&nbsp;<span>Subscribe</span>
+                        <p>Subscribe</p>
                     </div>
                 </a>
-                <button id="st-search-button" href="/" class="st-nav-item st-nav-right hvr-underline-from-left">
-                    <div class="st-flex-row">
-                        <img aria-hidden="true" src="icons/search.svg">&nbsp;<span>Search</span>
-                    </div>
-                </button>
+
+                <div class="st-nav-right">
+
+                    <a href="/" class="st-nav-item hvr-underline-from-left">
+                        <div class="st-flex-row">
+                            <object aria-hidden="true" type="image/svg+xml" data="icons/twitter.svg"></object></span>
+                        </div>
+                    </a>
+                    <a href="/" class="st-nav-item hvr-underline-from-left">
+                        <div class="st-flex-row">
+                            <object aria-hidden="true" type="image/svg+xml" data="icons/fb.svg"></object>
+                        </div>
+                    </a>
+                    <button id="st-search-button" href="/" class="st-nav-item hvr-underline-from-left">
+                        <div class="st-flex-row">
+                            <object aria-hidden="true" type="image/svg+xml" data="icons/search.svg"></object></span>
+                        </div>
+                    </button>
+
+
+                </div>
             </aside>
 
             <div class="st-hero-container st-flex-col">
@@ -127,15 +144,15 @@
                                         doesn't support SVGs</object>
                                     <p>July 20, 2019</p>
                                 </div>
-                                <div class="st-tag"><object type="image/svg+xml" data="icons/tag.svg">Your browser
-                                        doesn't support SVGs</object><a href="/">Anthropology</a></div>
+                                <div class="st-tag"><a href="/"><object type="image/svg+xml" data="icons/tag.svg">Your
+                                            browser
+                                            doesn't support SVGs</object>Anthropology</a></div>
                             </div>
                             <a href="/" class="st-home-post-title-link">
                                 <h3 class="st-home-post-title">Research Statement</h3>
                             </a>
                         </div>
-                        <div class="st-read"><object type="image/svg+xml" data="icons/read-dark.svg"></object>
-                            <p>10 min</p>
+                        <div class="st-read"><a href="/" class="st-readmore">Read</a>
                         </div>
                         <div class="st-home-post-border-bottom"></div>
                     </article>

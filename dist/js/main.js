@@ -95,7 +95,7 @@ let lastKnownScrollPos = 0;
 let ticking = false;
 
 function scroller(scrollPos) {
-  if (heroImage.offsetHeight < scrollPos) {
+  if (heroImage.offsetHeight < scrollPos - 150) {
     fixedNavbar.style.transform = 'translateY(0)';
   } else {
     fixedNavbar.style.transform = 'translateY(-100%)';
@@ -114,5 +114,3 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 });
-
-console.log(ticking)

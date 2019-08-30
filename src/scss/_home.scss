@@ -206,14 +206,21 @@
 
 .st-home-post-title-link {
     color: $dark;
+    
 
     &:active .st-home-post-title,
     &:focus .st-home-post-title,
     &:hover .st-home-post-title {
-        color: $prim;
+       color: $prim;
+        
     }
 }
 
+.st-readmore {
+    background: $acc1;
+    color: $dark;
+    padding: .25em .75em;
+}
 
 
 // Grid on the home page

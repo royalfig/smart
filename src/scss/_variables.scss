@@ -19,12 +19,15 @@ $acc3: #737274;
 // $acc3: #f9cb40;
 
 // Fjords
-$dark: #031c1f;
-$light: #ebeffd;
-$prim: #bf204a;
-$acc1: #0d7272;
-$acc2: #e396a5;
+// $dark: #031c1f;
+// $light: #ebeffd;
+// $prim: #bf204a;
+// $acc1: #0d7272;
+// $acc2: #e396a5;
 
+.light {
+    fill: $light
+}
 
 @mixin background-gradient {
     background: linear-gradient(rgba(232, 32, 14, .5), rgba(19, 2, 1, .5), rgba(232, 32, 14, .5));

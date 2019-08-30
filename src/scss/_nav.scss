@@ -34,13 +34,27 @@
 }
 
 .st-nav-right {
-    margin-left: auto;
+    display: flex;
+    
+    flex: auto;
+    
+    justify-content: flex-end;
+    font-size: .8em;
+    margin-right: 0;
+    line-height: 1;
+    &>* {
+        margin-left: 2em;
+    }
 
 }
 
 .st-main-nav {
     justify-content: space-between;
 
+}
+
+.st-search-button {
+    cursor: pointer;
 }
 
 
@@ -54,6 +68,7 @@
     width: 100%;
     
     background: $dark;
+    box-shadow: 0 1px 1px rgba(0,0,0,.25);
     transform: translateY(-100%);
     transition: transform .2s ease-in-out;
     z-index: 5;
@@ -82,9 +97,11 @@
     
     flex: auto;
     
-    // justify-content: flex-end;
+    justify-content: flex-end;
     font-size: .8em;
     margin-right: 0;
     line-height: 1;
-    
+    &>* {
+        margin-left: 2em;
+    }
 }
