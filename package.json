@@ -31,12 +31,16 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
-    "gulp-uglify": "^3.0.2"
+    "gulp-stylelint": "^9.0.0",
+    "gulp-uglify": "^3.0.2",
+    "stylelint": "^10.1.0",
+    "stylelint-config-twbs-bootstrap": "^0.4.0"
   },
   "browserslist": [
     "last 2 versions"
   ],
   "dependencies": {
+    "cosmiconfig": "^5.2.1",
     "normalize.css": "^8.0.1"
   }
 }

@@ -1,119 +1,110 @@
-.st-outer-container {
+/* -------------------------------
+Home Page
+Section and header styles
+------------------------------- */
+.outer-container {
     width: 100%;
     margin: 2.5em auto;
     padding: 2em;
 
-
     &:nth-child(even) {
         background: $dark;
-
-        .st-home-post-header {
-            color: $light;
-
-            &:before {
-                background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
-            }
-        }
-
-        .st-home-post-image-link {
-            background: $acc1;
-        }
-
-        .st-home-post-title {
-            color: $light;
-
-        }
-
-        .st-home-post-title-link:active .st-home-post-title,
-        .st-home-post-title-link:focus .st-home-post-title,
-        .st-home-post-title-link:hover .st-home-post-title {
-            color: $acc1;
-        }
-
-        .st-home-post-border-bottom {
-            border-color: scale-color($acc1, $alpha: -75%);
-        }
-
-        .st-date,
-        .st-tag,
-        .st-read {
-
-            p,
-            a {
-                color: scale-color($light, $alpha: -10%);
-            }
-        }
-
-
-
-        .st-tag>a:active,
-        .st-tag>a:focus,
-        .st-tag>a:hover {
-            color: $acc1;
-        }
-
-    }
-
-    &:last-child {
-        margin-bottom: 0;
     }
 }
 
 @media all and (min-width: $tablet) {
-    .st-outer-container {
+    .outer-container {
         padding: 2.5em;
     }
 }
 
-.st-inner-container {
+.inner-container {
     margin: 1em auto;
     max-width: $laptop;
 }
 
-
-// Featured
-.st-home-post-header-container {
-    margin: .5em 0 1.5em;
-}
-
-.st-home-post-header {
-    display: inline;
+.home-page-section-header {
     position: relative;
     z-index: 1;
+    display: inline;
 
     &:before {
-        background: linear-gradient(to right, scale-color($prim, $alpha: -75%), scale-color($prim, $alpha: -100%));
-
-        content: "";
-        bottom: 5px;
         position: absolute;
-        height: 50%;
+        bottom: 5px;
         left: -13px;
         z-index: -1;
         width: 175%;
-        transform: skew(-5deg)
-
+        height: 50%;
+        content: "";
+        transform: skew(-5deg);
+        background: linear-gradient(to right, scale-color($prim, $alpha: -75%), scale-color($prim, $alpha: -100%));
     }
 
 }
 
-.st-home-post {
-    margin: 1.5em 0 3em;
-    max-width: 100%;
+// Define alternative styles
+.outer-container {
+
+    .card-header {
+        color: $light;
+
+        &:before {
+            background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
+        }
+    }
+
+    .card-image-link {
+        background: $acc1;
+    }
+
+    .card-title {
+        color: $light;
+
+    }
+
+    .card-title-link:active .card-title,
+    .card-title-link:focus .card-title,
+    .card-title-link:hover .card-title {
+        color: $acc1;
+    }
+
+    .card-border-bottom {
+        border-color: scale-color($acc1, $alpha: -75%);
+    }
+
+    .st-date,
+    .card-tag,
+    .st-read {
+
+        p,
+        a {
+            color: scale-color($light, $alpha: -10%);
+        }
+    }
+
+    .card-tag>a:active,
+    .card-tag>a:focus,
+    .card-tag>a:hover {
+        color: $acc1;
+    }
+
+    
+    &:last-child {
+        margin-bottom: 0;
+    }
+    
+}
+
+/* -------------------------------
+Card Styles 
+For home and index pages
+------------------------------- */
+.card {
     position: relative;
     display: flex;
+    margin: 1.5em 0 3em;
+    max-width: 100%;
     flex-direction: column;
-
-    .st-home-post-border-bottom {
-        border-color: scale-color($prim, $alpha: -75%);
-    }
-
-}
-.st-home-post-image-link {
-    background: $prim;
-}
-.st-home-post-image-link:hover .st-home-post-image {
-    transform: translateX(10px);
 }
 
 .card-link-overlay {
@@ -125,8 +116,15 @@
     z-index: 1;
 }
 
+.card-image-link {
+    background: $prim;
+}
 
-.st-home-post-image {
+
+
+
+
+.card-image {
     display: block;
     height: $base;
     width: 100%;
@@ -137,12 +135,12 @@
     transition: all .2s ease-in-out;
 }
 
-.st-home-post-body {
+.card-body {
     margin: 1em 0;
     padding: .5em;
 }
 
-.st-home-post-date-and-tag {
+.card-date-and-tag {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -153,14 +151,14 @@
     font-weight: 300;
 }
 
-.st-home-post-date-and-tag>a:active,
-.st-home-post-date-and-tag>a:focus,
-.st-home-post-date-and-tag>a:hover {
+.card-date-and-tag>a:active,
+.card-date-and-tag>a:focus,
+.card-date-and-tag>a:hover {
     color: $prim;
 }
 
 .st-date,
-.st-tag,
+.card-tag,
 .st-read {
     align-items: center;
     display: flex;
@@ -168,7 +166,7 @@
     margin-right: 1em;
     color: $dark;
     text-transform: uppercase;
-   
+
     p,
     a {
         color: scale-color($dark, $alpha: -10%);
@@ -186,22 +184,22 @@
 
     &:last-child {
         margin-right: 0;
-        
-        
+
+
     }
 }
 
-.st-tag,
+.card-tag,
 .st-date {
     font-size: smaller;
 }
 
-.st-tag {
+.card-tag {
     display: inline-block;
     margin-top: .75em;
     padding: .25em .5em;
     position: relative;
-    
+
     background: $acc3;
     color: $light;
     z-index: 2;
@@ -234,7 +232,7 @@
     stroke: scale-color($light, $alpha: -10%);
 }
 
-.st-home-post-title {
+.card-title {
     margin: .25em 0 .5em;
     color: $dark;
     position: relative;
@@ -244,15 +242,15 @@
     line-height: 1.2;
 }
 
-.st-home-post-title-link {
+.card-title-link {
     color: $dark;
-    
 
-    &:active .st-home-post-title,
-    &:focus .st-home-post-title,
-    &:hover .st-home-post-title {
-       color: $prim;
-        
+
+    &:active .card-title,
+    &:focus .card-title,
+    &:hover .card-title {
+        color: $prim;
+
     }
 }
 
@@ -290,20 +288,20 @@
             "two three";
         grid-template-columns: 1fr 1fr;
 
-        .st-home-post-1 {
+        .card-1 {
             grid-area: one;
 
-            .st-home-post-image {
+            .card-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-2 {
+        .card-2 {
             grid-area: two;
         }
 
-        .st-home-post-3 {
+        .card-3 {
             grid-area: three;
         }
     }
@@ -315,33 +313,33 @@
 
         grid-template-columns: 1fr 1fr;
 
-        .st-home-post-1 {
+        .card-1 {
             grid-area: one;
 
-            .st-home-post-image {
+            .card-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-2 {
+        .card-2 {
             grid-area: two;
         }
 
-        .st-home-post-3 {
+        .card-3 {
             grid-area: three;
         }
 
-        .st-home-post-4 {
+        .card-4 {
             grid-area: four;
         }
 
-        .st-home-post-5 {
+        .card-5 {
             grid-area: five;
         }
     }
 
-    .st-home-post-image {
+    .card-image {
         height: 1.5 * $base;
     }
 }
@@ -362,20 +360,20 @@
             "two three";
         grid-template-columns: 1fr 1fr;
 
-        .st-home-post-1 {
+        .card-1 {
             grid-area: one;
 
-            .st-home-post-image {
+            .card-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-2 {
+        .card-2 {
             grid-area: two;
         }
 
-        .st-home-post-3 {
+        .card-3 {
             grid-area: three;
         }
     }
@@ -386,33 +384,33 @@
             "four five";
         grid-template-columns: 1fr 1fr;
 
-        .st-home-post-1 {
+        .card-1 {
             grid-area: one;
 
-            .st-home-post-image {
+            .card-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-2 {
+        .card-2 {
             grid-area: two;
         }
 
-        .st-home-post-3 {
+        .card-3 {
             grid-area: three;
         }
 
-        .st-home-post-4 {
+        .card-4 {
             grid-area: four;
         }
 
-        .st-home-post-5 {
+        .card-5 {
             grid-area: five;
         }
     }
 
-    .st-home-post-image {
+    .card-image {
         height: 1.5 * $base;
     }
 }
@@ -437,28 +435,28 @@
             "two three four";
         grid-template-columns: 1fr 1fr 1fr;
 
-        .st-home-post-1 {
+        .card-1 {
             grid-area: one;
 
-            .st-home-post-image {
+            .card-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-2 {
+        .card-2 {
             grid-area: two;
         }
 
-        .st-home-post-3 {
+        .card-3 {
             grid-area: three;
         }
 
-        .st-home-post-4 {
+        .card-4 {
             grid-area: four;
         }
 
-        .st-home-post-image {
+        .card-image {
             height: 1.5 * $base;
         }
 
@@ -469,38 +467,38 @@
             "three three four four five five";
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
-        .st-home-post-1 {
+        .card-1 {
             grid-area: one;
 
-            .st-home-post-image {
+            .card-image {
                 height: 3 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-2 {
+        .card-2 {
             grid-area: two;
 
-            .st-home-post-image {
+            .card-image {
                 height: 3 * $base;
                 max-height: 60vh;
             }
         }
 
-        .st-home-post-3 {
+        .card-3 {
             grid-area: three;
         }
 
-        .st-home-post-4 {
+        .card-4 {
             grid-area: four;
         }
 
-        .st-home-post-5 {
+        .card-5 {
             grid-area: five;
         }
     }
 
-    .st-home-post-image {
+    .card-image {
         height: 2 * $base;
     }
 
@@ -512,7 +510,7 @@
 
 
 // @media all and (min-width:$tablet) and (max-width: $laptop) {
-//     .st-home-post-grid-container {
+//     .card-grid-container {
 //         grid-template-areas: 'one one'
 //             'two three'
 //             'four five';
@@ -522,7 +520,7 @@
 // }
 
 // @media all and (min-width: $laptop) {
-//     .st-home-post-grid-container {
+//     .card-grid-container {
 //         grid-template-areas: 'one one one two two two'
 //             'one one one two two two'
 //             'three three four four five five';
@@ -530,25 +528,25 @@
 
 //     }
 // }
-// .st-home-post {
+// .card {
 
 // }
-// .st-home-post-1 {
+// .card-1 {
 //     grid-area: one;
 // }
 
-// .st-home-post-2 {
+// .card-2 {
 //     grid-area: two;
 // }
 
-// .st-home-post-3 {
+// .card-3 {
 //     grid-area: three;
 // }
 
-// .st-home-post-4 {
+// .card-4 {
 //     grid-area: four;
 // }
 
-// .st-home-post-5 {
+// .card-5 {
 //     grid-area: five;
 // }
