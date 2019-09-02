@@ -30,13 +30,13 @@ gridContainers.forEach((element) => {
 // Fly in fixed navbar
 // Will have to add padding to offset content?
 const fixedNavbar = document.querySelector('.fixed-navbar');
-const heroImage = document.querySelector('.hero-img');
+const navbarTest = document.querySelector('.navbar-test');
 
 let lastKnownScrollPos = 0;
 let ticking = false;
 
 function scroller(scrollPos) {
-  if (heroImage.offsetHeight - (heroImage.offsetHeight * 0.9) < scrollPos) {
+  if (navbarTest.offsetHeight - (navbarTest.offsetHeight * 0.9) < scrollPos) {
     fixedNavbar.style.background = '#181818';
   } else {
     fixedNavbar.style.background = 'transparent';

@@ -1,0 +1,36 @@
+<!-- Fixed Navbar-->
+<nav class="fixed-navbar">
+    <div class="fixed-left">
+        <a href="/">
+            <h1>{{@site.title}}</h1>
+        </a>
+    </div>
+    <div class="fixed-center">
+        {{#if @site.navigation}}
+        {{#foreach navigation}}
+        <a href="{{url absolute="true"}}" class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+        {{/foreach}}
+        {{/if}}
+    </div>
+
+    <div class="fixed-right nav-right">
+        {{#has @site.twitter}}
+        <a id="twitter" href="twitter_url @site.twitter" class="nav-item">
+            {{> "icons/twitter"}}
+        </a>
+        {{/has}}
+       {{#has @site.facebook}}
+        <a id="facebook" href="facebook_url @site.facebook" class="nav-item">
+            {{> "icons/facebook"}}
+        </a>
+        {{/has}}
+        {{#if @labs.subscribers}}
+        <button id="subscribe" href="/" class="nav-item">
+            {{> "icons/clipboard"}}
+        </button>
+        {{/if}}
+        <button id="search-button" href="/" class="search-button nav-item">
+                 {{> "icons/search"}}
+        </button>
+    </div>
+</nav>

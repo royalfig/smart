@@ -1,0 +1,26 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{> "nav"}}
+
+{{#post}}
+{{#if feature_image}}
+<div class="post-image navbar-test">
+    <img src="img_url feature_image" alt="">
+</div>
+
+<main class="main">
+    <div class="outer-container">
+        <div class="inner-container">
+            <article class="{{post_class}} post">
+                <h1 class="post-title serif">{{title}}</h1>
+                <section class="post-content">
+                {{content}}
+                </section>
+            </article>
+        </div>
+    </div>
+</main>
+
+{{/post}}
