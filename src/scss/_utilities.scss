@@ -57,3 +57,14 @@
   .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
     right: 0;
   }
+
+  .underline {
+    border-bottom: 2px solid currentColor;
+    display: inline-block;
+    line-height: 0.85;
+    text-shadow:
+      2px 2px $light,
+      2px -2px $light,
+      -2px 2px $light,
+      -2px -2px $light;
+  }

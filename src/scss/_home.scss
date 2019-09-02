@@ -5,14 +5,9 @@ Section and header styles
 .outer-container {
     position: relative;
     width: 100%;
-    padding: 3em;
+    padding: 1em 3em;
 
     background: $light;
-
-    // &:nth-child(even) {
-    //     // background: scale-color($dark, $lightness: 3%);
-
-    // }
 }
 
 .inner-container {
@@ -21,33 +16,10 @@ Section and header styles
 }
 
 .home-page-section-header {
-    position: relative;
-    z-index: 1;
-    display: inline;
-
-    &:before {
-        position: absolute;
-        bottom: 5px;
-        left: -13px;
-        z-index: -1;
-        width: 175%;
-        height: 50%;
-        content: "";
-        transform: skew(-5deg);
-        background: linear-gradient(to right, scale-color($prim, $alpha: -75%), scale-color($prim, $alpha: -100%));
-    }
-
+    // display: inline;
+    margin: 1em 0 .5em;
+    line-height: 1;
 }
-
-// .outer-container:nth-child(even) {
-//     .home-page-section-header {
-//         color: $light;
-
-//         &:before {
-//             background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
-//         }
-//     }
-// }
 
 /* -------------------------------
 Card Styles 
@@ -132,54 +104,6 @@ For home and index pages
     margin: .5em 0;
 }
 
-// .card-tag {
-//     position: relative;
-//     display: inline-block;
-//     z-index: 2;
-//     margin-top: .75em;
-//     padding: .25em .5em;
-
-//     background: $acc3;
-//     color: $light;
-
-//     transition: all .2s ease-in-out;
-
-//     &:hover {
-//         background: scale-color($acc3, $lightness: -50%);
-
-//     }
-
-// }
-
-// Define alternative styles
-// .outer-container:nth-child(even) {
-//     .card {
-//         background: $dark;
-
-//         &:hover {
-//             border-bottom-color: scale-color($acc1, $alpha: -50%);
-
-//             .card-image {
-//                 filter: saturate(1.5)
-//             }
-
-//             .card-title {
-//                 color: $acc1;
-//             }
-//         }
-//     }
-
-//     .card-date,
-//     .card-title,
-//     .card-excerpt {
-//         color: $light;
-//     }
-
-//     .no-image {
-//         background: linear-gradient(45deg, $acc2, $acc3);
-//     }
-
-// }
 
 /* Grid styles
 For home page */
