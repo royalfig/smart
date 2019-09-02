@@ -2,7 +2,7 @@
     "name": "smart-a-ghost-theme-for-academics",
     "description": "A Smart Theme for Smart People",
 
-    "version": "1.0",
+    "version": "1.0.0",
     "engines": {
         "ghost": ">=2.0.0",
         "ghost-api": "v2"
