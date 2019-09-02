@@ -3,12 +3,15 @@ Home Page
 Section and header styles
 ------------------------------- */
 .outer-container {
+    position: relative; 
     width: 100%;
-    margin: 2.5em auto;
-    padding: 2em;
+    padding: 3em 2em;
+
+    background: #eee;
 
     &:nth-child(even) {
-        background: $dark;
+        background: #222;
+
     }
 }
 
@@ -42,58 +45,18 @@ Section and header styles
 
 }
 
-// Define alternative styles
-.outer-container {
-
-    .card-header {
+.outer-container:nth-child(even) {
+    .home-page-section-header {
         color: $light;
 
         &:before {
             background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
         }
     }
-
-    .card-image-link {
-        background: $acc1;
-    }
-
-    .card-title {
-        color: $light;
-
-    }
-
-    .card-title-link:active .card-title,
-    .card-title-link:focus .card-title,
-    .card-title-link:hover .card-title {
-        color: $acc1;
-    }
-
-    .card-border-bottom {
-        border-color: scale-color($acc1, $alpha: -75%);
-    }
-
-    .st-date,
-    .card-tag,
-    .st-read {
-
-        p,
-        a {
-            color: scale-color($light, $alpha: -10%);
-        }
-    }
-
-    .card-tag>a:active,
-    .card-tag>a:focus,
-    .card-tag>a:hover {
-        color: $acc1;
-    }
-
-    
-    &:last-child {
-        margin-bottom: 0;
-    }
-    
 }
+
+
+
 
 /* -------------------------------
 Card Styles 
@@ -105,6 +68,18 @@ For home and index pages
     margin: 1.5em 0 3em;
     max-width: 100%;
     flex-direction: column;
+
+    background: $light;
+
+    &:hover {
+        .card-image {
+            filter: saturate(1.5)
+        }
+
+        .card-title {
+            color: $prim;
+        }
+    }
 }
 
 .card-link-overlay {
@@ -114,122 +89,33 @@ For home and index pages
     height: 100%;
     width: 100%;
     z-index: 1;
+
+
 }
 
-.card-image-link {
-    background: $prim;
-}
-
-
-
-
-
-.card-image {
+.card-image,
+.no-image {
     display: block;
-    height: $base;
     width: 100%;
-
-    // width: auto;
+    height: $base;
     object-fit: cover;
 
     transition: all .2s ease-in-out;
 }
 
+.no-image {
+    background: linear-gradient(45deg, $prim, $acc1);
+}
+
 .card-body {
-    margin: 1em 0;
-    padding: .5em;
-}
-
-.card-date-and-tag {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    margin: .5em 0 .25em;
-
-    color: scale-color($dark, $alpha: -10%);
-    font-size: .8rem;
-    font-weight: 300;
-}
-
-.card-date-and-tag>a:active,
-.card-date-and-tag>a:focus,
-.card-date-and-tag>a:hover {
-    color: $prim;
-}
-
-.st-date,
-.card-tag,
-.st-read {
-    align-items: center;
-    display: flex;
-    line-height: 1.5;
-    margin-right: 1em;
-    color: $dark;
-    text-transform: uppercase;
-
-    p,
-    a {
-        color: scale-color($dark, $alpha: -10%);
-    }
-
-    a:hover {
-        color: scale-color($prim, $alpha: -10%);
-    }
-
-    object {
-        height: 1rem;
-        margin-right: .2rem;
-
-    }
-
-    &:last-child {
-        margin-right: 0;
-
-
-    }
-}
-
-.card-tag,
-.st-date {
-    font-size: smaller;
-}
-
-.card-tag {
-    display: inline-block;
-    margin-top: .75em;
-    padding: .25em .5em;
-    position: relative;
-
-    background: $acc3;
-    color: $light;
-    z-index: 2;
-}
-
-.excerpt {
-    color: $dark;
     margin: .5em 0;
+    padding: 1em;
 }
 
-.st-read {
-    margin-top: auto;
-    margin-bottom: .5em;
-    justify-content: flex-end;
-
-    font-size: .8em;
-}
-
-.calendar,
-.tag,
-.read {
-    stroke: scale-color($dark, $alpha: -10%);
-}
-
-
-
-.calendar-dark,
-.tag-dark,
-.read-dark {
-    stroke: scale-color($light, $alpha: -10%);
+.card-tag,
+.card-date {
+    font-size: smaller;
+    font-weight: 100;
 }
 
 .card-title {
@@ -240,50 +126,86 @@ For home and index pages
     font-size: 2em;
     font-weight: 600;
     line-height: 1.2;
+    transition: all .2s ease-in-out;
+
 }
 
-.card-title-link {
+.card-excerpt {
     color: $dark;
+    margin: .5em 0;
+}
 
+.card-tag {
+    position: relative;
+    display: inline-block;
+    z-index: 2;
+    margin-top: .75em;
+    padding: .25em .5em;
 
-    &:active .card-title,
-    &:focus .card-title,
-    &:hover .card-title {
-        color: $prim;
+    background: $acc3;
+    color: $light;
+
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background: scale-color($acc3, $lightness: -50%);
 
     }
+
 }
 
-.st-readmore {
-    background: $acc1;
-    color: $dark;
-    padding: .25em .75em;
+// Define alternative styles
+.outer-container:nth-child(even) {
+    .card {
+        background: $dark;
+
+        &:hover {
+            .card-image {
+                filter: saturate(1.5)
+            }
+
+            .card-title {
+                color: $acc1;
+            }
+        }
+    }
+
+    .card-date,
+    .card-title,
+    .card-excerpt {
+        color: $light;
+    }
+
+    .no-image {
+        background: linear-gradient(45deg, $acc2, $acc3);
+    }
+
 }
 
+/* Grid styles
+For home page */
 
-// Grid on the home page
 // Mobile phones
-.st-grid-container-home {
+.grid-container-home {
     align-content: stretch;
 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     max-width: 100%;
 
-    border-bottom: 3px double $dark;
 }
 
 // Tablets
 @media all and (min-width:$tablet) and (max-width: $laptop) {
-    .st-grid-container-home-1 {
+    .grid-container-home-1 {
         grid-template-columns: minmax(250px, 500px);
     }
 
-    .st-grid-container-home-2,
-    .st-grid-container-home-4 {
+    .grid-container-home-2,
+    .grid-container-home-4 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .st-grid-container-home-3 {
+    .grid-container-home-3 {
         grid-template-areas: "one one"
             "two three";
         grid-template-columns: 1fr 1fr;
@@ -291,7 +213,8 @@ For home and index pages
         .card-1 {
             grid-area: one;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -306,7 +229,7 @@ For home and index pages
         }
     }
 
-    .st-grid-container-home-5 {
+    .grid-container-home-5 {
         grid-template-areas: "one one"
             "two three"
             "four five";
@@ -316,7 +239,8 @@ For home and index pages
         .card-1 {
             grid-area: one;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -339,23 +263,24 @@ For home and index pages
         }
     }
 
-    .card-image {
+    .card-image,
+    .no-image {
         height: 1.5 * $base;
     }
 }
 
 // Laptops
 @media all and (min-width: $laptop) and (max-width: $desktop) {
-    .st-grid-container-home-1 {
+    .grid-container-home-1 {
         grid-template-columns: minmax(250px, 500px);
     }
 
-    .st-grid-container-home-2,
-    .st-grid-container-home-4 {
+    .grid-container-home-2,
+    .grid-container-home-4 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .st-grid-container-home-3 {
+    .grid-container-home-3 {
         grid-template-areas: "one one"
             "two three";
         grid-template-columns: 1fr 1fr;
@@ -363,7 +288,8 @@ For home and index pages
         .card-1 {
             grid-area: one;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -378,7 +304,7 @@ For home and index pages
         }
     }
 
-    .st-grid-container-home-5 {
+    .grid-container-home-5 {
         grid-template-areas: "one one"
             "two three"
             "four five";
@@ -387,7 +313,8 @@ For home and index pages
         .card-1 {
             grid-area: one;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -410,7 +337,8 @@ For home and index pages
         }
     }
 
-    .card-image {
+    .card-image,
+    .no-image {
         height: 1.5 * $base;
     }
 }
@@ -418,19 +346,19 @@ For home and index pages
 // Desktops 
 @media all and (min-width: $desktop) {
 
-    .st-grid-container-home-1 {
+    .grid-container-home-1 {
         grid-template-columns: minmax(250px, 500px);
     }
 
-    .st-grid-container-home-2 {
+    .grid-container-home-2 {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .st-grid-container-home-3 {
+    .grid-container-home-3 {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .st-grid-container-home-4 {
+    .grid-container-home-4 {
         grid-template-areas: "one one one"
             "two three four";
         grid-template-columns: 1fr 1fr 1fr;
@@ -438,7 +366,8 @@ For home and index pages
         .card-1 {
             grid-area: one;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -456,13 +385,14 @@ For home and index pages
             grid-area: four;
         }
 
-        .card-image {
+        .card-image,
+        .no-image {
             height: 1.5 * $base;
         }
 
     }
 
-    .st-grid-container-home-5 {
+    .grid-container-home-5 {
         grid-template-areas: "one one one two two two"
             "three three four four five five";
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -470,7 +400,8 @@ For home and index pages
         .card-1 {
             grid-area: one;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 3 * $base;
                 max-height: 60vh;
             }
@@ -479,7 +410,8 @@ For home and index pages
         .card-2 {
             grid-area: two;
 
-            .card-image {
+            .card-image,
+            .no-image {
                 height: 3 * $base;
                 max-height: 60vh;
             }
@@ -498,55 +430,9 @@ For home and index pages
         }
     }
 
-    .card-image {
+    .card-image,
+    .no-image {
         height: 2 * $base;
     }
 
-
-
-
 }
-
-
-
-// @media all and (min-width:$tablet) and (max-width: $laptop) {
-//     .card-grid-container {
-//         grid-template-areas: 'one one'
-//             'two three'
-//             'four five';
-
-
-//     }
-// }
-
-// @media all and (min-width: $laptop) {
-//     .card-grid-container {
-//         grid-template-areas: 'one one one two two two'
-//             'one one one two two two'
-//             'three three four four five five';
-
-
-//     }
-// }
-// .card {
-
-// }
-// .card-1 {
-//     grid-area: one;
-// }
-
-// .card-2 {
-//     grid-area: two;
-// }
-
-// .card-3 {
-//     grid-area: three;
-// }
-
-// .card-4 {
-//     grid-area: four;
-// }
-
-// .card-5 {
-//     grid-area: five;
-// }

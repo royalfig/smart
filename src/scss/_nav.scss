@@ -1,12 +1,12 @@
-.st-nav-container {
-    max-width: $tablet;
-    margin: 25px auto;
+.nav-container {
+   width: 100%;
+   
 }
 
 
 
 
-.st-extras {
+.extras {
 
     font-size: .85em;
 
@@ -24,23 +24,44 @@
 
 
 }
+.nav-hero {
+    justify-content: center;
+    flex: 1;
+}
+.social-media {
+    justify-content: center;
+    
+    
+    height: 100%;
+    
+   
+    
 
-.st-nav-item {
-    color: $light;
+    a {
+        margin: .5em 0;
+    }
 }
 
-.st-nav-item img {
+
+.nav-item {
+    color: $light;
+    margin-right: 2em;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+.nav-item img {
     height: 24px;
 }
 
-.st-nav-right {
+.nav-right {
     display: flex;
-    
     flex: auto;
-    
     justify-content: flex-end;
     font-size: .8em;
-    margin-right: 0;
+    
     line-height: 1;
     &>* {
         margin-left: 2em;
@@ -48,18 +69,18 @@
 
 }
 
-.st-main-nav {
-    justify-content: space-between;
+.main-nav {
+    justify-content: center;
 
 }
 
-.st-search-button {
+.search-button {
     cursor: pointer;
 }
 
 
 // Fixed Navbar 
-.st-fixed-navbar {
+.fixed-navbar {
     align-items: center;
     display: flex;
     justify-content: space-between;
@@ -74,7 +95,7 @@
     z-index: 5;
 }
 
-.st-fixed-left {
+.fixed-left {
     color: $light;
     font-family: $serif;
     font-size: 1.25em;
@@ -82,7 +103,7 @@
     flex: auto;
 }
 
-.st-fixed-center {
+.fixed-center {
     display: flex;
     flex: auto;
     
@@ -92,7 +113,7 @@
     font-size: .8em;
 }
 
-.st-fixed-right {
+.fixed-right {
     display: flex;
     
     flex: auto;

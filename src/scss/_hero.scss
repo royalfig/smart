@@ -11,7 +11,7 @@
 
 }
 
-.st-hero-overlay {
+.hero-overlay {
     align-items: center;
     height: 100%;
     justify-content: space-around;
@@ -20,7 +20,7 @@
     background: linear-gradient(scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%),scale-color($acc1, $saturation: -5%, $lightness: -75%, $alpha: -20%),scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%))
 }
 
-.st-hero-container {
+.hero-container {
     align-items: center;
     height: 60vh;
     // Test min height 
@@ -28,22 +28,21 @@
     justify-content: space-around;
 }
 
-.st-nav-container {
+.nav-container {
     justify-content: center;
-    height: 80%;
-
+    height: 100%;
 }
 
-.st-site-title {
-    margin: 15px 0 0;
+.site-title {
+    margin: 0;
     text-align: center;
 }
 
-.st-site-description {
+.site-description {
     justify-content: center;
     color: $acc2;
 }
 
-.st-site-description-text {
+.site-description-text {
     font-size: 1.5em;
 }

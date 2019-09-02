@@ -1,26 +1,26 @@
 // Typography
-.st-serif {
+.serif {
     font-family: $serif;
 }
 
 // Display
-.st-flex-row {
+.flex-row {
     display: flex;
     flex-direction: row;
 }
 
-.st-flex-col {
+.flex-col {
     display: flex;
     flex-direction: column;
 }
 
-.st-grid-container {
+.grid-container {
     display: grid;
-    grid-gap: 4em;
+    grid-gap: 2em;
     justify-content: stretch;
 }
 
-.st-main {
+.main {
     margin: 0 auto;
     width: 100%;
     // padding: 1em;
@@ -61,14 +61,3 @@
   .hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
     right: 0;
   }
-
-//   Borders 
-.st-home-post-border-bottom {
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-
-    border-bottom: 2px solid transparent;
-}

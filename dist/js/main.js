@@ -18,14 +18,14 @@
 // window.addEventListener('resize', viewPort);
 
 // Show and hide search bar
-const searchBoxBtn = document.getElementById('st-search-button');
-const searchBox = document.querySelector('.st-search-box');
-const cancelBtn = document.querySelector('.st-cancel');
-const searchBar = document.querySelector('.st-search-bar');
+const searchBoxBtn = document.getElementById('search-button');
+const searchBox = document.querySelector('.search-box');
+const cancelBtn = document.querySelector('.cancel');
+const searchBar = document.querySelector('.search-bar');
 
 
 function showSearchBox(cb) {
-  // searchBox.classList.add('st-search-box-max-height');
+  // searchBox.classList.add('search-box-max-height');
   searchBox.style.display = 'block';
   let op = 0.1;
   const timer = setInterval(() => {
@@ -77,19 +77,19 @@ function closeBox() {
 cancelBtn.addEventListener('click', () => closeBox());
 
 // Add Grid styles
-const gridContainers = document.querySelectorAll('.st-grid-container-home');
+const gridContainers = document.querySelectorAll('.grid-container-home');
 
 gridContainers.forEach((element) => {
-  const gridItems = element.querySelectorAll('.st-home-post');
+  const gridItems = element.querySelectorAll('.home-post');
 
-  element.classList.add(`st-grid-container-home-${gridItems.length}`);
+  element.classList.add(`grid-container-home-${gridItems.length}`);
 });
 
 
 // Fly in fixed navbar
 // Will have to add padding to offset content
-const fixedNavbar = document.querySelector('.st-fixed-navbar');
-const heroImage = document.querySelector('.st-hero-image');
+const fixedNavbar = document.querySelector('.fixed-navbar');
+const heroImage = document.querySelector('.hero-img');
 
 let lastKnownScrollPos = 0;
 let ticking = false;
