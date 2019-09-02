@@ -7,12 +7,12 @@ Section and header styles
     width: 100%;
     padding: 3em 2em;
 
-    background: #eee;
+    background: $light;
 
-    &:nth-child(even) {
-        background: #222;
+    // &:nth-child(even) {
+    //     // background: scale-color($dark, $lightness: 3%);
 
-    }
+    // }
 }
 
 @media all and (min-width: $tablet) {
@@ -45,15 +45,15 @@ Section and header styles
 
 }
 
-.outer-container:nth-child(even) {
-    .home-page-section-header {
-        color: $light;
+// .outer-container:nth-child(even) {
+//     .home-page-section-header {
+//         color: $light;
 
-        &:before {
-            background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
-        }
-    }
-}
+//         &:before {
+//             background: linear-gradient(to right, scale-color($acc1, $alpha: -75%), scale-color($acc1, $alpha: -100%));
+//         }
+//     }
+// }
 
 /* -------------------------------
 Card Styles 
@@ -67,13 +67,13 @@ For home and index pages
     flex-direction: column;
 
     background: $light;
-    border-bottom: 3px solid transparent;
-    box-shadow: $box-shadow;
+    
+  
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
     &:hover {
 
-        border-bottom-color: scale-color($prim, $alpha: -50%);
+        
 
         .card-image {
             filter: saturate(1.5)
@@ -117,7 +117,7 @@ For home and index pages
 .card-date {
     color: $dark;
     font-size: .75em;
-    font-weight: 100;
+    font-weight: 400;
     text-transform: uppercase;
 }
 
@@ -138,54 +138,54 @@ For home and index pages
     margin: .5em 0;
 }
 
-.card-tag {
-    position: relative;
-    display: inline-block;
-    z-index: 2;
-    margin-top: .75em;
-    padding: .25em .5em;
+// .card-tag {
+//     position: relative;
+//     display: inline-block;
+//     z-index: 2;
+//     margin-top: .75em;
+//     padding: .25em .5em;
 
-    background: $acc3;
-    color: $light;
+//     background: $acc3;
+//     color: $light;
 
-    transition: all .2s ease-in-out;
+//     transition: all .2s ease-in-out;
 
-    &:hover {
-        background: scale-color($acc3, $lightness: -50%);
+//     &:hover {
+//         background: scale-color($acc3, $lightness: -50%);
 
-    }
+//     }
 
-}
+// }
 
 // Define alternative styles
-.outer-container:nth-child(even) {
-    .card {
-        background: $dark;
+// .outer-container:nth-child(even) {
+//     .card {
+//         background: $dark;
 
-        &:hover {
-            border-bottom-color: scale-color($acc1, $alpha: -50%);
+//         &:hover {
+//             border-bottom-color: scale-color($acc1, $alpha: -50%);
 
-            .card-image {
-                filter: saturate(1.5)
-            }
+//             .card-image {
+//                 filter: saturate(1.5)
+//             }
 
-            .card-title {
-                color: $acc1;
-            }
-        }
-    }
+//             .card-title {
+//                 color: $acc1;
+//             }
+//         }
+//     }
 
-    .card-date,
-    .card-title,
-    .card-excerpt {
-        color: $light;
-    }
+//     .card-date,
+//     .card-title,
+//     .card-excerpt {
+//         color: $light;
+//     }
 
-    .no-image {
-        background: linear-gradient(45deg, $acc2, $acc3);
-    }
+//     .no-image {
+//         background: linear-gradient(45deg, $acc2, $acc3);
+//     }
 
-}
+// }
 
 /* Grid styles
 For home page */
