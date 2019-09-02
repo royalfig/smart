@@ -17,7 +17,7 @@ function css() {
     }))
     .pipe(clean())
     .pipe(sourcemaps.write())
-    .pipe(gulp.dest('./dist/css/'));
+    .pipe(gulp.dest('./dist/assets/css/'));
 }
 
 gulp.task('watch', () => gulp.watch('./src/scss/**/*.scss', gulp.series('css')));
