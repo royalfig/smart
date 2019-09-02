@@ -2,50 +2,142 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<div class="st-hero-image" style="background-image: url(img/madurai.jpg)">
+{{> "nav"}}
 
-        <div class="st-hero-overlay ">
+{{#if background}}
 
-            <aside class="st-extras st-flex-row" style="position:relative">
-                
-            </aside>
+<style type="text/css">
+    .hero-img {
+        background-image: url({{img_url background size='xl'}});
+    }
 
-            <div class="st-hero-container st-flex-col">
+    @media(max-width: 1000px) {
+        .hero-img {
+            background-image: url({{img_url background size='l'}});
+            background-image: -webkit-image-set(url({{img_url background size='l'}}) 1x,
+                url({{img_url background size='xl'}}) 2x);
+            background-image: image-set(url({{img_url background size='l'}}) 1x,
+                url({{img_url background size='xl'}}) 2x);
+        }
+    }
 
-                <section class="st-nav-container st-flex-col">
+    @media(max-width: 600px) {
+        .hero-img {
+            background-image: url({{img_url background size='m'}});
+            background-image: -webkit-image-set(url({{img_url background size='m'}}) 1x,
+                url({{img_url background size='l'}}) 2x);
+            background-image: image-set(url({{img_url background size='m'}}) 1x,
+                url({{img_url background size='l'}}) 2x);
+        }
+    }
+</style>
 
-                    <h1 class="st-site-title st-serif">
-                        <a href="/" class="st-site-title-link">Madeline Chera</a>
-                    </h1>
+<div class="hero-img">
 
-                    <nav class="st-main-nav st-flex-row">
-                        <a href="/" class="st-nav-item hvr-underline-from-left">About</a>
-                        <a href="/" class="st-nav-item hvr-underline-from-left">Writing</a>
-                        <a href="/" class="st-nav-item hvr-underline-from-left">Teaching</a>
-                        <a href="/" class="st-nav-item hvr-underline-from-left">Research</a>
-                        <a href="/" class="st-nav-item hvr-underline-from-left">Workshops</a>
+    {{/if}}
 
-                    </nav>
+    <div class="hero-overlay ">
 
-                    <!-- End Nav Container Section -->
-                </section>
+        <div class="hero-container flex-col">
 
-                <section class="st-site-description">
+            <h2 class="site-description-text serif">@site.description
+            </h2>
 
-                    <h2 class="st-site-description-text">🍧 Anthropologist of Food: Studying Food, Culture, and
-                        Change
-                    </h2>
-
-                    <!-- End Site Description -->
-                </section>
-
-                <!-- End Hero Container  -->
-            </div>
-
-            <!-- End Hero Overlay -->
+            <!-- End Hero Container  -->
         </div>
 
-        <!-- End Hero Image -->
+        <!-- End Hero Overlay -->
     </div>
 
-    <!-- End Hero Wrapper -->
+    <!-- End Hero Image -->
+</div>
+
+<!-- End Hero Wrapper -->
+
+
+<main class="main">
+
+    {{#get "posts" limit="5" include="tags" filter="featured:true" as |featured|}}
+    {{#if featured}}
+    <!-- Begin Featured -->
+    <div class="outer-container">
+
+        <div class="inner-container">
+
+            <h2 class="home-page-section-header underline serif">Featured</h2>
+
+            <section class="grid-container grid-container-home">
+
+                {{#foreach featured}}
+                {{> "card"}}
+                {{/foreach}}
+
+            </section>
+
+            <!-- End inner container  -->
+        </div>
+
+        <!-- End outer container  -->
+    </div>
+
+    {{/if}}
+    {{#get}}
+    <!-- End Featured -->
+
+    <!-- Begin Latest -->
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-Publications" as |featured|}}
+    {{#if featured}}
+    <div class="outer-container">
+
+        <div class="inner-container">
+
+            <h2 class="home-page-section-header underline serif">Featured</h2>
+
+            <section class="grid-container grid-container-home">
+
+
+
+                {{#foreach featured}}
+                {{> "card"}}
+                {{/foreach}}
+
+            </section>
+
+            <!-- End inner container  -->
+        </div>
+
+        <!-- End outer container  -->
+    </div>
+
+    {{/if}}
+    {{#get}}
+    <!-- End Latest -->
+
+    <!-- Begin Publications -->
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:Publications" as |publications|}}
+    {{#if featured}}
+    <div class="outer-container">
+
+        <div class="inner-container">
+
+            <h2 class="home-page-section-header underline serif">Featured</h2>
+
+            <section class="grid-container grid-container-home">
+
+
+
+                {{#foreach publications}}
+                {{> "card"}}
+                {{/foreach}}
+
+            </section>
+
+            <!-- End inner container  -->
+        </div>
+
+        <!-- End outer container  -->
+    </div>
+
+    {{/if}}
+    {{#get}}
+    <!-- End Publications -->
