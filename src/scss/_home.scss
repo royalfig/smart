@@ -3,7 +3,7 @@ Home Page
 Section and header styles
 ------------------------------- */
 .outer-container {
-    position: relative; 
+    position: relative;
     width: 100%;
     padding: 3em 2em;
 
@@ -70,8 +70,14 @@ For home and index pages
     flex-direction: column;
 
     background: $light;
+    border-bottom: 3px solid transparent;
+    box-shadow: $box-shadow;
+    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
     &:hover {
+
+        border-bottom-color: scale-color($prim, $alpha: -50%);
+
         .card-image {
             filter: saturate(1.5)
         }
@@ -114,18 +120,20 @@ For home and index pages
 
 .card-tag,
 .card-date {
-    font-size: smaller;
+    color: $dark;
+    font-size: .75em;
     font-weight: 100;
+    text-transform: uppercase;
 }
 
 .card-title {
-    margin: .25em 0 .5em;
+    margin: .25em 0;
     color: $dark;
     position: relative;
 
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.1;
     transition: all .2s ease-in-out;
 
 }
@@ -356,13 +364,14 @@ For home page */
 
     .grid-container-home-3 {
         grid-template-columns: repeat(3, 1fr);
+
     }
 
     .grid-container-home-4 {
         grid-template-areas: "one one one"
             "two three four";
         grid-template-columns: 1fr 1fr 1fr;
-
+        
         .card-1 {
             grid-area: one;
 

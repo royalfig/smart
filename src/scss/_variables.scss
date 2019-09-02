@@ -8,23 +8,6 @@ $acc1: #bd708c;
 $acc2: #c3c0b7;
 $acc3: #737274;
 
-
-// Stone Fruit
-// $dark: #000000;
-// $light: #f7fefd;
-
-// $prim: #832161;
-// $acc1: #ff715b;
-// $acc2: #3d2645;
-// $acc3: #f9cb40;
-
-// Fjords
-// $dark: #031c1f;
-// $light: #ebeffd;
-// $prim: #bf204a;
-// $acc1: #0d7272;
-// $acc2: #e396a5;
-
 .light {
     fill: $light
 }
@@ -58,4 +41,7 @@ $laptop: 1024px;
 $desktop: 1280px;
 
 // Image Sizes for Home Page 
-$base: 175px;
+$base: 125px;
+
+// Box Shadow 
+$box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
