@@ -55,9 +55,6 @@ Section and header styles
     }
 }
 
-
-
-
 /* -------------------------------
 Card Styles 
 For home and index pages
@@ -65,7 +62,7 @@ For home and index pages
 .card {
     position: relative;
     display: flex;
-    margin: 1.5em 0 3em;
+    // margin: 1.5em 0 3em;
     max-width: 100%;
     flex-direction: column;
 
@@ -95,8 +92,6 @@ For home and index pages
     height: 100%;
     width: 100%;
     z-index: 1;
-
-
 }
 
 .card-image,
@@ -168,6 +163,8 @@ For home and index pages
         background: $dark;
 
         &:hover {
+            border-bottom-color: scale-color($acc1, $alpha: -50%);
+
             .card-image {
                 filter: saturate(1.5)
             }
@@ -198,6 +195,7 @@ For home page */
     align-content: stretch;
 
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    margin: 2em 0;
     max-width: 100%;
 
 }
