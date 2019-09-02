@@ -6,8 +6,6 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-
-
 }
 
 .hero-overlay {
@@ -16,7 +14,8 @@
     justify-content: space-around;
     padding: 1em;
 
-    background: linear-gradient(scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%),scale-color($acc1, $saturation: -5%, $lightness: -75%, $alpha: -20%),scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%))
+    background: linear-gradient(scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%),scale-color($acc1, $saturation: -5%, $lightness: -75%, $alpha: -30%),scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%));
+    background: rgba(0,0,0,.75);
 }
 
 .hero-container {
@@ -24,7 +23,7 @@
     height: 60vh;
     // Test min height 
     min-height: 300px;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .nav-container {
@@ -37,11 +36,14 @@
     text-align: center;
 }
 
-.site-description {
-    justify-content: center;
-    color: $acc2;
-}
-
 .site-description-text {
-    font-size: 1.5em;
+   
+    padding: 0 2em;
+    color: $light;
+    font-size: 2em;   
+    text-align: left;
+    text-shadow: 2px 2px 2px $dark;
+    text-align: left;
+ 
+    
 }

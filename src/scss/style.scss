@@ -16,6 +16,7 @@
 button {
     background: none;
     border: none;
+    cursor: pointer;
 }
 
 // Responsive typography
@@ -26,6 +27,7 @@ html {
     font-size: 16px;
     font-weight: normal;
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
 @media screen and (min-width: $tablet) and (max-width: $laptop) {

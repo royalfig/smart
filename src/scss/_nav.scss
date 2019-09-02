@@ -1,6 +1,6 @@
 .nav-container {
-   width: 100%;
-   
+    width: 100%;
+
 }
 
 
@@ -24,18 +24,20 @@
 
 
 }
+
 .nav-hero {
     justify-content: center;
     flex: 1;
 }
+
 .social-media {
     justify-content: center;
-    
-    
+
+
     height: 100%;
-    
-   
-    
+
+
+
 
     a {
         margin: .5em 0;
@@ -45,28 +47,11 @@
 
 .nav-item {
     color: $light;
-    margin-right: 2em;
+    margin-right: .5em;
 
     &:last-child {
         margin-right: 0;
     }
-}
-
-.nav-item img {
-    height: 24px;
-}
-
-.nav-right {
-    display: flex;
-    flex: auto;
-    justify-content: flex-end;
-    font-size: .8em;
-    
-    line-height: 1;
-    &>* {
-        margin-left: 2em;
-    }
-
 }
 
 .main-nav {
@@ -74,55 +59,87 @@
 
 }
 
-.search-button {
-    cursor: pointer;
-}
-
-
 // Fixed Navbar 
 .fixed-navbar {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: .25em 1em;
     position: fixed;
+    display: flex;
     width: 100%;
-    
-    background: $dark;
-    box-shadow: 0 1px 1px rgba(0,0,0,.25);
-    transform: translateY(-100%);
-    transition: transform .2s ease-in-out;
+    align-items: center;
+    justify-content: space-between;
     z-index: 5;
+
+    padding: .75em 1em;
+    background: transparent;
+
+    font-size: .8em;
+    line-height: 1.6;
+    transition: all .1s ease-in-out;
 }
 
 .fixed-left {
     color: $light;
     font-family: $serif;
     font-size: 1.25em;
-    font-weight: 900;
+    
     flex: auto;
+
+    a h1 {
+        font-size: 1em;
+        margin: 0;
+        font-weight: 400;
+    }
 }
 
 .fixed-center {
     display: flex;
     flex: auto;
-    
+
     justify-content: space-around;
     max-width: $tablet;
-    
-    font-size: .8em;
+
+
+}
+
+%svg-size {
+    height: 18px;
+    width: 18px;
 }
 
 .fixed-right {
     display: flex;
-    
     flex: auto;
-    
+    align-items: center;
     justify-content: flex-end;
-    font-size: .8em;
-    margin-right: 0;
-    line-height: 1;
+
     &>* {
-        margin-left: 2em;
+        margin-left: .75em;
     }
+
+    button svg {
+        @extend %svg-size;
+
+        &:hover {
+            stroke: $prim;
+        }
+    }
+
+    a svg {
+        @extend %svg-size;
+
+        
+    }
+}
+
+#facebook svg:hover {
+    
+        fill: $fb;
+    
+}
+
+#twitter svg:hover {
+    fill: $tw;
+}
+#search-button svg {
+    height: 21px;
+    width: 21px;
 }

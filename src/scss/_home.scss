@@ -5,7 +5,7 @@ Section and header styles
 .outer-container {
     position: relative;
     width: 100%;
-    padding: 3em 2em;
+    padding: 3em;
 
     background: $light;
 
@@ -13,12 +13,6 @@ Section and header styles
     //     // background: scale-color($dark, $lightness: 3%);
 
     // }
-}
-
-@media all and (min-width: $tablet) {
-    .outer-container {
-        padding: 2.5em;
-    }
 }
 
 .inner-container {

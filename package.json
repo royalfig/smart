@@ -41,6 +41,7 @@
   ],
   "dependencies": {
     "cosmiconfig": "^5.2.1",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "typed.js": "^2.0.10"
   }
 }
