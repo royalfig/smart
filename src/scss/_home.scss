@@ -37,18 +37,6 @@ For home and index pages
   
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
-    &:hover {
-
-        
-
-        .card-image {
-            filter: saturate(1.5)
-        }
-
-        .card-title {
-            color: $prim;
-        }
-    }
 }
 
 .card-link-overlay {
@@ -85,6 +73,9 @@ For home and index pages
     font-size: .75em;
     font-weight: 400;
     text-transform: uppercase;
+}
+.card-date {
+    margin-right: 1em;
 }
 
 .card-title {

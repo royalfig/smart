@@ -3,60 +3,13 @@
 
 }
 
-
-
-
-.extras {
-
-    font-size: .85em;
-
-    button {
-        cursor: pointer;
-        line-height: 1.5;
-    }
-
-
-    &>* {
-        margin: 10px;
-    }
-
-
-
-
-}
-
-.nav-hero {
-    justify-content: center;
-    flex: 1;
-}
-
-.social-media {
-    justify-content: center;
-
-
-    height: 100%;
-
-
-
-
-    a {
-        margin: .5em 0;
-    }
-}
-
-
 .nav-item {
     color: $light;
-    margin-right: .5em;
+    margin-right: 1em;
 
     &:last-child {
         margin-right: 0;
     }
-}
-
-.main-nav {
-    justify-content: center;
-
 }
 
 // Fixed Navbar 
@@ -68,7 +21,7 @@
     justify-content: space-between;
     z-index: 5;
 
-    padding: .75em 1em;
+    padding: 1em;
     background: transparent;
 
     font-size: .8em;
@@ -80,7 +33,7 @@
     color: $light;
     font-family: $serif;
     font-size: 1.25em;
-    
+
     flex: auto;
 
     a h1 {
@@ -103,6 +56,7 @@
 %svg-size {
     height: 18px;
     width: 18px;
+    transition: all .2s ease;
 }
 
 .fixed-right {
@@ -111,12 +65,11 @@
     align-items: center;
     justify-content: flex-end;
 
-    &>* {
-        margin-left: .75em;
-    }
+
 
     button svg {
         @extend %svg-size;
+        
 
         &:hover {
             stroke: $prim;
@@ -125,20 +78,17 @@
 
     a svg {
         @extend %svg-size;
-
-        
     }
 }
 
 #facebook svg:hover {
-    
-        fill: $fb;
-    
+    fill: $fb;
 }
 
 #twitter svg:hover {
     fill: $tw;
 }
+
 #search-button svg {
     height: 21px;
     width: 21px;

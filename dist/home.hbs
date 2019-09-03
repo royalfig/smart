@@ -4,30 +4,30 @@ into the {body} of the default.hbs template --}}
 
 {{navigation}}
 
-{{#if background}}
+{{#if @site.cover_image}}
 
 <style type="text/css">
     .hero-img {
-        background-image: url({{img_url background size='xl'}});
+        background-image: url({{img_url @site.cover_image size='xl'}});
     }
 
     @media(max-width: 1000px) {
         .hero-img {
-            background-image: url({{img_url background size='l'}});
-            background-image: -webkit-image-set(url({{img_url background size='l'}}) 1x,
-                url({{img_url background size='xl'}}) 2x);
-            background-image: image-set(url({{img_url background size='l'}}) 1x,
-                url({{img_url background size='xl'}}) 2x);
+            background-image: url({{img_url @site.cover_image size='l'}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size='l'}}) 1x,
+                url({{img_url @site.cover_image size='xl'}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size='l'}}) 1x,
+                url({{img_url @site.cover_image size='xl'}}) 2x);
         }
     }
 
     @media(max-width: 600px) {
         .hero-img {
-            background-image: url({{img_url background size='m'}});
-            background-image: -webkit-image-set(url({{img_url background size='m'}}) 1x,
-                url({{img_url background size='l'}}) 2x);
-            background-image: image-set(url({{img_url background size='m'}}) 1x,
-                url({{img_url background size='l'}}) 2x);
+            background-image: url({{img_url @site.cover_image size='m'}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size='m'}}) 1x,
+                url({{img_url @site.cover_image size='l'}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size='m'}}) 1x,
+                url({{img_url @site.cover_image size='l'}}) 2x);
         }
     }
 </style>
@@ -36,11 +36,11 @@ into the {body} of the default.hbs template --}}
 
     {{/if}}
 
-    <div class="hero-overlay ">
+    <div class="hero-overlay navbar-test">
 
         <div class="hero-container flex-col">
 
-            <h2 class="site-description-text serif">@site.description
+            <h2 class="site-description-text serif">{{@site.description}}
             </h2>
 
             <!-- End Hero Container  -->
@@ -85,19 +85,19 @@ into the {body} of the default.hbs template --}}
     <!-- End Featured -->
 
     <!-- Begin Latest -->
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-Publications" as |featured|}}
-    {{#if featured}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications" as |latest|}}
+    {{#if latest}}
     <div class="outer-container">
 
         <div class="inner-container">
 
-            <h2 class="home-page-section-header underline serif">Featured</h2>
+            <h2 class="home-page-section-header underline serif">Latest</h2>
 
             <section class="grid-container grid-container-home">
 
 
 
-                {{#foreach featured}}
+                {{#foreach latest}}
                 {{> "card"}}
                 {{/foreach}}
 
@@ -114,13 +114,13 @@ into the {body} of the default.hbs template --}}
     <!-- End Latest -->
 
     <!-- Begin Publications -->
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:Publications" as |publications|}}
-    {{#if featured}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications" as |publications|}}
+    {{#if publications}}
     <div class="outer-container">
 
         <div class="inner-container">
 
-            <h2 class="home-page-section-header underline serif">Featured</h2>
+            <h2 class="home-page-section-header underline serif">Publications</h2>
 
             <section class="grid-container grid-container-home">
 
@@ -141,3 +141,32 @@ into the {body} of the default.hbs template --}}
     {{/if}}
     {{/get}}
     <!-- End Publications -->
+
+    <!-- Begin presentations -->
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications" as |presentations|}}
+    {{#if presentations}}
+    <div class="outer-container">
+
+        <div class="inner-container">
+
+            <h2 class="home-page-section-header underline serif">Presentations</h2>
+
+            <section class="grid-container grid-container-home">
+
+
+
+                {{#foreach presentations}}
+                {{> "card"}}
+                {{/foreach}}
+
+            </section>
+
+            <!-- End inner container  -->
+        </div>
+
+        <!-- End outer container  -->
+    </div>
+
+    {{/if}}
+    {{/get}}
+    <!-- End presentations -->

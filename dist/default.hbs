@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="{{@site.lang}}">
+
 <head>
 
     <meta charset="UTF-8">
@@ -8,20 +9,23 @@
     <title>{{meta_title}}</title>
 
     {{!-- CSS  --}}
-    <link rel="stylesheet" href="{{asset "css/style.css"}}">
-
+    <link rel="stylesheet" href="{{asset 'css/style.css'}}">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 
 </head>
 
 <body>
-    
+
     {{!-- All the main content is inserted here --}}
     {{{body}}}
 
+    <script src="{{asset 'js/main.js'}}"></script>
+
     {{!-- Ghost footer required, right before the closing body tag --}}
     {{ghost_foot}}
-    
+
 </body>
+
 </html>

@@ -21,7 +21,7 @@
 const gridContainers = document.querySelectorAll('.grid-container-home');
 
 gridContainers.forEach((element) => {
-  const gridItems = element.querySelectorAll('.home-post');
+  const gridItems = element.querySelectorAll('.card');
 
   element.classList.add(`grid-container-home-${gridItems.length}`);
 });
