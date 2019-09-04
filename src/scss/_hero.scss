@@ -1,11 +1,26 @@
+
+.hero-left,
+.hero-right {
+    margin: 8em 10em;
+    width: 50%;
+}
+
+.hero-left {
+    margin-right: 5em;
+}
+
+.hero-right {
+    margin-left: 5em;
+}
+
 .hero-img {
     height: 100%;
-
-    // Shift to HBS inline variable
-
+    
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    box-shadow: 3px 3px 4px rgba(0,0,0,.3), -3px 2px 4px rgba(0,0,0,.3), 5px 10px 20px rgba(0,0,0,.2),-5px 5px 20px rgba(0,0,0,.2);
+
 }
 
 .hero-overlay {
@@ -13,8 +28,8 @@
     height: 100%;
     justify-content: space-around;
     padding: 1em;
-
-    background: linear-gradient(scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%),scale-color($acc1, $saturation: -5%, $lightness: -75%, $alpha: -30%),scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%));
+    // background: linear-gradient(to right, rgba(255,255,255,.75),rgba(255,255,255,0));
+    background: linear-gradient(scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%), scale-color($acc1, $saturation: -5%, $lightness: -80%, $alpha: -30%), scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%));
     // background: rgba(0,0,0,.75);
 }
 
@@ -37,13 +52,18 @@
 }
 
 .site-description-text {
-   
-    padding: 0 2em;
-    color: $light;
-    font-size: 2em;   
+    // background: $dark;
+    // mix-blend-mode: multiply;
+    padding: 1em;
+    color: white;
+    font-size: 3.5em;
     text-align: left;
-    text-shadow: 2px 2px 2px $dark;
+    // text-shadow: 2px 2px 2px $dark;
     text-align: left;
- 
-    
+
+    // transform: translateX(-15%);
+    // height: 90%;
+    // border: 3px solid $prim;
+
+
 }

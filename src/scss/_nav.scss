@@ -1,11 +1,7 @@
-.nav-container {
-    width: 100%;
-
-}
 
 .nav-item {
-    color: $light;
-    margin-right: 1em;
+    color: $dark;
+    margin-right: 2em;
 
     &:last-child {
         margin-right: 0;
@@ -18,25 +14,29 @@
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     z-index: 5;
 
     padding: 1em;
     background: transparent;
 
+    background-color: scale-color($light, $alpha: -5%);
     font-size: .8em;
     line-height: 1.6;
     transition: all .1s ease-in-out;
+    height: 55px;
+    
 }
 
 .fixed-left {
-    color: $light;
+    
     font-family: $serif;
     font-size: 1.25em;
 
     flex: auto;
 
     a h1 {
+        color: $dark;
         font-size: 1em;
         margin: 0;
         font-weight: 400;
@@ -47,16 +47,15 @@
     display: flex;
     flex: auto;
 
-    justify-content: space-around;
+    justify-content: center;
     max-width: $tablet;
-
-
 }
 
 %svg-size {
     height: 18px;
     width: 18px;
     transition: all .2s ease;
+    
 }
 
 .fixed-right {
@@ -69,15 +68,18 @@
 
     button svg {
         @extend %svg-size;
-        
+        stroke: $dark;
 
         &:hover {
             stroke: $prim;
+            
         }
     }
 
     a svg {
         @extend %svg-size;
+        fill: $dark;
+
     }
 }
 
@@ -90,6 +92,7 @@
 }
 
 #search-button svg {
-    height: 21px;
-    width: 21px;
+    height: 22px;
+    width: 22px;
 }
+

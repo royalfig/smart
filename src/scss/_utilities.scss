@@ -68,3 +68,13 @@
       -2px 2px $light,
       -2px -2px $light;
   }
+  .underline-dark {
+    border-bottom: 2px solid currentColor;
+    display: inline-block;
+    line-height: 0.85;
+    text-shadow:
+      2px 2px $dark,
+      2px -2px $dark,
+      -2px 2px $dark,
+      -2px -2px $dark;
+  }
