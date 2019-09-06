@@ -2,6 +2,10 @@
 Home Page
 Section and header styles
 ------------------------------- */
+.main {
+
+}
+
 .outer-container {
     position: relative;
     width: 100%;
@@ -44,15 +48,6 @@ For home and index pages
 
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 
-}
-
-.card-link-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    z-index: 1;
 }
 
 .card-image,
@@ -112,7 +107,8 @@ For home and index pages
     }
     .card-image {
         height: 150px;
-       
+        width: 200px;
+        
     }
 }
 

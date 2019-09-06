@@ -8,18 +8,9 @@ $acc1: #bd708c;
 $acc2: #c3c0b7;
 $acc3: #737274;
 
-
 // Social Media
 $fb: #1877f2;
 $tw: #1da1f2;
-
-.light {
-    fill: $light
-}
-
-@mixin background-gradient {
-    background: linear-gradient(rgba(232, 32, 14, .5), rgba(19, 2, 1, .5), rgba(232, 32, 14, .5));
-}
 
 // Font styles
 $sans: -apple-system,
@@ -38,9 +29,7 @@ Georgia,
 Times,
 serif;
 
-
 // Breakpoints 
-
 $tablet: 640px;
 $laptop: 1024px;
 $desktop: 1280px;
@@ -49,4 +38,4 @@ $desktop: 1280px;
 $base: 125px;
 
 // Box Shadow 
-$box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+$box-shadow: 3px 3px 4px rgba(0,0,0,.15), -3px 2px 4px rgba(0,0,0,.15), 5px 10px 20px rgba(0,0,0,.15),-5px 5px 20px rgba(0,0,0,.15);

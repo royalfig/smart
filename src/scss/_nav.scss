@@ -1,38 +1,24 @@
-
-.nav-item {
-    color: $dark;
-    margin-right: 2em;
-
-    &:last-child {
-        margin-right: 0;
-    }
-}
-
 // Fixed Navbar 
 .fixed-navbar {
     position: fixed;
-    display: flex;
     width: 100%;
+    height: 75px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    padding: 1.5em 3em;
     z-index: 5;
-
-    padding: 1em;
-    background: transparent;
 
     background-color: scale-color($light, $alpha: -5%);
     font-size: .8em;
     line-height: 1.6;
     transition: all .1s ease-in-out;
-    height: 55px;
-    
 }
 
+// Left navbar 
 .fixed-left {
-    
     font-family: $serif;
     font-size: 1.25em;
-
     flex: auto;
 
     a h1 {
@@ -44,18 +30,16 @@
 }
 
 .fixed-center {
+    max-width: $tablet;
     display: flex;
     flex: auto;
-
     justify-content: center;
-    max-width: $tablet;
 }
 
 %svg-size {
     height: 18px;
     width: 18px;
     transition: all .2s ease;
-    
 }
 
 .fixed-right {
@@ -64,22 +48,18 @@
     align-items: center;
     justify-content: flex-end;
 
-
-
     button svg {
         @extend %svg-size;
         stroke: $dark;
 
         &:hover {
             stroke: $prim;
-            
         }
     }
 
     a svg {
         @extend %svg-size;
         fill: $dark;
-
     }
 }
 
@@ -96,3 +76,11 @@
     width: 22px;
 }
 
+.nav-item {
+    color: $dark;
+    margin-right: 2em;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
