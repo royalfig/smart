@@ -1,26 +1,28 @@
 .hero {
     // padding: 100px 8em 3em;
-    height: calc(100vh);
-    flex-wrap: wrap;
-    overflow: hidden;
+    min-height: calc(100vh);
+    // flex-wrap: wrap;
+    // overflow: hidden;
     
     // background: scale-color($color: $dark, $lightness: 98%);
     // max-width: $desktop ;
-    margin: 3rem 15vw 0;
+    // margin: 3rem 15vw 0;
+    margin-top: 3rem;
 }
 .hero-left,
 .hero-right {
     margin-top: 1em;
     flex: 1;
     justify-content: center;
+    max-width: 100%;
 }
 
 .hero-left {
-    margin-right: 5em;
+    // margin-right: 5em;
 }
 
 .hero-right {
-    margin-left: 5em;
+    // margin-left: 5em;
     // align-content: center;
     align-items: flex-start;
     

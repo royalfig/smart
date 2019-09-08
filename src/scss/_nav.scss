@@ -36,7 +36,7 @@
 
     top: 0;
     z-index: 6;
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 4rem);
     margin-left: 100%;
     width: 100%;
     transition: all .4s ease-in-out;
@@ -144,37 +144,16 @@
         align-items: center;
         justify-content: flex-end;
 
-        button svg {
-            @extend %svg-size;
-            stroke: $dark;
-
-            &:hover {
-                stroke: $prim;
-            }
-        }
-
-        a svg {
-            @extend %svg-size;
-            fill: $dark;
-        }
+        
 
         .nav-item {
             margin-right: 1em;
         }
     }
 
-    #facebook svg:hover {
-        fill: $fb;
-    }
+    
 
-    #twitter svg:hover {
-        fill: $tw;
-    }
-
-    #search-button svg {
-        height: 22px;
-        width: 22px;
-    }
+    
 
     .nav-item {
         color: $dark;
@@ -184,4 +163,45 @@
             margin-right: 0;
         }
     }
+}
+%svg-size {
+    height: 18px;
+    width: 18px;
+    transition: all .2s ease;
+    // vertical-align: middle;
+    line-height: 1;
+}
+button svg {
+    @extend %svg-size;
+    stroke: $dark;
+
+    &:hover {
+        stroke: $prim;
+    }
+}
+
+a svg {
+    @extend %svg-size;
+    fill: $dark;
+}
+button>svg {
+    @extend %svg-size;
+    stroke: $dark;
+
+    &:hover {
+        stroke: $prim;
+    }
+}
+
+#facebook svg:hover {
+    fill: $fb;
+}
+
+#twitter svg:hover {
+    fill: $tw;
+}
+
+#search-button svg {
+    height: 22px;
+    width: 22px;
 }

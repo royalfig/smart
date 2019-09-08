@@ -20,18 +20,18 @@
             </a>
         </div>
         <div class="fixed-right">
-            <button id="mobile-nav-btn">
-                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-                    aria-labelledby="hamburgerIconTitle" stroke="#181818" stroke-width="2" stroke-linecap="square"
-                    stroke-linejoin="miter" fill="none" color="#181818">
-                    <title id="hamburgerIconTitle">Menu</title>
-                    <path d="M6 7L18 7M6 12L18 12M6 17L18 17" />
-                </svg>Menu
+            <button class="hamburger hamburger--slider" id="mobile-nav-btn">
+
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+
+                <!-- <span id="menu-text">Menu</span> -->
             </button>
         </div>
     </nav>
 
-    <div class="mobile-nav-menu nav-menu-hidden">
+    <div class="mobile-nav-menu nav-menu-hidden" aria-expanded="false">
         <div class="flex-col">
             <a href="/">
                 <p class="site-title underline serif">Madeline Chera</p>
@@ -122,29 +122,32 @@
                 </button>
         </div>
     </nav>
+    <div class="outer-container">
 
-    <section class="hero flex-row">
-        <div class="hero-left flex-col">
-            <img class="hero-img"
-                src="https://www.brwnpaperbag.com/wp-content/uploads/2017/05/inspiring-illlustrators-instagram-8.jpg"
-                alt="">
-            <div class="hero-container flex-col">
-                <h1 class="site-title serif">Madeline Chera</h1>
-                <h2 class="site-description">Anthropologist of Food: Studying Food, Culture,
-                    &amp;&nbsp;Change
-                </h2>
-                <!-- End Hero Container  -->
-            </div>
+        <div class="inner-container">
+            <section class="hero flex-col">
+
+                <div class="hero-left flex-col">
+                    <img class="hero-img"
+                        src="https://www.brwnpaperbag.com/wp-content/uploads/2017/05/inspiring-illlustrators-instagram-8.jpg"
+                        alt="">
+                    <div class="hero-container flex-col">
+                        <h1 class="site-title serif">Madeline Chera</h1>
+                        <h2 class="site-description">Anthropologist of Food: Studying Food, Culture,
+                            &amp;&nbsp;Change
+                        </h2>
+                        <!-- End Hero Container  -->
+                    </div>
 
 
-            <!-- End Hero Image -->
-        </div>
+                    <!-- End Hero Image -->
+                </div>
 
 
-        <div class="hero-right flex-col">
+                <div class="hero-right flex-col">
 
-            <h2 class="home-page-section-header underline serif">Featured</h2>
-            <article class="card featured card-1">
+                    <h2 class="home-page-section-header underline serif">Featured</h2>
+                    <!-- <article class="card featured card-1">
                 <a href="/article" aria-label="Link Article">
                     <img class="card-image" src="https://source.unsplash.com/random?400x500" alt="">
                 </a>
@@ -197,12 +200,13 @@
                         AY2018-19.</p>
                 </div>
 
-            </article>
+            </article> -->
 
+                </div>
+
+            </section>
         </div>
-
-    </section>
-
+    </div>
     <!-- End Hero Wrapper -->
 
 

@@ -59,16 +59,23 @@ window.addEventListener('scroll', () => {
 // Slide in mobile nav menu
 const mobileNavBtn = document.getElementById('mobile-nav-btn');
 const mobileMenu = document.querySelector('.mobile-nav-menu');
-const mobileNavbar = document.querySelector('.nav-mobile');
+const mobileNavbarText = document.getElementById('menu-text');
+const mobileHamburger = document.querySelector('.hamburger');
 
 mobileNavBtn.addEventListener('click', () => {
   if (mobileMenu.classList.contains('nav-menu-hidden')) {
+    mobileHamburger.classList.add('is-active');
     mobileMenu.classList.remove('nav-menu-hidden');
     mobileMenu.classList.add('nav-menu-expanded');
-    document.body.classList.add('no-scroll');
+    mobileMenu.setAttribute('aria-expanded', true);
+    // document.body.classList.add('no-scroll');
+    mobileNavbarText.textContent = 'Close';
   } else {
+    mobileHamburger.classList.remove('is-active');
     mobileMenu.classList.add('nav-menu-hidden');
     mobileMenu.classList.remove('nav-menu-expanded');
-    document.body.classList.remove('no-scroll');
+    mobileMenu.setAttribute('aria-expanded', false);
+    // document.body.classList.remove('no-scroll');
+    mobileNavbarText.textContent = 'Menu';
   }
 });

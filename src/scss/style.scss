@@ -3,6 +3,7 @@
 
 // Imports
 @import 'normalize';
+
 @import 'variables';
 @import 'utilities';
 
@@ -98,6 +99,13 @@ h5,
     color: $light;
 }
 
+// Hamburgers
+$hamburger-padding-x: 0;
+$hamburger-padding-y: 0;
+$hamburger-layer-color: $dark;
+$hamburger-layer-border-radius: 0;
+
+@import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
 // Import styles
 @import 'nav';
 @import 'search';
