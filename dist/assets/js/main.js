@@ -55,3 +55,20 @@ window.addEventListener('scroll', () => {
     ticking = true;
   }
 });
+
+// Slide in mobile nav menu
+const mobileNavBtn = document.getElementById('mobile-nav-btn');
+const mobileMenu = document.querySelector('.mobile-nav-menu');
+const mobileNavbar = document.querySelector('.nav-mobile');
+
+mobileNavBtn.addEventListener('click', () => {
+  if (mobileMenu.classList.contains('nav-menu-hidden')) {
+    mobileMenu.classList.remove('nav-menu-hidden');
+    mobileMenu.classList.add('nav-menu-expanded');
+    document.body.classList.add('no-scroll');
+  } else {
+    mobileMenu.classList.add('nav-menu-hidden');
+    mobileMenu.classList.remove('nav-menu-expanded');
+    document.body.classList.remove('no-scroll');
+  }
+});

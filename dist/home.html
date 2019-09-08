@@ -13,6 +13,67 @@
 
 <body>
 
+    <nav class="nav-mobile">
+        <div class="fixed-left">
+            <a href="/">
+                <img src="partials/icons/mc.png">
+            </a>
+        </div>
+        <div class="fixed-right">
+            <button id="mobile-nav-btn">
+                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
+                    aria-labelledby="hamburgerIconTitle" stroke="#181818" stroke-width="2" stroke-linecap="square"
+                    stroke-linejoin="miter" fill="none" color="#181818">
+                    <title id="hamburgerIconTitle">Menu</title>
+                    <path d="M6 7L18 7M6 12L18 12M6 17L18 17" />
+                </svg>Menu
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-nav-menu nav-menu-hidden">
+        <div class="flex-col">
+            <a href="/">
+                <p class="site-title underline serif">Madeline Chera</p>
+            </a>
+            <a href="/" class="nav-item hvr-underline-from-left">About</a>
+            <a href="/" class="nav-item hvr-underline-from-left">Writing</a>
+            <a href="/" class="nav-item hvr-underline-from-left">Teaching</a>
+            <a href="/" class="nav-item hvr-underline-from-left">Research</a>
+            <a href="/" class="nav-item hvr-underline-from-left">Workshops</a>
+            <a id="twitter" href="/" class="nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="light">
+                    <path
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.5 8.778c-.441.196-.916.328-1.414.388.509-.305.898-.787 1.083-1.362-.476.282-1.003.487-1.564.597-.448-.479-1.089-.778-1.796-.778-1.59 0-2.758 1.483-2.399 3.023-2.045-.103-3.86-1.083-5.074-2.572-.645 1.106-.334 2.554.762 3.287-.403-.013-.782-.124-1.114-.308-.027 1.14.791 2.207 1.975 2.445-.346.094-.726.116-1.112.042.313.978 1.224 1.689 2.3 1.709-1.037.812-2.34 1.175-3.647 1.021 1.09.699 2.383 1.106 3.773 1.106 4.572 0 7.154-3.861 6.998-7.324.482-.346.899-.78 1.229-1.274z" />
+                </svg>
+            </a>
+            <a id="facebook" href="/" class="nav-item">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path
+                        d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z" />
+                </svg>
+            </a>
+            <button href="/" class="nav-item">
+                <svg role="img" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                    aria-labelledby="clipboardIconTitle" stroke="#f7fefd" stroke-width="2" stroke-linecap="square"
+                    stroke-linejoin="miter" fill="none" color="#f7fefd">
+                    <title id="clipboardIconTitle">Clipboard</title>
+                    <polyline points="15 3 19 3 19 21 5 21 5 3 5 3 9 3" />
+                    <path
+                        d="M14,4 L10,4 C9.44771525,4 9,3.55228475 9,3 C9,2.44771525 9.44771525,2 10,2 L14,2 C14.5522847,2 15,2.44771525 15,3 C15,3.55228475 14.5522847,4 14,4 Z" />
+                </svg>
+                <button id="search-button" href="/" class="search-button nav-item">
+                    <svg role="img" xmlns="http://www.w3.org/2000/svg" width="24px" height="24px" viewBox="0 0 24 24"
+                        aria-labelledby="searchIconTitle" stroke="#f7fefd" stroke-width="2" stroke-linecap="square"
+                        stroke-linejoin="miter" fill="none" color="#f7fefd">
+                        <title id="searchIconTitle">Search</title>
+                        <path d="M14.4121122,14.4121122 L20,20" />
+                        <circle cx="10" cy="10" r="6" />
+                    </svg>
+                </button>
+        </div>
+    </div>
+
     <!-- Fixed Navbar (to be moved into partial)  -->
     <nav class="fixed-navbar">
         <div class="fixed-left">
@@ -36,7 +97,7 @@
                 </svg>
             </a>
             <a id="facebook" href="/" class="nav-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#fff">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
                     <path
                         d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 10h-2v2h2v6h3v-6h1.82l.18-2h-2v-.833c0-.478.096-.667.558-.667h1.442v-2.5h-2.404c-1.798 0-2.596.792-2.596 2.308v1.692z" />
                 </svg>
@@ -62,9 +123,6 @@
         </div>
     </nav>
 
-
-
-
     <section class="hero flex-row">
         <div class="hero-left flex-col">
             <img class="hero-img"
@@ -86,8 +144,6 @@
         <div class="hero-right flex-col">
 
             <h2 class="home-page-section-header underline serif">Featured</h2>
-            <!-- Begin card  -->
-            <!-- Begin card  -->
             <article class="card featured card-1">
                 <a href="/article" aria-label="Link Article">
                     <img class="card-image" src="https://source.unsplash.com/random?400x500" alt="">
@@ -106,7 +162,7 @@
                 </div>
 
             </article>
-            <article class="card featured card-1">
+            <article class="card featured card-2">
                 <a href="/article" aria-label="Link Article">
                     <img class="card-image" src="https://source.unsplash.com/random?1200x500" alt="">
                 </a>
@@ -124,7 +180,7 @@
                 </div>
 
             </article>
-            <article class="card featured card-1">
+            <article class="card featured card-3">
                 <a href="/article" aria-label="Link Article">
                     <img class="card-image" src="https://source.unsplash.com/random?500x700" alt="">
                 </a>
@@ -271,7 +327,7 @@
                 <section class="grid-container grid-container-home grid-container-home-3">
 
                     <!-- Begin card  -->
-                    <a href="/article" aria-label="Link Article" class="card card-2">
+                    <a href="/article" aria-label="Link Article" class="card card-1">
                         <article>
                             <img class="card-image" src="https://source.unsplash.com/random?600x400" alt="">
 
@@ -308,7 +364,7 @@
                     </a>
 
                     <!-- Begin card  -->
-                    <a href="/article" aria-label="Link Article" class="card card-2">
+                    <a href="/article" aria-label="Link Article" class="card card-3">
                         <article>
                             <div class="no-image"></div>
 

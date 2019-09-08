@@ -24,6 +24,11 @@
     width: 100%;
 }
 
+.no-scroll {
+  position: fixed;
+  overflow: hidden;
+}
+
 // Links
 
 /* Underline From Left */
@@ -61,7 +66,7 @@
   .underline {
     border-bottom: 2px solid currentColor;
     display: inline-block;
-    line-height: 0.85;
+    line-height: 0.95;
     text-shadow:
       2px 2px $light,
       2px -2px $light,

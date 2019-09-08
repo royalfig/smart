@@ -1,86 +1,187 @@
-// Fixed Navbar 
-.fixed-navbar {
+// Define common nav items
+.fixed-navbar,
+.nav-mobile {
     position: fixed;
+    top: 0;
     width: 100%;
-    height: 75px;
+    height: $navbar;
+    z-index: 5;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 1.5em 3em;
-    z-index: 5;
+    justify-content: space-between;
+    padding: .25em 1em;
 
     background-color: scale-color($light, $alpha: -5%);
     font-size: .8em;
     line-height: 1.6;
     transition: all .1s ease-in-out;
+
 }
 
-// Left navbar 
-.fixed-left {
-    font-family: $serif;
-    font-size: 1.25em;
-    flex: auto;
+#mobile-nav-btn {
+    font-size: 1rem;
 
-    a h1 {
-        color: $dark;
-        font-size: 1em;
-        margin: 0;
-        font-weight: 400;
+    svg {
+        transform: translateY(5px);
     }
 }
 
-.fixed-center {
-    max-width: $tablet;
-    display: flex;
-    flex: auto;
-    justify-content: center;
+
+.nav-mobile {}
+
+// Hide large nav on laptops and up
+
+.mobile-nav-menu {
+    position: fixed;
+
+    top: 0;
+    z-index: 6;
+    height: calc(100vh - 3rem);
+    margin-left: 100%;
+    width: 100%;
+    transition: all .4s ease-in-out;
+    color: $dark;
+
+    margin-top: $navbar;
+    font-size: 2em;
+    background-color: scale-color($light, $alpha: -5%);
+    // top: 0;
+    // right: 0;
+
+    overflow: auto;
+
+    .flex-col {
+        flex: 1 1 auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .site-title {
+        font-size: 115%;
+    }
+
+    a,
+    button {
+        color: $dark;
+        margin-bottom: .5em;
+    }
+
+    .underline {
+        text-shadow:
+            2px 2px scale-color($light, $alpha: -5%),
+            2px -2px scale-color($light, $alpha: -5%),
+            -2px 2px scale-color($light, $alpha: -5%),
+            -2px -2px scale-color($light, $alpha: -5%);
+    }
+
 }
 
-%svg-size {
-    height: 18px;
-    width: 18px;
-    transition: all .2s ease;
+.nav-menu-expanded {
+    margin-left: 0;
+    // transform: translateX(0);
+    // width: 100%;
 }
 
-.fixed-right {
-    display: flex;
-    flex: auto;
-    align-items: center;
-    justify-content: flex-end;
+.nav-menu-hidden {
 
-    button svg {
-        @extend %svg-size;
-        stroke: $dark;
+    // transform: translateX(100%);
+    // width: 0;
+}
 
-        &:hover {
-            stroke: $prim;
+
+
+// Hide navbar on viewports less than laptop
+.fixed-navbar {
+    display: none;
+}
+
+// Nav on laptops and up
+@media all and (min-width: $laptop) {
+    .nav-mobile {
+        display: none;
+    }
+
+    .nav-menu-expanded {
+        display: none;
+        transform: translateX(100%);
+    }
+
+    // Fixed Navbar 
+    .fixed-navbar {
+        display: flex;
+    }
+
+    // Left navbar 
+    .fixed-left {
+        font-family: $serif;
+        font-size: 1.25em;
+
+
+        a h1 {
+            color: $dark;
+            font-size: 1em;
+            margin: 0;
+            font-weight: 400;
         }
     }
 
-    a svg {
-        @extend %svg-size;
-        fill: $dark;
+    .fixed-center {
+
+        display: flex;
+
+        justify-content: center;
     }
-}
 
-#facebook svg:hover {
-    fill: $fb;
-}
+    %svg-size {
+        height: 18px;
+        width: 18px;
+        transition: all .2s ease;
+    }
 
-#twitter svg:hover {
-    fill: $tw;
-}
+    .fixed-right {
+        display: flex;
 
-#search-button svg {
-    height: 22px;
-    width: 22px;
-}
+        align-items: center;
+        justify-content: flex-end;
 
-.nav-item {
-    color: $dark;
-    margin-right: 2em;
+        button svg {
+            @extend %svg-size;
+            stroke: $dark;
 
-    &:last-child {
-        margin-right: 0;
+            &:hover {
+                stroke: $prim;
+            }
+        }
+
+        a svg {
+            @extend %svg-size;
+            fill: $dark;
+        }
+
+        .nav-item {
+            margin-right: 1em;
+        }
+    }
+
+    #facebook svg:hover {
+        fill: $fb;
+    }
+
+    #twitter svg:hover {
+        fill: $tw;
+    }
+
+    #search-button svg {
+        height: 22px;
+        width: 22px;
+    }
+
+    .nav-item {
+        color: $dark;
+        margin-right: 2em;
+
+        &:last-child {
+            margin-right: 0;
+        }
     }
 }
