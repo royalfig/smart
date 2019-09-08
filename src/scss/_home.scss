@@ -2,17 +2,14 @@
 Home Page
 Section and header styles
 ------------------------------- */
-.main {
-
-}
-
 .outer-container {
     position: relative;
     width: 100%;
     padding: 1em 3em;
 
     background: $light;
-    border-top: .5em solid white;
+    border-bottom: .5em solid white;
+
 }
 
 .inner-container {
@@ -21,15 +18,12 @@ Section and header styles
 }
 
 .home-page-section-header {
-    // display: inline;
     margin-bottom: .5em;
     line-height: 1;
 
-
-
     &:target {
-        padding-top: 55px;
-        margin-top: -55px;
+        padding-top: $navbar;
+        margin-top: -$navbar;
     }
 }
 
@@ -101,15 +95,17 @@ For home and index pages
     // align-content: center;
     align-items: center;
     padding: .5em;
+
     .card-body {
         margin: 0;
         padding: 0;
         margin-left: 1.5em;
     }
+
     .card-image {
         height: 150px;
         width: 200px;
-        
+
     }
 }
 

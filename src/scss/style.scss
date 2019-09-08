@@ -100,10 +100,13 @@ h5,
 }
 
 // Hamburgers
-$hamburger-padding-x: 0;
-$hamburger-padding-y: 0;
+$hamburger-padding-x: 2px;
+$hamburger-padding-y: 2px;
 $hamburger-layer-color: $dark;
 $hamburger-layer-border-radius: 0;
+$hamburger-layer-width: 30px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 4px;
 
 @import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
 // Import styles

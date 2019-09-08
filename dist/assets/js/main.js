@@ -59,23 +59,40 @@ window.addEventListener('scroll', () => {
 // Slide in mobile nav menu
 const mobileNavBtn = document.getElementById('mobile-nav-btn');
 const mobileMenu = document.querySelector('.mobile-nav-menu');
-const mobileNavbarText = document.getElementById('menu-text');
 const mobileHamburger = document.querySelector('.hamburger');
+const mobileMenuInner = document.querySelector('.mobile-nav-menu-inner');
+
+function closeMobileNavMenu() {
+  mobileHamburger.classList.remove('is-active');
+  mobileMenu.classList.add('nav-menu-hidden');
+  mobileMenu.classList.remove('nav-menu-expanded');
+  mobileMenu.setAttribute('aria-expanded', false);
+}
+
+function closeByEsc(keyPressed) {
+  if (keyPressed.key === 'Escape') {
+    closeMobileNavMenu();
+    document.body.removeEventListener('keydown', closeByEsc);
+  }
+}
+
+function openMobileNavMenu() {
+  mobileHamburger.classList.add('is-active');
+  mobileMenu.classList.remove('nav-menu-hidden');
+  mobileMenu.classList.add('nav-menu-expanded');
+  mobileMenu.setAttribute('aria-expanded', true);
+  mobileMenu.addEventListener('click', closeMobileNavMenu);
+  // Close nav menu with ESC key
+  document.body.addEventListener('keydown', closeByEsc);
+}
 
 mobileNavBtn.addEventListener('click', () => {
+  mobileMenuInner.addEventListener('click', (event) => {
+    event.stopPropagation();
+  });
   if (mobileMenu.classList.contains('nav-menu-hidden')) {
-    mobileHamburger.classList.add('is-active');
-    mobileMenu.classList.remove('nav-menu-hidden');
-    mobileMenu.classList.add('nav-menu-expanded');
-    mobileMenu.setAttribute('aria-expanded', true);
-    // document.body.classList.add('no-scroll');
-    mobileNavbarText.textContent = 'Close';
+    openMobileNavMenu();
   } else {
-    mobileHamburger.classList.remove('is-active');
-    mobileMenu.classList.add('nav-menu-hidden');
-    mobileMenu.classList.remove('nav-menu-expanded');
-    mobileMenu.setAttribute('aria-expanded', false);
-    // document.body.classList.remove('no-scroll');
-    mobileNavbarText.textContent = 'Menu';
+    closeMobileNavMenu();
   }
 });

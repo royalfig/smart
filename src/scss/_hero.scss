@@ -1,24 +1,23 @@
 .hero {
-    // padding: 100px 8em 3em;
-    min-height: calc(100vh);
-    // flex-wrap: wrap;
-    // overflow: hidden;
-    
-    // background: scale-color($color: $dark, $lightness: 98%);
-    // max-width: $desktop ;
-    // margin: 3rem 15vw 0;
-    margin-top: 3rem;
+    margin-top: calc(3rem - 1em);
+    // justify-content: center;
+    width: 100%;
+    align-items: center;
 }
+
+
 .hero-left,
 .hero-right {
-    margin-top: 1em;
+    
+    // margin-top: 1em;
     flex: 1;
     justify-content: center;
     max-width: 100%;
 }
 
 .hero-left {
-    // margin-right: 5em;
+    max-width: $tablet;
+    min-height: calc(100vh - 3rem);
 }
 
 .hero-right {
@@ -73,7 +72,7 @@
 
 }
 
-.hero-container {
+.hero-text-container {
     align-items: center;
     // align-content: center;
     // height: 60vh;

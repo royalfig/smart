@@ -9,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: .25em 1em;
+    padding: .5em 1em;
 
     background-color: scale-color($light, $alpha: -5%);
     font-size: .8em;
@@ -20,40 +20,42 @@
 
 #mobile-nav-btn {
     font-size: 1rem;
-
     svg {
         transform: translateY(5px);
     }
 }
 
 
-.nav-mobile {}
 
 // Hide large nav on laptops and up
 
 .mobile-nav-menu {
     position: fixed;
-
     top: 0;
     z-index: 6;
-    height: calc(100vh - 4rem);
-    margin-left: 100%;
     width: 100%;
-    transition: all .4s ease-in-out;
-    color: $dark;
-
     margin-top: $navbar;
-    font-size: 2em;
+    min-height: calc(100vh - 3rem);
+    margin-left: 100%;
+    transition: all .4s ease-in-out;
+    
     background-color: scale-color($light, $alpha: -5%);
-    // top: 0;
-    // right: 0;
-
+    font-size: 2em;
+    color: $dark;
+    
     overflow: auto;
 
     .flex-col {
-        flex: 1 1 auto;
+        
         align-items: center;
         justify-content: center;
+
+        .flex-row {
+            a,
+            button {
+                margin: 0 .5em;
+            }
+        }
     }
 
     .site-title {
