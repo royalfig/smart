@@ -1,38 +1,33 @@
 .hero {
-    margin-top: calc(3rem - 1em);
+    margin-top: $navbar;
     // justify-content: center;
     width: 100%;
-    align-items: center;
+    // align-items: center;
 }
 
 
 .hero-left,
 .hero-right {
-    
+
     // margin-top: 1em;
     flex: 1;
-    justify-content: center;
+    // justify-content: center;
     max-width: 100%;
+    
 }
 
 .hero-left {
-    max-width: $tablet;
-    min-height: calc(100vh - 3rem);
+    align-items: center;
+    // min-height: calc(100vh - 3rem);
 }
 
 .hero-right {
     // margin-left: 5em;
     // align-content: center;
     align-items: flex-start;
-    
 
-    .home-page-section-header {
-        margin-top: 0;
-    }
 
-    .card {
-        margin-bottom: 1em;
-    }
+
 }
 
 .featured-slider {
@@ -50,9 +45,10 @@
 
 .hero-img {
     height: 50vh;
-    max-width: 100%;
+    width: $base * 3;
+    height: $base * 3;
     object-fit: cover;
-    width: 100%;
+    max-width: 100%;
 
     background-position: center;
     background-repeat: no-repeat;
@@ -60,40 +56,30 @@
     box-shadow: $box-shadow;
 }
 
-.hero-overlay {
-    // align-items: center;
-    height: 100%;
-    // justify-content: center;
-    // padding: 1em;
-    // background: linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.25), rgba(255,255,255,.5));
-    // background: linear-gradient(scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%), scale-color($acc1, $saturation: -5%, $lightness: -80%, $alpha: -30%), scale-color($prim, $saturation: -10%, $lightness: -90%, $alpha: -20%));
-    // background: rgba(0,0,0,.55);
-    padding-top: 2em;
+@media all and (min-width: $tablet) and (max-width: $laptop) {
+    .hero-img {
+        width: $base * 3.5;
+        height: $base * 3.5;
+    }
+}
 
+@media all and (min-width: $laptop) {
+    .hero-img {
+        width: $base * 4;
+        height: $base * 4;
+    }
 }
 
 .hero-text-container {
     align-items: center;
-    // align-content: center;
-    // height: 60vh;
-    // height: 100%;
-    // Test min height 
-    min-height: 300px;
-    // justify-content: center;
     font-size: 3.5em;
-    // padding: 1em;
-
-    // background: $light;
-    // transform: translateX(40px);
-    // border: 1px solid $dark;
-
 }
 
 
 
 .site-title {
     // margin: 0;
-    margin: 4rem 0 1rem;
+    margin: .5em 0;
     text-align: left;
     font-size: 1em;
     color: $dark;
