@@ -1,6 +1,5 @@
-<svg role="img" xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24"
-    aria-labelledby="hashIconTitle" stroke="#181818" stroke-width="2" stroke-linecap="square" stroke-linejoin="miter"
-    fill="none" color="#000000">
-    <title id="hashIconTitle">Hash</title>
+<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24"
+    stroke="#181818" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter"
+    fill="none">
     <path d="M11 3L5 21M19 3L13 21M3 16L19 16M5 8L21 8" />
 </svg>

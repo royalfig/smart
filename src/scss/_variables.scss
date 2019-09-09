@@ -39,4 +39,11 @@ $base: 125px;
 $navbar: 3rem;
 
 // Box Shadow 
-$box-shadow: 3px 3px 4px rgba(0,0,0,.15), -3px 2px 4px rgba(0,0,0,.15), 5px 10px 20px rgba(0,0,0,.15),-5px 5px 20px rgba(0,0,0,.15);
+$box-shadow: 3px 3px 4px rgba(0, 0, 0, .12),
+-3px 2px 4px rgba(0, 0, 0, .12),
+5px 10px 15px rgba(0, 0, 0, .14),
+-5px 5px 15px rgba(0, 0, 0, .14);
+
+@mixin transition($property) {
+    transition: $property .4s ease-in-out;
+}

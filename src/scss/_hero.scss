@@ -3,8 +3,10 @@
     // justify-content: center;
     width: 100%;
     // align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
 }
-
 
 .hero-left,
 .hero-right {
@@ -13,7 +15,7 @@
     flex: 1;
     // justify-content: center;
     max-width: 100%;
-    
+
 }
 
 .hero-left {
@@ -26,27 +28,17 @@
     // align-content: center;
     align-items: flex-start;
 
-
-
-}
-
-.featured-slider {
-    // margin-top: 1em;
-    font-size: 1.5em;
-    text-align: center;
-    // display: block;
-    width: 100%;
-    color: $acc3;
-
-    &:first-child {
-        color: $dark;
+    .card-image {
+        width: 100%;
     }
+
+
 }
+
 
 .hero-img {
-    height: 50vh;
-    width: $base * 3;
-    height: $base * 3;
+    width: $base * 2;
+    height: $base * 2;
     object-fit: cover;
     max-width: 100%;
 
@@ -58,28 +50,87 @@
 
 @media all and (min-width: $tablet) and (max-width: $laptop) {
     .hero-img {
-        width: $base * 3.5;
-        height: $base * 3.5;
+        width: $base * 3;
+        height: $base * 3;
     }
 }
 
 @media all and (min-width: $laptop) {
     .hero-img {
-        width: $base * 4;
-        height: $base * 4;
+        width: $base * 3.5;
+        height: $base * 3.5;
+    }
+
+    .hero {
+        flex-direction: row;
+        min-height: 90vh;
+    }
+
+    .hero-left {
+        margin-right: 3em;
+        // justify-content: center;
+        align-items: center;
+    }
+
+    .hero-right {
+        margin-left: 3em;
+        // justify-content: space-around;
+        // align-items: flex-start;
+        align-items: stretch;
+
+        .featured.card-2 {
+            border-top: .5em solid #fff;
+            padding: 1em 0;
+            
+        }
+
+        .featured.card-2,
+        .featured.card-3 {
+            flex-direction: row;
+            align-items: flex-start;
+
+
+            .card-body {
+                padding-top: 0;
+                padding-bottom: 0;
+            }
+
+            .card-image {
+                max-height: $base;
+                width: $base;
+            }
+
+
+        }
+
+        .featured.card-3 {
+            border-top: .5em solid #fff;
+            padding: 1em 0;
+        }
+
+        .featured.card-1 {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            .card-body {
+                margin-bottom: 0;
+            }
+
+        }
+
     }
 }
 
 .hero-text-container {
-    align-items: center;
-    font-size: 3.5em;
+    font-size: 3.25em;
 }
 
 
 
 .site-title {
     // margin: 0;
-    margin: .5em 0;
+    margin: .75em 0 .25em;
     text-align: left;
     font-size: 1em;
     color: $dark;
@@ -87,19 +138,7 @@
 }
 
 .site-description {
-
-    // mix-blend-mode: multiply;
     margin: 0;
     color: $acc3;
     font-size: .5em;
-    text-align: center;
-    // text-shadow: 2px 2px 2px $dark;
-    // text-align: left;
-    // font-weight: 100;
-
-    // transform: translateX(-15%);
-    // height: 90%;
-
-
-
 }
