@@ -20,6 +20,7 @@
 
 .hero-left {
     align-items: center;
+    justify-content: center;
     // min-height: calc(100vh - 3rem);
 }
 
@@ -27,6 +28,11 @@
     // margin-left: 5em;
     // align-content: center;
     align-items: flex-start;
+    justify-content: center;
+
+    .home-page-section-header {
+        width: fit-content;
+    }
 
     .card-image {
         width: 100%;
@@ -37,28 +43,28 @@
 
 
 .hero-img {
-    width: $base * 2;
-    height: $base * 2;
+    width: 100%;
+    height: $base;
     object-fit: cover;
-    max-width: 100%;
+
 
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    box-shadow: $box-shadow;
+    // box-shadow: $box-shadow;
 }
 
 @media all and (min-width: $tablet) and (max-width: $laptop) {
     .hero-img {
-        width: $base * 3;
-        height: $base * 3;
+        width: 100%;
+        height: $base * 1.5;
     }
 }
 
 @media all and (min-width: $laptop) {
     .hero-img {
-        width: $base * 3.5;
-        height: $base * 3.5;
+        width: 100%;
+        height: $base * 2;
     }
 
     .hero {
@@ -78,52 +84,45 @@
         // align-items: flex-start;
         align-items: stretch;
 
-        .featured.card-2 {
-            border-top: .5em solid #fff;
-            padding: 1em 0;
-            
-        }
-
-        .featured.card-2,
-        .featured.card-3 {
+        .featured {
             flex-direction: row;
             align-items: flex-start;
-
+            padding: 1em 0;
 
             .card-body {
                 padding-top: 0;
                 padding-bottom: 0;
+                margin-top: 0;
+                flex: 1;
             }
 
             .card-image {
                 max-height: $base;
                 width: $base;
+                object-fit: cover;
             }
 
 
         }
 
-        .featured.card-3 {
-            border-top: .5em solid #fff;
-            padding: 1em 0;
-        }
 
-        .featured.card-1 {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
 
-            .card-body {
-                margin-bottom: 0;
-            }
+        // .featured.card-1 {
+        //     flex-direction: column;
+        //     justify-content: center;
+        //     align-items: center;
 
-        }
+        //     .card-body {
+        //         margin-bottom: 0;
+        //     }
+
+        // }
 
     }
 }
 
 .hero-text-container {
-    font-size: 3.25em;
+    font-size: 3em;
 }
 
 
@@ -140,5 +139,6 @@
 .site-description {
     margin: 0;
     color: $acc3;
-    font-size: .5em;
+    font-size: .65em;
+    font-weight: 300;
 }

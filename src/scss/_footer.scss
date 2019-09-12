@@ -1,0 +1,13 @@
+.footer {
+    height: 250px;
+    padding: 1.5em 3em;
+    
+    background-color: $dark;
+    border-bottom: none;
+    color: $light;
+
+    .inner-container {
+        // width: 100%;
+        justify-content: space-between;
+    }
+}
