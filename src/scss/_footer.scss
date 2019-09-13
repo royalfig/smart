@@ -1,18 +1,17 @@
 .footer {
     min-height: 250px;
    
-   
+  
     
     background-color: $dark;
-    color: $light;
+    color: scale-color($light, $lightness: -20%, $saturation: -75%);
     .outer-container {
         border-bottom: none;
         background-color: inherit;
         padding: 3em;
     }
     .inner-container {
-        // width: 100%;
-        justify-content: space-between;
+        
     
 
     }
@@ -23,10 +22,28 @@
 }
 
 .footer-section {
-    width: 20%;
     
+    padding: .5em;
+    flex: 1;
+    p {
+        margin-bottom: .5em;
+    }
 }
 
+.footer-location {
+    align-items: center;
+
+    svg {
+        height: 1em;
+        width: 1em;
+        margin-bottom: .5em;
+        stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
+        // margin-bottom: -.25px;
+        margin-top: 2px;
+        margin-right: 4px;
+        margin-left: -2px;
+    }
+}
 .published-by-ghost {
     justify-content: center;
     font-size: .75em;
