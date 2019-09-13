@@ -1,13 +1,35 @@
 .footer {
-    height: 250px;
-    padding: 1.5em 3em;
+    min-height: 250px;
+   
+   
     
     background-color: $dark;
-    border-bottom: none;
     color: $light;
-
+    .outer-container {
+        border-bottom: none;
+        background-color: inherit;
+        padding: 3em;
+    }
     .inner-container {
         // width: 100%;
         justify-content: space-between;
+    
+
     }
+
+    .home-page-section-header {
+        width: fit-content;
+    }
+}
+
+.footer-section {
+    width: 20%;
+    
+}
+
+.published-by-ghost {
+    justify-content: center;
+    font-size: .75em;
+    font-weight: 100;
+    padding: 1em;
 }
