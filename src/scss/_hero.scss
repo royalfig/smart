@@ -1,8 +1,6 @@
 .hero {
     margin-top: $navbar;
-    // justify-content: center;
     width: 100%;
-    // align-items: center;
     display: flex;
     flex-direction: column;
     padding: 1em 0;
@@ -10,23 +8,18 @@
 
 .hero-left,
 .hero-right {
-
-    // margin-top: 1em;
     flex: 1;
-    // justify-content: center;
     max-width: 100%;
-
+    align-items: stretch;
 }
 
 .hero-left {
     align-items: center;
     justify-content: center;
-    // min-height: calc(100vh - 3rem);
+    padding-bottom: 3em;
 }
 
 .hero-right {
-    // margin-left: 5em;
-    // align-content: center;
     align-items: flex-start;
     justify-content: center;
 
@@ -37,10 +30,7 @@
     .card-image {
         width: 100%;
     }
-
-
 }
-
 
 .hero-img {
     width: 100%;
@@ -53,79 +43,6 @@
     background-size: cover;
     // box-shadow: $box-shadow;
 }
-
-@media all and (min-width: $tablet) and (max-width: $laptop) {
-    .hero-img {
-        width: 100%;
-        height: $base * 1.5;
-    }
-}
-
-@media all and (min-width: $laptop) {
-    .hero-img {
-        width: 100%;
-        height: $base * 2;
-    }
-
-    .hero {
-        flex-direction: row;
-        min-height: 90vh;
-    }
-
-    .hero-left {
-        margin-right: 3em;
-        // justify-content: center;
-        align-items: center;
-    }
-
-    .hero-right {
-        margin-left: 3em;
-        // justify-content: space-around;
-        // align-items: flex-start;
-        align-items: stretch;
-
-        .featured {
-            flex-direction: row;
-            align-items: flex-start;
-            padding: 1em 0;
-
-            .card-body {
-                padding-top: 0;
-                padding-bottom: 0;
-                margin-top: 0;
-                flex: 1;
-            }
-
-            .card-image {
-                max-height: $base;
-                width: $base;
-                object-fit: cover;
-            }
-
-
-        }
-
-
-
-        // .featured.card-1 {
-        //     flex-direction: column;
-        //     justify-content: center;
-        //     align-items: center;
-
-        //     .card-body {
-        //         margin-bottom: 0;
-        //     }
-
-        // }
-
-    }
-}
-
-.hero-text-container {
-    font-size: 3em;
-}
-
-
 
 .site-title {
     // margin: 0;
@@ -142,3 +59,64 @@
     font-size: .65em;
     font-weight: 300;
 }
+.card.featured {
+        flex-direction: row
+    }
+
+.featured {
+    align-items: flex-start;
+    padding: 1em 0;
+    
+    .card-body {
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        flex: 1;
+    }
+
+    .card-image {
+        max-height: $base;
+        width: $base;
+        object-fit: cover;
+    }
+
+
+}
+
+
+@media all and (min-width: $tablet) and (max-width: $laptop) {
+    .hero-img {
+        width: 100%;
+        height: $base * 1.5;
+    }
+}
+
+@media all and (min-width: $laptop) {
+    .hero {
+        flex-direction: row;
+        min-height: 90vh;
+    }
+    
+    .hero-left {
+        margin-right: 3em;
+        // justify-content: center;
+        align-items: center;
+        padding-bottom: 0;
+    }
+    
+    .hero-img {
+        width: 100%;
+        height: $base * 2;
+    }
+
+    .hero-right {
+        margin-left: 3em;
+        align-items: stretch;
+    }
+}
+
+.hero-text-container {
+    font-size: 3em;
+}
+
+

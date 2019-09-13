@@ -5,11 +5,17 @@ Section and header styles
 .outer-container {
     position: relative;
     width: 100%;
-    padding: 1em 3em;
+    padding: 1em;
 
     background: $light;
     border-bottom: .5em solid white;
 
+}
+
+@media only all and (min-width: $tablet) {
+    .outer-container {
+        padding: 1em 4em;
+    }
 }
 
 .inner-container {

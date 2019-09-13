@@ -60,6 +60,7 @@
 
     .site-title {
         font-size: 115%;
+        text-align: center;
     }
 
     a,
@@ -78,6 +79,9 @@
 
 }
 
+.mobile-nav-menu-inner {
+    padding: .5em;
+}
 .nav-menu-expanded {
     margin-left: 0;
     // transform: translateX(0);
