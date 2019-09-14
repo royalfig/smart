@@ -1,18 +1,21 @@
 .footer {
     min-height: 250px;
-   
-  
-    
+
+
+
     background-color: $dark;
     color: scale-color($light, $lightness: -20%, $saturation: -75%);
+
     .outer-container {
         border-bottom: none;
         background-color: inherit;
         padding: 3em;
     }
+
     .inner-container {
-        
-    
+        flex-wrap: wrap;
+        justify-content: space-between;
+
 
     }
 
@@ -22,13 +25,22 @@
 }
 
 .footer-section {
-    
+    min-width: 200px;
     padding: .5em;
     flex: 1;
+
     p {
         margin-bottom: .5em;
     }
+
+    .card-tag {
+        color: scale-color($light, $lightness: -20%, $saturation: -75%);
+        p {
+            margin: 0;
+        }
+    }
 }
+
 
 .footer-location {
     align-items: center;
@@ -44,6 +56,17 @@
         margin-left: -2px;
     }
 }
+
+.footer-social {
+    a {
+        margin-right: .5em;
+    }
+    svg {
+        
+        fill: scale-color($light, $lightness: -20%, $saturation: -75%);
+    }   
+}
+
 .published-by-ghost {
     justify-content: center;
     font-size: .75em;
