@@ -1,8 +1,7 @@
 .subscribe {
     min-height: 300px;
-    background-color: $dark;
-    border-bottom-color: $acc1;
-    border-bottom: none;
+    background-color: $acc3;
+    border: 8px solid $acc2;
     text-align: center;
 
     h3 {
@@ -13,46 +12,51 @@
     }
 
     p {
-        color: $acc1;
+        color: $acc2;
         font-size: 1.2em;
         margin-bottom: 1.4em;
         font-weight: 100;
         &:last-child {
-            color: $light;
+            color: $acc2;
             text-align: left;
         }
     }
-
+    form {
+        align-items: flex-end;
+    }
     input {
         height: 2em;
         background: none;
         border: none;
         font-size: 1.5em;
-        border-bottom: 1px solid $light;
+        border-bottom: 1px solid $acc2;
         color: $light;
-        caret-color: $acc1;
+        caret-color: $prim;
         line-height: 1;
         font-weight: 100;
         width: 80%;
         text-align: left;
+        border-radius: 0;
 
         &::selection {
-            background: $acc1;
+            background: $prim;
             color: $dark ;
         }
     }
 }
 
 .subscribe-btn {
-    background-color: $acc1;
+    background-color: $acc2;
     padding: .5em;
     font-weight: 700;
     line-height: 1;
     border: 2px solid transparent;
     vertical-align: bottom;
     margin-left: 1em;
+    height: 50%;
+        
     &:hover {
-        background-color: $acc2;
+        background-color: $prim;
     }
     &:focus {
         border: 2px dotted currentColor;
