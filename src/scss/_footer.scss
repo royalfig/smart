@@ -1,34 +1,18 @@
 .footer {
     min-height: 250px;
-
-
-
     background-color: $dark;
+    border-bottom: none;
     color: scale-color($light, $lightness: -20%, $saturation: -75%);
 
-    .outer-container {
-        border-bottom: none;
-        background-color: inherit;
-        padding: 3em;
-    }
-
-    .inner-container {
-        flex-wrap: wrap;
-        justify-content: space-between;
-
-
-    }
-
-    .home-page-section-header {
-        width: fit-content;
+    .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 }
 
 .footer-section {
-    min-width: 200px;
+    
     padding: .5em;
-    flex: 1;
-
+    
     p {
         margin-bottom: .5em;
     }

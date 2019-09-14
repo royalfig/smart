@@ -15,15 +15,16 @@
 
 .hero-left {
     align-items: center;
-    justify-content: center;
+    // justify-content: center;
     padding-bottom: 3em;
 }
 
 .hero-right {
     align-items: flex-start;
-    justify-content: center;
+    // justify-content: center;
 
     .home-page-section-header {
+        margin-top: 0;
         width: fit-content;
     }
 
@@ -36,21 +37,16 @@
     width: 100%;
     height: $base;
     object-fit: cover;
-
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    // box-shadow: $box-shadow;
 }
 
 .site-title {
-    // margin: 0;
     margin: .75em 0 .25em;
     text-align: left;
     font-size: 1em;
     color: $dark;
-
 }
 
 .site-description {
@@ -59,30 +55,35 @@
     font-size: .65em;
     font-weight: 300;
 }
+
 .card.featured {
-        flex-direction: row
-    }
+    flex-direction: row;
+    border-bottom: 2px solid #acc2;
+}
 
 .featured {
     align-items: flex-start;
     padding: 1em 0;
-    
-    .card-body {
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-top: 0;
-        flex: 1;
-    }
+
 
     .card-image {
         max-height: $base;
         width: $base;
         object-fit: cover;
+        align-self: center;
     }
 
+    .card-body {
+        height: 100%;
+        padding-top: 0;
+        padding-bottom: 0;
+        margin-top: 0;
+        .card-date-tag:last-child {
+            margin-top: auto;
+        }
 
+    }
 }
-
 
 @media all and (min-width: $tablet) and (max-width: $laptop) {
     .hero-img {
@@ -94,16 +95,15 @@
 @media all and (min-width: $laptop) {
     .hero {
         flex-direction: row;
-        min-height: 90vh;
     }
-    
+
     .hero-left {
         margin-right: 3em;
         // justify-content: center;
         align-items: center;
         padding-bottom: 0;
     }
-    
+
     .hero-img {
         width: 100%;
         height: $base * 2;
@@ -118,5 +118,3 @@
 .hero-text-container {
     font-size: 3em;
 }
-
-

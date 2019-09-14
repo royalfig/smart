@@ -91,12 +91,22 @@ h5,
 }
 
 :link {
-    color: $light;
+    color: currentColor;
     text-decoration: none;
 }
 
 :visited {
-    color: $light;
+    color: currentColor
+}
+
+::selection {
+    background: $prim;
+    color: $dark;
+}
+
+:target {
+    padding-top: $navbar;
+    margin-top: -$navbar;
 }
 
 // Hamburgers
@@ -115,5 +125,6 @@ $hamburger-layer-spacing: 4px;
 @import 'hero';
 @import 'home';
 @import 'post';
+@import 'ghostRequired';
 @import 'subscribe';
 @import 'footer';

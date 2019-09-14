@@ -1,21 +1,21 @@
 // dEV
-const dev = document.querySelector('.dev');
+// const dev = document.querySelector('.dev');
 
-function viewPort() {
-  if (window.innerWidth < 640) {
-    dev.textContent = `${window.innerWidth}px, PHONE`;
-  } else if (window.innerWidth > 639 && window.innerWidth < 1024) {
-    dev.textContent = `${window.innerWidth}px, TABLET`;
-  } else if (window.innerWidth > 1023 && window.innerWidth < 1280) {
-    dev.textContent = `${window.innerWidth}px, LAPTOP`;
-  } else {
-    dev.textContent = `${window.innerWidth}px, DESKTOP`;
-  }
-}
+// function viewPort() {
+//   if (window.innerWidth < 640) {
+//     dev.textContent = `${window.innerWidth}px, PHONE`;
+//   } else if (window.innerWidth > 639 && window.innerWidth < 1024) {
+//     dev.textContent = `${window.innerWidth}px, TABLET`;
+//   } else if (window.innerWidth > 1023 && window.innerWidth < 1280) {
+//     dev.textContent = `${window.innerWidth}px, LAPTOP`;
+//   } else {
+//     dev.textContent = `${window.innerWidth}px, DESKTOP`;
+//   }
+// }
 
-viewPort();
+// viewPort();
 
-window.addEventListener('resize', viewPort);
+// window.addEventListener('resize', viewPort);
 
 // Add Grid styles
 const gridContainers = document.querySelectorAll('.grid-container-home');
@@ -94,5 +94,41 @@ mobileNavBtn.addEventListener('click', () => {
     openMobileNavMenu();
   } else {
     closeMobileNavMenu();
+  }
+});
+
+
+// Reading progress bar
+const progressBar = document.querySelector('.post-reading-progress');
+const postContentHeight = document.querySelector('.post-content').clientHeight;
+// const fixedNavbar = document.querySelector('.fixed-navbar');
+// const navbarTest = document.querySelector('.navbar-test');
+
+let lastKnownScrollPos = 0;
+let ticking = false;
+
+// function scroller(scrollPos) {
+//   if (navbarTest.offsetHeight - (navbarTest.offsetHeight * 0.9) < scrollPos) {
+//     fixedNavbar.style.background = '#181818';
+//   } else {
+//     fixedNavbar.style.background = 'transparent';
+//   }
+// }
+
+function readingBarProgress(scrollPos) {
+  const progress = Math.ceil((scrollPos / postContentHeight) * 100);
+  progressBar.style.width = `${progress}%`;
+}
+
+window.addEventListener('scroll', () => {
+  lastKnownScrollPos = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      readingBarProgress(lastKnownScrollPos);
+      ticking = false;
+    });
+
+    ticking = true;
   }
 });

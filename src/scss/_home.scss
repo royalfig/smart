@@ -27,10 +27,7 @@ Section and header styles
     margin-bottom: .5em;
     line-height: 1;
 
-    &:target {
-        padding-top: $navbar;
-        margin-top: -$navbar;
-    }
+    
 }
 
 /* -------------------------------
