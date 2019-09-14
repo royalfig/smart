@@ -32,6 +32,22 @@
 .dark {
   color: $light;
 }
+
+.back-to-top  {
+  position: fixed;
+  bottom: 2em;
+  right: 2em;
+  z-index: 10;
+  line-height: 1;
+  
+  svg {
+    height: 48px;
+    width: 48px;
+    fill: scale-color($light, $alpha: -5%);
+    stroke: $prim; 
+    color: $prim;     
+  }
+}
 // Links
 
 /* Underline From Left */

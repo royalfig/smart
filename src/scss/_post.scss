@@ -1,5 +1,5 @@
 .post-reading-progress {
-    height: 2px;
+    height: 3px;
     position: fixed;
     margin-top: $navbar;
     background: linear-gradient(to right, scale-color($prim, $alpha: -50%), scale-color($acc1, $alpha: -50%));
@@ -7,30 +7,59 @@
     width: 0;
     z-index: 10;
     // @include transition(all);
+
 }
 
-.post-image {
+.post-img {
     width: 100%;
-    
     height: 50vh;
-    
-    img {
+
+    img,
+    .no-post-img {
         display: block;
         width: 100%;
         height: 100%;
         object-fit: cover;
-        
     }
+
+    .no-post-img {
+        background: linear-gradient(to right, $prim, $acc1);
+    }
+
 }
 
-.post-author-img {
-    height: $base;
+.post-title {
+    margin-bottom: 0;
 }
+
+.post-header {
+    margin: 1em 0 3em;
+}
+
+.post-author {
+    font-weight: 600;
+    color: $prim;
+}
+
 .post {
     max-width: $tablet;
-    margin: 0 auto;
+    margin: 0 auto 8em;
+
 }
 
-.post-content p  {
+.post-content p {
     margin-bottom: 1em;
+}
+
+.author-footer-container {
+    font-size: .8em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    
+}
+
+.author-footer-img {
+    height: .5 * $base;
+    width: .5 * $base;
+    object-fit: cover;
+    display: block;
 }
