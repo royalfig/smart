@@ -53,13 +53,78 @@
 
 .author-footer-container {
     font-size: .8em;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    
+    grid-template-areas: "title-1"
+        "author"
+        "title-2"
+        "post-1"
+        "post-2";
+    grid-template-columns: 1fr;
+    grid-row-gap: .5em;
+    border-top: 1px solid $acc2;
+}
+
+
+@media only screen and (min-width: $tablet) and (max-width: $laptop) {
+    .author-footer-container {
+        grid-template-areas: "title-1 title-1"
+        "author author"
+        "title-2 title-2"
+        "post-1 post-2";
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media only screen and (min-width: $laptop) {
+    .author-footer-container {
+        grid-template-areas: "title-1 title-2 title-2"
+            "author post-1 post-2";
+        grid-template-columns: repeat(3, minmax(200px, 1fr));
+    }
+}
+
+
+.author-footer {
+    .flex-row {
+        align-items: center;
+        margin-bottom: 1em;
+    }
+}
+
+.author-footer-social {
+
+    // margin-top: .5em;
+    svg {
+        height: 1em;
+        width: 1em;
+        fill: $acc2;
+    }
 }
 
 .author-footer-img {
-    height: .5 * $base;
-    width: .5 * $base;
+    height: .35 * $base;
+    width: .35 * $base;
     object-fit: cover;
-    display: block;
+    // display: block;
+    border-radius: 50%;
+    margin-right: 1em;
+}
+
+.author-footer-title-1 {
+    grid-area: title-1;
+}
+
+.author-footer-title-2 {
+    grid-area: title-2;
+}
+
+.author-footer {
+    grid-area: author;
+}
+
+.related-posts-1 {
+    grid-area: post-1;
+}
+
+.related-posts-2 {
+    grid-area: post-2;
 }
