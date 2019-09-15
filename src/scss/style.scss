@@ -3,7 +3,6 @@
 
 // Imports
 @import 'normalize';
-
 @import 'variables';
 @import 'utilities';
 
@@ -109,7 +108,41 @@ h5,
     margin-top: -$navbar;
 }
 
-// Hamburgers
+//-------------------------------------------
+// Global Container Styles
+//-------------------------------------------
+.outer-container {
+    position: relative;
+    width: 100%;
+    padding: 1em;
+
+    background: $light;
+    border-bottom: .5em solid white;
+    
+}
+
+@media only all and (min-width: $tablet) {
+    .outer-container {
+        padding: 1em 4em;
+    }
+}
+
+.inner-container {
+    margin: 0 auto 1em;
+    max-width: $laptop;
+}
+
+.home-page-section-header {
+    margin-bottom: .5em;
+    line-height: 1;
+
+    
+}
+
+//-------------------------------------------
+// Hamburger default over rides
+// https://github.com/jonsuh/hamburgers
+//-------------------------------------------
 $hamburger-padding-x: 2px;
 $hamburger-padding-y: 2px;
 $hamburger-layer-color: $dark;
@@ -119,7 +152,10 @@ $hamburger-layer-height: 3px;
 $hamburger-layer-spacing: 4px;
 
 @import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
-// Import styles
+
+//-------------------------------------------
+// Import substyles
+//-------------------------------------------
 @import 'nav';
 @import 'search';
 @import 'hero';

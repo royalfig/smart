@@ -11,13 +11,13 @@
 
     h3 {
         display: block;
-        color: $dark;
+        color: $light;
         font-size: 2.4em;
         line-height: 1;
     }
 
     p {
-        color: $dark;
+        color: $light;
         font-size: 1.2em;
         margin-bottom: 1.4em;
         
@@ -36,9 +36,9 @@
         background: none;
         border: none;
         font-size: 1.5em;
-        border-bottom: 1px solid $dark;
-        color: $dark;
-        caret-color: $dark;
+        border-bottom: 1px solid $light;
+        color: $light;
+        caret-color: $light;
         line-height: 1;
         // font-weight: 100;
         width: 80%;
@@ -49,11 +49,14 @@
 
 .subscribe-btn {
     background: linear-gradient(45deg, $prim, $acc1);
-    border: 1px solid $dark;
+    border: 1px solid scale-color($dark, $alpha: -85%);
+    // border: none;
+    // border: 1px solid rgba(0,0,0,.15);
     border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.15);
-    padding: .5em;
-    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0,0,0,.25);
+    color: $light;
+    padding: .5em .75em;
+    font-weight: 100;
     line-height: 1;
 
     vertical-align: bottom;
@@ -62,11 +65,12 @@
 
     &:hover,
     &:active {
-        box-shadow: 0 4px 5px rgba(0,0,0,.25);
-
+        box-shadow: 0 4px 7px rgba(0,0,0,.35);
+        outline: none;
     }
 
-    &:focus-within {
+    &:focus {
         outline: 2px dotted currentColor;
     }
+
 }

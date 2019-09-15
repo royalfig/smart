@@ -28,7 +28,7 @@
         width: fit-content;
     }
 
-    .card-image {
+    .card-img {
         width: 100%;
     }
 }
@@ -66,7 +66,7 @@
     padding: 1em 0;
 
 
-    .card-image {
+    .card-img {
         max-height: $base;
         width: $base;
         object-fit: cover;
@@ -118,3 +118,19 @@
 .hero-text-container {
     font-size: 3em;
 }
+
+//-------------------------------------------
+// Animations
+//-------------------------------------------
+
+// @media only screen and (min-width: $laptop) {
+//     .hero-img {
+//         transform: translateX(-10%);
+//         @include transition(transform);
+//     }
+
+//     .hero-text-container {
+//         transform: translateX(-10%);
+//         @include transition(transform);
+//     }
+// }

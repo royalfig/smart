@@ -1,39 +1,6 @@
-/* -------------------------------
-Home Page
-Section and header styles
-------------------------------- */
-.outer-container {
-    position: relative;
-    width: 100%;
-    padding: 1em;
-
-    background: $light;
-    border-bottom: .5em solid white;
-
-}
-
-@media only all and (min-width: $tablet) {
-    .outer-container {
-        padding: 1em 4em;
-    }
-}
-
-.inner-container {
-    margin: 0 auto 1em;
-    max-width: $laptop;
-}
-
-.home-page-section-header {
-    margin-bottom: .5em;
-    line-height: 1;
-
-    
-}
-
-/* -------------------------------
-Card Styles 
-For home and index pages
-------------------------------- */
+//-------------------------------------------
+// Card Styles
+//-------------------------------------------
 .card {
     position: relative;
     display: flex;
@@ -43,8 +10,8 @@ For home and index pages
     transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
 }
 
-.card-image,
-.no-image {
+.card-img,
+.no-img {
     display: block;
     width: 100%;
     height: $base;
@@ -57,7 +24,7 @@ For home and index pages
     }
 }
 
-.no-image {
+.no-img {
     background: linear-gradient(45deg, $prim, $acc1);
 }
 
@@ -112,9 +79,9 @@ For home and index pages
     margin: .5em 0;
 }
 
-
-/* Grid styles
-For home page */
+//-------------------------------------------
+// Grid Styles for Home Page
+//-------------------------------------------
 
 // Mobile phones
 .grid-container-home {
@@ -144,8 +111,8 @@ For home page */
         .card-1 {
             grid-area: one;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -170,8 +137,8 @@ For home page */
         .card-1 {
             grid-area: one;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -194,8 +161,8 @@ For home page */
         }
     }
 
-    .card-image,
-    .no-image {
+    .card-img,
+    .no-img {
         height: 1.5 * $base;
     }
 }
@@ -219,8 +186,8 @@ For home page */
         .card-1 {
             grid-area: one;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -244,8 +211,8 @@ For home page */
         .card-1 {
             grid-area: one;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -268,8 +235,8 @@ For home page */
         }
     }
 
-    .card-image,
-    .no-image {
+    .card-img,
+    .no-img {
         height: 1.5 * $base;
     }
 }
@@ -298,8 +265,8 @@ For home page */
         .card-1 {
             grid-area: one;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 2.5 * $base;
                 max-height: 60vh;
             }
@@ -317,8 +284,8 @@ For home page */
             grid-area: four;
         }
 
-        .card-image,
-        .no-image {
+        .card-img,
+        .no-img {
             height: 1.5 * $base;
         }
 
@@ -332,8 +299,8 @@ For home page */
         .card-1 {
             grid-area: one;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 3 * $base;
                 max-height: 60vh;
             }
@@ -342,8 +309,8 @@ For home page */
         .card-2 {
             grid-area: two;
 
-            .card-image,
-            .no-image {
+            .card-img,
+            .no-img {
                 height: 3 * $base;
                 max-height: 60vh;
             }
@@ -362,8 +329,8 @@ For home page */
         }
     }
 
-    .card-image,
-    .no-image {
+    .card-img,
+    .no-img {
         height: 2 * $base;
     }
 

@@ -1,3 +1,6 @@
+//-------------------------------------------
+// Global Footer Styles
+//-------------------------------------------
 .footer {
     min-height: 250px;
     background-color: $dark;
@@ -10,20 +13,39 @@
 }
 
 .footer-section {
-    
+
     padding: .5em;
-    
+
     p {
         margin-bottom: .5em;
     }
 
     .card-tag {
         color: scale-color($light, $lightness: -20%, $saturation: -75%);
+        @include transition(all);
+
         p {
             margin: 0;
         }
+
+        svg {
+            height: 1em;
+            width: 1em;
+        }
+
+        &:hover {
+            background: none;
+            color: $prim;
+
+            svg {
+                stroke: $prim;
+
+            }
+        }
     }
 }
+
+
 
 
 .footer-location {
@@ -45,10 +67,11 @@
     a {
         margin-right: .5em;
     }
+
     svg {
-        
+
         fill: scale-color($light, $lightness: -20%, $saturation: -75%);
-    }   
+    }
 }
 
 .published-by-ghost {

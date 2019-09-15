@@ -26,9 +26,11 @@ gridContainers.forEach((element) => {
   element.classList.add(`grid-container-home-${gridItems.length}`);
 });
 
-
+//-------------------------------------------
 // Fly in fixed navbar
 // Will have to add padding to offset content?
+//-------------------------------------------
+
 // const fixedNavbar = document.querySelector('.fixed-navbar');
 // const navbarTest = document.querySelector('.navbar-test');
 
@@ -97,13 +99,9 @@ mobileNavBtn.addEventListener('click', () => {
   }
 });
 
-
-// Reading progress bar
-const progressBar = document.querySelector('.post-reading-progress');
-const postContentHeight = document.querySelector('.post-content').clientHeight;
-// const fixedNavbar = document.querySelector('.fixed-navbar');
-// const navbarTest = document.querySelector('.navbar-test');
-
+//-------------------------------------------
+// Reading Progress Bar
+//-------------------------------------------
 let lastKnownScrollPos = 0;
 let ticking = false;
 
@@ -116,19 +114,37 @@ let ticking = false;
 // }
 
 function readingBarProgress(scrollPos) {
+  const progressBar = document.querySelector('.post-reading-progress');
+  const postContentHeight = document.querySelector('.post-content').clientHeight;
   const progress = Math.ceil((scrollPos / postContentHeight) * 100);
   progressBar.style.width = `${progress}%`;
 }
 
-window.addEventListener('scroll', () => {
-  lastKnownScrollPos = window.scrollY;
+if (document.querySelector('.post-reading-progress')) {
 
-  if (!ticking) {
-    window.requestAnimationFrame(() => {
-      readingBarProgress(lastKnownScrollPos);
-      ticking = false;
-    });
+  window.addEventListener('scroll', () => {
+    lastKnownScrollPos = window.scrollY;
 
-    ticking = true;
-  }
-});
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        readingBarProgress(lastKnownScrollPos);
+        ticking = false;
+      });
+
+      ticking = true;
+    }
+  });
+}
+
+// const fixedNavbar = document.querySelector('.fixed-navbar');
+// const navbarTest = document.querySelector('.navbar-test');
+// Animation
+// const heroImg = document.querySelector('.hero-img');
+// const heroTextContainer = document.querySelector('.hero-text-container');
+
+// window.onload = () => {
+//   heroImg.style.transform = 'translateX(0)';
+//   setTimeout(() => {
+//     heroTextContainer.style.transform = 'translateX(0)';
+//   }, 200);
+// };
