@@ -52,7 +52,7 @@
 }
 
 .author-footer-container {
-    font-size: .8em;
+    font-size: .95em;
     grid-template-areas: "title-1"
         "author"
         "title-2"
@@ -61,6 +61,8 @@
     grid-template-columns: 1fr;
     grid-row-gap: .5em;
     border-top: 1px solid $acc2;
+    
+    
 }
 
 

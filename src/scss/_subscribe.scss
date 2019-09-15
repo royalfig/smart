@@ -1,29 +1,29 @@
 .subscribe {
+    background: linear-gradient(45deg, $prim, $acc1);
     min-height: 300px;
-    
+
     text-align: center;
 }
 
 .subscribe-inner {
-    background-color: $acc3;
-    border: 8px solid $acc2;
+    // border: .5em solid $dark;
     padding: 3em;
+
     h3 {
         display: block;
-        color: $light;
+        color: $dark;
         font-size: 2.4em;
         line-height: 1;
     }
 
     p {
-        color: $acc2;
+        color: $dark;
         font-size: 1.2em;
         margin-bottom: 1.4em;
-        font-weight: 100;
-
+        
         &:last-child {
-            color: $acc2;
             text-align: left;
+            font-weight: 100;
         }
     }
 
@@ -36,11 +36,11 @@
         background: none;
         border: none;
         font-size: 1.5em;
-        border-bottom: 1px solid $acc2;
-        color: $light;
-        caret-color: $prim;
+        border-bottom: 1px solid $dark;
+        color: $dark;
+        caret-color: $dark;
         line-height: 1;
-        font-weight: 100;
+        // font-weight: 100;
         width: 80%;
         text-align: left;
         border-radius: 0;
@@ -48,19 +48,22 @@
 }
 
 .subscribe-btn {
-    background-color: $acc2;
+    background: linear-gradient(45deg, $prim, $acc1);
+    border: 1px solid $dark;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.15);
     padding: .5em;
     font-weight: 700;
     line-height: 1;
-    
+
     vertical-align: bottom;
     margin-left: 1em;
     height: 50%;
 
     &:hover,
     &:active {
-        background-color: $prim;
-        
+        box-shadow: 0 4px 5px rgba(0,0,0,.25);
+
     }
 
     &:focus-within {
