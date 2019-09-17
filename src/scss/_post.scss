@@ -1,3 +1,6 @@
+//-------------------------------------------
+// Post Reading Progress Bar
+//-------------------------------------------
 .post-reading-progress {
     height: 3px;
     position: fixed;
@@ -10,48 +13,27 @@
 
 }
 
-.post-share-bar {
-    color: scale-color($dark, $alpha: -50%);
-    margin-top: 4em;
-    background: $acc2;
+//-------------------------------------------
+// Post Styles
+//-------------------------------------------
+.post {
+    max-width: $tablet;
+    margin: 0 auto 8em;
 }
 
-.post-share-bar-item {
-    padding: .5em;
-    flex: 1;
-    // margin-right: 1em;
-    &.flex-row {
-        align-items: center;
-    }
-}
-
-.post-share-bar-link {
-
-    @include transition(all);
-
-    &:hover {
-        color: $dark;
-    }
-
+.post-header {
     
+    margin: 1em 0 3em;
+    max-width: $tablet;
 
-    &.twitter {
-        background: $tw;
-    }
-
-    &.facebook {
-        background-color: $fb;
-    }
-
-    &.email {
-        background-color: $acc1;
-    }
-
-    svg {
-        margin-right: .25em;
-    }
 }
 
+
+.post-content {
+    max-width: $tablet;
+    margin: 0 auto 4em;
+
+}
 
 .post-img {
     width: 100%;
@@ -72,26 +54,100 @@
 }
 
 .post-title {
-    margin-bottom: 0;
+    margin-bottom: .5rem;;
 }
 
-.post-header {
-    margin: 1em 0 3em;
-}
+
 
 .post-author {
     font-weight: 600;
     color: $prim;
 }
 
-.post {
-    max-width: $tablet;
-    margin: 0 auto 8em;
-
-}
-
 .post-content p {
     margin-bottom: 1em;
+}
+
+//-------------------------------------------
+// Share Bar
+//-------------------------------------------
+%post-aside {
+    padding: .25em .5em;
+    flex: 1 1 auto;
+    color: $dark;
+}
+
+.post-share-bar,
+.post-tag-bar {
+    margin: 1em 0;
+    color: scale-color($dark, $alpha: -50%);
+    font-size: .8em;
+    font-weight: 600;
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+.post-share-bar-title,
+.post-tag-bar-title {
+    @extend %post-aside;
+    background-color: scale-color($acc3, $alpha: -50%);
+}
+
+.post-tag-link {
+    @extend %post-aside;
+    @include transition(background-color);
+    background-color: scale-color($acc3, $alpha: -75%);
+
+    &:hover,
+    &:active {
+        background-color: scale-color($acc3, $alpha: -50%);
+    }
+}
+
+.post-share-bar-link {
+    @extend %post-aside;
+    @include transition(all);
+
+
+    &:focus {
+        outline: 2px dotted currentColor;
+    }
+
+    &.twitter {
+        background-color: scale-color($tw, $alpha: -50%);
+
+        &:hover,
+        &:active {
+            background-color: $tw;
+        }
+    }
+
+    &.facebook {
+        background-color: scale-color($fb, $alpha: -50%);
+
+        &:hover,
+        &:active {
+            background-color: $fb;
+        }
+    }
+
+    &.linkedin {
+        background-color: scale-color($li, $alpha: -50%);
+
+        &:hover,
+        &:active {
+            background-color: $li;
+        }
+    }
+
+    &.email {
+        background-color: scale-color($acc1, $alpha: -50%);
+
+        &:hover,
+        &:active {
+            background-color: $acc1;
+        }
+    }
 }
 
 // -------------------------------------------
