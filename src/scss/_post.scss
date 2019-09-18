@@ -76,7 +76,6 @@
     flex: 1 1 auto;
     color: $dark;
 }
-
 .post-share-bar,
 .post-tag-bar {
     margin: 1em 0;
@@ -85,25 +84,42 @@
     font-weight: 600;
     text-align: center;
     flex-wrap: wrap;
+    border-top: 1px solid scale-color($acc3, $alpha: -50%);
+}
+
+.post-share-bar {
+    position: fixed;
+    top: 50%;
+    left: 25px;
+    transform: translateY(-50%);
+    font-size: .75em;
 }
 
 .post-share-bar-title,
 .post-tag-bar-title {
     @extend %post-aside;
-    background-color: scale-color($acc3, $alpha: -50%);
+    // background-color: scale-color($acc3, $alpha: -50%);
 }
 
 .post-tag-link {
     @extend %post-aside;
     @include transition(background-color);
     background-color: scale-color($acc3, $alpha: -75%);
-
     &:hover,
     &:active {
         background-color: scale-color($acc3, $alpha: -50%);
     }
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.post-tag-icon {
+    height: 1em;
+    // margin-right: .25em;
+    margin-top: 2px;
+    
+}
 .post-share-bar-link {
     @extend %post-aside;
     @include transition(all);
