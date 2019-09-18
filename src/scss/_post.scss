@@ -78,13 +78,13 @@
 }
 .post-share-bar,
 .post-tag-bar {
-    margin: 1em 0;
+    // margin: 1em 0 0;
     color: scale-color($dark, $alpha: -50%);
     font-size: .8em;
     font-weight: 600;
     text-align: center;
     flex-wrap: wrap;
-    border-top: 1px solid scale-color($acc3, $alpha: -50%);
+    // border-top: 1px solid scale-color($acc3, $alpha: -50%);
 }
 
 .post-share-bar {
@@ -98,7 +98,10 @@
 .post-share-bar-title,
 .post-tag-bar-title {
     @extend %post-aside;
-    // background-color: scale-color($acc3, $alpha: -50%);
+    background-color: scale-color($acc3, $alpha: -50%);
+}
+.post-tag-bar-title > svg {
+    height: 24px;
 }
 
 .post-tag-link {
@@ -116,10 +119,10 @@
 
 .post-tag-icon {
     height: 1em;
-    // margin-right: .25em;
     margin-top: 2px;
     
 }
+
 .post-share-bar-link {
     @extend %post-aside;
     @include transition(all);
@@ -178,7 +181,7 @@
         "post-2";
     grid-template-columns: 1fr;
     grid-row-gap: .5em;
-    border-top: 1px solid $acc2;
+    // border-top: 1px solid $acc2;
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $laptop) {
