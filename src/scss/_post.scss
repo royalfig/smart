@@ -72,13 +72,13 @@
 // Share Bar
 //-------------------------------------------
 %post-aside {
-    padding: .25em .5em;
-    flex: 1 1 auto;
+    // padding: .25em .5em;
+    // flex: 1 1 auto;
     color: $dark;
 }
 .post-share-bar,
 .post-tag-bar {
-    // margin: 1em 0 0;
+    margin: .5em 0 0;
     color: scale-color($dark, $alpha: -50%);
     font-size: .8em;
     font-weight: 600;
@@ -98,7 +98,7 @@
 .post-share-bar-title,
 .post-tag-bar-title {
     @extend %post-aside;
-    background-color: scale-color($acc3, $alpha: -50%);
+    // background-color: scale-color($acc3, $alpha: -50%);
 }
 .post-tag-bar-title > svg {
     height: 24px;
@@ -107,7 +107,9 @@
 .post-tag-link {
     @extend %post-aside;
     @include transition(background-color);
-    background-color: scale-color($acc3, $alpha: -75%);
+    // background-color: scale-color($acc3, $alpha: -75%);
+    margin-right: .5em;
+    color: scale-color($dark, $alpha: -25%);
     &:hover,
     &:active {
         background-color: scale-color($acc3, $alpha: -50%);
@@ -119,7 +121,7 @@
 
 .post-tag-icon {
     height: 1em;
-    margin-top: 2px;
+    // margin-top: 2px;
     
 }
 
@@ -181,7 +183,7 @@
         "post-2";
     grid-template-columns: 1fr;
     grid-row-gap: .5em;
-    // border-top: 1px solid $acc2;
+    border-top: 1px solid $acc2;
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $laptop) {
