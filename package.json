@@ -35,7 +35,8 @@
     "gulp-stylelint": "^9.0.0",
     "gulp-uglify": "^3.0.2",
     "stylelint": "^10.1.0",
-    "stylelint-config-twbs-bootstrap": "^0.4.0"
+    "stylelint-config-twbs-bootstrap": "^0.4.0",
+    "stylelint-order": "^3.1.1"
   },
   "browserslist": [
     "last 2 versions"

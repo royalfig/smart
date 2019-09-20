@@ -100,7 +100,7 @@ mobileNavBtn.addEventListener('click', () => {
 });
 
 //-------------------------------------------
-// Reading Progress Bar
+// Reading Progress Bar and Share Bar
 //-------------------------------------------
 let lastKnownScrollPos = 0;
 let ticking = false;
@@ -113,21 +113,38 @@ let ticking = false;
 //   }
 // }
 
+// Variables for reading progress
+const progressBar = document.querySelector('.post-reading-progress');
+const shareBar = document.querySelector('.post-share-bar');
+const footer = document.querySelector('.footer');
+const buffer = 50;
+
+// Variables for share bar
+const postImg = document.querySelector('.post-img');
+const postContentHeight = document.querySelector('.post-content').clientHeight;
+
 function readingBarProgress(scrollPos) {
-  const progressBar = document.querySelector('.post-reading-progress');
-  const postContentHeight = document.querySelector('.post-content').clientHeight;
   const progress = Math.ceil((scrollPos / postContentHeight) * 100);
   progressBar.style.width = `${progress}%`;
 }
 
-if (document.querySelector('.post-reading-progress')) {
+function shareBarAnimation() {
+  if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top &&
+    shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
+    shareBar.style.marginLeft = '0';
+  } else {
+    shareBar.style.marginLeft = '-200%';
+  }
+}
 
+if (progressBar) {
   window.addEventListener('scroll', () => {
     lastKnownScrollPos = window.scrollY;
 
     if (!ticking) {
       window.requestAnimationFrame(() => {
         readingBarProgress(lastKnownScrollPos);
+        shareBarAnimation();
         ticking = false;
       });
 
@@ -135,16 +152,3 @@ if (document.querySelector('.post-reading-progress')) {
     }
   });
 }
-
-// const fixedNavbar = document.querySelector('.fixed-navbar');
-// const navbarTest = document.querySelector('.navbar-test');
-// Animation
-// const heroImg = document.querySelector('.hero-img');
-// const heroTextContainer = document.querySelector('.hero-text-container');
-
-// window.onload = () => {
-//   heroImg.style.transform = 'translateX(0)';
-//   setTimeout(() => {
-//     heroTextContainer.style.transform = 'translateX(0)';
-//   }, 200);
-// };

@@ -1,8 +1,7 @@
 .subscribe {
-    background: linear-gradient(45deg, $prim, $acc1);
     min-height: 300px;
-
     text-align: center;
+    background: linear-gradient(45deg, $prim, $acc1);
 }
 
 .subscribe-inner {
@@ -11,19 +10,19 @@
 
     h3 {
         display: block;
-        color: $light;
         font-size: 2.4em;
         line-height: 1;
+        color: $light;
     }
 
     p {
-        color: $light;
-        font-size: 1.2em;
         margin-bottom: 1.4em;
-        
+        font-size: 1.2em;
+        color: $light;
+
         &:last-child {
-            text-align: left;
             font-weight: 100;
+            text-align: left;
         }
     }
 
@@ -32,41 +31,36 @@
     }
 
     input {
+        width: 80%;
         height: 2em;
+        font-size: 1.5em;
+        color: $light;
+        text-align: left;
         background: none;
         border: none;
-        font-size: 1.5em;
         border-bottom: 1px solid $light;
-        color: $light;
         caret-color: $light;
-        line-height: 1;
-        // font-weight: 100;
-        width: 80%;
-        text-align: left;
         border-radius: 0;
     }
 }
 
 .subscribe-btn {
+    height: 50%;
+    padding: .5em .75em;
+    margin-left: 1em;
+    // font-weight: 100;
+    line-height: 1;
+    color: $light;
+    vertical-align: bottom;
     background: linear-gradient(45deg, $prim, $acc1);
     border: 1px solid scale-color($dark, $alpha: -85%);
-    // border: none;
-    // border: 1px solid rgba(0,0,0,.15);
-    border-radius: 6px;
-    box-shadow: 0 2px 5px rgba(0,0,0,.25);
-    color: $light;
-    padding: .5em .75em;
-    font-weight: 100;
-    line-height: 1;
-
-    vertical-align: bottom;
-    margin-left: 1em;
-    height: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
+    @include transition(box-shadow);
 
     &:hover,
     &:active {
-        box-shadow: 0 4px 7px rgba(0,0,0,.35);
         outline: none;
+        box-shadow: 0 4px 7px rgba(0, 0, 0, .35);
     }
 
     &:focus {

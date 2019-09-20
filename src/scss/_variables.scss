@@ -46,5 +46,5 @@ $box-shadow: 3px 3px 4px rgba(0, 0, 0, .12),
 -5px 5px 15px rgba(0, 0, 0, .14);
 
 @mixin transition($property) {
-    transition: $property .2s ease-in-out;
+    transition: $property .2s cubic-bezier(.41, .56, .05, .95);
 }

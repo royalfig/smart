@@ -2,14 +2,13 @@
 // Post Reading Progress Bar
 //-------------------------------------------
 .post-reading-progress {
-    height: 3px;
     position: fixed;
+    top: 0;
+    z-index: 10;
+    width: 0;
+    height: 3px;
     margin-top: $navbar;
     background: linear-gradient(to right, scale-color($prim, $alpha: -50%), scale-color($acc1, $alpha: -50%));
-    top: 0;
-    width: 0;
-    z-index: 10;
-    // @include transition(all);
 
 }
 
@@ -22,12 +21,9 @@
 }
 
 .post-header {
-    
-    margin: 1em 0 3em;
     max-width: $tablet;
-
+    margin: 1em 0 3em;
 }
-
 
 .post-content {
     max-width: $tablet;
@@ -54,7 +50,8 @@
 }
 
 .post-title {
-    margin-bottom: .5rem;;
+    margin-bottom: .5rem;
+    ;
 }
 
 
@@ -71,47 +68,101 @@
 //-------------------------------------------
 // Share Bar
 //-------------------------------------------
-%post-aside {
-    // padding: .25em .5em;
-    // flex: 1 1 auto;
-    color: $dark;
-}
-.post-share-bar,
-.post-tag-bar {
-    margin: .5em 0 0;
-    color: scale-color($dark, $alpha: -50%);
-    font-size: .8em;
-    font-weight: 600;
-    text-align: center;
-    flex-wrap: wrap;
-    // border-top: 1px solid scale-color($acc3, $alpha: -50%);
-}
-
 .post-share-bar {
     position: fixed;
     top: 50%;
     left: 25px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0;
+    margin-left: -200%;
+    font-size: .8em;
+    font-weight: 600;
+    color: scale-color($dark, $alpha: -50%);
+    text-align: center;
     transform: translateY(-50%);
-    font-size: .75em;
+    @include transition(margin-left);
 }
 
-.post-share-bar-title,
-.post-tag-bar-title {
-    @extend %post-aside;
-    // background-color: scale-color($acc3, $alpha: -50%);
+.post-share-bar-title {}
+
+.post-share-bar-link {
+
+    width: 2em;
+    height: 2em;
+    margin-bottom: 1em;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &:focus {
+        outline: 2px dotted currentColor;
+    }
+
+    svg {
+        width: 100%;
+        height: 100%;
+        fill: scale-color($dark, $alpha: -50%);
+        @include transition(all);
+    }
+
+
+
+    &.twitter svg {
+
+
+        &:hover,
+        &:active {
+            fill: $tw;
+        }
+    }
+
+    &.facebook svg {
+
+        &:hover,
+        &:active {
+            fill: $fb;
+        }
+    }
+
+    &.linkedin svg {
+
+        &:hover,
+        &:active {
+            fill: $li;
+        }
+    }
+
+    &.email svg {
+        fill: none;
+        stroke: scale-color($dark, $alpha: -50%);
+
+        &:hover,
+        &:active {
+            stroke: $prim;
+        }
+    }
+
 }
-.post-tag-bar > svg {
-    // height: 24px;
-    margin-right: .25em;
+
+
+
+//-------------------------------------------
+// Tag Bar
+//-------------------------------------------
+.post-tag-bar {
+    font-size: .75em;
+    text-transform: uppercase;
 }
 
 .post-tag-link {
-    @extend %post-aside;
+
     @include transition(background-color);
     // background-color: scale-color($acc3, $alpha: -75%);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin-right: .5em;
 
     &:last-child {
@@ -121,8 +172,9 @@
     &:first-child {
         margin-left: .5em;
     }
-    
+
     color: scale-color($dark, $alpha: -25%);
+
     &:hover,
     &:active {
         background-color: scale-color($acc3, $alpha: -50%);
@@ -132,53 +184,7 @@
 .post-tag-icon {
     height: 1em;
     // margin-top: 2px;
-    
-}
 
-.post-share-bar-link {
-    @extend %post-aside;
-    @include transition(all);
-
-
-    &:focus {
-        outline: 2px dotted currentColor;
-    }
-
-    &.twitter {
-        background-color: scale-color($tw, $alpha: -50%);
-
-        &:hover,
-        &:active {
-            background-color: $tw;
-        }
-    }
-
-    &.facebook {
-        background-color: scale-color($fb, $alpha: -50%);
-
-        &:hover,
-        &:active {
-            background-color: $fb;
-        }
-    }
-
-    &.linkedin {
-        background-color: scale-color($li, $alpha: -50%);
-
-        &:hover,
-        &:active {
-            background-color: $li;
-        }
-    }
-
-    &.email {
-        background-color: scale-color($acc1, $alpha: -50%);
-
-        &:hover,
-        &:active {
-            background-color: $acc1;
-        }
-    }
 }
 
 // -------------------------------------------
@@ -226,33 +232,33 @@
 }
 
 .author-footer-img {
-    height: .35 * $base;
     width: .35 * $base;
+    height: .35 * $base;
+    margin-right: 1em;
     object-fit: cover;
     // display: block;
     border-radius: 50%;
-    margin-right: 1em;
 }
 
 .author-footer-social,
 .author-footer-location {
     p {
-        color: $acc2;
         font-size: .85em;
+        color: $acc2;
     }
 
     // margin-top: .5em;
     svg {
-        height: 1em;
         width: 1em;
+        height: 1em;
         fill: $acc2;
     }
 }
 
 .author-footer-location {
     align-items: center;
-    line-height: 1;
     margin-bottom: .25em;
+    line-height: 1;
 
     svg {
         margin-top: 3px;

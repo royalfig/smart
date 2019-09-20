@@ -1,236 +1,243 @@
-// Define common nav items
+//-------------------------------------------
+// Navbar common items
+//-------------------------------------------
 .fixed-navbar,
 .nav-mobile {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    height: $navbar;
-    z-index: 5;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: .5em 1em;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: $navbar;
+  padding: .5em 1em;
 
-    background-color: scale-color($light, $alpha: -5%);
-    font-size: .8em;
-    line-height: 1.6;
-    transition: all .1s ease-in-out;
-
+  font-size: .8em;
+  line-height: 1.6;
+  background-color: scale-color($light, $alpha: -5%);
+  transition: all .1s ease-in-out;
 }
 
-#mobile-nav-btn {
-    font-size: 1rem;
-
-    svg {
-        transform: translateY(5px);
-    }
-}
-
-
-
-// Hide large nav on laptops and up
-
+//-------------------------------------------
+// Navbar Mobile
+//-------------------------------------------
 .mobile-nav-menu {
-    position: fixed;
-    top: 0;
-    z-index: 6;
-    width: 100%;
-    margin-top: $navbar;
-    min-height: calc(100vh - 3rem);
-    margin-left: 100%;
-    transition: all .4s ease-in-out;
+  position: fixed;
+  top: 0;
+  z-index: 6;
+  width: 100%;
+  min-height: calc(100vh - 3rem);
+  margin-top: $navbar;
+  margin-left: 100%;
+  overflow: auto;
+  font-size: 2em;
+  color: $dark;
+  background-color: scale-color($light, $alpha: -5%);
+  transition: all .4s ease-in-out;
 
-    background-color: scale-color($light, $alpha: -5%);
-    font-size: 2em;
+  .flex-col {
+    align-items: center;
+    justify-content: center;
+
+    .flex-row {
+
+      a,
+      button {
+        margin: 0 .5em;
+      }
+    }
+  }
+
+  .site-title {
+    font-size: 115%;
+    text-align: center;
+  }
+
+  a,
+  button {
+    margin-bottom: .5em;
     color: $dark;
+  }
 
-    overflow: auto;
-
-    .flex-col {
-
-        align-items: center;
-        justify-content: center;
-
-        .flex-row {
-
-            a,
-            button {
-                margin: 0 .5em;
-            }
-        }
-    }
-
-    .site-title {
-        font-size: 115%;
-        text-align: center;
-    }
-
-    a,
-    button {
-        color: $dark;
-        margin-bottom: .5em;
-    }
-
-    .underline {
-        text-shadow:
-            2px 2px scale-color($light, $alpha: -5%),
-            2px -2px scale-color($light, $alpha: -5%),
-            -2px 2px scale-color($light, $alpha: -5%),
-            -2px -2px scale-color($light, $alpha: -5%);
-    }
-
+  .underline {
+    text-shadow: 2px 2px scale-color($light, $alpha: -5%), 2px -2px scale-color($light, $alpha: -5%), -2px 2px scale-color($light, $alpha: -5%), -2px -2px scale-color($light, $alpha: -5%);
+  }
 }
 
 .mobile-nav-menu-inner {
-    padding: .5em;
+  padding: .5em;
 }
 
 .nav-menu-expanded {
-    margin-left: 0;
-    // transform: translateX(0);
-    // width: 100%;
+  margin-left: 0;
 }
 
-.nav-menu-hidden {
+.nav-sub-menu {
+  flex-wrap: wrap;
+  justify-content: center;
 
-    // transform: translateX(100%);
-    // width: 0;
+  a,
+  button {
+    padding: .5em;
+    line-height: 0;
+  }
+
+  %svg-size {
+    width: 24px;
+    height: 24px;
+    line-height: 1;
+    transition: all .2s ease;
+  }
+
+  button svg {
+    @extend %svg-size;
+    stroke: $dark;
+
+    &:hover {
+      stroke: $prim;
+    }
+  }
+
+  a svg {
+    @extend %svg-size;
+    fill: $dark;
+  }
+
+  button>svg {
+    @extend %svg-size;
+    stroke: $dark;
+
+    &:hover {
+      stroke: $prim;
+    }
+  }
+
+  .search-button svg {
+    width: 27px;
+    height: 27px;
+  }
 }
-
-
 
 // Hide navbar on viewports less than laptop
 .fixed-navbar {
-    display: none;
+  display: none;
 }
 
-// Nav on laptops and up
+//-------------------------------------------
+// Navbar on laptops and up
+//-------------------------------------------
 @media all and (min-width: $laptop) {
-    .nav-mobile {
-        display: none;
+  .nav-mobile {
+    display: none;
+  }
+
+  .nav-menu-expanded {
+    display: none;
+    transform: translateX(100%);
+  }
+
+
+  .fixed-navbar {
+    display: flex;
+  }
+
+  .fixed-left {
+    font-family: $serif;
+    font-size: 1.25em;
+
+    a {
+      font-size: 1em;
     }
+  }
 
-    .nav-menu-expanded {
-        display: none;
-        transform: translateX(100%);
+  .navbar-site-title {
+    align-items: center;
+
+    img {
+      width: 1.25em;
+      height: 1.25em;
     }
+  }
 
-    // Fixed Navbar 
-    .fixed-navbar {
-        display: flex;
-    }
+  .site-header-1 {
+    margin: 0;
+    margin-left: 5px;
+    font-size: 1em;
+    font-weight: 400;
+    color: $dark;
+  }
 
-    // Left navbar 
-    .fixed-left {
-        font-family: $serif;
-        font-size: 1.25em;
-
-
-        a {
-            font-size: 1em;
-        }
-
-
-
-    }
-
-    .navbar-site-title {
-        align-items: center;
-
-        img {
-            height: 1.25em;
-            width: 1.25em;
-        }
-    }
-
-    .site-header-1 {
-        margin: 0;
-        color: $dark;
-        font-size: 1em;
-        font-weight: 400;
-        margin-left: 5px;
-    }
-
-    .fixed-center {
-
-        display: flex;
-
-        justify-content: center;
-    }
-
-    %svg-size {
-        height: 18px;
-        width: 18px;
-        transition: all .2s ease;
-    }
-
-    .fixed-right {
-        display: flex;
-
-        align-items: center;
-        justify-content: flex-end;
+  .fixed-center {
+    display: flex;
+    justify-content: center;
+  }
 
 
 
-        .nav-item {
-            margin-right: 1em;
-        }
-    }
-
-
-
-
+  .fixed-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 
     .nav-item {
-        color: $dark;
-        margin-right: 2em;
-
-        &:last-child {
-            margin-right: 0;
-        }
+      margin-right: 1em;
     }
-}
 
-%svg-size {
-    height: 18px;
-    width: 18px;
-    transition: all .2s ease;
-    // vertical-align: middle;
-    line-height: 1;
-}
 
-button svg {
-    @extend %svg-size;
-    stroke: $dark;
 
-    &:hover {
+    button svg {
+      width: 18px;
+      height: 18px;
+      line-height: 1;
+      transition: all .2s ease;
+      stroke: $dark;
+
+      &:hover {
         stroke: $prim;
+      }
     }
-}
 
-a svg {
-    @extend %svg-size;
-    fill: $dark;
-}
+    a svg {
+      width: 18px;
+      height: 18px;
+      line-height: 1;
+      transition: all .2s ease;
+      fill: $dark;
+    }
 
-button>svg {
-    @extend %svg-size;
-    stroke: $dark;
+    button>svg {
+      width: 18px;
+      height: 18px;
+      line-height: 1;
+      transition: all .2s ease;
+      stroke: $dark;
 
-    &:hover {
+      &:hover {
         stroke: $prim;
+      }
     }
+
+    .search-button svg {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  .nav-item {
+    margin-right: 2em;
+    color: $dark;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 }
 
 .facebook svg:hover {
-    fill: $fb;
+  fill: $fb;
 }
 
 .twitter svg:hover {
-    fill: $tw;
-}
-
-#search-button svg {
-    height: 22px;
-    width: 22px;
+  fill: $tw;
 }
