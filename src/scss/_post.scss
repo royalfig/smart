@@ -100,23 +100,33 @@
     @extend %post-aside;
     // background-color: scale-color($acc3, $alpha: -50%);
 }
-.post-tag-bar-title > svg {
-    height: 24px;
+.post-tag-bar > svg {
+    // height: 24px;
+    margin-right: .25em;
 }
 
 .post-tag-link {
     @extend %post-aside;
     @include transition(background-color);
     // background-color: scale-color($acc3, $alpha: -75%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-right: .5em;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    &:first-child {
+        margin-left: .5em;
+    }
+    
     color: scale-color($dark, $alpha: -25%);
     &:hover,
     &:active {
         background-color: scale-color($acc3, $alpha: -50%);
     }
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .post-tag-icon {
