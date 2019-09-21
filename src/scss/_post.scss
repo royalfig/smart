@@ -70,18 +70,20 @@
 //-------------------------------------------
 .post-share-bar {
     position: fixed;
-    top: 50%;
-    left: 25px;
+    top: $navbar + 1rem;
     flex-wrap: wrap;
     align-items: center;
     margin: 0;
-    margin-left: -200%;
+    margin-left: -200px;
+    // margin-left: -200%;
     font-size: .8em;
     font-weight: 600;
     color: scale-color($dark, $alpha: -50%);
     text-align: center;
-    transform: translateY(-50%);
-    @include transition(margin-left);
+    // transform: translateY(-50%);
+    @include transition(all);
+    opacity: 0;
+
 }
 
 .post-share-bar-title {}
@@ -134,7 +136,7 @@
         }
     }
 
-    &.email svg {
+    &.copy svg {
         fill: none;
         stroke: scale-color($dark, $alpha: -50%);
 
@@ -152,28 +154,37 @@
 // Tag Bar
 //-------------------------------------------
 .post-tag-bar {
+    margin-top: .25em;
     font-size: .75em;
     text-transform: uppercase;
+
+    svg {
+        width: 22px;
+        height: 22px;
+        fill: none;
+        stroke: scale-color($dark, $alpha: -25%);
+    }
 }
 
 .post-tag-link {
 
-    @include transition(background-color);
     // background-color: scale-color($acc3, $alpha: -75%);
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: .5em;
+    color: scale-color($dark, $alpha: -25%);
+    @include transition(background-color);
+
+
+
+    &:first-of-type {
+        margin-left: .25em;
+    }
 
     &:last-child {
         margin-right: 0;
     }
-
-    &:first-child {
-        margin-left: .5em;
-    }
-
-    color: scale-color($dark, $alpha: -25%);
 
     &:hover,
     &:active {
@@ -183,8 +194,6 @@
 
 .post-tag-icon {
     height: 1em;
-    // margin-top: 2px;
-
 }
 
 // -------------------------------------------

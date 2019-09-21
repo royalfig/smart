@@ -131,9 +131,11 @@ function readingBarProgress(scrollPos) {
 function shareBarAnimation() {
   if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top &&
     shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
-    shareBar.style.marginLeft = '0';
+    shareBar.style.marginLeft = '25px';
+    shareBar.style.opacity = '1';
   } else {
-    shareBar.style.marginLeft = '-200%';
+    shareBar.style.marginLeft = '-200px';
+    shareBar.style.opacity = '0';
   }
 }
 
@@ -152,3 +154,18 @@ if (progressBar) {
     }
   });
 }
+
+//-------------------------------------------
+// Copy Function
+//-------------------------------------------
+const copyButton = document.getElementById('copy-button');
+
+copyButton.addEventListener('click', () => {
+  const url = window.location.href;
+  const temp = document.createElement('input');
+  document.body.appendChild(temp);
+  temp.value = url;
+  temp.select();
+  document.execCommand('copy');
+  document.body.removeChild(temp);
+})
