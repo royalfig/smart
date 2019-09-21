@@ -51,7 +51,7 @@
 
 // Links
 
-/* Underline From Left */
+// Underline from left effect
 .hvr-underline-from-left {
   position: relative;
   display: inline-block;
@@ -81,6 +81,41 @@
   right: 0;
 }
 
+// Fill from bottom
+.hvr-bounce-to-top {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  transition-duration: 0.5s;
+  transition-property: color;
+  transform: perspective(1px) translateZ(0);
+}
+
+.hvr-bounce-to-top:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  content: "";
+  background: scale-color($prim, $alpha: -50%);
+  transition-timing-function: ease-out;
+  transition-duration: .45s;
+  transition-property: transform;
+  transform: scaleY(0);
+  transform-origin: 50% 100%;
+}
+
+.hvr-bounce-to-top:hover:before,
+.hvr-bounce-to-top:focus:before,
+.hvr-bounce-to-top:active:before {
+  transition-timing-function: cubic-bezier(.52, 1.64, .37, .66);
+  transform: scaleY(1);
+}
+
+// Underline effect
 .underline {
   display: inline-block;
   line-height: 0.95;

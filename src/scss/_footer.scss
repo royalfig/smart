@@ -3,9 +3,9 @@
 //-------------------------------------------
 .footer {
     min-height: 250px;
+    color: scale-color($light, $lightness: -20%, $saturation: -75%);
     background-color: $dark;
     border-bottom: none;
-    color: scale-color($light, $lightness: -20%, $saturation: -75%);
 
     .grid-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -29,8 +29,8 @@
         }
 
         svg {
-            height: 1em;
             width: 1em;
+            height: 1em;
         }
 
         &:hover {
@@ -52,31 +52,32 @@
     align-items: center;
 
     svg {
-        height: 1em;
         width: 1em;
-        margin-bottom: .5em;
+        height: 1em;
+        // margin: 2px 4px -2px .5em;
+        vertical-align: middle;
         stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
-        // margin-bottom: -.25px;
-        margin-top: 2px;
-        margin-right: 4px;
-        margin-left: -2px;
+
     }
 }
 
 .footer-social {
+    @include transition(all);
+
     a {
         margin-right: .5em;
     }
 
     svg {
-
+        width: 1rem;
+        height: 1rem;
         fill: scale-color($light, $lightness: -20%, $saturation: -75%);
     }
 }
 
 .published-by-ghost {
     justify-content: center;
+    padding: 1em;
     font-size: .75em;
     font-weight: 100;
-    padding: 1em;
 }

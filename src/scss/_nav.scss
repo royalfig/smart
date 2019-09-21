@@ -241,10 +241,18 @@
   }
 }
 
-.facebook svg:hover {
-  fill: $fb;
+.facebook svg {
+  @include transition(all);
+
+  &:hover {
+    fill: $fb;
+  }
 }
 
-.twitter svg:hover {
-  fill: $tw;
+.twitter svg {
+  @include transition(all);
+
+  &:hover {
+    fill: $tw;
+  }
 }
