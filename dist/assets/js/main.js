@@ -136,7 +136,7 @@ function shareBarAnimation() {
   if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top
     && shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
     if (window.innerWidth > 1024) {
-      shareBar.style.marginLeft = '10px';
+      shareBar.style.marginLeft = '0';
       shareBar.style.opacity = '1';
     } else {
       shareBar.style.marginBottom = '0';
