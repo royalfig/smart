@@ -1,70 +1,8 @@
+//-------------------------------------------
+// Inline Subscription
+//-------------------------------------------
 .subscribe {
     min-height: 300px;
     text-align: center;
     background: linear-gradient(45deg, $prim, $acc1);
-}
-
-.subscribe-inner {
-    // border: .5em solid $dark;
-    padding: 3em;
-
-    h3 {
-        display: block;
-        font-size: 2.4em;
-        line-height: 1;
-        color: $light;
-    }
-
-    p {
-        margin-bottom: 1.4em;
-        font-size: 1.2em;
-        color: $light;
-
-        &:last-child {
-            font-weight: 100;
-            text-align: left;
-        }
-    }
-
-    form {
-        align-items: flex-end;
-    }
-
-    input {
-        width: 80%;
-        height: 2em;
-        font-size: 1.5em;
-        color: $light;
-        text-align: left;
-        background: none;
-        border: none;
-        border-bottom: 1px solid $light;
-        caret-color: $light;
-        border-radius: 0;
-    }
-}
-
-.subscribe-btn {
-    height: 50%;
-    padding: .5em .75em;
-    margin-left: 1em;
-    // font-weight: 100;
-    line-height: 1;
-    color: $light;
-    vertical-align: bottom;
-    background: linear-gradient(45deg, $prim, $acc1);
-    border: 1px solid scale-color($dark, $alpha: -85%);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-    @include transition(box-shadow);
-
-    &:hover,
-    &:active {
-        outline: none;
-        box-shadow: 0 4px 7px rgba(0, 0, 0, .35);
-    }
-
-    &:focus {
-        outline: 2px dotted currentColor;
-    }
-
 }

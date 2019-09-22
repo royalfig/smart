@@ -14,6 +14,9 @@
 <body>
     <!--- {{! SVG Spritesheet }} --->
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <symbol viewBox="0 0 24 24" id="close">
+            <path d="M6.34314575 6.34314575L17.6568542 17.6568542M6.34314575 17.6568542L17.6568542 6.34314575"></path>
+        </symbol>
         <symbol viewBox="0 0 24 24" id="battery-alt">
             <path d="M14 3h-4" />
             <path d="M6 4v17h12V4z" />
@@ -129,7 +132,6 @@
                 <a href="/">
                     <p class="site-title serif">Madeline Chera</p>
                 </a>
-
                 <a href="/" class="nav-item hvr-underline-from-left">About</a>
                 <a href="/" class="nav-item hvr-underline-from-left">Writing</a>
                 <a href="/" class="nav-item hvr-underline-from-left">Teaching</a>
@@ -148,13 +150,13 @@
                             <use href="#facebook"></use>
                         </svg>
                     </a>
-                    <button href="/" class="nav-item">
+                    <button class="navbar-subscribe-btn nav-item" data-id="subscribe">
                         <svg>
                             <title>Subscribe</title>
                             <use href="#clipboard"></use>
                         </svg>
                     </button>
-                    <button id="search-button" href="/" class="search-button nav-item">
+                    <button class="navbar-search-btn nav-item" data-id="search">
                         <svg>
                             <title>Search</title>
                             <use href="#search"></use>
@@ -182,7 +184,7 @@
             <a href="/" class="nav-item hvr-underline-from-left">Workshops</a>
         </div>
 
-        <div class="fixed-right">
+        <div class="nav-sub-menu flex-row">
             <a class="nav-item twitter" href="/">
                 <svg>
                     <title>Twitter</title>
@@ -195,17 +197,18 @@
                     <use href="#facebook"></use>
                 </svg>
             </a>
-            <button class="nav-item" href="/">
+            <button class="navbar-subscribe-btn nav-item" data-id="subscribe">
                 <svg>
                     <title>Subscribe</title>
                     <use href="#clipboard"></use>
                 </svg>
-                <button class="search-button nav-item" id="search-button" href="/">
-                    <svg>
-                        <title>Search</title>
-                        <use href="#search"></use>
-                    </svg>
-                </button>
+            </button>
+            <button class="navbar-search-btn nav-item" data-id="search">
+                <svg>
+                    <title>Search</title>
+                    <use href="#search"></use>
+                </svg>
+            </button>
         </div>
     </nav>
     <!-- {{!Fixed Navbar (to be moved into partial) }} -->
@@ -402,15 +405,17 @@
                 </footer>
 
                 <!-- {{! Subscribe Module }} -->
-                <aside class="subscribe outer-container">
+                <aside class="subscribe">
                     <div class="inner-container">
-                        <div class="subscribe-inner">
+                        <div class="modal-inner">
                             <h3 class="serif">Subscribe</h3>
                             <p>Don't miss what happens next 🦙</p>
-                            <form class="flex-row">
-                                <input type="text">
-                                <button class="subscribe-btn">Submit</button>
+                            <!--- {{! subscribe_form partial }} --->
+                            <form class="modal-form flex-row">
+                                <input class="modal-input" type="text">
+                                <button class="modal-btn">Submit</button>
                             </form>
+                            <!--- {{! subscribe_form partial }} --->
                             <p>Email</p>
                         </div>
                     </div>
@@ -532,6 +537,57 @@
         </button>
     </aside>
     <!--- {{! Share Bar }} --->
+
+    <!--- {{! Subscribe Modal }} --->
+    <aside class="modal subscribe-modal outer-container" aria-expanded="false">
+        <div class="inner-container flex-col">
+            <button class="modal-close" title="Close">
+                <svg>
+                    <use href="#close"></use>
+                </svg>
+            </button>
+            <div class="modal-inner">
+                <svg class="modal-icon" aria-hidden="true">
+                    <use href="#clipboard"></use>
+                </svg>
+                <h3 class="serif">Subscribe, bitches!</h3>
+                <p>Or you're gonna get cut 🔪</p>
+                <!--- {{! subscribe_form partial }} --->
+                <form class="modal-form flex-row">
+                    <input class="modal-input" type="text">
+                    <button class="modal-btn">Submit</button>
+                </form>
+                <!--- {{! subscribe_form partial }} --->
+                <p>Email</p>
+            </div>
+        </div>
+    </aside>
+    <!--- {{! Subscribe Modal }} --->
+
+    <!--- {{! Search Modal }} --->
+    <aside class="modal search-modal outer-container" aria-expanded="false">
+        <div class="inner-container flex-col">
+            <button class="modal-close" title="Close">
+                <svg>
+                    <use href="#close"></use>
+                </svg>
+            </button>
+            <div class="modal-inner">
+                <svg class="modal-icon" aria-hidden="true">
+                    <use href="#search"></use>
+                </svg>
+                <h3 class="serif">Search, bitches!</h3>
+                <p>Find it, boi 🦑</p>
+                <!--- {{! subscribe_form partial }} --->
+                <form class="modal-form flex-row">
+                    <input class="modal-input" type="text" autofocus placeholder="I'm looking for...">
+                    <button class="modal-btn">Search</button>
+                </form>
+                <!--- {{! subscribe_form partial }} --->
+            </div>
+        </div>
+    </aside>
+    <!--- {{! Subscribe Modal }} --->
 
     <script src="assets/js/main.js"></script>
 

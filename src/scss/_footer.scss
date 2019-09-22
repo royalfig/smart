@@ -3,7 +3,7 @@
 //-------------------------------------------
 .footer {
     min-height: 250px;
-    font-size: .85em;
+    font-size: .9375em;
     color: scale-color($light, $lightness: -20%, $saturation: -75%);
     background-color: $dark;
     border-bottom: none;
@@ -25,6 +25,7 @@
     }
 
     .card-tag {
+        font-size: 1em;
         color: scale-color($light, $lightness: -20%, $saturation: -75%);
 
         p {
@@ -49,9 +50,6 @@
         }
     }
 }
-
-
-
 
 .footer-location {
     align-items: center;
@@ -87,6 +85,7 @@
 }
 
 .footer-latest>a {
+    padding-bottom: .25em;
     margin-bottom: .75em;
 
     border-bottom: 1px solid scale-color($light, $lightness: -50%, $saturation: -75%);
@@ -98,7 +97,6 @@
 
 .published-by-ghost {
     justify-content: center;
-    padding: 1em;
-    font-size: .75em;
-    font-weight: 100;
+    padding: em;
+    font-size: 95%;
 }

@@ -17,7 +17,9 @@
 
 // window.addEventListener('resize', viewPort);
 
+
 // Add Grid styles
+
 const gridContainers = document.querySelectorAll('.grid-container-home');
 
 gridContainers.forEach((element) => {
@@ -131,9 +133,8 @@ function readingBarProgress(scrollPos) {
 }
 
 function shareBarAnimation() {
-
-  if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top &&
-    shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
+  if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top
+    && shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
     if (window.innerWidth > 1024) {
       shareBar.style.marginLeft = '10px';
       shareBar.style.opacity = '1';
@@ -179,4 +180,35 @@ copyButton.addEventListener('click', () => {
   temp.select();
   document.execCommand('copy');
   document.body.removeChild(temp);
-})
+});
+
+//-------------------------------------------
+// Modals
+//-------------------------------------------
+const subBtns = document.querySelectorAll('.navbar-subscribe-btn');
+const searchBtns = document.querySelectorAll('.navbar-search-btn');
+
+function modalOpen(e) {
+  const id = e.currentTarget.dataset.id.toString();
+  const targetDiv = document.querySelector(`.${id}-modal`);
+  targetDiv.style.marginLeft = '0';
+  targetDiv.setAttribute('aria-expanded', 'true');
+  // document.body.classList.add('no-scroll');
+}
+
+subBtns.forEach((el) => {
+  el.addEventListener('click', (e) => modalOpen(e));
+});
+
+searchBtns.forEach((el) => {
+  el.addEventListener('click', (e) => modalOpen(e));
+});
+
+const modalClose = document.querySelectorAll('.modal-close');
+
+modalClose.forEach((el) => el.addEventListener('click', (e) => {
+  e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'false');
+  e.currentTarget.parentElement.parentElement.style.marginLeft = '100%';
+
+  // document.body.classList.remove('no-scroll');
+}));
