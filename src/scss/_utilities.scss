@@ -89,7 +89,7 @@
   display: inline-block;
   vertical-align: middle;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  transition-duration: 0.5s;
+  transition-duration: .5s;
   transition-property: color;
   transform: perspective(1px) translateZ(0);
 }
@@ -120,22 +120,14 @@
 // Underline effect
 .underline {
   display: inline-block;
-  line-height: 0.95;
-  text-shadow:
-    2px 2px $light,
-    2px -2px $light,
-    -2px 2px $light,
-    -2px -2px $light;
+  line-height: .95;
+  text-shadow: 2px 2px $light, 2px -2px $light, -2px 2px $light, -2px -2px $light;
   border-bottom: 2px solid currentColor;
 }
 
 .underline-dark {
   display: inline-block;
-  line-height: 0.85;
-  text-shadow:
-    2px 2px $dark,
-    2px -2px $dark,
-    -2px 2px $dark,
-    -2px -2px $dark;
+  line-height: .85;
+  text-shadow: 2px 2px $dark, 2px -2px $dark, -2px 2px $dark, -2px -2px $dark;
   border-bottom: 2px solid currentColor;
 }
