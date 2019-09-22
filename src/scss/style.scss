@@ -1,32 +1,34 @@
 // Dev
-@import 'dev';
+@import "dev";
 
 // Imports
-@import 'normalize';
-@import 'variables';
-@import 'utilities';
+@import "normalize";
+@import "variables";
+@import "utilities";
+
 
 //reset 
 * {
     box-sizing: border-box;
-    margin: 0;
     padding: 0;
+    margin: 0;
 }
 
 button {
+    cursor: pointer;
     background: none;
     border: none;
-    cursor: pointer;
 }
 
 // Responsive typography
+
 html {
-    background: $light;
-    color: $dark;
     font-family: $sans;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 400;
     line-height: 1.5;
+    color: $dark;
+    background: $light;
     scroll-behavior: smooth;
 }
 
@@ -51,42 +53,51 @@ html {
 // Headings GRT 
 h1,
 .h1 {
-    font-size: 4.23529412em;
-    line-height: 1.08333333em;
-    margin-top: 0.36111111em;
-    margin-bottom: 0.72222222em;
+    margin-top: 2.488em * .5;
+    margin-bottom: 2.488em * .5;
+    font-size: 2.488em;
+    line-height: 1.2;
 }
 
 h2,
 .h2 {
-    font-size: 2.64705882em;
-    line-height: 1.15555556em;
-    margin-top: 0.57777778em;
-    margin-bottom: 0.57777778em;
+    margin-top: 2.074em * .5;
+    margin-bottom: 2.074em * .5;
+    font-size: 2.074em;
+    line-height: 1.2;
 }
 
 h3,
 .h3 {
-    font-size: 1.64705882em;
-    line-height: 1.85714286em;
-    margin-top: 0.92857143em;
-    margin-bottom: 0em;
+    margin-top: 1.728em * .5;
+    margin-bottom: 1.728em * .5;
+    font-size: 1.728em;
+    line-height: 1.2;
 }
 
 h4,
 .h4 {
-    font-size: 1em;
-    line-height: 1.52941176em;
-    margin-top: 1.52941176em;
-    margin-bottom: 0em;
+    margin-top: 1.44em * .5;
+    margin-bottom: 1.44em * .5;
+    font-size: 1.44em;
+    line-height: 1.2;
 }
 
 h5,
 .h5 {
+    margin-top: 1.2em * .5;
+    margin-bottom: 1.2em * .5;
+    font-size: 1.2em;
+    line-height: 1.2;
+    letter-spacing: 1.2px;
+}
+
+h6,
+.h6 {
+    margin-top: .5em;
+    margin-bottom: .5em;
     font-size: 1em;
-    line-height: 1.52941176em;
-    margin-top: 1.52941176em;
-    margin-bottom: 0em;
+    line-height: 1.2;
 }
 
 :link {
@@ -99,8 +110,8 @@ h5,
 }
 
 ::selection {
-    background: $prim;
     color: $dark;
+    background: $prim;
 }
 
 :target {
@@ -117,8 +128,8 @@ h5,
     padding: 1em;
 
     background: $light;
-    border-bottom: .5em solid white;
-    
+    border-bottom: .5em solid #ffffff;
+
 }
 
 @media only all and (min-width: $tablet) {
@@ -128,15 +139,15 @@ h5,
 }
 
 .inner-container {
-    margin: 0 auto 1em;
     max-width: $laptop;
+    margin: 0 auto 1em;
 }
 
 .home-page-section-header {
     margin-bottom: .5em;
     line-height: 1;
 
-    
+
 }
 
 //-------------------------------------------
@@ -151,16 +162,16 @@ $hamburger-layer-width: 30px;
 $hamburger-layer-height: 3px;
 $hamburger-layer-spacing: 4px;
 
-@import '../../node_modules/hamburgers/_sass/hamburgers/hamburgers';
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 //-------------------------------------------
 // Import substyles
 //-------------------------------------------
-@import 'nav';
-@import 'search';
-@import 'hero';
-@import 'home';
-@import 'post';
-@import 'ghostRequired';
-@import 'subscribe';
-@import 'footer';
+@import "nav";
+@import "search";
+@import "hero";
+@import "home";
+@import "post";
+@import "ghostRequired";
+@import "subscribe";
+@import "footer";

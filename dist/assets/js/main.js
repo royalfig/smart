@@ -69,6 +69,7 @@ function closeMobileNavMenu() {
   mobileMenu.classList.add('nav-menu-hidden');
   mobileMenu.classList.remove('nav-menu-expanded');
   mobileMenu.setAttribute('aria-expanded', false);
+  document.body.classList.remove('no-scroll');
 }
 
 function closeByEsc(keyPressed) {
@@ -82,8 +83,9 @@ function openMobileNavMenu() {
   mobileHamburger.classList.add('is-active');
   mobileMenu.classList.remove('nav-menu-hidden');
   mobileMenu.classList.add('nav-menu-expanded');
-  mobileMenu.setAttribute('aria-expanded', true);
   mobileMenu.addEventListener('click', closeMobileNavMenu);
+  mobileMenu.setAttribute('aria-expanded', true);
+  document.body.classList.add('no-scroll');
   // Close nav menu with ESC key
   document.body.addEventListener('keydown', closeByEsc);
 }
@@ -129,12 +131,21 @@ function readingBarProgress(scrollPos) {
 }
 
 function shareBarAnimation() {
+
   if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top &&
     shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
-    shareBar.style.marginLeft = '25px';
-    shareBar.style.opacity = '1';
-  } else {
+    if (window.innerWidth > 1024) {
+      shareBar.style.marginLeft = '10px';
+      shareBar.style.opacity = '1';
+    } else {
+      shareBar.style.marginBottom = '0';
+      shareBar.style.opacity = '1';
+    }
+  } else if (window.innerWidth > 1024) {
     shareBar.style.marginLeft = '-200px';
+    shareBar.style.opacity = '0';
+  } else {
+    shareBar.style.marginBottom = '-100px';
     shareBar.style.opacity = '0';
   }
 }

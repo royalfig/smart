@@ -19,6 +19,20 @@
   transition: all .1s ease-in-out;
 }
 
+.fixed-left {
+  font-family: $serif;
+  font-size: 1.25em;
+
+  a {
+    align-items: center;
+    font-size: 1em;
+
+    p {
+      margin-left: .5em;
+    }
+  }
+}
+
 //-------------------------------------------
 // Navbar Mobile
 //-------------------------------------------
@@ -145,14 +159,7 @@
     display: flex;
   }
 
-  .fixed-left {
-    font-family: $serif;
-    font-size: 1.25em;
 
-    a {
-      font-size: 1em;
-    }
-  }
 
   .navbar-site-title {
     align-items: center;
