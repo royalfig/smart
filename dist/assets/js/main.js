@@ -212,3 +212,17 @@ modalClose.forEach((el) => el.addEventListener('click', (e) => {
 
   // document.body.classList.remove('no-scroll');
 }));
+
+//-------------------------------------------
+// Make tables responsive
+//-------------------------------------------
+const tables = document.querySelectorAll('.post-content > table');
+
+function tablePrepend(e) {
+  const responsiveWrapper = document.createElement('div');
+  responsiveWrapper.setAttribute('style', 'width: 100%; overflow-x: auto; margin: 1em 0;');
+  e.parentNode.insertBefore(responsiveWrapper, e);
+  responsiveWrapper.appendChild(e);
+}
+
+tables.forEach((e) => tablePrepend(e));

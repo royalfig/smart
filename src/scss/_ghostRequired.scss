@@ -19,11 +19,10 @@
 
 .kg-width-full {
     position: relative;
-    width: 95vw;
+    width: 100vw;
     min-width: 100%;
     margin: auto calc(50% - 50vw) 1em;
     transform: translateX(calc(50vw - 50%));
-
 }
 
 .kg-bookmark-container {
