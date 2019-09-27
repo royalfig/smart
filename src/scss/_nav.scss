@@ -148,7 +148,9 @@
 // Navbar on laptops and up
 //-------------------------------------------
 @media all and (min-width: $laptop) {
-  .nav-mobile {
+
+  .nav-mobile,
+  .mobile-nav-menu {
     display: none;
   }
 

@@ -21,13 +21,15 @@
 }
 
 .post-header {
-    max-width: $tablet;
     margin: 1em 0 3em;
 }
 
 .post-content {
-    max-width: $tablet;
     margin: 0 auto 4em;
+
+    p {
+        margin-bottom: 1em;
+    }
 
 }
 
@@ -51,18 +53,16 @@
 
 .post-title {
     margin-bottom: .5rem;
-    ;
 }
 
-
-
 .post-author {
+    font-size: 1.1em;
     font-weight: 600;
     color: $prim;
 }
 
-.post-content p {
-    margin-bottom: 1em;
+.post-date {
+    font-size: .9em;
 }
 
 //-------------------------------------------
@@ -109,8 +109,6 @@
         fill: scale-color($dark, $alpha: -50%);
         @include transition(all);
     }
-
-
 
     &.twitter svg {
 

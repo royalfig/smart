@@ -112,9 +112,9 @@
     <!-- {{! Mobile Nav Bar }} -->
     <nav class="nav-mobile">
         <div class="fixed-left">
-            <a class="flex-row" href="/">
+            <a class="flex-row" href="/" aria-labelledby="site-title-mobile">
                 <img src="partials/icons/mc.png">
-                <p>Madeline Chera</p>
+                <p id="site-title-mobile">Madeline Chera</p>
             </a>
         </div>
         <div class="fixed-right">
@@ -152,13 +152,13 @@
                             <use href="#facebook"></use>
                         </svg>
                     </a>
-                    <button class="navbar-subscribe-btn nav-item" data-id="subscribe">
+                    <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
                         <svg>
                             <title>Subscribe</title>
                             <use href="#clipboard"></use>
                         </svg>
                     </button>
-                    <button class="navbar-search-btn nav-item" data-id="search">
+                    <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
                         <svg>
                             <title>Search</title>
                             <use href="#search"></use>
@@ -173,9 +173,9 @@
     <!-- {{!Fixed Navbar (to be moved into partial) }} -->
     <nav class="fixed-navbar">
         <div class="fixed-left">
-            <a class="flex-row brand" href="/">
-                <img src="partials/icons/mc.png">
-                <p>Madeline Chera</p>
+            <a class="flex-row brand" href="/" aria-labelledby="site-title">
+                <img src="partials/icons/mc.png" alt="">
+                <p id="site-title">Madeline Chera</p>
             </a>
         </div>
         <div class="fixed-center">
@@ -187,25 +187,25 @@
         </div>
 
         <div class="nav-sub-menu flex-row">
-            <a class="nav-item twitter" href="/">
+            <a class="nav-item twitter" href="/" aria-label="Twitter">
                 <svg>
                     <title>Twitter</title>
                     <use href="#twitter"></use>
                 </svg>
             </a>
-            <a class="nav-item facebook" href="/">
+            <a class="nav-item facebook" href="/" aria-label="Facebook">
                 <svg>
                     <title>Facebook</title>
                     <use href="#facebook"></use>
                 </svg>
             </a>
-            <button class="navbar-subscribe-btn nav-item" data-id="subscribe">
+            <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
                 <svg>
                     <title>Subscribe</title>
                     <use href="#clipboard"></use>
                 </svg>
             </button>
-            <button class="navbar-search-btn nav-item" data-id="search">
+            <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
                 <svg>
                     <title>Search</title>
                     <use href="#search"></use>
@@ -250,10 +250,13 @@
 
                     <header class="post-header">
                         <h1 class="post-title serif">Research Statement</h1>
-                        <p class="post-byline"><a href="/" class="post-author">Madeline Chera</a> on <span
-                                class="post-date">July 23, 2019</span>. Updated on Aug 9, 2019</p>
+                        <a href="/" class="post-author">Madeline Chera</a>
+                        <p class="post-date">
+                            <time datetime="2019-07-13">July 23, 2019</time>. <time datetime="2019-07-13">Updated Aug 9,
+                                2019
+                            </time></p>
                         <!--- {{! Tags }} --->
-                        <aside class="post-tag-bar flex-row">
+                        <section class="post-tag-bar flex-row">
                             <svg>
                                 <title>Filed under</title>
                                 <use href="#folder"></use>
@@ -270,138 +273,361 @@
                             <a href="/dist/" class="post-tag-link hvr-bounce-to-top"><svg aria-hidden="true">
                                     <use href="#hash"></use>
                                 </svg>Research</a>
-                        </aside>
+                        </section>
                         <!--- {{! Tags }} --->
                     </header>
 
                     <div class="post-content">
-                        <p>Proident consectetur ipsum quis incididunt laboris id magna nulla do sunt ipsum tempor. Quis
-                            ipsum ipsum consectetur sit deserunt laborum aliquip id. Ipsum culpa voluptate labore eu
-                            ullamco fugiat voluptate veniam occaecat irure enim nulla exercitation.
+                        <p>
+                            In a very short time, Greta Thunberg—with her searing stare, Pippi Longstocking braids, and
+                            hand-painted sign reading SKOLSTREJK FÖR KLIMATET—has become a global icon. A year ago, the
+                            16-year-old Swedish climate activist began striking from school each Friday to protest
+                            climate
+                            inaction; last Friday, she gave a speech to hundreds of thousands of people in New York, at
+                            the
+                            Global Climate Strike, which was inspired by her protest.
                         </p>
 
-                        <p>Occaecat duis ipsum sit velit culpa aute cupidatat minim tempor nulla consectetur. Quis
-                            excepteur eiusmod laboris laboris exercitation duis. Consequat culpa reprehenderit
-                            incididunt in. Aliquip ut cillum elit esse veniam deserunt incididunt consectetur occaecat
-                            commodo reprehenderit consectetur. Et eu laborum officia Lorem. Eu consequat aliquip
-                            consectetur aute ullamco ex mollit occaecat aliqua. Voluptate proident consectetur sint ex
-                            est.</p>
-                        <h2>Image size implementation</h2>
+                        <p>It is always at least a little unfortunate to see a young person become an icon—it robs them
+                            of
+                            the privacy of growing up. But Thunberg is an especially flummoxing figure. She looks
+                            younger
+                            than her years, yet her speeches take a shaming, authoritative tone that is, at the very
+                            least,
+                            unusual for a child. “How dare you? You have stolen my dreams and my childhood,” she told
+                            world
+                            leaders at the United Nations today. She has also said that money and eternal economic
+                            growth
+                            are “fairy tales.” So she has inspired both public adoration and malign theorizing (mostly
+                            centered around the power of her parents).</p>
 
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at interdum ipsum.</p>
+                        <blockquote>Last week I had the chance to meet the girl behind the image. She is, thankfully,
+                            still a
+                            person. And she is even more than that: She’s a teenager.</blockquote>
 
+                        <p>In fact, I think her extreme teenager-ness may be key to her influence.</p>
 
-                        <figure class="kg-image-card">
-                            <img class="kg-image" src="https://casper.ghost.org/v1.25.0/images/koenig-demo-2.jpg">
-                            <figcaption>A regular image</figcaption>
-                        </figure>
+                        <p>Thunberg and a handful of other young climate activists were receiving the Ambassador of
+                            Conscience Award from Amnesty International in Washington, D.C., last Monday. In the past 17
+                            years, Amnesty has given the award to other icons: Nelson Mandela, Colin Kaepernick, and Ai
+                            Weiwei. Backstage, grizzled men in their 40s exchanged boisterous handclasps. Interns and
+                            assistants buzzed around: anxious, helpful, and attuned to hierarchy. Somewhere Maggie
+                            Gyllenhaal was in a dressing room.</p>
 
+                        <p>Yet when I saw Thunberg—in jeans, sneakers, and a pink tank top—she seemed small, quiet, and
+                            somewhat overwhelmed. Thunberg has Asperger’s, which she calls her “superpower,” and which
+                            she
+                            says allows her to be more direct and straightforward about climate change.</p>
 
+                        <p>Read: Greta Thunberg is right to panic</p>
 
-                        <figure class="kg-image-card kg-width-wide">
-                            <img class="kg-image" src="https://casper.ghost.org/v1.25.0/images/koenig-demo-1.jpg">
-                            <figcaption>A wide image</figcaption>
-                        </figure>
+                        <p>When we got to a room apart from the hubbub, I asked her how she was managing the onslaught
+                            of
+                            attention. “When I am around too many people, I just shut off my brain, in a way to not get
+                            too
+                            tired, because I cannot take everything in,” she told me. “It’s hard to be the center of
+                            attention; I don’t like that. I have to tell myself it’s for a good cause. I am trying to
+                            say
+                            something with all this attention, to use my platform to do something good.”</p>
 
-                        <figure class="kg-image-card kg-width-full">
-                            <img class="kg-image" src="https://casper.ghost.org/v1.25.0/images/koenig-demo-2.jpg">
-                            <figcaption>A full-width image</figcaption>
-                        </figure>
+                        <p>Her answers were direct but earnest. She sometimes searched for an English word. Unlike
+                            politicians and book-touring authors who have been brain-poisoned by media training, she
+                            answered the questions posed. When I asked whether there was a climate fact that caused her
+                            particular worry, she frowned and first said she could not think of any one fact in
+                            particular.
+                            Then she added that she was worried about what she’d heard would be in the upcoming UN
+                            Intergovernmental Panel report on sea-level rise. Same, Greta.</p>
 
+                        <p>She is strikingly nonradical, at least in tactics. Unlike other young climate activists—such
+                            as
+                            members of the Sunrise Movement in the United States, which is led by college students and
+                            early
+                            20-somethings—she rejects specific policy proposals such as the Green New Deal, instructing
+                            politicians instead to “listen to the science.” She has even declined to endorse a specific
+                            platform in the European Union, where her “Fridays for Future” movement has taken hold. When
+                            I
+                            asked how other teenagers should fight climate change, she said, “They can do everything.
+                            There
+                            are so many ways to make a difference.” Then she gave, as examples, joining an activist
+                            movement
+                            and “also to, if you can, vote.”</p>
 
+                        <p>When I wondered aloud whether young people’s rights are underrepresented in the political
+                            system, she demurred. “Sometimes it feels that way, yeah,” she said. “The problems we care
+                            about
+                            the most are usually not the ones that are being prioritized the highest. Young people are
+                            very
+                            concerned about the climate crisis and ecological crisis, and that is very
+                            underrepresented.”</p>
 
-                        <p><strong>Suspendisse sed</strong> lacus efficitur, euismod nisi a, sollicitudin orci.</p>
-                        <p>Proident ad deserunt enim eu officia veniam et elit nostrud commodo exercitation. Consectetur
-                            ex reprehenderit elit nisi ullamco. Aliqua esse reprehenderit exercitation duis proident
-                            tempor excepteur Lorem qui laboris reprehenderit. Qui amet labore dolore est non id amet
-                            laborum aute dolor fugiat elit. Sit incididunt reprehenderit qui exercitation dolor magna
-                            eiusmod qui amet ullamco deserunt. Cillum deserunt laborum cillum proident ex dolor Lorem
-                            officia adipisicing incididunt consequat labore. Minim culpa pariatur aliqua laborum.</p>
-                        <p>Et commodo commodo esse do. Excepteur elit irure officia est quis aute reprehenderit cillum
-                            pariatur pariatur qui laborum. Sunt et et ullamco in aliqua esse in duis non laborum. Nisi
-                            proident Lorem ut elit consectetur. Esse duis pariatur non sit do ullamco irure elit esse.
-                            <a href="/">Occaecat voluptate ex</a> esse Lorem nisi consequat proident ad mollit.</p>
-                        <p>Ipsum qui eiusmod labore dolore quis reprehenderit consequat. Eiusmod exercitation cillum
-                            voluptate nisi quis magna officia eu. Mollit in adipisicing mollit amet ad culpa. Irure
-                            culpa sunt sint excepteur pariatur voluptate. <em>Duis aliqua amet adipisicing minim.</em>
+                        <p>Photos: Climate-change protests around the world</p>
+
+                        <p>Though perhaps she is moderate in speech, she can be radical in action. Thunberg’s chosen
+                            form
+                            of protest—a school strike—is uncommon in the United States, though more popular in Europe.
+                            Americans think of school as something that chiefly benefits students, not society;
+                            comparing it
+                            to a job, where a labor stoppage is a recognized form of protest, is outside our ken. But if
+                            you
+                            come to see school as part of an intergenerational exchange of welfare—students go to school
+                            now, so that in 30 years they can get jobs and pay Social Security taxes—then it aligns well
+                            with Thunberg’s overall point, which is that older generations have betrayed young people
+                            today
+                            by failing to address climate change. This almost economic argument has the virtue of being
+                            accurate.</p>
+
+                        <p>And when Thunberg talks about this, especially in private, she sounds a lot like … a
+                            teenager.
+                            “We are not the ones who are responsible for this, but we are the ones who have to live with
+                            these consequences, and that is so incredibly unfair,” she said at one point.</p>
+
+                        <p>And this is the way to understand Thunberg that paints her as neither a saint nor a demon but
+                            that still captures her appeal. Thunberg epitomizes, in a person, the unique moral position
+                            of
+                            being a teenager. She can see the world through an “adult” moral lens, and so she knows that
+                            the
+                            world is a heartbreakingly flawed place. But unlike an actual adult, she bears almost no
+                            conscious blame for this dismal state. Thunberg seems to gesture at this when referring to
+                            herself as a “child,” which she does often in speeches.</p>
+
+                        <p>When I spoke with her, I asked whether she felt this dual position: the burden of awareness
+                            mixed with the lack of blame. “Yes, definitely,” she said. “Because we are so young, our
+                            perspective on the world, our perception of the world is so—is so, like, blank. We don’t
+                            have
+                            that much experience. We don’t say, Oh, we cannot change this because it’s always been this
+                            way,
+                            which a lot of old people say. We definitely need that new perspective to see the world.”
                         </p>
 
-                        <h1>Heading 1</h1>
-                        <h2>Heading 2</h2>
-                        <h3>Heading 3</h3>
-                        <h4>Heading 4</h4>
-                        <h5>Heading 5</h5>
-                        <h6>Heading 6</h6>
+                        <p>Perhaps that is why adults find her so unnerving. “This child—and she is a child—has been
+                            scared
+                            and her parents are letting her be controlled by that fear,” writes the right-wing
+                            commentator
+                            Erick Erickson, who blames her parents for “depriving her of a sound education so she
+                            can
+                            lecture grownups.” Jonathan Tobin, at The Federalist, worries that the shoe is on the
+                            other
+                            foot: Thunberg has “forced her parents to adopt a vegan diet” and “bullied her mother to
+                            give up
+                            her career because it involved air travel.”</p>
 
-                        <blockquote>You miss 100% of the shots you don't take</blockquote>
+                        <p>These may seem like exaggerated concerns, but Erickson and Tobin are really just
+                            engaging in a
+                            great American tradition: In this country, even before we greet you, we ask whether
+                            you’re being
+                            parented wrong.</p>
 
-                        <table>
+                        <p>Other arguments against Thunberg’s rhetoric can and should be made; if she wants to
+                            participate
+                            as an adult citizen, she should be criticized like one. But in The New York Times,
+                            the
+                            journalist Christopher Caldwell takes maybe the oddest line of all, claiming that
+                            Thunberg’s
+                            message is antidemocratic. “Democracy often calls for waiting and seeing. Patience
+                            may be
+                            democracy’s cardinal virtue,” he wrote. “Climate change is a serious issue. But to
+                            say, ‘We
+                            can’t wait,’ is to invite a problem just as grave.”</p>
 
-                        </table>
+                        <p>I want to thank Caldwell, because he reminded me of my own childhood. About 20 years
+                            ago, I was
+                            at a restaurant with my parents, reading a kid’s science magazine below the table.
+                            In a small
+                            box at the bottom of the page, it mentioned something called the greenhouse effect,
+                            caused by
+                            cars and factories. The effect could eventually screw up the entire planet’s
+                            environment.
 
-                        <ul>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
-                            <li>Item 5</li>
-                            <li>Item 6</li>
-                        </ul>
+                            <p>My head jolted up. I interrupted my parents’ conversation, which was about
+                                something boring,
+                                like real-estate prices or which highway to take home.</p>
 
-                        <hr>
+                            <p>“Is this real?” I asked, pointing at the magazine.</p>
 
-                        <ol>
-                            <li>Item 1</li>
-                            <li>Item 2</li>
-                            <li>Item 3</li>
-                            <li>Item 4</li>
-                            <li>Item 5</li>
-                            <li>Item 6</li>
-                        </ol>
+                            <p>Oh yeah, definitely, one of them said.</p>
 
-                        <p>1<sup>st</sup><br>2<sub>nd</sub></p>
+                            <p>“Is it getting fixed?” I said.</p>
 
-                        <p>1/2</p>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
-                                    <th>Header</th>
+                            <p>No, no, people don’t really know how to fix it.</p>
 
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
+                            <p>And then I remember feeling something constrict in my chest. It was like the
+                                adult feeling of
+                                learning that a loved one is in danger, of seeing the comfortable world teeter
+                                on its axis.
+                                There was a problem with the entire planet, and everyone was just allowing it to
+                                go on?</p>
 
-                                </tr>
-                                <tr>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
-                                    <td>Cell</td>
+                            <p>In 1999, Caldwell was older than I am now, and the United States had virtually no
+                                national
+                                climate policy. Since then, I have gone to middle school and high school,
+                                graduated from
+                                college, moved across the country twice, spent years as a technology reporter,
+                                and covered
+                                climate change for four years. Since then, the concentration of carbon dioxide
+                                in the atmosphere
+                                has soared from 364 to 415 parts per million. But since then, the United States
+                                still has passed
+                                virtually no new national climate policy.</p>
 
-                                </tr>
+                            <p>Caldwell is right that patience is a democratic virtue. But sloth is a cardinal
+                                sin. Perhaps
+                                only the young can tell the difference.</p>
 
-                            </tbody>
-                        </table>
+                            <p>We want to hear what you think about this article. Submit a letter to the editor
+                                or write to
+                                letters@theatlantic.com.</p>
+                            <p>Proident consectetur ipsum quis incididunt laboris id magna nulla do
+                                sunt ipsum tempor. Quis
+                                ipsum ipsum consectetur sit deserunt laborum aliquip id. Ipsum culpa voluptate
+                                labore eu
+                                ullamco fugiat voluptate veniam occaecat irure enim nulla exercitation.
+                            </p>
+
+                            <p>Occaecat duis ipsum sit velit culpa aute cupidatat minim tempor nulla
+                                consectetur. Quis
+                                excepteur eiusmod laboris laboris exercitation duis. Consequat culpa
+                                reprehenderit
+                                incididunt in. Aliquip ut cillum elit esse veniam deserunt incididunt
+                                consectetur occaecat
+                                commodo reprehenderit consectetur. Et eu laborum officia Lorem. Eu consequat
+                                aliquip
+                                consectetur aute ullamco ex mollit occaecat aliqua. Voluptate proident
+                                consectetur sint ex
+                                est.</p>
+                            <h2>Image size implementation</h2>
+
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce at interdum ipsum.
+                            </p>
+
+
+                            <figure class="kg-image-card">
+                                <img alt="" class="kg-image"
+                                    src="https://casper.ghost.org/v1.25.0/images/koenig-demo-2.jpg">
+                                <figcaption>A regular image</figcaption>
+                            </figure>
+
+
+
+                            <figure class="kg-image-card kg-width-wide">
+                                <img alt="" class="kg-image"
+                                    src="https://casper.ghost.org/v1.25.0/images/koenig-demo-1.jpg">
+                                <figcaption>A wide image</figcaption>
+                            </figure>
+
+                            <figure class="kg-image-card kg-width-full">
+                                <img alt="" class="kg-image"
+                                    src="https://casper.ghost.org/v1.25.0/images/koenig-demo-2.jpg">
+                                <figcaption>A full-width image</figcaption>
+                            </figure>
+
+
+
+                            <p><strong>Suspendisse sed</strong> lacus efficitur, euismod nisi a, sollicitudin
+                                orci.</p>
+                            <p>Proident ad deserunt enim eu officia veniam et elit nostrud commodo exercitation.
+                                Consectetur
+                                ex reprehenderit elit nisi ullamco. Aliqua esse reprehenderit exercitation duis
+                                proident
+                                tempor excepteur Lorem qui laboris reprehenderit. Qui amet labore dolore est non
+                                id amet
+                                laborum aute dolor fugiat elit. Sit incididunt reprehenderit qui exercitation
+                                dolor magna
+                                eiusmod qui amet ullamco deserunt. Cillum deserunt laborum cillum proident ex
+                                dolor Lorem
+                                officia adipisicing incididunt consequat labore. Minim culpa pariatur aliqua
+                                laborum.</p>
+                            <p>Et commodo commodo esse do. Excepteur elit irure officia est quis aute
+                                reprehenderit cillum
+                                pariatur pariatur qui laborum. Sunt et et ullamco in aliqua esse in duis non
+                                laborum. Nisi
+                                proident Lorem ut elit consectetur. Esse duis pariatur non sit do ullamco irure
+                                elit esse.
+                                <a href="/">Occaecat voluptate ex</a> esse Lorem nisi consequat proident ad
+                                mollit.</p>
+                            <p>Ipsum qui eiusmod labore dolore quis reprehenderit consequat. Eiusmod
+                                exercitation cillum
+                                voluptate nisi quis magna officia eu. Mollit in adipisicing mollit amet ad
+                                culpa. Irure
+                                culpa sunt sint excepteur pariatur voluptate. <em>Duis aliqua amet adipisicing
+                                    minim.</em>
+                            </p>
+
+                            <h1>Heading 1</h1>
+                            <h2>Heading 2</h2>
+                            <h3>Heading 3</h3>
+                            <h4>Heading 4</h4>
+                            <h5>Heading 5</h5>
+                            <h6>Heading 6</h6>
+
+                            <blockquote>You miss 100% of the shots you don't take</blockquote>
+
+                            <table>
+
+                            </table>
+
+                            <ul>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                                <li>Item 4</li>
+                                <li>Item 5</li>
+                                <li>Item 6</li>
+                            </ul>
+
+                            <hr>
+
+                            <ol>
+                                <li>Item 1</li>
+                                <li>Item 2</li>
+                                <li>Item 3</li>
+                                <li>Item 4</li>
+                                <li>Item 5</li>
+                                <li>Item 6</li>
+                            </ol>
+
+                            <p>1<sup>st</sup><br>2<sub>nd</sub></p>
+
+                            <p>1/2</p>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+                                        <th>Header</th>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+
+                                    </tr>
+                                    <tr>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+                                        <td>Cell</td>
+
+                                    </tr>
+
+                                </tbody>
+                            </table>
 
 
                     </div>
@@ -416,24 +642,24 @@
 
 
                 <footer class="post-footer-container grid-container inner-container">
-                    <h3 class="post-footer-title-1 serif">About the Author</h3>
-                    <h3 class="post-footer-title-2 serif">Related Posts</h3>
+                    <h3 class="post-footer-title-1 serif">About</h3>
+                    <h3 class="post-footer-title-2 serif">More to Read</h3>
                     <div class="author-footer">
                         <div class="author-footer-img-container flex-row">
-                            <a href="/" class="author-footer-img-link">
-                                <img class="author-footer-img"
-                                    src="https://madelinechera.com/img/MadelineChera-992.jpg" />
+                            <a href="/" class="author-footer-img-link" aria-labelledby="footer-site-title">
+                                <img class="author-footer-img" src="https://madelinechera.com/img/MadelineChera-992.jpg"
+                                    alt="Madeline" />
                             </a>
                             <div>
-                                <a class="serif" href="/">Madeline Chera</a>
+                                <a class="serif" id="footer-site-title" href="/">Madeline Chera</a>
                                 <div class="author-footer-social flex-row">
-                                    <a class="twitter" href="/">
+                                    <a class="twitter" href="/" aria-label="Twitter">
                                         <svg>
                                             <title>Twitter</title>
                                             <use href="#twitter"></use>
                                         </svg>
                                     </a>
-                                    <a class="facebook" href="/">
+                                    <a class="facebook" href="/" aria-label="Facebook">
                                         <svg>
                                             <title>Facebook</title>
                                             <use href="#facebook"></use>
@@ -441,7 +667,7 @@
                                     </a>
                                 </div>
                                 <div class="author-footer-location flex-row">
-                                    <svg>
+                                    <svg aria-label="location">
                                         <title>Location</title>
                                         <use href="#location"></use>
                                     </svg>
@@ -512,21 +738,22 @@
                 </footer>
 
                 <!-- {{! Subscribe Module }} -->
-                <aside class="subscribe">
+                <section class="subscribe">
                     <div class="inner-container">
                         <div class="modal-inner">
                             <h3 class="serif">Subscribe</h3>
                             <p>Don't miss what happens next 🦙</p>
                             <!--- {{! subscribe_form partial }} --->
                             <form class="modal-form flex-row">
-                                <input class="modal-input" type="text">
-                                <button class="modal-btn">Submit</button>
+                                <label for="subscribe">Email</label>
+                                <input class="modal-input" type="email" id="subscribe" autocomplete="off">
+                                <button class="modal-btn" type="submit">Submit</button>
+                                <!--- {{! subscribe_form partial }} --->
+
                             </form>
-                            <!--- {{! subscribe_form partial }} --->
-                            <p>Email</p>
                         </div>
                     </div>
-                </aside>
+                </section>
                 <!-- {{! Subscribe Module }} -->
             </div>
         </div>
@@ -543,7 +770,7 @@
                     <p class="home-page-section-header serif">About Me</p>
                     <p>Madeline Chera</p>
                     <div class="footer-location flex-row">
-                        <svg aria-hidden="true">
+                        <svg aria-label="location">
                             <use href="#location"></use>
                         </svg>
                         <p>South Bend, IN</p>
@@ -552,13 +779,13 @@
                         Anthropology
                         of Food at Indiana University, Bloomington. </p>
                     <div class="footer-social flex-row">
-                        <a class="twitter" href="/" class="nav-item">
+                        <a class="twitter" href="/" class="nav-item" aria-label="Twitter">
                             <svg>
                                 <title>Twitter</title>
                                 <use href="#twitter"></use>
                             </svg>
                         </a>
-                        <a class="facebook" href="/" class="nav-item">
+                        <a class="facebook" href="/" class="nav-item" aria-label="Facebook">
                             <svg>
                                 <title>Facebook</title>
                                 <use href="#facebook"></use>
@@ -569,7 +796,7 @@
 
                 <div class="footer-section flex-col">
                     <p class="home-page-section-header serif">Topics</p>
-                    <a class="card-tag flex-row dark" href="/tag/anthropology">
+                    <a class="card-tag flex-row dark" href="/tag/anthropology" aria-label="Anthropology">
                         <svg>
                             <use href="#hash"></use>
                         </svg>
@@ -577,7 +804,7 @@
                             Cultural Anthropology
                         </p>
                     </a>
-                    <a class="card-tag flex-row dark" href="/tag/anthropology">
+                    <a class="card-tag flex-row dark" href="/tag/anthropology" aria-label="Food Studies">
                         <svg>
                             <use href="#hash"></use>
                         </svg>
@@ -585,7 +812,7 @@
                             Food Studies
                         </p>
                     </a>
-                    <a class="card-tag flex-row dark" href="/tag/anthropology">
+                    <a class="card-tag flex-row dark" href="/tag/anthropology" aria-label="Pedagogy">
                         <svg>
                             <use href="#hash"></use>
                         </svg>
@@ -616,39 +843,39 @@
     <!--- {{! Footer }} --->
 
     <!--- {{! Share Bar }} --->
-    <aside class="post-share-bar">
+    <div class="post-share-bar">
         <p class="post-share-bar-title">Share</p>
-        <a class="post-share-bar-link twitter" href="/">
+        <a class="post-share-bar-link twitter" href="/" aria-label="Share on Twitter">
             <svg>
                 <title>Share on Twitter</title>
                 <use href="#twitter"></use>
             </svg>
         </a>
-        <a class="post-share-bar-link facebook" href="/">
+        <a class="post-share-bar-link facebook" href="/" aria-label="Share on Facebook">
             <svg>
                 <title>Share on Facebook</title>
                 <use href="#facebook"></use>
             </svg>
         </a>
-        <a class="post-share-bar-link linkedin" href="/">
+        <a class="post-share-bar-link linkedin" href="/" aria-label="Share on LinkedIn">
             <svg>
                 <title>Share on LinkedIn</title>
                 <use href="#linkedin"></use>
             </svg>
         </a>
-        <button class="post-share-bar-link copy" id="copy-button">
+        <button class="post-share-bar-link copy" id="copy-button" aria-label="Copy to clipboard">
             <svg>
                 <title id="copyIconTitle">Copy to clipboard</title>
                 <use href="#copy"></use>
             </svg>
         </button>
-    </aside>
+    </div>
     <!--- {{! Share Bar }} --->
 
     <!--- {{! Subscribe Modal }} --->
     <aside class="modal subscribe-modal outer-container" aria-expanded="false">
         <div class="inner-container flex-col">
-            <button class="modal-close" title="Close">
+            <button class="modal-close" title="Close" aria-label="close">
                 <svg>
                     <use href="#close"></use>
                 </svg>
@@ -661,11 +888,11 @@
                 <p>Or you're gonna get cut 🔪</p>
                 <!--- {{! subscribe_form partial }} --->
                 <form class="modal-form flex-row">
-                    <input class="modal-input" type="text">
-                    <button class="modal-btn">Submit</button>
+                    <input class="modal-input" id="modal-subscribe" type="email">
+                    <button class="modal-btn" type="submit">Submit</button>
+                    <label for="modal-subscribe">Email</lable>
                 </form>
                 <!--- {{! subscribe_form partial }} --->
-                <p>Email</p>
             </div>
         </div>
     </aside>
@@ -674,7 +901,7 @@
     <!--- {{! Search Modal }} --->
     <aside class="modal search-modal outer-container" aria-expanded="false">
         <div class="inner-container flex-col">
-            <button class="modal-close" title="Close">
+            <button class="modal-close" title="Close" aria-label="close">
                 <svg>
                     <use href="#close"></use>
                 </svg>
@@ -687,8 +914,9 @@
                 <p>Find it, boi 🦑</p>
                 <!--- {{! subscribe_form partial }} --->
                 <form class="modal-form flex-row">
-                    <input class="modal-input" type="text" autofocus placeholder="I'm looking for...">
-                    <button class="modal-btn">Search</button>
+                    <input class="modal-input" type="text" autofocus placeholder="I'm looking for..."
+                        aria-label="Enter your search term">
+                    <button class="modal-btn" type="button" aria-label="search">Search</button>
                 </form>
                 <!--- {{! subscribe_form partial }} --->
             </div>

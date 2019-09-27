@@ -20,11 +20,18 @@
 
     .inner-container {
         // align-items: center;
-        justify-content: center;
+        // justify-content: center;
         height: 100%;
     }
 }
 
+@media (min-width: $tablet) {
+    .modal {
+        .inner-container {
+            justify-content: center;
+        }
+    }
+}
 
 .modal-inner {
     padding: 3em;
@@ -37,17 +44,27 @@
     }
 
     p {
+        display: inline-block;
+        padding: .5em;
         margin-bottom: 1.4em;
         font-size: 1.2em;
-        color: $light;
-
-        &:last-child {
-            font-weight: 100;
-            text-align: left;
-        }
+        color: $dark;
+        background: $light;
     }
 
+    label {
+        flex: 0;
+        padding: 0;
+        margin-right: .5rem;
+        font-weight: 100;
+        line-height: 1;
+        color: $light;
+        text-align: left;
+        background: none;
+    }
 }
+
+
 
 .modal-icon {
     width: 3em;
@@ -62,6 +79,7 @@
 }
 
 .modal-input {
+    flex: 1;
     width: 80%;
     height: 2em;
     font-size: 1.25em;
@@ -77,8 +95,7 @@
 .modal-btn {
     height: 50%;
     padding: .5em .75em;
-    margin-left: 1em;
-    // font-weight: 100;
+    margin-left: .5rem;
     line-height: 1;
     color: $light;
     vertical-align: bottom;
