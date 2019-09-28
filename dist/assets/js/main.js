@@ -125,10 +125,10 @@ const buffer = 50;
 
 // Variables for share bar
 const postImg = document.querySelector('.post-img');
-const postContentHeight = document.querySelector('.post-content').clientHeight;
+const postContentHeight = document.querySelector('.post-content');
 
 function readingBarProgress(scrollPos) {
-  const progress = Math.ceil((scrollPos / postContentHeight) * 100);
+  const progress = Math.ceil((scrollPos / postContentHeight.clientHeight) * 100);
   progressBar.style.width = `${progress}%`;
 }
 

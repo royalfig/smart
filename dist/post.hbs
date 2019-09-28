@@ -2,26 +2,180 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
+{{! Post Reading Progress }}
+<div class="post-reading-progress flex-row"></div>
+{{! Post Reading Progress }}
+
 {{navigation}}
 
 {{#post}}
-{{#if feature_image}}
-<div class="post-image navbar-test">
-    <img src="{{img_url feature_image}}" alt="">
-</div>
-{{/if}}
+{{!-- Post Header  --}}
+<header class="post-img">
+    {{#if feature_image}}
+    <img srcset="{{img_url feature_image size="s"}} 300w,
+                 {{img_url feature_image size="m"}} 600w,
+                 {{img_url feature_image size="l"}} 1000w,
+                 {{img_url feature_image size="xl"}} 2000w" sizes="100vw" src="{{img_url feature_image size="xl"}}"
+        alt="{{title}}">
+    {{else}}<div class="no-post-img"></div>{{/if}}
+</header>
+{{!-- Post Header  --}}
 
-<main class="main">
+{{!-- Main  --}}
+<main id="main" class="main">
     <div class="outer-container">
         <div class="inner-container">
             <article class="{{post_class}} post">
-                <h1 class="post-title serif">{{title}}</h1>
-                <section class="post-content">
-                {{content}}
-                </section>
+
+                <header class="post-header">
+                    <h1 class="post-title serif">{{title}}</h1>
+                    <a href="/" class="post-author">{{authors}}</a>
+                    <p class="post-date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>.
+                        {{#if updated_at}}<time
+                            datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>{{/if}}</p>
+
+                    {{! Tags }}
+                    <section class="post-tag-bar flex-row">
+                        <svg aria-hidden="true">
+                            <title>Filed under</title>
+                            <use href="#folder"></use>
+                        </svg>
+                        {{#foreach tags}}
+                        <a href="{{url}}" class="post-tag-link hvr-bounce-to-top"><svg aria-hidden="true">
+                                <use href="#hash"></use>
+                            </svg>{{name}}</a>
+                        {{/foreach}}
+                    </section>
+                    {{! Tags }}
+                </header>
+
+                <div class="post-content">
+                    {{content}}
+                </div>
             </article>
+
+            <footer class="post-footer-container grid-container inner-container">
+                <h3 class="post-footer-title-1 serif">About the Author</h3>
+                <h3 class="post-footer-title-2 serif">More to Read</h3>
+                {{#primary_author}}
+                <div class="author-footer">
+                    <div class="author-footer-img-container flex-row">
+                        <a href="{{url}}" class="author-footer-img-link" aria-labelledby="footer-site-title">
+                            {{#if profile_image}}
+                            <img class="author-footer-img" src="{{img_url profile_image size="s"}}" alt="{{name}}" />
+                            {{else}}
+                            <div class="no-author-footer-img"></div>
+                            {{/if}}
+                        </a>
+                        <div>
+                            <a class="serif" id="footer-site-title" href="{{url}}">{{name}}</a>
+                            <div class="author-footer-social flex-row">
+                                {{#if twitter}}
+                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                    <svg>
+                                        <title>Twitter</title>
+                                        <use href="#twitter"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                                {{#if facebook}}
+                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                    <svg>
+                                        <title>Facebook</title>
+                                        <use href="#facebook"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                            </div>
+                            {{#if location}}
+                            <div class="author-footer-location flex-row">
+                                <svg aria-label="location">
+                                    <title>Location</title>
+                                    <use href="#location"></use>
+                                </svg>
+                                <p>{{location}}</p>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{#if bio}}
+                    <p>{{bio}}</p>
+                    {{/if}}
+                </div>
+                {{/primary_author}}
+
+                {{#get "posts" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}"}}
+                {{#foreach posts}}
+                <div class="related-posts related-posts-{{@number}}">
+                    <article class="card card-{{@number}}">
+                        <a href="{{url}}" aria-label="{{title}}">
+                            {{#if feature_image}}<img class="card-img" src="{{img_url feature_image}}"
+                                alt="{{title}}">{{else}}<div class="no-card-img"></div>{{/if}}
+                        </a>
+                        <div class="card-body">
+                            <div class="flex-row card-date-tag">
+                                <p class="card-date"><time
+                                        datetime="{{date published_at}}">{{date published_at timeago="true"}}</time></p>
+                                {{#primary_tag}}
+                                <a class="card-tag hvr-bounce-to-top flex-row" href="{{url}}"> <svg>
+                                        <use href="#hash"></use>
+                                    </svg>
+                                    <p>
+                                        {{name}}
+                                    </p>
+                                </a>
+                                {{/primary_tag}}
+                            </div>
+                            <a href="{{url}}">
+                                <h4 class="card-title">{{title}}</h3>
+                            </a>
+                            <p class="excerpt">
+                                {{excerpt}}
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                {{/foreach}}
+                {{/get}}
+            </footer>
+
+            {{#if @labs.subscribe}}
+            {{> "subscribe_inner"}}
+            {{/if}}
         </div>
     </div>
 </main>
+{{!-- Main --}}
 
 {{/post}}
+
+{{!-- Share Bar --}}
+<div class="post-share-bar">
+    <p class="post-share-bar-title">Share</p>
+    <a class="post-share-bar-link twitter" href="/" aria-label="Share on Twitter">
+        <svg>
+            <title>Share on Twitter</title>
+            <use href="#twitter"></use>
+        </svg>
+    </a>
+    <a class="post-share-bar-link facebook" href="/" aria-label="Share on Facebook">
+        <svg>
+            <title>Share on Facebook</title>
+            <use href="#facebook"></use>
+        </svg>
+    </a>
+    <a class="post-share-bar-link linkedin" href="/" aria-label="Share on LinkedIn">
+        <svg>
+            <title>Share on LinkedIn</title>
+            <use href="#linkedin"></use>
+        </svg>
+    </a>
+    <button class="post-share-bar-link copy" id="copy-button" aria-label="Copy to clipboard">
+        <svg>
+            <title id="copyIconTitle">Copy to clipboard</title>
+            <use href="#copy"></use>
+        </svg>
+    </button>
+</div>
+{{!-- Share Bar --}}

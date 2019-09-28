@@ -1,36 +1,119 @@
-<!-- Fixed Navbar-->
+{{!-- Mobile Navbar --}}
+<nav class="nav-mobile">
+    <div class="fixed-left">
+        <a class="flex-row" href="{{@site_url}}" aria-labelledby="site-title-mobile">
+            <img src="partials/icons/mc.png" alt="">
+            <p id="site-title-mobile">{{@site.title}}</p>
+        </a>
+    </div>
+    <div class="fixed-right">
+        <button class="hamburger hamburger--slider" id="mobile-nav-btn" aria-label="menu">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+    </div>
+</nav>
+{{!-- Mobile Navbar --}}
+
+{{!-- Mobile Nav Menu --}}
+<div class="mobile-nav-menu nav-menu-hidden" aria-expanded="false">
+    <div class="mobile-nav-menu-inner">
+        <div class="flex-col">
+            <a href="{{@site_url}}">
+                <p class="site-title serif">{{@site.title}}</p>
+            </a>
+            {{#if @site.navigation}}
+            {{#foreach navigation}}
+            <a href="{{url}}"
+                class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+            {{/foreach}}
+            {{/if}}
+            <div class="nav-sub-menu flex-row">
+                {{#if @site.twitter}}
+                <a class="nav-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
+                    <svg>
+                        <title>Twitter</title>
+                        <use href="#twitter"></use>
+                    </svg>
+                </a>
+                {{/if}}
+                {{#if @site.facebook}}
+                <a class="nav-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
+                    <svg>
+                        <title>Facebook</title>
+                        <use href="#facebook"></use>
+                    </svg>
+                </a>
+                {{/if}}
+                {{#if @labs.subscribers}}
+                <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
+                    <svg>
+                        <title>Subscribe</title>
+                        <use href="#clipboard"></use>
+                    </svg>
+                </button>
+                {{/if}}
+                <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
+                    <svg>
+                        <title>Search</title>
+                        <use href="#search"></use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{{!-- Mobile Nav Menu --}}
+
+{{!-- Fixed Navbar --}}
 <nav class="fixed-navbar">
     <div class="fixed-left">
-        <a href="/">
-            <h1>{{@site.title}}</h1>
+        <a class="flex-row brand" href="{{@site_url}}" aria-labelledby="site-title">
+            <img src="partials/icons/mc.png" alt="">
+            <p id="site-title">{{@site.title}}</p>
         </a>
     </div>
     <div class="fixed-center">
         {{#if @site.navigation}}
         {{#foreach navigation}}
-        <a href="{{url}}" class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+        <a href="{{url}}"
+            class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
         {{/foreach}}
         {{/if}}
     </div>
 
-    <div class="fixed-right nav-right">
+    <div class="nav-sub-menu flex-row">
         {{#if @site.twitter}}
-        <a id="twitter" href="{{twitter_url @site.twitter}}" class="nav-item">
-            {{> "icons/twitter"}}
+        <a class="nav-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
+            <svg>
+                <title>Twitter</title>
+                <use href="#twitter"></use>
+            </svg>
         </a>
         {{/if}}
-       {{#if @site.facebook}}
-        <a id="facebook" href="{{facebook_url @site.facebook}}" class="nav-item">
-            {{> "icons/fb"}}
+        {{#if @site.facebook}}
+        <a class="nav-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
+            <svg>
+                <title>Facebook</title>
+                <use href="#facebook"></use>
+            </svg>
         </a>
         {{/if}}
         {{#if @labs.subscribers}}
-        <button id="subscribe" href="/" class="nav-item">
-            {{> "icons/clipboard"}}
+        <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
+            <svg>
+                <title>Subscribe</title>
+                <use href="#clipboard"></use>
+            </svg>
         </button>
         {{/if}}
-        <button id="search-button" href="/" class="search-button nav-item">
-            {{> "icons/search"}}
+        <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
+            <svg>
+                <title>Search</title>
+                <use href="#search"></use>
+            </svg>
         </button>
     </div>
 </nav>
+{{!-- Fixed Navbar --}}
