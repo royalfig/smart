@@ -7,7 +7,7 @@
     z-index: 10;
     width: 0;
     height: 3px;
-    margin-top: $navbar;
+    // margin-top: $navbar;
     background: linear-gradient(to right, scale-color($prim, $alpha: -50%), scale-color($acc1, $alpha: -50%));
 
 }
@@ -294,19 +294,38 @@
     align-items: center;
     margin-bottom: .25em;
 
-    svg {
+    a svg {
         // margin-top: 3px;
         // margin-left: -3px;
         margin-right: .1em;
         fill: none;
         stroke: scale-color($dark, $alpha: -50%);
         stroke-width: 2px;
+
     }
 }
 
 .related-posts {
     .card-img {
         height: $base;
+    }
+
+    .card-tag {
+        display: flex;
+        // align-items: center;
+
+        svg {
+            width: 1em;
+            height: 1em;
+            stroke: scale-color($dark, $alpha: -50%);
+            stroke-width: 2px;
+        }
+
+        p {}
+
+        &:hover {
+            background: none;
+        }
     }
 }
 

@@ -103,7 +103,7 @@
   left: 0;
   z-index: -1;
   content: "";
-  background: scale-color($prim, $alpha: -50%);
+  background: scale-color($acc1, $alpha: -50%);
   transition-timing-function: ease-out;
   transition-duration: .45s;
   transition-property: transform;

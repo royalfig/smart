@@ -17,7 +17,7 @@
 
 // window.addEventListener('resize', viewPort);
 
-
+window.addEventListener('keyup', (e) => console.log(e));
 // Add Grid styles
 
 const gridContainers = document.querySelectorAll('.grid-container-home');

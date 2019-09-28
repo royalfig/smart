@@ -108,17 +108,19 @@
         </symbol>
     </svg>
     <!--- {{! SVG Spritesheet }} --->
-
+    <!-- {{! Post Reading Progress }} -->
+    <div class="post-reading-progress flex-row"></div>
+    <!-- {{! Post Reading Progress }} -->
     <!-- {{! Mobile Nav Bar }} -->
     <nav class="nav-mobile">
         <div class="fixed-left">
             <a class="flex-row" href="/" aria-labelledby="site-title-mobile">
-                <img src="partials/icons/mc.png">
+                <img src="partials/icons/mc.png" alt="">
                 <p id="site-title-mobile">Madeline Chera</p>
             </a>
         </div>
         <div class="fixed-right">
-            <button class="hamburger hamburger--slider" id="mobile-nav-btn">
+            <button class="hamburger hamburger--slider" id="mobile-nav-btn" aria-label="menu">
                 <span class="hamburger-box">
                     <span class="hamburger-inner"></span>
                 </span>
@@ -199,6 +201,7 @@
                     <use href="#facebook"></use>
                 </svg>
             </a>
+
             <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
                 <svg>
                     <title>Subscribe</title>
@@ -215,9 +218,6 @@
     </nav>
     <!-- {{!Fixed Navbar (to be moved into partial) }} -->
 
-    <!-- {{! Post Reading Progress }} -->
-    <div class="post-reading-progress flex-row"></div>
-    <!-- {{! Post Reading Progress }} -->
 
     <!-- {{! Back to top }} -->
     <!-- <a href="#main" class="back-to-top">
@@ -237,7 +237,7 @@
 
     <!-- {{! Post Header}} -->
     <header class="post-img">
-        <img src="https://www.brwnpaperbag.com/wp-content/uploads/2017/05/bodil-jane-2.jpg" alt="">
+        <img src="https://www.brwnpaperbag.com/wp-content/uploads/2017/05/bodil-jane-2.jpg" alt="test">
         <!-- <div class="no-post-img"></div> -->
     </header>
     <!-- {{! Post Header}} -->
@@ -631,18 +631,11 @@
 
 
                     </div>
-
-
-
-
-
-
-
                 </article>
 
 
                 <footer class="post-footer-container grid-container inner-container">
-                    <h3 class="post-footer-title-1 serif">About</h3>
+                    <h3 class="post-footer-title-1 serif">About the Author</h3>
                     <h3 class="post-footer-title-2 serif">More to Read</h3>
                     <div class="author-footer">
                         <div class="author-footer-img-container flex-row">
@@ -687,8 +680,9 @@
                             <div class="card-body">
                                 <div class="flex-row card-date-tag">
                                     <p class="card-date">3 days ago</p>
-                                    <a class="card-tag flex-row" href="/tag/anthropology"><img
-                                            src="partials/icons/hash.svg">
+                                    <a class="card-tag hvr-bounce-to-top flex-row" href="/tag/anthropology"> <svg>
+                                            <use href="#hash"></use>
+                                        </svg>
                                         <p>
                                             Pedagogy
                                         </p>
@@ -715,8 +709,10 @@
                             <div class="card-body">
                                 <div class="flex-row card-date-tag">
                                     <p class="card-date">3 days ago</p>
-                                    <a class="card-tag flex-row" href="/tag/anthropology"><img
-                                            src="partials/icons/hash.svg">
+                                    <a class="card-tag hvr-bounce-to-top flex-row" href="/tag/anthropology">
+                                        <svg>
+                                            <use href="#hash"></use>
+                                        </svg>
                                         <p>
                                             Pedagogy
                                         </p>
@@ -767,7 +763,7 @@
             <div class="grid-container">
 
                 <div class="footer-section flex-col">
-                    <p class="home-page-section-header serif">About Me</p>
+                    <p class="home-page-section-header serif">About</p>
                     <p>Madeline Chera</p>
                     <div class="footer-location flex-row">
                         <svg aria-label="location">
@@ -796,7 +792,7 @@
 
                 <div class="footer-section flex-col">
                     <p class="home-page-section-header serif">Topics</p>
-                    <a class="card-tag flex-row dark" href="/tag/anthropology" aria-label="Anthropology">
+                    <a class="card-tag flex-row" href="/tag/anthropology" aria-label="Anthropology">
                         <svg>
                             <use href="#hash"></use>
                         </svg>
@@ -873,7 +869,7 @@
     <!--- {{! Share Bar }} --->
 
     <!--- {{! Subscribe Modal }} --->
-    <aside class="modal subscribe-modal outer-container" aria-expanded="false">
+    <aside class="modal subscribe-modal outer-container" aria-expanded="false" aria-hidden="true">
         <div class="inner-container flex-col">
             <button class="modal-close" title="Close" aria-label="close">
                 <svg>
@@ -888,9 +884,9 @@
                 <p>Or you're gonna get cut 🔪</p>
                 <!--- {{! subscribe_form partial }} --->
                 <form class="modal-form flex-row">
+                    <label for="modal-subscribe">Email</label>
                     <input class="modal-input" id="modal-subscribe" type="email">
                     <button class="modal-btn" type="submit">Submit</button>
-                    <label for="modal-subscribe">Email</lable>
                 </form>
                 <!--- {{! subscribe_form partial }} --->
             </div>
@@ -899,7 +895,7 @@
     <!--- {{! Subscribe Modal }} --->
 
     <!--- {{! Search Modal }} --->
-    <aside class="modal search-modal outer-container" aria-expanded="false">
+    <aside class="modal search-modal outer-container" aria-expanded="false" aria-hidden="true">
         <div class="inner-container flex-col">
             <button class="modal-close" title="Close" aria-label="close">
                 <svg>
