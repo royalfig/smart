@@ -2,7 +2,6 @@
 <html lang="{{@site.lang}}">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,16 +9,179 @@
 
     {{!-- CSS  --}}
     <link rel="stylesheet" href="{{asset 'css/style.css'}}">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
-
 </head>
 
 <body>
 
     {{!-- All the main content is inserted here --}}
     {{{body}}}
+
+    {{!-- Footer Module --}}
+    <footer class="footer outer-container">
+        <div class="inner-container ">
+            <div class="grid-container">
+                <div class="footer-section flex-col">
+                    <p class="home-page-section-header serif">About</p>
+                    <p>{{@site.title}}</p>
+                    {{#if @site.description}}
+                    <p>{{@site.description}}</p>
+                    {{/if}}
+                    <div class="footer-social flex-row">
+                        {{#if @site.twitter}}
+                        <a class="twitter" href="{{@site.twitter}}" class="nav-item" aria-label="Twitter">
+                            <svg>
+                                <title>Twitter</title>
+                                <use href="#twitter"></use>
+                            </svg>
+                        </a>
+                        {{/if}}
+                        {{#if @site.facebook}}
+                        <a class="facebook" href="{{@site.facebook}}" class="nav-item" aria-label="Facebook">
+                            <svg>
+                                <title>Facebook</title>
+                                <use href="#facebook"></use>
+                            </svg>
+                        </a>
+                        {{/if}}
+                    </div>
+                </div>
+
+                {{get "tags" limit="10"}}
+                <div class="footer-section flex-col">
+                    <p class="home-page-section-header serif">Topics</p>
+
+                    <a class="card-tag flex-row" href="/tag/anthropology" aria-label="Anthropology">
+                        <svg>
+                            <use href="#hash"></use>
+                        </svg>
+                        <p>
+                            Cultural Anthropology
+                        </p>
+                    </a>
+                    <a class="card-tag flex-row dark" href="/tag/anthropology" aria-label="Food Studies">
+                        <svg>
+                            <use href="#hash"></use>
+                        </svg>
+                        <p>
+                            Food Studies
+                        </p>
+                    </a>
+                    <a class="card-tag flex-row dark" href="/tag/anthropology" aria-label="Pedagogy">
+                        <svg>
+                            <use href="#hash"></use>
+                        </svg>
+                        <p>
+                            Pedagogy
+                        </p>
+                    </a>
+
+                </div>
+
+                <div class="footer-section footer-latest flex-col">
+                    <p class="home-page-section-header serif">Latest</p>
+                    <a href="/">Country Chicken, Globalization, and Discourse: Young Tamil
+                        Women’s Cultural Critique</a>
+                    <a href="/">Outreach</a>
+                    <a href="/">Where the 🔔 Is my 🍕?</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="published-by-ghost flex-row">
+            <p>
+                &copy; 2019 Madeline Chera | Published by Ghost
+            </p>
+        </div>
+    </footer>
+    {{!-- Footer --}}
+
+    {{!-- Share Bar --}}
+    <div class="post-share-bar">
+        <p class="post-share-bar-title">Share</p>
+        <a class="post-share-bar-link twitter" href="/" aria-label="Share on Twitter">
+            <svg>
+                <title>Share on Twitter</title>
+                <use href="#twitter"></use>
+            </svg>
+        </a>
+        <a class="post-share-bar-link facebook" href="/" aria-label="Share on Facebook">
+            <svg>
+                <title>Share on Facebook</title>
+                <use href="#facebook"></use>
+            </svg>
+        </a>
+        <a class="post-share-bar-link linkedin" href="/" aria-label="Share on LinkedIn">
+            <svg>
+                <title>Share on LinkedIn</title>
+                <use href="#linkedin"></use>
+            </svg>
+        </a>
+        <button class="post-share-bar-link copy" id="copy-button" aria-label="Copy to clipboard">
+            <svg>
+                <title id="copyIconTitle">Copy to clipboard</title>
+                <use href="#copy"></use>
+            </svg>
+        </button>
+    </div>
+    {{!-- Share Bar --}}
+
+    {{!-- Subscribe Modal --}}
+    <aside class="modal subscribe-modal outer-container" aria-expanded="false" aria-hidden="true">
+        <div class="inner-container flex-col">
+            <button class="modal-close" title="Close" aria-label="close">
+                <svg>
+                    <use href="#close"></use>
+                </svg>
+            </button>
+            <div class="modal-inner">
+                <svg class="modal-icon" aria-hidden="true">
+                    <use href="#clipboard"></use>
+                </svg>
+                <h3 class="serif">Subscribe, bitches!</h3>
+                <p>Or you're gonna get cut 🔪</p>
+                - {{! subscribe_form partial }} -
+                <form class="modal-form flex-row">
+                    <label for="modal-subscribe">Email</label>
+                    <input class="modal-input" id="modal-subscribe" type="email">
+                    <button class="modal-btn" type="submit">Submit</button>
+                </form>
+                - {{! subscribe_form partial }} -
+            </div>
+        </div>
+    </aside>
+    {{!-- Subscribe Modal --}}
+
+    {{!-- Search Modal --}}
+    <aside class="modal search-modal outer-container" aria-expanded="false" aria-hidden="true">
+        <div class="inner-container flex-col">
+            <button class="modal-close" title="Close" aria-label="close">
+                <svg>
+                    <use href="#close"></use>
+                </svg>
+            </button>
+            <div class="modal-inner">
+                <svg class="modal-icon" aria-hidden="true">
+                    <use href="#search"></use>
+                </svg>
+                <h3 class="serif">Search, bitches!</h3>
+                <p>Find it, boi 🦑</p>
+                - {{! subscribe_form partial }} -
+                <form class="modal-form flex-row">
+                    <input class="modal-input" type="text" autofocus placeholder="I'm looking for..."
+                        aria-label="Enter your search term">
+                    <button class="modal-btn" type="button" aria-label="search">Search</button>
+                </form>
+                - {{! subscribe_form partial }} -
+            </div>
+        </div>
+    </aside>
+    {{!-- Subscribe Modal --}}
 
     <script src="{{asset 'js/main.js'}}"></script>
 
