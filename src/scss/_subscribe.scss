@@ -5,4 +5,12 @@
     min-height: 300px;
     text-align: center;
     background: linear-gradient(45deg, $prim, $acc1);
+
+    &.page {
+        height: 100vh;
+
+        h1 {
+            color: $light;
+        }
+    }
 }

@@ -2,15 +2,27 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<section class="subscribe">
+<section class="subscribe page">
     <div class="inner-container">
-        <div class="modal-inner">
-            <h3 class="serif">Subscribe</h3>
-            <p>Don't miss what happens next 🦙</p>
+        <a href="{{#if subscribed_url}}{{subscribed_url}}{{else}}{{@site.url}}{{/if}}" class="go-back">BACK</a>
+        <div class="modal-inner flex-col">
+            {{^if success}}
+            <header>
+                <h1 class="serif">Subscribe</h1>
+                <p>Don't miss what happens next!</p>
+            </header>
+
             {{!-- subscribe_form partial --}}
-            {{subscribe_form input_class="modal-input" autofocus="true"}}
+            {{subscribe_form input_class="modal-input"}}
             {{!-- subscribe_form partial --}}
-            </form>
+
+            {{else}}
+            <header>
+                <h1 class="serif">You're subscribed!</h1>
+            </header>
+            <p> You've successfully subscribed to <em>{{@site.title}}</em>
+                with the email address <em>{{email}}</em>.</p>
+            {{/if}}
         </div>
     </div>
 </section>

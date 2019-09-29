@@ -112,7 +112,7 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/primary_author}}
 
-                {{#get "posts" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}"}}
+                {{#get "posts" include="tags" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}"}}
                 {{#foreach posts}}
                 <div class="related-posts related-posts-{{@number}}">
                     <article class="card card-{{@number}}">
@@ -155,24 +155,25 @@ into the {body} of the default.hbs template --}}
 </main>
 {{!-- Main --}}
 
-{{/post}}
-
 {{!-- Share Bar --}}
 <div class="post-share-bar">
     <p class="post-share-bar-title">Share</p>
-    <a class="post-share-bar-link twitter" href="/" aria-label="Share on Twitter">
+    <a class="post-share-bar-link twitter" href="https://twitter.com/share?url={{encode url}}&amp;text={{encode title}}"
+        aria-label="Share on Twitter">
         <svg>
             <title>Share on Twitter</title>
             <use href="#twitter"></use>
         </svg>
     </a>
-    <a class="post-share-bar-link facebook" href="/" aria-label="Share on Facebook">
+    <a class="post-share-bar-link facebook" href="http://www.facebook.com/sharer.php?u={{encode url}}"
+        aria-label="Share on Facebook">
         <svg>
             <title>Share on Facebook</title>
             <use href="#facebook"></use>
         </svg>
     </a>
-    <a class="post-share-bar-link linkedin" href="/" aria-label="Share on LinkedIn">
+    <a class="post-share-bar-link linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{encode url}}"
+        aria-label="Share on LinkedIn">
         <svg>
             <title>Share on LinkedIn</title>
             <use href="#linkedin"></use>
@@ -186,3 +187,4 @@ into the {body} of the default.hbs template --}}
     </button>
 </div>
 {{!-- Share Bar --}}
+{{/post}}

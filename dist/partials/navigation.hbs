@@ -1,7 +1,7 @@
 {{!-- Mobile Navbar --}}
 <nav class="nav-mobile">
     <div class="fixed-left">
-        <a class="flex-row" href="{{@site_url}}" aria-labelledby="site-title-mobile">
+        <a class="flex-row" href="{{@site.url}}" aria-labelledby="site-title-mobile">
             {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
             <p id="site-title-mobile">{{@site.title}}</p>
         </a>
@@ -20,7 +20,7 @@
 <div class="mobile-nav-menu nav-menu-hidden" aria-expanded="false">
     <div class="mobile-nav-menu-inner">
         <div class="flex-col">
-            <a href="{{@site_url}}">
+            <a href="{{@site.url}}">
                 <p class="site-title serif">{{@site.title}}</p>
             </a>
             {{#if @site.navigation}}
@@ -69,7 +69,7 @@
 {{!-- Fixed Navbar --}}
 <nav class="fixed-navbar">
     <div class="fixed-left">
-        <a class="flex-row brand" href="{{@site_url}}" aria-labelledby="site-title">
+        <a class="flex-row brand" href="{{@site.url}}" aria-labelledby="site-title">
             {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
             <p id="site-title">{{@site.title}}</p>
         </a>
