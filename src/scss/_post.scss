@@ -168,9 +168,6 @@
     }
 }
 
-
-
-
 //-------------------------------------------
 // Tag Bar
 //-------------------------------------------
@@ -283,6 +280,10 @@
         color: scale-color($dark, $alpha: -50%);
     }
 
+
+}
+
+.author-footer-social {
     svg {
         width: 1em;
         height: 1em;
@@ -294,10 +295,12 @@
     align-items: center;
     margin-bottom: .25em;
 
-    a svg {
-        // margin-top: 3px;
-        // margin-left: -3px;
+    svg {
+        width: 1em;
+        height: 1em;
+        margin-top: 3px;
         margin-right: .1em;
+        margin-left: -3px;
         fill: none;
         stroke: scale-color($dark, $alpha: -50%);
         stroke-width: 2px;

@@ -9,6 +9,7 @@ into the {body} of the default.hbs template --}}
 {{navigation}}
 
 {{#post}}
+
 {{!-- Post Header  --}}
 <header class="post-img">
     {{#if feature_image}}
@@ -31,23 +32,21 @@ into the {body} of the default.hbs template --}}
                     <h1 class="post-title serif">{{title}}</h1>
                     {{#primary_author}}<a href="/" class="post-author">{{name}}</a>{{/primary_author}}
                     <p class="post-date">
-                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>.
-                        {{#if updated_at}}<time
-                            datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>{{/if}}</p>
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time>
 
-                    {{! Tags }}
-                    <section class="post-tag-bar flex-row">
-                        <svg aria-hidden="true">
-                            <title>Filed under</title>
-                            <use href="#folder"></use>
-                        </svg>
-                        {{#foreach tags}}
-                        <a href="{{url}}" class="post-tag-link hvr-bounce-to-top"><svg aria-hidden="true">
-                                <use href="#hash"></use>
-                            </svg>{{name}}</a>
-                        {{/foreach}}
-                    </section>
-                    {{! Tags }}
+                        {{! Tags }}
+                        <section class="post-tag-bar flex-row">
+                            <svg aria-hidden="true">
+                                <title>Filed under</title>
+                                <use href="#folder"></use>
+                            </svg>
+                            {{#foreach tags}}
+                            <a href="{{url}}" class="post-tag-link hvr-bounce-to-top"><svg aria-hidden="true">
+                                    <use href="#hash"></use>
+                                </svg>{{name}}</a>
+                            {{/foreach}}
+                        </section>
+                        {{! Tags }}
                 </header>
 
                 <div class="post-content">
@@ -84,6 +83,14 @@ into the {body} of the default.hbs template --}}
                                     <svg>
                                         <title>Facebook</title>
                                         <use href="#facebook"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                                {{#if website}}
+                                <a class="website" href="{{website}}" aria-label="{{website}}">
+                                    <svg>
+
+                                        <use href="#website"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
@@ -140,7 +147,7 @@ into the {body} of the default.hbs template --}}
                 {{/get}}
             </footer>
 
-            {{#if @labs.subscribe}}
+            {{#if @labs.subscribers}}
             {{> "subscribe_inner"}}
             {{/if}}
         </div>

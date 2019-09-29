@@ -3,7 +3,7 @@
     {{hidden}}
 
     <label for="modal-subscribe">Email</label>
-    <input class="modal-input" id="modal-subscribe" type="email" autofocus>
+    {{input_email class=input_class placeholder=placeholder value=email autofocus=autofocus}}
     <button class="{{button_class}} modal-btn" type="submit">Subscribe</button>
 
     {{! This is used to get extra info about where this subscriber came from }}

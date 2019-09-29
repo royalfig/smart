@@ -137,8 +137,12 @@ into the {body} of the default.hbs template --}}
     {{!-- Outreach --}}
 
     {{!-- Subscribe --}}
-    {{#if @labs.subscribe}}
-    {{> "subscribe_inner"}}
-    {{/if}}
+    {{#if @labs.subscribers}}
+    <div class="outer-container">
+        <div class="inner-container">
+            {{> "subscribe_inner"}}
+            {{/if}}
+        </div>
+    </div>
     {{!-- Subscribe --}}
 </main>
