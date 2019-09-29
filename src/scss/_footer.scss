@@ -27,6 +27,7 @@
     .card-tag {
         font-size: 1em;
         color: scale-color($light, $lightness: -20%, $saturation: -75%);
+        @include transition(color);
 
         p {
             margin: 0;
@@ -84,14 +85,20 @@
     }
 }
 
-.footer-latest>a {
-    padding-bottom: .25em;
-    margin-bottom: .75em;
+.footer-latest {
+    .footer-date {
+        margin-bottom: .25em;
+        font-size: .75em;
+    }
 
-    border-bottom: 1px solid scale-color($light, $lightness: -50%, $saturation: -75%);
+    a {
+        padding-bottom: .25em;
+        margin-bottom: .75em;
+        border-bottom: 1px solid scale-color($light, $lightness: -50%, $saturation: -75%);
 
-    &:hover {
-        color: $prim;
+        &:hover {
+            color: $prim;
+        }
     }
 }
 

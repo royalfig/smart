@@ -1,24 +1,11 @@
-// dEV
-// const dev = document.querySelector('.dev');
+//-------------------------------------------
+// Home
+//-------------------------------------------
 
-// function viewPort() {
-//   if (window.innerWidth < 640) {
-//     dev.textContent = `${window.innerWidth}px, PHONE`;
-//   } else if (window.innerWidth > 639 && window.innerWidth < 1024) {
-//     dev.textContent = `${window.innerWidth}px, TABLET`;
-//   } else if (window.innerWidth > 1023 && window.innerWidth < 1280) {
-//     dev.textContent = `${window.innerWidth}px, LAPTOP`;
-//   } else {
-//     dev.textContent = `${window.innerWidth}px, DESKTOP`;
-//   }
-// }
 
-// viewPort();
-
-// window.addEventListener('resize', viewPort);
-
-window.addEventListener('keyup', (e) => console.log(e));
-// Add Grid styles
+//-------------------------------------------
+// Grid Styles
+//-------------------------------------------
 
 const gridContainers = document.querySelectorAll('.grid-container-home');
 
@@ -29,38 +16,8 @@ gridContainers.forEach((element) => {
 });
 
 //-------------------------------------------
-// Fly in fixed navbar
-// Will have to add padding to offset content?
+// Mobile Nav Menu
 //-------------------------------------------
-
-// const fixedNavbar = document.querySelector('.fixed-navbar');
-// const navbarTest = document.querySelector('.navbar-test');
-
-// let lastKnownScrollPos = 0;
-// let ticking = false;
-
-// function scroller(scrollPos) {
-//   if (navbarTest.offsetHeight - (navbarTest.offsetHeight * 0.9) < scrollPos) {
-//     fixedNavbar.style.background = '#181818';
-//   } else {
-//     fixedNavbar.style.background = 'transparent';
-//   }
-// }
-
-// window.addEventListener('scroll', () => {
-//   lastKnownScrollPos = window.scrollY;
-
-//   if (!ticking) {
-//     window.requestAnimationFrame(() => {
-//       scroller(lastKnownScrollPos);
-//       ticking = false;
-//     });
-
-//     ticking = true;
-//   }
-// });
-
-// Slide in mobile nav menu
 const mobileNavBtn = document.getElementById('mobile-nav-btn');
 const mobileMenu = document.querySelector('.mobile-nav-menu');
 const mobileHamburger = document.querySelector('.hamburger');
@@ -104,18 +61,14 @@ mobileNavBtn.addEventListener('click', () => {
 });
 
 //-------------------------------------------
+// Post Scripts
+//-------------------------------------------
+
+//-------------------------------------------
 // Reading Progress Bar and Share Bar
 //-------------------------------------------
 let lastKnownScrollPos = 0;
 let ticking = false;
-
-// function scroller(scrollPos) {
-//   if (navbarTest.offsetHeight - (navbarTest.offsetHeight * 0.9) < scrollPos) {
-//     fixedNavbar.style.background = '#181818';
-//   } else {
-//     fixedNavbar.style.background = 'transparent';
-//   }
-// }
 
 // Variables for reading progress
 const progressBar = document.querySelector('.post-reading-progress');
@@ -172,15 +125,17 @@ if (progressBar) {
 //-------------------------------------------
 const copyButton = document.getElementById('copy-button');
 
-copyButton.addEventListener('click', () => {
-  const url = window.location.href;
-  const temp = document.createElement('input');
-  document.body.appendChild(temp);
-  temp.value = url;
-  temp.select();
-  document.execCommand('copy');
-  document.body.removeChild(temp);
-});
+if (copyButton) {
+  copyButton.addEventListener('click', () => {
+    const url = window.location.href;
+    const temp = document.createElement('input');
+    document.body.appendChild(temp);
+    temp.value = url;
+    temp.select();
+    document.execCommand('copy');
+    document.body.removeChild(temp);
+  });
+}
 
 //-------------------------------------------
 // Modals

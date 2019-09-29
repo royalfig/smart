@@ -1,11 +1,7 @@
-// Dev
-@import "dev";
-
 // Imports
 @import "normalize";
 @import "variables";
 @import "utilities";
-
 
 //reset 
 * {
@@ -105,8 +101,9 @@ h6,
 }
 
 ::selection {
+    font-weight: 600;
     color: $dark;
-    background: $prim;
+    background: #ffdc73;
 }
 
 :target {
@@ -121,10 +118,8 @@ h6,
     position: relative;
     width: 100%;
     padding: 1em;
-
     background: $light;
     border-bottom: .5em solid #ffffff;
-
 }
 
 @media only all and (min-width: $tablet) {

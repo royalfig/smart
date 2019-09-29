@@ -1,0 +1,26 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{navigation}}
+
+<main class="main">
+
+    <div class="outer-container">
+
+        <div class="inner-container">
+
+            <section class="grid-container grid-container-index">
+
+                {{#foreach posts}}
+                {{> "card"}}
+                {{/foreach}}
+
+            </section>
+
+            <!-- End inner container  -->
+        </div>
+
+        <!-- End outer container  -->
+    </div>
+</main>

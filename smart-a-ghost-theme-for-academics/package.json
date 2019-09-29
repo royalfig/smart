@@ -29,7 +29,7 @@
         "Profile"
     ],
     "config": {
-        "posts_per_page": 25,
+        "posts_per_page": 5,
         "image_sizes": {
             "xxs": {
                 "width": 30

@@ -4,10 +4,10 @@
 .card {
     position: relative;
     display: flex;
-    max-width: 100%;
     flex-direction: column;
+    max-width: 100%;
     background: $light;
-    transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+    @include transition(all);
 }
 
 .card-img,
@@ -29,8 +29,8 @@
 }
 
 .card-body {
-    margin: .5em 0;
     padding: 1em;
+    margin: .5em 0;
 }
 
 .card-date-tag {
@@ -39,34 +39,31 @@
 
 .card-date,
 .card-tag {
-    color: $dark;
+    display: flex;
+    padding: 1px;
     font-size: .75em;
     font-weight: 400;
+    color: $dark;
     text-transform: uppercase;
-    padding: 1px;
 }
 
 .card-tag {
     align-items: center;
-    @include transition(background-color);
 
-    &:hover {
-        background-color: $acc2;
-    }
-
-    img {
+    svg {
+        width: 1em;
         height: 1em;
+        stroke: currentColor;
     }
 }
 
 .card-title {
-    margin: .25em 0;
-    color: $dark;
     position: relative;
-
+    margin: .25em 0;
     font-size: 1.5em;
     font-weight: 600;
     line-height: 1.1;
+    color: $dark;
     @include transition(color);
 
     &:hover {
@@ -75,8 +72,8 @@
 }
 
 .card-excerpt {
-    color: $dark;
     margin: .5em 0;
+    color: $dark;
 }
 
 //-------------------------------------------
@@ -86,10 +83,9 @@
 // Mobile phones
 .grid-container-home {
     align-content: stretch;
-
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    margin: 2em 0;
     max-width: 100%;
+    margin: 2em 0;
 }
 
 // Tablets
