@@ -9,8 +9,38 @@
     &.page {
         height: 100vh;
 
+        .inner-container {
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .go-back {
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 1em;
+                height: 1em;
+                fill: none;
+                stroke: $light;
+                stroke-width: 2px;
+            }
+
+            p {
+
+                color: $light;
+                background: none;
+            }
+        }
+
+
         h1 {
             color: $light;
+        }
+
+        p {
+            background: $light;
         }
     }
 }

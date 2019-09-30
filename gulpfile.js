@@ -26,7 +26,7 @@ function css() {
 // Build JS
 function buildJS() {
   return gulp
-    .src('./dist/assets/js/main.js')
+    .src('./dist/assets/js/*.js')
     .pipe(babel({
       presets: ['@babel/preset-env'],
     }))
