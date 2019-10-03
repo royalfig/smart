@@ -86,8 +86,8 @@ function readingBarProgress(scrollPos) {
 }
 
 function shareBarAnimation() {
-  if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top
-    && shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
+  if (postImg.getBoundingClientRect().bottom + buffer < shareBar.getBoundingClientRect().top &&
+    shareBar.getBoundingClientRect().bottom < footer.getBoundingClientRect().top - buffer) {
     if (window.innerWidth > 1024) {
       shareBar.style.marginLeft = '0';
       shareBar.style.opacity = '1';
@@ -181,3 +181,66 @@ function tablePrepend(e) {
 }
 
 tables.forEach((e) => tablePrepend(e));
+
+// Search
+const api = new GhostContentAPI({
+  url: 'http://localhost:2368',
+  key: 'c10f1eda667e7db4d6cd719908',
+  version: 'v2'
+});
+
+const searchResult = [];
+const builtIdx = api.posts
+  .browse({
+    include: 'tags,authors',
+    formats: 'plaintext',
+    limit: 'all'
+  })
+  .then((posts) => {
+    return posts;
+  })
+  .then(posts => {
+    const idx = lunr(function () {
+
+      this.ref('uuid')
+      this.field('plaintext')
+      this.field('title')
+
+      posts.forEach(function (doc) {
+        this.add(doc)
+      }, this)
+    })
+
+    return {
+      posts,
+      idx
+    };
+  })
+  .catch((err) => {
+    console.error(err);
+  })
+
+builtIdx.then(x => {
+      let srch = x.idx.search('blumenbach');
+      let result = srch.forEach(el => {
+        x.posts.filter(post => {
+          if (post.uuid === el.ref) {
+            console.log({
+              title: post.title,
+              slug: post.slug
+            })
+          }
+        })
+      })
+    });
+
+
+      // let sRes = idx.search('blumenbach');
+
+      // sRes.forEach( el => {
+      //   posts.filter(x => {
+      //     if (x.uuid === el.ref) {
+      //       searchResult.push({title: x.title, slug: x.slug})
+      //     }
+      //   })
+      // })

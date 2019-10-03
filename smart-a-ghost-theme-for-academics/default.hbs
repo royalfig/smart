@@ -160,7 +160,7 @@
                     </div>
                 </div>
 
-                {{#get "tags" limit="5"}}
+                {{#get "tags" include="count.posts" limit="5" order="count.posts"}}
                 {{#if tags}}
                 <div class="footer-section flex-col">
                     <p class="home-page-section-header serif">Topics</p>
@@ -243,14 +243,16 @@
                         aria-label="Enter your search term">
                     {{!-- <button class="modal-btn" type="button" aria-label="search">Search</button> --}}
                 </form>
-                <ul id="search-result"></ul>
+                <div id="search-result"></div>
             </div>
         </div>
     </aside>
     {{!-- Subscribe Modal --}}
 
+<script src="https://unpkg.com/@tryghost/content-api@1.2.10/umd/content-api.min.js"></script>
+  <script src="https://unpkg.com/lunr/lunr.js"></script>
+
     <script src="{{asset 'js/main.js'}}"></script>
-    <script src="{{asset 'js/ghost-finder.js'}}"></script>
 
     {{!-- Ghost footer required, right before the closing body tag --}}
     {{ghost_foot}}

@@ -47,6 +47,7 @@
   "dependencies": {
     "hamburgers": "^1.1.3",
     "hover.css": "^2.3.2",
+    "js-search": "^1.4.3",
     "normalize.css": "^8.0.1"
   }
 }
