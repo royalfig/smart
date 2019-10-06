@@ -35,34 +35,14 @@
     }
 
     a {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
         color: $prim;
-        vertical-align: middle;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-        transform: perspective(1px) translateZ(0);
+        @include transition(color);
     }
 
-    a:before {
-        position: absolute;
-        right: 100%;
-        bottom: -7px;
-        left: 0;
-        z-index: -1;
-        height: 12px;
-        content: "";
-        background: $prim;
-        transition-timing-function: ease-out;
-        transition-duration: .3s;
-        transition-property: right;
-    }
-
-    a:hover:before,
-    a:focus:before,
-    a:active:before {
-        right: 0;
-        background: linear-gradient(to right, $prim, $acc1);
+    a:hover,
+    a:active,
+    a:focus {
+        color: scale-color($prim, $lightness: -50%)
     }
 
     ul,
