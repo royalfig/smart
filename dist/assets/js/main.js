@@ -181,3 +181,68 @@ function tablePrepend(e) {
 }
 
 tables.forEach((e) => tablePrepend(e));
+
+// Search
+const api = new GhostContentAPI({
+  url: 'http://localhost:2368',
+  key: '4db03b3482d82faf27a48f7309',
+  version: 'v2',
+});
+
+const builtIdx = api.posts
+  .browse({
+    include: 'tags,authors',
+    formats: 'plaintext',
+    limit: 'all',
+  })
+  .then((posts) => posts)
+  .then((posts) => {
+    const idx = lunr(function () {
+      this.ref('uuid');
+      this.field('plaintext');
+      this.field('title');
+
+      posts.forEach(function (doc) {
+        this.add(doc);
+      }, this);
+    });
+
+    return {
+      posts,
+      idx,
+    };
+  })
+  .catch((err) => {
+    console.error(err);
+  });
+
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
+const searchResult = document.getElementById('search-result');
+
+
+function searchPosts(term) {
+  searchResult.innerHTML = '';
+
+  console.log(term);
+
+  builtIdx.then((obj) => {
+    const srch = obj.idx.search(term);
+    console.log(srch);
+
+    srch.forEach((el) => {
+      obj.posts.filter((post) => {
+        if (post.uuid === el.ref) {
+          searchResult.innerHTML += `<a href="/${post.slug}">${post.title}</a><br>`;
+        } else {
+          searchResult.innerHTML = '<p>No results</p>';
+        }
+      });
+    });
+  });
+}
+
+searchBtn.addEventListener('click', () => searchPosts(searchInput.value));
+searchInput.addEventListener('focus', (e) => {
+  e.target.value = '';
+});
