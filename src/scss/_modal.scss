@@ -53,11 +53,10 @@
     }
 
     label {
-        flex: 0;
+        width: 100%;
         padding: 0;
         margin-right: .5rem;
         font-weight: 100;
-        line-height: 1;
         color: $light;
         text-align: left;
         background: none;
@@ -75,6 +74,7 @@
 }
 
 .modal-form {
+    flex-wrap: wrap;
     align-items: flex-end;
 }
 
