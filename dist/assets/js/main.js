@@ -218,6 +218,7 @@ const builtIdx = api.posts
 
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
+const searchResultHeader = document.querySelector('.search-result-header');
 const searchResult = document.getElementById('search-result');
 
 
@@ -230,12 +231,18 @@ function searchPosts(term) {
     const srch = obj.idx.search(term);
     console.log(srch);
 
+    if (srch.length > 1) {
+      searchResultHeader.textContent = `${srch.length} Results`;
+    } else if (srch.length != 0) {
+      searchResultHeader.textContent = `${srch.length} Result`;
+    } else {
+      searchResultHeader.textContent = 'No results';
+    }
+
     srch.forEach((el) => {
       obj.posts.filter((post) => {
         if (post.uuid === el.ref) {
           searchResult.innerHTML += `<a href="/${post.slug}">${post.title}</a><br>`;
-        } else {
-          searchResult.innerHTML = '<p>No results</p>';
         }
       });
     });
