@@ -189,7 +189,6 @@ const api = new GhostContentAPI({
   version: 'v2'
 });
 
-const searchResult = [];
 const builtIdx = api.posts
   .browse({
     include: 'tags,authors',
@@ -220,27 +219,41 @@ const builtIdx = api.posts
     console.error(err);
   })
 
-builtIdx.then(x => {
-      let srch = x.idx.search('blumenbach');
-      let result = srch.forEach(el => {
-        x.posts.filter(post => {
-          if (post.uuid === el.ref) {
-            console.log({
-              title: post.title,
-              slug: post.slug
-            })
-          }
-        })
+const searchInput = document.getElementById('search-input');
+const searchBtn = document.getElementById('search-btn');
+const searchResult = document.getElementById('search-result');
+
+searchBtn.addEventListener('click', () => searchPosts(searchInput.value));
+searchInput.addEventListener('focus', (e) => e.target.value = '');
+
+function searchPosts(term) {
+  searchResult.innerHTML = '';
+
+  console.log(term);
+
+  builtIdx.then(obj => {
+
+    let srch = obj.idx.search(term);
+    console.log(srch);
+
+    srch.forEach(el => {
+      obj.posts.filter(post => {
+        if (post.uuid === el.ref) {
+          searchResult.innerHTML += `<a href="/${post.slug}">${post.title}</a><br>`;
+        }
       })
-    });
+    })
+  });
+}
 
 
-      // let sRes = idx.search('blumenbach');
 
-      // sRes.forEach( el => {
-      //   posts.filter(x => {
-      //     if (x.uuid === el.ref) {
-      //       searchResult.push({title: x.title, slug: x.slug})
-      //     }
-      //   })
-      // })
+// let sRes = idx.search('blumenbach');
+
+// sRes.forEach( el => {
+//   posts.filter(x => {
+//     if (x.uuid === el.ref) {
+//       searchResult.push({title: x.title, slug: x.slug})
+//     }
+//   })
+// })
