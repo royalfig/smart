@@ -148,7 +148,7 @@ function modalOpen(e) {
   const targetDiv = document.querySelector(`.${id}-modal`);
   targetDiv.style.marginLeft = '0';
   targetDiv.setAttribute('aria-expanded', 'true');
-  // document.body.classList.add('no-scroll');
+  targetDiv.querySelector('input').focus();
 }
 
 subBtns.forEach((el) => {
@@ -182,9 +182,11 @@ function tablePrepend(e) {
 
 tables.forEach((e) => tablePrepend(e));
 
-// Search
+//-------------------------------------------
+// Search function
+//-------------------------------------------
 const api = new GhostContentAPI({
-  url: 'http://localhost:2368',
+  url: `${window.location.protocol}//${window.location.host}`,
   key: '4db03b3482d82faf27a48f7309',
   version: 'v2',
 });
@@ -225,15 +227,12 @@ const searchResult = document.getElementById('search-result');
 function searchPosts(term) {
   searchResult.innerHTML = '';
 
-  console.log(term);
-
   builtIdx.then((obj) => {
     const srch = obj.idx.search(term);
-    console.log(srch);
 
     if (srch.length > 1) {
       searchResultHeader.textContent = `${srch.length} Results`;
-    } else if (srch.length != 0) {
+    } else if (srch.length !== 0) {
       searchResultHeader.textContent = `${srch.length} Result`;
     } else {
       searchResultHeader.textContent = 'No results';
@@ -242,14 +241,37 @@ function searchPosts(term) {
     srch.forEach((el) => {
       obj.posts.filter((post) => {
         if (post.uuid === el.ref) {
-          searchResult.innerHTML += `<a href="/${post.slug}">${post.title}</a><br>`;
+          const published = new Date(post.published_at);
+          const months = [
+            'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
+          ];
+          const publishedString = `${months[published.getMonth()]} ${published.getDate()}, ${published.getFullYear()}`;
+          searchResult.innerHTML += `<p class="search-result-date">${publishedString}</p>
+          <a class="search-result-item" href="${post.url}">${post.title}</a><br>`;
         }
       });
     });
   });
 }
 
-searchBtn.addEventListener('click', () => searchPosts(searchInput.value));
+searchBtn.addEventListener('click', () => {
+  if (searchInput.value === '') {
+    searchResultHeader.textContent = 'Enter a search term';
+    searchResult.innerHTML = '';
+  } else {
+    searchPosts(searchInput.value);
+  }
+});
+
+searchInput.addEventListener('keyup', (e) => {
+  if (searchInput.value === '') {
+    searchResultHeader.textContent = 'Enter a search term';
+    searchResult.innerHTML = '';
+  } else if (e.keyCode === 13) {
+    searchPosts(searchInput.value);
+  }
+});
+
 searchInput.addEventListener('focus', (e) => {
   e.target.value = '';
 });
