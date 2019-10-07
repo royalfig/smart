@@ -19,17 +19,7 @@
     }
 
     .inner-container {
-        // align-items: center;
-        // justify-content: center;
         height: 100%;
-    }
-}
-
-@media (min-width: $tablet) {
-    .modal {
-        .inner-container {
-            justify-content: center;
-        }
     }
 }
 
@@ -139,4 +129,30 @@
     &:focus {
         outline: 2px dotted currentColor;
     }
+}
+
+//-------------------------------------------
+// Search Styles
+//-------------------------------------------
+.search-result-container {
+    padding: 1em 0;
+    margin-top: 2em;
+}
+
+.search-result-header {
+    font-size: 1.2em;
+    color: $dark;
+    background: $light;
+}
+
+.search-result-date {
+    margin: 1em 0;
+    color: $light;
+    background: none;
+}
+
+.search-result-item {
+    padding: .5em 0;
+    margin: 1em 0;
+    border-bottom: 1px solid $light;
 }
