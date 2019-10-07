@@ -187,7 +187,7 @@ tables.forEach((e) => tablePrepend(e));
 //-------------------------------------------
 const api = new GhostContentAPI({
   url: `${window.location.protocol}//${window.location.host}`,
-  key: '4db03b3482d82faf27a48f7309',
+  key: SEARCH_API,
   version: 'v2',
 });
 

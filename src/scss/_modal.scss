@@ -33,15 +33,6 @@
         color: $light;
     }
 
-    p {
-        display: inline-block;
-        padding: .5em;
-        margin-bottom: 1.4em;
-        font-size: 1.2em;
-        color: $dark;
-        background: $light;
-    }
-
     label {
         width: 100%;
         padding: 0;
@@ -53,6 +44,14 @@
     }
 }
 
+.modal-tagline {
+    display: inline-block;
+    padding: .5em;
+    margin-bottom: 1.4em;
+    font-size: 1.2em;
+    color: $dark;
+    background: $light;
+}
 
 
 .modal-icon {
@@ -140,19 +139,24 @@
 }
 
 .search-result-header {
-    font-size: 1.2em;
+    font-size: 1.3em;
     color: $dark;
     background: $light;
 }
 
+#search-result {
+    text-align: left;
+}
+
 .search-result-date {
-    margin: 1em 0;
-    color: $light;
+    margin-top: 1em;
+    font-size: .93em;
+    color: scale-color($light, $alpha: .9);
     background: none;
 }
 
 .search-result-item {
     padding: .5em 0;
-    margin: 1em 0;
-    border-bottom: 1px solid $light;
+    margin-bottom: 1em;
+    border-bottom: 1px solid scale-color($light, $alpha: .9);
 }
