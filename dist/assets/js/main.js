@@ -199,12 +199,12 @@ const builtIdx = api.posts
   })
   .then((posts) => posts)
   .then((posts) => {
-    const idx = lunr(function () {
+    const idx = lunr(() => {
       this.ref('uuid');
       this.field('plaintext');
       this.field('title');
 
-      posts.forEach(function (doc) {
+      posts.forEach((doc) => {
         this.add(doc);
       }, this);
     });
