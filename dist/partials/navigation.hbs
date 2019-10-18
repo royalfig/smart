@@ -24,10 +24,13 @@
                 <p class="site-title serif">{{@site.title}}</p>
             </a>
             {{#if @site.navigation}}
-            {{#foreach navigation}}
-            <a href="{{url}}"
-                class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
-            {{/foreach}}
+            <ul class="nav-ul">
+                {{#foreach navigation}}
+                <li class="nav-li"><a href="{{url}}"
+                        class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}
+                    </a></li>
+                {{/foreach}}
+            </ul>
             {{/if}}
             <div class="nav-sub-menu flex-row">
                 {{#if @site.twitter}}
@@ -76,10 +79,13 @@
     </div>
     <div class="fixed-center">
         {{#if @site.navigation}}
-        {{#foreach navigation}}
-        <a href="{{url}}"
-            class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
-        {{/foreach}}
+        <ul class="nav-ul">
+            {{#foreach navigation}}
+            <li class="nav-li"><a href="{{url}}"
+                    class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+            </li>
+            {{/foreach}}
+        </ul>
         {{/if}}
     </div>
 
