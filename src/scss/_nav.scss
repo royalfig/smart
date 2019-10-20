@@ -37,6 +37,15 @@
   }
 }
 
+.nav-ul {
+  padding: 0;
+  margin: 0;
+}
+
+.nav-li {
+  list-style-type: none;
+}
+
 //-------------------------------------------
 // Navbar Mobile
 //-------------------------------------------
@@ -192,6 +201,15 @@
     justify-content: center;
   }
 
+  .nav-li {
+    display: inline;
+    margin-right: .5em;
+    list-style-type: none;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 
 
   .fixed-right {

@@ -1,9 +1,4 @@
 //-------------------------------------------
-// Home
-//-------------------------------------------
-
-
-//-------------------------------------------
 // Grid Styles
 //-------------------------------------------
 
@@ -191,43 +186,84 @@ const api = new GhostContentAPI({
   version: 'v2',
 });
 
-const builtIdx = api.posts
-  .browse({
-    include: 'tags,authors',
-    formats: 'plaintext',
-    limit: 'all',
-  })
-  .then((posts) => posts)
-  .then((posts) => {
-    const idx = lunr(() => {
-      this.ref('uuid');
-      this.field('plaintext');
-      this.field('title');
+let builtIdx = {};
 
-      posts.forEach((doc) => {
-        this.add(doc);
-      }, this);
+// Check whether posts are cached or not. Check if they need to be updated.
+if (!localStorage.getItem('posts')) {
+  builtIdx = api.posts
+    .browse({
+      include: 'tags,authors',
+      formats: 'plaintext',
+      limit: 'all',
+    })
+    .then((posts) => posts)
+    .then((posts) => {
+      const idx = lunr(function () {
+        this.ref('uuid');
+        this.field('plaintext');
+        this.field('title');
+
+        posts.forEach((doc) => {
+          this.add(doc);
+        }, this);
+      });
+
+      localStorage.setItem('posts', JSON.stringify(posts));
+
+      return {
+        posts,
+        idx,
+      };
+    })
+    .catch((err) => {
+      console.error(err);
     });
+} else {
+  builtIdx = api.posts
+    .browse({
+      fields: 'published_at',
+      limit: 1,
+    })
+    .then((post) => new Date(post[0].published_at))
 
-    return {
-      posts,
-      idx,
-    };
-  })
-  .catch((err) => {
-    console.error(err);
-  });
+    .then((newest) => {
+      const newestTime = newest.getTime();
+      const rawPosts = localStorage.getItem('posts');
+      const posts = JSON.parse(rawPosts);
+      const lastUpdated = new Date(posts[0].published_at);
+      const lastUpdatedTime = lastUpdated.getTime();
+
+      if (newestTime > lastUpdatedTime) {
+        console.log('there is a newer post');
+      } else {
+        const idx = lunr(function () {
+          this.ref('uuid');
+          this.field('plaintext');
+          this.field('title');
+
+          posts.forEach((doc) => {
+            this.add(doc);
+          }, this);
+        });
+
+        return {
+          posts,
+          idx,
+        };
+      }
+    });
+}
 
 const searchInput = document.getElementById('search-input');
 const searchBtn = document.getElementById('search-btn');
 const searchResultHeader = document.querySelector('.search-result-header');
 const searchResult = document.getElementById('search-result');
 
-
 function searchPosts(term) {
   searchResult.innerHTML = '';
 
   builtIdx.then((obj) => {
+    console.log(obj, term);
     const srch = obj.idx.search(term);
 
     if (srch.length > 1) {
