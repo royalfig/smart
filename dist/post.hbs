@@ -112,8 +112,10 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/primary_author}}
 
-                {{#get "posts" include="tags" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}"}}
-                {{#foreach posts}}
+                {{#get "posts" include="tags" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}" as
+                |related_posts|}}
+                {{#if related_posts}}
+                {{#foreach related_posts}}
                 <div class="related-posts related-posts-{{@number}}">
                     <article class="card card-{{@number}}">
                         <a href="{{url}}" aria-label="{{title}}">
@@ -144,6 +146,27 @@ into the {body} of the default.hbs template --}}
                     </article>
                 </div>
                 {{/foreach}}
+                {{else}}
+
+                <div class="related-posts related-posts-1">
+                    <article class="card card-1">
+                        <a href="{{@site.url}}" aria-label="{{title}}">
+                            {{#if @site.cover_image}}<img class="card-img" src="{{img_url @site.cover_image}}"
+                                alt="{{@site.title}}">{{else}}<div class="no-card-img"></div>{{/if}}
+                        </a>
+                        <div class="card-body">
+
+                            <a href="{{@site.url}}">
+                                <h4 class="card-title">{{@site.title}}</h3>
+                            </a>
+                            <p class="excerpt">
+                                {{@site.description}}
+                            </p>
+                        </div>
+                    </article>
+                </div>
+
+                {{/if}}
                 {{/get}}
             </footer>
 
