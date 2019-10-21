@@ -150,7 +150,7 @@ into the {body} of the default.hbs template --}}
 
                 <div class="related-posts related-posts-1">
                     <article class="card card-1">
-                        <a href="@site.url" aria-label="{{title}}">
+                        <a href="{{@site.url}}" aria-label="{{title}}">
                             {{#if @site.cover_image}}<img class="card-img" src="{{img_url @site.cover_image}}"
                                 alt="{{@site.title}}">{{else}}<div class="no-card-img"></div>{{/if}}
                         </a>

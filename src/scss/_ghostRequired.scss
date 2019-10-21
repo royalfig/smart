@@ -1,9 +1,16 @@
 // Required KG Styles
-.kg-image-card {
+.kg-card {
     margin-bottom: 1em;
 }
 
-.post-content img {
+.kg-embed-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.post-content img:not(.kg-bookmark-icon) {
     display: block;
     width: 100%;
 }
@@ -14,7 +21,6 @@
     min-width: 100%;
     margin: auto calc(50% - 50vw) 1em;
     transform: translateX(calc(50vw - 50%));
-
 }
 
 .kg-width-full {

@@ -252,9 +252,14 @@
     </aside>
     {{!-- Subscribe Modal --}}
     <script src="https://unpkg.com/@tryghost/content-api@1.2.10/umd/content-api.min.js"></script>
-    <script src="{{asset 'js/lunr.min.js'}}"></script>
+
     <script src="{{asset 'js/main.js'}}"></script>
 
+    <script>fluidvids.init({
+            selector: ['iframe', 'object'],
+            players: ['www.youtube.com', 'player.vimeo.com']
+        });
+    </script>
 
     {{!-- Ghost footer required, right before the closing body tag --}}
     {{ghost_foot}}
