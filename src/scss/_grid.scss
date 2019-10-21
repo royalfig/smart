@@ -1,0 +1,255 @@
+//-------------------------------------------
+// Grid Styles for Home Page
+//-------------------------------------------
+
+// Mobile phones
+.grid-container-home {
+    align-content: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    max-width: 100%;
+    margin: 2em 0;
+}
+
+// Tablets
+@media all and (min-width:$tablet) and (max-width: $laptop) {
+    .grid-container-home-1 {
+        grid-template-columns: minmax(250px, 500px);
+    }
+
+    .grid-container-home-2,
+    .grid-container-home-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container-home-3 {
+        grid-template-areas: "one one"
+            "two three";
+        grid-template-columns: 1fr 1fr;
+
+        .card-1 {
+            grid-area: one;
+
+            .card-img,
+            .no-img {
+                height: 2.5 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-2 {
+            grid-area: two;
+        }
+
+        .card-3 {
+            grid-area: three;
+        }
+    }
+
+    .grid-container-home-5 {
+        grid-template-areas: "one one"
+            "two three"
+            "four five";
+
+        grid-template-columns: 1fr 1fr;
+
+        .card-1 {
+            grid-area: one;
+
+            .card-img,
+            .no-img {
+                height: 2.5 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-2 {
+            grid-area: two;
+        }
+
+        .card-3 {
+            grid-area: three;
+        }
+
+        .card-4 {
+            grid-area: four;
+        }
+
+        .card-5 {
+            grid-area: five;
+        }
+    }
+
+    .card-img,
+    .no-img {
+        height: 1.5 * $base;
+    }
+}
+
+// Laptops
+@media all and (min-width: $laptop) and (max-width: $desktop) {
+    .grid-container-home-1 {
+        grid-template-columns: minmax(250px, 500px);
+    }
+
+    .grid-container-home-2,
+    .grid-container-home-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container-home-3 {
+        grid-template-areas: "one one"
+            "two three";
+        grid-template-columns: 1fr 1fr;
+
+        .card-1 {
+            grid-area: one;
+
+            .card-img,
+            .no-img {
+                height: 2.5 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-2 {
+            grid-area: two;
+        }
+
+        .card-3 {
+            grid-area: three;
+        }
+    }
+
+    .grid-container-home-5 {
+        grid-template-areas: "one one"
+            "two three"
+            "four five";
+        grid-template-columns: 1fr 1fr;
+
+        .card-1 {
+            grid-area: one;
+
+            .card-img,
+            .no-img {
+                height: 2.5 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-2 {
+            grid-area: two;
+        }
+
+        .card-3 {
+            grid-area: three;
+        }
+
+        .card-4 {
+            grid-area: four;
+        }
+
+        .card-5 {
+            grid-area: five;
+        }
+    }
+
+    .card-img,
+    .no-img {
+        height: 1.5 * $base;
+    }
+}
+
+// Desktops 
+@media all and (min-width: $desktop) {
+
+    .grid-container-home-1 {
+        grid-template-columns: minmax(250px, 500px);
+    }
+
+    .grid-container-home-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .grid-container-home-3 {
+        grid-template-columns: repeat(3, 1fr);
+
+    }
+
+    .grid-container-home-4 {
+        grid-template-areas: "one one one"
+            "two three four";
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .card-1 {
+            grid-area: one;
+
+            .card-img,
+            .no-img {
+                height: 2.5 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-2 {
+            grid-area: two;
+        }
+
+        .card-3 {
+            grid-area: three;
+        }
+
+        .card-4 {
+            grid-area: four;
+        }
+
+        .card-img,
+        .no-img {
+            height: 1.5 * $base;
+        }
+
+    }
+
+    .grid-container-home-5 {
+        grid-template-areas: "one one one two two two"
+            "three three four four five five";
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+        .card-1 {
+            grid-area: one;
+
+            .card-img,
+            .no-img {
+                height: 3 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-2 {
+            grid-area: two;
+
+            .card-img,
+            .no-img {
+                height: 3 * $base;
+                max-height: 60vh;
+            }
+        }
+
+        .card-3 {
+            grid-area: three;
+        }
+
+        .card-4 {
+            grid-area: four;
+        }
+
+        .card-5 {
+            grid-area: five;
+        }
+    }
+
+    .card-img,
+    .no-img {
+        height: 2 * $base;
+    }
+
+}

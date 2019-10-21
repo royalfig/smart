@@ -4,7 +4,7 @@ into the {body} of the default.hbs template --}}
 
 {{navigation}}
 
-{{#post}}
+{{#tag}}
 
 {{!-- Post Header  --}}
 <header class="post-img">
@@ -22,14 +22,20 @@ into the {body} of the default.hbs template --}}
 <main id="main" class="main">
     <div class="outer-container">
         <div class="inner-container">
-            <article class="{{post_class}}">
+            <article class="{{slug}} {{post_class}}">
 
                 <header class="post-header">
-                    <h1 class="post-title serif">{{title}}</h1>
+                    <h1 class="post-title serif">{{name}}</h1>
+                    {{#if description}}
+                    <p>{{description}}</p>
+                    {{/if}}
                 </header>
+                {{/tag}}
 
-                <div class="post-content">
-                    {{content}}
+                <div class="grid-container-home">
+                    {{#foreach posts}}
+                    {{> "card"}}
+                    {{/foreach}}
                 </div>
             </article>
 
@@ -73,4 +79,3 @@ into the {body} of the default.hbs template --}}
     </button>
 </div>
 {{!-- Share Bar --}}
-{{/post}}
