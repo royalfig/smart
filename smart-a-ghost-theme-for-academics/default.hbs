@@ -213,10 +213,10 @@
                 <svg class="modal-icon" aria-hidden="true">
                     <use href="#clipboard"></use>
                 </svg>
-                <h3 class="serif">Subscribe, bitches!</h3>
-                <p class="modal-tagline">Or you're gonna get cut 🔪</p>
+                <h3 class="serif">Subscribe</h3>
+                <p class="modal-tagline">Don't miss what happens next</p>
                 {{!-- subscribe_form partial --}}
-                {{subscribe_form input_class="modal-input" autofocus="true"}}
+                {{subscribe_form input_class="modal-input"}}
                 {{!-- subscribe_form partial --}}
             </div>
         </div>
@@ -252,7 +252,6 @@
     </aside>
     {{!-- Subscribe Modal --}}
     <script src="https://unpkg.com/@tryghost/content-api@1.2.10/umd/content-api.min.js"></script>
-
     <script src="{{asset 'js/main.js'}}"></script>
 
     <script>fluidvids.init({

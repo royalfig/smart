@@ -1,4 +1,82 @@
 //-------------------------------------------
+// Card Styles
+//-------------------------------------------
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    background: $light;
+    @include transition(all);
+}
+
+.card-img,
+.no-img {
+    display: block;
+    width: 100%;
+    height: $base;
+    object-fit: cover;
+    @include transition(all);
+
+    &:hover {
+        filter: saturate(125%);
+        box-shadow: $box-shadow;
+    }
+}
+
+.no-img {
+    background: linear-gradient(45deg, $prim, $acc1);
+}
+
+.card-body {
+    padding: 1em;
+    margin: .5em 0;
+}
+
+.card-date-tag {
+    justify-content: space-between;
+}
+
+.card-date,
+.card-tag {
+    display: flex;
+    padding: 1px;
+    font-size: .75em;
+    font-weight: 400;
+    color: $dark;
+    text-transform: uppercase;
+}
+
+.card-tag {
+    align-items: center;
+
+    svg {
+        width: 1em;
+        height: 1em;
+        stroke: currentColor;
+    }
+}
+
+.card-title {
+    position: relative;
+    margin: .25em 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    line-height: 1.1;
+    color: $dark;
+    @include transition(color);
+
+    &:hover {
+        color: $prim;
+    }
+}
+
+.card-excerpt {
+    margin: .5em 0;
+    color: $dark;
+}
+
+//-------------------------------------------
 // Grid Styles for Home Page
 //-------------------------------------------
 
@@ -11,7 +89,7 @@
 }
 
 // Tablets
-@media all and (min-width:$tablet) and (max-width: $laptop) {
+@media (min-width:$tablet) and (max-width: $laptop) {
     .grid-container-home-1 {
         grid-template-columns: minmax(250px, 500px);
     }
@@ -86,7 +164,7 @@
 }
 
 // Laptops
-@media all and (min-width: $laptop) and (max-width: $desktop) {
+@media (min-width: $laptop) and (max-width: $desktop) {
     .grid-container-home-1 {
         grid-template-columns: minmax(250px, 500px);
     }
@@ -160,7 +238,7 @@
 }
 
 // Desktops 
-@media all and (min-width: $desktop) {
+@media (min-width: $desktop) {
 
     .grid-container-home-1 {
         grid-template-columns: minmax(250px, 500px);
@@ -257,9 +335,9 @@
 //-------------------------------------------
 // Index Styles
 //-------------------------------------------
-@media (min-width: $tablet) and (max-width: $desktop) {
+@media (max-width: $desktop) {
     .grid-container-index {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
         .card-1 {
             grid-column: 1 / -1;
@@ -270,7 +348,7 @@
 
 @media (min-width: $desktop) {
     .grid-container-index {
-        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
         .card-1 {
             grid-column: 1 / -1;
