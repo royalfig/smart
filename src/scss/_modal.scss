@@ -9,9 +9,11 @@
     width: 100%;
     height: 100vh;
     margin-left: 100%;
-    color: $light;
+    overflow-y: auto;
+    color: $dark;
     text-align: center;
-    background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
+    // background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
+    background-color: $light;
     @include transition(margin-left);
 
     &.outer-container {
@@ -30,7 +32,7 @@
         display: block;
         font-size: 2.4em;
         line-height: 1;
-        color: $light;
+        color: $dark;
     }
 
     label {
@@ -38,7 +40,7 @@
         padding: 0;
         margin-right: .5rem;
         font-weight: 100;
-        color: $light;
+        color: $dark;
         text-align: left;
         background: none;
     }
@@ -50,7 +52,6 @@
     margin-bottom: 1.4em;
     font-size: 1.2em;
     color: $dark;
-    background: $light;
 }
 
 
@@ -59,7 +60,7 @@
     height: 3em;
     pointer-events: none;
     fill: none;
-    stroke: $light;
+    stroke: $dark;
 }
 
 .modal-form {
@@ -72,12 +73,12 @@
     width: 80%;
     height: 2em;
     font-size: 1.25em;
-    color: $light;
+    color: $dark;
     text-align: left;
     background: none;
     border: none;
-    border-bottom: 1px solid $light;
-    caret-color: $light;
+    border-bottom: 1px solid $dark;
+    caret-color: $prim;
     border-radius: 0;
 }
 
@@ -89,7 +90,7 @@
     color: $light;
     vertical-align: bottom;
     background: linear-gradient(45deg, $prim, $acc1);
-    border: 1px solid scale-color($dark, $alpha: -85%);
+    border: none;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
     @include transition(box-shadow);
 
@@ -109,14 +110,14 @@
     display: block;
     padding: .5em;
     margin-left: auto;
-    color: $light;
+    color: $dark;
 
 
     svg {
         width: 3em;
         height: 3em;
-        color: $light;
-        stroke: $light;
+        color: $dark;
+        stroke: $dark;
 
         &:hover {
             // stroke: scale-color($light, $alpha: -25%);
@@ -126,7 +127,7 @@
     }
 
     &:focus {
-        outline: 2px dotted currentColor;
+        outline: 2px dotted $dark;
     }
 }
 
@@ -139,24 +140,33 @@
 }
 
 .search-result-header {
-    font-size: 1.3em;
-    color: $dark;
-    background: $light;
+    font-size: 1em;
+    color: $light;
+    background: $dark;
 }
 
-#search-result {
+.search-result-item {
+    padding-bottom: .5em;
+    margin-top: 1em;
     text-align: left;
+    border-bottom: 1px solid scale-color($dark, $alpha: .8)
 }
 
 .search-result-date {
     margin-top: 1em;
-    font-size: .93em;
-    color: scale-color($light, $alpha: .9);
+    font-size: .9em;
+    color: scale-color($dark, $alpha: .8);
     background: none;
 }
 
-.search-result-item {
-    padding: .5em 0;
-    margin-bottom: 1em;
-    border-bottom: 1px solid scale-color($light, $alpha: .9);
+.search-result-link {
+    font-size: 1.2em;
+    font-weight: 700;
+    color: $dark;
+
+    &:hover,
+    &:active {
+        color: $prim;
+        @include transition(color);
+    }
 }

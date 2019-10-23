@@ -144,6 +144,7 @@ function modalOpen(e) {
   targetDiv.style.marginLeft = '0';
   targetDiv.setAttribute('aria-expanded', 'true');
   targetDiv.querySelector('input').focus();
+  document.body.classList.add('no-scroll');
 }
 
 subBtns.forEach((el) => {
@@ -159,8 +160,7 @@ const modalClose = document.querySelectorAll('.modal-close');
 modalClose.forEach((el) => el.addEventListener('click', (e) => {
   e.currentTarget.parentElement.parentElement.setAttribute('aria-expanded', 'false');
   e.currentTarget.parentElement.parentElement.style.marginLeft = '100%';
-
-  // document.body.classList.remove('no-scroll');
+  document.body.classList.remove('no-scroll');
 }));
 
 //-------------------------------------------
@@ -240,14 +240,14 @@ if (!localStorage.getItem('posts')) {
             formats: 'plaintext',
             limit: 'all',
           })
-          .then((posts) => posts)
-          .then((posts) => {
+          .then((postsReturned) => postsReturned)
+          .then((postsForIndex) => {
             const idx = lunr(function () {
               this.ref('uuid');
               this.field('plaintext');
               this.field('title');
 
-              posts.forEach((doc) => {
+              postsForIndex.forEach((doc) => {
                 this.add(doc);
               }, this);
             });
@@ -308,8 +308,8 @@ function searchPosts(term) {
             'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
           ];
           const publishedString = `${months[published.getMonth()]} ${published.getDate()}, ${published.getFullYear()}`;
-          searchResult.innerHTML += `<p class="search-result-date">${publishedString}</p>
-          <a class="search-result-item" href="${post.url}">${post.title}</a><br>`;
+          searchResult.innerHTML += `<article class="search-result-item"><p class="search-result-date">${publishedString}</p>
+          <a class="search-result-link" href="${post.url}">${post.title}</a></article>`;
         }
       });
     });

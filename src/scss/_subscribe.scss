@@ -4,7 +4,9 @@
 .subscribe {
     min-height: 300px;
     text-align: center;
-    background: linear-gradient(45deg, $prim, $acc1);
+    // background: linear-gradient(45deg, $prim, $acc1);
+    background-color: scale-color($light, $alpha: -5%);
+    border: 2px solid $dark;
 
     &.page {
         height: 100vh;
@@ -23,24 +25,20 @@
                 width: 1em;
                 height: 1em;
                 fill: none;
-                stroke: $light;
+                stroke: $dark;
                 stroke-width: 2px;
             }
 
             p {
 
-                color: $light;
+                color: $dark;
                 background: none;
             }
         }
 
 
         h1 {
-            color: $light;
-        }
-
-        p {
-            background: $light;
+            color: $dark;
         }
     }
 }

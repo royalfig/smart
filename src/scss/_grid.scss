@@ -253,3 +253,28 @@
     }
 
 }
+
+//-------------------------------------------
+// Index Styles
+//-------------------------------------------
+@media (min-width: $tablet) and (max-width: $desktop) {
+    .grid-container-index {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+        .card-1 {
+            grid-column: 1 / -1;
+        }
+    }
+
+}
+
+@media (min-width: $desktop) {
+    .grid-container-index {
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+
+        .card-1 {
+            grid-column: 1 / -1;
+        }
+    }
+
+}
