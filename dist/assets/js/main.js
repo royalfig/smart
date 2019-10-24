@@ -196,7 +196,6 @@ if (!localStorage.getItem('posts')) {
       formats: 'plaintext',
       limit: 'all',
     })
-    .then((posts) => posts)
     .then((posts) => {
       const idx = lunr(function () {
         this.ref('uuid');
@@ -233,6 +232,7 @@ if (!localStorage.getItem('posts')) {
       const lastUpdated = new Date(posts[0].published_at);
       const lastUpdatedTime = lastUpdated.getTime();
 
+
       if (newestTime > lastUpdatedTime) {
         api.posts
           .browse({
@@ -240,14 +240,13 @@ if (!localStorage.getItem('posts')) {
             formats: 'plaintext',
             limit: 'all',
           })
-          .then((postsReturned) => postsReturned)
-          .then((postsForIndex) => {
+          .then((posts) => {
             const idx = lunr(function () {
               this.ref('uuid');
               this.field('plaintext');
               this.field('title');
 
-              postsForIndex.forEach((doc) => {
+              posts.forEach((doc) => {
                 this.add(doc);
               }, this);
             });
@@ -290,6 +289,7 @@ function searchPosts(term) {
   searchResult.innerHTML = '';
 
   builtIdx.then((obj) => {
+    console.log(obj);
     const srch = obj.idx.search(term);
 
     if (srch.length > 1) {
