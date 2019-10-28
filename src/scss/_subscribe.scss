@@ -2,10 +2,10 @@
 // Inline Subscription
 //-------------------------------------------
 .subscribe {
-    min-height: 300px;
+    min-height: 400px;
+    margin: 5em 0;
     text-align: center;
-    // background: linear-gradient(45deg, $prim, $acc1);
-    background-color: scale-color($light, $alpha: -5%);
+    background-color: $light;
     border: 2px solid $dark;
 
     &.page {

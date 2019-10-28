@@ -1,0 +1,129 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{navigation}}
+
+{{#author}}
+
+{{!-- Post Header  --}}
+<header class="post-img">
+    {{#if cover_image}}
+    <img srcset="{{img_url cover_image size="s"}} 300w,
+                 {{img_url cover_image size="m"}} 600w,
+                 {{img_url cover_image size="l"}} 1000w,
+                 {{img_url cover_image size="xl"}} 2000w" sizes="100vw" src="{{img_url cover_image size="xl"}}"
+        alt="{{name}}">
+    {{else}}<div class="no-post-img"></div>
+    {{/if}}
+</header>
+{{!-- Post Header  --}}
+
+{{!-- Main  --}}
+<main id="main" class="main">
+    <div class="outer-container">
+        <div class="inner-container">
+            <section class="{{slug}}">
+
+                <header class="post-header">
+                    <div class="flex-row">
+                        {{#if profile_image}}
+                        <img class="profile-image" srcset="{{img_url profile_image size="s"}} 300w,
+                    {{img_url profile_image size="m"}} 600w,
+                    {{img_url profile_image size="l"}} 1000w,
+                    {{img_url profile_image size="xl"}} 2000w" sizes="100vw" src="{{img_url profile_image size="xl"}}"
+                            alt="{{name}}">
+                        {{/if}}
+                        <h1 class="post-title serif underline">{{name}}</h1>
+                    </div>
+
+                    <div class="author-meta flex-row">
+                        {{#if twitter}}
+                        <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                            <svg>
+                                <title>Twitter</title>
+                                <use href="#twitter"></use>
+                            </svg>
+                        </a>
+                        {{/if}}
+                        {{#if facebook}}
+                        <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                            <svg>
+                                <title>Facebook</title>
+                                <use href="#facebook"></use>
+                            </svg>
+                        </a>
+                        {{/if}}
+                        {{#if website}}
+                        <a class="website" href="{{website}}" aria-label="{{website}}">
+                            <svg class="globe">
+
+                                <use href="#website"></use>
+                            </svg>
+                        </a>
+                        {{/if}}
+
+                        {{#if location}}
+                        <div class="author-footer-location flex-row">
+                            <svg aria-label="location">
+                                <title>Location</title>
+                                <use href="#location"></use>
+                            </svg>
+                            <p>{{location}}</p>
+                        </div>
+                        {{/if}}
+                    </div>
+
+                    {{#if bio}}
+                    <p class="bio">{{bio}}</p>
+                    {{/if}}
+                </header>
+                {{/author}}
+
+                <div class="grid-container grid-container-index">
+                    {{#foreach posts}}
+                    {{> "card"}}
+                    {{/foreach}}
+                </div>
+            </section>
+
+            {{#if @labs.subscribers}}
+            {{> "subscribe_inner"}}
+            {{/if}}
+        </div>
+    </div>
+</main>
+{{!-- Main --}}
+
+{{!-- Share Bar --}}
+<div class="post-share-bar">
+    <p class="post-share-bar-title">Share</p>
+    <a class="post-share-bar-link twitter" href="https://twitter.com/share?url={{encode url}}&amp;text={{encode title}}"
+        aria-label="Share on Twitter">
+        <svg>
+            <title>Share on Twitter</title>
+            <use href="#twitter"></use>
+        </svg>
+    </a>
+    <a class="post-share-bar-link facebook" href="http://www.facebook.com/sharer.php?u={{encode url}}"
+        aria-label="Share on Facebook">
+        <svg>
+            <title>Share on Facebook</title>
+            <use href="#facebook"></use>
+        </svg>
+    </a>
+    <a class="post-share-bar-link linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{encode url}}"
+        aria-label="Share on LinkedIn">
+        <svg>
+            <title>Share on LinkedIn</title>
+            <use href="#linkedin"></use>
+        </svg>
+    </a>
+    <button class="post-share-bar-link copy" id="copy-button" aria-label="Copy to clipboard">
+        <svg>
+            <title id="copyIconTitle">Copy to clipboard</title>
+            <use href="#copy"></use>
+        </svg>
+    </button>
+</div>
+{{!-- Share Bar --}}

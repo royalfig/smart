@@ -177,8 +177,6 @@
     display: flex;
   }
 
-
-
   .navbar-site-title {
     align-items: center;
 
@@ -199,18 +197,17 @@
   .fixed-center {
     display: flex;
     justify-content: center;
-  }
-
-  .nav-li {
-    display: inline;
-    margin-right: 1em;
-    list-style-type: none;
 
     &:last-child {
       margin-right: 0;
     }
   }
 
+  .nav-li {
+    display: inline;
+    margin-right: 1em;
+    list-style-type: none;
+  }
 
   .fixed-right {
     display: flex;

@@ -147,7 +147,6 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/foreach}}
                 {{else}}
-
                 <div class="related-posts related-posts-1">
                     <article class="card card-1">
                         <a href="{{@site.url}}" aria-label="{{title}}">
@@ -167,6 +166,9 @@ into the {body} of the default.hbs template --}}
                 </div>
 
                 {{/if}}
+                {{#../next_post}}
+                {{> card}}
+                {{/../next_post}}
                 {{/get}}
             </footer>
 

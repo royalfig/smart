@@ -80,7 +80,8 @@
 
 .hvr-underline-from-left:hover:before,
 .hvr-underline-from-left:focus:before,
-.hvr-underline-from-left:active:before {
+.hvr-underline-from-left:active:before,
+.nav-current:before {
   right: 0;
 }
 
