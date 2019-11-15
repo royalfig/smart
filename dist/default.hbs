@@ -12,13 +12,69 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
-    <link href="https://free.bboxtype.com/embedfonts/?family=FiraSans:400,400i,700" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Fira Sans';
+            src: url({{asset 'fonts/FiraSans-Regular.woff2'}}) format('woff2'),
+            url({{asset 'fonts/FiraSans-Regular.woff'}}) format('woff');
+        }
 
+        @font-face {
+            font-family: 'Fira Sans';
+            src: url({{asset 'fonts/FiraSans-Bold.woff2'}}) format('woff2'),
+            url({{asset 'fonts/FiraSans-Bold.woff'}}) format('woff');
+            font-weight: 700;
+        }
+
+        @font-face {
+            font-family: 'Fira Sans';
+            src: url({{asset 'fonts/FiraSans-Italic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/FiraSans-Italic.woff'}}) format('woff');
+            font-style: italic;
+        }
+
+        @font-face {
+            font-family: 'Fira Sans';
+            src: url({{asset 'fonts/FiraSans-BoldItalic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/FiraSans-BoldItalic.woff'}}) format('woff');
+            font-weight: 700;
+            font-style: italic;
+        }
+
+        body {
+            font-family: sans-serif;
+        }
+
+        .fonts-loaded body {
+            font-family: 'Fira Sans', sans-serif;
+        }
+    </style>
+    <script>
+        (function () {
+            // Optimization for Repeat Views
+            if (sessionStorage.fontsLoadedFoutWithClass) {
+                document.documentElement.className += " fonts-loaded";
+                return;
+            }
+            if ("fonts" in document) {
+                Promise.all([
+                    document.fonts.load("1em 'Fira Sans'"),
+                    document.fonts.load("700 1em 'Fira Sans'"),
+                    document.fonts.load("italic 1em 'Fira Sans'"),
+                    document.fonts.load("italic 700 1em 'Fira Sans'")
+                ]).then(function () {
+                    document.documentElement.className += " fonts-loaded";
+                    // Optimization for Repeat Views
+                    sessionStorage.fontsLoadedFoutWithClass = true;
+                });
+            }
+        })();
+    </script>
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
 
-<body {{body_class}}>
+<body class="{{body_class}}">
     {{!-- SVG Sprite  --}}
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol viewBox="0 0 24 24" id="close">
