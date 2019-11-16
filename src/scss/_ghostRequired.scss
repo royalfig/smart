@@ -1,109 +1,161 @@
 // Required KG Styles
 .kg-card {
-    margin-bottom: 1em;
+  margin-bottom: 1em;
 }
 
 .kg-embed-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-.post-content img:not(.kg-bookmark-icon) {
-    display: block;
-    width: 100%;
+.kg-image-card img {
+  display: block;
+  width: 100%;
 }
 
 .kg-width-wide {
-    position: relative;
-    width: 75vw;
-    min-width: 100%;
-    margin: auto calc(50% - 50vw) 1em;
-    transform: translateX(calc(50vw - 50%));
+  position: relative;
+  width: 75vw;
+  min-width: 100%;
+  margin: auto calc(50% - 50vw) 1em;
+  transform: translateX(calc(50vw - 50%));
 }
 
 .kg-width-full {
-    position: relative;
-    width: 100vw;
-    min-width: 100%;
-    margin: auto calc(50% - 50vw) 1em;
-    transform: translateX(calc(50vw - 50%));
+  position: relative;
+  width: 100vw;
+  min-width: 100%;
+  margin: auto calc(50% - 50vw) 1em;
+  transform: translateX(calc(50vw - 50%));
+}
+
+// Bookmark Styles
+.kg-bookmark-card {
+  width: 100%;
+  position: relative;
 }
 
 .kg-bookmark-container {
-    display: flex;
-    flex-wrap: wrap;
-    color: $dark;
-    text-decoration: none;
-    border: 2px solid $prim;
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap-reverse;
+  @include transition(all);
+}
+
+.kg-bookmark-container:hover {
+  text-decoration: none;
 }
 
 .kg-bookmark-content {
-    flex-basis: 0;
-    flex-grow: 999;
-    min-width: 50%;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
 }
 
 .kg-bookmark-title {
-    font-weight: 600;
+  margin-bottom: 1em;
+  font-family: $serif;
+  font-size: 1em;
+  font-weight: 600;
 }
 
-.kg-bookmark-description,
+.kg-bookmark-metadata,
+.kg-bookmark-description {
+  font-family: $sans;
+}
+
 .kg-bookmark-metadata {
-    margin-top: 12px;
+  display: flex;
+  align-items: center;
 }
 
-.kg-bookmark-thumbnail {
-    flex-basis: 15rem;
-    flex-grow: 1;
-}
+.kg-bookmark-description {
+  font-size: 0.93em;
+  margin-bottom: 1em;
+  overflow: hidden;
+  color: $dark;
 
-
-.kg-bookmark-thumbnail img {
-    width: 100%;
-    vertical-align: bottom;
-    object-fit: cover;
+  &:hover,
+  &:active,
+  &:focus {
+    color: $dark;
+  }
 }
 
 .kg-bookmark-icon {
-    width: 22px;
-    height: 22px;
-    margin-right: 8px;
-    vertical-align: bottom;
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.5em;
 }
 
-.kg-bookmark-author:after {
-    margin: 0 6px;
-    content: "•";
+.kg-bookmark-thumbnail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+  background: linear-gradient(
+    45deg,
+    scale-color($dark, $lightness: 15%),
+    scale-color($dark, $lightness: 25%)
+  );
 }
 
+.kg-bookmark-thumbnail img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 15rem;
+  @include transition(all);
+}
+
+.kg-bookmark-author {
+  font-family: $sans;
+}
+
+.kg-bookmark-publisher {
+  font-family: $sans;
+  font-size: 0.93em;
+}
+
+@media (min-width: $laptop) {
+  .kg-bookmark-container {
+    flex-wrap: nowrap;
+  }
+  .kg-bookmark-content,
+  .kg-bookmark-thumbnail {
+    width: 50%;
+  }
+}
+
+// Gallery Styles
 .kg-gallery-container {
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    max-width: 1040px;
-    margin: 1.5em auto;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  max-width: 1040px;
+  margin: 1.5em auto;
 }
 
 .kg-gallery-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .kg-gallery-image img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 .kg-gallery-row:not(:first-of-type) {
-    margin: .75em 0 0;
+  margin: 0.75em 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
-    margin: 0 0 0 .75em;
+  margin: 0 0 0 0.75em;
 }

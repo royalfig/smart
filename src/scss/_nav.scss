@@ -11,12 +11,12 @@
   justify-content: space-between;
   width: 100%;
   height: $navbar;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 
-  font-size: .8em;
+  font-size: 0.8em;
   line-height: 1.6;
   background-color: scale-color($light, $alpha: -5%);
-  transition: all .1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 
 .fixed-left {
@@ -32,7 +32,7 @@
     }
 
     p {
-      margin-left: .25em;
+      margin-left: 0.25em;
     }
   }
 }
@@ -62,17 +62,16 @@
   font-size: 1.5em;
   color: $dark;
   background-color: scale-color($light, $alpha: -5%);
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   .flex-col {
     align-items: center;
     justify-content: center;
 
     .flex-row {
-
       a,
       button {
-        margin: 0 .5em;
+        margin: 0 0.5em;
       }
     }
   }
@@ -84,17 +83,20 @@
 
   a,
   button {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
     color: $dark;
   }
 
   .underline {
-    text-shadow: 2px 2px scale-color($light, $alpha: -5%), 2px -2px scale-color($light, $alpha: -5%), -2px 2px scale-color($light, $alpha: -5%), -2px -2px scale-color($light, $alpha: -5%);
+    text-shadow: 2px 2px scale-color($light, $alpha: -5%),
+      2px -2px scale-color($light, $alpha: -5%),
+      -2px 2px scale-color($light, $alpha: -5%),
+      -2px -2px scale-color($light, $alpha: -5%);
   }
 }
 
 .mobile-nav-menu-inner {
-  padding: .5em;
+  padding: 0.5em;
   padding-bottom: 1em;
 }
 
@@ -106,9 +108,13 @@
   flex-wrap: wrap;
   justify-content: center;
 
+  .nav-item {
+    margin-right: 1em;
+  }
+
   a,
   button {
-    padding: .5em;
+    padding: 0.5em;
     line-height: 0;
   }
 
@@ -116,7 +122,7 @@
     width: 24px;
     height: 24px;
     line-height: 1;
-    transition: all .2s ease;
+    transition: all 0.2s ease;
   }
 
   button svg {
@@ -134,7 +140,7 @@
     fill: $dark;
   }
 
-  button>svg {
+  button > svg {
     @extend %svg-size;
     stroke: $dark;
     stroke-width: 2px;
@@ -161,7 +167,6 @@
 // Navbar on laptops and up
 //-------------------------------------------
 @media all and (min-width: $laptop) {
-
   .nav-mobile,
   .mobile-nav-menu {
     display: none;
@@ -171,7 +176,6 @@
     display: none;
     transform: translateX(100%);
   }
-
 
   .fixed-navbar {
     display: flex;
@@ -222,7 +226,7 @@
       width: 18px;
       height: 18px;
       line-height: 1;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       fill: none;
       stroke: $dark;
       stroke-width: 2px;
@@ -236,15 +240,15 @@
       width: 18px;
       height: 18px;
       line-height: 1;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       fill: $dark;
     }
 
-    button>svg {
+    button > svg {
       width: 18px;
       height: 18px;
       line-height: 1;
-      transition: all .2s ease;
+      transition: all 0.2s ease;
       stroke: $dark;
 
       &:hover {
