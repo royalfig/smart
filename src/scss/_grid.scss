@@ -53,8 +53,19 @@
     svg {
         width: 1em;
         height: 1em;
+        transform: translateY(-.1em);
         stroke: currentColor;
+        stroke-width: 1.5px;
     }
+}
+
+.read-more svg {
+    width: 2em;
+    height: 2em;
+    transform: translateY(.5em);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2px;
 }
 
 .card-title {

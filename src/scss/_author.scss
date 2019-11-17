@@ -1,4 +1,53 @@
+.author-header {
+    align-items: flex-start;
+    margin: 2em 0;
+}
+
 .profile-image {
-    width: 150px;
-    height: 150px;
+    flex-shrink: 0;
+    width: $base;
+    height: $base;
+    margin: auto;
+}
+
+.author-text {
+    margin-left: 2em;
+}
+
+.bio {
+    margin-top: 1em;
+}
+
+@media (min-width: $tablet) and (max-width: $laptop) {
+    .profile-image {
+        width: $base + 25px;
+        height: $base + 25px;
+    }
+}
+
+@media (min-width: $laptop) {
+    .profile-image {
+        width: $base + 50px;
+        height: $base + 50px;
+    }
+}
+
+.author-meta {
+    justify-content: space-around;
+    margin-top: 1em;
+
+    svg {
+        width: 1.5em;
+        height: 1.5em;
+        stroke: currentColor;
+    }
+}
+
+.author-footer-location {
+    margin-top: 1em;
+}
+
+.website svg,
+.author-footer-location svg {
+    fill: none;
 }

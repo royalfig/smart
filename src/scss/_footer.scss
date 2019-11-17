@@ -36,6 +36,7 @@
         svg {
             width: 1em;
             height: 1em;
+            transform: none;
             stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
             stroke-width: 2px;
         }

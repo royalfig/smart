@@ -26,65 +26,61 @@ into the {body} of the default.hbs template --}}
             <section class="{{slug}}">
 
                 <header class="post-header">
-                    <div class="flex-row">
+                    <div class="author-header flex-row">
                         {{#if profile_image}}
-                        <img class="profile-image" srcset="{{img_url profile_image size="s"}} 300w,
-                    {{img_url profile_image size="m"}} 600w,
-                    {{img_url profile_image size="l"}} 1000w,
-                    {{img_url profile_image size="xl"}} 2000w" sizes="100vw" src="{{img_url profile_image size="xl"}}"
-                            alt="{{name}}">
+                        <img class="profile-image" src="{{img_url profile_image size="m"}}" alt="{{name}}">
                         {{/if}}
-                        <h1 class="post-title serif underline">{{name}}</h1>
-                    </div>
-
-                    <div class="author-meta flex-row">
-                        {{#if twitter}}
-                        <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
-                            <svg>
-                                <title>Twitter</title>
-                                <use href="#twitter"></use>
-                            </svg>
-                        </a>
-                        {{/if}}
-                        {{#if facebook}}
-                        <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
-                            <svg>
-                                <title>Facebook</title>
-                                <use href="#facebook"></use>
-                            </svg>
-                        </a>
-                        {{/if}}
-                        {{#if website}}
-                        <a class="website" href="{{website}}" aria-label="{{website}}">
-                            <svg class="globe">
-
-                                <use href="#website"></use>
-                            </svg>
-                        </a>
-                        {{/if}}
-
-                        {{#if location}}
-                        <div class="author-footer-location flex-row">
-                            <svg aria-label="location">
-                                <title>Location</title>
-                                <use href="#location"></use>
-                            </svg>
-                            <p>{{location}}</p>
+                        <div class="author-text">
+                            <h1 class="post-title serif underline">{{name}}</h1>
+                            {{#if location}}
+                            <div class="author-footer-location flex-row">
+                                <svg aria-label="location">
+                                    <title>Location</title>
+                                    <use href="#location"></use>
+                                </svg>
+                                <p>{{location}}</p>
+                            </div>
+                            {{/if}}
+                            {{#if bio}}
+                            <p class="bio">{{bio}}</p>
+                            {{/if}}
+                            <div class="author-meta flex-row">
+                                {{#if twitter}}
+                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                    <svg>
+                                        <title>Twitter</title>
+                                        <use href="#twitter"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                                {{#if facebook}}
+                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                    <svg>
+                                        <title>Facebook</title>
+                                        <use href="#facebook"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                                {{#if website}}
+                                <a class="website" href="{{website}}" aria-label="{{website}}">
+                                    <svg class="globe">
+                                        <use href="#website"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                            </div>
                         </div>
-                        {{/if}}
                     </div>
-
-                    {{#if bio}}
-                    <p class="bio">{{bio}}</p>
-                    {{/if}}
                 </header>
                 {{/author}}
 
+                <h2 class="underline">My Posts</h2>
                 <div class="grid-container grid-container-index">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}
                 </div>
+                {{pagination}}
             </section>
 
             {{#if @labs.subscribers}}

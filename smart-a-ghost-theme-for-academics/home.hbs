@@ -73,7 +73,11 @@ into the {body} of the default.hbs template --}}
     {{#if latest}}
     <div class="outer-container">
         <div class="inner-container">
-            <h2 class="home-page-section-header underline serif">Latest</h2>
+            <a class="read-more" href="/page/2/">
+                <h2 class="home-page-section-header underline serif">Latest</h2><svg aria-label="See more">
+                    <use href="#arrow-right"></use>
+                </svg>
+            </a>
             <section class="grid-container grid-container-home">
                 {{#foreach latest}}
                 {{> "card"}}
@@ -90,12 +94,18 @@ into the {body} of the default.hbs template --}}
     {{#if publications}}
     <div class="outer-container">
         <div class="inner-container">
-            <h2 class="home-page-section-header underline serif">Publications</h2>
+            <a class="read-more" href="/tag/publications/">
+                <h2 class="home-page-section-header underline serif">Publications</h2><svg
+                    aria-label="See more publications">
+                    <use href="#arrow-right"></use>
+                </svg>
+            </a>
             <section class="grid-container grid-container-home">
                 {{#foreach publications}}
                 {{> "card"}}
                 {{/foreach}}
             </section>
+
         </div>
     </div>
     {{/if}}
@@ -107,12 +117,18 @@ into the {body} of the default.hbs template --}}
     {{#if presentations}}
     <div class="outer-container">
         <div class="inner-container">
-            <h2 class="home-page-section-header underline serif">Presentations</h2>
+            <a class="read-more" href="/tag/presentations/">
+                <h2 class="home-page-section-header underline serif">
+                    Presentations</h2><svg aria-label="See more presentations">
+                    <use href="#arrow-right"></use>
+                </svg>
+            </a>
             <section class="grid-container grid-container-home">
                 {{#foreach presentations}}
                 {{> "card"}}
                 {{/foreach}}
             </section>
+
         </div>
     </div>
     {{/if}}
@@ -124,7 +140,11 @@ into the {body} of the default.hbs template --}}
     {{#if outreach}}
     <div class="outer-container">
         <div class="inner-container">
-            <h2 class="home-page-section-header underline serif">Outreach</h2>
+            <a class="read-more" href="/tag/outreach/">
+                <h2 class="home-page-section-header underline serif">Outreach</h2><svg aria-label="See more outreach">
+                    <use href="#arrow-right"></use>
+                </svg>
+            </a>
             <section class="grid-container grid-container-home">
                 {{#foreach outreach}}
                 {{> "card"}}
