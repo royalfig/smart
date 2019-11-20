@@ -6,11 +6,14 @@ into the {body} of the default.hbs template --}}
 
 <main class="main">
 
-    <div class="outer-container">
+    <div class="outer-container index">
 
         <div class="inner-container">
+            <header class="post-header">
+                <h1 class="post-title serif underline">{{meta_title}}</h1>
+            </header>
 
-            <section class="grid-container grid-container-index">
+            <section class="grid-container grid-container-home">
 
                 {{#foreach posts}}
                 {{> "card"}}

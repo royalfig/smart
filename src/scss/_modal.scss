@@ -76,6 +76,11 @@
     border-bottom: 1px solid $dark;
     caret-color: $prim;
     border-radius: 0;
+
+    &:focus {
+        border-bottom: 1px solid $prim;
+        outline: none;
+    }
 }
 
 .modal-btn {

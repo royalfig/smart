@@ -47,6 +47,7 @@ function concatJS() {
 function buildCSS() {
   return gulp
     .src('./src/scss/**/*.scss')
+    .pipe(sourcemaps.init())
     .pipe(sass({
       outputStyle: 'compressed',
     }))
@@ -54,6 +55,7 @@ function buildCSS() {
       cascade: false,
     }))
     .pipe(clean())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('./smart-a-ghost-theme-for-academics/assets/css'));
 }
 

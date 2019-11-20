@@ -5,7 +5,9 @@
     min-height: 250px;
     font-size: .9375em;
     color: scale-color($light, $lightness: -20%, $saturation: -75%);
+    // color: scale-color(#fafafa, $lightness: -20%, $saturation: -75%);
     background-color: $dark;
+    // background-color: #1d1d1f;
     border-bottom: none;
 
     .home-page-section-header {

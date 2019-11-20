@@ -119,13 +119,14 @@
   transform: scaleY(1);
 }
 
-// Underline effect
+// Underline effect 
 .underline {
   display: inline-block;
   line-height: .95;
   text-shadow: 2px 2px $light, 2px -2px $light, -2px 2px $light, -2px -2px $light;
   border-bottom: 2px solid currentColor;
 }
+
 
 .underline-dark {
   display: inline-block;

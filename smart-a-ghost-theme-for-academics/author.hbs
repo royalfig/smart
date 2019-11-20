@@ -28,12 +28,17 @@ into the {body} of the default.hbs template --}}
                 <header class="post-header">
                     <div class="author-header flex-row">
                         {{#if profile_image}}
-                        <img class="profile-image" src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                        <div class="profile-image-container">
+                            <img class="profile-image" src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                        </div>
                         {{/if}}
                         <div class="author-text">
-                            <h1 class="post-title serif underline">{{name}}</h1>
+                            <div class="underline">
+                                <h1 class="post-title serif">{{name}}</h1>
+                            </div>
                             {{#if location}}
-                            <div class="author-footer-location flex-row">
+                            <p class="author-small-header">Location</p>
+                            <div class="author-location flex-row">
                                 <svg aria-label="location">
                                     <title>Location</title>
                                     <use href="#location"></use>
@@ -42,8 +47,12 @@ into the {body} of the default.hbs template --}}
                             </div>
                             {{/if}}
                             {{#if bio}}
+                            <p class="author-small-header">Bio</p>
                             <p class="bio">{{bio}}</p>
                             {{/if}}
+                            {{#has any="twitter, facebook, website"}}
+                            <p class="author-small-header">Social</p>
+                            {{/has}}
                             <div class="author-meta flex-row">
                                 {{#if twitter}}
                                 <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
@@ -63,7 +72,8 @@ into the {body} of the default.hbs template --}}
                                 {{/if}}
                                 {{#if website}}
                                 <a class="website" href="{{website}}" aria-label="{{website}}">
-                                    <svg class="globe">
+                                    <svg>
+                                        <title>External Website</title>
                                         <use href="#website"></use>
                                     </svg>
                                 </a>
@@ -72,10 +82,11 @@ into the {body} of the default.hbs template --}}
                         </div>
                     </div>
                 </header>
-                {{/author}}
 
-                <h2 class="underline">My Posts</h2>
-                <div class="grid-container grid-container-index">
+                <h2 class="underline">{{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}
+                </h2>
+                {{/author}}
+                <div class="grid-container grid-container-home">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}

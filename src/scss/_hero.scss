@@ -9,7 +9,6 @@
 .hero-left,
 .hero-right {
     flex: 1;
-    align-items: stretch;
     max-width: 100%;
 }
 
@@ -24,7 +23,7 @@
     // justify-content: center;
 
     .home-page-section-header {
-        width: fit-content;
+        display: inline-block;
         margin-top: 0;
     }
 
@@ -34,6 +33,7 @@
 }
 
 .hero-img {
+    z-index: 1;
     width: 100%;
     height: $base;
     object-fit: cover;
@@ -87,14 +87,14 @@
     }
 }
 
-@media all and (min-width: $tablet) and (max-width: $laptop) {
+@media (min-width: $tablet) and (max-width: $laptop) {
     .hero-img {
         width: 100%;
         height: $base * 1.5;
     }
 }
 
-@media all and (min-width: $laptop) {
+@media (min-width: $laptop) {
     .hero {
         flex-direction: row;
     }
@@ -107,12 +107,13 @@
     }
 
     .hero-img {
+        position: relative;
         width: 100%;
         height: $base * 2;
+        box-shadow: $box-shadow;
     }
 
     .hero-right {
-        align-items: stretch;
         margin-left: 3em;
     }
 }
@@ -120,19 +121,3 @@
 .hero-text-container {
     font-size: 3em;
 }
-
-//-------------------------------------------
-// Animations
-//-------------------------------------------
-
-// @media only screen and (min-width: $laptop) {
-//     .hero-img {
-//         transform: translateX(-10%);
-//         @include transition(transform);
-//     }
-
-//     .hero-text-container {
-//         transform: translateX(-10%);
-//         @include transition(transform);
-//     }
-// }

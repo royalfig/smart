@@ -16,11 +16,11 @@
     width: 100%;
     height: $base;
     object-fit: cover;
+    box-shadow: $box-shadow;
     @include transition(all);
 
     &:hover {
         filter: saturate(125%);
-        box-shadow: $box-shadow;
     }
 }
 
@@ -29,12 +29,16 @@
 }
 
 .card-body {
-    padding: 1em;
-    margin: .5em 0;
+    padding: .5em;
+    margin: 1em 0 .5em;
 }
 
 .card-date-tag {
     justify-content: space-between;
+}
+
+.card-date {
+    flex: 1;
 }
 
 .card-date,
@@ -51,6 +55,7 @@
     align-items: center;
 
     svg {
+        flex-shrink: 0;
         width: 1em;
         height: 1em;
         transform: translateY(-.1em);
@@ -72,7 +77,6 @@
     position: relative;
     margin: .25em 0;
     font-size: 1.5em;
-    font-weight: 600;
     line-height: 1.1;
     color: $dark;
     @include transition(color);
@@ -170,7 +174,7 @@
 
     .card-img,
     .no-img {
-        height: 1.5 * $base;
+        height: 1.75 * $base;
     }
 }
 
@@ -244,7 +248,7 @@
 
     .card-img,
     .no-img {
-        height: 1.5 * $base;
+        height: 1.75 * $base;
     }
 }
 
@@ -293,7 +297,7 @@
 
         .card-img,
         .no-img {
-            height: 1.5 * $base;
+            height: 2 * $base;
         }
 
     }
@@ -338,7 +342,7 @@
 
     .card-img,
     .no-img {
-        height: 2 * $base;
+        height: 2.25 * $base;
     }
 
 }

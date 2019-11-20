@@ -1,20 +1,10 @@
 //colors
 // Stone
 $dark: #181818;
+$dark: #1d1d1f;
 $light: #f7fefd;
-$prim: #f4725b;
-$acc1: #bd708c;
-$acc2: #c3c0b7;
-$acc3: #737274;
+$light: #fafafa;
 
-// Darker
-// $prim: #851e3e;
-// $acc1: #051e3e;
-// $acc2: #651e3e;
-// $acc3: #251e3e;
-// $acc4: #451e3e;
-
-// Trendy
 $prim: #c70d3a;
 $acc2: #230338;
 $acc1: #ed5107;
@@ -25,12 +15,17 @@ $fb: #1877f2;
 $tw: #1da1f2;
 $li: #0077B5;
 
+$pureWhite: #ffffff;
+$pureBlack: #000000;
+
 // $dark: invert(#181818, 100%);
 // $light: invert(#f7fefd, 100%);
 // $prim: invert(#c70d3a, 100%);
 // $acc2: invert(#230338, 100%);
 // $acc1: invert(#ed5107, 100%);
 // $acc3: invert(#02383c, 100%);
+// $pureWhite: invert(#ffffff, 100%);
+
 // Font styles
 $sans: "Fira Sans",
 -apple-system,
@@ -55,14 +50,22 @@ $laptop: 1024px;
 $desktop: 1280px;
 
 // Sizes
-$base: 150px;
+$base: 175px;
 $navbar: 3rem;
+
+.index {
+    margin-top: $navbar;
+}
 
 // Box Shadow 
 $box-shadow: 3px 3px 4px rgba(0, 0, 0, .12),
 -3px 2px 4px rgba(0, 0, 0, .12),
 5px 10px 15px rgba(0, 0, 0, .14),
 -5px 5px 15px rgba(0, 0, 0, .14);
+
+$box-shadow: 0 8px 17px 2px rgba(0, 0, 0, .14),
+0 3px 14px 2px rgba(0, 0, 0, .12),
+0 5px 5px -3px rgba(0, 0, 0, .2);
 
 @mixin transition($property) {
     transition: $property .2s cubic-bezier(.41, .56, .05, .95);

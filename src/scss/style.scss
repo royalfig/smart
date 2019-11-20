@@ -4,7 +4,9 @@
 @import "utilities";
 
 //reset 
-* {
+*,
+*:before,
+*:after {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
@@ -118,7 +120,7 @@ h6,
     width: 100%;
     padding: 1em;
     background: $light;
-    border-bottom: .5em solid #ffffff;
+    border-bottom: .5em solid $pureWhite;
 }
 
 @media only all and (min-width: $tablet) {
@@ -133,10 +135,8 @@ h6,
 }
 
 .home-page-section-header {
-    margin-bottom: .5em;
-    line-height: 1;
-
-
+    position: relative;
+    margin: 0;
 }
 
 //-------------------------------------------

@@ -11,12 +11,12 @@
   justify-content: space-between;
   width: 100%;
   height: $navbar;
-  padding: 0.5em 1em;
+  padding: .5em 1em;
 
-  font-size: 0.8em;
+  font-size: .8em;
   line-height: 1.6;
   background-color: scale-color($light, $alpha: -5%);
-  transition: all 0.1s ease-in-out;
+  transition: all .1s ease-in-out;
 }
 
 .fixed-left {
@@ -32,7 +32,7 @@
     }
 
     p {
-      margin-left: 0.25em;
+      margin-left: .25em;
     }
   }
 }
@@ -40,6 +40,7 @@
 .nav-ul {
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .nav-li {
@@ -62,16 +63,17 @@
   font-size: 1.5em;
   color: $dark;
   background-color: scale-color($light, $alpha: -5%);
-  transition: all 0.4s ease-in-out;
+  transition: all .4s ease-in-out;
 
   .flex-col {
     align-items: center;
     justify-content: center;
 
     .flex-row {
+
       a,
       button {
-        margin: 0 0.5em;
+        margin: 0 .5em;
       }
     }
   }
@@ -83,20 +85,17 @@
 
   a,
   button {
-    margin-bottom: 0.5em;
+    margin-bottom: .5em;
     color: $dark;
   }
 
   .underline {
-    text-shadow: 2px 2px scale-color($light, $alpha: -5%),
-      2px -2px scale-color($light, $alpha: -5%),
-      -2px 2px scale-color($light, $alpha: -5%),
-      -2px -2px scale-color($light, $alpha: -5%);
+    text-shadow: 2px 2px scale-color($light, $alpha: -5%), 2px -2px scale-color($light, $alpha: -5%), -2px 2px scale-color($light, $alpha: -5%), -2px -2px scale-color($light, $alpha: -5%);
   }
 }
 
 .mobile-nav-menu-inner {
-  padding: 0.5em;
+  padding: .5em;
   padding-bottom: 1em;
 }
 
@@ -109,12 +108,12 @@
   justify-content: center;
 
   .nav-item {
-    margin-right: 1em;
+    margin-right: .5em;
   }
 
   a,
   button {
-    padding: 0.5em;
+    padding: .5em;
     line-height: 0;
   }
 
@@ -122,7 +121,7 @@
     width: 24px;
     height: 24px;
     line-height: 1;
-    transition: all 0.2s ease;
+    @include transition(all);
   }
 
   button svg {
@@ -140,7 +139,7 @@
     fill: $dark;
   }
 
-  button > svg {
+  button>svg {
     @extend %svg-size;
     stroke: $dark;
     stroke-width: 2px;
@@ -167,6 +166,7 @@
 // Navbar on laptops and up
 //-------------------------------------------
 @media all and (min-width: $laptop) {
+
   .nav-mobile,
   .mobile-nav-menu {
     display: none;
@@ -213,56 +213,56 @@
     list-style-type: none;
   }
 
-  .fixed-right {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  // .fixed-right {
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: flex-end;
 
-    .nav-item {
-      margin-right: 1em;
-    }
+  //   .nav-item {
+  //     margin-right: .5em;
+  //   }
 
-    button svg {
-      width: 18px;
-      height: 18px;
-      line-height: 1;
-      transition: all 0.2s ease;
-      fill: none;
-      stroke: $dark;
-      stroke-width: 2px;
+  //   button svg {
+  //     width: 18px;
+  //     height: 18px;
+  //     line-height: 1;
+  //     @include transition(all);
+  //     fill: none;
+  //     stroke: $dark;
+  //     stroke-width: 2px;
 
-      &:hover {
-        stroke: $prim;
-      }
-    }
+  //     &:hover {
+  //       stroke: $prim;
+  //     }
+  //   }
 
-    a svg {
-      width: 18px;
-      height: 18px;
-      line-height: 1;
-      transition: all 0.2s ease;
-      fill: $dark;
-    }
+  //   a svg {
+  //     width: 18px;
+  //     height: 18px;
+  //     line-height: 1;
+  //     @include transition(all);
+  //     fill: $dark;
+  //   }
 
-    button > svg {
-      width: 18px;
-      height: 18px;
-      line-height: 1;
-      transition: all 0.2s ease;
-      stroke: $dark;
+  //   button>svg {
+  //     width: 18px;
+  //     height: 18px;
+  //     line-height: 1;
+  //     @include transition(all);
+  //     stroke: $dark;
 
-      &:hover {
-        stroke: $prim;
-      }
-    }
+  //     &:hover {
+  //       stroke: $prim;
+  //     }
+  //   }
 
-    .search-button svg {
-      width: 22px;
-      height: 22px;
-      fill: none;
-      stroke-width: 2px;
-    }
-  }
+  //   .search-button svg {
+  //     width: 22px;
+  //     height: 22px;
+  //     fill: none;
+  //     stroke-width: 2px;
+  //   }
+  // }
 
   .nav-item {
     margin-right: 2em;
@@ -275,6 +275,7 @@
 }
 
 .facebook svg {
+  stroke: none;
   @include transition(all);
 
   &:hover {
@@ -283,9 +284,29 @@
 }
 
 .twitter svg {
+  stroke: none;
   @include transition(all);
 
   &:hover {
     fill: $tw;
+  }
+}
+
+// Navigation
+.pagination {
+  display: flex;
+  justify-content: center;
+
+  >* {
+    margin: 1em;
+  }
+
+  a {
+
+    &:hover,
+    &:focus {
+      color: $prim;
+      @include transition(color);
+    }
   }
 }
