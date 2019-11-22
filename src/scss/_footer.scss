@@ -27,6 +27,7 @@
     }
 
     .card-tag {
+        justify-content: flex-start;
         font-size: 1em;
         color: scale-color($light, $lightness: -20%, $saturation: -75%);
         @include transition(color);

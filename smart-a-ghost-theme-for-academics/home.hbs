@@ -71,7 +71,7 @@ into the {body} of the default.hbs template --}}
 
 <main class="main home">
     {{!-- Latest --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications" as |latest|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach" as |latest|}}
     {{#if latest}}
     <div class="outer-container">
         <div class="inner-container">

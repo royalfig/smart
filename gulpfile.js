@@ -49,13 +49,11 @@ function buildCSS() {
     .src('./src/scss/**/*.scss')
     .pipe(sourcemaps.init())
     .pipe(sass({
-      outputStyle: 'compressed',
+      outputStyle: 'expanded',
     }))
-    .pipe(autoprefixer({
-      cascade: false,
-    }))
+    .pipe(autoprefixer())
     .pipe(clean())
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./smart-a-ghost-theme-for-academics/assets/css'));
 }
 

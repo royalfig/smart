@@ -33,14 +33,14 @@
 
 // Bookmark Styles
 .kg-bookmark-card {
-  width: 100%;
   position: relative;
+  width: 100%;
 }
 
 .kg-bookmark-container {
   display: flex;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   flex-wrap: wrap-reverse;
+  border: 1px solid rgba(0, 0, 0, .1);
   @include transition(all);
 }
 
@@ -72,9 +72,9 @@
 }
 
 .kg-bookmark-description {
-  font-size: 0.93em;
   margin-bottom: 1em;
   overflow: hidden;
+  font-size: .93em;
   color: $dark;
 
   &:hover,
@@ -87,7 +87,7 @@
 .kg-bookmark-icon {
   width: 1.5em;
   height: 1.5em;
-  margin-right: 0.5em;
+  margin-right: .5em;
 }
 
 .kg-bookmark-thumbnail {
@@ -96,17 +96,15 @@
   justify-content: center;
   width: 100%;
   padding: 1em;
-  background: linear-gradient(
-    45deg,
-    scale-color($dark, $lightness: 15%),
-    scale-color($dark, $lightness: 25%)
-  );
+  background: linear-gradient(45deg,
+      scale-color($dark, $lightness: 15%),
+      scale-color($dark, $lightness: 25%));
 }
 
 .kg-bookmark-thumbnail img {
   width: auto;
-  height: auto;
   max-width: 100%;
+  height: auto;
   max-height: 15rem;
   @include transition(all);
 }
@@ -117,13 +115,14 @@
 
 .kg-bookmark-publisher {
   font-family: $sans;
-  font-size: 0.93em;
+  font-size: .93em;
 }
 
 @media (min-width: $laptop) {
   .kg-bookmark-container {
     flex-wrap: nowrap;
   }
+
   .kg-bookmark-content,
   .kg-bookmark-thumbnail {
     width: 50%;
@@ -134,8 +133,7 @@
 .kg-gallery-container {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  max-width: 1040px;
+  width: 100%;
   margin: 1.5em auto;
 }
 
@@ -153,9 +151,9 @@
 }
 
 .kg-gallery-row:not(:first-of-type) {
-  margin: 0.75em 0 0;
+  margin: .75em 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
-  margin: 0 0 0 0.75em;
+  margin: 0 0 0 .75em;
 }

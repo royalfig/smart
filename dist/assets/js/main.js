@@ -23,12 +23,12 @@ function closeMobileNavMenu() {
   mobileMenu.classList.add('nav-menu-hidden');
   mobileMenu.classList.remove('nav-menu-expanded');
   mobileMenu.setAttribute('aria-expanded', false);
-  // document.body.classList.remove('no-scroll');
+  document.body.classList.remove('no-scroll');
 }
 
-function closeByEsc(keyPressed) {
-  if (keyPressed.key === 'Escape') {
-    closeMobileNavMenu();
+function closeByEsc(keydown, action) {
+  if (keydown.key === 'Escape') {
+    action();
     document.body.removeEventListener('keydown', closeByEsc);
   }
 }
@@ -39,9 +39,9 @@ function openMobileNavMenu() {
   mobileMenu.classList.add('nav-menu-expanded');
   mobileMenu.addEventListener('click', closeMobileNavMenu);
   mobileMenu.setAttribute('aria-expanded', true);
-  // document.body.classList.add('no-scroll');
+  document.body.classList.add('no-scroll');
   // Close nav menu with ESC key
-  document.body.addEventListener('keydown', closeByEsc);
+  document.body.addEventListener('keydown', (keydown) => closeByEsc(keydown, closeMobileNavMenu));
 }
 
 mobileNavBtn.addEventListener('click', () => {
@@ -99,14 +99,16 @@ function shareBarAnimation() {
   }
 }
 
-if (progressBar) {
+if (typeof shareBar !== 'undefined') {
   window.addEventListener('scroll', () => {
     lastKnownScrollPos = window.scrollY;
 
     if (!ticking) {
       window.requestAnimationFrame(() => {
-        readingBarProgress(lastKnownScrollPos);
         shareBarAnimation();
+        if (progressBar) {
+          readingBarProgress(lastKnownScrollPos);
+        }
         ticking = false;
       });
 
@@ -180,88 +182,25 @@ tables.forEach((e) => tablePrepend(e));
 //-------------------------------------------
 // Search function
 //-------------------------------------------
-const api = new GhostContentAPI({
-  url: `${window.location.protocol}//${window.location.host}`,
-  key: SEARCH_API,
-  version: 'v2',
-});
 
-let builtIdx = {};
+if (typeof SEARCH_API !== 'undefined') {
+  const api = new GhostContentAPI({
+    url: `${window.location.protocol}//${window.location.host}`,
+    key: SEARCH_API,
+    version: 'v2',
+  });
 
-// Check whether posts are cached or not. Check if they need to be updated.
-if (!localStorage.getItem('posts')) {
-  builtIdx = api.posts
-    .browse({
-      include: 'tags,authors',
-      formats: 'plaintext',
-      limit: 'all',
-    })
-    .then((posts) => {
-      const idx = lunr(function () {
-        this.ref('uuid');
-        this.field('plaintext');
-        this.field('title');
+  let builtIdx = {};
 
-        posts.forEach((doc) => {
-          this.add(doc);
-        }, this);
-      });
-
-      localStorage.setItem('posts', JSON.stringify(posts));
-
-      return {
-        posts,
-        idx,
-      };
-    })
-    .catch((err) => {
-      console.error(err);
-    });
-} else {
-  builtIdx = api.posts
-    .browse({
-      fields: 'published_at',
-      limit: 1,
-    })
-    .then((post) => new Date(post[0].published_at))
-
-    .then((newest) => {
-      const newestTime = newest.getTime();
-      const rawPosts = localStorage.getItem('posts');
-      const posts = JSON.parse(rawPosts);
-      const lastUpdated = new Date(posts[0].published_at);
-      const lastUpdatedTime = lastUpdated.getTime();
-
-
-      if (newestTime > lastUpdatedTime) {
-        api.posts
-          .browse({
-            include: 'tags,authors',
-            formats: 'plaintext',
-            limit: 'all',
-          })
-          .then((posts) => {
-            const idx = lunr(function () {
-              this.ref('uuid');
-              this.field('plaintext');
-              this.field('title');
-
-              posts.forEach((doc) => {
-                this.add(doc);
-              }, this);
-            });
-
-            localStorage.setItem('posts', JSON.stringify(posts));
-
-            return {
-              posts,
-              idx,
-            };
-          })
-          .catch((err) => {
-            console.error(err);
-          });
-      } else {
+  // Check whether posts are cached or not. Check if they need to be updated.
+  if (!localStorage.getItem('posts')) {
+    builtIdx = api.posts
+      .browse({
+        include: 'tags,authors',
+        formats: 'plaintext',
+        limit: 'all',
+      })
+      .then((posts) => {
         const idx = lunr(function () {
           this.ref('uuid');
           this.field('plaintext');
@@ -272,68 +211,138 @@ if (!localStorage.getItem('posts')) {
           }, this);
         });
 
+        localStorage.setItem('posts', JSON.stringify(posts));
+
         return {
           posts,
           idx,
         };
-      }
-    });
-}
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  } else {
+    builtIdx = api.posts
+      .browse({
+        fields: 'published_at',
+        limit: 1,
+      })
+      .then((post) => new Date(post[0].published_at))
 
-const searchInput = document.getElementById('search-input');
-const searchBtn = document.getElementById('search-btn');
-const searchResultHeader = document.querySelector('.search-result-header');
-const searchResult = document.getElementById('search-result');
+      .then((newest) => {
+        const newestTime = newest.getTime();
+        const rawPosts = localStorage.getItem('posts');
+        const posts = JSON.parse(rawPosts);
+        const lastUpdated = new Date(posts[0].published_at);
+        const lastUpdatedTime = lastUpdated.getTime();
 
-function searchPosts(term) {
-  searchResult.innerHTML = '';
 
-  builtIdx.then((obj) => {
-    console.log(obj);
-    const srch = obj.idx.search(term);
+        if (newestTime > lastUpdatedTime) {
+          api.posts
+            .browse({
+              include: 'tags,authors',
+              formats: 'plaintext',
+              limit: 'all',
+            })
+            .then((posts) => {
+              const idx = lunr(function () {
+                this.ref('uuid');
+                this.field('plaintext');
+                this.field('title');
 
-    if (srch.length > 1) {
-      searchResultHeader.textContent = `${srch.length} Results`;
-    } else if (srch.length !== 0) {
-      searchResultHeader.textContent = `${srch.length} Result`;
-    } else {
-      searchResultHeader.textContent = 'No results';
-    }
+                posts.forEach((doc) => {
+                  this.add(doc);
+                }, this);
+              });
 
-    srch.forEach((el) => {
-      obj.posts.filter((post) => {
-        if (post.uuid === el.ref) {
-          const published = new Date(post.published_at);
-          const months = [
-            'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
-          ];
-          const publishedString = `${months[published.getMonth()]} ${published.getDate()}, ${published.getFullYear()}`;
-          searchResult.innerHTML += `<article class="search-result-item"><p class="search-result-date">${publishedString}</p>
-          <a class="search-result-link" href="${post.url}">${post.title}</a></article>`;
+              localStorage.setItem('posts', JSON.stringify(posts));
+
+              return {
+                posts,
+                idx,
+              };
+            })
+            .catch((err) => {
+              console.error(err);
+            });
+        } else {
+          const idx = lunr(function () {
+            this.ref('uuid');
+            this.field('plaintext');
+            this.field('title');
+
+            posts.forEach((doc) => {
+              this.add(doc);
+            }, this);
+          });
+
+          return {
+            posts,
+            idx,
+          };
         }
       });
+  }
+
+  const searchInput = document.getElementById('search-input');
+  const searchBtn = document.getElementById('search-btn');
+  const searchResultHeader = document.querySelector('.search-result-header');
+  const searchResult = document.getElementById('search-result');
+
+  function searchPosts(term) {
+    searchResult.innerHTML = '';
+
+    builtIdx.then((obj) => {
+      const srch = obj.idx.search(term);
+
+      if (srch.length > 1) {
+        searchResultHeader.textContent = `${srch.length} Results`;
+      } else if (srch.length !== 0) {
+        searchResultHeader.textContent = `${srch.length} Result`;
+      } else {
+        searchResultHeader.textContent = 'No results';
+      }
+
+      srch.forEach((el) => {
+        obj.posts.filter((post) => {
+          if (post.uuid === el.ref) {
+            const published = new Date(post.published_at);
+            const months = [
+              'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December',
+            ];
+            const publishedString = `${months[published.getMonth()]} ${published.getDate()}, ${published.getFullYear()}`;
+            searchResult.innerHTML += `<article class="search-result-item"><p class="search-result-date">${publishedString}</p>
+          <a class="search-result-link" href="${post.url}">${post.title}</a></article>`;
+          }
+        });
+      });
     });
+  }
+
+  searchBtn.addEventListener('click', () => {
+    if (searchInput.value === '') {
+      searchResultHeader.textContent = 'Enter a search term';
+      searchResult.innerHTML = '';
+    } else {
+      searchPosts(searchInput.value);
+    }
+  });
+
+  searchInput.addEventListener('keyup', (e) => {
+    if (searchInput.value === '') {
+      searchResultHeader.textContent = 'Enter a search term';
+      searchResult.innerHTML = '';
+    } else if (e.keyCode === 13) {
+      searchPosts(searchInput.value);
+    }
+  });
+
+  searchInput.addEventListener('focus', (e) => {
+    e.target.value = '';
+  });
+} else {
+  searchBtns.forEach((btn) => {
+    const hide = btn;
+    hide.style.display = 'none';
   });
 }
-
-searchBtn.addEventListener('click', () => {
-  if (searchInput.value === '') {
-    searchResultHeader.textContent = 'Enter a search term';
-    searchResult.innerHTML = '';
-  } else {
-    searchPosts(searchInput.value);
-  }
-});
-
-searchInput.addEventListener('keyup', (e) => {
-  if (searchInput.value === '') {
-    searchResultHeader.textContent = 'Enter a search term';
-    searchResult.innerHTML = '';
-  } else if (e.keyCode === 13) {
-    searchPosts(searchInput.value);
-  }
-});
-
-searchInput.addEventListener('focus', (e) => {
-  e.target.value = '';
-});

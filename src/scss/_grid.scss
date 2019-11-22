@@ -30,20 +30,18 @@
 
 .card-body {
     padding: .5em;
-    margin: 1em 0 .5em;
+    margin: 1.25em 0;
 }
 
 .card-date-tag {
     justify-content: space-between;
 }
 
-.card-date {
-    flex: 1;
-}
 
 .card-date,
 .card-tag {
     display: flex;
+    min-width: 50%;
     padding: 1px;
     font-size: .75em;
     font-weight: 400;
@@ -53,6 +51,7 @@
 
 .card-tag {
     align-items: center;
+    justify-content: flex-end;
 
     svg {
         flex-shrink: 0;

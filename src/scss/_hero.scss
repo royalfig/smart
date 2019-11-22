@@ -18,6 +18,10 @@
     padding-bottom: 3em;
 }
 
+.hero-img-container {
+    margin: 0 1em;
+}
+
 .hero-right {
     align-items: flex-start;
     // justify-content: center;
@@ -85,6 +89,9 @@
             margin-top: auto;
         }
 
+        .card-tag {
+            justify-content: flex-start;
+        }
     }
 }
 
