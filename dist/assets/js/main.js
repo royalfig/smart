@@ -107,14 +107,14 @@ function shareBarAnimation() {
   }
 }
 
-if (typeof shareBar !== "undefined") {
+if (typeof shareBar !== null) {
   window.addEventListener("scroll", () => {
     lastKnownScrollPos = window.scrollY;
 
     if (!ticking) {
       window.requestAnimationFrame(() => {
         shareBarAnimation();
-        if (typeof progressBar !== "undefined") {
+        if (progressBar !== null) {
           readingBarProgress(lastKnownScrollPos);
         }
         ticking = false;
