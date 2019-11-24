@@ -107,7 +107,7 @@ function shareBarAnimation() {
   }
 }
 
-if (typeof shareBar !== null) {
+if (shareBar !== null) {
   window.addEventListener("scroll", () => {
     lastKnownScrollPos = window.scrollY;
 

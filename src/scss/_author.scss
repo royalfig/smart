@@ -1,119 +1,123 @@
 .author-header {
-    align-content: center;
-    align-items: center;
-    padding: 1em;
-    margin: 2em 0;
-    border-bottom: .5em solid #ffffff;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  margin: 2em 0;
+  border-bottom: 0.5em solid #ffffff;
 }
 
 .profile-image-container,
 .hero-img-container {
-    position: relative;
-    display: flex;
-    flex-shrink: 0;
+  position: relative;
+  display: flex;
+  flex-shrink: 0;
 
-    &:before {
-        position: absolute;
-        top: -1rem;
-        left: -1rem;
-        width: 50%;
-        height: 50%;
-        content: "";
-        background: linear-gradient(45deg, scale-color($prim, $alpha: -50%), scale-color($acc1, $alpha: -50%));
-    }
+  &:before {
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    width: 50%;
+    height: 50%;
+    content: "";
+    background: linear-gradient(
+      45deg,
+      scale-color($prim, $alpha: -50%),
+      scale-color($acc1, $alpha: -50%)
+    );
+  }
 
-    &:after {
-        position: absolute;
-        right: -1rem;
-        bottom: -1rem;
-        z-index: 0;
-        width: 50%;
-        height: 50%;
-        content: "";
-        background: linear-gradient(-45deg, scale-color($prim, $alpha: -50%), scale-color($acc1, $alpha: -50%));
-    }
-
+  &:after {
+    position: absolute;
+    right: -1rem;
+    bottom: -1rem;
+    z-index: 0;
+    width: 50%;
+    height: 50%;
+    content: "";
+    background: linear-gradient(
+      -45deg,
+      scale-color($prim, $alpha: -50%),
+      scale-color($acc1, $alpha: -50%)
+    );
+  }
 }
 
 .profile-image {
-    position: relative;
-    z-index: 1;
-    width: $base;
-    height: $base;
-    margin: 0;
-    box-shadow: $box-shadow;
+  position: relative;
+  z-index: 1;
+  width: $base;
+  height: $base;
+  margin: 0;
+  box-shadow: $box-shadow;
 }
 
 .author-text {
-    margin-left: 4em;
+  margin-left: 4em;
 
-    h1 {
-        margin: 0;
-    }
+  h1 {
+    margin: 0;
+  }
 }
 
 @media (min-width: $tablet) and (max-width: $laptop) {
-    .profile-image {
-        width: $base + 25px;
-        height: $base + 25px;
-    }
+  .profile-image {
+    width: $base + 25px;
+    height: $base + 25px;
+  }
 }
 
 @media (min-width: $laptop) {
-    .profile-image {
-        width: $base + 50px;
-        height: $base + 50px;
-    }
+  .profile-image {
+    width: $base + 50px;
+    height: $base + 50px;
+  }
 }
 
 .author-meta {
-    justify-content: flex-start;
-    @include transition(all);
+  justify-content: flex-start;
+  @include transition(all);
 
-    a {
-        margin-right: .5em;
+  a {
+    margin-right: 0.5em;
 
-        &:last-child {
-            margin-right: 0;
-        }
+    &:last-child {
+      margin-right: 0;
     }
+  }
 
-    svg {
-        width: 1.5em;
-        height: 1.5em;
-    }
+  svg {
+    width: 1.5em;
+    height: 1.5em;
+  }
 }
 
 .author-small-header {
-    margin-top: 1em;
-    font-size: .8em;
-    font-weight: 600;
-    color: scale-color($dark, $lightness: 50%);
-    text-transform: uppercase;
+  margin-top: 1em;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: scale-color($dark, $lightness: 50%);
+  text-transform: uppercase;
 }
 
 .author-location {
-
-
-
-    p {
-        margin-left: .25em;
-    }
-
-
+  p {
+    margin-left: 0.25em;
+  }
 }
 
 .website svg,
 .author-location svg {
-    width: 1.5em;
-    height: 1.5em;
-    fill: none;
-    stroke: currentColor;
-    @include transition(stroke);
+  width: 1.5em;
+  height: 1.5em;
+  fill: none;
+  stroke: currentColor;
+  @include transition(stroke);
 }
 
 .website {
-    &:hover svg {
-        stroke: $prim;
-    }
+  &:hover svg {
+    stroke: $prim;
+  }
 }

@@ -13,7 +13,7 @@ $acc3: #02383c;
 // Social Media
 $fb: #1877f2;
 $tw: #1da1f2;
-$li: #0077B5;
+$li: #0077b5;
 
 $pureWhite: #ffffff;
 $pureBlack: #000000;
@@ -27,24 +27,12 @@ $pureBlack: #000000;
 // $pureWhite: invert(#ffffff, 100%);
 
 // Font styles
-$sans: "Fira Sans",
--apple-system,
-blinkmacsystemfont,
-roboto,
-"Segoe UI",
-oxygen,
-ubuntu,
-cantarell,
-"Open Sans",
-"Helvetica Neue",
-sans-serif;
+$sans: "Fira Sans", -apple-system, blinkmacsystemfont, roboto, "Segoe UI",
+  oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-$serif: "DM Serif Text",
-georgia,
-times,
-serif;
+$serif: "DM Serif Text", georgia, times, serif;
 
-// Breakpoints 
+// Breakpoints
 $tablet: 640px;
 $laptop: 1024px;
 $desktop: 1280px;
@@ -54,19 +42,18 @@ $base: 180px;
 $navbar: 3rem;
 
 .index {
-    margin-top: $navbar;
+  margin-top: $navbar;
 }
 
-// Box Shadow 
-$box-shadow: 3px 3px 4px rgba(0, 0, 0, .12),
--3px 2px 4px rgba(0, 0, 0, .12),
-5px 10px 15px rgba(0, 0, 0, .14),
--5px 5px 15px rgba(0, 0, 0, .14);
+// Box Shadow
+$box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.12), -3px 2px 4px rgba(0, 0, 0, 0.12),
+  5px 10px 15px rgba(0, 0, 0, 0.14), -5px 5px 15px rgba(0, 0, 0, 0.14);
 
-$box-shadow: 0 8px 17px 2px rgba(0, 0, 0, .14),
-0 3px 14px 2px rgba(0, 0, 0, .12),
-0 5px 5px -3px rgba(0, 0, 0, .2);
+$box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+
+$box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
 @mixin transition($property) {
-    transition: $property .2s cubic-bezier(.41, .56, .05, .95);
+  transition: $property 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 }
