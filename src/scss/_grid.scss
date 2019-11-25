@@ -2,92 +2,91 @@
 // Card Styles
 //-------------------------------------------
 .card {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    max-width: 100%;
-    background: $light;
-    @include transition(all);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  background: $light;
+  @include transition(all);
 }
 
 .card-img,
 .no-img {
-    display: block;
-    width: 100%;
-    height: $base;
-    object-fit: cover;
-    box-shadow: $box-shadow;
-    @include transition(all);
+  display: block;
+  width: 100%;
+  height: $base;
+  object-fit: cover;
+  box-shadow: $box-shadow;
+  @include transition(all);
 
-    &:hover {
-        filter: saturate(125%);
-    }
+  &:hover {
+    filter: saturate(125%);
+  }
 }
 
 .no-img {
-    background: linear-gradient(45deg, $prim, $acc1);
+  background: linear-gradient(45deg, $prim, $acc1);
 }
 
 .card-body {
-    padding: .5em;
-    margin: 1.25em 0;
+  padding: 0.5em;
+  margin: 1.25em 0;
 }
 
 .card-date-tag {
-    justify-content: space-between;
+  justify-content: space-between;
 }
-
 
 .card-date,
 .card-tag {
-    display: flex;
-    min-width: 50%;
-    padding: 1px;
-    font-size: .75em;
-    font-weight: 400;
-    color: $dark;
-    text-transform: uppercase;
+  display: flex;
+  min-width: 50%;
+  padding: 1px;
+  font-size: 0.75em;
+  font-weight: 400;
+  color: $dark;
+  text-transform: uppercase;
 }
 
 .card-tag {
-    align-items: center;
-    justify-content: flex-end;
+  align-items: center;
+  justify-content: flex-end;
 
-    svg {
-        flex-shrink: 0;
-        width: 1em;
-        height: 1em;
-        transform: translateY(-.1em);
-        stroke: currentColor;
-        stroke-width: 1.5px;
-    }
+  svg {
+    flex-shrink: 0;
+    width: 1em;
+    height: 1em;
+    transform: translateY(-0.1em);
+    stroke: currentColor;
+    stroke-width: 1.5px;
+  }
 }
 
 .read-more svg {
-    width: 2em;
-    height: 2em;
-    transform: translateY(.5em);
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2px;
+  width: 2em;
+  height: 2em;
+  transform: translateY(0.5em);
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2px;
 }
 
 .card-title {
-    position: relative;
-    margin: .25em 0;
-    font-size: 1.5em;
-    line-height: 1.1;
-    color: $dark;
-    @include transition(color);
+  position: relative;
+  margin: 0.25em 0;
+  font-size: 1.5em;
+  line-height: 1.1;
+  color: $dark;
+  @include transition(color);
 
-    &:hover {
-        color: $prim;
-    }
+  &:hover {
+    color: $prim;
+  }
 }
 
 .card-excerpt {
-    margin: .5em 0;
-    color: $dark;
+  margin: 0.5em 0;
+  color: $dark;
 }
 
 //-------------------------------------------
@@ -96,277 +95,277 @@
 
 // Mobile phones
 .grid-container-home {
-    align-content: stretch;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    max-width: 100%;
-    margin: 2em 0;
+  align-content: stretch;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  max-width: 100%;
+  margin: 2em 0;
 }
 
 // Tablets
-@media (min-width:$tablet) and (max-width: $laptop) {
-    .grid-container-home-1 {
-        grid-template-columns: minmax(250px, 500px);
+@media (min-width: $tablet) and (max-width: $laptop - 1) {
+  .grid-container-home-1 {
+    grid-template-columns: minmax(250px, 500px);
+  }
+
+  .grid-container-home-2,
+  .grid-container-home-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-container-home-3 {
+    grid-template-areas:
+      "one one"
+      "two three";
+    grid-template-columns: 1fr 1fr;
+
+    .card-1 {
+      grid-area: one;
+
+      .card-img,
+      .no-img {
+        height: 2.5 * $base;
+        max-height: 60vh;
+      }
     }
 
-    .grid-container-home-2,
-    .grid-container-home-4 {
-        grid-template-columns: repeat(2, 1fr);
+    .card-2 {
+      grid-area: two;
     }
 
-    .grid-container-home-3 {
-        grid-template-areas: "one one"
-            "two three";
-        grid-template-columns: 1fr 1fr;
+    .card-3 {
+      grid-area: three;
+    }
+  }
 
-        .card-1 {
-            grid-area: one;
+  .grid-container-home-5 {
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four five";
 
-            .card-img,
-            .no-img {
-                height: 2.5 * $base;
-                max-height: 60vh;
-            }
-        }
+    grid-template-columns: 1fr 1fr;
 
-        .card-2 {
-            grid-area: two;
-        }
+    .card-1 {
+      grid-area: one;
 
-        .card-3 {
-            grid-area: three;
-        }
+      .card-img,
+      .no-img {
+        height: 2.5 * $base;
+        max-height: 60vh;
+      }
     }
 
-    .grid-container-home-5 {
-        grid-template-areas: "one one"
-            "two three"
-            "four five";
-
-        grid-template-columns: 1fr 1fr;
-
-        .card-1 {
-            grid-area: one;
-
-            .card-img,
-            .no-img {
-                height: 2.5 * $base;
-                max-height: 60vh;
-            }
-        }
-
-        .card-2 {
-            grid-area: two;
-        }
-
-        .card-3 {
-            grid-area: three;
-        }
-
-        .card-4 {
-            grid-area: four;
-        }
-
-        .card-5 {
-            grid-area: five;
-        }
+    .card-2 {
+      grid-area: two;
     }
 
-    .card-img,
-    .no-img {
-        height: 1.75 * $base;
+    .card-3 {
+      grid-area: three;
     }
+
+    .card-4 {
+      grid-area: four;
+    }
+
+    .card-5 {
+      grid-area: five;
+    }
+  }
+
+  .card-img,
+  .no-img {
+    height: 1.75 * $base;
+  }
 }
 
 // Laptops
-@media (min-width: $laptop) and (max-width: $desktop) {
-    .grid-container-home-1 {
-        grid-template-columns: minmax(250px, 500px);
+@media (min-width: $laptop) and (max-width: $desktop - 1) {
+  .grid-container-home-1 {
+    grid-template-columns: minmax(250px, 500px);
+  }
+
+  .grid-container-home-2,
+  .grid-container-home-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-container-home-3 {
+    grid-template-areas:
+      "one one"
+      "two three";
+    grid-template-columns: 1fr 1fr;
+
+    .card-1 {
+      grid-area: one;
+
+      .card-img,
+      .no-img {
+        height: 2.5 * $base;
+        max-height: 60vh;
+      }
     }
 
-    .grid-container-home-2,
-    .grid-container-home-4 {
-        grid-template-columns: repeat(2, 1fr);
+    .card-2 {
+      grid-area: two;
     }
 
-    .grid-container-home-3 {
-        grid-template-areas: "one one"
-            "two three";
-        grid-template-columns: 1fr 1fr;
+    .card-3 {
+      grid-area: three;
+    }
+  }
 
-        .card-1 {
-            grid-area: one;
+  .grid-container-home-5 {
+    grid-template-areas:
+      "one one"
+      "two three"
+      "four five";
+    grid-template-columns: 1fr 1fr;
 
-            .card-img,
-            .no-img {
-                height: 2.5 * $base;
-                max-height: 60vh;
-            }
-        }
+    .card-1 {
+      grid-area: one;
 
-        .card-2 {
-            grid-area: two;
-        }
-
-        .card-3 {
-            grid-area: three;
-        }
+      .card-img,
+      .no-img {
+        height: 2.5 * $base;
+        max-height: 60vh;
+      }
     }
 
-    .grid-container-home-5 {
-        grid-template-areas: "one one"
-            "two three"
-            "four five";
-        grid-template-columns: 1fr 1fr;
-
-        .card-1 {
-            grid-area: one;
-
-            .card-img,
-            .no-img {
-                height: 2.5 * $base;
-                max-height: 60vh;
-            }
-        }
-
-        .card-2 {
-            grid-area: two;
-        }
-
-        .card-3 {
-            grid-area: three;
-        }
-
-        .card-4 {
-            grid-area: four;
-        }
-
-        .card-5 {
-            grid-area: five;
-        }
+    .card-2 {
+      grid-area: two;
     }
 
-    .card-img,
-    .no-img {
-        height: 1.75 * $base;
+    .card-3 {
+      grid-area: three;
     }
+
+    .card-4 {
+      grid-area: four;
+    }
+
+    .card-5 {
+      grid-area: five;
+    }
+  }
+
+  .card-img,
+  .no-img {
+    height: 1.75 * $base;
+  }
 }
 
-// Desktops 
+// Desktops
 @media (min-width: $desktop) {
+  .grid-container-home-1 {
+    grid-template-columns: minmax(250px, 500px);
+  }
 
-    .grid-container-home-1 {
-        grid-template-columns: minmax(250px, 500px);
+  .grid-container-home-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .grid-container-home-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid-container-home-4 {
+    grid-template-areas:
+      "one one one"
+      "two three four";
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .card-1 {
+      grid-area: one;
+
+      .card-img,
+      .no-img {
+        height: 2.5 * $base;
+        max-height: 60vh;
+      }
     }
 
-    .grid-container-home-2 {
-        grid-template-columns: repeat(2, 1fr);
+    .card-2 {
+      grid-area: two;
     }
 
-    .grid-container-home-3 {
-        grid-template-columns: repeat(3, 1fr);
-
+    .card-3 {
+      grid-area: three;
     }
 
-    .grid-container-home-4 {
-        grid-template-areas: "one one one"
-            "two three four";
-        grid-template-columns: 1fr 1fr 1fr;
-
-        .card-1 {
-            grid-area: one;
-
-            .card-img,
-            .no-img {
-                height: 2.5 * $base;
-                max-height: 60vh;
-            }
-        }
-
-        .card-2 {
-            grid-area: two;
-        }
-
-        .card-3 {
-            grid-area: three;
-        }
-
-        .card-4 {
-            grid-area: four;
-        }
-
-        .card-img,
-        .no-img {
-            height: 2 * $base;
-        }
-
-    }
-
-    .grid-container-home-5 {
-        grid-template-areas: "one one one two two two"
-            "three three four four five five";
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-
-        .card-1 {
-            grid-area: one;
-
-            .card-img,
-            .no-img {
-                height: 3 * $base;
-                max-height: 60vh;
-            }
-        }
-
-        .card-2 {
-            grid-area: two;
-
-            .card-img,
-            .no-img {
-                height: 3 * $base;
-                max-height: 60vh;
-            }
-        }
-
-        .card-3 {
-            grid-area: three;
-        }
-
-        .card-4 {
-            grid-area: four;
-        }
-
-        .card-5 {
-            grid-area: five;
-        }
+    .card-4 {
+      grid-area: four;
     }
 
     .card-img,
     .no-img {
-        height: 2.25 * $base;
+      height: 2 * $base;
+    }
+  }
+
+  .grid-container-home-5 {
+    grid-template-areas:
+      "one one one two two two"
+      "three three four four five five";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+    .card-1 {
+      grid-area: one;
+
+      .card-img,
+      .no-img {
+        height: 3 * $base;
+        max-height: 60vh;
+      }
     }
 
+    .card-2 {
+      grid-area: two;
+
+      .card-img,
+      .no-img {
+        height: 3 * $base;
+        max-height: 60vh;
+      }
+    }
+
+    .card-3 {
+      grid-area: three;
+    }
+
+    .card-4 {
+      grid-area: four;
+    }
+
+    .card-5 {
+      grid-area: five;
+    }
+  }
+
+  .card-img,
+  .no-img {
+    height: 2.25 * $base;
+  }
 }
 
 //-------------------------------------------
 // Index Styles
 //-------------------------------------------
 @media (max-width: $desktop) {
-    .grid-container-index {
-        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  .grid-container-index {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 
-        .card-1 {
-            grid-column: 1 / -1;
-        }
+    .card-1 {
+      grid-column: 1 / -1;
     }
-
+  }
 }
 
 @media (min-width: $desktop) {
-    .grid-container-index {
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  .grid-container-index {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 
-        .card-1 {
-            grid-column: 1 / -1;
-        }
+    .card-1 {
+      grid-column: 1 / -1;
     }
-
+  }
 }
