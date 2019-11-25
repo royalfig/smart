@@ -2,355 +2,351 @@
 // Post Reading Progress Bar
 //-------------------------------------------
 .post-reading-progress {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    width: 0;
-    height: 3px;
-    // margin-top: $navbar;
-    background: linear-gradient(to right, scale-color($prim, $alpha: -50%), scale-color($acc1, $alpha: -50%));
-
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  width: 0;
+  height: 3px;
+  // margin-top: $navbar;
+  background: linear-gradient(
+    to right,
+    scale-color($prim, $alpha: -50%),
+    scale-color($acc1, $alpha: -50%)
+  );
 }
 
 //-------------------------------------------
 // Post Styles
 //-------------------------------------------
 .post {
-    max-width: $tablet;
-    margin: 0 auto 8em;
+  max-width: $tablet;
+  margin: 0 auto 8em;
 }
 
 .post-header {
-    margin: 1em 0 3em;
+  margin: 1em 0 3em;
 }
 
 .post-content {
-    margin: 0 auto 4em;
+  margin: 0 auto 4em;
 
-    p {
-        margin-bottom: 1em;
-    }
-
+  p {
+    margin-bottom: 1em;
+  }
 }
 
 .post-img {
+  width: 100%;
+  height: 50vh;
+
+  img,
+  .no-post-img {
+    display: block;
     width: 100%;
-    height: 50vh;
+    height: 100%;
+    object-fit: cover;
+  }
 
-    img,
-    .no-post-img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .no-post-img {
-        background: linear-gradient(to right, $prim, $acc1);
-    }
-
+  .no-post-img {
+    background: linear-gradient(to right, $prim, $acc1);
+  }
 }
 
 .post-title {
-    position: relative;
-    margin-bottom: .5rem;
+  position: relative;
+  margin-bottom: 0.5rem;
 }
 
 .post-author {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: $prim;
+  font-size: 1.1em;
+  font-weight: 600;
+  color: $prim;
 }
 
 .post-date {
-    font-size: .9em;
+  font-size: 0.9em;
 }
 
 //-------------------------------------------
 // Share Bar
 //-------------------------------------------
 .post-share-bar {
-    position: fixed;
-    bottom: 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 1em;
-    margin: 0;
-    margin-bottom: -100px;
-    font-size: .8em;
-    font-weight: 600;
-    color: scale-color($dark, $alpha: -30%);
-    text-align: center;
-    background: scale-color($light, $alpha: -5%);
-    opacity: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+  margin: 0;
+  margin-bottom: -100px;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: scale-color($dark, $alpha: -30%);
+  text-align: center;
+  background: scale-color($light, $alpha: -5%);
+  opacity: 0;
 
-    @include transition(all);
+  @include transition(all);
 }
 
 .post-share-bar-title {
-    margin-right: 2em;
+  margin-right: 2em;
 }
 
 .post-share-bar-link {
-    width: 2em;
-    height: 2em;
-    margin-right: 2em;
+  width: 2em;
+  height: 2em;
+  margin-right: 2em;
 
-    &:focus {
-        outline: 2px dotted currentColor;
+  &:focus {
+    outline: 2px dotted currentColor;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: scale-color($dark, $alpha: -30%);
+    @include transition(all);
+  }
+
+  &.twitter svg {
+    &:hover,
+    &:active {
+      fill: $tw;
     }
+  }
 
-    svg {
-        width: 100%;
-        height: 100%;
-        fill: scale-color($dark, $alpha: -30%);
-        @include transition(all);
+  &.facebook svg {
+    &:hover,
+    &:active {
+      fill: $fb;
     }
+  }
 
-    &.twitter svg {
-
-
-        &:hover,
-        &:active {
-            fill: $tw;
-        }
+  &.linkedin svg {
+    &:hover,
+    &:active {
+      fill: $li;
     }
+  }
 
-    &.facebook svg {
+  &.copy svg {
+    fill: none;
+    stroke: scale-color($dark, $alpha: -30%);
 
-        &:hover,
-        &:active {
-            fill: $fb;
-        }
+    &:hover,
+    &:active {
+      stroke: $prim;
     }
-
-    &.linkedin svg {
-
-        &:hover,
-        &:active {
-            fill: $li;
-        }
-    }
-
-    &.copy svg {
-        fill: none;
-        stroke: scale-color($dark, $alpha: -30%);
-
-        &:hover,
-        &:active {
-            stroke: $prim;
-        }
-    }
-
+  }
 }
 
 @media only screen and (min-width: $laptop) {
-    .post-share-bar {
-        top: $navbar + 1rem;
-        bottom: initial;
-        flex-direction: column;
-        width: initial;
-        margin: 0;
-        margin-left: -200px;
-    }
+  .post-share-bar {
+    top: $navbar + 1rem;
+    bottom: initial;
+    flex-direction: column;
+    width: initial;
+    margin: 0;
+    margin-left: -200px;
+  }
 
-    .post-share-bar-title,
-    .post-share-bar-link {
-        margin-right: 0;
-        margin-bottom: 1em;
+  .post-share-bar-title,
+  .post-share-bar-link {
+    margin-right: 0;
+    margin-bottom: 1em;
 
-        &:last-child {
-            margin-bottom: 0;
-        }
+    &:last-child {
+      margin-bottom: 0;
     }
+  }
 }
 
 //-------------------------------------------
 // Tag Bar
 //-------------------------------------------
 .post-tag-bar {
-    flex-wrap: wrap;
-    margin-top: .25em;
-    font-size: .75em;
-    text-transform: uppercase;
+  flex-wrap: wrap;
+  margin-top: 0.25em;
+  font-size: 0.75em;
+  text-transform: uppercase;
 
-    svg {
-        width: 22px;
-        height: 22px;
-        fill: none;
-        stroke: scale-color($dark, $alpha: -25%);
-    }
+  svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: scale-color($dark, $alpha: -25%);
+  }
 }
 
 .post-tag-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: .15em .35em;
-    margin-right: .25em;
-    color: scale-color($dark, $alpha: -25%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.15em 0.35em;
+  margin-right: 0.25em;
+  color: scale-color($dark, $alpha: -25%);
 
-    &:first-of-type {
-        margin-left: .15em;
-    }
+  &:first-of-type {
+    margin-left: 0.15em;
+  }
 
-    &:last-child {
-        margin-right: 0;
-    }
+  &:last-child {
+    margin-right: 0;
+  }
 
-    svg {
-        width: 1em;
-        height: 1em;
-    }
+  svg {
+    width: 1em;
+    height: 1em;
+  }
 }
 
 // -------------------------------------------
 // Post Footer: About the Author and Related Posts
 // -------------------------------------------
 .post-footer-container {
-    padding-top: .5em;
-    grid-template-areas: "title-1"
-        "author"
-        "title-2"
-        "post-1"
-        "post-2";
-    grid-template-columns: 1fr;
-    grid-row-gap: .5em;
-    border-top: 2px solid scale-color($dark, $alpha: -50%);
+  padding-top: 0.5em;
+  grid-template-areas:
+    "title-1"
+    "author"
+    "title-2"
+    "post-1"
+    "post-2";
+  grid-template-columns: 1fr;
+  grid-row-gap: 0.5em;
+  border-top: 2px solid scale-color($dark, $alpha: -50%);
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $laptop) {
-    .post-footer-container {
-        grid-template-areas: "title-1 title-1"
-            "author author"
-            "title-2 title-2"
-            "post-1 post-2";
-        grid-template-columns: 1fr 1fr;
-    }
+  .post-footer-container {
+    grid-template-areas:
+      "title-1 title-1"
+      "author author"
+      "title-2 title-2"
+      "post-1 post-2";
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media only screen and (min-width: $laptop) {
-    .post-footer-container {
-        grid-template-areas: "title-1 title-2 title-2"
-            "author post-1 post-2";
-        grid-template-columns: repeat(3, minmax(200px, 1fr));
-    }
+  .post-footer-container {
+    grid-template-areas:
+      "title-1 title-2 title-2"
+      "author post-1 post-2";
+    grid-template-columns: repeat(3, minmax(200px, 1fr));
+  }
 }
 
-
 .author-footer {
-    grid-area: author;
-    grid-column: 1 / 2;
+  grid-area: author;
+  grid-column: 1 / 2;
 }
 
 .author-footer-img-container {
-    align-items: center;
-    margin-bottom: 1em;
+  align-items: center;
+  margin-bottom: 1em;
 }
 
 .author-footer-img-link {
-    line-height: 0;
+  line-height: 0;
 }
 
 .author-footer-img {
-    width: .35 * $base;
-    height: .35 * $base;
-    margin-right: 1em;
-    object-fit: cover;
-    // display: block;
-    border-radius: 50%;
+  width: 0.35 * $base;
+  height: 0.35 * $base;
+  margin-right: 1em;
+  object-fit: cover;
+  // display: block;
+  border-radius: 50%;
 }
 
 .author-footer-social,
 .author-footer-location {
-    align-items: center;
+  align-items: center;
 
-    a {
-        padding: .1em .25em;
+  a {
+    padding: 0.1em 0.25em;
 
-        &:first-child {
-            padding-left: 0;
-        }
+    &:first-child {
+      padding-left: 0;
     }
+  }
 
-    p {
-        font-size: .85em;
-        color: scale-color($dark, $alpha: -30%);
-    }
-
-
+  p {
+    font-size: 0.85em;
+    color: scale-color($dark, $alpha: -30%);
+  }
 }
 
 .author-footer-social {
-    svg {
-        width: 1em;
-        height: 1em;
-        fill: scale-color($dark, $alpha: -30%);
-    }
+  svg {
+    width: 1em;
+    height: 1em;
+    fill: scale-color($dark, $alpha: -30%);
+  }
 
-    .globe {
-        width: 1em;
-        height: 1em;
-        fill: none;
-        stroke: scale-color($dark, $alpha: -30%);
-    }
+  .globe {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: scale-color($dark, $alpha: -30%);
+  }
 }
 
 .author-footer-location {
-    align-items: center;
-    margin-bottom: .25em;
+  align-items: center;
+  margin-bottom: 0.25em;
 
-    svg {
-        width: 1em;
-        height: 1em;
-        margin-top: 3px;
-        margin-right: .2em;
-        margin-left: -3px;
-        fill: none;
-        stroke: scale-color($dark, $alpha: -30%);
-        stroke-width: 1px;
-
-    }
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-top: 3px;
+    margin-right: 0.2em;
+    margin-left: -3px;
+    fill: none;
+    stroke: scale-color($dark, $alpha: -30%);
+    stroke-width: 1px;
+  }
 }
 
 .related-posts {
-    .card-img {
-        height: $base;
+  .card-img {
+    height: $base;
+  }
+
+  .card-tag {
+    display: flex;
+    // align-items: center;
+
+    svg {
+      width: 1em;
+      height: 1em;
+      stroke: scale-color($dark, $alpha: -30%);
+      stroke-width: 2px;
     }
 
-    .card-tag {
-        display: flex;
-        // align-items: center;
-
-        svg {
-            width: 1em;
-            height: 1em;
-            stroke: scale-color($dark, $alpha: -30%);
-            stroke-width: 2px;
-        }
-
-        &:hover {
-            background: none;
-        }
+    &:hover {
+      background: none;
     }
+  }
 }
 
 .post-footer-title-1 {
-    grid-area: title-1;
+  grid-area: title-1;
 }
 
 .post-footer-title-2 {
-    grid-area: title-2;
+  grid-area: title-2;
 }
 
 .related-posts-1 {
-    grid-area: post-1;
+  grid-area: post-1;
 }
 
 .related-posts-2 {
-    grid-area: post-2;
+  grid-area: post-2;
 }

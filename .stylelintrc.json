@@ -39,7 +39,7 @@
     "media-feature-range-operator-space-before": "never",
     "no-descending-specificity": null,
     "no-duplicate-selectors": true,
-    "number-leading-zero": "never",
+    "number-leading-zero": "always",
     "order/properties-order": [
       "position",
       "top",

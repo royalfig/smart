@@ -7,12 +7,14 @@
   margin: 2rem 0;
   border-bottom: 0.5rem solid #ffffff;
 }
+
+.profile-image-container {
+  margin-bottom: 2rem;
+}
+
 @media (min-width: $tablet) {
   .author-header {
     flex-direction: row;
-  }
-  .profile-image-container {
-    margin-bottom: 1rem;
   }
 }
 .profile-image-container,
@@ -56,7 +58,6 @@
   z-index: 1;
   width: $base;
   height: $base;
-  margin: 0;
   box-shadow: $box-shadow;
 }
 
@@ -69,6 +70,10 @@
 @media (min-width: $tablet) {
   .author-text {
     margin-left: 4rem;
+  }
+
+  .profile-image {
+    margin-bottom: 0;
   }
 }
 
