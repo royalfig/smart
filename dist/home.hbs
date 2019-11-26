@@ -9,7 +9,7 @@ into the {body} of the default.hbs template --}}
 <div class="outer-container">
     <div class="inner-container">
         <section class="hero">
-            <div class="hero-left flex-col">
+            <div class="hero-left{{#if featured}} featured-left{{/if}} flex-col">
                 {{#if @site.cover_image}}
                 <div class="hero-img-container">
                     <img class="hero-img" srcset="{{img_url @site.cover_image size="s"}} 300w,

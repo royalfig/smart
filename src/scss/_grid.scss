@@ -346,26 +346,3 @@
     height: 2.25 * $base;
   }
 }
-
-//-------------------------------------------
-// Index Styles
-//-------------------------------------------
-@media (max-width: $desktop) {
-  .grid-container-index {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-
-    .card-1 {
-      grid-column: 1 / -1;
-    }
-  }
-}
-
-@media (min-width: $desktop) {
-  .grid-container-index {
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-
-    .card-1 {
-      grid-column: 1 / -1;
-    }
-  }
-}
