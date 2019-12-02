@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem 0;
+  padding: 1rem;
   margin-top: $navbar + 1rem;
 }
 
@@ -14,7 +14,7 @@
 .hero-left {
   align-items: center;
   justify-content: center;
-  padding: 0 1rem;
+  margin: 0 1rem;
 }
 
 .hero-img-container {
@@ -22,6 +22,10 @@
   height: 0;
   padding-top: 56.25%; // To achieve 16:9 img aspect ratio
   margin: 0 1rem 2rem;
+}
+
+.featured-left .hero-img-container {
+  padding-top: 56.25%;
 }
 
 @media (min-width: $tablet) {
@@ -48,7 +52,7 @@
 }
 
 .site-title {
-  margin: 0.75rem 0 0.25rem;
+  margin: 0 0 0.25rem;
   color: $dark;
   text-align: left;
 }
@@ -62,7 +66,7 @@
 
 .hero-right {
   align-items: flex-start;
-  // justify-content: center;
+  margin-top: 2rem;
 
   .home-page-section-header {
     display: inline-block;
@@ -117,7 +121,11 @@
     padding-bottom: 0;
   }
 
+  .featured-left {
+    margin-right: 3rem;
+  }
+
   .hero-right {
-    margin-left: 3rem;
+    margin: 0 0 0 3rem;
   }
 }
