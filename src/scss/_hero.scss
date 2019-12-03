@@ -3,10 +3,9 @@
 }
 .hero {
   width: 100%;
-  // max-width: 1024px;
-  // height: calc(100vh - 4rem);
-  // margin: 4rem auto 0;
-  height: 100vh;
+  max-width: 1024px;
+  height: calc(100vh - 4rem);
+  margin: 4rem auto 0;
 }
 
 .hero-left,
@@ -31,7 +30,7 @@
 }
 
 .hero-img-container {
-  flex: 60%;
+  flex: 1;
   max-width: 30rem;
   margin-bottom: 0.5rem;
 }
@@ -44,7 +43,7 @@
 }
 
 .hero-text-container {
-  flex: 40%;
+  flex: 1;
   margin-top: 0.5rem;
   line-height: 1;
   text-align: center;
@@ -52,6 +51,7 @@
 
 .site-title {
   margin: 0 0 0.25rem;
+  font-size: 3rem;
   color: $dark;
 }
 
@@ -59,7 +59,7 @@
   margin: 0;
   font-family: $sans;
   font-weight: 300;
-  color: $prim;
+  color: scale-color($dark, $lightness: 25%);
 }
 
 .hero-right {
