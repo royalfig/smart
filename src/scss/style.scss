@@ -119,18 +119,18 @@ h6,
   width: 100%;
   padding: 1em;
   background: $light;
-  border-bottom: 0.5em solid $pureWhite;
+  border-bottom: 0.5rem solid $pureWhite;
 }
 
 @media only all and (min-width: $tablet) {
   .outer-container {
-    padding: 1em 4em;
+    padding: 1rem 4rem;
   }
 }
 
 .inner-container {
   max-width: $laptop;
-  margin: 0 auto 1em;
+  margin: 0 auto 1rem;
 }
 
 .home-page-section-header {

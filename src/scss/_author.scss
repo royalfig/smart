@@ -7,20 +7,16 @@
   border-bottom: 0.5rem solid #ffffff;
 }
 
-.profile-image-container {
-  margin-bottom: 2rem;
-}
-
 @media (min-width: $tablet) {
   .author-header {
     flex-direction: row;
   }
 }
-.profile-image-container,
-.hero-img-container {
+.profile-image-container {
   position: relative;
   display: flex;
   flex-shrink: 0;
+  margin-bottom: 2rem;
 
   &:before {
     position: absolute;
