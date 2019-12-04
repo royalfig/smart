@@ -46,8 +46,9 @@ $navbar: 3rem;
 }
 
 // Box Shadow
-$box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.12), -3px 2px 4px rgba(0, 0, 0, 0.12),
-  5px 10px 15px rgba(0, 0, 0, 0.14), -5px 5px 15px rgba(0, 0, 0, 0.14);
+$box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
+  -3px 2px 4px rgba(0, 0, 0, 0.12), 5px 10px 15px rgba(0, 0, 0, 0.14),
+  -5px 5px 15px rgba(0, 0, 0, 0.14);
 
 $box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
   0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);

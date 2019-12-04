@@ -6,10 +6,10 @@ into the {body} of the default.hbs template --}}
 
 {{! Hero }}
 {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
-<section class="hero {{#if @site.cover_image}}hero-img-set"
-    style="background-image: url('{{img_url @site.cover_image size="xl"}}')" {{else}}<div class="no-hero-img">
-    </div>{{/if}}>
+
+<section class="hero">
     <div class="hero-left{{#if featured}} featured-left{{/if}} flex-col">
+
         <div class="{{#if @site.cover_image}}hero-img-true{{/if}} hero-text-container flex-col">
             <div class="hero-text flex-col">
                 <h1 class="site-title serif">{{@site.title}}</h1>

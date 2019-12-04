@@ -5,6 +5,8 @@
   // height: calc(100vh - 4rem);
   // margin: 4rem auto 0;
   height: 100vh;
+  background: $dark;
+  background-position: center;
   background-size: cover;
 }
 
@@ -21,10 +23,6 @@
   // padding: 4rem 4rem 1rem;
 }
 
-.hero-img-set .hero-left {
-  background-color: rgba(0, 0, 0, 0.35);
-}
-
 .hero-img {
   width: 100%;
   height: 100%;
@@ -33,27 +31,74 @@
 }
 
 .hero-text-container {
+  position: relative;
   align-items: center;
   justify-content: center;
-  max-width: 30rem;
-  margin-top: 0.5rem;
+  max-width: $tablet;
+  margin: 1rem;
   text-align: center;
-  border: 1rem solid $light;
-  box-shadow: $box-shadow;
+  border: 0.5rem solid $light;
+  box-shadow: $box-shadow-large;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 80%;
+    content: "";
+    background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0),
+      $prim,
+      $acc1,
+      rgba(0, 0, 0, 0)
+    );
+  }
+  &:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 0;
+    width: 80%;
+    height: 80%;
+    content: "";
+    background: linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0),
+      $acc1,
+      $prim,
+      rgba(0, 0, 0, 0)
+    );
+  }
 }
 
 .hero-text {
   // flex: 1;
+  position: relative;
+  z-index: 1;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  margin: 1rem;
+  padding: 1rem;
+  margin: 0.5rem;
   background-color: $light;
+  box-shadow: $box-shadow;
+}
+
+@media (min-width: $tablet) and (max-width: $laptop - 1) {
+  .hero-text {
+    padding: 2rem;
+  }
+}
+@media (min-width: $laptop) {
+  .hero-text {
+    padding: 3rem;
+  }
 }
 
 .site-title {
-  margin: 0 0 0.25rem;
-  font-size: 3rem;
+  margin: 0 0 0.75rem;
+  line-height: 1;
   color: $dark;
 }
 

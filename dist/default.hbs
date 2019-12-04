@@ -49,6 +49,27 @@
             font-family: 'Fira Sans', sans-serif;
         }
     </style>
+    {{#is "home"}}
+    <style type="text/css">
+        @media (max-width: 600px) {
+            .hero {
+                background-image: url({{img_url @site.cover_image size="m"}});
+            }
+        }
+
+        @media (min-width: 601px) and (max-width: 1000px) {
+            .hero {
+                background-image: url({{img_url @site.cover_image size="l"}});
+            }
+        }
+
+        @media (min-width: 1001px) {
+            .hero {
+                background-image: url({{img_url @site.cover_image size="xl"}});
+            }
+        }
+    </style>
+    {{/is}}
     <script>
         (function () {
             // Optimization for Repeat Views
