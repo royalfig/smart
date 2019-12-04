@@ -11,28 +11,28 @@
   justify-content: space-between;
   width: 100%;
   height: $navbar;
-  padding: .5em 1em;
+  padding: 0.5em 1em;
 
   // font-size: .8em;
   line-height: 1.6;
   background-color: scale-color($light, $alpha: -5%);
-  transition: all .1s ease-in-out;
+  @include transition(all);
 }
 
 .fixed-left {
   font-family: $serif;
-  font-size: 1.25em;
+  font-size: 1.25rem;
 
   a {
     align-items: center;
-    font-size: 1em;
+    font-size: 0.935rem;
 
     img {
-      height: 1.25em;
+      height: 1.25rem;
     }
 
     p {
-      margin-left: .25em;
+      margin-left: 0.25rem;
     }
   }
 }
@@ -40,6 +40,7 @@
 .nav-ul {
   padding: 0;
   margin: 0;
+  font-size: 0.935rem;
   text-align: center;
 }
 
@@ -63,40 +64,35 @@
   font-size: 1.5em;
   color: $dark;
   background-color: scale-color($light, $alpha: -5%);
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 
   .flex-col {
     align-items: center;
     justify-content: center;
 
     .flex-row {
-
       a,
       button {
-        margin: 0 .5em;
+        margin: 0 0.5rem;
       }
     }
   }
 
   .site-title {
-    font-size: 115%;
+    // font-size: 115%;
     text-align: center;
   }
 
   a,
   button {
-    margin-bottom: .5em;
+    margin-bottom: 0.5rem;
     color: $dark;
-  }
-
-  .underline {
-    text-shadow: 2px 2px scale-color($light, $alpha: -5%), 2px -2px scale-color($light, $alpha: -5%), -2px 2px scale-color($light, $alpha: -5%), -2px -2px scale-color($light, $alpha: -5%);
   }
 }
 
 .mobile-nav-menu-inner {
-  padding: .5em;
-  padding-bottom: 1em;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
 }
 
 .nav-menu-expanded {
@@ -108,18 +104,18 @@
   justify-content: center;
 
   .nav-item {
-    margin-right: .5em;
+    margin-right: 0.5rem;
   }
 
   a,
   button {
-    padding: .5em;
+    padding: 0.5rem;
     line-height: 0;
   }
 
   %svg-size {
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     line-height: 1;
     @include transition(all);
   }
@@ -139,7 +135,7 @@
     fill: $dark;
   }
 
-  button>svg {
+  button > svg {
     @extend %svg-size;
     stroke: $dark;
     stroke-width: 2px;
@@ -150,8 +146,8 @@
   }
 
   .search-btn svg {
-    width: 27px;
-    height: 27px;
+    width: 1.5rem;
+    height: 1.5rem;
     fill: none;
     stroke-width: 2px;
   }
@@ -166,7 +162,6 @@
 // Navbar on laptops and up
 //-------------------------------------------
 @media all and (min-width: $laptop) {
-
   .nav-mobile,
   .mobile-nav-menu {
     display: none;
@@ -185,15 +180,15 @@
     align-items: center;
 
     img {
-      width: 1.25em;
-      height: 1.25em;
+      width: 1.25rem;
+      height: 1.25rem;
     }
   }
 
   .site-header-1 {
     margin: 0;
     margin-left: 5px;
-    font-size: 1em;
+    font-size: 0.935rem;
     font-weight: 400;
     color: $dark;
   }
@@ -209,63 +204,12 @@
 
   .nav-li {
     display: inline;
-    margin-right: 1em;
+    margin-right: 1rem;
     list-style-type: none;
   }
 
-  // .fixed-right {
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: flex-end;
-
-  //   .nav-item {
-  //     margin-right: .5em;
-  //   }
-
-  //   button svg {
-  //     width: 18px;
-  //     height: 18px;
-  //     line-height: 1;
-  //     @include transition(all);
-  //     fill: none;
-  //     stroke: $dark;
-  //     stroke-width: 2px;
-
-  //     &:hover {
-  //       stroke: $prim;
-  //     }
-  //   }
-
-  //   a svg {
-  //     width: 18px;
-  //     height: 18px;
-  //     line-height: 1;
-  //     @include transition(all);
-  //     fill: $dark;
-  //   }
-
-  //   button>svg {
-  //     width: 18px;
-  //     height: 18px;
-  //     line-height: 1;
-  //     @include transition(all);
-  //     stroke: $dark;
-
-  //     &:hover {
-  //       stroke: $prim;
-  //     }
-  //   }
-
-  //   .search-button svg {
-  //     width: 22px;
-  //     height: 22px;
-  //     fill: none;
-  //     stroke-width: 2px;
-  //   }
-  // }
-
   .nav-item {
-    margin-right: 2em;
+    margin-right: 2rem;
     color: $dark;
 
     &:last-child {
@@ -297,12 +241,11 @@
   display: flex;
   justify-content: center;
 
-  >* {
-    margin: 1em;
+  > * {
+    margin: 1rem;
   }
 
   a {
-
     &:hover,
     &:focus {
       color: $prim;
