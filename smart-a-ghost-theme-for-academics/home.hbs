@@ -7,6 +7,34 @@ into the {body} of the default.hbs template --}}
 {{! Hero }}
 {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
 
+{{#if @site.cover_image}}
+<style type="text/css">
+    .hero {
+        background-image: url({{img_url @site.cover_image size='xl'}});
+    }
+
+    @media(max-width: 1000px) {
+        .hero {
+            background-image: url({{img_url @site.cover_image size='l'}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size='l'}}) 1x,
+                url({{img_url @site.cover_image size='xl'}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size='l'}}) 1x,
+                url({{img_url @site.cover_image size='xl'}}) 2x);
+        }
+
+    }
+
+    @media(max-width: 600px) {
+        .hero {
+            background-image: url({{img_url @site.cover_image size='m'}});
+            background-image: -webkit-image-set(url({{img_url @site.cover_image size='m'}}) 1x,
+                url({{img_url @site.cover_image size='l'}}) 2x);
+            background-image: image-set(url({{img_url @site.cover_image size='m'}}) 1x,
+                url({{img_url @site.cover_image size='l'}}) 2x);
+        }
+    }
+</style>
+{{/if}}
 <section class="hero">
     <div class="hero-left{{#if featured}} featured-left{{/if}} flex-col">
 

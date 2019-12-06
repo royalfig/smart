@@ -15,7 +15,7 @@ gridContainers.forEach(element => {
 //-------------------------------------------
 const mobileNavBtn = document.getElementById("mobile-nav-btn");
 const mobileMenu = document.querySelector(".mobile-nav-menu");
-const mobileHamburger = document.querySelector(".hamburger");
+const mobileHamburger = document.querySelector(".button-hamburger");
 const mobileMenuInner = document.querySelector(".mobile-nav-menu-inner");
 
 function closeMobileNavMenu() {
@@ -151,7 +151,7 @@ const searchBtns = document.querySelectorAll(".navbar-search-btn");
 function modalOpen(e) {
   const id = e.currentTarget.dataset.id.toString();
   const targetDiv = document.querySelector(`.${id}-modal`);
-  targetDiv.style.marginLeft = "0";
+  targetDiv.style.right = "0";
   targetDiv.setAttribute("aria-expanded", "true");
   targetDiv.querySelector("input").focus();
   document.body.classList.add("no-scroll");
@@ -173,7 +173,7 @@ modalClose.forEach(el =>
       "aria-expanded",
       "false"
     );
-    e.currentTarget.parentElement.parentElement.style.marginLeft = "100%";
+    e.currentTarget.parentElement.parentElement.style.right = "100%";
     document.body.classList.remove("no-scroll");
   })
 );

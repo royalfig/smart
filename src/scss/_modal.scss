@@ -2,172 +2,170 @@
 // General Modal Styles
 //-------------------------------------------
 .modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100%;
-    height: 100vh;
-    margin-left: 100%;
-    overflow-y: auto;
-    color: $dark;
-    text-align: center;
-    // background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
-    background-color: $light;
-    @include transition(margin-left);
+  position: fixed;
+  top: 0;
+  right: -100%;
+  z-index: 10;
+  width: 50%;
+  min-width: 250px;
+  height: 100vh;
+  //   margin-left: 100%;
+  overflow-y: auto;
+  color: $dark;
+  text-align: center;
+  // background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
+  background-color: $light;
+  @include transition(margin-left);
 
-    &.outer-container {
-        border-bottom: none;
-    }
+  &.outer-container {
+    border-bottom: none;
+  }
 }
 
 .modal-inner {
-    padding: 3em;
+  padding: 3em;
 
-    h3 {
-        display: block;
-        font-size: 2.4em;
-        line-height: 1;
-        color: $dark;
-    }
-
-    label {
-        width: 100%;
-        padding: 0;
-        margin-right: .5rem;
-        font-weight: 100;
-        color: $dark;
-        text-align: left;
-        background: none;
-    }
-}
-
-.modal-tagline {
-    display: inline-block;
-    padding: .5em;
-    margin-bottom: 1.4em;
-    font-size: 1.2em;
+  h3 {
+    display: block;
+    font-size: 2.4em;
+    line-height: 1;
     color: $dark;
-}
+  }
 
-
-.modal-icon {
-    width: 3em;
-    height: 3em;
-    pointer-events: none;
-    fill: none;
-    stroke: $dark;
-}
-
-.modal-form {
-    flex-wrap: wrap;
-    align-items: flex-end;
-}
-
-.modal-input {
-    flex: 1;
-    width: 80%;
-    height: 2em;
-    font-size: 1.25em;
+  label {
+    width: 100%;
+    padding: 0;
+    margin-right: 0.5rem;
+    font-weight: 100;
     color: $dark;
     text-align: left;
     background: none;
-    border: none;
-    border-bottom: 1px solid $dark;
-    caret-color: $prim;
-    border-radius: 0;
+  }
+}
 
-    &:focus {
-        border-bottom: 1px solid $prim;
-        outline: none;
-    }
+.modal-tagline {
+  display: inline-block;
+  padding: 0.5em;
+  margin-bottom: 1.4em;
+  font-size: 1.2em;
+  color: $dark;
+}
+
+.modal-icon {
+  width: 3em;
+  height: 3em;
+  pointer-events: none;
+  fill: none;
+  stroke: $dark;
+}
+
+.modal-form {
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.modal-input {
+  flex: 1;
+  width: 80%;
+  height: 2em;
+  font-size: 1.25em;
+  color: $dark;
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $dark;
+  caret-color: $prim;
+  border-radius: 0;
+
+  &:focus {
+    border-bottom: 1px solid $prim;
+    outline: none;
+  }
 }
 
 .modal-btn {
-    height: 50%;
-    padding: .5em .75em;
-    margin-left: .5rem;
-    line-height: 1;
-    color: $light;
-    vertical-align: bottom;
-    background: linear-gradient(45deg, $prim, $acc1);
-    border: none;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, .25);
-    @include transition(box-shadow);
+  height: 50%;
+  padding: 0.5em 0.75em;
+  margin-left: 0.5rem;
+  line-height: 1;
+  color: $light;
+  vertical-align: bottom;
+  background: linear-gradient(45deg, $prim, $acc1);
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  @include transition(box-shadow);
 
-    &:hover,
-    &:active {
-        outline: none;
-        box-shadow: 0 4px 7px rgba(0, 0, 0, .35);
-    }
+  &:hover,
+  &:active {
+    outline: none;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.35);
+  }
 
-    &:focus {
-        outline: 2px dotted $dark;
-    }
-
+  &:focus {
+    outline: 2px dotted $dark;
+  }
 }
 
 .modal-close {
-    display: block;
-    padding: .5em;
-    margin-left: auto;
+  display: block;
+  padding: 0.5em;
+  margin-left: auto;
+  color: $dark;
+
+  svg {
+    width: 3em;
+    height: 3em;
     color: $dark;
+    stroke: $dark;
 
-
-    svg {
-        width: 3em;
-        height: 3em;
-        color: $dark;
-        stroke: $dark;
-
-        &:hover {
-            // stroke: scale-color($light, $alpha: -25%);
-            stroke-width: 2px;
-            @include transition(stroke-width);
-        }
+    &:hover {
+      // stroke: scale-color($light, $alpha: -25%);
+      stroke-width: 2px;
+      @include transition(stroke-width);
     }
+  }
 
-    &:focus {
-        outline: 2px dotted currentColor;
-    }
+  &:focus {
+    outline: 2px dotted currentColor;
+  }
 }
 
 //-------------------------------------------
 // Search Styles
 //-------------------------------------------
 .search-result-container {
-    padding: 1em 0;
-    margin-top: 2em;
+  padding: 1em 0;
+  margin-top: 2em;
 }
 
 .search-result-header {
-    font-size: 1em;
-    color: $light;
-    background: $dark;
+  font-size: 1em;
+  color: $light;
+  background: $dark;
 }
 
 .search-result-item {
-    padding-bottom: .5em;
-    margin-top: 1em;
-    text-align: left;
-    border-bottom: 1px solid scale-color($dark, $alpha: .8)
+  padding-bottom: 0.5em;
+  margin-top: 1em;
+  text-align: left;
+  border-bottom: 1px solid scale-color($dark, $alpha: 0.8);
 }
 
 .search-result-date {
-    margin-top: 1em;
-    font-size: .9em;
-    color: scale-color($dark, $alpha: .8);
-    background: none;
+  margin-top: 1em;
+  font-size: 0.9em;
+  color: scale-color($dark, $alpha: 0.8);
+  background: none;
 }
 
 .search-result-link {
-    font-size: 1.2em;
-    font-weight: 700;
-    color: $dark;
+  font-size: 1.2em;
+  font-weight: 700;
+  color: $dark;
 
-    &:hover,
-    &:active {
-        color: $prim;
-        @include transition(color);
-    }
+  &:hover,
+  &:active {
+    color: $prim;
+    @include transition(color);
+  }
 }
