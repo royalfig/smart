@@ -7,10 +7,27 @@
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
-  justify-content: $justify;
   align-items: $align;
+  justify-content: $justify;
 }
 
+@mixin respond-above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max - 1) {
+    @content;
+  }
+}
 // Display
 .flex-row {
   display: flex;
@@ -34,8 +51,8 @@
 }
 
 .no-scroll {
-  position: fixed;
-  overflow: hidden;
+  // position: fixed;
+  // overflow: hidden;
 }
 
 // Links

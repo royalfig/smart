@@ -151,7 +151,7 @@ const searchBtns = document.querySelectorAll(".navbar-search-btn");
 function modalOpen(e) {
   const id = e.currentTarget.dataset.id.toString();
   const targetDiv = document.querySelector(`.${id}-modal`);
-  targetDiv.style.right = "0";
+  targetDiv.style.transform = "translate3d(0,0,0)";
   targetDiv.setAttribute("aria-expanded", "true");
   targetDiv.querySelector("input").focus();
   document.body.classList.add("no-scroll");
@@ -173,7 +173,8 @@ modalClose.forEach(el =>
       "aria-expanded",
       "false"
     );
-    e.currentTarget.parentElement.parentElement.style.right = "100%";
+    e.currentTarget.parentElement.parentElement.style.transform =
+      "translate3d(300px,0,0)";
     document.body.classList.remove("no-scroll");
   })
 );
