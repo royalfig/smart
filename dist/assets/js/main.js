@@ -23,7 +23,7 @@ function closeMobileNavMenu() {
   mobileMenu.classList.add('nav-menu-hidden');
   mobileMenu.classList.remove('nav-menu-expanded');
   mobileMenu.setAttribute('aria-expanded', false);
-  document.body.classList.remove('no-scroll');
+  document.body.classList.remove('show-modal');
 }
 
 function closeByEsc(keydown, action) {
@@ -39,7 +39,7 @@ function openMobileNavMenu() {
   mobileMenu.classList.add('nav-menu-expanded');
   mobileMenu.addEventListener('click', closeMobileNavMenu);
   mobileMenu.setAttribute('aria-expanded', true);
-  document.body.classList.add('no-scroll');
+  document.body.classList.add('show-modal');
   // Close nav menu with ESC key
   document.body.addEventListener('keydown', (keydown) => closeByEsc(keydown, closeMobileNavMenu));
 }

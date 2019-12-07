@@ -8,11 +8,9 @@
   width: 0;
   height: 3px;
   // margin-top: $navbar;
-  background: linear-gradient(
-    to right,
-    scale-color($prim, $alpha: -50%),
-    scale-color($acc1, $alpha: -50%)
-  );
+  background: linear-gradient(to right,
+      scale-color($prim, $alpha: -50%),
+      scale-color($acc1, $alpha: -50%));
 }
 
 //-------------------------------------------
@@ -114,6 +112,7 @@
   }
 
   &.twitter svg {
+
     &:hover,
     &:active {
       fill: $tw;
@@ -121,6 +120,7 @@
   }
 
   &.facebook svg {
+
     &:hover,
     &:active {
       fill: $fb;
@@ -128,6 +128,7 @@
   }
 
   &.linkedin svg {
+
     &:hover,
     &:active {
       fill: $li;
@@ -191,10 +192,6 @@
   margin-right: 0.25em;
   color: scale-color($dark, $alpha: -25%);
 
-  &:first-of-type {
-    margin-left: 0.15em;
-  }
-
   &:last-child {
     margin-right: 0;
   }
@@ -218,7 +215,7 @@
     "post-2";
   grid-template-columns: 1fr;
   grid-row-gap: 0.5em;
-  border-top: 2px solid scale-color($dark, $alpha: -50%);
+  border-top: 2px solid scale-color($dark, $alpha: -75%);
 }
 
 @media only screen and (min-width: $tablet) and (max-width: $laptop) {

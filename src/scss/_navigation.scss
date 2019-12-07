@@ -54,18 +54,22 @@
 //-------------------------------------------
 .mobile-nav-menu {
   position: fixed;
-  top: 0;
-  z-index: 6;
-  width: 100%;
+  top: $navbar;
+  left: 0;
+  z-index: 1001;
+  width: 35rem;
+  max-width: 100vw;
   height: 100%;
-  min-height: calc(100vh - #{$navbar});
-  margin-top: $navbar;
-  margin-left: 100%;
-  overflow: auto;
-  font-size: 1.5rem;
+  overflow-x: hidden;
+  //   margin-left: 100%;
+  overflow-y: auto;
   color: $dark;
-  background-color: scale-color($light, $alpha: -5%);
-  transition: all 0.4s ease-in-out;
+  text-align: center;
+  // background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
+  background-color: $light;
+  box-shadow: 3px 0 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translate3d(-100vw, 0, 0);
 
   .flex-col {
     align-items: center;
@@ -98,7 +102,7 @@
 }
 
 .nav-menu-expanded {
-  margin-left: 0;
+  transform: translate3d(0, 0, 0);
 }
 
 .nav-sub-menu {

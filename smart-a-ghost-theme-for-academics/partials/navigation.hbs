@@ -91,12 +91,6 @@
     </div>
 
     <div class="nav-sub-menu flex-row">
-        <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
-            <svg>
-                <title>Search</title>
-                <use href="#search"></use>
-            </svg>
-        </button>
         {{#if @site.twitter}}
         <a class="nav-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
             <svg>
@@ -121,6 +115,12 @@
             </svg>
         </button>
         {{/if}}
+        <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
+            <svg>
+                <title>Search</title>
+                <use href="#search"></use>
+            </svg>
+        </button>
     </div>
 </nav>
 {{!-- Fixed Navbar --}}
