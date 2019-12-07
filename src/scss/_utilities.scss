@@ -28,6 +28,7 @@
     @content;
   }
 }
+
 // Display
 .flex-row {
   display: flex;
@@ -50,10 +51,7 @@
   overflow-x: hidden;
 }
 
-.no-scroll {
-  // position: fixed;
-  // overflow: hidden;
-}
+.show-modal {}
 
 // Links
 

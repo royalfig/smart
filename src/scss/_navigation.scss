@@ -72,6 +72,7 @@
     justify-content: center;
 
     .flex-row {
+
       a,
       button {
         margin: 0 0.5rem;
@@ -136,7 +137,7 @@
     fill: $dark;
   }
 
-  button > svg {
+  button>svg {
     @extend %svg-size;
     stroke: $dark;
     stroke-width: 2px;
@@ -163,6 +164,7 @@
 // Navbar on laptops and up
 //-------------------------------------------
 @media all and (min-width: $laptop) {
+
   .nav-mobile,
   .mobile-nav-menu {
     display: none;
@@ -242,11 +244,12 @@
   display: flex;
   justify-content: center;
 
-  > * {
+  >* {
     margin: 1rem;
   }
 
   a {
+
     &:hover,
     &:focus {
       color: $prim;
@@ -261,6 +264,7 @@ $hamburger-base: 1rem;
 .fixed-right {
   line-height: 1;
 }
+
 .button-hamburger {
   position: relative;
   display: block;
@@ -304,10 +308,12 @@ $hamburger-base: 1rem;
       top: calc(0.4 * #{$hamburger-base});
       transform: rotate(135deg);
     }
+
     span:nth-child(2) {
-      left: -3.75rem;
+      left: -1.5rem;
       opacity: 0;
     }
+
     span:nth-child(3) {
       top: calc(0.4 * #{$hamburger-base});
       transform: rotate(-135deg);
