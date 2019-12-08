@@ -1,71 +1,81 @@
 {{!-- Mobile Navbar --}}
-<nav class="nav-mobile">
-    <div class="fixed-left">
-        <a class="flex-row" href="{{@site.url}}" aria-labelledby="site-title-mobile">
+<nav class="navbar-mobile">
+    <div class="navbar-mobile__left">
+        <button class="navbar-mobile__hamburger-btn" id="navbar-mobile__hamburger-btn" aria-label="menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a class="navbar-mobile__site-title--serif" href="{{@site.url}}" aria-labelledby="site-title">
             {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
-            <p id="site-title-mobile">{{@site.title}}</p>
+            <p id="site-title">{{@site.title}}</p>
         </a>
     </div>
-    <div class="fixed-right">
-        <button class="button-hamburger" id="mobile-nav-btn" aria-label="menu">
-            <span></span>
-            <span></span>
-            <span></span>
+    <div class="navbar-mobile__right">
+        <button class="navbar-mobile__search-btn" data-id="search" aria-label="Search {{@site.title}}">
+            <svg>
+                <title>Search {{@site.title}}</title>
+                <use href="#search"></use>
+            </svg>
         </button>
     </div>
 </nav>
 {{!-- Mobile Navbar --}}
 
 {{!-- Mobile Nav Menu --}}
-<div class="mobile-nav-menu nav-menu-hidden" aria-expanded="false">
-    <div class="mobile-nav-menu-inner">
-        <div class="flex-col">
-            <a href="{{@site.url}}">
-                <p class="site-title serif">{{@site.title}}</p>
+<div class="mobile-nav-menu mobile-nav-menu--hidden" aria-expanded="false">
+    <div class="mobile-nav-menu__inner">
+        {{#if @site.icon}}
+        <a href="{{@site.url}}">
+            <p class="mobile-nav-menu__site-title--serif">{{@site.title}}</p>
+        </a>
+        {{/if}}
+        {{#if @site.description}}
+        <p class="mobile-nav-menu__site-description">{{@site.description}}</p>
+        {{/if}}
+        {{!-- Main Navigation --}}
+        {{#if @site.navigation}}
+        <ul class="mobile-nav-menu__main-nav">
+            {{#foreach navigation}}
+            <li class="mobile-nav-menu__main-nav-list-item"><a href="{{url}}"
+                    class="mobile-nav-menu__main-nav-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}
+                </a></li>
+            {{/foreach}}
+        </ul>
+        {{/if}}
+        {{!-- End Main Navigation --}}
+        {{!-- Social Media  --}}
+        {{#has any="@site.twitter, @site.facebook"}}
+        <div class="mobile-nav-menu__social-media">
+            {{#if @site.twitter}}
+            <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+                aria-label="Twitter">
+                <svg>
+                    <title>Twitter</title>
+                    <use href="#twitter"></use>
+                </svg>
             </a>
-            {{#if @site.navigation}}
-            <ul class="nav-ul">
-                {{#foreach navigation}}
-                <li class="nav-li"><a href="{{url}}"
-                        class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}
-                    </a></li>
-                {{/foreach}}
-            </ul>
             {{/if}}
-            <div class="nav-sub-menu flex-row">
-                <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
-                    <svg>
-                        <title>Search</title>
-                        <use href="#search"></use>
-                    </svg>
-                </button>
-                {{#if @site.twitter}}
-                <a class="nav-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
-                    <svg>
-                        <title>Twitter</title>
-                        <use href="#twitter"></use>
-                    </svg>
-                </a>
-                {{/if}}
-                {{#if @site.facebook}}
-                <a class="nav-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
-                    <svg>
-                        <title>Facebook</title>
-                        <use href="#facebook"></use>
-                    </svg>
-                </a>
-                {{/if}}
-                {{#if @labs.subscribers}}
-                <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
-                    <svg>
-                        <title>Subscribe</title>
-                        <use href="#clipboard"></use>
-                    </svg>
-                </button>
-                {{/if}}
-
-            </div>
+            {{#if @site.facebook}}
+            <a class="mobile-nav-menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+                aria-label="Facebook">
+                <svg>
+                    <title>Facebook</title>
+                    <use href="#facebook"></use>
+                </svg>
+            </a>
+            {{/if}}
+            {{#if @labs.subscribers}}
+            <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
+                <svg>
+                    <title>Subscribe</title>
+                    <use href="#clipboard"></use>
+                </svg>
+            </button>
+            {{/if}}
         </div>
+        {{/has}}
+        {{!-- End Social Media --}}
     </div>
 </div>
 {{!-- Mobile Nav Menu --}}

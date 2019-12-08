@@ -4,6 +4,11 @@
   font-weight: 400;
 }
 
+%_serif {
+  font-family: $serif;
+  font-weight: 400;
+}
+
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;

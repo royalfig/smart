@@ -13,14 +13,14 @@ gridContainers.forEach((element) => {
 //-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------
-const mobileNavBtn = document.getElementById('mobile-nav-btn');
+// const mobileNavBtn = document.getElementById('mobile-nav-btn');
 const mobileMenu = document.querySelector('.mobile-nav-menu');
-const mobileHamburger = document.querySelector('.button-hamburger');
-const mobileMenuInner = document.querySelector('.mobile-nav-menu-inner');
+const mobileHamburger = document.querySelector('.navbar-mobile__hamburger-btn');
+const mobileMenuInner = document.querySelector('.mobile-nav-menu__inner');
 
 function closeMobileNavMenu() {
   mobileHamburger.classList.remove('is-active');
-  mobileMenu.classList.add('nav-menu-hidden');
+  mobileMenu.classList.add('mobile-nav-menu--hidden');
   mobileMenu.classList.remove('nav-menu-expanded');
   mobileMenu.setAttribute('aria-expanded', false);
   document.body.classList.remove('show-modal');
@@ -35,7 +35,7 @@ function closeByEsc(keydown, action) {
 
 function openMobileNavMenu() {
   mobileHamburger.classList.add('is-active');
-  mobileMenu.classList.remove('nav-menu-hidden');
+  mobileMenu.classList.remove('mobile-nav-menu--hidden');
   mobileMenu.classList.add('nav-menu-expanded');
   mobileMenu.addEventListener('click', closeMobileNavMenu);
   mobileMenu.setAttribute('aria-expanded', true);
@@ -44,11 +44,11 @@ function openMobileNavMenu() {
   document.body.addEventListener('keydown', (keydown) => closeByEsc(keydown, closeMobileNavMenu));
 }
 
-mobileNavBtn.addEventListener('click', () => {
+mobileHamburger.addEventListener('click', () => {
   mobileMenuInner.addEventListener('click', (event) => {
     event.stopPropagation();
   });
-  if (mobileMenu.classList.contains('nav-menu-hidden')) {
+  if (mobileMenu.classList.contains('mobile-nav-menu--hidden')) {
     openMobileNavMenu();
   } else {
     closeMobileNavMenu();
