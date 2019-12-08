@@ -37,6 +37,8 @@ into the {body} of the default.hbs template --}}
                 </div>
             </section>
 
+            {{pagination}}
+
             {{#if @labs.subscribers}}
             {{> "subscribe_inner"}}
             {{/if}}

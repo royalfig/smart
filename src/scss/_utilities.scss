@@ -64,6 +64,7 @@
 .hvr-underline-from-left {
   position: relative;
   display: inline-block;
+  // padding: 0 1px;
   overflow: hidden;
   vertical-align: middle;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
@@ -73,13 +74,13 @@
 .hvr-underline-from-left:before {
   position: absolute;
   right: 100%;
-  bottom: -7px;
+  bottom: 0;
   left: 0;
   z-index: -1;
-  height: 10px;
+  height: 0.75em;
   content: "";
-  background: $prim;
-  transition-timing-function: ease-out;
+  background: linear-gradient(rgba(0, 0, 0, 0), scale-color($prim, $alpha:-75%));
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 0.3s;
   transition-property: right;
 }
