@@ -181,7 +181,7 @@
 //-------------------------------------------
 
 // Hide navbar on viewports less than laptop
-.fixed-navbar {
+.navbar {
   display: none;
 }
 
@@ -192,55 +192,82 @@
     display: none;
   }
 
-  .nav-menu-expanded {
-    display: none;
-    transform: translateX(100%);
-  }
-
-  .fixed-navbar {
+  .navbar {
+    position: fixed;
+    top: 0;
+    z-index: 1002;
     display: flex;
-  }
-
-  .navbar-site-title {
     align-items: center;
-
-    img {
-      width: 1.25rem;
-      height: 1.25rem;
-    }
-  }
-
-  .site-header-1 {
-    margin: 0;
-    margin-left: 5px;
+    justify-content: space-between;
+    width: 100%;
+    height: $navbar;
+    padding: 0.5em 1em;
     font-size: 0.975rem;
-    font-weight: 400;
-    color: $dark;
-  }
+    line-height: 0.975rem;
+    background-color: scale-color($light, $alpha: -5%);
+    box-shadow: $box-shadow;
+    @include transition(all);
 
-  .fixed-center {
-    display: flex;
-    justify-content: center;
+    &__brand--serif {
+      font-family: $serif;
+      font-weight: 400;
+      @include flex(row, flex-start, center);
 
-    &:last-child {
-      margin-right: 0;
+      img {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
     }
-  }
 
-  .nav-li {
-    display: inline;
-    margin-right: 1rem;
-    list-style-type: none;
-  }
-
-  .nav-item {
-    margin-right: 2rem;
-    color: $dark;
-
-    &:last-child {
-      margin-right: 0;
+    &__center {
+      @include flex(row, space-between, center);
     }
+
+    &__right {
+      @include flex(row, flex-end, center);
+    }
+
+    &__ul {
+      display: inline-flex;
+      list-style-type: none;
+    }
+
+    &__list-item {
+      margin: 0 0.5rem;
+
+
+    }
+
+
+    &__right-item {
+      margin: 0 0.5rem;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        fill: $dark;
+      }
+
+      &--search {
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+          fill: none;
+          stroke: $dark;
+          stroke-width: 2px;
+        }
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+
+
   }
+
+
 }
 
 // SVG Icons

@@ -78,29 +78,30 @@
 </div>
 {{!-- Mobile Nav Menu --}}
 
-{{!-- Fixed Navbar --}}
-<nav class="fixed-navbar">
-    <div class="fixed-left">
-        <a class="flex-row brand" href="{{@site.url}}" aria-labelledby="site-title">
+{{!-- Navbar --}}
+<nav class="navbar">
+    <div class="navbar__left">
+        <a class="navbar__brand--serif" href="{{@site.url}}" aria-labelledby="site-title">
             {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
             <p id="site-title">{{@site.title}}</p>
         </a>
     </div>
-    <div class="fixed-center">
+
+    <div class="navbar__center">
         {{#if @site.navigation}}
-        <ul class="nav-ul">
+        <ul class="navbar__ul">
             {{#foreach navigation}}
-            <li class="nav-li"><a href="{{url}}"
-                    class="nav-item hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+            <li class="navbar__list-item"><a href="{{url}}"
+                    class="navbar__list-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
             </li>
             {{/foreach}}
         </ul>
         {{/if}}
     </div>
 
-    <div class="nav-sub-menu flex-row">
+    <div class="navbar__right">
         {{#if @site.twitter}}
-        <a class="nav-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
+        <a class="navbar__right-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
             <svg>
                 <title>Twitter</title>
                 <use href="#twitter"></use>
@@ -108,7 +109,7 @@
         </a>
         {{/if}}
         {{#if @site.facebook}}
-        <a class="nav-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
+        <a class="navbar__right-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
             <svg>
                 <title>Facebook</title>
                 <use href="#facebook"></use>
@@ -116,14 +117,14 @@
         </a>
         {{/if}}
         {{#if @labs.subscribers}}
-        <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
+        <button class="navbar__right-item" data-id="subscribe" aria-label="Subscribe">
             <svg>
                 <title>Subscribe</title>
                 <use href="#clipboard"></use>
             </svg>
         </button>
         {{/if}}
-        <button class="navbar-search-btn nav-item" data-id="search" aria-label="Search">
+        <button class="navbar__right-item--search" data-id="search" aria-label="Search">
             <svg>
                 <title>Search</title>
                 <use href="#search"></use>

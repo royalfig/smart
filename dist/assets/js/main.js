@@ -55,6 +55,40 @@ mobileHamburger.addEventListener('click', () => {
 
 
 //-------------------------------------------
+// Modals
+//-------------------------------------------
+const subBtns = document.querySelectorAll('.navbar-subscribe-btn');
+const searchBtns = document.querySelectorAll('.navbar-search-btn');
+
+function modalOpen(e) {
+  const id = e.currentTarget.dataset.id.toString();
+  const targetDiv = document.querySelector(`.${id}-modal`);
+  targetDiv.style.transform = 'translate3d(0,0,0)';
+  targetDiv.setAttribute('aria-expanded', 'true');
+  targetDiv.querySelector('input').focus();
+  document.body.classList.add('show-modal');
+}
+
+subBtns.forEach((el) => {
+  el.addEventListener('click', (e) => modalOpen(e));
+});
+
+searchBtns.forEach((el) => {
+  el.addEventListener('click', (e) => modalOpen(e));
+});
+
+const modalClose = document.querySelectorAll('.modal-close');
+
+modalClose.forEach((el) => el.addEventListener('click', (e) => {
+  e.currentTarget.parentElement.parentElement.setAttribute(
+    'aria-expanded',
+    'false',
+  );
+  e.currentTarget.parentElement.parentElement.style.transform = 'translate3d(100vw,0,0)';
+  document.body.classList.remove('show-modal');
+}));
+
+//-------------------------------------------
 // Post Scripts
 //-------------------------------------------
 
@@ -138,40 +172,6 @@ if (copyButton) {
     document.body.removeChild(temp);
   });
 }
-
-//-------------------------------------------
-// Modals
-//-------------------------------------------
-const subBtns = document.querySelectorAll('.navbar-subscribe-btn');
-const searchBtns = document.querySelectorAll('.navbar-search-btn');
-
-function modalOpen(e) {
-  const id = e.currentTarget.dataset.id.toString();
-  const targetDiv = document.querySelector(`.${id}-modal`);
-  targetDiv.style.transform = 'translate3d(0,0,0)';
-  targetDiv.setAttribute('aria-expanded', 'true');
-  targetDiv.querySelector('input').focus();
-  document.body.classList.add('show-modal');
-}
-
-subBtns.forEach((el) => {
-  el.addEventListener('click', (e) => modalOpen(e));
-});
-
-searchBtns.forEach((el) => {
-  el.addEventListener('click', (e) => modalOpen(e));
-});
-
-const modalClose = document.querySelectorAll('.modal-close');
-
-modalClose.forEach((el) => el.addEventListener('click', (e) => {
-  e.currentTarget.parentElement.parentElement.setAttribute(
-    'aria-expanded',
-    'false',
-  );
-  e.currentTarget.parentElement.parentElement.style.transform = 'translate3d(100vw,0,0)';
-  document.body.classList.remove('show-modal');
-}));
 
 //-------------------------------------------
 // Make tables responsive
