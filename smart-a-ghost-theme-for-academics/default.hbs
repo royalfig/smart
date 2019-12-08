@@ -259,7 +259,7 @@
     {{!-- end content-wrap --}}
 
     {{!-- Search Modal --}}
-    <aside class="modal search-modal" aria-expanded="false" aria-hidden="true">
+    <aside class="modal search-modal modal__search" aria-expanded="false" aria-hidden="true">
         <div class="inner-container flex-col">
             <button class="modal-close" title="Close" aria-label="close">
                 <span></span>
@@ -268,7 +268,7 @@
             <div class="modal-inner">
                 <div class="modal-form flex-row">
                     <input class="modal-input" id="search-input" type="text" placeholder="I'm looking for..."
-                        aria-label="Enter your search term">
+                        aria-label="Enter your search term" autocomplete="off">
                     <button class="modal-btn" id="search-btn" type="button" aria-label="search">Search</button>
                 </div>
                 <div class="search-result-container">

@@ -12,7 +12,7 @@
         </a>
     </div>
     <div class="navbar-mobile__right">
-        <button class="navbar-mobile__search-btn" data-id="search" aria-label="Search {{@site.title}}">
+        <button class="navbar-mobile__search-btn" id="sm-search" aria-label="Search {{@site.title}}">
             <svg>
                 <title>Search {{@site.title}}</title>
                 <use href="#search"></use>
@@ -124,9 +124,9 @@
             </svg>
         </button>
         {{/if}}
-        <button class="navbar__right-item--search" data-id="search" aria-label="Search">
+        <button class="navbar__right-item--search" id="lg-search" aria-label="Search {{@site.title}}">
             <svg>
-                <title>Search</title>
+                <title>Search {{@site.title}}</title>
                 <use href="#search"></use>
             </svg>
         </button>

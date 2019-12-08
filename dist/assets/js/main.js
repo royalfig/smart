@@ -18,6 +18,10 @@ const mobileMenu = document.querySelector('.mobile-nav-menu');
 const mobileHamburger = document.querySelector('.navbar-mobile__hamburger-btn');
 const mobileMenuInner = document.querySelector('.mobile-nav-menu__inner');
 
+const smSearchBtn = document.getElementById('sm-search');
+const lgSearchBtn = document.getElementById('lg-search');
+const searchBtns = [smSearchBtn, lgSearchBtn];
+
 function closeMobileNavMenu() {
   mobileHamburger.classList.remove('is-active');
   mobileMenu.classList.add('mobile-nav-menu--hidden');
@@ -57,24 +61,29 @@ mobileHamburger.addEventListener('click', () => {
 //-------------------------------------------
 // Modals
 //-------------------------------------------
-const subBtns = document.querySelectorAll('.navbar-subscribe-btn');
-const searchBtns = document.querySelectorAll('.navbar-search-btn');
+// const subBtns = document.querySelectorAll('.navbar-subscribe-btn');
 
-function modalOpen(e) {
-  const id = e.currentTarget.dataset.id.toString();
-  const targetDiv = document.querySelector(`.${id}-modal`);
+
+function modalOpen(el) {
+  if (el.id.substring(0, 2) === 'sm') {
+    closeMobileNavMenu();
+  }
+
+  const targetDiv = document.querySelector('.modal__search');
   targetDiv.style.transform = 'translate3d(0,0,0)';
   targetDiv.setAttribute('aria-expanded', 'true');
   targetDiv.querySelector('input').focus();
   document.body.classList.add('show-modal');
 }
 
-subBtns.forEach((el) => {
-  el.addEventListener('click', (e) => modalOpen(e));
-});
+// subBtns.forEach((el) => {
+//   el.addEventListener('click', (e) => modalOpen(e));
+// });
 
 searchBtns.forEach((el) => {
-  el.addEventListener('click', (e) => modalOpen(e));
+  el.addEventListener('click', () => {
+    modalOpen(el);
+  });
 });
 
 const modalClose = document.querySelectorAll('.modal-close');
