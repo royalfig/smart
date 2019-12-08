@@ -25,11 +25,9 @@
 {{!-- Mobile Nav Menu --}}
 <div class="mobile-nav-menu mobile-nav-menu--hidden" aria-expanded="false">
     <div class="mobile-nav-menu__inner">
-        {{#if @site.icon}}
         <a href="{{@site.url}}">
             <p class="mobile-nav-menu__site-title--serif">{{@site.title}}</p>
         </a>
-        {{/if}}
         {{#if @site.description}}
         <p class="mobile-nav-menu__site-description">{{@site.description}}</p>
         {{/if}}

@@ -168,74 +168,23 @@
     }
 
   }
-}
 
-.nav-menu-expanded {
-  transform: translate3d(0, 0, 0);
-}
-
-.nav-sub-menu {
-  flex-wrap: wrap;
-  justify-content: center;
-
-  .nav-item {
-    margin-right: 0.5rem;
-  }
-
-  a,
-  button {
-    padding: 0.5rem;
-    line-height: 0;
-  }
-
-  %svg-size {
-    width: 1.5rem;
-    height: 1.5rem;
-    line-height: 1;
-    @include transition(all);
-  }
-
-  button svg {
-    @extend %svg-size;
-    fill: none;
-    stroke: $dark;
-
-    &:hover {
-      stroke: $prim;
-    }
-  }
-
-  a svg {
-    @extend %svg-size;
-    fill: $dark;
-  }
-
-  button>svg {
-    @extend %svg-size;
-    stroke: $dark;
-    stroke-width: 2px;
-
-    &:hover {
-      stroke: $prim;
-    }
-  }
-
-  .search-btn svg {
-    width: 1.5rem;
-    height: 1.5rem;
-    fill: none;
-    stroke-width: 2px;
+  &--expanded {
+    transform: translate3d(0, 0, 0);
   }
 }
+
+
+
+//-------------------------------------------
+// Navbar on laptops and up
+//-------------------------------------------
 
 // Hide navbar on viewports less than laptop
 .fixed-navbar {
   display: none;
 }
 
-//-------------------------------------------
-// Navbar on laptops and up
-//-------------------------------------------
 @media all and (min-width: $laptop) {
 
   .navbar-mobile,
@@ -294,6 +243,7 @@
   }
 }
 
+// SVG Icons
 .facebook svg {
   stroke: none;
   @include transition(all);
