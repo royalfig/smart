@@ -1,0 +1,218 @@
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: $dark;
+  background-position: center;
+  background-size: cover;
+
+  &__overlay {
+    @include flex(column, center, center);
+    width: 100%;
+    height: 100vh;
+    min-height: 100%;
+    background: radial-gradient(rgba(25, 117, 148, 0.25), rgba(2, 92, 122, 0.15));
+
+    @include respond-above($tablet) {
+      @include flex(row, center, center);
+    }
+  }
+
+  &__left,
+  &__right {
+    flex: 1;
+    max-width: 100%;
+    height: 100%;
+    margin-top: $navbar;
+  }
+
+  &__left {
+    @include flex(column, center, center);
+  }
+
+  &__text-container {
+    position: relative;
+    @include flex(column, center, center);
+    max-width: $tablet;
+    margin: 1rem;
+    text-align: center;
+    border: 0.5rem solid $light;
+    box-shadow: $box-shadow-large;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 80%;
+      height: 80%;
+      content: "";
+      background: linear-gradient(45deg,
+          rgba(0, 0, 0, 0),
+          $prim,
+          $acc1,
+          rgba(0, 0, 0, 0));
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      width: 80%;
+      height: 80%;
+      content: "";
+      background: linear-gradient(45deg,
+          rgba(0, 0, 0, 0),
+          $acc1,
+          $prim,
+          rgba(0, 0, 0, 0));
+    }
+  }
+
+
+  &__text {
+    @include flex(column, center, center);
+    position: relative;
+    z-index: 1;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    background-color: $light;
+    box-shadow: $box-shadow;
+
+    @include respond-between($tablet, $laptop) {
+      padding: 2rem;
+    }
+
+    @include respond-above($laptop) {
+      padding: 3rem;
+    }
+  }
+
+  &__site-title--serif {
+    margin: 0 0 0.75rem;
+    line-height: 1;
+    @include serif;
+    color: $dark;
+  }
+
+  &__site-description {
+    margin: 0;
+    font-family: $sans;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: scale-color($dark, $lightness: 25%);
+  }
+
+  &__right {
+    @include flex(column, center, flex-start);
+  }
+
+  &__container {
+    padding: 1rem;
+    background: $dark;
+    box-shadow: $box-shadow;
+
+    @include respond-between($tablet, $laptop) {
+      padding: 2rem;
+    }
+
+    @include respond-above($laptop) {
+      padding: 3rem;
+    }
+  }
+
+  &__card {
+    @include flex(row, flex-start, stretch);
+    min-height: $base;
+    padding: 1rem 0;
+    border-bottom: 1px solid scale-color($light, $alpha: -50%);
+
+    &:first-child {
+      padding-top: 0;
+    }
+  }
+
+  &__header--serif {
+    display: inline-block;
+    margin-top: 0;
+    @include serif;
+    color: $light;
+    background: $dark;
+  }
+
+  &__card-img-container {
+    flex-shrink: 0;
+    width: $base;
+    height: $base;
+  }
+
+  &__card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__card-body {
+    @include flex(column, space-between, flex-start);
+    margin-left: 1rem;
+  }
+
+  &__card-date {
+    color: $light;
+  }
+
+  &__card-title--serif {
+    @include serif;
+    color: $light;
+  }
+
+  &__tag-link {
+    @include flex(row, flex-start, center);
+    color: $light;
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      stroke: $light;
+      stroke-width: 2px;
+    }
+  }
+
+
+}
+
+
+
+
+.card.featured {
+  flex-direction: row;
+  border-bottom: 2px solid #acc2;
+}
+
+.featured {
+  align-items: flex-start;
+  padding: 1rem 0;
+
+  .card-img {
+    align-self: center;
+
+  }
+
+  .card-body {
+    height: 100%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-left: 1rem;
+
+    .card-date-tag:last-child {
+      margin-top: auto;
+    }
+
+    .card-tag {
+      justify-content: flex-start;
+    }
+  }
+}
