@@ -41,7 +41,6 @@
     }
   }
 
-
   // Hamburger Button
   &__hamburger-btn {
     $hamburger-base: 0.975rem;
@@ -101,7 +100,6 @@
   &__right {
     @include flex(row, flex-end, center);
     flex: 1;
-
   }
 
   &__search-btn {
@@ -172,15 +170,12 @@
       width: 1.25rem;
       height: 1.25rem;
     }
-
   }
 
   &--expanded {
     transform: translate3d(0, 0, 0);
   }
 }
-
-
 
 //-------------------------------------------
 // Navbar on laptops and up
@@ -192,7 +187,6 @@
 }
 
 @media all and (min-width: $laptop) {
-
   .navbar-mobile,
   .mobile-nav-menu {
     display: none;
@@ -209,7 +203,6 @@
     height: $navbar;
     padding: 0.5em 1em;
     font-size: 0.975rem;
-    line-height: 0.975rem;
     background-color: scale-color($light, $alpha: -5%);
     box-shadow: $box-shadow;
     @include transition(all);
@@ -243,7 +236,6 @@
       margin: 0 0.5rem;
     }
 
-
     &__right-item {
       margin: 0 0.5rem;
 
@@ -267,12 +259,7 @@
         margin-right: 0;
       }
     }
-
-
-
   }
-
-
 }
 
 // SVG Icons
@@ -299,12 +286,11 @@
   display: flex;
   justify-content: center;
 
-  >* {
+  > * {
     margin: 1rem;
   }
 
   a {
-
     &:hover,
     &:focus {
       color: $prim;
