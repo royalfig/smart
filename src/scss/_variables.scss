@@ -18,19 +18,31 @@ $li: #0077b5;
 $pureWhite: #ffffff;
 $pureBlack: #000000;
 
-// $dark: invert(#181818, 100%);
-// $light: invert(#f7fefd, 100%);
-// $prim: invert(#c70d3a, 100%);
-// $acc2: invert(#230338, 100%);
-// $acc1: invert(#ed5107, 100%);
-// $acc3: invert(#02383c, 100%);
-// $pureWhite: invert(#ffffff, 100%);
+$light: #1f1f1f;
+$dark: #fcfcfc;
+$prim: invert(#c70d3a, 100%);
+$acc2: invert(#230338, 100%);
+$acc1: invert(#ed5107, 100%);
+$acc3: invert(#02383c, 100%);
+$pureWhite: invert(#ffffff, 100%);
 
 // Font styles
-$sans: "Fira Sans", -apple-system, blinkmacsystemfont, roboto, "Segoe UI",
-  oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$sans: "Fira Sans",
+-apple-system,
+blinkmacsystemfont,
+roboto,
+"Segoe UI",
+oxygen,
+ubuntu,
+cantarell,
+"Open Sans",
+"Helvetica Neue",
+sans-serif;
 
-$serif: "DM Serif Text", georgia, times, serif;
+$serif: "DM Serif Text",
+georgia,
+times,
+serif;
 
 // Breakpoints
 $tablet: 640px;
@@ -43,14 +55,16 @@ $navbar: 3rem;
 
 // Box Shadow
 $box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
-  -3px 2px 4px rgba(0, 0, 0, 0.12), 5px 10px 15px rgba(0, 0, 0, 0.14),
-  -5px 5px 15px rgba(0, 0, 0, 0.14);
+-3px 2px 4px rgba(0, 0, 0, 0.12),
+5px 10px 15px rgba(0, 0, 0, 0.14),
+-5px 5px 15px rgba(0, 0, 0, 0.14);
 
 $box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+0 3px 14px 2px rgba(0, 0, 0, 0.12),
+0 5px 5px -3px rgba(0, 0, 0, 0.2);
 
 $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
 @mixin transition($property) {
   transition: $property 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);

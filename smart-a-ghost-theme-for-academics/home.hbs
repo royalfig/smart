@@ -3,8 +3,6 @@
 into the {body} of the default.hbs template --}}
 
 {{! Hero }}
-{{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
-
 {{#if @site.cover_image}}
 <style type="text/css">
     .hero {
@@ -35,20 +33,19 @@ into the {body} of the default.hbs template --}}
 {{/if}}
 <section class="hero">
     <div class="hero__overlay">
-
-        <div class="hero__top{{#if featured}} featured__top{{/if}}">
-
-            <div class="{{#if @site.cover_image}}hero__img--true{{/if}} hero__text-container">
-                <div class="hero__text">
-                    <h2 class="hero__site-description">{{@site.description}}
-                    </h2>
-                </div>
+        <div class="hero__top">
+            <div class="hero__text-container">
+                <h2 class="hero__site-description">{{@site.description}}
+                </h2>
             </div>
-
         </div>
 
     </div>
+
+    </div>
 </section>
+
+{{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
 {{#if featured}}
 <div class="hero__bottom">
     <div class="hero__container">
@@ -62,13 +59,15 @@ into the {body} of the default.hbs template --}}
             1000px" src="{{img_url feature_image size="l"}}" />
             </a>
             <div class="hero__card-body">
+                <div class="hero__card-body-wrapper">
+                    <p class="hero__card-date"><time
+                            datetime="{{date published_at}}">{{date published_at timeago="true"}}
+                    </p>
 
-                <p class="hero__card-date"><time datetime="{{date published_at}}">{{date published_at timeago="true"}}
-                </p>
-
-                <a href="{{url}}">
-                    <p class="hero__card-title--serif">{{title}}</p>
-                </a>
+                    <a href="{{url}}">
+                        <p class="hero__card-title--serif">{{title}}</p>
+                    </a>
+                </div>
                 <div class="hero__card-tag">
                     {{#primary_tag}}
                     <a class="hero__tag-link" href="{{url}}"><svg aria-hidden="true">

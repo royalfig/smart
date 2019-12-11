@@ -71,6 +71,7 @@
   display: inline-block;
   // padding: 0 1px;
   overflow: hidden;
+  line-height: 1.2;
   vertical-align: middle;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   transform: perspective(1px) translateZ(0);
@@ -82,11 +83,11 @@
   bottom: 0;
   left: 0;
   z-index: -1;
-  height: 0.75em;
+  height: 0.5em;
   content: "";
-  background: linear-gradient(rgba(0, 0, 0, 0), scale-color($prim, $alpha:-75%));
+  background: scale-color($prim, $alpha:-75%);
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition-duration: 0.3s;
+  transition-duration: 0.4s;
   transition-property: right;
 }
 
@@ -133,6 +134,14 @@
 
 // Underline effect
 .underline {
+  display: inline-block;
+  line-height: 0.95;
+  text-shadow: 2px 2px $light, 2px -2px $light, -2px 2px $light,
+    -2px -2px $light;
+  border-bottom: 2px solid currentColor;
+}
+
+@mixin underline {
   display: inline-block;
   line-height: 0.95;
   text-shadow: 2px 2px $light, 2px -2px $light, -2px 2px $light,
