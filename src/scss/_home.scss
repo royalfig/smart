@@ -2,7 +2,8 @@
   position: relative;
   width: 100%;
   height: 50vh;
-  background: $dark;
+  min-height: 500px;
+  @include color-map(background-color, shade700);
   background-position: center;
   background-size: cover;
 
@@ -11,8 +12,8 @@
     flex: 1;
     width: 100%;
     height: 100%;
-    background: radial-gradient(rgba(116, 141, 150, 0.75) 25%,
-        rgba(0, 27, 36, 0.85) 85%, rgba(0, 0, 0, 0.95));
+    background: radial-gradient(rgba(160, 174, 177, 0.10) 25%,
+        rgba(18, 52, 59, 0.5) 85%, hsla(189, 57%, 5%, 0.25));
   }
 
   &__top,
@@ -23,34 +24,37 @@
   }
 
   &__top {
-    @include flex(column, center, center);
-    padding: 1rem;
+    @include flex(column, flex-start, flex-start);
     margin-top: $navbar;
   }
 
   &__text-container {
-    @include flex(column, center, center);
+    @include flex(column, center, flex-start);
     position: relative;
     z-index: 1;
-    align-items: center;
-    justify-content: center;
-    padding: 0.5rem;
-    text-align: center;
+    width: 100%;
   }
 
   &__site-description {
-    padding: 0.25rem;
+    width: 100%;
+    padding: 0.25rem 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 2rem;
-    font-weight: 700;
-    color: $light;
-    background: $prim;
+    font-size: 1rem;
+    font-weight: 100;
+    color: color("shade200");
+    color: var(--shade200);
+    background: color("shade800");
+    background: linear-gradient(90deg, var(--shade800), var(--shade700), var(--shade600), var(--shade500));
+    background: var(--shade800);
   }
 
   &__bottom {
     @include flex(column, center, flex-start);
-    border-bottom: 0.5rem solid $pureWhite;
+    border-bottom-color: color("shade800");
+    border-bottom-color: var(--shade800);
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rem;
   }
 
   &__container {
@@ -71,7 +75,8 @@
     z-index: 1;
     width: 100%;
     margin-bottom: 1rem;
-    background-color: $light;
+    background-color: color("shade600");
+    background-color: var(--shade600);
     box-shadow: $box-shadow;
 
     &:last-child {
@@ -87,13 +92,6 @@
         margin-bottom: 1rem;
       }
     }
-  }
-
-  &__header--serif {
-    display: inline-block;
-    margin-top: 0;
-    @include serif;
-    background: $light;
   }
 
   &__card-img-container {
@@ -130,6 +128,8 @@
 
   &__card-date {
     font-size: 0.75rem;
+    color: color("shade200");
+    color: var(--shade200);
     text-transform: uppercase;
   }
 
@@ -140,28 +140,35 @@
     @include transition(color);
 
     &:hover {
-      color: $prim;
+      color: color("primary");
+      color: var(--primary);
     }
   }
 
   &__tag-link {
     @include flex(row, flex-start, center);
     font-size: 0.75rem;
+    color: color("shade200");
+    color: var(--shade200);
     text-transform: uppercase;
-
-    &:hover {
-      color: $prim;
-
-      svg {
-        stroke: $prim;
-      }
-    }
 
     svg {
       width: 0.75rem;
       height: 0.75rem;
-      stroke: $dark;
+      stroke: color("shade200");
+      stroke: var(--shade200);
       stroke-width: 1px;
     }
+
+    &:hover {
+      color: color("primary");
+      color: var(--primary);
+
+      svg {
+        color: color("primary");
+        stroke: var(--primary);
+      }
+    }
+
   }
 }

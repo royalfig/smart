@@ -15,16 +15,49 @@ $fb: #1877f2;
 $tw: #1da1f2;
 $li: #0077b5;
 
-$pureWhite: #ffffff;
+$pureWhite: #051012;
 $pureBlack: #000000;
 
-$light: #1f1f1f;
-$dark: #fcfcfc;
-$prim: invert(#c70d3a, 100%);
-$acc2: invert(#230338, 100%);
-$acc1: invert(#ed5107, 100%);
-$acc3: invert(#02383c, 100%);
-$pureWhite: invert(#ffffff, 100%);
+// Dark Mode
+$extra-dark: #051012;
+$dark: #E7EBEB;
+$light: #0B1F23;
+
+:root {
+  --text: #ffffff;
+  --primary: #FAC21B;
+  --shade100: #e7ebeb;
+  --shade200: #c4ccce;
+  --shade300: #a0aeb1;
+  --shade400: #597176;
+  --shade500: #12343b;
+  --shade600: #102F35;
+  --shade700: #0b1f23;
+  --shade800: #08171b;
+  --shade900: #051214;
+}
+
+$colors: ("text": #ffffff,
+  "primary": #FAC21B,
+  "100": #E7EBEB,
+  "200": #C4CCCE,
+  "300": #A0AEB1,
+  "400": #597176,
+  "500": #12343B,
+  "600": #102F35,
+  "700": #0B1F23,
+  "800": #08171B,
+  "900": #051012,
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
 
 // Font styles
 $sans: "Fira Sans",

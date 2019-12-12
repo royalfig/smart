@@ -3,11 +3,8 @@
 //-------------------------------------------
 .footer {
     min-height: 250px;
-    font-size: .9375em;
-    color: scale-color($light, $lightness: -20%, $saturation: -75%);
-    // color: scale-color(#fafafa, $lightness: -20%, $saturation: -75%);
-    background-color: $dark;
-    // background-color: #1d1d1f;
+    font-size: 0.9375em;
+    @include color-map(background-color, shade800);
     border-bottom: none;
 
     .home-page-section-header {
@@ -29,7 +26,7 @@
     .card-tag {
         justify-content: flex-start;
         font-size: 1em;
-        color: scale-color($light, $lightness: -20%, $saturation: -75%);
+        @include color-map(color, shade200);
         @include transition(color);
 
         p {
@@ -40,17 +37,17 @@
             width: 1em;
             height: 1em;
             transform: none;
-            stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
+            @include color-map(stroke, shade200);
             stroke-width: 2px;
         }
 
         &:hover {
-            color: $prim;
+            @include color-map(color, primary);
+
             background: none;
 
             svg {
-                stroke: $prim;
-
+                @include color-map(stroke, primary);
             }
         }
     }
@@ -69,7 +66,7 @@
         height: 1em;
         margin-right: 3px;
         margin-left: -3px;
-        stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
+        @include color-map(stroke, shade200);
         stroke-width: 2px;
 
     }
@@ -85,7 +82,7 @@
     svg {
         width: 1rem;
         height: 1rem;
-        fill: scale-color($light, $lightness: -20%, $saturation: -75%);
+        @include color-map(stroke, shade200);
     }
 }
 
@@ -98,16 +95,17 @@
     a {
         padding-bottom: .25em;
         margin-bottom: .75em;
-        border-bottom: 1px solid scale-color($light, $lightness: -50%, $saturation: -75%);
+        border-bottom: 1px solid scale-color($dark, $lightness: -50%, $saturation: -75%);
 
         &:hover {
-            color: $prim;
+            @include color-map(stroke, primary);
         }
     }
 }
 
 .published-by-ghost {
     justify-content: center;
-    padding: em;
-    font-size: 95%;
+    padding: 0.15em;
+    font-size: 0.8rem;
+    @include color-map(color, shade400);
 }

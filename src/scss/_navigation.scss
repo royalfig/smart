@@ -1,8 +1,7 @@
 //-------------------------------------------
-// Navbar common items
+// Navbar Mobile
 //-------------------------------------------
-
-%_navbar-common {
+.navbar-mobile {
   position: fixed;
   top: 0;
   z-index: 1002;
@@ -12,17 +11,11 @@
   width: 100%;
   height: $navbar;
   padding: 0.5em 1em;
-  background-color: scale-color($light, $alpha: -5%);
+  // background-color: scale-color($light, $alpha: -5%);
+  @include color-map(background-color, shade700);
+  font-size: 0.975rem;
   box-shadow: $box-shadow;
   @include transition(all);
-}
-
-//-------------------------------------------
-// Navbar Mobile
-//-------------------------------------------
-.navbar-mobile {
-  @extend %_navbar-common;
-  font-size: 0.975rem;
 
   &__left {
     @include flex(row, flex-start, center);
@@ -61,7 +54,7 @@
       display: block;
       width: 100%;
       height: calc(#{$hamburger-base} / 5);
-      background: $dark;
+      @include color-map(background-color, shade100);
       opacity: 1;
       transition: 0.25s ease-in-out;
       transform: rotate(0deg);
@@ -107,7 +100,7 @@
       width: 1.5rem;
       height: 1.5rem;
       fill: none;
-      stroke: $dark;
+      @include color-map(stroke, shade100);
       stroke-width: 2px;
     }
   }
@@ -127,7 +120,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   color: $dark;
-  background-color: scale-color($light, $alpha: -5%);
+  @include color-map(background-color, shade700);
   box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translate3d(-100vw, 0, 0);
@@ -144,7 +137,7 @@
 
   &__site-description {
     font-size: 0.975rem;
-    color: scale-color($dark, $lightness: 25%);
+    @include color-map(color, shade400);
   }
 
   &__main-nav {
@@ -187,6 +180,7 @@
 }
 
 @media all and (min-width: $laptop) {
+
   .navbar-mobile,
   .mobile-nav-menu {
     display: none;
@@ -203,7 +197,7 @@
     height: $navbar;
     padding: 0.5em 1em;
     font-size: 0.975rem;
-    background-color: scale-color($light, $alpha: -5%);
+    @include color-map(background-color, shade700);
     box-shadow: $box-shadow;
     @include transition(all);
 
@@ -242,7 +236,7 @@
       svg {
         width: 1.25rem;
         height: 1.25rem;
-        fill: $dark;
+        @include color-map(fill, shade100);
       }
 
       &--search {
@@ -250,9 +244,15 @@
           width: 1.25rem;
           height: 1.25rem;
           fill: none;
-          stroke: $dark;
-          stroke-width: 2px;
+          @include color-map(stroke, shade100);
+          stroke-width: 3px;
+          @include transition(stroke);
+
+          &:hover {
+            @include color-map(stroke, primary);
+          }
         }
+
       }
 
       &:last-child {
@@ -286,15 +286,16 @@
   display: flex;
   justify-content: center;
 
-  > * {
+  >* {
     margin: 1rem;
   }
 
   a {
+    @include transition(color);
+
     &:hover,
     &:focus {
-      color: $prim;
-      @include transition(color);
+      @include color-map(color, primary);
     }
   }
 }
