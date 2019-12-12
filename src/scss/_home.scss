@@ -88,25 +88,11 @@
       max-width: 20rem;
       margin: 1rem;
 
-      &:first-child {
-        @include transition(transform);
-        transform: translateX(-3rem);
 
-        .animate & {
-          transform: translateX(0);
-
-        }
-      }
 
       &:last-child {
         margin-bottom: 1rem;
-        @include transition(transform);
-        transform: translateX(3rem);
 
-        .animate & {
-          transform: translateX(0);
-
-        }
       }
     }
   }
