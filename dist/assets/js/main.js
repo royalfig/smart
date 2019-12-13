@@ -51,7 +51,7 @@ function openMobileNavMenu() {
   mobileMenu.setAttribute('aria-expanded', true);
   document.body.classList.add('show-modal');
   // Close nav menu with ESC key
-  document.body.addEventListener('keydown', (keydown) => closeByEsc(keydown, closeMobileNavMenu));
+  document.body.addEventListener('keydown', (keydown) => closeByEsc(keydown, closeMobileNavMenu),);
 }
 
 mobileHamburger.addEventListener('click', () => {
@@ -61,6 +61,20 @@ mobileHamburger.addEventListener('click', () => {
     openMobileNavMenu();
   }
 });
+
+const searchBtns = 
+
+
+
+
+const closeMenu = (input) => {
+  // parse input
+  // toggle aria-attribute
+  // add el to body
+  // add keyboard ev listener
+};
+
+const openMenu = (input) => {};
 
 //-------------------------------------------
 // Modals
@@ -92,13 +106,13 @@ searchBtns.forEach((el) => {
 const modalClose = document.querySelectorAll('.modal-close');
 
 modalClose.forEach((el) => el.addEventListener('click', (e) => {
-  e.currentTarget.parentElement.parentElement.setAttribute(
-    'aria-expanded',
-    'false',
-  );
-  e.currentTarget.parentElement.parentElement.style.transform = 'translate3d(100vw,0,0)';
-  document.body.classList.remove('show-modal');
-}));
+    e.currentTarget.parentElement.parentElement.setAttribute(
+      'aria-expanded',
+      'false',
+    );
+    e.currentTarget.parentElement.parentElement.style.transform =      'translate3d(100vw,0,0)';
+    document.body.classList.remove('show-modal');
+  }),);
 
 //-------------------------------------------
 // Post Scripts
@@ -117,7 +131,9 @@ const footer = document.querySelector('.footer');
 const buffer = 50;
 
 // Variables for share bar
-const postImg = (!document.querySelector('.post-img') !== null) ? document.querySelector('.post-img') : document.querySelector('.no-post-img');
+const postImg =  !document.querySelector('.post-img') !== null
+    ? document.querySelector('.post-img')
+    : document.querySelector('.no-post-img');
 const postContentHeight = document.querySelector('.post-content');
 
 function readingBarProgress(scrollPos) {
@@ -130,9 +146,9 @@ function readingBarProgress(scrollPos) {
 function shareBarAnimation() {
   if (
     postImg.getBoundingClientRect().bottom + buffer
-    < shareBar.getBoundingClientRect().top
+      < shareBar.getBoundingClientRect().top
     && shareBar.getBoundingClientRect().bottom
-    < footer.getBoundingClientRect().top - buffer
+      < footer.getBoundingClientRect().top - buffer
   ) {
     if (window.innerWidth > 1024) {
       shareBar.style.marginLeft = '0';
@@ -245,10 +261,10 @@ if (typeof SEARCH_API !== 'undefined') {
   }
 }
 
-const searchInput = document.getElementById('search-input');
-const searchBtn = document.getElementById('search-btn');
-const searchResultHeader = document.querySelector('.search-result-header');
-const searchResult = document.getElementById('search-result');
+const searchInput = document.querySelector('.modal-search__input');
+const searchBtn = document.querySelector('.modal-search__btn');
+const searchResultHeader = document.querySelector('.search-results__header');
+const searchResult = document.querySelector('.search-results_container');
 
 function searchPosts(term) {
   searchResult.innerHTML = '';
@@ -285,8 +301,8 @@ function searchPosts(term) {
           const publishedString = `${
             months[published.getMonth()]
           } ${published.getDate()}, ${published.getFullYear()}`;
-          searchResult.innerHTML += `<article class="search-result-item"><p class="search-result-date">${publishedString}</p>
-          <a class="search-result-link" href="${post.url}">${post.title}</a></article>`;
+          searchResult.innerHTML += `<article class="search-results__item"><p class="search-results__date">${publishedString}</p>
+          <a class="search-results__link" href="${post.url}">${post.title}</a></article>`;
         }
       });
     });
