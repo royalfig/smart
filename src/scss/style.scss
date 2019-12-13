@@ -100,9 +100,8 @@ h6,
 }
 
 ::selection {
-  font-weight: 600;
-  color: $dark;
-  background: #ffdc73;
+  @include color-map(color, shade900);
+  @include color-map(background-color, primary);
 }
 
 :target {

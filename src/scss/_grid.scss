@@ -25,12 +25,13 @@
 }
 
 .no-img {
-  background: linear-gradient(45deg, $prim, $acc1);
+  background: linear-gradient(45deg, color(primary), color(accent));
+  background: linear-gradient(45deg, var(--primary), var(--accent));
 }
 
 .card-body {
-  padding: 0.5em;
-  margin: 1.25em 0;
+  padding: 0.5rem;
+  margin: 1.25rem 0;
 }
 
 .card-date-tag {
@@ -42,9 +43,9 @@
   display: flex;
   min-width: 50%;
   padding: 1px;
-  font-size: 0.75em;
+  font-size: 0.75rem;
   font-weight: 400;
-  color: $dark;
+  @include color-map(color, shade200);
   text-transform: uppercase;
 }
 
@@ -54,8 +55,8 @@
 
   svg {
     flex-shrink: 0;
-    width: 1em;
-    height: 1em;
+    width: 1rem;
+    height: 1rem;
     transform: translateY(-0.1em);
     stroke: currentColor;
     stroke-width: 1.5px;
@@ -63,8 +64,8 @@
 }
 
 .read-more svg {
-  width: 2em;
-  height: 2em;
+  width: 2rem;
+  height: 2rem;
   transform: translateY(0.5em);
   fill: none;
   stroke: currentColor;
@@ -73,20 +74,20 @@
 
 .card-title {
   position: relative;
-  margin: 0.25em 0;
-  font-size: 1.5em;
+  margin: 0.25rem 0;
+  font-size: 1.5rem;
   line-height: 1.1;
   color: $dark;
   @include transition(color);
 
   &:hover {
-    color: $prim;
+    @include color-map(color, primary);
   }
 }
 
 .card-excerpt {
   margin: 0.5em 0;
-  color: $dark;
+  @include color-map(color, text);
 }
 
 //-------------------------------------------

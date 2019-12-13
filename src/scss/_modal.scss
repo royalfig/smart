@@ -10,18 +10,16 @@
   max-width: 100vw;
   height: 100%;
   overflow-x: hidden;
-  //   margin-left: 100%;
   overflow-y: auto;
-  color: $dark;
+  @include color-map(color, text);
   text-align: center;
-  // background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
-  background-color: $light;
+  @include color-map(background-color, shade700);
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translate3d(100vw, 0, 0);
 
   .show-modal & {
-    transition: transform 0.2s 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
   .inner-container {
@@ -31,7 +29,7 @@
 
 .content-wrap {
   &:before {
-    transition: opacity 0.1s 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
 
   .show-modal & {
@@ -50,40 +48,9 @@
 
 .modal-inner {
   padding: 2rem 1rem;
-
-  h3 {
-    display: block;
-    font-size: 2.4rem;
-    line-height: 1;
-    color: $dark;
-  }
-
-  label {
-    width: 100%;
-    padding: 0;
-    margin-right: 0.5rem;
-    font-weight: 100;
-    color: $dark;
-    text-align: left;
-    background: none;
-  }
 }
 
-.modal-tagline {
-  display: inline-block;
-  padding: 0.5rem;
-  margin-bottom: 1.4rem;
-  font-size: 1.2rem;
-  color: $dark;
-}
 
-.modal-icon {
-  width: 3rem;
-  height: 3rem;
-  pointer-events: none;
-  fill: none;
-  stroke: $dark;
-}
 
 .modal-form {
   flex-wrap: wrap;
@@ -95,16 +62,19 @@
   width: 80%;
   height: 2rem;
   font-size: 1rem;
-  color: $dark;
+  @include color-map(color, text);
   text-align: left;
   background: none;
   border: none;
-  border-bottom: 1px solid $dark;
-  caret-color: $prim;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  @include color-map(border-bottom-color, shade100);
+  @include color-map(caret-color, primary);
   border-radius: 0;
+  @include transition(border-bottom-color);
 
   &:focus {
-    border-bottom: 1px solid $prim;
+    @include color-map(border-bottom-color, primary);
     outline: none;
   }
 }
@@ -115,9 +85,10 @@
   margin-left: 0.5rem;
   font-weight: 600;
   line-height: 1;
-  color: $light;
+  @include color-map(color, text);
   vertical-align: bottom;
-  background: linear-gradient(45deg, $prim, $acc1);
+  background: linear-gradient(45deg, color(primary), color(accent));
+  background: linear-gradient(45deg, var(--primary), var(--accent));
   border: none;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
   @include transition(box-shadow);
@@ -129,7 +100,14 @@
   }
 
   &:focus {
-    outline: 2px dotted $dark;
+    outline-width: 2px;
+    outline-style: dotted;
+    @include color-map(outline-color, text);
+    outline-offset: 1px;
+  }
+
+  &::-moz-focus-inner {
+    outline: none;
   }
 }
 
@@ -146,7 +124,7 @@
     display: block;
     width: 100%;
     height: calc(1rem / 5);
-    background: $dark;
+    @include color-map(background-color, text);
     opacity: 1;
     transition: 0.25s ease-in-out;
 
@@ -159,9 +137,17 @@
     }
   }
 
+  &:hover {
+    span {
+      @include color-map(background-color, primary);
+    }
+  }
 
   &:focus {
-    outline: 2px dotted currentColor;
+    outline-width: 2px;
+    outline-style: dotted;
+    @include color-map(outline-color, text);
+    outline-offset: 1px;
   }
 }
 
@@ -183,24 +169,27 @@
   padding-bottom: 0.5rem;
   margin-top: 1rem;
   text-align: left;
-  border-bottom: 1px solid scale-color($dark, $alpha: 0.8);
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  @include color-map(border-bottom-color, shade200);
 }
 
 .search-result-date {
   margin-top: 1rem;
   font-size: 0.9em;
-  color: scale-color($dark, $alpha: 0.8);
+  @include color-map(color, shade200);
   background: none;
 }
 
 .search-result-link {
   font-weight: 700;
   line-height: 1.1;
-  color: $dark;
+  @include color-map(color, text);
+  @include transition(color);
 
   &:hover,
   &:active {
-    color: $prim;
+    @include color-map(color, primary);
     @include transition(color);
   }
 }

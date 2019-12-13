@@ -117,7 +117,7 @@ const footer = document.querySelector('.footer');
 const buffer = 50;
 
 // Variables for share bar
-const postImg = document.querySelector('.post-img');
+const postImg = (!document.querySelector('.post-img') !== null) ? document.querySelector('.post-img') : document.querySelector('.no-post-img');
 const postContentHeight = document.querySelector('.post-content');
 
 function readingBarProgress(scrollPos) {
@@ -214,33 +214,35 @@ if (typeof SEARCH_API !== 'undefined') {
     version: 'v2',
   });
 
-  builtIdx = api.posts
-    .browse({
-      include: 'tags,authors',
-      formats: 'plaintext',
-      limit: 'all',
-    })
-    .then((posts) => {
-      const idx = lunr(function () {
-        this.ref('uuid');
-        this.field('plaintext');
-        this.field('title');
+  if (builtIdx === '') {
+    builtIdx = api.posts
+      .browse({
+        include: 'tags,authors',
+        formats: 'plaintext',
+        limit: 'all',
+      })
+      .then((posts) => {
+        const idx = lunr(function () {
+          this.ref('uuid');
+          this.field('plaintext');
+          this.field('title');
 
-        posts.forEach((doc) => {
-          this.add(doc);
-        }, this);
+          posts.forEach((doc) => {
+            this.add(doc);
+          }, this);
+        });
+
+        localStorage.setItem('posts', JSON.stringify(posts));
+
+        return {
+          posts,
+          idx,
+        };
+      })
+      .catch((err) => {
+        console.error(err);
       });
-
-      localStorage.setItem('posts', JSON.stringify(posts));
-
-      return {
-        posts,
-        idx,
-      };
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+  }
 }
 
 const searchInput = document.getElementById('search-input');

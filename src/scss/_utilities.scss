@@ -24,7 +24,8 @@ $light: #0B1F23;
 
 :root {
   --text: #ffffff;
-  --primary: #FAC21B;
+  --primary: #fac21b;
+  --accent: #ed5107;
   --shade100: #e7ebeb;
   --shade200: #c4ccce;
   --shade300: #a0aeb1;
@@ -37,7 +38,8 @@ $light: #0B1F23;
 }
 
 $colors: ("text": #ffffff,
-  "primary": #FAC21B,
+  "primary": #fac21b,
+  "accent": #ed5107,
   "shade100": #E7EBEB,
   "shade200": #C4CCCE,
   "shade300": #A0AEB1,
@@ -48,6 +50,21 @@ $colors: ("text": #ffffff,
   "shade800": #08171B,
   "shade900": #051012,
 );
+
+// :root {
+//   --text: #ffffff;
+//   --primary: #FAC21B;
+//   --shade100: #E8E9E9;
+//   --shade200: #C7C7C8;
+//   --shade300: #A5A5A7;
+//   --shade400: #616264;
+//   --shade500: #1D1E22;
+//   --shade600: #1A1B1F;
+//   --shade700: #111214;
+//   --shade800: #0D0E0F;
+//   --shade900: #09090A;
+// }
+
 
 @function color($key) {
   @if map-has-key($colors, $key) {
