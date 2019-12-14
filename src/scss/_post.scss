@@ -8,12 +8,8 @@
   width: 0;
   height: 3px;
   // margin-top: $navbar;
-  background: linear-gradient(to right,
-      color(primary),
-      color(accent));
-  background: linear-gradient(to right,
-      var(--primary),
-      var(--accent));
+  background: linear-gradient(to right, color(primary), color(accent));
+  background: linear-gradient(to right, var(--primary), var(--accent));
 }
 
 //-------------------------------------------
@@ -47,16 +43,11 @@
     height: 100%;
     object-fit: cover;
   }
-
 }
 
 .no-post-img {
-  background: linear-gradient(45deg,
-      color(primary),
-      color(accent));
-  background: linear-gradient(45deg,
-      var(--primary),
-      var(--accent));
+  background: linear-gradient(45deg, color(primary), color(accent));
+  background: linear-gradient(45deg, var(--primary), var(--accent));
 }
 
 .post-title {
@@ -98,80 +89,88 @@
   opacity: 0;
 
   @include transition(all);
-}
 
-.post-share-bar-title {
-  margin-right: 2em;
-}
-
-.post-share-bar-link {
-  width: 2em;
-  height: 2em;
-  margin-right: 2em;
-
-  &:focus {
-    outline: 2px dotted currentColor;
+  &__title {
+    margin-right: 2em;
   }
 
-  svg {
-    width: 100%;
-    height: 100%;
-    @include color-map(fill, shade200);
-    @include transition(all);
-  }
+  &__link {
+    width: 2em;
+    height: 2em;
+    margin-right: 2em;
 
-  &.twitter svg {
+    &:focus {
+      outline: 2px dotted currentColor;
+    }
 
-    &:hover,
-    &:active {
-      fill: $tw;
+    svg {
+      width: 100%;
+      height: 100%;
+      @include color-map(fill, shade200);
+      @include transition(all);
     }
   }
 
-  &.facebook svg {
+  &__link--twitter {
+    @extend .post-share-bar__link;
 
-    &:hover,
-    &:active {
-      fill: $fb;
+    svg {
+      &:hover,
+      &:active {
+        fill: $tw;
+      }
+    }
+  }
+  &__link--facebook {
+    @extend .post-share-bar__link;
+
+    svg {
+      &:hover,
+      &:active {
+        fill: $fb;
+      }
+    }
+  }
+  &__link--linkedin {
+    @extend .post-share-bar__link;
+
+    svg {
+      &:hover,
+      &:active {
+        fill: $li;
+      }
+    }
+  }
+  &__link--copy {
+    @extend .post-share-bar__link;
+
+    svg {
+      fill: none;
+      @include color-map(stroke, shade200);
+
+      &:hover,
+      &:active {
+        @include color-map(stroke, primary);
+      }
     }
   }
 
-  &.linkedin svg {
-
-    &:hover,
-    &:active {
-      fill: $li;
-    }
-  }
-
-  &.copy svg {
-    fill: none;
-    @include color-map(stroke, shade200);
-
-    &:hover,
-    &:active {
-      @include color-map(stroke, primary);
-    }
-  }
-}
-
-@media only screen and (min-width: $laptop) {
-  .post-share-bar {
+  @include respond-above($laptop) {
     top: $navbar + 1rem;
     bottom: initial;
     flex-direction: column;
     width: initial;
     margin: 0;
     margin-left: -200px;
-  }
 
-  .post-share-bar-title,
-  .post-share-bar-link {
-    margin-right: 0;
-    margin-bottom: 1em;
+    &__title,
+    &__link {
+      margin-right: 0;
+      margin-bottom: 1em;
 
-    &:last-child {
-      margin-bottom: 0;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -358,15 +357,15 @@
   grid-area: post-2;
 }
 
-.related-posts-2~.related-posts-3,
-.related-posts-2~.related-posts-4 {
+.related-posts-2 ~ .related-posts-3,
+.related-posts-2 ~ .related-posts-4 {
   display: none;
 }
 
-.related-posts-1+.related-posts-3 {
+.related-posts-1 + .related-posts-3 {
   grid-area: post-2;
 
-  &+.related-posts-4 {
+  & + .related-posts-4 {
     display: none;
   }
 }

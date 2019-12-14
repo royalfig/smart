@@ -20,7 +20,7 @@
   }
 
   &__section {
-    @include flex(column, flex-start, center) padding: 0.5em;
+    @include flex(column, flex-start, flex-start) padding: 0.5em;
   }
   &--header {
     font-size: 115%;
