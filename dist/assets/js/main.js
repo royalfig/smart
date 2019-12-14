@@ -25,6 +25,10 @@ const hamburgerBtn = document.querySelector('.navbar-mobile__hamburger-btn');
 const mobileNavMenu = document.querySelector('.mobile-nav-menu');
 const searchModal = document.querySelector('.modal-search');
 const modalSearchCloseBtn = document.querySelector('.modal-search__close-btn');
+const searchModalInner = document.querySelector(
+  '.modal-search__inner-container',
+);
+const mobileNavMenuInner = document.querySelector('.mobile-nav-menu__inner');
 
 const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn, modalSearchCloseBtn];
 
@@ -35,6 +39,12 @@ const closeMenu = (input, target) => {
 };
 
 const openMenu = (input, target) => {
+  if (document.body.classList.contains('expanded-menu')) {
+    closeMenu(mobileNavMenu, 'menu');
+  }
+  if (document.body.classList.contains('expanded-modal-search')) {
+    closeMenu(searchModal, 'modal-search');
+  }
   document.body.classList.add(`expanded-${target}`);
   input.setAttribute('aria-expanded', 'true');
   input.setAttribute('aria-hidden', 'false');
