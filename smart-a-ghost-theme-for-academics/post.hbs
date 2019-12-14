@@ -109,12 +109,13 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/primary_author}}
 
-                {{#get "posts" include="tags" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}" as
+                {{!-- {{#get "posts" include="tags" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}" as
                 |related_posts|}}
                 {{#if related_posts}}
-                {{#foreach related_posts}}
-                <div class="related-posts related-posts-{{@number}}">
-                    <article class="card card-{{@number}}">
+                {{#foreach related_posts}} --}}
+                {{#prev_post in="primary_tag"}}
+                <div class="related-posts related-posts-1">
+                    <article class="card card-1">
                         <a href="{{url}}" aria-label="{{title}}">
                             {{#if feature_image}}<img class="card-img" src="{{img_url feature_image}}"
                                 alt="{{title}}">{{else}}<div class="no-card-img"></div>{{/if}}
@@ -142,9 +143,41 @@ into the {body} of the default.hbs template --}}
                         </div>
                     </article>
                 </div>
-                {{/foreach}}
+                {{!-- {{/foreach}}
                 {{/if}}
-                {{/get}}
+                {{/get}} --}}
+                {{/prev_post}}
+                {{#next_post in="primary_tag"}}
+                <div class="related-posts related-posts-1">
+                    <article class="card card-1">
+                        <a href="{{url}}" aria-label="{{title}}">
+                            {{#if feature_image}}<img class="card-img" src="{{img_url feature_image}}"
+                                alt="{{title}}">{{else}}<div class="no-card-img"></div>{{/if}}
+                        </a>
+                        <div class="card-body">
+                            <div class="flex-row card-date-tag">
+                                <p class="card-date"><time
+                                        datetime="{{date published_at}}">{{date published_at timeago="true"}}</time></p>
+                                {{#primary_tag}}
+                                <a class="card-tag hvr-bounce-to-top flex-row" href="{{url}}"> <svg>
+                                        <use href="#hash"></use>
+                                    </svg>
+                                    <p>
+                                        {{name}}
+                                    </p>
+                                </a>
+                                {{/primary_tag}}
+                            </div>
+                            <a href="{{url}}">
+                                <h4 class="card-title">{{title}}</h3>
+                            </a>
+                            <p class="excerpt">
+                                {{excerpt}}
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                {{/next_post}}
 
                 {{#prev_post in="-primary_tag"}}
                 <div class="related-posts related-posts-3">

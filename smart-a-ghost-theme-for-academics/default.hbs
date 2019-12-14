@@ -161,16 +161,14 @@
         {{!-- Footer Module --}}
         <footer class="footer--outer-container">
             <div class="footer--inner-container">
-                <div class="grid-container">
-                    <div class="footer-section flex-col">
-                        <p class="home-page-section-header serif">About</p>
-                        <a href="{{@site.url}}">{{@site.title}}</a>
-
+                <div class="footer--grid-container">
+                    <div class="footer__section flex-col">
+                        <p class="footer--header--serif">About</p>
+                        <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
                         {{#if @site.description}}
-                        <p>{{@site.description}}</p>
+                        <p class="footer__description">{{@site.description}}</p>
                         {{/if}}
-
-                        <div class=" footer-social flex-row">
+                        <div class="footer__social">
                             {{#if @site.twitter}}
                             <a class="twitter" href="{{twitter_url}}" class="nav-item" aria-label="Twitter">
                                 <svg>
@@ -193,8 +191,8 @@
 
                     {{#get "tags" include="count.posts" limit="10" order="count.posts desc"}}
                     {{#if tags}}
-                    <div class="footer-section flex-col">
-                        <p class="home-page-section-header serif">Topics</p>
+                    <div class="footer__section">
+                        <p class="footer--header--serif">Topics</p>
 
                         {{#foreach tags}}
                         <a class="card-tag flex-row" href="{{url}}" aria-label="{{name}}">

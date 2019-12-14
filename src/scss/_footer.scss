@@ -45,33 +45,33 @@
       @include color-map(fill, shade200);
     }
   }
-}
+  &--card-tag {
+    @extend .card-tag;
+    @include flex(row, flex-start, center);
+    font-size: 1em;
+    @include color-map(color, shade200);
+    @include transition(color);
 
-.card-tag {
-  justify-content: flex-start;
-  font-size: 1em;
-  @include color-map(color, shade200);
-  @include transition(color);
-
-  p {
-    margin: 0;
-  }
-
-  svg {
-    width: 1em;
-    height: 1em;
-    transform: none;
-    @include color-map(stroke, shade200);
-    stroke-width: 2px;
-  }
-
-  &:hover {
-    @include color-map(color, primary);
-
-    background: none;
+    p {
+      margin: 0;
+    }
 
     svg {
-      @include color-map(stroke, primary);
+      width: 1em;
+      height: 1em;
+      transform: none;
+      @include color-map(stroke, shade200);
+      stroke-width: 2px;
+    }
+
+    &:hover {
+      @include color-map(color, primary);
+
+      background: none;
+
+      svg {
+        @include color-map(stroke, primary);
+      }
     }
   }
 }
