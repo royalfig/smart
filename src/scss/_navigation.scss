@@ -319,6 +319,7 @@
 .pagination {
   display: flex;
   justify-content: center;
+  @include color-map(color, shade200);
 
   > * {
     margin: 1rem;

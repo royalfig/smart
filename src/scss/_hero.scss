@@ -4,7 +4,7 @@
   height: 50vh;
   min-height: 500px;
   @include color-map(background-color, shade700);
-  background-position: center;
+  background-position: top;
   background-size: cover;
 
   &__overlay {

@@ -28,17 +28,6 @@ const modalSearchCloseBtn = document.querySelector('.modal-search__close-btn');
 
 const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn, modalSearchCloseBtn];
 
-btns.forEach((item) => {
-  item.addEventListener('click', (e) => {
-    const { target } = e.currentTarget.dataset;
-    const targetEl = document.getElementById(target);
-    if (targetEl.getAttribute('aria-expanded') === 'false') {
-      return openMenu(targetEl, target);
-    }
-    closeMenu(targetEl, target);
-  });
-});
-
 const closeMenu = (input, target) => {
   document.body.classList.remove(`expanded-${target}`);
   input.setAttribute('aria-expanded', 'false');
@@ -58,6 +47,16 @@ const openMenu = (input, target) => {
   document.body.addEventListener('keyup', closeByEsc);
 };
 
+btns.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const { target } = e.currentTarget.dataset;
+    const targetEl = document.getElementById(target);
+    if (targetEl.getAttribute('aria-expanded') === 'false') {
+      return openMenu(targetEl, target);
+    }
+    closeMenu(targetEl, target);
+  });
+});
 //-------------------------------------------
 // Post Scripts
 //-------------------------------------------

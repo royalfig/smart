@@ -34,8 +34,8 @@
       .card {
         &__img,
         &__no-img {
-          height: 2.5 * $base;
-          max-height: 60vh;
+          height: 2 * $base;
+          // max-height: 60vh;
         }
       }
     }
@@ -63,8 +63,8 @@
       .card {
         &__img,
         &__no-img {
-          height: 2.5 * $base;
-          max-height: 60vh;
+          height: 2 * $base;
+          // max-height: 60vh;
         }
       }
     }
@@ -87,7 +87,7 @@
     .card {
       &__img,
       &__no-img {
-        height: 1.75 * $base;
+        height: 1.5 * $base;
       }
     }
   }
@@ -115,8 +115,8 @@
 
       .card-img,
       .no-img {
-        height: 2.5 * $base;
-        max-height: 60vh;
+        height: 2 * $base;
+        // max-height: 60vh;
       }
     }
 
@@ -142,8 +142,8 @@
       .card {
         &__img,
         &__no-img {
-          height: 2.5 * $base;
-          max-height: 60vh;
+          height: 2 * $base;
+          // max-height: 60vh;
         }
       }
     }
@@ -168,7 +168,7 @@
   .card {
     &__img,
     &__no-img {
-      height: 1.75 * $base;
+      height: 1.5 * $base;
     }
   }
 }
@@ -199,8 +199,8 @@
       .card {
         &__img,
         &__no-img {
-          height: 2.5 * $base;
-          max-height: 60vh;
+          height: 2 * $base;
+          // max-height: 60vh;
         }
       }
     }
@@ -219,7 +219,7 @@
 
     .card-img,
     .no-img {
-      height: 2 * $base;
+      height: 1.75 * $base;
     }
   }
 
@@ -235,8 +235,8 @@
       .card {
         &__img,
         &__no-img {
-          height: 3 * $base;
-          max-height: 60vh;
+          height: 1.75 * $base;
+          // max-height: 60vh;
         }
       }
     }
@@ -247,8 +247,8 @@
       .card {
         &__img,
         &__no-img {
-          height: 3 * $base;
-          max-height: 60vh;
+          height: 1.75 * $base;
+          // max-height: 60vh;
         }
       }
     }
@@ -269,8 +269,8 @@
   .card {
     &__img,
     &__no-img {
-      height: 2 * $base;
-      max-height: 50vh;
+      height: 1.75 * $base;
+      // max-height: 50vh;
     }
   }
 }
