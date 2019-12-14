@@ -2,116 +2,123 @@
 // Global Footer Styles
 //-------------------------------------------
 .footer {
+  &--outer-container {
+    @extend .outer-container;
     min-height: 250px;
     font-size: 0.9375em;
     @include color-map(background-color, shade800);
     @include color-map(color, shade200);
     border-bottom: none;
+  }
 
-    .home-page-section-header {
-        font-size: 115%;
+  &--inner-container {
+    @extend .inner-container;
+  }
+
+  &--grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  &__section {
+    @include flex(column, flex-start, center) padding: 0.5em;
+  }
+  &--header {
+    font-size: 115%;
+    @extend .header;
+
+    &--serif {
+      margin-bottom: 0.5em;
+      @extend .serif;
     }
+  }
 
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
-
-.footer-section {
-    padding: .5em;
-
-    p {
-        margin-bottom: .5em;
-    }
-
-    .card-tag {
-        justify-content: flex-start;
-        font-size: 1em;
-        @include color-map(color, shade200);
-        @include transition(color);
-
-        p {
-            margin: 0;
-        }
-
-        svg {
-            width: 1em;
-            height: 1em;
-            transform: none;
-            @include color-map(stroke, shade200);
-            stroke-width: 2px;
-        }
-
-        &:hover {
-            @include color-map(color, primary);
-
-            background: none;
-
-            svg {
-                @include color-map(stroke, primary);
-            }
-        }
-    }
-}
-
-.footer-location {
-    align-items: center;
-    margin-bottom: .5em;
-
-    p {
-        margin: 0;
-    }
-
-    svg {
-        width: 1em;
-        height: 1em;
-        margin-right: 3px;
-        margin-left: -3px;
-        @include color-map(stroke, shade200);
-        stroke-width: 2px;
-
-    }
-}
-
-.footer-social {
+  &__social {
     @include transition(all);
 
     a {
-        margin-right: .5em;
+      margin-right: 0.5em;
     }
 
     svg {
-        width: 1rem;
-        height: 1rem;
-        @include color-map(fill, shade200);
+      width: 1rem;
+      height: 1rem;
+      @include color-map(fill, shade200);
     }
+  }
+}
+
+.card-tag {
+  justify-content: flex-start;
+  font-size: 1em;
+  @include color-map(color, shade200);
+  @include transition(color);
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    transform: none;
+    @include color-map(stroke, shade200);
+    stroke-width: 2px;
+  }
+
+  &:hover {
+    @include color-map(color, primary);
+
+    background: none;
+
+    svg {
+      @include color-map(stroke, primary);
+    }
+  }
+}
+
+.footer-location {
+  align-items: center;
+  margin-bottom: 0.5em;
+
+  p {
+    margin: 0;
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 3px;
+    margin-left: -3px;
+    @include color-map(stroke, shade200);
+    stroke-width: 2px;
+  }
 }
 
 .footer-latest {
-    @include color-map(color, shade100);
+  @include color-map(color, shade100);
 
-    .footer-date {
-        margin-bottom: .25em;
-        font-size: .75em;
-        @include color-map(color, shade400);
+  .footer-date {
+    margin-bottom: 0.25em;
+    font-size: 0.75em;
+    @include color-map(color, shade400);
+  }
+
+  a {
+    padding-bottom: 0.25em;
+    margin-bottom: 0.75em;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    @include color-map(border-bottom-color, shade400);
+
+    &:hover {
+      @include color-map(stroke, primary);
     }
-
-    a {
-        padding-bottom: .25em;
-        margin-bottom: .75em;
-        border-bottom-style: solid;
-        border-bottom-width: 1px;
-        @include color-map(border-bottom-color, shade400);
-
-        &:hover {
-            @include color-map(stroke, primary);
-        }
-    }
+  }
 }
 
 .published-by-ghost {
-    justify-content: center;
-    padding: 0.15em;
-    font-size: 0.8rem;
-    @include color-map(color, shade400);
+  justify-content: center;
+  padding: 0.15em;
+  font-size: 0.8rem;
+  @include color-map(color, shade400);
 }

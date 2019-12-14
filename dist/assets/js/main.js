@@ -24,51 +24,38 @@ const lgSearchBtn = document.querySelector(".navbar__right-item--search");
 const hamburgerBtn = document.querySelector(".navbar-mobile__hamburger-btn");
 const mobileNavMenu = document.querySelector(".mobile-nav-menu");
 const searchModal = document.querySelector(".modal-search");
+const modalSearchCloseBtn = document.querySelector(".modal-search__close-btn");
 
-const closeByEsc = key => {
-  console.log(key);
-
-  if (key.key === "Escape") {
-  }
-};
-
-const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn];
+const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn, modalSearchCloseBtn];
 
 btns.forEach(item => {
   item.addEventListener("click", e => {
     const target = e.currentTarget.dataset.target;
     const targetEl = document.getElementById(target);
     if (targetEl.getAttribute("aria-expanded") === "false") {
-      return openMenu(targetEl);
+      return openMenu(targetEl, target);
     }
-    closeMenu(targetEl);
+    closeMenu(targetEl, target);
   });
 });
 
-const closeMenu = input => {
-  // parse input
-  // toggle aria-attribute
-  document.body.classList.remove("expanded");
+const closeMenu = (input, target) => {
+  document.body.classList.remove(`expanded-${target}`);
   input.setAttribute("aria-expanded", "false");
   input.setAttribute("aria-hidden", "true");
-  // add el to body
-  // add keyboard ev listener
-  console.log("close", input);
 };
 
-const openMenu = input => {
-  document.body.classList.add("expanded");
+const openMenu = (input, target) => {
+  document.body.classList.add(`expanded-${target}`);
   input.setAttribute("aria-expanded", "true");
   input.setAttribute("aria-hidden", "false");
-  function closeTest(key) {
-    console.log(key, input);
+  const closeByEsc = key => {
     if (key.key === "Escape") {
-      closeMenu(input);
-      document.body.removeEventListener("keyup", closeTest);
+      closeMenu(input, target);
+      document.body.removeEventListener("keyup", closeByEsc);
     }
-  }
-  document.body.addEventListener("keyup", closeTest);
-  console.log("open", input);
+  };
+  document.body.addEventListener("keyup", closeByEsc);
 };
 
 //-------------------------------------------
@@ -222,7 +209,7 @@ if (typeof SEARCH_API !== "undefined") {
 const searchInput = document.querySelector(".modal-search__input");
 const searchBtn = document.querySelector(".modal-search__btn");
 const searchResultHeader = document.querySelector(".search-results__header");
-const searchResult = document.querySelector(".search-results_container");
+const searchResult = document.querySelector(".search-results__container");
 
 function searchPosts(term) {
   searchResult.innerHTML = "";

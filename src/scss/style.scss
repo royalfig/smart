@@ -116,12 +116,12 @@ h6,
   position: relative;
   width: 100%;
   padding: 1em;
-  background: $light;
-  border-bottom: 0.5rem solid $pureWhite;
-}
+  @include color-map(background-color, shade700);
+  border-bottom-style: solid;
+  border-bottom-width: 0.5rem;
+  @include color-map(border-bottom-color, shade800);
 
-@media (min-width: $tablet) {
-  .outer-container {
+  @include respond-above(tablet) {
     padding: 1rem 4rem;
   }
 }
@@ -131,7 +131,8 @@ h6,
   margin: 0 auto 1rem;
 }
 
-.home-page-section-header {
+.home-page-section-header,
+.header {
   position: relative;
   margin: 0;
 }
