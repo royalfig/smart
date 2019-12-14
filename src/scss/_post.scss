@@ -7,7 +7,6 @@
   z-index: 1003;
   width: 0;
   height: 3px;
-  // margin-top: $navbar;
   background: linear-gradient(to right, color(primary), color(accent));
   background: linear-gradient(to right, var(--primary), var(--accent));
 }

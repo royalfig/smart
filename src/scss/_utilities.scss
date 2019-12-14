@@ -19,8 +19,8 @@ $pureBlack: #000000;
 
 // Dark Mode
 $extra-dark: #051012;
-$dark: #E7EBEB;
-$light: #0B1F23;
+$dark: #e7ebeb;
+$light: #0b1f23;
 
 :root {
   --text: #ffffff;
@@ -31,24 +31,25 @@ $light: #0B1F23;
   --shade300: #a0aeb1;
   --shade400: #597176;
   --shade500: #12343b;
-  --shade600: #102F35;
+  --shade600: #102f35;
   --shade700: #0b1f23;
   --shade800: #08171b;
   --shade900: #051214;
 }
 
-$colors: ("text": #ffffff,
+$colors: (
+  "text": #ffffff,
   "primary": #fac21b,
   "accent": #ed5107,
-  "shade100": #E7EBEB,
-  "shade200": #C4CCCE,
-  "shade300": #A0AEB1,
+  "shade100": #e7ebeb,
+  "shade200": #c4ccce,
+  "shade300": #a0aeb1,
   "shade400": #597176,
-  "shade500": #12343B,
-  "shade600": #102F35,
-  "shade700": #0B1F23,
-  "shade800": #08171B,
-  "shade900": #051012,
+  "shade500": #12343b,
+  "shade600": #102f35,
+  "shade700": #0b1f23,
+  "shade800": #08171b,
+  "shade900": #051012
 );
 
 // :root {
@@ -65,7 +66,6 @@ $colors: ("text": #ffffff,
 //   --shade900: #09090A;
 // }
 
-
 @function color($key) {
   @if map-has-key($colors, $key) {
     @return map-get($colors, $key);
@@ -81,22 +81,10 @@ $colors: ("text": #ffffff,
 }
 
 // Font styles
-$sans: "Fira Sans",
--apple-system,
-blinkmacsystemfont,
-roboto,
-"Segoe UI",
-oxygen,
-ubuntu,
-cantarell,
-"Open Sans",
-"Helvetica Neue",
-sans-serif;
+$sans: "Fira Sans", -apple-system, blinkmacsystemfont, roboto, "Segoe UI",
+  oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-$serif: "DM Serif Text",
-georgia,
-times,
-serif;
+$serif: "DM Serif Text", georgia, times, serif;
 
 // Breakpoints
 $tablet: 640px;
@@ -109,16 +97,14 @@ $navbar: 3rem;
 
 // Box Shadow
 $box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
--3px 2px 4px rgba(0, 0, 0, 0.12),
-5px 10px 15px rgba(0, 0, 0, 0.14),
--5px 5px 15px rgba(0, 0, 0, 0.14);
+  -3px 2px 4px rgba(0, 0, 0, 0.12), 5px 10px 15px rgba(0, 0, 0, 0.14),
+  -5px 5px 15px rgba(0, 0, 0, 0.14);
 
 $box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-0 3px 14px 2px rgba(0, 0, 0, 0.12),
-0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
 
 $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
 @mixin transition($property) {
   transition: $property 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
@@ -165,7 +151,9 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   }
 }
 
-// Display
+//-------------------------------------------
+// Utility Classes
+//-------------------------------------------
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -178,17 +166,52 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 
 .grid-container {
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2rem;
 }
 
-.main {
+%grid-container {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.outer-container {
+  position: relative;
   width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden;
+  padding: 1em;
+  border-bottom-width: 0.5rem;
+  @include color-map(border-bottom-color, shade800);
+  @include respond-above(tablet) {
+    padding: 1rem 4rem;
+  }
 }
 
-.show-modal {}
+%outer-container {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  @include color-map(background-color, shade700);
+  border-bottom-style: solid;
+  border-bottom-width: 0.5rem;
+  @include color-map(border-bottom-color, shade800);
 
+  @include respond-above(tablet) {
+    padding: 1rem 4rem;
+  }
+}
+
+.inner-container {
+  max-width: $laptop;
+  margin: 0 auto 1rem;
+}
+
+.header {
+  position: relative;
+  margin: 0;
+}
+
+.index {
+  margin-top: $navbar;
+}
 // Links
 
 // Underline from left effect
@@ -263,19 +286,19 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 .underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"), -2px 2px color("shade700"),
-    -2px -2px color("shade700");
-  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700), -2px 2px var(--shade700),
-    -2px -2px var(--shade700);
+  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"),
+    -2px 2px color("shade700"), -2px -2px color("shade700");
+  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700),
+    -2px 2px var(--shade700), -2px -2px var(--shade700);
   border-bottom: 2px solid currentColor;
 }
 
 @mixin underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"), -2px 2px color("shade700"),
-    -2px -2px color("shade700");
-  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700), -2px 2px var(--shade700),
-    -2px -2px var(--shade700);
+  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"),
+    -2px 2px color("shade700"), -2px -2px color("shade700");
+  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700),
+    -2px 2px var(--shade700), -2px -2px var(--shade700);
   border-bottom: 2px solid currentColor;
 }

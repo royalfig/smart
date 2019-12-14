@@ -12,6 +12,18 @@
         </a>
     </div>
     <div class="navbar-mobile__right">
+        <button class="navbar-mobile__color-mode-btn" aria-label="Toggle dark or bright mode">
+            <svg>
+                <title>Bright Mode</title>
+                <use href="#sun"></use>
+            </svg>
+        </button>
+        <button class="navbar-mobile__color-mode-btn--hidden" aria-label="Toggle dark or bright mode">
+            <svg>
+                <title>Dark Mode</title>
+                <use href="#moon"></use>
+            </svg>
+        </button>
         <button class="navbar-mobile__search-btn" data-target="modal-search" aria-label="Search {{@site.title}}">
             <svg>
                 <title>Search {{@site.title}}</title>
@@ -124,6 +136,18 @@
             </svg>
         </button>
         {{/if}}
+        <button class="navbar__right-item--color-mode-btn" aria-label="Toggle dark or bright mode">
+            <svg>
+                <title>Bright Mode</title>
+                <use href="#sun"></use>
+            </svg>
+        </button>
+        <button class="navbar__right-item--color-mode-btn--hidden" aria-label="Toggle dark or bright mode">
+            <svg>
+                <title>Dark Mode</title>
+                <use href="#moon"></use>
+            </svg>
+        </button>
         <button class="navbar__right-item--search" data-target="modal-search" aria-label="Search {{@site.title}}">
             <svg>
                 <title>Search {{@site.title}}</title>

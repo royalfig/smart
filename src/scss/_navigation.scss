@@ -10,7 +10,7 @@
   justify-content: space-between;
   width: 100%;
   height: $navbar;
-  padding: 0.5em 1em;
+  padding: 0.5rem 1rem;
   @include color-map(background-color, shade700);
   font-size: 0.975rem;
   box-shadow: $box-shadow;
@@ -94,13 +94,24 @@
     flex: 1;
   }
 
-  &__search-btn {
+  &__search-btn,
+  &__color-mode-btn {
     svg {
       width: 1.5rem;
       height: 1.5rem;
       fill: none;
       @include color-map(stroke, shade100);
       stroke-width: 2px;
+    }
+  }
+
+  &__color-mode-btn {
+    margin-right: 0.5rem;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    &--hidden {
+      display: none;
     }
   }
 }
@@ -131,7 +142,7 @@
 
   &__inner {
     @include flex(column, center, flex-start);
-    padding: 2em 1em 1em;
+    padding: 2rem 1rem 1rem;
   }
 
   &__site-title--serif {
@@ -145,7 +156,7 @@
   }
 
   &__main-nav {
-    margin: 1em 0;
+    margin: 1rem 0;
     list-style-type: none;
   }
 
@@ -195,7 +206,7 @@
     justify-content: space-between;
     width: 100%;
     height: $navbar;
-    padding: 0.5em 1em;
+    padding: 0.5rem 1rem;
     font-size: 0.975rem;
     @include color-map(background-color, shade700);
     box-shadow: $box-shadow;
@@ -239,7 +250,31 @@
         @include color-map(fill, shade100);
       }
 
+      &--color-mode-btn {
+        &--hidden {
+          display: none;
+        }
+
+        margin: 0 0.5rem;
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+          fill: none;
+          @include color-map(stroke, shade100);
+          stroke-width: 3px;
+          @include transition(stroke);
+          stroke-linecap: round;
+          stroke-linejoin: round;
+
+          &:hover {
+            @include color-map(stroke, primary);
+          }
+        }
+      }
+
       &--search {
+        margin-left: 0.5rem;
         svg {
           width: 1.25rem;
           height: 1.25rem;

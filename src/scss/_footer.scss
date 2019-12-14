@@ -5,7 +5,7 @@
   &--outer-container {
     @extend .outer-container;
     min-height: 250px;
-    font-size: 0.9375em;
+    font-size: 0.9375rem;
     @include color-map(background-color, shade800);
     @include color-map(color, shade200);
     border-bottom: none;
@@ -16,27 +16,93 @@
   }
 
   &--grid-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    @extend %grid-container;
+    grid-gap: 0;
+    grid-template-columns: repeat(1, 12rem);
+
+    @include respond-between($tablet, $laptop) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include respond-above($laptop) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
   }
 
   &__section {
-    @include flex(column, flex-start, flex-start) padding: 0.5em;
-  }
-  &--header {
-    font-size: 115%;
-    @extend .header;
+    @include flex(column, flex-start, flex-start);
+    padding: 0.5rem;
 
-    &--serif {
-      margin-bottom: 0.5em;
-      @extend .serif;
+    &--latest {
+      @extend .footer__section;
+      @include color-map(color, shade200);
+
+      &:nth-child(3) {
+        padding-bottom: 0;
+      }
+
+      &:last-child {
+        padding-top: 0;
+        & > p:first-child {
+          display: none;
+        }
+      }
+
+      @include respond-above($tablet) {
+        &:nth-child(3) {
+          padding-bottom: 0.5rem;
+        }
+
+        &:last-child {
+          padding-top: 0.5rem;
+          & > p:first-child {
+            display: block;
+          }
+        }
+      }
     }
+  }
+
+  &__link {
+    margin-bottom: 0.15rem;
+  }
+
+  &__description {
+    margin-bottom: 0.25rem;
+  }
+
+  &__date {
+    margin-bottom: 0.25rem;
+    font-size: 0.85rem;
+    @include color-map(color, shade300);
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 12rem;
+    margin-bottom: 1rem;
+
+    @include color-map(color, shade200);
+
+    @include transition(color);
+
+    &:hover {
+      @include color-map(color, primary);
+    }
+  }
+
+  &__header--serif {
+    margin-bottom: 0.5rem;
+    font-size: 115%;
+    @extend .serif;
   }
 
   &__social {
     @include transition(all);
 
     a {
-      margin-right: 0.5em;
+      margin-right: 0.5rem;
     }
 
     svg {
@@ -45,80 +111,42 @@
       @include color-map(fill, shade200);
     }
   }
+
   &--card-tag {
-    @extend .card-tag;
     @include flex(row, flex-start, center);
-    font-size: 1em;
     @include color-map(color, shade200);
-    @include transition(color);
 
     p {
       margin: 0;
+      text-transform: uppercase;
+      @include transition(all);
     }
 
     svg {
-      width: 1em;
-      height: 1em;
-      transform: none;
+      flex-shrink: 0;
+      align-self: flex-start;
+      width: 0.9375rem;
+      height: 0.9375rem;
+      transform: translateY(0.2em);
       @include color-map(stroke, shade200);
       stroke-width: 2px;
+      @include transition(all);
     }
 
     &:hover {
-      @include color-map(color, primary);
-
-      background: none;
-
+      p {
+        @include color-map(color, accent);
+      }
       svg {
-        @include color-map(stroke, primary);
+        @include color-map(stroke, accent);
       }
     }
   }
-}
 
-.footer-location {
-  align-items: center;
-  margin-bottom: 0.5em;
-
-  p {
-    margin: 0;
-  }
-
-  svg {
-    width: 1em;
-    height: 1em;
-    margin-right: 3px;
-    margin-left: -3px;
-    @include color-map(stroke, shade200);
-    stroke-width: 2px;
-  }
-}
-
-.footer-latest {
-  @include color-map(color, shade100);
-
-  .footer-date {
-    margin-bottom: 0.25em;
-    font-size: 0.75em;
+  &__published-by-ghost {
+    @include flex(row, center, center);
+    padding: 0.15rem;
+    font-size: 0.8rem;
     @include color-map(color, shade400);
   }
-
-  a {
-    padding-bottom: 0.25em;
-    margin-bottom: 0.75em;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    @include color-map(border-bottom-color, shade400);
-
-    &:hover {
-      @include color-map(stroke, primary);
-    }
-  }
-}
-
-.published-by-ghost {
-  justify-content: center;
-  padding: 0.15em;
-  font-size: 0.8rem;
-  @include color-map(color, shade400);
 }

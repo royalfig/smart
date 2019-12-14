@@ -1,6 +1,8 @@
 @import "utilities";
 
-//reset
+//-------------------------------------------
+// Global Styles
+//-------------------------------------------
 *,
 *:before,
 *:after {
@@ -8,14 +10,6 @@
   padding: 0;
   margin: 0;
 }
-
-button {
-  cursor: pointer;
-  background: none;
-  border: none;
-}
-
-// Responsive typography
 
 html {
   font-size: 16px;
@@ -46,7 +40,12 @@ html {
   }
 }
 
-// Headings GRT
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
 %headings {
   margin: 0.5rem 0;
   font-family: $serif;
@@ -110,42 +109,12 @@ h6,
 }
 
 //-------------------------------------------
-// Global Container Styles
-//-------------------------------------------
-.outer-container {
-  position: relative;
-  width: 100%;
-  padding: 1em;
-  @include color-map(background-color, shade700);
-  border-bottom-style: solid;
-  border-bottom-width: 0.5rem;
-  @include color-map(border-bottom-color, shade800);
-
-  @include respond-above(tablet) {
-    padding: 1rem 4rem;
-  }
-}
-
-.inner-container {
-  max-width: $laptop;
-  margin: 0 auto 1rem;
-}
-
-.home-page-section-header,
-.header {
-  position: relative;
-  margin: 0;
-}
-
-.index {
-  margin-top: $navbar;
-}
-
-//-------------------------------------------
 // Import substyles
 //-------------------------------------------
 @import "navigation";
-@import "home";
+@import "hero";
+@import "index";
+@import "card";
 @import "grid";
 @import "footer";
 @import "modal";

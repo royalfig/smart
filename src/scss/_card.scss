@@ -1,0 +1,108 @@
+//-------------------------------------------
+// Card Styles
+//-------------------------------------------
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  background: $light;
+  @include transition(all);
+
+  &__img,
+  &__no-img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: $base;
+    object-fit: cover;
+    box-shadow: $box-shadow;
+    @include transition(all);
+
+    &:hover {
+      filter: saturate(125%);
+    }
+  }
+
+  &__no-img {
+    background: linear-gradient(45deg, color(primary), color(accent));
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      margin: 1rem;
+      @include color-map(background-color, shade700);
+      content: "";
+    }
+  }
+
+  &__body {
+    padding: 0.5rem;
+    margin: 1.25rem 0;
+  }
+
+  &__date-tag {
+    @include flex(row, space-between, flex-start);
+  }
+
+  &__date,
+  &__tag {
+    display: flex;
+    min-width: 50%;
+    padding: 1px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    @include color-map(color, shade200);
+    text-transform: uppercase;
+  }
+
+  &__tag {
+    @include flex(row, flex-end, center);
+
+    svg {
+      flex-shrink: 0;
+      align-self: flex-start;
+      width: 0.75rem;
+      height: 0.75rem;
+      transform: translateY(0.2em);
+      stroke: currentColor;
+      stroke-width: 2px;
+      @include transition(all);
+    }
+
+    p {
+      @include transition(all);
+    }
+
+    &:hover {
+      p {
+        @include color-map(color, accent);
+      }
+      svg {
+        @include color-map(stroke, accent);
+      }
+    }
+  }
+
+  &__title {
+    position: relative;
+    margin: 0.25rem 0;
+    font-size: 1.5rem;
+    line-height: 1.1;
+    color: $dark;
+    @include transition(color);
+
+    &:hover {
+      @include color-map(color, primary);
+    }
+  }
+
+  &__excerpt {
+    margin: 0.5em 0;
+    @include color-map(color, text);
+  }
+}

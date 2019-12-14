@@ -149,6 +149,20 @@
                 d="M12,22 C14.6666667,19.5757576 16,16.2424242 16,12 C16,7.75757576 14.6666667,4.42424242 12,2 C9.33333333,4.42424242 8,7.75757576 8,12 C8,16.2424242 9.33333333,19.5757576 12,22 Z" />
             <path stroke-linecap="round" d="M2.5 9L21.5 9M2.5 15L21.5 15" />
         </symbol>
+        <symbol viewBox="0 0 24 24" id="moon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </symbol>
+        <symbol viewBox="0 0 24 24" id="sun">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </symbol>
     </svg>
     {{!-- SVG Sprite  --}}
 
@@ -162,8 +176,8 @@
         <footer class="footer--outer-container">
             <div class="footer--inner-container">
                 <div class="footer--grid-container">
-                    <div class="footer__section flex-col">
-                        <p class="footer--header--serif">About</p>
+                    <div class="footer__section">
+                        <p class="footer__header--serif">About</p>
                         <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
                         {{#if @site.description}}
                         <p class="footer__description">{{@site.description}}</p>
@@ -192,7 +206,7 @@
                     {{#get "tags" include="count.posts" limit="10" order="count.posts desc"}}
                     {{#if tags}}
                     <div class="footer__section">
-                        <p class="footer--header--serif">Topics</p>
+                        <p class="footer__header--serif">Topics</p>
 
                         {{#foreach tags}}
                         <a class="footer--card-tag" href="{{url}}" aria-label="{{name}}">
@@ -208,20 +222,28 @@
                     {{/if}}
                     {{/get}}
 
-                    {{#get "posts" limit="5"}}
-                    <div class="footer-section footer-latest flex-col">
-                        <p class="home-page-section-header serif">Latest</p>
-                        {{#foreach posts}}
-                        <p class="footer-date"><time
+                    {{#get "posts" limit="6"}}
+                    <div class="footer__section--latest">
+                        <p class="footer__header--serif">Latest</p>
+                        {{#foreach posts limit="3"}}
+                        <p class="footer__date"><time
                                 datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></p>
-                        <a href="{{url}}">{{title}}</a>
+                        <a class="footer__title" href="{{url}}">{{title}}</a>
+                        {{/foreach}}
+                    </div>
+                    <div class="footer__section--latest">
+                        <p class="footer__header--serif">&nbsp;</p>
+                        {{#foreach posts from="4" to="6"}}
+                        <p class="footer__date"><time
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></p>
+                        <a class="footer__title" href="{{url}}">{{title}}</a>
                         {{/foreach}}
                     </div>
                     {{/get}}
                 </div>
             </div>
 
-            <div class="published-by-ghost flex-row">
+            <div class="footer__published-by-ghost">
                 <p>
                     &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Published by <a
                         href="https://ghost.org/">Ghost</a>
