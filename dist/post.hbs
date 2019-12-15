@@ -9,7 +9,7 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 {{!-- Post Header  --}}
-<header class="{{^if feature_image}}no-post-img">{{else}}post-img">
+<header class="{{^if feature_image}}post__no-img">{{else}}post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 600w,
                  {{img_url feature_image size="l"}} 1000w,
@@ -25,28 +25,32 @@ into the {body} of the default.hbs template --}}
         <div class="inner-container">
             <article class="{{post_class}}">
 
-                <header class="post-header">
-                    <h1 class="post-title serif">{{title}}</h1>
-                    {{#primary_author}}<a href="{{url}}" class="post-author">{{name}}</a>{{/primary_author}}
+                <header class="post__header">
+                    <h1 class="post__title--serif">{{title}}</h1>
+                    {{#primary_author}}<a href="{{url}}" class="post__author">{{name}}</a>{{/primary_author}}
                     <p class="post-date">
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
 
                         {{! Tags }}
-                        <section class="post-tag-bar flex-row">
+                        <section class="post__tag-bar">
                             <svg aria-hidden="true">
                                 <title>Filed under</title>
                                 <use href="#folder"></use>
                             </svg>
                             {{#foreach tags}}
-                            <a href="{{url}}" class="post-tag-link hvr-bounce-to-top"><svg aria-hidden="true">
+                            <a href="{{url}}" class="post__tag-link"><svg aria-hidden="true">
                                     <use href="#hash"></use>
-                                </svg>{{name}}</a>
+                                </svg>
+                                <p>
+                                    {{name}}
+                                </p>
+                            </a>
                             {{/foreach}}
                         </section>
                         {{! Tags }}
                 </header>
 
-                <div class="post-content">
+                <div class="post__content">
                     {{content}}
                 </div>
             </article>

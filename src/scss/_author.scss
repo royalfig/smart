@@ -74,15 +74,15 @@
 
 @media (min-width: $tablet) and (max-width: $laptop - 1) {
   .profile-image {
-    width: $base + 25px;
-    height: $base + 25px;
+    width: $base;
+    height: $base;
   }
 }
 
 @media (min-width: $laptop) {
   .profile-image {
-    width: $base + 50px;
-    height: $base + 50px;
+    width: $base;
+    height: $base;
   }
 }
 

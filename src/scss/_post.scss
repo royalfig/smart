@@ -17,196 +17,121 @@
 .post {
   max-width: $tablet;
   margin: 0 auto 8em;
-}
 
-.post-header {
-  margin: 1em 0 3em;
-}
-
-.post-content {
-  margin: 0 auto 4em;
-
-  p {
-    margin-bottom: 1em;
+  &__img {
+    height: 3 * $base;
   }
-}
 
-.post-img,
-.no-post-img {
-  width: 100%;
-  height: 50vh;
-
-  img {
-    display: block;
+  &__img,
+  &__no-img {
+    position: relative;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    margin-top: $navbar;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
   }
-}
 
-.no-post-img {
-  background: linear-gradient(45deg, color(primary), color(accent));
-  background: linear-gradient(45deg, var(--primary), var(--accent));
-}
+  &__no-img {
+    height: 2 * $base;
+    background: linear-gradient(45deg, color(primary), color(accent));
+    background: linear-gradient(45deg, var(--primary), var(--accent));
 
-.post-title {
-  position: relative;
-  margin-bottom: 0.5rem;
-}
+    &:after {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: calc(100% - 2rem);
+      height: calc(100% - 2rem);
+      margin: 1rem;
+      @include color-map(background-color, shade700);
+      content: "";
+    }
+  }
 
-.post-author {
-  font-size: 1.1em;
-  font-weight: 700;
-  @include color-map(color, primary);
+  &__header {
+    margin: 1em 0 3em;
+  }
+
+  &__title--serif {
+    position: relative;
+    margin-bottom: 0.5rem;
+    @extend .serif;
+  }
+
+  &__author {
+    font-size: 1.1em;
+    font-weight: 700;
+    @include color-map(color, primary);
+  }
+
+  &__tag-bar {
+    @include flex(row, flex-start, center);
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+
+    svg {
+      align-self: flex-start;
+      width: 1rem;
+      height: 1rem;
+      fill: none;
+      @include color-map(stroke, shade200);
+    }
+  }
+
+  &__tag-link {
+    @include flex(row, flex-start, flex-start);
+    margin-right: 0.25rem;
+
+    p {
+      @include color-map(color, shade200);
+      @include transition(color);
+    }
+
+    &:first-child {
+      margin-left: 0.25rem;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      p {
+        @include color-map(color, accent);
+      }
+
+      svg {
+        @include color-map(stroke, accent);
+      }
+    }
+    svg {
+      width: 0.75rem;
+      height: 0.75rem;
+      @include color-map(stroke, shade200);
+      stroke-width: 2px;
+      transform: translateY(0.2em);
+      @include transition(stroke);
+    }
+  }
+
+  &__content {
+    margin: 0 auto 4rem;
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .post-date {
-  font-size: 0.9em;
-}
-
-//-------------------------------------------
-// Share Bar
-//-------------------------------------------
-.post-share-bar {
-  position: fixed;
-  bottom: 0;
-  z-index: 5;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  padding: 1em;
-  margin: 0;
-  margin-bottom: -100px;
-  font-size: 0.8em;
-  font-weight: 700;
-  @include color-map(color, shade200);
-  text-align: center;
-  @include color-map(background-color, shade600);
-  opacity: 0;
-
-  @include transition(all);
-
-  &__title {
-    margin-right: 2em;
-  }
-
-  &__link {
-    width: 2em;
-    height: 2em;
-    margin-right: 2em;
-
-    &:focus {
-      outline: 2px dotted currentColor;
-    }
-
-    svg {
-      width: 100%;
-      height: 100%;
-      @include color-map(fill, shade200);
-      @include transition(all);
-    }
-  }
-
-  &__link--twitter {
-    @extend .post-share-bar__link;
-
-    svg {
-      &:hover,
-      &:active {
-        fill: $tw;
-      }
-    }
-  }
-  &__link--facebook {
-    @extend .post-share-bar__link;
-
-    svg {
-      &:hover,
-      &:active {
-        fill: $fb;
-      }
-    }
-  }
-  &__link--linkedin {
-    @extend .post-share-bar__link;
-
-    svg {
-      &:hover,
-      &:active {
-        fill: $li;
-      }
-    }
-  }
-  &__link--copy {
-    @extend .post-share-bar__link;
-
-    svg {
-      fill: none;
-      @include color-map(stroke, shade200);
-
-      &:hover,
-      &:active {
-        @include color-map(stroke, primary);
-      }
-    }
-  }
-
-  @include respond-above($laptop) {
-    top: $navbar + 1rem;
-    bottom: initial;
-    flex-direction: column;
-    width: initial;
-    margin: 0;
-    margin-left: -200px;
-
-    &__title,
-    &__link {
-      margin-right: 0;
-      margin-bottom: 1em;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-}
-
-//-------------------------------------------
-// Tag Bar
-//-------------------------------------------
-.post-tag-bar {
-  flex-wrap: wrap;
-  margin-top: 0.25em;
-  font-size: 0.75em;
-  text-transform: uppercase;
-
-  svg {
-    width: 22px;
-    height: 22px;
-    fill: none;
-    @include color-map(stroke, shade200);
-  }
-}
-
-.post-tag-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.15em 0.35em;
-  margin-right: 0.25em;
-  @include color-map(color, shade200);
-
-  &:last-child {
-    margin-right: 0;
-  }
-
-  svg {
-    width: 1em;
-    height: 1em;
-  }
+  font-size: 0.9375rem;
 }
 
 // -------------------------------------------

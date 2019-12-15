@@ -102,10 +102,10 @@ const footer = document.querySelector('.footer--outer-container');
 const buffer = 50;
 
 // Variables for share bar
-const postImg =  !document.querySelector('.post-img') !== null
-    ? document.querySelector('.post-img')
-    : document.querySelector('.no-post-img');
-const postContentHeight = document.querySelector('.post-content');
+const postImg =  !document.querySelector('.post__img') !== null
+    ? document.querySelector('.post__img')
+    : document.querySelector('.post__no-img');
+const postContentHeight = document.querySelector('.post__content');
 
 function readingBarProgress(scrollPos) {
   const progress = Math.ceil(
@@ -219,7 +219,7 @@ if (typeof SEARCH_API !== 'undefined') {
           }, this);
         });
 
-        localStorage.setItem('posts', JSON.stringify(posts));
+        // localStorage.setItem('posts', JSON.stringify(posts));
 
         return {
           posts,

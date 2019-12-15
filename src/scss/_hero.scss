@@ -1,8 +1,8 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 50vh;
-  min-height: 500px;
+  height: 3 * $base;
+  margin-top: $navbar;
   @include color-map(background-color, shade700);
   background-position: top;
   background-size: cover;
@@ -28,7 +28,6 @@
 
   &__top {
     @include flex(column, flex-start, flex-start);
-    margin-top: $navbar;
   }
 
   &__text-container {

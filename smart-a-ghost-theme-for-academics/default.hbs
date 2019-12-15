@@ -14,29 +14,29 @@
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     <style>
         @font-face {
-            font-family: 'Fira Sans';
-            src: url({{asset 'fonts/FiraSans-Regular.woff2'}}) format('woff2'),
-            url({{asset 'fonts/FiraSans-Regular.woff'}}) format('woff');
+            font-family: 'Lato';
+            src: url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
         }
 
         @font-face {
-            font-family: 'Fira Sans';
-            src: url({{asset 'fonts/FiraSans-Bold.woff2'}}) format('woff2'),
-            url({{asset 'fonts/FiraSans-Bold.woff'}}) format('woff');
+            font-family: 'Lato';
+            src: url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
             font-weight: 700;
         }
 
         @font-face {
-            font-family: 'Fira Sans';
-            src: url({{asset 'fonts/FiraSans-Italic.woff2'}}) format('woff2'),
-            url({{asset 'fonts/FiraSans-Italic.woff'}}) format('woff');
+            font-family: 'Lato';
+            src: url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
             font-style: italic;
         }
 
         @font-face {
-            font-family: 'Fira Sans';
-            src: url({{asset 'fonts/FiraSans-BoldItalic.woff2'}}) format('woff2'),
-            url({{asset 'fonts/FiraSans-BoldItalic.woff'}}) format('woff');
+            font-family: 'Lato';
+            src: url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
             font-weight: 700;
             font-style: italic;
         }
@@ -46,25 +46,24 @@
         }
 
         .fonts-loaded body {
-            font-family: 'Fira Sans', sans-serif;
+            font-family: 'Lato', sans-serif;
         }
     </style>
+
     <script>
         (function () {
-            // Optimization for Repeat Views
             if (sessionStorage.fontsLoadedFoutWithClass) {
                 document.documentElement.className += " fonts-loaded";
                 return;
             }
             if ("fonts" in document) {
                 Promise.all([
-                    document.fonts.load("1em 'Fira Sans'"),
-                    document.fonts.load("700 1em 'Fira Sans'"),
-                    document.fonts.load("italic 1em 'Fira Sans'"),
-                    document.fonts.load("italic 700 1em 'Fira Sans'")
+                    document.fonts.load("1rem 'Lato'"),
+                    document.fonts.load("700 1rem 'Lato'"),
+                    document.fonts.load("italic 1rem 'Lato'"),
+                    document.fonts.load("italic 700 1rem 'Lato'")
                 ]).then(function () {
                     document.documentElement.className += " fonts-loaded";
-                    // Optimization for Repeat Views
                     sessionStorage.fontsLoadedFoutWithClass = true;
                 });
             }

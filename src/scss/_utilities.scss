@@ -96,7 +96,7 @@ $colors: (
 }
 
 // Font styles
-$sans: "Fira Sans", -apple-system, blinkmacsystemfont, roboto, "Segoe UI",
+$sans: "Source Sans Pro", -apple-system, blinkmacsystemfont, roboto, "Segoe UI",
   oxygen, ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
 $serif: "DM Serif Text", georgia, times, serif;
@@ -107,7 +107,7 @@ $laptop: 1024px;
 $desktop: 1280px;
 
 // Sizes
-$base: 180px;
+$base: 11.25rem;
 $navbar: 3rem;
 
 // Box Shadow
@@ -261,40 +261,6 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 .hvr-underline-from-left:active:before,
 .nav-current:before {
   right: 0;
-}
-
-// Fill from bottom
-.hvr-bounce-to-top {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  transition-duration: 0.5s;
-  transition-property: color;
-  transform: perspective(1px) translateZ(0);
-}
-
-.hvr-bounce-to-top:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  content: "";
-  background: scale-color($acc1, $alpha: -50%);
-  transition-timing-function: ease-out;
-  transition-duration: 0.45s;
-  transition-property: transform;
-  transform: scaleY(0);
-  transform-origin: 50% 100%;
-}
-
-.hvr-bounce-to-top:hover:before,
-.hvr-bounce-to-top:focus:before,
-.hvr-bounce-to-top:active:before {
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-  transform: scaleY(1);
 }
 
 // Underline effect
