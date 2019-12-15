@@ -18,12 +18,9 @@
   &--grid-container {
     @extend %grid-container;
     grid-gap: 0;
-    grid-template-columns: repeat(1, 12rem);
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
 
-    @include respond-between($tablet, $laptop) {
-      grid-gap: 2rem;
-      grid-template-columns: repeat(2, 1fr);
-    }
     @include respond-above($laptop) {
       grid-gap: 2rem;
       grid-template-columns: repeat(4, 1fr);
@@ -39,26 +36,13 @@
       @include color-map(color, shade200);
 
       &:nth-child(3) {
-        padding-bottom: 0;
+        padding-bottom: 0.5rem;
       }
 
       &:last-child {
         padding-top: 0;
         & > p:first-child {
-          display: none;
-        }
-      }
-
-      @include respond-above($tablet) {
-        &:nth-child(3) {
-          padding-bottom: 0.5rem;
-        }
-
-        &:last-child {
-          padding-top: 0.5rem;
-          & > p:first-child {
-            display: block;
-          }
+          display: block;
         }
       }
     }

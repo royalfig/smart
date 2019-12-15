@@ -16,6 +16,24 @@ gridContainers.forEach((element) => {
 document.body.onload = document.body.classList.add('animate');
 
 //-------------------------------------------
+// Color Mode Toggle
+//-------------------------------------------
+
+const sun = document.querySelectorAll('.color-mode-btn--sun');
+const moon = document.querySelectorAll('.color-mode-btn--moon');
+
+const toggleBrightMode = () => document.documentElement.setAttribute('color-mode', 'bright');
+const toggleDarkMode = () => document.documentElement.setAttribute('color-mode', 'dark');
+
+sun.forEach((btn) => {
+  btn.addEventListener('click', toggleBrightMode);
+});
+
+moon.forEach((btn) => {
+  btn.addEventListener('click', toggleDarkMode);
+});
+
+//-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------
 
@@ -64,7 +82,7 @@ btns.forEach((item) => {
     if (targetEl.getAttribute('aria-expanded') === 'false') {
       return openMenu(targetEl, target);
     }
-    closeMenu(targetEl, target);
+    return closeMenu(targetEl, target);
   });
 });
 //-------------------------------------------

@@ -22,7 +22,7 @@ $extra-dark: #051012;
 $dark: #e7ebeb;
 $light: #0b1f23;
 
-:root {
+:root[color-mode="dark"] {
   --text: #ffffff;
   --primary: #fac21b;
   --accent: #ed5107;
@@ -35,6 +35,21 @@ $light: #0b1f23;
   --shade700: #0b1f23;
   --shade800: #08171b;
   --shade900: #051214;
+}
+
+:root[color-mode="bright"] {
+  --text: #000000;
+  --primary: #fac21b;
+  --accent: #ed5107;
+  --shade100: #ffffff;
+  --shade200: #ffffff;
+  --shade300: #ffffff;
+  --shade400: #ffffff;
+  --shade500: #fdfdfd;
+  --shade600: #f9fafa;
+  --shade700: #f5f7f7;
+  --shade800: #eef1f1;
+  --shade900: #e7ebeb;
 }
 
 $colors: (
