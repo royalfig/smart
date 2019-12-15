@@ -137,8 +137,10 @@
 // -------------------------------------------
 // Post Footer: About the Author and Related Posts
 // -------------------------------------------
-.post-footer-container {
-  padding-top: 0.5em;
+.post-footer {
+  @extend .inner-container;
+  @extend .grid-container;
+  padding-top: 0.5rem;
   grid-template-areas:
     "title-1"
     "author"
@@ -146,14 +148,12 @@
     "post-1"
     "post-2";
   grid-template-columns: 1fr;
-  grid-row-gap: 0.5em;
+  grid-row-gap: 0.5rem;
   border-top-style: solid;
   border-top-width: 2px;
   @include color-map(border-top-color, shade500);
-}
 
-@media only screen and (min-width: $tablet) and (max-width: $laptop) {
-  .post-footer-container {
+  @include respond-between($tablet, $laptop) {
     grid-template-areas:
       "title-1 title-1"
       "author author"
@@ -161,123 +161,103 @@
       "post-1 post-2";
     grid-template-columns: 1fr 1fr;
   }
-}
 
-@media only screen and (min-width: $laptop) {
-  .post-footer-container {
+  @include respond-above($laptop) {
     grid-template-areas:
       "title-1 title-2 title-2"
       "author post-1 post-2";
     grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
-}
 
-.author-footer {
-  grid-area: author;
-  grid-column: 1 / 2;
-}
+  &__title-1,
+  &__title-2 {
+    @extend .serif;
+  }
 
-.author-footer-img-container {
-  align-items: center;
-  margin-bottom: 1em;
-}
+  &__title-1 {
+    grid-area: title-1;
+  }
 
-.author-footer-img-link {
-  line-height: 0;
-}
+  &__title-2 {
+    grid-area: title-2;
+  }
 
-.author-footer-img {
-  width: 0.5 * $base;
-  height: 0.5 * $base;
-  margin-right: 1rem;
-  object-fit: cover;
-  border-radius: 50%;
-}
+  &__author {
+    grid-area: author;
+    grid-column: 1 / 2;
+  }
 
-.author-footer-social,
-.author-footer-location {
-  align-items: center;
+  &__author-img-container {
+    align-items: center;
+    margin-bottom: 1em;
+  }
 
-  a {
-    padding: 0.1rem 0.25rem;
+  &__author-img-link {
+    line-height: 0;
+  }
 
-    &:first-child {
-      padding-left: 0;
+  &__author-img {
+    width: 0.5 * $base;
+    height: 0.5 * $base;
+    margin-right: 1rem;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__author-name {
+    @extend .serif;
+
+    &:hover {
+      @include color-map(color, primary);
+      @include transition(color);
     }
   }
 
-  p {
-    font-size: 0.85rem;
-    @include color-map(color, shade200);
-  }
-}
+  &__author-social,
+  &__author-location {
+    @include flex(row, flex-start, center);
 
-.author-footer-social {
-  svg {
-    width: 1rem;
-    height: 1rem;
-    @include color-map(fill, shade200);
-  }
+    a {
+      padding: 0.1rem 0.25rem;
 
-  .globe {
-    width: 1rem;
-    height: 1rem;
-    fill: none;
-    @include color-map(fill, shade200);
-  }
-}
+      &:first-child {
+        padding-left: 0;
+      }
+    }
 
-.author-footer-location {
-  align-items: center;
-  margin-bottom: 0.25rem;
-
-  svg {
-    width: 1em;
-    height: 1em;
-    margin-top: 3px;
-    margin-right: 0.2rem;
-    margin-left: -3px;
-    fill: none;
-    @include color-map(stroke, shade200);
-    stroke-width: 1px;
-  }
-}
-
-.related-posts {
-  .card-img {
-    height: $base;
+    p {
+      font-size: 0.85rem;
+      @include color-map(color, shade200);
+    }
   }
 
-  .card-tag {
-    display: flex;
-    @include color-map(color, shade200);
-
+  &__author-social {
     svg {
       width: 1rem;
       height: 1rem;
+      @include color-map(fill, shade200);
+    }
+  }
+
+  &__author-location {
+    svg {
+      width: 1rem;
+      height: 1rem;
+      margin-top: 3px;
+      margin-right: 0.2rem;
+      margin-left: -3px;
+      fill: none;
       @include color-map(stroke, shade200);
       stroke-width: 2px;
-    }
-
-    &:hover {
-      background: none;
     }
   }
 }
 
-.post-footer-title-1 {
-  grid-area: title-1;
-}
-
-.post-footer-title-2 {
-  grid-area: title-2;
-}
-
-.related-posts-1 {
+.related-posts:nth-child(4) {
   grid-area: post-1;
 }
 
-.related-posts-2 {
+.related-posts:nth-child(5) {
   grid-area: post-2;
 }
 
@@ -286,10 +266,6 @@
   display: none;
 }
 
-.related-posts-1 + .related-posts-3 {
-  grid-area: post-2;
-
-  & + .related-posts-4 {
-    display: none;
-  }
+.related-posts-1 + .related-posts-3 + .related-posts-4 {
+  display: none;
 }
