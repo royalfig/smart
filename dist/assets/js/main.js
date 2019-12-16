@@ -22,8 +22,15 @@ document.body.onload = document.body.classList.add('animate');
 const sun = document.querySelectorAll('.color-mode-btn--sun');
 const moon = document.querySelectorAll('.color-mode-btn--moon');
 
-const toggleBrightMode = () => document.documentElement.setAttribute('color-mode', 'bright');
-const toggleDarkMode = () => document.documentElement.setAttribute('color-mode', 'dark');
+const toggleBrightMode = () => {
+  document.documentElement.setAttribute('color-mode', 'bright');
+  localStorage.setItem('pref', 'bright');
+};
+
+const toggleDarkMode = () => {
+  document.documentElement.setAttribute('color-mode', 'dark');
+  localStorage.setItem('pref', 'dark');
+};
 
 sun.forEach((btn) => {
   btn.addEventListener('click', toggleBrightMode);
@@ -32,6 +39,12 @@ sun.forEach((btn) => {
 moon.forEach((btn) => {
   btn.addEventListener('click', toggleDarkMode);
 });
+
+(function toggleCheck() {
+  if (localStorage.getItem('pref') === 'bright') {
+    toggleBrightMode();
+  }
+}());
 
 //-------------------------------------------
 // Mobile Nav Menu
@@ -269,9 +282,9 @@ function searchPosts(term) {
             'November',
             'December',
           ];
-          const publishedString = `${
+          const publishedString = `${published.getDate()} ${
             months[published.getMonth()]
-          } ${published.getDate()}, ${published.getFullYear()}`;
+          } ${published.getFullYear()}`;
           searchResult.innerHTML += `<article class="search-results__item"><p class="search-results__date">${publishedString}</p>
           <a class="search-results__link" href="${post.url}">${post.title}</a></article>`;
         }

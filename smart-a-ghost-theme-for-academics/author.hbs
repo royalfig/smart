@@ -5,38 +5,36 @@ into the {body} of the default.hbs template --}}
 {{#author}}
 
 {{!-- Post Header  --}}
-<header class="post-img">
-    {{#if cover_image}}
+<header class="{{^if cover_image}}post__no-img">{{else}}post__img">
     <img srcset="{{img_url cover_image size="s"}} 300w,
                  {{img_url cover_image size="m"}} 600w,
                  {{img_url cover_image size="l"}} 1000w,
                  {{img_url cover_image size="xl"}} 2000w" sizes="100vw" src="{{img_url cover_image size="xl"}}"
         alt="{{name}}">
-    {{else}}<div class="no-post-img"></div>
     {{/if}}
 </header>
 {{!-- Post Header  --}}
 
 {{!-- Main  --}}
-<main id="main" class="main">
+<main class="main" id="main">
     <div class="outer-container">
         <div class="inner-container">
             <section class="{{slug}}">
 
-                <header class="post-header">
-                    <div class="author-header">
+                <header class="author__header">
+                    <div class="author__container">
                         {{#if profile_image}}
-                        <div class="profile-image-container">
-                            <img class="profile-image" src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                        <div class="author__img-container">
+                            <img class="author__img" src="{{img_url profile_image size="m"}}" alt="{{name}}">
                         </div>
                         {{/if}}
-                        <div class="author-text">
-                            <div class="underline">
-                                <h1 class="post-title serif">{{name}}</h1>
+                        <div class="author__text">
+                            <div class="author__text-container">
+                                <h1 class="author__name">{{name}}</h1>
                             </div>
                             {{#if location}}
-                            <p class="author-small-header">Location</p>
-                            <div class="author-location flex-row">
+                            <p class="author__small-header">Location</p>
+                            <div class="author__location flex-row">
                                 <svg aria-label="location">
                                     <title>Location</title>
                                     <use href="#location"></use>
@@ -45,13 +43,13 @@ into the {body} of the default.hbs template --}}
                             </div>
                             {{/if}}
                             {{#if bio}}
-                            <p class="author-small-header">Bio</p>
-                            <p class="bio">{{bio}}</p>
+                            <p class="author__small-header">Bio</p>
+                            <p class="author__bio">{{bio}}</p>
                             {{/if}}
                             {{#has any="twitter, facebook, website"}}
-                            <p class="author-small-header">Social</p>
+                            <p class="author__small-header">Social</p>
                             {{/has}}
-                            <div class="author-meta flex-row">
+                            <div class="author__meta">
                                 {{#if twitter}}
                                 <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
@@ -84,7 +82,7 @@ into the {body} of the default.hbs template --}}
                 <h2 class="underline">{{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}
                 </h2>
                 {{/author}}
-                <div class="grid-container grid-container-home">
+                <div class="grid-container-home">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}
@@ -101,34 +99,5 @@ into the {body} of the default.hbs template --}}
 {{!-- Main --}}
 
 {{!-- Share Bar --}}
-<div class="post-share-bar">
-    <p class="post-share-bar-title">Share</p>
-    <a class="post-share-bar-link twitter" href="https://twitter.com/share?url={{encode url}}&amp;text={{encode title}}"
-        aria-label="Share on Twitter">
-        <svg>
-            <title>Share on Twitter</title>
-            <use href="#twitter"></use>
-        </svg>
-    </a>
-    <a class="post-share-bar-link facebook" href="http://www.facebook.com/sharer.php?u={{encode url}}"
-        aria-label="Share on Facebook">
-        <svg>
-            <title>Share on Facebook</title>
-            <use href="#facebook"></use>
-        </svg>
-    </a>
-    <a class="post-share-bar-link linkedin" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{encode url}}"
-        aria-label="Share on LinkedIn">
-        <svg>
-            <title>Share on LinkedIn</title>
-            <use href="#linkedin"></use>
-        </svg>
-    </a>
-    <button class="post-share-bar-link copy" id="copy-button" aria-label="Copy to clipboard">
-        <svg>
-            <title id="copyIconTitle">Copy to clipboard</title>
-            <use href="#copy"></use>
-        </svg>
-    </button>
-</div>
+{{> "share"}}
 {{!-- Share Bar --}}

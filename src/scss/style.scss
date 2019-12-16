@@ -99,7 +99,7 @@ h6,
 }
 
 ::selection {
-  @include color-map(color, shade900);
+  @include color-map(color, text);
   @include color-map(background-color, primary);
 }
 
@@ -122,5 +122,4 @@ h6,
 @import "postContentStyles";
 @import "shareBar";
 @import "ghostRequired";
-@import "subscribe";
 @import "author";

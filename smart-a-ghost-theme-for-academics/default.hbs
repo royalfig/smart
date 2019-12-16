@@ -226,7 +226,7 @@
                         <p class="footer__header--serif">Latest</p>
                         {{#foreach posts limit="3"}}
                         <p class="footer__date"><time
-                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></p>
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></p>
                         <a class="footer__title" href="{{url}}">{{title}}</a>
                         {{/foreach}}
                     </div>
@@ -234,7 +234,7 @@
                         <p class="footer__header--serif">&nbsp;</p>
                         {{#foreach posts from="4" to="6"}}
                         <p class="footer__date"><time
-                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMMM DD, YYYY"}}</time></p>
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></p>
                         <a class="footer__title" href="{{url}}">{{title}}</a>
                         {{/foreach}}
                     </div>

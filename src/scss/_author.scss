@@ -1,134 +1,111 @@
-.author-header {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  padding: 2rem 1rem;
-  border-bottom: 0.5rem solid #ffffff;
-}
-
-@media (min-width: $tablet) {
-  .author-header {
-    flex-direction: row;
-  }
-}
-.profile-image-container {
-  position: relative;
-  display: flex;
-  flex-shrink: 0;
-  margin-bottom: 2rem;
-
-  &:before {
-    position: absolute;
-    top: -1rem;
-    left: -1rem;
-    width: 50%;
-    height: 50%;
-    content: "";
-    background: linear-gradient(
-      45deg,
-      scale-color($prim, $alpha: -50%),
-      scale-color($acc1, $alpha: -50%)
-    );
+.author {
+  &__header {
+    @extend .post__header;
   }
 
-  &:after {
-    position: absolute;
-    right: -1rem;
-    bottom: -1rem;
-    z-index: 0;
-    width: 50%;
-    height: 50%;
-    content: "";
-    background: linear-gradient(
-      -45deg,
-      scale-color($prim, $alpha: -50%),
-      scale-color($acc1, $alpha: -50%)
-    );
-  }
-}
+  &__container {
+    @include flex(column, center, center);
+    padding: 2rem 1rem;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    @include color-map(border-bottom-color, shade500);
 
-.profile-image {
-  position: relative;
-  z-index: 1;
-  width: $base;
-  height: $base;
-  box-shadow: $box-shadow;
-}
-
-.author-text {
-  h1 {
-    margin: 0;
-  }
-}
-
-@media (min-width: $tablet) {
-  .author-text {
-    margin-left: 4rem;
-  }
-
-  .profile-image {
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: $tablet) and (max-width: $laptop - 1) {
-  .profile-image {
-    width: $base;
-    height: $base;
-  }
-}
-
-@media (min-width: $laptop) {
-  .profile-image {
-    width: $base;
-    height: $base;
-  }
-}
-
-.author-meta {
-  justify-content: flex-start;
-  @include transition(all);
-
-  a {
-    margin-right: 0.5rem;
-
-    &:last-child {
-      margin-right: 0;
+    @include respond-above($tablet) {
+      flex-direction: row;
     }
   }
 
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
+  &__img-container {
+    position: relative;
+    @include flex(row, center, center);
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+    border-radius: 50%;
+
+    &:before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: linear-gradient(45deg, color(primary), color(accent));
+      background: linear-gradient(45deg, var(--primary), var(--accent));
+      border-radius: 50%;
+    }
+
+    @include respond-above($tablet) {
+      margin-bottom: 0;
+    }
   }
-}
 
-.author-small-header {
-  margin-top: 1rem;
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: scale-color($dark, $lightness: 50%);
-  text-transform: uppercase;
-}
-
-.author-location {
-  p {
-    margin-left: 0.25rem;
+  &__img {
+    position: relative;
+    z-index: 1;
+    width: $base;
+    height: $base;
+    margin: 0.25rem;
+    border-radius: 50%;
+    box-shadow: $box-shadow;
   }
-}
+  &__text {
+    @include respond-above($tablet) {
+      margin-left: 4rem;
+    }
+  }
+  &__text-container {
+    @extend .underline;
+  }
 
-.website svg,
-.author-location svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: none;
-  stroke: currentColor;
-  @include transition(stroke);
-}
+  &__name {
+    margin: 0;
+    line-height: 0.95;
+    @extend .serif;
+  }
 
-.website {
-  &:hover svg {
-    stroke: $prim;
+  &__small-header {
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    @include color-map(color, shade200);
+    text-transform: uppercase;
+  }
+
+  &__meta {
+    @include flex(row, flex-start, center);
+    justify-content: flex-start;
+    @include transition(all);
+
+    a {
+      margin-right: 0.5rem;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      fill: currentColor;
+      stroke: none;
+    }
+  }
+
+  &__location {
+    @include flex(row, flex-start, center);
+
+    p {
+      margin-left: 0.25rem;
+    }
+
+    svg {
+      width: 1rem;
+      height: 1rem;
+      transform: translateY(-0.1em);
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2px;
+    }
   }
 }

@@ -2,20 +2,17 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<main class="main">
-
-    <div class="outer-container index">
+<main class="main index" id="main">
+    <div class="outer-container">
         <div class="inner-container">
             <header class="post__header">
-                <h1 class="post__title--serif">{{meta_title}}</h1>
+                <h1 class="post__title--serif underline">{{meta_title}}</h1>
             </header>
 
             <section class="grid-container-home">
-
                 {{#foreach posts}}
                 {{> "card"}}
                 {{/foreach}}
-
             </section>
 
             {{pagination}}

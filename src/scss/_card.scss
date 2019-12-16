@@ -92,7 +92,7 @@
     margin: 0.25rem 0;
     font-size: 1.5rem;
     line-height: 1.1;
-    color: $dark;
+    @include color-map(color, text);
     @include transition(color);
 
     &:hover {
