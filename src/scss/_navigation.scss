@@ -102,6 +102,11 @@
       fill: none;
       @include color-map(stroke, shade100);
       stroke-width: 2px;
+      @include transition(stroke);
+
+      &:hover {
+        @include color-map(stroke, primary);
+      }
     }
   }
 
