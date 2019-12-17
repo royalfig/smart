@@ -131,6 +131,6 @@
     @include flex(row, center, center);
     padding: 0.15rem;
     font-size: 0.8rem;
-    @include color-map(color, shade400);
+    @include color-map(color, shade300);
   }
 }

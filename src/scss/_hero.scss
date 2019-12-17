@@ -28,22 +28,39 @@
   }
 
   &__top {
-    @include flex(column, flex-start, flex-start);
+    @include flex(column, center, center);
   }
 
   &__text-container {
-    @include flex(column, center, flex-start);
+    @include flex(column, center, stretch);
     position: relative;
     z-index: 1;
-    width: 100%;
+    font-size: 2rem;
+
+    @include respond-between($tablet, $laptop) {
+      font-size: 2.5rem;
+    }
+
+    @include respond-above($laptop) {
+      font-size: 3rem;
+    }
+  }
+
+  &__site-title {
+    padding: 0.5rem 1rem;
+    margin: 0;
+    @extend .serif;
+    font-size: 1.4em;
+    color: color(text);
+    color: var(--text);
+    backdrop-filter: blur(25px);
   }
 
   &__site-description {
-    width: 100%;
     padding: 0.5rem 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 1rem;
+    font-size: 0.45em;
     font-weight: 400;
     color: color(shade200);
     color: var(--shade200);
