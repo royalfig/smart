@@ -58,8 +58,9 @@
 
   &__date {
     margin-bottom: 0.25rem;
-    font-size: 0.85rem;
-    @include color-map(color, shade300);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    @include color-map(color, shade200);
   }
 
   &__title {

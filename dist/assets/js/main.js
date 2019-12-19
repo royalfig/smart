@@ -46,6 +46,34 @@ moon.forEach(btn => {
   }
 })();
 
+// animate navbar on desktop
+const siteTitles = document.querySelectorAll(".site-title");
+const hero = document.querySelector(".hero");
+let scrollPosHero = 0;
+let tickingHero = false;
+
+const animateNav = scrollPos => {
+  if (scrollPosHero > hero.offsetHeight + 25) {
+    siteTitles.forEach(item => item.classList.add("show-nav"));
+  } else {
+    siteTitles.forEach(item => item.classList.remove("show-nav"));
+  }
+};
+
+if (hero !== null) {
+  window.addEventListener("scroll", () => {
+    scrollPosHero = window.scrollY;
+
+    if (!tickingHero) {
+      window.requestAnimationFrame(() => {
+        animateNav();
+        tickingHero = false;
+      });
+
+      tickingHero = true;
+    }
+  });
+}
 //-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------

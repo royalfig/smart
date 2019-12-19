@@ -1,3 +1,11 @@
+.site-title {
+  transform: translateY(-200%);
+  @include transition(transform);
+
+  &.show-nav {
+    transform: translateY(0);
+  }
+}
 //-------------------------------------------
 // Navbar Mobile
 //-------------------------------------------

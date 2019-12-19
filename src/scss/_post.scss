@@ -6,6 +6,7 @@
   top: 0;
   z-index: 1003;
   width: 0;
+  max-width: 100%;
   height: 3px;
   background: linear-gradient(to right, color(primary), color(accent));
   background: linear-gradient(to right, var(--primary), var(--accent));
@@ -39,7 +40,9 @@
   }
 
   &__no-img {
+    width: auto;
     height: 2 * $base;
+    margin: 4rem 1rem 1rem;
     background: linear-gradient(45deg, color(primary), color(accent));
     background: linear-gradient(45deg, var(--primary), var(--accent));
 

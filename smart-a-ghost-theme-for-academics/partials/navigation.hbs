@@ -8,7 +8,7 @@
         </button>
         <a class="navbar-mobile__site-title--serif" href="{{@site.url}}" aria-labelledby="site-title">
             {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
-            <p id="site-title">{{@site.title}}</p>
+            <p class="{{#is "home"}}site-title{{/is}}" id="site-title-mobile">{{@site.title}}</p>
         </a>
     </div>
     <div class="navbar-mobile__right">
@@ -95,7 +95,7 @@
     <div class="navbar__left">
         <a class="navbar__brand--serif" href="{{@site.url}}" aria-labelledby="site-title">
             {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
-            <p id="site-title">{{@site.title}}</p>
+            <p class="{{#is "home"}}site-title{{/is}}" id="site-title">{{@site.title}}</p>
         </a>
     </div>
 
