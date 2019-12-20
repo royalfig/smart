@@ -144,7 +144,7 @@ const buffer = 50;
 
 // Variables for share bar
 const postImg =
-  !document.querySelector(".post__img") !== null
+  document.querySelector(".post__img") !== null
     ? document.querySelector(".post__img")
     : document.querySelector(".post__no-img");
 const postContentHeight = document.querySelector(".post__content");

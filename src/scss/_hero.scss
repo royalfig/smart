@@ -156,7 +156,7 @@
   &__card-title--serif {
     font-size: 1rem;
     line-height: 1.2;
-    @include serif;
+    @extend .serif;
     @include transition(color);
 
     &:hover {

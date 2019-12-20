@@ -32,7 +32,7 @@
   &__site-title--serif {
     @include flex(row, flex-start, center);
     margin-left: 0.5rem;
-    @extend %_serif;
+    @extend .serif;
 
     img {
       width: 1.25rem;
@@ -160,7 +160,7 @@
 
   &__site-title--serif {
     font-size: 1rem;
-    @extend %_serif;
+    @extend .serif;
   }
 
   &__site-description {
@@ -226,9 +226,9 @@
     @include transition(all);
 
     &__brand--serif {
+      @include flex(row, flex-start, center);
       font-family: $serif;
       font-weight: 400;
-      @include flex(row, flex-start, center);
 
       img {
         width: 1.25rem;
@@ -270,7 +270,7 @@
           height: 1.25rem;
           fill: none;
           @include color-map(stroke, shade100);
-          stroke-width: 3px;
+          stroke-width: 2px;
           @include transition(stroke);
 
           &:hover {
@@ -293,7 +293,7 @@
     height: 1.25rem;
     fill: none;
     @include color-map(stroke, shade100);
-    stroke-width: 3px;
+    stroke-width: 2px;
     @include transition(stroke);
     stroke-linecap: round;
     stroke-linejoin: round;
