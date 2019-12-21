@@ -77,7 +77,6 @@ if (hero !== null) {
 //-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------
-
 const smSearchBtn = document.querySelector(".navbar-mobile__search-btn");
 const lgSearchBtn = document.querySelector(".navbar__right-item--search");
 const hamburgerBtn = document.querySelector(".navbar-mobile__hamburger-btn");
@@ -88,6 +87,11 @@ const searchModalInner = document.querySelector(
   ".modal-search__inner-container"
 );
 const mobileNavMenuInner = document.querySelector(".mobile-nav-menu__inner");
+
+if (typeof SEARCH_API !== "undefined") {
+  smSearchBtn.style.display = "block";
+  lgSearchBtn.style.display = "block";
+}
 
 const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn, modalSearchCloseBtn];
 
