@@ -315,9 +315,11 @@ function searchPosts(term) {
             "November",
             "December"
           ];
-          const publishedString = `${published.getDate()} ${
-            months[published.getMonth()]
-          } ${published.getFullYear()}`;
+
+          const day = post.published_at.substring(8, 10);
+          const year = post.published_at.substring(0, 4);
+          const month = months[parseInt(post.published_at.substring(5, 7)) - 1];
+          const publishedString = `${day} ${month} ${year}`;
           searchResult.innerHTML += `<article class="search-results__item"><p class="search-results__date">${publishedString}</p>
           <a class="search-results__link" href="${post.url}">${post.title}</a></article>`;
         }

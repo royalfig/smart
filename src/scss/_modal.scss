@@ -125,7 +125,7 @@
     margin-left: 0.5rem;
     font-weight: 700;
     line-height: 1;
-    @include color-map(color, text);
+    color: #ffffff;
     vertical-align: bottom;
     background: linear-gradient(45deg, color(primary), color(accent));
     background: linear-gradient(45deg, var(--primary), var(--accent));
