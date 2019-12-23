@@ -39,6 +39,31 @@
     }
   }
 
+  &__no-img-2 {
+    background: linear-gradient(-45deg, color(primary), color(accent));
+    background: linear-gradient(-45deg, var(--primary), var(--accent));
+  }
+
+  &__no-img-3 {
+    background: linear-gradient(85deg, color(primary), color(accent));
+    background: linear-gradient(85deg, var(--primary), var(--accent));
+  }
+
+  &__no-img-4 {
+    background: linear-gradient(-85deg, color(primary), color(accent));
+    background: linear-gradient(-85deg, var(--primary), var(--accent));
+  }
+
+  &__no-img-5 {
+    background: linear-gradient(65deg, color(primary), color(accent));
+    background: linear-gradient(65deg, var(--primary), var(--accent));
+  }
+
+  &__no-img-6 {
+    background: linear-gradient(-65deg, color(primary), color(accent));
+    background: linear-gradient(-65deg, var(--primary), var(--accent));
+  }
+
   &__body {
     padding: 0.5rem;
     margin: 1.25rem 0;

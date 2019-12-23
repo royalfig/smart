@@ -206,13 +206,13 @@
                         </div>
                     </div>
 
-                    {{#get "tags" include="count.posts" limit="10" order="count.posts desc"}}
+                    {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
                     {{#if tags}}
                     <div class="footer__section">
-                        <p class="footer__header--serif">Topics</p>
+                        <p class="footer__header--serif">Tags</p>
 
                         {{#foreach tags}}
-                        <a class="footer--card-tag" href="{{url}}" aria-label="{{name}}">
+                        <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
                             <svg>
                                 <use href="#hash"></use>
                             </svg>

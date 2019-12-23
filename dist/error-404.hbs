@@ -1,0 +1,27 @@
+{{!--
+This error template is used for all 404 errors, which might occur on your site.
+It's a good idea to keep this template as minimal as possible in terms of both file size and complexity.
+--}}
+
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+<main class="error">
+    <div class="outer-container">
+        <div class="inner-container">
+            <header class="post__header">
+                <h1 class="post__title--serif underline">{{statusCode}}</h1>
+                <h2>{{message}}</h2>
+                <a href="{{@site.url}}">Let&apos;s go home &rightarrow;</a>
+            </header>
+            {{#get "posts" limit="3" include="authors,tags"}}
+            <section class="grid-container-home">
+                {{#foreach posts limit="5"}}
+                {{> "card"}}
+                {{/foreach}}
+            </section>
+            {{/get}}
+        </div>
+    </div>
+</main>

@@ -1,0 +1,4 @@
+.error {
+  @extend .main;
+  margin-top: $navbar + 1rem;
+}

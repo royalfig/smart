@@ -97,7 +97,7 @@
     }
   }
 
-  &--card-tag {
+  &__card-tag {
     @include flex(row, flex-start, center);
     @include color-map(color, shade200);
 
