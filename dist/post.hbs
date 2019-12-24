@@ -119,23 +119,27 @@ into the {body} of the default.hbs template --}}
                     {{> "card"}}
                 </div>
                 {{/prev_post}}
+
                 {{#next_post in="primary_tag"}}
                 <div class="related-posts related-posts-2">
                     {{> "card"}}
                 </div>
                 {{/next_post}}
 
-                {{#prev_post in="-primary_tag"}}
+                {{#prev_post}}
+                {{^has tag=../primary_tag.name}}
                 <div class="related-posts related-posts-3">
                     {{> "card"}}
-                    </article>
                 </div>
+                {{/has}}
                 {{/prev_post}}
 
-                {{#next_post in="-primary_tag"}}
+                {{#next_post}}
+                {{^has tag=../primary_tag.name}}
                 <div class="related-posts related-posts-4">
                     {{> "card"}}
                 </div>
+                {{/has}}
                 {{/next_post}}
 
             </footer>

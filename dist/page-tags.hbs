@@ -22,7 +22,7 @@ into the {body} of the default.hbs template --}}
                 <h1 class="post__title--serif underline">{{title}}</h1>
             </header>
             {{/post}}
-            {{#get "tags" include="count.posts"}}
+            {{#get "tags" include="count.posts" limit="all"}}
             <section class="grid-container-home">
                 {{#foreach tags}}
                 {{!-- Card  --}}
@@ -54,6 +54,8 @@ into the {body} of the default.hbs template --}}
                 {{/foreach}}
             </section>
             {{/get}}
+
+
         </div>
     </div>
 </main>
