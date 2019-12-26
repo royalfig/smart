@@ -70,6 +70,10 @@
     @include color-map(color, primary);
   }
 
+  &__date {
+    font-size: 0.9375rem;
+  }
+
   &__tag-bar {
     @include flex(row, flex-start, center);
     flex-wrap: wrap;
@@ -128,10 +132,6 @@
       margin-bottom: 1rem;
     }
   }
-}
-
-.post-date {
-  font-size: 0.9375rem;
 }
 
 // -------------------------------------------
