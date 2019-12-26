@@ -68,17 +68,19 @@
   }
 
   &__header-container {
-    @include flex(row, center, center);
+    @include flex(row, flex-start, center);
     width: 100%;
-    max-width: $tablet;
-    padding: 1rem 1rem 0;
+    padding: 1rem 0;
     margin: 0 auto;
+
+    @include respond-above($laptop) {
+      padding: 1rem;
+    }
   }
 
   &__header--serif--underline {
     @extend .serif;
     @extend .underline;
-    text-align: center;
   }
 
   &__bottom {
@@ -92,9 +94,15 @@
   }
 
   &__container {
+    @include flex(column, flex-start, center);
+    padding: 1rem;
+    margin: 0 auto;
+  }
+
+  &__card-container {
     @include flex(column, center, stretch);
     width: 100%;
-    padding: 0 1rem;
+    padding: 0;
     margin: 0 0 1rem;
 
     @include respond-above($laptop) {
@@ -119,7 +127,7 @@
     @include respond-above($laptop) {
       @include flex(column, flex-start, flex-start);
       max-width: 20rem;
-      margin: 1rem;
+      margin: 0 1rem 1rem;
 
       &:last-child {
         margin-bottom: 1rem;
