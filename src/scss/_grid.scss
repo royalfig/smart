@@ -1,100 +1,10 @@
 //-------------------------------------------
-// Card Styles
-//-------------------------------------------
-.card {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  max-width: 100%;
-  background: $light;
-  @include transition(all);
-}
-
-.card-img,
-.no-img {
-  display: block;
-  width: 100%;
-  height: $base;
-  object-fit: cover;
-  box-shadow: $box-shadow;
-  @include transition(all);
-
-  &:hover {
-    filter: saturate(125%);
-  }
-}
-
-.no-img {
-  background: linear-gradient(45deg, $prim, $acc1);
-}
-
-.card-body {
-  padding: 0.5em;
-  margin: 1.25em 0;
-}
-
-.card-date-tag {
-  justify-content: space-between;
-}
-
-.card-date,
-.card-tag {
-  display: flex;
-  min-width: 50%;
-  padding: 1px;
-  font-size: 0.75em;
-  font-weight: 400;
-  color: $dark;
-  text-transform: uppercase;
-}
-
-.card-tag {
-  align-items: center;
-  justify-content: flex-end;
-
-  svg {
-    flex-shrink: 0;
-    width: 1em;
-    height: 1em;
-    transform: translateY(-0.1em);
-    stroke: currentColor;
-    stroke-width: 1.5px;
-  }
-}
-
-.read-more svg {
-  width: 2em;
-  height: 2em;
-  transform: translateY(0.5em);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2px;
-}
-
-.card-title {
-  position: relative;
-  margin: 0.25em 0;
-  font-size: 1.5em;
-  line-height: 1.1;
-  color: $dark;
-  @include transition(color);
-
-  &:hover {
-    color: $prim;
-  }
-}
-
-.card-excerpt {
-  margin: 0.5em 0;
-  color: $dark;
-}
-
-//-------------------------------------------
-// Grid Styles for Home Page
+// Grid Styles
 //-------------------------------------------
 
 // Mobile phones
 .grid-container-home {
+  @extend %grid-container;
   align-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   max-width: 100%;
@@ -121,10 +31,12 @@
     .card-1 {
       grid-area: one;
 
-      .card-img,
-      .no-img {
-        height: 2.5 * $base;
-        max-height: 60vh;
+      .card {
+        &__img,
+        &__no-img {
+          height: 2 * $base;
+          // max-height: 60vh;
+        }
       }
     }
 
@@ -148,13 +60,14 @@
     .card-1 {
       grid-area: one;
 
-      .card-img,
-      .no-img {
-        height: 2.5 * $base;
-        max-height: 60vh;
+      .card {
+        &__img,
+        &__no-img {
+          height: 2 * $base;
+          // max-height: 60vh;
+        }
       }
     }
-
     .card-2 {
       grid-area: two;
     }
@@ -170,11 +83,13 @@
     .card-5 {
       grid-area: five;
     }
-  }
 
-  .card-img,
-  .no-img {
-    height: 1.75 * $base;
+    .card {
+      &__img,
+      &__no-img {
+        height: 1.5 * $base;
+      }
+    }
   }
 }
 
@@ -200,8 +115,8 @@
 
       .card-img,
       .no-img {
-        height: 2.5 * $base;
-        max-height: 60vh;
+        height: 2 * $base;
+        // max-height: 60vh;
       }
     }
 
@@ -224,10 +139,12 @@
     .card-1 {
       grid-area: one;
 
-      .card-img,
-      .no-img {
-        height: 2.5 * $base;
-        max-height: 60vh;
+      .card {
+        &__img,
+        &__no-img {
+          height: 2 * $base;
+          // max-height: 60vh;
+        }
       }
     }
 
@@ -248,9 +165,11 @@
     }
   }
 
-  .card-img,
-  .no-img {
-    height: 1.75 * $base;
+  .card {
+    &__img,
+    &__no-img {
+      height: 1.5 * $base;
+    }
   }
 }
 
@@ -277,10 +196,12 @@
     .card-1 {
       grid-area: one;
 
-      .card-img,
-      .no-img {
-        height: 2.5 * $base;
-        max-height: 60vh;
+      .card {
+        &__img,
+        &__no-img {
+          height: 2 * $base;
+          // max-height: 60vh;
+        }
       }
     }
 
@@ -298,7 +219,7 @@
 
     .card-img,
     .no-img {
-      height: 2 * $base;
+      height: 1.75 * $base;
     }
   }
 
@@ -311,20 +232,24 @@
     .card-1 {
       grid-area: one;
 
-      .card-img,
-      .no-img {
-        height: 3 * $base;
-        max-height: 60vh;
+      .card {
+        &__img,
+        &__no-img {
+          height: 1.75 * $base;
+          // max-height: 60vh;
+        }
       }
     }
 
     .card-2 {
       grid-area: two;
 
-      .card-img,
-      .no-img {
-        height: 3 * $base;
-        max-height: 60vh;
+      .card {
+        &__img,
+        &__no-img {
+          height: 1.75 * $base;
+          // max-height: 60vh;
+        }
       }
     }
 
@@ -341,8 +266,11 @@
     }
   }
 
-  .card-img,
-  .no-img {
-    height: 2.25 * $base;
+  .card {
+    &__img,
+    &__no-img {
+      height: 1.75 * $base;
+      // max-height: 50vh;
+    }
   }
 }

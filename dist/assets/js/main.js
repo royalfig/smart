@@ -11,50 +11,125 @@ gridContainers.forEach((element) => {
 });
 
 //-------------------------------------------
-// Mobile Nav Menu
+// Animation
 //-------------------------------------------
-const mobileNavBtn = document.getElementById('mobile-nav-btn');
-const mobileMenu = document.querySelector('.mobile-nav-menu');
-const mobileHamburger = document.querySelector('.button-hamburger');
-const mobileMenuInner = document.querySelector('.mobile-nav-menu-inner');
+document.body.onload = document.body.classList.add('animate');
 
-function closeMobileNavMenu() {
-  mobileHamburger.classList.remove('is-active');
-  mobileMenu.classList.add('nav-menu-hidden');
-  mobileMenu.classList.remove('nav-menu-expanded');
-  mobileMenu.setAttribute('aria-expanded', false);
-  document.body.classList.remove('show-modal');
-}
+//-------------------------------------------
+// Color Mode Toggle
+//-------------------------------------------
 
-function closeByEsc(keydown, action) {
-  if (keydown.key === 'Escape') {
-    action();
-    document.body.removeEventListener('keydown', closeByEsc);
-  }
-}
+const sun = document.querySelectorAll('.color-mode-btn--sun');
+const moon = document.querySelectorAll('.color-mode-btn--moon');
 
-function openMobileNavMenu() {
-  mobileHamburger.classList.add('is-active');
-  mobileMenu.classList.remove('nav-menu-hidden');
-  mobileMenu.classList.add('nav-menu-expanded');
-  mobileMenu.addEventListener('click', closeMobileNavMenu);
-  mobileMenu.setAttribute('aria-expanded', true);
-  document.body.classList.add('show-modal');
-  // Close nav menu with ESC key
-  document.body.addEventListener('keydown', (keydown) => closeByEsc(keydown, closeMobileNavMenu));
-}
+const toggleBrightMode = () => {
+  document.documentElement.setAttribute('color-mode', 'bright');
+  localStorage.setItem('pref', 'bright');
+};
 
-mobileNavBtn.addEventListener('click', () => {
-  mobileMenuInner.addEventListener('click', (event) => {
-    event.stopPropagation();
-  });
-  if (mobileMenu.classList.contains('nav-menu-hidden')) {
-    openMobileNavMenu();
-  } else {
-    closeMobileNavMenu();
-  }
+const toggleDarkMode = () => {
+  document.documentElement.setAttribute('color-mode', 'dark');
+  localStorage.setItem('pref', 'dark');
+};
+
+sun.forEach((btn) => {
+  btn.addEventListener('click', toggleBrightMode);
 });
 
+moon.forEach((btn) => {
+  btn.addEventListener('click', toggleDarkMode);
+});
+
+(function toggleCheck() {
+  if (localStorage.getItem('pref') === 'bright') {
+    toggleBrightMode();
+  }
+}());
+
+// animate navbar on desktop
+const siteTitles = document.querySelectorAll('.site-title');
+const hero = document.querySelector('.hero');
+let scrollPosHero = 0;
+let tickingHero = false;
+
+const animateNav = (pos) => {
+  if (pos > hero.offsetHeight + 25) {
+    siteTitles.forEach((item) => item.classList.add('show-nav'));
+  } else {
+    siteTitles.forEach((item) => item.classList.remove('show-nav'));
+  }
+};
+
+if (hero !== null) {
+  window.addEventListener('scroll', () => {
+    scrollPosHero = window.scrollY;
+
+    if (!tickingHero) {
+      window.requestAnimationFrame(() => {
+        animateNav(scrollPosHero);
+        tickingHero = false;
+      });
+
+      tickingHero = true;
+    }
+  });
+}
+//-------------------------------------------
+// Mobile Nav Menu
+//-------------------------------------------
+const smSearchBtn = document.querySelector('.navbar-mobile__search-btn');
+const lgSearchBtn = document.querySelector('.navbar__right-item--search');
+const hamburgerBtn = document.querySelector('.navbar-mobile__hamburger-btn');
+const mobileNavMenu = document.querySelector('.mobile-nav-menu');
+const searchModal = document.querySelector('.modal-search');
+const modalSearchCloseBtn = document.querySelector('.modal-search__close-btn');
+const searchModalInner = document.querySelector(
+  '.modal-search__inner-container',
+);
+const mobileNavMenuInner = document.querySelector('.mobile-nav-menu__inner');
+
+if (typeof SEARCH_API !== 'undefined') {
+  smSearchBtn.style.display = 'block';
+  lgSearchBtn.style.display = 'block';
+}
+
+const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn, modalSearchCloseBtn];
+
+const closeMenu = (input, target) => {
+  document.body.classList.remove(`expanded-${target}`);
+  input.setAttribute('aria-expanded', 'false');
+  input.setAttribute('aria-hidden', 'true');
+};
+
+const openMenu = (input, target) => {
+  if (document.body.classList.contains('expanded-menu')) {
+    closeMenu(mobileNavMenu, 'menu');
+  }
+  if (document.body.classList.contains('expanded-modal-search')) {
+    closeMenu(searchModal, 'modal-search');
+  }
+  document.body.classList.add(`expanded-${target}`);
+  input.setAttribute('aria-expanded', 'true');
+  input.setAttribute('aria-hidden', 'false');
+  const closeByEsc = (key) => {
+    if (key.key === 'Escape') {
+      closeMenu(input, target);
+      document.body.removeEventListener('keyup', closeByEsc);
+    }
+  };
+  document.body.addEventListener('keyup', closeByEsc);
+};
+
+btns.forEach((item) => {
+  item.addEventListener('click', (e) => {
+    const { target } = e.currentTarget.dataset;
+    const targetEl = document.getElementById(target);
+    if (targetEl.getAttribute('aria-expanded') === 'false') {
+      return openMenu(targetEl, target);
+    }
+    return closeMenu(targetEl, target);
+  });
+});
 //-------------------------------------------
 // Post Scripts
 //-------------------------------------------
@@ -68,12 +143,14 @@ let ticking = false;
 // Variables for reading progress
 const progressBar = document.querySelector('.post-reading-progress');
 const shareBar = document.querySelector('.post-share-bar');
-const footer = document.querySelector('.footer');
+const footer = document.querySelector('.footer--outer-container');
 const buffer = 50;
 
 // Variables for share bar
-const postImg = document.querySelector('.post-img');
-const postContentHeight = document.querySelector('.post-content');
+const postImg =  document.querySelector('.post__img') !== null
+    ? document.querySelector('.post__img')
+    : document.querySelector('.post__no-img');
+const postContentHeight = document.querySelector('.post__content');
 
 function readingBarProgress(scrollPos) {
   const progress = Math.ceil(
@@ -85,9 +162,9 @@ function readingBarProgress(scrollPos) {
 function shareBarAnimation() {
   if (
     postImg.getBoundingClientRect().bottom + buffer
-    < shareBar.getBoundingClientRect().top
+      < shareBar.getBoundingClientRect().top
     && shareBar.getBoundingClientRect().bottom
-    < footer.getBoundingClientRect().top - buffer
+      < footer.getBoundingClientRect().top - buffer
   ) {
     if (window.innerWidth > 1024) {
       shareBar.style.marginLeft = '0';
@@ -141,40 +218,6 @@ if (copyButton) {
 }
 
 //-------------------------------------------
-// Modals
-//-------------------------------------------
-const subBtns = document.querySelectorAll('.navbar-subscribe-btn');
-const searchBtns = document.querySelectorAll('.navbar-search-btn');
-
-function modalOpen(e) {
-  const id = e.currentTarget.dataset.id.toString();
-  const targetDiv = document.querySelector(`.${id}-modal`);
-  targetDiv.style.transform = 'translate3d(0,0,0)';
-  targetDiv.setAttribute('aria-expanded', 'true');
-  targetDiv.querySelector('input').focus();
-  document.body.classList.add('show-modal');
-}
-
-subBtns.forEach((el) => {
-  el.addEventListener('click', (e) => modalOpen(e));
-});
-
-searchBtns.forEach((el) => {
-  el.addEventListener('click', (e) => modalOpen(e));
-});
-
-const modalClose = document.querySelectorAll('.modal-close');
-
-modalClose.forEach((el) => el.addEventListener('click', (e) => {
-  e.currentTarget.parentElement.parentElement.setAttribute(
-    'aria-expanded',
-    'false',
-  );
-  e.currentTarget.parentElement.parentElement.style.transform = 'translate3d(100vw,0,0)';
-  document.body.classList.remove('show-modal');
-}));
-
-//-------------------------------------------
 // Make tables responsive
 //-------------------------------------------
 const tables = document.querySelectorAll('.post-content > table');
@@ -194,6 +237,7 @@ tables.forEach((e) => tablePrepend(e));
 //-------------------------------------------
 // Search function
 //-------------------------------------------
+let builtIdx = '';
 
 if (typeof SEARCH_API !== 'undefined') {
   const api = new GhostContentAPI({
@@ -202,10 +246,7 @@ if (typeof SEARCH_API !== 'undefined') {
     version: 'v2',
   });
 
-  let builtIdx = {};
-
-  // Check whether posts are cached or not. Check if they need to be updated.
-  if (!localStorage.getItem('posts')) {
+  if (builtIdx === '') {
     builtIdx = api.posts
       .browse({
         include: 'tags,authors',
@@ -223,7 +264,7 @@ if (typeof SEARCH_API !== 'undefined') {
           }, this);
         });
 
-        localStorage.setItem('posts', JSON.stringify(posts));
+        // localStorage.setItem('posts', JSON.stringify(posts));
 
         return {
           posts,
@@ -233,140 +274,76 @@ if (typeof SEARCH_API !== 'undefined') {
       .catch((err) => {
         console.error(err);
       });
-  } else {
-    builtIdx = api.posts
-      .browse({
-        fields: 'published_at',
-        limit: 1,
-      })
-      .then((post) => new Date(post[0].published_at))
+  }
+}
 
-      .then((newest) => {
-        const newestTime = newest.getTime();
-        const rawPosts = localStorage.getItem('posts');
-        const posts = JSON.parse(rawPosts);
-        const lastUpdated = new Date(posts[0].published_at);
-        const lastUpdatedTime = lastUpdated.getTime();
+const searchInput = document.querySelector('.modal-search__input');
+const searchBtn = document.querySelector('.modal-search__btn');
+const searchResultHeader = document.querySelector('.search-results__header');
+const searchResult = document.querySelector('.search-results__container');
 
-        if (newestTime > lastUpdatedTime) {
-          api.posts
-            .browse({
-              include: 'tags,authors',
-              formats: 'plaintext',
-              limit: 'all',
-            })
-            .then((posts) => {
-              const idx = lunr(function () {
-                this.ref('uuid');
-                this.field('plaintext');
-                this.field('title');
+function searchPosts(term) {
+  searchResult.innerHTML = '';
 
-                posts.forEach((doc) => {
-                  this.add(doc);
-                }, this);
-              });
+  builtIdx.then((obj) => {
+    const srch = obj.idx.search(term);
 
-              localStorage.setItem('posts', JSON.stringify(posts));
+    if (srch.length > 1) {
+      searchResultHeader.textContent = `${srch.length} Results`;
+    } else if (srch.length !== 0) {
+      searchResultHeader.textContent = `${srch.length} Result`;
+    } else {
+      searchResultHeader.textContent = 'No results';
+    }
 
-              return {
-                posts,
-                idx,
-              };
-            })
-            .catch((err) => {
-              console.error(err);
-            });
-        } else {
-          const idx = lunr(function () {
-            this.ref('uuid');
-            this.field('plaintext');
-            this.field('title');
+    srch.forEach((el) => {
+      obj.posts.filter((post) => {
+        if (post.uuid === el.ref) {
+          const months = [
+            'January',
+            'February',
+            'March',
+            'April',
+            'May',
+            'June',
+            'July',
+            'August',
+            'September',
+            'October',
+            'November',
+            'December',
+          ];
 
-            posts.forEach((doc) => {
-              this.add(doc);
-            }, this);
-          });
-
-          return {
-            posts,
-            idx,
-          };
+          const day = post.published_at.substring(8, 10);
+          const year = post.published_at.substring(0, 4);
+          const month =            months[parseInt(post.published_at.substring(5, 7), 10) - 1];
+          const publishedString = `${day} ${month} ${year}`;
+          searchResult.innerHTML += `<article class="search-results__item"><p class="search-results__date">${publishedString}</p>
+          <a class="search-results__link" href="${post.url}">${post.title}</a></article>`;
         }
       });
-  }
-
-  const searchInput = document.getElementById('search-input');
-  const searchBtn = document.getElementById('search-btn');
-  const searchResultHeader = document.querySelector('.search-result-header');
-  const searchResult = document.getElementById('search-result');
-
-  function searchPosts(term) {
-    searchResult.innerHTML = '';
-
-    builtIdx.then((obj) => {
-      const srch = obj.idx.search(term);
-
-      if (srch.length > 1) {
-        searchResultHeader.textContent = `${srch.length} Results`;
-      } else if (srch.length !== 0) {
-        searchResultHeader.textContent = `${srch.length} Result`;
-      } else {
-        searchResultHeader.textContent = 'No results';
-      }
-
-      srch.forEach((el) => {
-        obj.posts.filter((post) => {
-          if (post.uuid === el.ref) {
-            const published = new Date(post.published_at);
-            const months = [
-              'January',
-              'February',
-              'March',
-              'April',
-              'May',
-              'June',
-              'July',
-              'August',
-              'September',
-              'October',
-              'November',
-              'December',
-            ];
-            const publishedString = `${
-              months[published.getMonth()]
-            } ${published.getDate()}, ${published.getFullYear()}`;
-            searchResult.innerHTML += `<article class="search-result-item"><p class="search-result-date">${publishedString}</p>
-          <a class="search-result-link" href="${post.url}">${post.title}</a></article>`;
-          }
-        });
-      });
     });
-  }
-
-  searchBtn.addEventListener('click', () => {
-    if (searchInput.value === '') {
-      searchResultHeader.textContent = 'Enter a search term';
-      searchResult.innerHTML = '';
-    } else {
-      searchPosts(searchInput.value);
-    }
-  });
-
-  searchInput.addEventListener('keyup', (e) => {
-    if (searchInput.value === '') {
-      searchResultHeader.textContent = 'Enter a search term';
-      searchResult.innerHTML = '';
-    } else if (e.keyCode === 13) {
-      searchPosts(searchInput.value);
-    }
-  });
-
-  searchInput.addEventListener('focus', (e) => {
-    e.target.value = '';
-  });
-} else {
-  searchBtns.forEach((btn) => {
-    const hide = btn;
-    hide.style.display = 'none';
   });
 }
+
+searchBtn.addEventListener('click', () => {
+  if (searchInput.value === '') {
+    searchResultHeader.textContent = 'Enter a search term';
+    searchResult.innerHTML = '';
+  } else {
+    searchPosts(searchInput.value);
+  }
+});
+
+searchInput.addEventListener('keyup', (e) => {
+  if (searchInput.value === '') {
+    searchResultHeader.textContent = 'Enter a search term';
+    searchResult.innerHTML = '';
+  } else if (e.keyCode === 13) {
+    searchPosts(searchInput.value);
+  }
+});
+
+searchInput.addEventListener('focus', (e) => {
+  e.target.value = '';
+});

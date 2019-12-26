@@ -1,3 +1,112 @@
+// Social Media
+$fb: #1877f2;
+$tw: #1da1f2;
+$li: #0077b5;
+
+// :root[color-mode="dark"] {
+//   --text: #ffffff;
+//   --primary: #fac21b;
+//   --accent: #ed5107;
+//   --shade100: #e7ebeb;
+//   --shade200: #c4ccce;
+//   --shade300: #a0aeb1;
+//   --shade400: #597176;
+//   --shade500: #12343b;
+//   --shade600: #102f35;
+//   --shade700: #0b1f23;
+//   --shade800: #08171b;
+//   --shade900: #051214;
+// }
+
+:root[color-mode="bright"] {
+  --text: #000000;
+  --primary: #02769d;
+  --accent: #9d023b;
+  --shade100: #484848;
+  --shade200: #6c6c6c;
+  --shade300: #8f8f90;
+  --shade400: #d7d7d8;
+  --shade500: #efeff0;
+  --shade600: #f4f4f5;
+  --shade700: #f9f9f9;
+  --shade800: #fbfbfb;
+  --shade900: #fdfdfe;
+}
+
+:root[color-mode="dark"] {
+  --text: #ffffff;
+  --primary: #02b0eb;
+  --accent: #ebc002;
+  --shade100: #e8e9e9;
+  --shade200: #c7c7c8;
+  --shade300: #a5a5a7;
+  --shade400: #616264;
+  --shade500: #1d1e22;
+  --shade600: #1a1b1f;
+  --shade700: #111214;
+  --shade800: #0d0e0f;
+  --shade900: #09090a;
+}
+
+$colors: (
+  "text": #ffffff,
+  "primary": #fac21b,
+  "accent": #ed5107,
+  "shade100": #e7ebeb,
+  "shade200": #c4ccce,
+  "shade300": #a0aeb1,
+  "shade400": #597176,
+  "shade500": #12343b,
+  "shade600": #102f35,
+  "shade700": #0b1f23,
+  "shade800": #08171b,
+  "shade900": #051012
+);
+
+@function color($key) {
+  @if map-has-key($colors, $key) {
+    @return map-get($colors, $key);
+  }
+
+  @warn "Unknown `#{$key}` in $colors.";
+  @return null;
+}
+
+@mixin color-map($property, $color) {
+  #{$property}: color($color);
+  #{$property}: var(--#{$color});
+}
+
+// Font styles
+$sans: "Lato", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen,
+  ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+$serif: "DM Serif Text", georgia, times, serif;
+
+// Breakpoints
+$tablet: 640px;
+$laptop: 1024px;
+$desktop: 1280px;
+
+// Sizes
+$base: 11rem;
+$navbar: 3rem;
+
+// Box Shadow
+$box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
+  -3px 2px 4px rgba(0, 0, 0, 0.12), 5px 10px 15px rgba(0, 0, 0, 0.14),
+  -5px 5px 15px rgba(0, 0, 0, 0.14);
+
+$box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
+  0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
+
+$box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+@mixin transition($property) {
+  transition: $property 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
+}
+
 // Typography
 .serif {
   font-family: $serif;
@@ -29,7 +138,9 @@
   }
 }
 
-// Display
+//-------------------------------------------
+// Utility Classes
+//-------------------------------------------
 .flex-row {
   display: flex;
   flex-direction: row;
@@ -42,24 +153,62 @@
 
 .grid-container {
   display: grid;
-  grid-gap: 2em;
+  grid-gap: 2rem;
 }
 
-.main {
+%grid-container {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.outer-container {
+  position: relative;
   width: 100%;
-  margin: 0 auto;
-  overflow-x: hidden;
+  padding: 1em;
+  border-bottom-style: solid;
+  border-bottom-width: 0.5rem;
+  @include color-map(border-bottom-color, shade800);
+  @include respond-above(tablet) {
+    padding: 1rem 4rem;
+  }
 }
 
-.show-modal {}
+%outer-container {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  @include color-map(background-color, shade700);
+  border-bottom-style: solid;
+  border-bottom-width: 0.5rem;
+  @include color-map(border-bottom-color, shade800);
 
+  @include respond-above(tablet) {
+    padding: 1rem 4rem;
+  }
+}
+
+.inner-container {
+  max-width: $laptop;
+  margin: 0 auto 1rem;
+}
+
+.header {
+  position: relative;
+  margin: 0;
+}
+
+.index {
+  margin-top: $navbar;
+}
 // Links
 
 // Underline from left effect
 .hvr-underline-from-left {
   position: relative;
   display: inline-block;
+  // padding: 0 1px;
   overflow: hidden;
+  line-height: 1.2;
   vertical-align: middle;
   box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   transform: perspective(1px) translateZ(0);
@@ -68,14 +217,15 @@
 .hvr-underline-from-left:before {
   position: absolute;
   right: 100%;
-  bottom: -7px;
+  bottom: 0;
   left: 0;
   z-index: -1;
-  height: 10px;
+  height: 0.5em;
   content: "";
-  background: $prim;
-  transition-timing-function: ease-out;
-  transition-duration: 0.3s;
+  background: color("shade400");
+  background: var(--shade400);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-duration: 0.4s;
   transition-property: right;
 }
 
@@ -86,52 +236,23 @@
   right: 0;
 }
 
-// Fill from bottom
-.hvr-bounce-to-top {
-  position: relative;
-  display: inline-block;
-  vertical-align: middle;
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-  transition-duration: 0.5s;
-  transition-property: color;
-  transform: perspective(1px) translateZ(0);
-}
-
-.hvr-bounce-to-top:before {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  content: "";
-  background: scale-color($acc1, $alpha: -50%);
-  transition-timing-function: ease-out;
-  transition-duration: 0.45s;
-  transition-property: transform;
-  transform: scaleY(0);
-  transform-origin: 50% 100%;
-}
-
-.hvr-bounce-to-top:hover:before,
-.hvr-bounce-to-top:focus:before,
-.hvr-bounce-to-top:active:before {
-  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
-  transform: scaleY(1);
-}
-
 // Underline effect
 .underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px $light, 2px -2px $light, -2px 2px $light,
-    -2px -2px $light;
+  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"),
+    -2px 2px color("shade700"), -2px -2px color("shade700");
+  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700),
+    -2px 2px var(--shade700), -2px -2px var(--shade700);
   border-bottom: 2px solid currentColor;
 }
 
-.underline-dark {
+@mixin underline {
   display: inline-block;
-  line-height: 0.85;
-  text-shadow: 2px 2px $dark, 2px -2px $dark, -2px 2px $dark, -2px -2px $dark;
+  line-height: 0.95;
+  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"),
+    -2px 2px color("shade700"), -2px -2px color("shade700");
+  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700),
+    -2px 2px var(--shade700), -2px -2px var(--shade700);
   border-bottom: 2px solid currentColor;
 }

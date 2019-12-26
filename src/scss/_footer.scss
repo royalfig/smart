@@ -2,112 +2,136 @@
 // Global Footer Styles
 //-------------------------------------------
 .footer {
+  &--outer-container {
+    @extend .outer-container;
     min-height: 250px;
-    font-size: .9375em;
-    color: scale-color($light, $lightness: -20%, $saturation: -75%);
-    // color: scale-color(#fafafa, $lightness: -20%, $saturation: -75%);
-    background-color: $dark;
-    // background-color: #1d1d1f;
+    font-size: 0.9375rem;
+    @include color-map(background-color, shade800);
+    @include color-map(color, shade200);
     border-bottom: none;
+  }
 
-    .home-page-section-header {
-        font-size: 115%;
+  &--inner-container {
+    @extend .inner-container;
+  }
+
+  &--grid-container {
+    @extend %grid-container;
+    grid-gap: 0;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include respond-above($laptop) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
     }
+  }
 
-    .grid-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }
-}
+  &__section {
+    @include flex(column, flex-start, flex-start);
+    padding: 0.5rem;
 
-.footer-section {
-    padding: .5em;
+    &--latest {
+      @extend .footer__section;
+      @include color-map(color, shade200);
 
-    p {
-        margin-bottom: .5em;
-    }
+      &:nth-child(3) {
+        padding-bottom: 0.5rem;
+      }
 
-    .card-tag {
-        justify-content: flex-start;
-        font-size: 1em;
-        color: scale-color($light, $lightness: -20%, $saturation: -75%);
-        @include transition(color);
-
-        p {
-            margin: 0;
+      &:last-child {
+        padding-top: 0;
+        & > p:first-child {
+          display: block;
         }
-
-        svg {
-            width: 1em;
-            height: 1em;
-            transform: none;
-            stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
-            stroke-width: 2px;
-        }
-
-        &:hover {
-            color: $prim;
-            background: none;
-
-            svg {
-                stroke: $prim;
-
-            }
-        }
+      }
     }
-}
+  }
 
-.footer-location {
-    align-items: center;
-    margin-bottom: .5em;
+  &__link {
+    margin-bottom: 0.15rem;
+  }
 
-    p {
-        margin: 0;
+  &__description {
+    margin-bottom: 0.25rem;
+  }
+
+  &__date {
+    margin-bottom: 0.25rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    @include color-map(color, shade200);
+  }
+
+  &__title {
+    width: 100%;
+    max-width: 12rem;
+    margin-bottom: 1rem;
+
+    @include color-map(color, shade200);
+
+    @include transition(color);
+
+    &:hover {
+      @include color-map(color, primary);
     }
+  }
 
-    svg {
-        width: 1em;
-        height: 1em;
-        margin-right: 3px;
-        margin-left: -3px;
-        stroke: scale-color($light, $lightness: -20%, $saturation: -75%);
-        stroke-width: 2px;
+  &__header--serif {
+    margin-bottom: 0.5rem;
+    font-size: 115%;
+    @extend .serif;
+  }
 
-    }
-}
-
-.footer-social {
+  &__social {
     @include transition(all);
 
     a {
-        margin-right: .5em;
+      margin-right: 0.5rem;
     }
 
     svg {
-        width: 1rem;
-        height: 1rem;
-        fill: scale-color($light, $lightness: -20%, $saturation: -75%);
+      width: 1rem;
+      height: 1rem;
+      @include color-map(fill, shade200);
     }
-}
+  }
 
-.footer-latest {
-    .footer-date {
-        margin-bottom: .25em;
-        font-size: .75em;
+  &__card-tag {
+    @include flex(row, flex-start, center);
+    @include color-map(color, shade200);
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
+      @include transition(all);
     }
 
-    a {
-        padding-bottom: .25em;
-        margin-bottom: .75em;
-        border-bottom: 1px solid scale-color($light, $lightness: -50%, $saturation: -75%);
-
-        &:hover {
-            color: $prim;
-        }
+    svg {
+      flex-shrink: 0;
+      align-self: flex-start;
+      width: 0.9375rem;
+      height: 0.9375rem;
+      transform: translateY(0.2em);
+      @include color-map(stroke, shade200);
+      stroke-width: 2px;
+      @include transition(all);
     }
-}
 
-.published-by-ghost {
-    justify-content: center;
-    padding: em;
-    font-size: 95%;
+    &:hover {
+      p {
+        @include color-map(color, accent);
+      }
+      svg {
+        @include color-map(stroke, accent);
+      }
+    }
+  }
+
+  &__published-by-ghost {
+    @include flex(row, center, center);
+    padding: 0.15rem;
+    font-size: 0.8rem;
+    @include color-map(color, shade300);
+  }
 }

@@ -1,0 +1,109 @@
+//-------------------------------------------
+// Share Bar
+//-------------------------------------------
+.post-share-bar {
+  position: fixed;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 1em;
+  margin: 0;
+  margin-bottom: -100px;
+  font-size: 0.8em;
+  font-weight: 700;
+  @include color-map(color, shade200);
+  text-align: center;
+  @include color-map(background-color, shade600);
+  opacity: 0;
+
+  @include transition(all);
+
+  &__title {
+    margin-right: 2em;
+  }
+
+  &__link {
+    width: 2em;
+    height: 2em;
+    margin-right: 2em;
+
+    &:focus {
+      outline: 2px dotted currentColor;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+      @include color-map(fill, shade200);
+      @include transition(all);
+    }
+  }
+
+  &__link--twitter {
+    @extend .post-share-bar__link;
+
+    svg {
+      &:hover,
+      &:active {
+        fill: $tw;
+      }
+    }
+  }
+  &__link--facebook {
+    @extend .post-share-bar__link;
+
+    svg {
+      &:hover,
+      &:active {
+        fill: $fb;
+      }
+    }
+  }
+  &__link--linkedin {
+    @extend .post-share-bar__link;
+
+    svg {
+      &:hover,
+      &:active {
+        fill: $li;
+      }
+    }
+  }
+  &__link--copy {
+    @extend .post-share-bar__link;
+
+    svg {
+      fill: none;
+      @include color-map(stroke, shade200);
+
+      &:hover,
+      &:active {
+        @include color-map(stroke, primary);
+      }
+    }
+  }
+
+  @include respond-above($laptop) {
+    top: $navbar + 1rem;
+    bottom: initial;
+    flex-direction: column;
+    width: initial;
+    margin: 0;
+    margin-left: -200px;
+
+    &__title,
+    &__link {
+      margin-right: 0;
+      margin-bottom: 1em;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

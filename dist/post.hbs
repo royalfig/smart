@@ -6,19 +6,16 @@ into the {body} of the default.hbs template --}}
 <div class="post-reading-progress flex-row"></div>
 {{! Post Reading Progress }}
 
-{{navigation}}
-
 {{#post}}
 
 {{!-- Post Header  --}}
-<header class="post-img">
-    {{#if feature_image}}
+<header class="{{^if feature_image}}post__no-img">{{else}}post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 600w,
                  {{img_url feature_image size="l"}} 1000w,
                  {{img_url feature_image size="xl"}} 2000w" sizes="100vw" src="{{img_url feature_image size="xl"}}"
         alt="{{title}}">
-    {{else}}<div class="no-post-img"></div>{{/if}}
+    {{/if}}
 </header>
 {{!-- Post Header  --}}
 
@@ -28,48 +25,53 @@ into the {body} of the default.hbs template --}}
         <div class="inner-container">
             <article class="{{post_class}}">
 
-                <header class="post-header">
-                    <h1 class="post-title serif">{{title}}</h1>
-                    {{#primary_author}}<a href="{{url}}" class="post-author">{{name}}</a>{{/primary_author}}
-                    <p class="post-date">
+                <header class="post__header">
+                    <h1 class="post__title--serif">{{title}}</h1>
+                    {{#primary_author}}<a href="{{url}}" class="post__author">{{name}}</a>{{/primary_author}}
+                    <p class="post__date">
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
 
                         {{! Tags }}
-                        <section class="post-tag-bar flex-row">
+                        <section class="post__tag-bar">
                             <svg aria-hidden="true">
                                 <title>Filed under</title>
                                 <use href="#folder"></use>
                             </svg>
                             {{#foreach tags}}
-                            <a href="{{url}}" class="post-tag-link hvr-bounce-to-top"><svg aria-hidden="true">
+                            <a href="{{url}}" class="post__tag-link"><svg aria-hidden="true">
                                     <use href="#hash"></use>
-                                </svg>{{name}}</a>
+                                </svg>
+                                <p>
+                                    {{name}}
+                                </p>
+                            </a>
                             {{/foreach}}
                         </section>
                         {{! Tags }}
                 </header>
 
-                <div class="post-content">
+                <div class="post__content">
                     {{content}}
                 </div>
             </article>
 
-            <footer class="post-footer-container grid-container inner-container">
-                <h3 class="post-footer-title-1 serif">About the Author</h3>
-                <h3 class="post-footer-title-2 serif">More to Read</h3>
+            <footer class="post-footer">
+                <h3 class="post-footer__title-1">About the Author</h3>
+                <h3 class="post-footer__title-2">More to Read</h3>
                 {{#primary_author}}
-                <div class="author-footer">
-                    <div class="author-footer-img-container flex-row">
-                        <a href="{{url}}" class="author-footer-img-link" aria-labelledby="footer-site-title">
+                <div class="post-footer__author">
+                    <div class="post-footer__author-img-container">
+                        <a href="{{url}}" class="post-footer__author-img-link" aria-labelledby="footer-site-title">
                             {{#if profile_image}}
-                            <img class="author-footer-img" src="{{img_url profile_image size="xs"}}" alt="{{name}}" />
+                            <img class="post-footer__author-img" src="{{img_url profile_image size="s"}}"
+                                alt="{{name}}" />
                             {{else}}
-                            <div class="no-author-footer-img"></div>
+                            <div class="post-footer__no-author-img"></div>
                             {{/if}}
                         </a>
                         <div>
-                            <a class="serif" id="footer-site-title" href="{{url}}">{{name}}</a>
-                            <div class="author-footer-social flex-row">
+                            <a class="post-footer__author-name" href="{{url}}">{{name}}</a>
+                            <div class="post-footer__author-social">
                                 {{#if twitter}}
                                 <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
@@ -88,7 +90,7 @@ into the {body} of the default.hbs template --}}
                                 {{/if}}
                                 {{#if website}}
                                 <a class="website" href="{{website}}" aria-label="{{website}}">
-                                    <svg class="globe">
+                                    <svg>
                                         <title>{{website}}</title>
                                         <use href="#website"></use>
                                     </svg>
@@ -96,7 +98,7 @@ into the {body} of the default.hbs template --}}
                                 {{/if}}
                             </div>
                             {{#if location}}
-                            <div class="author-footer-location flex-row">
+                            <div class="post-footer__author-location">
                                 <svg aria-label="location">
                                     <title>Location</title>
                                     <use href="#location"></use>
@@ -112,64 +114,34 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/primary_author}}
 
-                {{#get "posts" include="tags" limit="2" filter="tags:{{primary_tag.slug}}+id:-{{id}}" as
-                |related_posts|}}
-                {{#if related_posts}}
-                {{#foreach related_posts}}
-                <div class="related-posts related-posts-{{@number}}">
-                    <article class="card card-{{@number}}">
-                        <a href="{{url}}" aria-label="{{title}}">
-                            {{#if feature_image}}<img class="card-img" src="{{img_url feature_image}}"
-                                alt="{{title}}">{{else}}<div class="no-card-img"></div>{{/if}}
-                        </a>
-                        <div class="card-body">
-                            <div class="flex-row card-date-tag">
-                                <p class="card-date"><time
-                                        datetime="{{date published_at}}">{{date published_at timeago="true"}}</time></p>
-                                {{#primary_tag}}
-                                <a class="card-tag hvr-bounce-to-top flex-row" href="{{url}}"> <svg>
-                                        <use href="#hash"></use>
-                                    </svg>
-                                    <p>
-                                        {{name}}
-                                    </p>
-                                </a>
-                                {{/primary_tag}}
-                            </div>
-                            <a href="{{url}}">
-                                <h4 class="card-title">{{title}}</h3>
-                            </a>
-                            <p class="excerpt">
-                                {{excerpt}}
-                            </p>
-                        </div>
-                    </article>
-                </div>
-                {{/foreach}}
-                {{else}}
+                {{#prev_post in="primary_tag"}}
                 <div class="related-posts related-posts-1">
-                    <article class="card card-1">
-                        <a href="{{@site.url}}" aria-label="{{title}}">
-                            {{#if @site.cover_image}}<img class="card-img" src="{{img_url @site.cover_image}}"
-                                alt="{{@site.title}}">{{else}}<div class="no-card-img"></div>{{/if}}
-                        </a>
-                        <div class="card-body">
-
-                            <a href="{{@site.url}}">
-                                <h4 class="card-title">{{@site.title}}</h3>
-                            </a>
-                            <p class="excerpt">
-                                {{@site.description}}
-                            </p>
-                        </div>
-                    </article>
+                    {{> "card"}}
                 </div>
+                {{/prev_post}}
 
-                {{/if}}
-                {{#../next_post}}
-                {{> card}}
-                {{/../next_post}}
-                {{/get}}
+                {{#next_post in="primary_tag"}}
+                <div class="related-posts related-posts-2">
+                    {{> "card"}}
+                </div>
+                {{/next_post}}
+
+                {{#prev_post}}
+                {{^has tag=../primary_tag.name}}
+                <div class="related-posts related-posts-3">
+                    {{> "card"}}
+                </div>
+                {{/has}}
+                {{/prev_post}}
+
+                {{#next_post}}
+                {{^has tag=../primary_tag.name}}
+                <div class="related-posts related-posts-4">
+                    {{> "card"}}
+                </div>
+                {{/has}}
+                {{/next_post}}
+
             </footer>
 
             {{#if @labs.subscribers}}

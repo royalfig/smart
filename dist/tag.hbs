@@ -2,19 +2,16 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{navigation}}
-
 {{#tag}}
 
 {{!-- Post Header  --}}
-<header class="post-img">
-    {{#if feature_image}}
+<header class="{{^if feature_image}}post__no-img">{{else}}post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 600w,
                  {{img_url feature_image size="l"}} 1000w,
                  {{img_url feature_image size="xl"}} 2000w" sizes="100vw" src="{{img_url feature_image size="xl"}}"
-        alt="{{title}}">
-    {{else}}<div class="no-post-img"></div>{{/if}}
+        alt="{{name}}">
+    {{/if}}
 </header>
 {{!-- Post Header  --}}
 
@@ -24,20 +21,22 @@ into the {body} of the default.hbs template --}}
         <div class="inner-container">
             <section class="{{slug}}">
 
-                <header class="post-header">
-                    <h1 class="post-title serif underline">{{name}}</h1>
+                <header class="post__header">
+                    <h1 class="post__title--serif underline">{{name}}</h1>
                     {{#if description}}
                     <p>{{description}}</p>
                     {{/if}}
                 </header>
                 {{/tag}}
 
-                <div class="grid-container grid-container-home">
+                <div class="grid-container-home">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}
                 </div>
             </section>
+
+            {{pagination}}
 
             {{#if @labs.subscribers}}
             {{> "subscribe_inner"}}
@@ -46,6 +45,3 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 {{!-- Main --}}
-{{#tag}}
-{{> "share"}}
-{{/tag}}

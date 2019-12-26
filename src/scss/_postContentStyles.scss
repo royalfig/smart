@@ -1,99 +1,97 @@
-.post-content {
+.post {
+  &__content {
     figcaption {
-        padding: .5em;
-        font-size: .9375em;
-        color: scale-color($color: $dark, $alpha: -5%);
-        text-align: center;
+      padding: 0.5rem;
+      font-size: 0.9375rem;
+      @include color-map(color, shade200);
+      text-align: center;
     }
 
     blockquote {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        // float: left;
-        min-height: 200px;
-        padding: 1em 2em;
-        margin: 2em 0;
-        font-size: 1.5em;
-        font-style: italic;
-        color: $acc3;
-        background: scale-color($dark, $lightness: 95%);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      // float: left;
+      min-height: 200px;
+      padding: 1rem 2rem;
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      font-style: italic;
+      @include color-map(color, shade200);
+      @include color-map(background-color, shade600);
 
-
-
-
-        &:before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            content: "";
-            background: linear-gradient($prim, $acc1);
-        }
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100%;
+        content: "";
+        background: linear-gradient(color(primary), color(accent));
+        background: linear-gradient(var(--primary), var(--accent));
+      }
     }
 
     a {
-        color: $prim;
-        @include transition(color);
+      @include color-map(color, primary);
+      @include transition(color);
     }
 
     a:hover,
     a:active,
     a:focus {
-        color: scale-color($prim, $lightness: -50%)
+      @include color-map(color, accent);
     }
 
     ul,
     ol {
-        margin: 1em 2em;
-        color: $dark;
+      margin: 1em 2em;
+      @include color-map(color, text);
     }
 
     ul {
-        list-style-type: square;
+      list-style-type: square;
     }
 
     hr {
-        height: 2px;
-        margin: 1em 0;
-        background: scale-color($dark, $lightness: 95%);
-        border: none;
+      height: 2px;
+      margin: 1rem 0;
+      @include color-map(background-color, shade400);
+      border: none;
     }
 
     table {
-        width: 100%;
-        overflow: hidden;
-        font-size: .935em;
-        border-collapse: collapse;
-        border: 1px solid scale-color($dark, $lightness: 95%);
+      width: 100%;
+      overflow: hidden;
+      font-size: 0.935rem;
+      border-collapse: collapse;
+      @include color-map(border-color, shade400);
+      border-style: solid;
+      border-width: 1px;
     }
 
-    tbody {}
-
     tr {
+      &:nth-child(odd) {
+        @include color-map(background-color, shade400);
+      }
 
-        &:nth-child(odd) {
-            background: scale-color($dark, $lightness: 95%);
-        }
-
-        &:first-child {
-            color: $light;
-            background-color: $dark;
-        }
-
+      &:first-child {
+        @include color-map(color, shade900);
+        @include color-map(background-color, shade400);
+      }
     }
 
     th {
-        padding: .5em 1em;
-        font-family: $serif;
-        font-weight: 400;
-        text-align: left;
+      padding: 0.5rem 1rem;
+      font-family: $serif;
+      font-weight: 400;
+      text-align: left;
     }
 
     td {
-        padding: .5em 1em;
-        text-align: left;
+      padding: 0.5rem 1rem;
+      text-align: left;
     }
+  }
 }

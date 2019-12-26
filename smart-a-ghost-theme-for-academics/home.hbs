@@ -2,11 +2,7 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{navigation}}
-
 {{! Hero }}
-{{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
-
 {{#if @site.cover_image}}
 <style type="text/css">
     .hero {
@@ -36,71 +32,78 @@ into the {body} of the default.hbs template --}}
 </style>
 {{/if}}
 <section class="hero">
-    <div class="hero-left{{#if featured}} featured-left{{/if}} flex-col">
-
-        <div class="{{#if @site.cover_image}}hero-img-true{{/if}} hero-text-container flex-col">
-            <div class="hero-text flex-col">
-                <h1 class="site-title serif">{{@site.title}}</h1>
-                <h2 class="site-description">{{@site.description}}
+    <div class="hero__overlay">
+        <div class="hero__top">
+            <div class="hero__text-container">
+                <h1 class="hero__site-title">{{@site.title}}</h1>
+                <h2 class="hero__site-description">{{@site.description}}
                 </h2>
             </div>
         </div>
-
     </div>
-    {{#if featured}}
-
-    <div class="hero-right flex-col">
-        <h2 class="home-page-section-header serif underline">Featured</h2>
-        {{#foreach featured}}
-        <article class="card featured card-1">
-            <a class="card-img" href="{{url}}" aria-label="{{title}}">
-                <img class="card-img" alt="" loading="lazy" srcset="{{img_url feature_image size="s"}} 300w,
-            {{img_url feature_image size="m"}} 600w,
-            {{img_url feature_image size="l"}} 1000w,
-            {{img_url feature_image size="xl"}} 2000w" sizes="(max-width: 640px) 90vw,
-            (max-width: 1280px) 50vw,
-            1300px" src="{{img_url feature_image size="m"}}" />
-            </a>
-            <div class="card-body flex-col">
-                <div class="flex-row card-date-tag">
-                    <p class="card-date"><time datetime="{{date published_at}}">{{date published_at timeago="true"}}
-                    </p>
-                </div>
-                <a href=" {{url}}">
-                    <h3 class="card-title">{{title}}</h3>
-                </a>
-                <div class="flex-row card-date-tag">
-                    {{#primary_tag}}
-                    <a class="card-tag flex-row hvr-bounce-to-top" href="{{url}}"><svg aria-hidden="true">
-                            <use href="#hash"></use>
-                            <p>{{name}}
-                            </p>
-                    </a>
-                    {{/primary_tag}}
-                </div>
-            </div>
-        </article>
-        {{/foreach}}
-    </div>
-    {{/if}}
 </section>
+
+{{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
+{{#if featured}}
+<div class="hero__bottom">
+    <div class="hero__container">
+        <div class="hero__header-container">
+            <h2 class="hero__header--serif--underline">Featured</h2>
+        </div>
+        <div class="hero__card-container">
+            {{#foreach featured}}
+            <article class="hero__card">
+                <a class="hero__card-img-container" href="{{url}}" aria-label="{{title}}">
+                    {{#if feature_image}}<img class="hero__card-img lazyload" alt="{{title}}" data-srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 600w,
+            {{img_url feature_image size="l"}} 1000w" sizes="(max-width: 640px) 90vw,
+            (max-width: 1280px) 50vw,
+            1000px" data-src="{{img_url feature_image size="l"}}" />{{else}}<div class="hero__card-no-img"></div>
+                    {{/if}}
+                </a>
+                <div class="hero__card-body">
+                    <div class="hero__card-body-wrapper">
+                        <p class="hero__card-date"><time
+                                datetime="{{date published_at}}">{{date published_at timeago="true"}}
+                        </p>
+
+                        <a href="{{url}}">
+                            <p class="hero__card-title--serif">{{title}}</p>
+                        </a>
+                    </div>
+                    <div class="hero__card-tag">
+                        {{#primary_tag}}
+                        <a class="hero__tag-link" href="{{url}}"><svg aria-hidden="true">
+                                <use href="#hash"></use>
+                                <p>{{name}}
+                                </p>
+                        </a>
+                        {{/primary_tag}}
+                    </div>
+                </div>
+            </article>
+            {{/foreach}}
+        </div>
+    </div>
+</div>
+{{/if}}
 {{/get}}
 {{!-- Hero  --}}
 
 
-<main class="main home">
+<main class="main">
     {{!-- Latest --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach" as |latest|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |latest|}}
     {{#if latest}}
-    <div class="outer-container">
-        <div class="inner-container">
-            <a class="read-more" href="/page/2/">
-                <h2 class="home-page-section-header serif underline">Latest</h2>
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <a class="main__read-more" href="/page/2/">
+                <h2 class="main__header--serif--underline">Latest</h2>
                 <svg aria-label="See more posts">
                     <use href="#arrow-right"></use>
                 </svg>
             </a>
-            <section class="grid-container grid-container-home">
+            <section class="grid-container-home">
                 {{#foreach latest}}
                 {{> "card"}}
                 {{/foreach}}
@@ -112,22 +115,21 @@ into the {body} of the default.hbs template --}}
     {{!-- Latest --}}
 
     {{!-- Publications --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications+tag:-presentations+tag:-outreach" as |publications|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |publications|}}
     {{#if publications}}
-    <div class="outer-container">
-        <div class="inner-container">
-            <a class="read-more" href="/tag/publications/">
-                <h2 class="home-page-section-header serif underline">Publications</h2>
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <a class="main__read-more" href="/tag/publications/">
+                <h2 class="main__header--serif--underline">Publications</h2>
                 <svg aria-label="See more publications">
                     <use href="#arrow-right"></use>
                 </svg>
             </a>
-            <section class="grid-container grid-container-home">
+            <section class="grid-container-home">
                 {{#foreach publications}}
                 {{> "card"}}
                 {{/foreach}}
             </section>
-
         </div>
     </div>
     {{/if}}
@@ -135,41 +137,62 @@ into the {body} of the default.hbs template --}}
     {{!-- Publications --}}
 
     {{!-- Presentations --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications+tag:-outreach" as |presentations|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications+tag:-outreach+tag:-teaching+tag:-dissertation" as |presentations|}}
     {{#if presentations}}
-    <div class="outer-container">
-        <div class="inner-container">
-            <a class="read-more" href="/tag/presentations/">
-                <h2 class="home-page-section-header serif underline">
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <a class="main__read-more" href="/tag/presentations/">
+                <h2 class="main__header--serif--underline">
                     Presentations</h2>
                 <svg aria-label="See more presentations">
                     <use href="#arrow-right"></use>
                 </svg>
             </a>
-            <section class="grid-container grid-container-home">
+            <section class="grid-container-home">
                 {{#foreach presentations}}
                 {{> "card"}}
                 {{/foreach}}
             </section>
-
         </div>
     </div>
     {{/if}}
     {{/get}}
     {{!-- Presentations --}}
 
+    {{!-- Teaching --}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations+tag:-outreach+tag:-dissertation" as |teaching|}}
+    {{#if teaching}}
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <a class="main__read-more" href="/tag/teaching/">
+                <h2 class="main__header--serif--underline">Teaching</h2>
+                <svg aria-label="See more teaching">
+                    <use href="#arrow-right"></use>
+                </svg>
+            </a>
+            <section class="grid-container-home">
+                {{#foreach teaching}}
+                {{> "card"}}
+                {{/foreach}}
+            </section>
+        </div>
+    </div>
+    {{/if}}
+    {{/get}}
+    {{!-- Teaching --}}
+
     {{!-- Outreach --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations" as |outreach|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching+tag:-dissertation" as |outreach|}}
     {{#if outreach}}
-    <div class="outer-container">
-        <div class="inner-container">
-            <a class="read-more" href="/tag/outreach/">
-                <h2 class="home-page-section-header serif underline">Outreach</h2>
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <a class="main__read-more" href="/tag/outreach/">
+                <h2 class="main__header--serif--underline">Outreach</h2>
                 <svg aria-label="See more outreach">
                     <use href="#arrow-right"></use>
                 </svg>
             </a>
-            <section class="grid-container grid-container-home">
+            <section class="grid-container-home">
                 {{#foreach outreach}}
                 {{> "card"}}
                 {{/foreach}}
@@ -180,13 +203,35 @@ into the {body} of the default.hbs template --}}
     {{/get}}
     {{!-- Outreach --}}
 
+    {{!-- Dissertation --}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:dissertation+tag:-publications+tag:-presentations+tag:-teaching" as |dissertation|}}
+    {{#if dissertation}}
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <a class="main__read-more" href="/tag/dissertation/">
+                <h2 class="main__header--serif--underline">Dissertation</h2>
+                <svg aria-label="See more dissertation">
+                    <use href="#arrow-right"></use>
+                </svg>
+            </a>
+            <section class="grid-container-home">
+                {{#foreach dissertation}}
+                {{> "card"}}
+                {{/foreach}}
+            </section>
+        </div>
+    </div>
+    {{/if}}
+    {{/get}}
+    {{!-- Dissertation --}}
+
     {{!-- Subscribe --}}
     {{#if @labs.subscribers}}
     <div class="outer-container">
         <div class="inner-container">
             {{> "subscribe_inner"}}
-            {{/if}}
         </div>
     </div>
+    {{/if}}
     {{!-- Subscribe --}}
 </main>

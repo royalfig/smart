@@ -1,6 +1,6 @@
 // Required KG Styles
 .kg-card {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
 }
 
 .kg-embed-card {
@@ -19,7 +19,7 @@
   position: relative;
   width: 75vw;
   min-width: 100%;
-  margin: auto calc(50% - 50vw) 1em;
+  margin: auto calc(50% - 50vw) 1rem;
   transform: translateX(calc(50vw - 50%));
 }
 
@@ -27,7 +27,7 @@
   position: relative;
   width: 100vw;
   min-width: 100%;
-  margin: auto calc(50% - 50vw) 1em;
+  margin: auto calc(50% - 50vw) 1rem;
   transform: translateX(calc(50vw - 50%));
 }
 
@@ -35,12 +35,16 @@
 .kg-bookmark-card {
   position: relative;
   width: 100%;
+  @include color-map(border-color, shade200);
+  border-color: var(--shade500);
+  border-style: solid;
+  border-width: 1px;
 }
 
 .kg-bookmark-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  border: 1px solid rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   @include transition(all);
 }
 
@@ -51,14 +55,13 @@
 .kg-bookmark-content {
   display: flex;
   flex-direction: column;
-  padding: 1em;
+  padding: 1rem;
 }
 
 .kg-bookmark-title {
-  margin-bottom: 1em;
-  font-family: $serif;
-  font-size: 1em;
-  font-weight: 600;
+  @extend .serif;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .kg-bookmark-metadata,
@@ -74,20 +77,20 @@
 .kg-bookmark-description {
   margin-bottom: 1em;
   overflow: hidden;
-  font-size: .93em;
-  color: $dark;
+  font-size: 0.9375em;
+  @include color-map(color, text);
 
   &:hover,
   &:active,
   &:focus {
-    color: $dark;
+    @include color-map(color, text);
   }
 }
 
 .kg-bookmark-icon {
-  width: 1.5em;
-  height: 1.5em;
-  margin-right: .5em;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
 }
 
 .kg-bookmark-thumbnail {
@@ -96,9 +99,18 @@
   justify-content: center;
   width: 100%;
   padding: 1em;
-  background: linear-gradient(45deg,
-      scale-color($dark, $lightness: 15%),
-      scale-color($dark, $lightness: 25%));
+
+  // background: linear-gradient(
+  //   45deg,
+  //   scale-color($dark, $lightness: 15%),
+  //   scale-color($dark, $lightness: 25%)
+  // );
+
+  // background: linear-gradient(
+  //   45deg,
+  //   scale-color($dark, $lightness: 15%),
+  //   scale-color($dark, $lightness: 25%)
+  // );
 }
 
 .kg-bookmark-thumbnail img {
@@ -115,7 +127,7 @@
 
 .kg-bookmark-publisher {
   font-family: $sans;
-  font-size: .93em;
+  font-size: 0.9375rem;
 }
 
 @media (min-width: $laptop) {
@@ -151,9 +163,9 @@
 }
 
 .kg-gallery-row:not(:first-of-type) {
-  margin: .75em 0 0;
+  margin: 0.75em 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
-  margin: 0 0 0 .75em;
+  margin: 0 0 0 0.75em;
 }

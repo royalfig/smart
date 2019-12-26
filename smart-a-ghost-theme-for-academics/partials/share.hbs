@@ -1,7 +1,7 @@
 {{!-- Share Bar --}}
 <div class="post-share-bar">
-    <p class="post-share-bar-title">Share</p>
-    <a class="post-share-bar-link twitter"
+    <p class="post-share-bar__title">Share</p>
+    <a class="post-share-bar__link--twitter"
         href="https://twitter.com/share?url={{url absolute='true'}}&amp;text={{#if title}}{{title}}{{else}}{{name}}{{/if}}"
         aria-label="Share on Twitter">
         <svg>
@@ -9,14 +9,14 @@
             <use href="#twitter"></use>
         </svg>
     </a>
-    <a class="post-share-bar-link facebook" href="http://www.facebook.com/sharer.php?u={{url absolute='true'}}"
+    <a class="post-share-bar__link--facebook" href="http://www.facebook.com/sharer.php?u={{url absolute='true'}}"
         aria-label="Share on Facebook">
         <svg>
             <title>Share on Facebook</title>
             <use href="#facebook"></use>
         </svg>
     </a>
-    <a class="post-share-bar-link linkedin"
+    <a class="post-share-bar__link--linkedin"
         href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}"
         aria-label="Share on LinkedIn">
         <svg>
@@ -24,7 +24,7 @@
             <use href="#linkedin"></use>
         </svg>
     </a>
-    <button class="post-share-bar-link copy" id="copy-button" aria-label="Copy to clipboard">
+    <button class="post-share-bar__link--copy" id="copy-button" aria-label="Copy to clipboard">
         <svg>
             <title id="copyIconTitle">Copy to clipboard</title>
             <use href="#copy"></use>

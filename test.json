@@ -1,0 +1,486 @@
+{
+  "meta": {
+    "exported_on": 1575822868935,
+    "version": "3.0.3"
+  },
+  "data": {
+    "posts": [
+      {
+        "id": 1,
+        "title": "Ideologies of Fermented Foods",
+        "author_id": 1,
+        "created_at": "2011-11-01T00:00:00.000Z",
+        "updated_at": "2011-11-01T00:00:00.000Z",
+        "published_at": "2011-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 1,
+        "title": "Thoughts on the True Estimation of Living Forces",
+        "author_id": 1,
+        "created_at": "1749-11-01T00:00:00.000Z",
+        "updated_at": "1749-11-01T00:00:00.000Z",
+        "published_at": "1749-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 2,
+        "title": "Universal Natural History and Theory of the Heavens",
+        "author_id": 1,
+        "created_at": "1755-11-01T00:00:00.000Z",
+        "updated_at": "1755-11-01T00:00:00.000Z",
+        "published_at": "1755-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 3,
+        "title": "Brief Outline of Certain Meditations on Fire",
+        "author_id": 1,
+        "created_at": "1755-11-01T00:00:00.000Z",
+        "updated_at": "1755-11-01T00:00:00.000Z",
+        "published_at": "1755-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 4,
+        "title": "A New Elucidation of the First Principles of Metaphysical Cognition",
+        "author_id": 1,
+        "created_at": "1755-11-01T00:00:00.000Z",
+        "updated_at": "1755-11-01T00:00:00.000Z",
+        "published_at": "1755-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 5,
+        "title": "The Use in Natural Philosophy of Metaphysics Combined with Geometry",
+        "author_id": 1,
+        "created_at": "1756-11-01T00:00:00.000Z",
+        "updated_at": "1756-11-01T00:00:00.000Z",
+        "published_at": "1756-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 6,
+        "title": "The False Subtlety of the Four Syllogistic Figures",
+        "author_id": 1,
+        "created_at": "1762-11-01T00:00:00.000Z",
+        "updated_at": "1762-11-01T00:00:00.000Z",
+        "published_at": "1762-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 7,
+        "title": "The Only Possible Arugment in Support of a Demonstration of the Existence of God",
+        "author_id": 1,
+        "created_at": "1763-11-01T00:00:00.000Z",
+        "updated_at": "1763-11-01T00:00:00.000Z",
+        "published_at": "1763-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 8,
+        "title": "Attempt to Introduce the Concept of Negative Magnitudes into Philosophy",
+        "author_id": 1,
+        "created_at": "1763-11-01T00:00:00.000Z",
+        "updated_at": "1763-11-01T00:00:00.000Z",
+        "published_at": "1763-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 9,
+        "title": "Observations on the Feeling of the Beautiful and Sublime",
+        "author_id": 1,
+        "created_at": "1764-11-01T00:00:00.000Z",
+        "updated_at": "1764-11-01T00:00:00.000Z",
+        "published_at": "1764-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 10,
+        "title": "Essay on the Illness of the Head",
+        "author_id": 1,
+        "created_at": "1764-11-01T00:00:00.000Z",
+        "updated_at": "1764-11-01T00:00:00.000Z",
+        "published_at": "1764-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 11,
+        "title": "Inquiry Concerning the Distinctness of the Principles of Natural Theology",
+        "author_id": 1,
+        "created_at": "1764-11-01T00:00:00.000Z",
+        "updated_at": "1764-11-01T00:00:00.000Z",
+        "published_at": "1764-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 12,
+        "title": "Dreams of a Spirit-Seer",
+        "author_id": 1,
+        "created_at": "1766-11-01T00:00:00.000Z",
+        "updated_at": "1766-11-01T00:00:00.000Z",
+        "published_at": "1766-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 13,
+        "title": "On the Ulimate Ground of the Differentiation of Regions in Space",
+        "author_id": 1,
+        "created_at": "1768-11-01T00:00:00.000Z",
+        "updated_at": "1768-11-01T00:00:00.000Z",
+        "published_at": "1768-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 14,
+        "title": "Dissertation on the Form and Principles of the Sensible and Intelligible World",
+        "author_id": 1,
+        "created_at": "1770-11-01T00:00:00.000Z",
+        "updated_at": "1770-11-01T00:00:00.000Z",
+        "published_at": "1770-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 15,
+        "title": "On the Different Races of Man",
+        "author_id": 1,
+        "created_at": "1775-11-01T00:00:00.000Z",
+        "updated_at": "1775-11-01T00:00:00.000Z",
+        "published_at": "1775-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 16,
+        "title": "The Critique of Pure Reason (1st Ed.)",
+        "author_id": 1,
+        "created_at": "1781-11-01T00:00:00.000Z",
+        "updated_at": "1781-11-01T00:00:00.000Z",
+        "published_at": "1781-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 17,
+        "title": "Prologomena to Any Future Metaphysics",
+        "author_id": 1,
+        "created_at": "1783-11-01T00:00:00.000Z",
+        "updated_at": "1783-11-01T00:00:00.000Z",
+        "published_at": "1783-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 18,
+        "title": "An Answer to the Question: What is Enlightenment?",
+        "author_id": 1,
+        "created_at": "1784-11-01T00:00:00.000Z",
+        "updated_at": "1784-11-01T00:00:00.000Z",
+        "published_at": "1784-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 19,
+        "title": "Idea for a University History with a Cosmopolitan Purpose",
+        "author_id": 1,
+        "created_at": "1784-11-01T00:00:00.000Z",
+        "updated_at": "1784-11-01T00:00:00.000Z",
+        "published_at": "1784-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 20,
+        "title": "Groundwork of the Metaphysics of Morals",
+        "author_id": 1,
+        "created_at": "1785-11-01T00:00:00.000Z",
+        "updated_at": "1785-11-01T00:00:00.000Z",
+        "published_at": "1785-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 21,
+        "title": "Metaphysical Foundations of Natural Science",
+        "author_id": 1,
+        "created_at": "1786-11-01T00:00:00.000Z",
+        "updated_at": "1786-11-01T00:00:00.000Z",
+        "published_at": "1786-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 22,
+        "title": "What does it mean to orient oneself in thinking?",
+        "author_id": 1,
+        "created_at": "1786-11-01T00:00:00.000Z",
+        "updated_at": "1786-11-01T00:00:00.000Z",
+        "published_at": "1786-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 23,
+        "title": "Conjectural Beginning of Human History",
+        "author_id": 1,
+        "created_at": "1786-11-01T00:00:00.000Z",
+        "updated_at": "1786-11-01T00:00:00.000Z",
+        "published_at": "1786-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 24,
+        "title": "Critique of Pure Reason (2nd Ed.)",
+        "author_id": 1,
+        "created_at": "1787-11-01T00:00:00.000Z",
+        "updated_at": "1787-11-01T00:00:00.000Z",
+        "published_at": "1787-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 25,
+        "title": "Critique of Practical Reason",
+        "author_id": 1,
+        "created_at": "1788-11-01T00:00:00.000Z",
+        "updated_at": "1788-11-01T00:00:00.000Z",
+        "published_at": "1788-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 26,
+        "title": "Critique of the Power of Judgment",
+        "author_id": 1,
+        "created_at": "1790-11-01T00:00:00.000Z",
+        "updated_at": "1790-11-01T00:00:00.000Z",
+        "published_at": "1790-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 27,
+        "title": "Religion withinthe Limits of Reason Alone",
+        "author_id": 1,
+        "created_at": "1793-11-01T00:00:00.000Z",
+        "updated_at": "1793-11-01T00:00:00.000Z",
+        "published_at": "1793-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 28,
+        "title": "On the Old Saw: That May be Right in Theory But It Won't Work in Practice",
+        "author_id": 1,
+        "created_at": "1793-11-01T00:00:00.000Z",
+        "updated_at": "1793-11-01T00:00:00.000Z",
+        "published_at": "1793-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 29,
+        "title": "Perpetual Peace: A Philosophical Sketch",
+        "author_id": 1,
+        "created_at": "1795-11-01T00:00:00.000Z",
+        "updated_at": "1795-11-01T00:00:00.000Z",
+        "published_at": "1795-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 30,
+        "title": "Metaphysics of Morals",
+        "author_id": 1,
+        "created_at": "1797-11-01T00:00:00.000Z",
+        "updated_at": "1797-11-01T00:00:00.000Z",
+        "published_at": "1797-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 31,
+        "title": "Anthropology from a Pragmatic Point of View",
+        "author_id": 1,
+        "created_at": "1798-11-01T00:00:00.000Z",
+        "updated_at": "1798-11-01T00:00:00.000Z",
+        "published_at": "1798-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 32,
+        "title": "The Contest of Faculties",
+        "author_id": 1,
+        "created_at": "1798-11-01T00:00:00.000Z",
+        "updated_at": "1798-11-01T00:00:00.000Z",
+        "published_at": "1798-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 33,
+        "title": "Logic",
+        "author_id": 1,
+        "created_at": "1800-11-01T00:00:00.000Z",
+        "updated_at": "1800-11-01T00:00:00.000Z",
+        "published_at": "1800-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 34,
+        "title": "On Pedagogy",
+        "author_id": 1,
+        "created_at": "1803-11-01T00:00:00.000Z",
+        "updated_at": "1803-11-01T00:00:00.000Z",
+        "published_at": "1803-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 35,
+        "title": "Opus Postumum",
+        "author_id": 1,
+        "created_at": "1804-11-01T00:00:00.000Z",
+        "updated_at": "1804-11-01T00:00:00.000Z",
+        "published_at": "1804-11-01T00:00:00.000Z"
+      },
+      {
+        "id": 36,
+        "title": "Lectures on Philosophical Theology",
+        "author_id": 1,
+        "created_at": "1817-11-01T00:00:00.000Z",
+        "updated_at": "1817-11-01T00:00:00.000Z",
+        "published_at": "1817-11-01T00:00:00.000Z"
+      }
+    ],
+    "users": [
+      {
+        "id": 1,
+        "name": "Immanuel Kant",
+        "email": "ryan.feigenbaum@gmail.com"
+      }
+    ],
+    "tags": [
+      {
+        "id": 1,
+        "name": "Publications"
+      }
+    ],
+    "posts_tags": [
+      {
+        "id": 1,
+        "tag_id": 1,
+        "post_id": 1
+      },
+      {
+        "id": 2,
+        "tag_id": 1,
+        "post_id": 2
+      },
+      {
+        "id": 3,
+        "tag_id": 1,
+        "post_id": 3
+      },
+      {
+        "id": 4,
+        "tag_id": 1,
+        "post_id": 4
+      },
+      {
+        "id": 5,
+        "tag_id": 1,
+        "post_id": 5
+      },
+      {
+        "id": 6,
+        "tag_id": 1,
+        "post_id": 6
+      },
+      {
+        "id": 7,
+        "tag_id": 1,
+        "post_id": 7
+      },
+      {
+        "id": 8,
+        "tag_id": 1,
+        "post_id": 8
+      },
+      {
+        "id": 9,
+        "tag_id": 1,
+        "post_id": 9
+      },
+      {
+        "id": 10,
+        "tag_id": 1,
+        "post_id": 10
+      },
+      {
+        "id": 11,
+        "tag_id": 1,
+        "post_id": 11
+      },
+      {
+        "id": 12,
+        "tag_id": 1,
+        "post_id": 12
+      },
+      {
+        "id": 13,
+        "tag_id": 1,
+        "post_id": 13
+      },
+      {
+        "id": 14,
+        "tag_id": 1,
+        "post_id": 14
+      },
+      {
+        "id": 15,
+        "tag_id": 1,
+        "post_id": 15
+      },
+      {
+        "id": 16,
+        "tag_id": 1,
+        "post_id": 16
+      },
+      {
+        "id": 17,
+        "tag_id": 1,
+        "post_id": 17
+      },
+      {
+        "id": 18,
+        "tag_id": 1,
+        "post_id": 18
+      },
+      {
+        "id": 19,
+        "tag_id": 1,
+        "post_id": 19
+      },
+      {
+        "id": 20,
+        "tag_id": 1,
+        "post_id": 20
+      },
+      {
+        "id": 21,
+        "tag_id": 1,
+        "post_id": 21
+      },
+      {
+        "id": 22,
+        "tag_id": 1,
+        "post_id": 22
+      },
+      {
+        "id": 23,
+        "tag_id": 1,
+        "post_id": 23
+      },
+      {
+        "id": 24,
+        "tag_id": 1,
+        "post_id": 24
+      },
+      {
+        "id": 25,
+        "tag_id": 1,
+        "post_id": 25
+      },
+      {
+        "id": 26,
+        "tag_id": 1,
+        "post_id": 26
+      },
+      {
+        "id": 27,
+        "tag_id": 1,
+        "post_id": 27
+      },
+      {
+        "id": 28,
+        "tag_id": 1,
+        "post_id": 28
+      },
+      {
+        "id": 29,
+        "tag_id": 1,
+        "post_id": 29
+      },
+      {
+        "id": 30,
+        "tag_id": 1,
+        "post_id": 30
+      },
+      {
+        "id": 31,
+        "tag_id": 1,
+        "post_id": 31
+      },
+      {
+        "id": 32,
+        "tag_id": 1,
+        "post_id": 32
+      },
+      {
+        "id": 33,
+        "tag_id": 1,
+        "post_id": 33
+      }
+    ]
+  }
+}

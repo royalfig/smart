@@ -1,40 +1,13 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
-.modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 1001;
-  width: 35rem;
-  max-width: 100vw;
-  height: 100%;
-  overflow-x: hidden;
-  //   margin-left: 100%;
-  overflow-y: auto;
-  color: $dark;
-  text-align: center;
-  // background: linear-gradient(45deg, scale-color($prim, $alpha: -5%), scale-color($acc1, $alpha: -5%));
-  background-color: $light;
-  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: translate3d(100vw, 0, 0);
-
-  .show-modal & {
-    transition: transform 0.4s 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  }
-
-  .inner-container {
-    padding: 1rem 1.5rem;
-  }
-}
-
 .content-wrap {
   &:before {
-    transition: opacity 0.2s 0.4s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
 
-  .show-modal & {
+  .expanded-modal-search &,
+  .expanded-menu & {
     &:before {
       position: fixed;
       z-index: 1000;
@@ -43,164 +16,182 @@
       content: "";
       background: #000;
       opacity: 0.5;
-      transition: opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
     }
   }
 }
 
-.modal-inner {
-  padding: 2rem 1rem;
+.modal-search {
+  position: fixed;
+  top: $navbar;
+  right: 0;
+  z-index: 1001;
+  width: 20rem;
+  max-width: 100vw;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include color-map(color, text);
+  text-align: center;
+  @include color-map(background-color, shade700);
+  box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform: translate3d(100vw, 0, 0);
 
-  h3 {
-    display: block;
-    font-size: 2.4rem;
-    line-height: 1;
-    color: $dark;
+  &__container {
+    @include flex(column, center, flex-start);
+    padding: 1rem 1.5rem;
   }
 
-  label {
-    width: 100%;
-    padding: 0;
-    margin-right: 0.5rem;
-    font-weight: 100;
-    color: $dark;
+  &[aria-expanded="true"] {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translate3d(0, 0, 0);
+  }
+
+  &__close-btn {
+    position: relative;
+    display: block;
+    width: 1.5rem;
+    height: 1rem;
+    margin-left: auto;
+
+    span {
+      position: absolute;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: calc(1rem / 5);
+      @include color-map(background-color, text);
+      opacity: 1;
+      transition: 0.25s ease-in-out;
+
+      &:first-child {
+        transform: rotate(45deg);
+      }
+
+      &:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &:hover {
+      span {
+        @include color-map(background-color, primary);
+      }
+    }
+
+    &:focus {
+      outline-width: 2px;
+      outline-style: dotted;
+      @include color-map(outline-color, text);
+      outline-offset: 1px;
+    }
+  }
+
+  &__inner-container {
+    padding: 2rem 1rem;
+  }
+
+  &__input-container {
+    @include flex(row, flex-start, flex-end);
+    flex-wrap: wrap;
+  }
+
+  &__input {
+    flex: 1;
+    width: 80%;
+    height: 2rem;
+    font-size: 1rem;
+    @include color-map(color, text);
     text-align: left;
     background: none;
-  }
-}
+    border: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    @include color-map(border-bottom-color, shade100);
+    @include color-map(caret-color, primary);
+    border-radius: 0;
+    @include transition(border-bottom-color);
 
-.modal-tagline {
-  display: inline-block;
-  padding: 0.5rem;
-  margin-bottom: 1.4rem;
-  font-size: 1.2rem;
-  color: $dark;
-}
-
-.modal-icon {
-  width: 3rem;
-  height: 3rem;
-  pointer-events: none;
-  fill: none;
-  stroke: $dark;
-}
-
-.modal-form {
-  flex-wrap: wrap;
-  align-items: flex-end;
-}
-
-.modal-input {
-  flex: 1;
-  width: 80%;
-  height: 2rem;
-  font-size: 1.25rem;
-  color: $dark;
-  text-align: left;
-  background: none;
-  border: none;
-  border-bottom: 1px solid $dark;
-  caret-color: $prim;
-  border-radius: 0;
-
-  &:focus {
-    border-bottom: 1px solid $prim;
-    outline: none;
-  }
-}
-
-.modal-btn {
-  height: 50%;
-  padding: 0.5rem 0.75rem;
-  margin-left: 0.5rem;
-  font-weight: 600;
-  line-height: 1;
-  color: $light;
-  vertical-align: bottom;
-  background: linear-gradient(45deg, $prim, $acc1);
-  border: none;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
-  @include transition(box-shadow);
-
-  &:hover,
-  &:active {
-    outline: none;
-    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.35);
-  }
-
-  &:focus {
-    outline: 2px dotted $dark;
-  }
-}
-
-.modal-close {
-  position: relative;
-  display: block;
-  width: 1.5rem;
-  height: 1rem;
-  margin-left: auto;
-
-  span {
-    position: absolute;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: calc(1rem / 5);
-    background: $dark;
-    opacity: 1;
-    transition: 0.25s ease-in-out;
-
-    &:first-child {
-      transform: rotate(45deg);
-    }
-
-    &:last-child {
-      transform: rotate(-45deg);
+    &:focus {
+      @include color-map(border-bottom-color, primary);
+      outline: none;
     }
   }
 
+  &__btn {
+    height: 50%;
+    padding: 0.5rem 0.75rem;
+    margin-left: 0.5rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #ffffff;
+    vertical-align: bottom;
+    background: linear-gradient(45deg, color(primary), color(accent));
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    border: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+    @include transition(box-shadow);
 
-  &:focus {
-    outline: 2px dotted currentColor;
+    &:hover,
+    &:active {
+      outline: none;
+      box-shadow: 0 4px 7px rgba(0, 0, 0, 0.35);
+    }
+
+    &:focus {
+      outline-width: 2px;
+      outline-style: dotted;
+      @include color-map(outline-color, text);
+      outline-offset: 1px;
+    }
+
+    &::-moz-focus-inner {
+      border: none;
+      outline: none;
+    }
   }
 }
 
 //-------------------------------------------
 // Search Styles
 //-------------------------------------------
-.search-result-container {
+.search-results {
   padding: 1rem 0;
   margin-top: 2rem;
-}
 
-.search-result-header {
-  font-size: 1rem;
-  color: $light;
-  background: $dark;
-}
+  &__header {
+    font-size: 1rem;
+    @include color-map(color, shade900);
+    @include color-map(background-color, text);
+  }
 
-.search-result-item {
-  padding-bottom: 0.5rem;
-  margin-top: 1rem;
-  text-align: left;
-  border-bottom: 1px solid scale-color($dark, $alpha: 0.8);
-}
+  &__item {
+    padding-bottom: 0.5rem;
+    margin-top: 1rem;
+    text-align: left;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    @include color-map(border-bottom-color, shade200);
+  }
 
-.search-result-date {
-  margin-top: 1rem;
-  font-size: 0.9em;
-  color: scale-color($dark, $alpha: 0.8);
-  background: none;
-}
+  &__date {
+    margin-top: 1rem;
+    font-size: 0.9em;
+    @include color-map(color, shade200);
+    background: none;
+  }
 
-.search-result-link {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: $dark;
-
-  &:hover,
-  &:active {
-    color: $prim;
+  &__link {
+    font-weight: 700;
+    line-height: 1.1;
+    @include color-map(color, text);
     @include transition(color);
+
+    &:hover,
+    &:active {
+      @include color-map(color, primary);
+      @include transition(color);
+    }
   }
 }

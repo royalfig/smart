@@ -1,0 +1,32 @@
+//-------------------------------------------
+// For Home, Index, and Tag pages
+//-------------------------------------------
+
+.main {
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  &--outer-container {
+    @extend .outer-container;
+  }
+
+  &--inner-container {
+    @extend .inner-container;
+  }
+
+  &__header--serif--underline {
+    @extend .serif;
+    @extend .underline;
+  }
+
+  &__read-more {
+    svg {
+      width: 2rem;
+      height: 2rem;
+      transform: translateY(0.5em);
+      fill: none;
+      stroke-width: 2px;
+      @include color-map(stroke, text);
+    }
+  }
+}
