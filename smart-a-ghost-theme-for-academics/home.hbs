@@ -45,6 +45,9 @@ into the {body} of the default.hbs template --}}
 
 {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
 {{#if featured}}
+<div class="hero__header-container">
+    <h2 class="hero__header--serif--underline">Featured</h2>
+</div>
 <div class="hero__bottom">
     <div class="hero__container">
         {{#foreach featured}}

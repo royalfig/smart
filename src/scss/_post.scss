@@ -60,7 +60,7 @@
   }
 
   &__header {
-    margin: 1em 0 3em;
+    margin: 1rem 0 3rem;
   }
 
   &__title--serif {
@@ -70,7 +70,7 @@
   }
 
   &__author {
-    font-size: 1.1em;
+    font-size: 1.1rem;
     font-weight: 700;
     @include color-map(color, primary);
   }
@@ -194,7 +194,7 @@
 
   &__author-img-container {
     align-items: center;
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 
   &__author-img-link {
@@ -241,6 +241,17 @@
       width: 1rem;
       height: 1rem;
       @include color-map(fill, shade200);
+      @include transition(all);
+    }
+    .website svg {
+      fill: none;
+      @include color-map(stroke, shade200);
+      stroke-width: 2px;
+
+      &:hover,
+      &:focus {
+        @include color-map(stroke, primary);
+      }
     }
   }
 

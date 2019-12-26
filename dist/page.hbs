@@ -16,23 +16,19 @@ into the {body} of the default.hbs template --}}
 {{!-- Post Header  --}}
 
 {{!-- Main  --}}
-<main id="main" class="main">
+<main class="main" id="main">
     <div class="outer-container">
         <div class="inner-container">
             <article class="{{post_class}}">
 
-                <header class="post-header">
-                    <h1 class="post-title serif underline">{{title}}</h1>
+                <header class="post__header">
+                    <h1 class="post__title--serif">{{title}}</h1>
                 </header>
 
-                <div class="post-content">
+                <div class="post__content">
                     {{content}}
                 </div>
             </article>
-
-            {{#if @labs.subscribers}}
-            {{> "subscribe_inner"}}
-            {{/if}}
         </div>
     </div>
 </main>

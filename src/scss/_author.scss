@@ -74,7 +74,6 @@
   &__meta {
     @include flex(row, flex-start, center);
     justify-content: flex-start;
-    @include transition(all);
 
     a {
       margin-right: 0.5rem;
@@ -89,6 +88,17 @@
       height: 1rem;
       fill: currentColor;
       stroke: none;
+      @include transition(all);
+    }
+
+    .website svg {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2px;
+
+      &:hover {
+        @include color-map(stroke, primary);
+      }
     }
   }
 

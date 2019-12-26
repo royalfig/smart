@@ -68,9 +68,23 @@
     background-color: #ffffff;
   }
 
+  &__header-container {
+    @include flex(row, center, center);
+    width: 100%;
+    max-width: $tablet;
+    padding: 1rem 1rem 0;
+    margin: 0 auto;
+  }
+
+  &__header--serif--underline {
+    @extend .serif;
+    @extend .underline;
+    text-align: center;
+  }
+
   &__bottom {
     @extend .outer-container;
-    padding: 0;
+    padding: 0 0 1rem;
     @include flex(column, center, flex-start);
     border-bottom-color: color("shade800");
     border-bottom-color: var(--shade800);
@@ -82,7 +96,7 @@
     @include flex(column, center, stretch);
     width: 100%;
     padding: 0 1rem;
-    margin: 1rem 0;
+    margin: 0 0 1rem;
 
     @include respond-above($laptop) {
       @include flex(row, center, stretch);
@@ -118,9 +132,10 @@
     flex-shrink: 0;
     width: $base;
     height: $base;
+    @include transition(all);
 
     &:hover {
-      filter: saturate(125%);
+      filter: saturate(125%) contrast(125%);
     }
 
     @include respond-above($laptop) {

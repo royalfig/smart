@@ -19,7 +19,7 @@
     @include transition(all);
 
     &:hover {
-      filter: saturate(125%);
+      filter: saturate(125%) contrast(125%);
     }
   }
 
