@@ -1,6 +1,6 @@
 {
-    "name": "smart-a-ghost-theme-for-academics",
-    "description": "A Smart Theme for Smart People",
+    "name": "smart",
+    "description": "Smart: A Ghost Theme for Scholars and Scientists",
 
     "version": "1.0.0",
     "engines": {
@@ -29,7 +29,7 @@
         "Profile"
     ],
     "config": {
-        "posts_per_page": 5,
+        "posts_per_page": 10,
         "image_sizes": {
             "xxs": {
                 "width": 30

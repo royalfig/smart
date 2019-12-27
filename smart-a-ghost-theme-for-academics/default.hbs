@@ -54,6 +54,7 @@
         }
     </style>
 
+    {{!-- Optimize font loading for repeat views --}}
     <script>
         (function () {
             if (sessionStorage.fontsLoadedFoutWithClass) {
@@ -73,11 +74,13 @@
             }
         })();
     </script>
+
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
 
 <body class="{{body_class}}">
+
     {{!-- SVG Sprite  --}}
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol viewBox="0 0 24 24" id="close">
@@ -172,6 +175,7 @@
     {{navigation}}
 
     <div class="content-wrap">
+
         {{!-- All the main content is inserted here --}}
         {{{body}}}
 
@@ -255,30 +259,6 @@
         </footer>
         {{!-- Footer --}}
 
-        {{!-- Subscribe Modal --}}
-        {{#if @labs.subscribers}}
-        <aside class="modal subscribe-modal outer-container" aria-expanded="false" aria-hidden="true">
-            <div class="inner-container flex-col">
-                <button class="modal-close" title="Close" aria-label="close">
-                    <svg>
-                        <use href="#close"></use>
-                    </svg>
-                </button>
-                <div class="modal-inner">
-                    <svg class="modal-icon" aria-hidden="true">
-                        <use href="#clipboard"></use>
-                    </svg>
-                    <h3 class="serif">Subscribe</h3>
-                    <p class="modal-tagline">Don't miss what happens next</p>
-                    {{!-- subscribe_form partial --}}
-                    {{subscribe_form input_class="modal-input"}}
-                    {{!-- subscribe_form partial --}}
-                </div>
-            </div>
-        </aside>
-        {{/if}}
-        {{!-- Subscribe Modal --}}
-
     </div>
     {{!-- end content-wrap --}}
 
@@ -304,32 +284,13 @@
     </aside>
     {{!-- Search Modal --}}
 
-
     <script src=" https://unpkg.com/@tryghost/content-api@1.2.10/umd/content-api.min.js"> </script> <script
                         src="{{asset 'js/main.js'}}">
                         </script>
 
-                        <script>
-                            (function (window, document) {
-                                var resizeImagesInGalleries = function resizeImagesInGalleries() {
-                                    var images = document.querySelectorAll('.kg-gallery-image img');
-                                    images.forEach(function (image) {
-                                        var container = image.closest('.kg-gallery-image');
-                                        var width = image.attributes.width.value;
-                                        var height = image.attributes.height.value;
-                                        var ratio = width / height;
-                                        container.style.flex = ratio + ' 1 0%';
-                                    });
-                                };
-                                document.addEventListener('DOMContentLoaded', resizeImagesInGalleries);
-                            })(window, document);
-                        </script>
+                        {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
+                        {{{block "scripts"}}}
 
-                        <script>fluidvids.init({
-                                selector: ['iframe', 'object'],
-                                players: ['www.youtube.com', 'player.vimeo.com']
-                            });
-                        </script>
 
                         {{!-- Ghost footer required, right before the closing body tag --}}
                         {{ghost_foot}}

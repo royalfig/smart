@@ -75,9 +75,9 @@
 }
 
 .kg-bookmark-description {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   overflow: hidden;
-  font-size: 0.9375em;
+  font-size: 0.9375rem;
   @include color-map(color, text);
 
   &:hover,
@@ -98,19 +98,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1em;
-
-  // background: linear-gradient(
-  //   45deg,
-  //   scale-color($dark, $lightness: 15%),
-  //   scale-color($dark, $lightness: 25%)
-  // );
-
-  // background: linear-gradient(
-  //   45deg,
-  //   scale-color($dark, $lightness: 15%),
-  //   scale-color($dark, $lightness: 25%)
-  // );
+  padding: 1rem;
 }
 
 .kg-bookmark-thumbnail img {
@@ -146,7 +134,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 1.5em auto;
+  margin: 1.5rem auto;
 }
 
 .kg-gallery-row {
@@ -163,9 +151,26 @@
 }
 
 .kg-gallery-row:not(:first-of-type) {
-  margin: 0.75em 0 0;
+  margin: 0.75rem 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
-  margin: 0 0 0 0.75em;
+  margin: 0 0 0 0.75rem;
+}
+
+// For sizing embeds
+.fluid-width-video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.fluid-width-video-wrapper iframe,
+.fluid-width-video-wrapper object,
+.fluid-width-video-wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
