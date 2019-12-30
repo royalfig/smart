@@ -13,7 +13,8 @@
   }
 
   textarea {
-    height: 5rem;
+    flex-basis: auto;
+    height: 8rem;
     padding: 0.15rem;
     margin: 0.5rem 0;
     font-family: $sans;

@@ -141,22 +141,7 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 //-------------------------------------------
 // Utility Classes
 //-------------------------------------------
-.flex-row {
-  display: flex;
-  flex-direction: row;
-}
-
-.flex-col {
-  display: flex;
-  flex-direction: column;
-}
-
 .grid-container {
-  display: grid;
-  grid-gap: 2rem;
-}
-
-%grid-container {
   display: grid;
   grid-gap: 2rem;
 }
@@ -168,20 +153,6 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   border-bottom-style: solid;
   border-bottom-width: 0.5rem;
   @include color-map(border-bottom-color, shade800);
-  @include respond-above(tablet) {
-    padding: 1rem 4rem;
-  }
-}
-
-%outer-container {
-  position: relative;
-  width: 100%;
-  padding: 1em;
-  @include color-map(background-color, shade700);
-  border-bottom-style: solid;
-  border-bottom-width: 0.5rem;
-  @include color-map(border-bottom-color, shade800);
-
   @include respond-above(tablet) {
     padding: 1rem 4rem;
   }
@@ -200,7 +171,6 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 .index {
   margin-top: $navbar;
 }
-// Links
 
 // Underline from left effect
 .hvr-underline-from-left {

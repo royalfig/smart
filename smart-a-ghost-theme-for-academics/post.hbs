@@ -61,7 +61,7 @@ into the {body} of the default.hbs template --}}
                 {{#primary_author}}
                 <div class="post-footer__author">
                     <div class="post-footer__author-img-container">
-                        <a href="{{url}}" class="post-footer__author-img-link" aria-labelledby="footer-site-title">
+                        <a href="{{url}}" class="post-footer__author-img-link" aria-label="{{name}}">
                             {{#if profile_image}}
                             <img class="post-footer__author-img" src="{{img_url profile_image size="s"}}"
                                 alt="{{name}}" />

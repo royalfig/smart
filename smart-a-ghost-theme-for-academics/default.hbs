@@ -9,9 +9,9 @@
 
     {{!-- CSS  --}}
     <link rel="stylesheet" href="{{asset 'css/style.css'}}">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap&subset=latin-ext" rel="stylesheet">
     <style>
         @font-face {
             font-family: 'Lato';
@@ -284,9 +284,8 @@
     </aside>
     {{!-- Search Modal --}}
 
-    <script src=" https://unpkg.com/@tryghost/content-api@1.2.10/umd/content-api.min.js"> </script> <script
-                        src="{{asset 'js/main.js'}}">
-                        </script>
+    <script src=" {{asset 'js/main.js'}}">
+    </script>
 
                         {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
                         {{{block "scripts"}}}

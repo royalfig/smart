@@ -22,15 +22,18 @@ into the {body} of the default.hbs template --}}
     <div class="outer-container">
         <div class="inner-container">
             <header class="post__header">
-                <h1 class="post__title--serif underline">{{statusCode}}</h1>
-                <h2>{{message}}</h2>
-                <a href="{{@site.url}}">Let&apos;s go home &rightarrow;</a>
+                <h1 class="error__heading">{{statusCode}}</h1>
+                <p class="error__text">{{message}}</p>
             </header>
+            <hr class="error__divider">
             {{#get "posts" limit="3" include="authors,tags"}}
-            <section class="grid-container-home">
-                {{#foreach posts limit="5"}}
-                {{> "card"}}
-                {{/foreach}}
+            <section>
+                <h2>Recent Posts</h2>
+                <div class="grid-container-home">
+                    {{#foreach posts}}
+                    {{> "card"}}
+                    {{/foreach}}
+                </div>
             </section>
             {{/get}}
         </div>
