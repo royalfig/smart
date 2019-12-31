@@ -94,12 +94,10 @@
 
   &__input-container {
     @include flex(row, flex-start, flex-end);
-    flex-wrap: wrap;
   }
 
   &__input {
     flex: 1;
-    width: 80%;
     height: 2rem;
     font-size: 1rem;
     @include color-map(color, text);

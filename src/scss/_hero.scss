@@ -53,8 +53,15 @@
     margin: 0;
     @extend .serif;
     font-size: 1.4em;
-    color: #ffffff;
-    background-color: #000000;
+    @include color-map(color, text);
+    @include color-map(background-color, shade800);
+  }
+
+  &__divider {
+    height: 5px;
+    background: linear-gradient(90deg, color(primary), color(accent));
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    opacity: 0.75;
   }
 
   &__site-description {
@@ -63,8 +70,8 @@
     font-family: $sans;
     font-size: 0.5em;
     font-weight: 400;
-    color: #000000;
-    background-color: #ffffff;
+    @include color-map(color, text);
+    @include color-map(background-color, shade700);
   }
 
   &__header-container {

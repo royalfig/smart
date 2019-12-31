@@ -100,8 +100,8 @@ h6,
 }
 
 ::selection {
-  @include color-map(background-color, accent);
   color: #000000;
+  background-color: #ccff00;
 }
 
 :target {
