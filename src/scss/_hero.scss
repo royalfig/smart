@@ -95,8 +95,13 @@
 
   &__container {
     @include flex(column, flex-start, center);
+    width: 100%;
     padding: 1rem;
-    margin: 0 auto;
+
+    @include respond-above($laptop) {
+      width: auto;
+      margin: 0 auto;
+    }
   }
 
   &__card-container {
