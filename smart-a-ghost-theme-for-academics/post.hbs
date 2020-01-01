@@ -126,27 +126,15 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/next_post}}
 
-                {{#prev_post}}
-                {{^has tag=../primary_tag.name}}
-                <div class="related-posts related-posts-3">
+                {{#get "posts" include="tags" limit="2" filter="primary_tag:-{{primary_tag.slug}}+id:-{{id}}"}}
+                {{#foreach posts}}
+                <div class="related-posts related-posts-3-{{@number}}">
                     {{> "card"}}
                 </div>
-                {{/has}}
-                {{/prev_post}}
-
-                {{#next_post}}
-                {{^has tag=../primary_tag.name}}
-                <div class="related-posts related-posts-4">
-                    {{> "card"}}
-                </div>
-                {{/has}}
-                {{/next_post}}
+                {{/foreach}}
+                {{/get}}
 
             </footer>
-
-            {{#if @labs.subscribers}}
-            {{> "subscribe_inner"}}
-            {{/if}}
         </div>
     </div>
 </main>

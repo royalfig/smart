@@ -89,7 +89,8 @@
   }
 
   &__inner-container {
-    padding: 2rem 1rem;
+    width: 100%;
+    padding: 2rem 0;
   }
 
   &__input-container {
@@ -98,6 +99,7 @@
 
   &__input {
     flex: 1;
+    width: 80%;
     height: 2rem;
     font-size: 1rem;
     @include color-map(color, text);

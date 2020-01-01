@@ -35,16 +35,15 @@
 .kg-bookmark-card {
   position: relative;
   width: 100%;
-  @include color-map(border-color, shade200);
-  border-color: var(--shade500);
-  border-style: solid;
-  border-width: 1px;
 }
 
 .kg-bookmark-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  @include color-map(border-color, shade200);
+  border-color: var(--shade500);
+  border-style: solid;
+  border-width: 1px;
   @include transition(all);
 }
 
@@ -88,8 +87,8 @@
 }
 
 .kg-bookmark-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: auto;
   margin-right: 0.5rem;
 }
 
@@ -110,11 +109,14 @@
 }
 
 .kg-bookmark-author {
-  font-family: $sans;
+  margin-right: 0.5rem;
+  font-size: 0.9375rem;
+  & ~ .kg-bookmark-publisher {
+    margin-left: auto;
+  }
 }
 
 .kg-bookmark-publisher {
-  font-family: $sans;
   font-size: 0.9375rem;
 }
 

@@ -8,6 +8,7 @@
 
   &__input {
     @extend .modal-search__input;
+    width: 100%;
     padding-bottom: 0.15rem;
     margin: 0;
   }
