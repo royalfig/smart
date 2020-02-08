@@ -6,8 +6,8 @@
     @extend .outer-container;
     min-height: 250px;
     font-size: 0.9375rem;
-    @include color-map(background-color, shade800);
-    @include color-map(color, shade200);
+    @include color-map(background-color, shade700);
+    @include color-map(color, shade100);
     border-bottom: none;
   }
 

@@ -89,8 +89,9 @@ $laptop: 1024px;
 $desktop: 1280px;
 
 // Sizes
-$base: 11rem;
+$base: 9rem;
 $navbar: 3rem;
+$radius: 8px;
 
 // Box Shadow
 $box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
@@ -143,7 +144,7 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 //-------------------------------------------
 .grid-container {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1.5rem;
 }
 
 .outer-container {
