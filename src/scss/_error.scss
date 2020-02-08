@@ -1,4 +1,19 @@
 .error {
   @extend .main;
-  margin-top: $navbar + 1rem;
+
+  &__heading {
+    @extend .post__title--serif;
+    font-size: 4rem;
+    text-align: center;
+  }
+
+  &__text {
+    font-size: 2rem;
+    text-align: center;
+    @include color-map(color, shade100);
+  }
+
+  &__divider {
+    @include color-map(color, shade400);
+  }
 }

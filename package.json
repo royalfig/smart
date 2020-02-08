@@ -48,6 +48,7 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "@tryghost/content-api": "^1.3.5",
     "hamburgers": "^1.1.3",
     "hover.css": "^2.3.2",
     "lazysizes": "^5.2.0",

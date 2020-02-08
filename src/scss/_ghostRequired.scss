@@ -1,6 +1,6 @@
 // Required KG Styles
 .kg-card {
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 
 .kg-embed-card {
@@ -35,16 +35,15 @@
 .kg-bookmark-card {
   position: relative;
   width: 100%;
-  @include color-map(border-color, shade200);
-  border-color: var(--shade500);
-  border-style: solid;
-  border-width: 1px;
 }
 
 .kg-bookmark-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  @include color-map(border-color, shade200);
+  border-color: var(--shade500);
+  border-style: solid;
+  border-width: 1px;
   @include transition(all);
 }
 
@@ -75,9 +74,9 @@
 }
 
 .kg-bookmark-description {
-  margin-bottom: 1em;
+  margin-bottom: 1rem;
   overflow: hidden;
-  font-size: 0.9375em;
+  font-size: 0.9375rem;
   @include color-map(color, text);
 
   &:hover,
@@ -88,8 +87,8 @@
 }
 
 .kg-bookmark-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: auto;
   margin-right: 0.5rem;
 }
 
@@ -98,19 +97,7 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1em;
-
-  // background: linear-gradient(
-  //   45deg,
-  //   scale-color($dark, $lightness: 15%),
-  //   scale-color($dark, $lightness: 25%)
-  // );
-
-  // background: linear-gradient(
-  //   45deg,
-  //   scale-color($dark, $lightness: 15%),
-  //   scale-color($dark, $lightness: 25%)
-  // );
+  padding: 1rem;
 }
 
 .kg-bookmark-thumbnail img {
@@ -122,11 +109,14 @@
 }
 
 .kg-bookmark-author {
-  font-family: $sans;
+  margin-right: 0.5rem;
+  font-size: 0.9375rem;
+  & ~ .kg-bookmark-publisher {
+    margin-left: auto;
+  }
 }
 
 .kg-bookmark-publisher {
-  font-family: $sans;
   font-size: 0.9375rem;
 }
 
@@ -146,7 +136,6 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 1.5em auto;
 }
 
 .kg-gallery-row {
@@ -163,9 +152,26 @@
 }
 
 .kg-gallery-row:not(:first-of-type) {
-  margin: 0.75em 0 0;
+  margin: 0.75rem 0 0;
 }
 
 .kg-gallery-image:not(:first-of-type) {
-  margin: 0 0 0 0.75em;
+  margin: 0 0 0 0.75rem;
+}
+
+// For sizing embeds
+.fluid-width-video-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  overflow: hidden;
+}
+
+.fluid-width-video-wrapper iframe,
+.fluid-width-video-wrapper object,
+.fluid-width-video-wrapper embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }

@@ -22,7 +22,7 @@ into the {body} of the default.hbs template --}}
             <article class="{{post_class}}">
 
                 <header class="post__header">
-                    <h1 class="post__title--serif">{{title}}</h1>
+                    <h1 class="post__title--serif underline">{{title}}</h1>
                 </header>
 
                 <div class="post__content">
@@ -36,3 +36,25 @@ into the {body} of the default.hbs template --}}
 
 {{> "share"}}
 {{/post}}
+
+{{#contentFor "scripts"}}
+<script>
+    (function (window, document) {
+        var resizeImagesInGalleries = function resizeImagesInGalleries() {
+            var images = document.querySelectorAll('.kg-gallery-image img');
+            images.forEach(function (image) {
+                var container = image.closest('.kg-gallery-image');
+                var width = image.attributes.width.value;
+                var height = image.attributes.height.value;
+                var ratio = width / height;
+                container.style.flex = ratio + ' 1 0%';
+            });
+        };
+        document.addEventListener('DOMContentLoaded', resizeImagesInGalleries);
+    })(window, document);
+    fluidvids.init({
+        selector: ['iframe', 'object'],
+        players: ['www.youtube.com', 'player.vimeo.com']
+    });
+</script>
+{{/contentFor}}

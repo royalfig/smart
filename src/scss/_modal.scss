@@ -3,20 +3,21 @@
 //-------------------------------------------
 .content-wrap {
   &:before {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    height: 100%;
+    content: "";
+    background: #000;
+    opacity: 0;
     transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
 
   .expanded-modal-search &,
   .expanded-menu & {
     &:before {
-      position: fixed;
-      z-index: 1000;
-      width: 100%;
-      height: 100%;
-      content: "";
-      background: #000;
-      opacity: 0.5;
-      transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      opacity: 0.75;
+      transition: opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
     }
   }
 }
@@ -89,12 +90,12 @@
   }
 
   &__inner-container {
-    padding: 2rem 1rem;
+    width: 100%;
+    padding: 2rem 0;
   }
 
   &__input-container {
     @include flex(row, flex-start, flex-end);
-    flex-wrap: wrap;
   }
 
   &__input {

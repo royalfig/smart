@@ -1,10 +1,10 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 60vh;
+  height: 70vh;
   margin-top: $navbar;
   @include color-map(background-color, shade700);
-  background-position: top;
+  background-position: center;
   background-size: cover;
 
   &__overlay {
@@ -13,9 +13,9 @@
     width: 100%;
     height: 100%;
     background: radial-gradient(
-      rgba(185, 185, 185, 0.1) 25%,
-      rgba(56, 60, 61, 0.5) 85%,
-      hsla(0, 0%, 8%, 0.25)
+      rgba(105, 105, 105, 0.15) 25%,
+      rgba(55, 55, 55, 0.5) 75%,
+      rgba(20, 20, 20, 0.25)
     );
   }
 
@@ -34,37 +34,41 @@
     position: relative;
     @include flex(column, center, stretch);
     z-index: 1;
-    margin: 2rem;
-    font-size: 2rem;
-    box-shadow: $box-shadow;
+    max-width: $laptop;
+    margin: 1rem;
+    font-size: 2.5rem;
+    text-align: center;
 
     @include respond-between($tablet, $laptop) {
-      font-size: 2.5rem;
+      font-size: 3.5rem;
     }
 
     @include respond-above($laptop) {
-      font-size: 3rem;
+      font-size: 4rem;
     }
   }
 
   &__site-title {
     z-index: 3;
-    padding: 0.5rem 1rem;
+    padding: 1rem 0;
     margin: 0;
     @extend .serif;
     font-size: 1.4em;
+    line-height: 1;
     color: #ffffff;
-    background-color: #000000;
   }
 
   &__site-description {
-    padding: 1rem;
+    padding: 0 0 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 0.5em;
+    font-size: 0.35em;
     font-weight: 400;
-    color: #000000;
-    background-color: #ffffff;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 4px;
   }
 
   &__header-container {
@@ -95,8 +99,13 @@
 
   &__container {
     @include flex(column, flex-start, center);
+    width: 100%;
     padding: 1rem;
-    margin: 0 auto;
+
+    @include respond-above($laptop) {
+      width: auto;
+      margin: 0 auto;
+    }
   }
 
   &__card-container {

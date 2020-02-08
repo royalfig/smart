@@ -4,7 +4,7 @@
 
 // Mobile phones
 .grid-container-home {
-  @extend %grid-container;
+  @extend .grid-container;
   align-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   max-width: 100%;
