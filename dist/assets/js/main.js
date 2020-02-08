@@ -77,23 +77,23 @@ if (hero !== null) {
 //-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------
-const smSearchBtn = document.querySelector(".navbar-mobile__search-btn");
-const lgSearchBtn = document.querySelector(".navbar__right-item--search");
+const mobileSearchBtn = document.querySelector(".navbar-mobile__search-btn");
+const navSearchBtn = document.querySelector(".navbar__right-item--search");
 const hamburgerBtn = document.querySelector(".navbar-mobile__hamburger-btn");
 const mobileNavMenu = document.querySelector(".mobile-nav-menu");
-const searchModal = document.querySelector(".modal-search");
+const modalSearch = document.querySelector(".modal-search");
 const modalSearchCloseBtn = document.querySelector(".modal-search__close-btn");
-const searchModalInner = document.querySelector(
+const modalSearchInnerDiv = document.querySelector(
   ".modal-search__inner-container"
 );
 const mobileNavMenuInner = document.querySelector(".mobile-nav-menu__inner");
 
 if (typeof SEARCH_API !== "undefined") {
-  smSearchBtn.style.display = "block";
-  lgSearchBtn.style.display = "block";
+  mobileSearchBtn.style.display = "block";
+  navSearchBtn.style.display = "block";
 }
 
-const btns = [smSearchBtn, lgSearchBtn, hamburgerBtn, modalSearchCloseBtn];
+const btns = [mobileSearchBtn, navSearchBtn, hamburgerBtn, modalSearchCloseBtn];
 
 const closeMenu = (input, target) => {
   document.body.classList.remove(`expanded-${target}`);
@@ -106,19 +106,38 @@ const openMenu = (input, target) => {
     closeMenu(mobileNavMenu, "menu");
   }
   if (document.body.classList.contains("expanded-modal-search")) {
-    closeMenu(searchModal, "modal-search");
+    closeMenu(modalSearch, "modal-search");
   }
+
+  if (target === "modal-search") {
+    const textInput = document.querySelector(".modal-search__input");
+    textInput.focus();
+  }
+
   document.body.classList.add(`expanded-${target}`);
   input.setAttribute("aria-expanded", "true");
   input.setAttribute("aria-hidden", "false");
-  const closeByEsc = key => {
-    if (key.key === "Escape") {
-      closeMenu(input, target);
-      document.body.removeEventListener("keyup", closeByEsc);
+
+  const closeAll = input => {
+    const wrapper = document.querySelector(".content-wrap");
+    if (input.target === wrapper) {
+      closeMenu(mobileNavMenu, "menu");
+      closeMenu(modalSearch, "modal-search");
+      document.body.removeEventListener("click", closeAll);
     }
   };
-  document.body.addEventListener("keyup", closeByEsc);
+
+  document.body.addEventListener("click", closeAll);
 };
+
+const closeByEsc = key => {
+  if (key.key === "Escape") {
+    closeMenu(mobileNavMenu, "menu");
+    closeMenu(modalSearch, "modal-search");
+  }
+};
+
+document.body.addEventListener("keyup", closeByEsc);
 
 btns.forEach(item => {
   item.addEventListener("click", e => {
