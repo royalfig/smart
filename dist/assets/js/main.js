@@ -153,6 +153,16 @@ btns.forEach(item => {
 // Post Scripts
 //-------------------------------------------
 
+// Medium Zoom
+const postImages = document.querySelectorAll(".kg-image");
+const galleryImages = document.querySelectorAll(".kg-gallery-image img");
+
+const totalImages = [...postImages, ...galleryImages];
+
+mediumZoom(totalImages, {
+  background: "rgba(0,0,0,0.75)"
+});
+
 //-------------------------------------------
 // Reading Progress Bar and Share Bar
 //-------------------------------------------

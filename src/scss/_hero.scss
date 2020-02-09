@@ -129,12 +129,21 @@
     border-radius: $radius;
     box-shadow: $box-shadow;
 
+    &-link {
+      display: flex;
+      width: 100%;
+
+      @include respond-above($laptop) {
+        flex-direction: column;
+      }
+    }
+
     &:hover,
     &:focus {
       box-shadow: 0 0 0 2px color(primary);
       box-shadow: 0 0 0 2px var(--primary);
 
-      .card__title {
+      .hero__card-title--serif {
         @include color-map(color, primary);
       }
     }
@@ -159,11 +168,6 @@
     width: $base;
     height: $base;
     @include transition(all);
-
-    &:hover {
-      filter: saturate(125%) contrast(125%);
-    }
-
     @include respond-above($laptop) {
       width: 100%;
     }
@@ -181,6 +185,7 @@
     @include respond-above($laptop) {
       border-top-left-radius: $radius;
       border-top-right-radius: $radius;
+      border-bottom-left-radius: 0;
     }
   }
 
@@ -194,10 +199,6 @@
     width: 100%;
     height: $base;
     padding: 0.5rem 0.75rem;
-  }
-
-  &__card-body-wrapper {
-    margin-bottom: 3rem;
   }
 
   &__card-date {

@@ -225,7 +225,7 @@
     height: $navbar;
     padding: 0.5rem 1rem;
     font-size: 0.975rem;
-    @include color-map(background-color, shade700);
+    @include color-map(background-color, shade600);
     box-shadow: $box-shadow;
     @include transition(all);
 

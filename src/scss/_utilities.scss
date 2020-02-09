@@ -81,7 +81,8 @@ $colors: (
 $sans: "Lato", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen,
   ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-$serif: "DM Serif Text", georgia, times, serif;
+// $serif: "DM Serif Text", georgia, times, serif;
+$serif: "DM Serif Display", georgia, times, serif;
 
 // Breakpoints
 $tablet: 640px;
@@ -91,7 +92,7 @@ $desktop: 1280px;
 // Sizes
 $base: 9rem;
 $navbar: 3rem;
-$radius: 8px;
+$radius: 4px;
 
 // Box Shadow
 $box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
@@ -153,8 +154,13 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   padding: 1em;
   border-bottom-style: solid;
   border-bottom-width: 0.5rem;
-  @include color-map(border-bottom-color, shade800);
-  @include respond-above(tablet) {
+  @include color-map(border-bottom-color, shade700);
+
+  @include respond-between($tablet, $laptop) {
+    padding: 1rem 3rem;
+  }
+
+  @include respond-above($laptop) {
     padding: 1rem 4rem;
   }
 }
