@@ -19,7 +19,7 @@
   width: 100%;
   height: $navbar;
   padding: 0.5rem 1rem;
-  @include color-map(background-color, shade700);
+  @include color-map(background-color, shade600);
   font-size: 0.975rem;
   box-shadow: $box-shadow;
   @include transition(all);

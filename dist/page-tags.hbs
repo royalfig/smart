@@ -38,14 +38,15 @@ into the {body} of the default.hbs template --}}
                         {{else}}
                         <div class="card__no-img card__no-img-{{@number}}"></div>
                         {{/if}}
-                    </a>
-                    <div class="card__body">
-                        <div class="card__date-tag">
-                            <p class="card__date">{{plural count.posts empty='' singular='% post' plural='% posts'}}</p>
+                        <div class="card__body">
+                            <div class="card__date-tag">
+                                <p class="card__date">{{plural count.posts empty='' singular='% post' plural='% posts'}}
+                                </p>
+                            </div>
+                            <h3 class="card__title">{{name}}</h3>
+                            <p class="card__excerpt">{{description}}</p>
                         </div>
-                        <h3 class="card__title">{{name}}</h3>
-                        <p class="card__excerpt">{{description}}</p>
-                    </div>
+                    </a>
                 </article>
                 {{!-- Card  --}}
 

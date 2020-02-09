@@ -17,8 +17,9 @@
       margin: 2rem 0;
       font-size: 1.5rem;
       font-style: italic;
-      @include color-map(color, shade200);
-      @include color-map(background-color, shade600);
+      @include color-map(color, shade100);
+      @include color-map(background-color, shade500);
+      border-radius: $radius;
 
       &:before {
         position: absolute;
@@ -29,6 +30,8 @@
         content: "";
         background: linear-gradient(color(primary), color(accent));
         background: linear-gradient(var(--primary), var(--accent));
+        border-top-left-radius: $radius;
+        border-bottom-left-radius: $radius;
       }
     }
 
