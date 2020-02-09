@@ -9,7 +9,7 @@
   @include color-map(background-color, shade500);
   border-radius: $radius;
   @include transition(all);
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: $box-shadow;
 
   &:hover,
   &:focus {

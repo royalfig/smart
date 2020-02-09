@@ -125,9 +125,19 @@
     z-index: 1;
     width: 100%;
     margin-bottom: 1rem;
-    background-color: color(shade600);
-    background-color: var(--shade600);
+    @include color-map(background-color, shade500);
+    border-radius: $radius;
     box-shadow: $box-shadow;
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 2px color(primary);
+      box-shadow: 0 0 0 2px var(--primary);
+
+      .card__title {
+        @include color-map(color, primary);
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -136,7 +146,7 @@
     @include respond-above($laptop) {
       @include flex(column, flex-start, flex-start);
       max-width: 20rem;
-      margin: 0 1rem 1rem;
+      margin: 0 0.5rem 1rem;
 
       &:last-child {
         margin-bottom: 1rem;
@@ -165,6 +175,13 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+
+    @include respond-above($laptop) {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+    }
   }
 
   &__card-no-img {
