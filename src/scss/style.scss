@@ -22,7 +22,7 @@ html {
 
   @include respond-between($tablet, $desktop) {
     font-size: 19px;
-    font-size: calc(calc(16px + (21 - 16) * (100vw - 640px) / (1280 - 640)));
+    font-size: calc(16px + (21 - 16) * (100vw - 640px) / (1280 - 640));
   }
 
   @include respond-above($desktop) {
