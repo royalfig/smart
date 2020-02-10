@@ -21,7 +21,9 @@ $li: #0077b5;
 :root[color-mode="bright"] {
   --text: #030303;
   --primary: #02769d;
+  --primary: #0d47a1;
   --accent: #9d023b;
+  --accent: #ff5722;
   --shade100: #484848;
   --shade200: #6c6c6c;
   --shade300: #8f8f90;
@@ -36,7 +38,9 @@ $li: #0077b5;
 :root[color-mode="dark"] {
   --text: #f5f5f5;
   --primary: #02b0eb;
+  --primary: #81d4fa;
   --accent: #ebc002;
+  --accent: #ffab91;
   --shade100: #e8e9e9;
   --shade200: #c7c7c8;
   --shade300: #a5a5a7;

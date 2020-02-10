@@ -34,7 +34,7 @@
       .card {
         &__img,
         &__no-img {
-          height: 2 * $base;
+          height: 1.75 * $base;
           // max-height: 60vh;
         }
       }
@@ -63,7 +63,7 @@
       .card {
         &__img,
         &__no-img {
-          height: 2 * $base;
+          height: 1.75 * $base;
           // max-height: 60vh;
         }
       }
@@ -87,7 +87,7 @@
     .card {
       &__img,
       &__no-img {
-        height: 1.5 * $base;
+        height: 1.25 * $base;
       }
     }
   }
@@ -115,7 +115,7 @@
 
       .card-img,
       .no-img {
-        height: 2 * $base;
+        height: 1.75 * $base;
         // max-height: 60vh;
       }
     }
@@ -142,7 +142,7 @@
       .card {
         &__img,
         &__no-img {
-          height: 2 * $base;
+          height: 1.75 * $base;
           // max-height: 60vh;
         }
       }
@@ -168,7 +168,7 @@
   .card {
     &__img,
     &__no-img {
-      height: 1.5 * $base;
+      height: 1.25 * $base;
     }
   }
 }
@@ -199,7 +199,7 @@
       .card {
         &__img,
         &__no-img {
-          height: 2 * $base;
+          height: 1.75 * $base;
           // max-height: 60vh;
         }
       }
@@ -219,7 +219,7 @@
 
     .card-img,
     .no-img {
-      height: 1.75 * $base;
+      height: 1.5 * $base;
     }
   }
 
@@ -235,7 +235,7 @@
       .card {
         &__img,
         &__no-img {
-          height: 1.75 * $base;
+          height: 1.5 * $base;
           // max-height: 60vh;
         }
       }
@@ -247,7 +247,7 @@
       .card {
         &__img,
         &__no-img {
-          height: 1.75 * $base;
+          height: 1.5 * $base;
           // max-height: 60vh;
         }
       }
@@ -269,7 +269,7 @@
   .card {
     &__img,
     &__no-img {
-      height: 1.75 * $base;
+      height: 1.5 * $base;
       // max-height: 50vh;
     }
   }

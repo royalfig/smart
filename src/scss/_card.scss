@@ -22,6 +22,8 @@
   }
 
   &__link {
+    display: flex;
+    flex-direction: column;
     height: 100%;
   }
 
@@ -63,7 +65,9 @@
   }
 
   &__body {
-    padding: 0.5rem 1rem;
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
+    padding: 0 1rem;
     margin: 1rem 0;
   }
 
@@ -74,7 +78,6 @@
   &__date,
   &__tag {
     display: flex;
-    min-width: 50%;
     padding: 1px;
     font-size: 0.75rem;
     font-weight: 400;
@@ -84,6 +87,7 @@
 
   &__tag {
     @include flex(row, flex-end, center);
+    margin-top: auto;
 
     svg {
       flex-shrink: 0;
@@ -103,7 +107,7 @@
 
   &__title {
     position: relative;
-    margin: 0.25rem 0;
+    margin: 0.25rem 0 1rem;
     font-size: 1.5rem;
     line-height: 1.1;
     @include color-map(color, text);

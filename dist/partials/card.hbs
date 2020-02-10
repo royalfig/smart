@@ -14,17 +14,17 @@
         <div class="card__body">
             <div class="card__date-tag">
                 <p class="card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMMM YYYY'}}</p>
-                {{#primary_tag}}
-                <div class="card__tag {{slug}}">
-                    <svg aria-hidden="true">
-                        <use href="#hash"></use>
-                    </svg>
-                    <p>{{name}}</p>
-                </div>
-                {{/primary_tag}}
             </div>
             <h3 class="card__title">{{title}}</h3>
-            <p class="card__excerpt">{{excerpt}}</p>
+            {{!-- <p class="card__excerpt">{{excerpt characters="75"}}</p> --}}
+            {{#primary_tag}}
+            <div class="card__tag {{slug}}">
+                <svg aria-hidden="true">
+                    <use href="#hash"></use>
+                </svg>
+                <p>{{name}}</p>
+            </div>
+            {{/primary_tag}}
         </div>
     </a>
 </article>
