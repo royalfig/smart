@@ -16,30 +16,36 @@ html {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5;
-  color: color(text);
-  color: var(--text);
-  background: color(shade600);
-  background: var(--shade600);
+  @include color-map(color, text);
+  @include color-map(background-color, shade600);
   scroll-behavior: smooth;
-}
 
-@media screen and (min-width: $tablet) and (max-width: $laptop) {
-  html {
-    font-size: 17px;
-  }
-}
-
-@media screen and (min-width: $laptop) and (max-width: $desktop) {
-  html {
-    font-size: 18px;
-  }
-}
-
-@media screen and (min-width: $desktop) {
-  html {
+  @include respond-between($tablet, $desktop) {
     font-size: 19px;
+    font-size: calc(calc(16px + (21 - 16) * (100vw - 640px) / (1280 - 640)));
+  }
+
+  @include respond-above($desktop) {
+    font-size: 21px;
   }
 }
+
+// @media screen and (min-width: $tablet) and (max-width: $laptop) {
+//   html {
+//     font-size: 17px;
+//   }
+// }
+// @media screen and (min-width: $laptop) and (max-width: $desktop) {
+//   html {
+//     font-size: 18px;
+//   }
+// }
+
+// @media screen and (min-width: $desktop) {
+//   html {
+//     font-size: 19px;
+//   }
+// }
 
 button {
   cursor: pointer;
