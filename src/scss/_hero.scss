@@ -36,7 +36,7 @@
     z-index: 1;
     max-width: $laptop;
     margin: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
 
     @include respond-between($tablet, $laptop) {
@@ -53,7 +53,7 @@
     padding: 1rem 0;
     margin: 0;
     @extend .serif;
-    font-size: 1.4em;
+    font-size: 1.25em;
     line-height: 1;
     color: #ffffff;
   }
@@ -62,7 +62,7 @@
     padding: 0 0 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 0.35em;
+    font-size: 0.3em;
     font-weight: 400;
     font-weight: 700;
     line-height: 1.2;
@@ -143,8 +143,10 @@
       box-shadow: 0 0 0 2px color(primary);
       box-shadow: 0 0 0 2px var(--primary);
 
-      .hero__card-title--serif {
-        @include color-map(color, primary);
+      .hero {
+        &__card-title--serif {
+          @include color-map(color, primary);
+        }
       }
     }
 

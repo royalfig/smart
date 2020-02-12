@@ -11,20 +11,24 @@
   @include transition(all);
   box-shadow: $box-shadow;
 
-  &:hover,
-  &:focus {
-    box-shadow: 0 0 0 2px color(primary);
-    box-shadow: 0 0 0 2px var(--primary);
-
-    .card__title {
-      @include color-map(color, primary);
-    }
-  }
-
   &__link {
     display: flex;
     flex-direction: column;
     height: 100%;
+    border-radius: $radius;
+    @include transition(all);
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 4px color(shade400);
+      box-shadow: 0 0 0 4px var(--shade400);
+
+      .card {
+        &__title {
+          @include color-map(color, primary);
+        }
+      }
+    }
   }
 
   &__img-container {
