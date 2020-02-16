@@ -1,0 +1,97 @@
+//-------------------------------------------
+// Global Styles
+//-------------------------------------------
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+  @include color-map(color, text);
+  @include color-map(background-color, surface1);
+  scroll-behavior: smooth;
+
+  @include respond-between($tablet, $desktop) {
+    font-size: 19px;
+    font-size: calc(16px + (21 - 16) * (100vw - 640px) / (1280 - 640));
+  }
+
+  @include respond-above($desktop) {
+    font-size: 21px;
+  }
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+%headings {
+  margin: 0.5rem 0;
+  font-family: $serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+h1,
+.h1 {
+  font-size: 2.488rem;
+  @extend %headings;
+}
+
+h2,
+.h2 {
+  font-size: 2.074rem;
+  @extend %headings;
+}
+
+h3,
+.h3 {
+  font-size: 1.728rem;
+  @extend %headings;
+}
+
+h4,
+.h4 {
+  font-size: 1.44rem;
+  @extend %headings;
+}
+
+h5,
+.h5 {
+  font-size: 1.2rem;
+  @extend %headings;
+}
+
+h6,
+.h6 {
+  font-size: 1rem;
+  @extend %headings;
+}
+
+:link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+:visited {
+  color: currentColor;
+}
+
+::selection {
+  color: #000000;
+  background-color: #ccff00;
+}
+
+:target {
+  padding-top: $navbar;
+  margin-top: -$navbar;
+}

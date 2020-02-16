@@ -40,8 +40,8 @@
 .kg-bookmark-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  @include color-map(background-color, shade500);
-  @include color-map(border-color, shade400);
+  @include color-map(background-color, surface2);
+  @include color-map(border-color, text2);
   border-style: solid;
   border-width: 1px;
   border-radius: $radius;

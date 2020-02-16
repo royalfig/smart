@@ -34,7 +34,7 @@
   overflow-y: auto;
   @include color-map(color, text);
   text-align: center;
-  @include color-map(background-color, shade600);
+  @include color-map(background-color, surface2);
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translate3d(100vw, 0, 0);
@@ -109,7 +109,7 @@
     border: none;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    @include color-map(border-bottom-color, shade100);
+    @include color-map(border-bottom-color, text1);
     @include color-map(caret-color, primary);
     border-radius: 0;
     @include transition(border-bottom-color);
@@ -126,9 +126,9 @@
     margin-left: 0.5rem;
     font-weight: 700;
     line-height: 1;
-    @include color-map(color, shade900);
+    @include color-map(color, text4);
     vertical-align: bottom;
-    @include color-map(background, shade100);
+    @include color-map(background, surface4);
     border: none;
     border-radius: $radius;
     box-shadow: $box-shadow;
@@ -136,8 +136,8 @@
 
     &:hover,
     &:focus {
-      background: linear-gradient(45deg, color(primary), color(accent));
-      background: linear-gradient(45deg, var(--primary), var(--accent));
+      background: linear-gradient(45deg, color(primary), color(secondary));
+      background: linear-gradient(45deg, var(--primary), var(--secondary));
       outline: none;
     }
 
@@ -161,7 +161,7 @@
 
   &__header {
     font-size: 1rem;
-    @include color-map(color, shade900);
+    @include color-map(color, surface);
     @include color-map(background-color, text);
   }
 
@@ -171,13 +171,13 @@
     text-align: left;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    @include color-map(border-bottom-color, shade200);
+    @include color-map(border-bottom-color, text1);
   }
 
   &__date {
     margin-top: 1rem;
     font-size: 0.9em;
-    @include color-map(color, shade200);
+    @include color-map(color, text1);
     background: none;
   }
 

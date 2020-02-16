@@ -2,8 +2,9 @@
   position: relative;
   width: 100%;
   height: 70vh;
+  max-height: 30rem;
   margin-top: $navbar;
-  @include color-map(background-color, shade700);
+  @include color-map(background-color, surface1);
   background-position: center;
   background-size: cover;
 
@@ -91,8 +92,7 @@
     @extend .outer-container;
     padding: 0 0 1rem;
     @include flex(column, center, flex-start);
-    border-bottom-color: color("shade800");
-    border-bottom-color: var(--shade800);
+    @include color-map(border-bottom, surface);
     border-bottom-style: solid;
     border-bottom-width: 0.5rem;
   }
@@ -125,7 +125,7 @@
     z-index: 1;
     width: 100%;
     margin-bottom: 1rem;
-    @include color-map(background-color, shade500);
+    @include color-map(background-color, surface2);
     border-radius: $radius;
     box-shadow: $box-shadow;
 
@@ -192,8 +192,8 @@
   }
 
   &__card-no-img {
-    background: linear-gradient(45deg, color(primary), color(accent));
-    background: linear-gradient(45deg, var(--primary), var(--accent));
+    background: linear-gradient(45deg, color(primary), color(secondary));
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
   }
 
   &__card-body {
@@ -205,8 +205,7 @@
 
   &__card-date {
     font-size: 0.75rem;
-    color: color(shade200);
-    color: var(--shade200);
+    @include color-map(color, text1);
     text-transform: uppercase;
   }
 
@@ -225,8 +224,7 @@
   &__tag-link {
     @include flex(row, flex-start, center);
     font-size: 0.75rem;
-    color: color(shade200);
-    color: var(--shade200);
+    @include color-map(color, text1);
     text-transform: uppercase;
 
     svg {
@@ -235,18 +233,17 @@
       width: 0.75rem;
       height: 0.75rem;
       transform: translateY(0.2em);
-      stroke: color(shade200);
-      stroke: var(--shade200);
+      @include color-map(stroke, text1);
       stroke-width: 2px;
     }
 
     &:hover {
-      color: color(accent);
-      color: var(--accent);
+      color: color(secondary);
+      color: var(--secondary);
 
       svg {
-        color: color(accent);
-        stroke: var(--accent);
+        color: color(secondary);
+        stroke: var(--secondary);
       }
     }
   }

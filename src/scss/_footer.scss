@@ -6,8 +6,8 @@
     @extend .outer-container;
     min-height: 250px;
     font-size: 0.9375rem;
-    @include color-map(background-color, shade700);
-    @include color-map(color, shade100);
+    @include color-map(background-color, surface);
+    @include color-map(color, text1);
     border-bottom: none;
   }
 
@@ -33,7 +33,7 @@
 
     &--latest {
       @extend .footer__section;
-      @include color-map(color, shade200);
+      @include color-map(color, text1);
 
       &:nth-child(3) {
         padding-bottom: 0.5rem;
@@ -60,7 +60,7 @@
     margin-bottom: 0.25rem;
     font-size: 0.75rem;
     text-transform: uppercase;
-    @include color-map(color, shade200);
+    @include color-map(color, text3);
   }
 
   &__title {
@@ -68,7 +68,7 @@
     max-width: 12rem;
     margin-bottom: 1rem;
 
-    @include color-map(color, shade200);
+    @include color-map(color, text2);
 
     @include transition(color);
 
@@ -93,13 +93,13 @@
     svg {
       width: 1rem;
       height: 1rem;
-      @include color-map(fill, shade200);
+      @include color-map(fill, text2);
     }
   }
 
   &__card-tag {
     @include flex(row, flex-start, center);
-    @include color-map(color, shade200);
+    @include color-map(color, text2);
 
     p {
       margin: 0;
@@ -113,17 +113,17 @@
       width: 0.9375rem;
       height: 0.9375rem;
       transform: translateY(0.2em);
-      @include color-map(stroke, shade200);
+      @include color-map(stroke, text2);
       stroke-width: 2px;
       @include transition(all);
     }
 
     &:hover {
       p {
-        @include color-map(color, accent);
+        @include color-map(color, secondary);
       }
       svg {
-        @include color-map(stroke, accent);
+        @include color-map(stroke, secondary);
       }
     }
   }
@@ -132,6 +132,6 @@
     @include flex(row, center, center);
     padding: 0.15rem;
     font-size: 0.8rem;
-    @include color-map(color, shade300);
+    @include color-map(color, text4);
   }
 }

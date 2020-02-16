@@ -21,6 +21,7 @@
     font-family: $sans;
     font-size: 1rem;
     border: 1px solid currentColor;
+    border-radius: $radius;
 
     &:focus {
       border: 1px solid color(primary);

@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  @include color-map(background-color, shade500);
+  @include color-map(background-color, surface2);
   border-radius: $radius;
   @include transition(all);
   box-shadow: $box-shadow;
@@ -20,8 +20,8 @@
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 0 4px color(shade400);
-      box-shadow: 0 0 0 4px var(--shade400);
+      box-shadow: 0 0 0 4px color(surface4);
+      box-shadow: 0 0 0 4px var(--surface4);
 
       .card {
         &__title {
@@ -53,8 +53,8 @@
   }
 
   &__no-img {
-    background: linear-gradient(to bottom, color(primary), color(accent));
-    background: linear-gradient(to bottom, var(--primary), var(--accent));
+    background: linear-gradient(to bottom, color(primary), color(secondary));
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
 
     &:after {
       position: absolute;
@@ -63,7 +63,7 @@
       width: calc(100% - 2rem);
       height: calc(100% - 2rem);
       margin: 1rem;
-      @include color-map(background-color, shade700);
+      @include color-map(background-color, surface3);
       content: "";
     }
   }
@@ -71,8 +71,16 @@
   &:nth-of-type(even) {
     & .card {
       &__no-img {
-        background: linear-gradient(to bottom, color(accent), color(primary));
-        background: linear-gradient(to bottom, var(--accent), var(--primary));
+        background: linear-gradient(
+          to bottom,
+          color(secondary),
+          color(primary)
+        );
+        background: linear-gradient(
+          to bottom,
+          var(--secondary),
+          var(--primary)
+        );
       }
     }
   }
@@ -94,7 +102,7 @@
     padding: 1px;
     font-size: 0.75rem;
     font-weight: 400;
-    @include color-map(color, shade200);
+    @include color-map(color, text2);
     text-transform: uppercase;
   }
 
@@ -129,6 +137,6 @@
 
   &__excerpt {
     margin: 0.5em 0;
-    @include color-map(color, shade200);
+    @include color-map(color, text2);
   }
 }

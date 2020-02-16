@@ -3,7 +3,7 @@
     figcaption {
       padding: 0.5rem;
       font-size: 0.9375rem;
-      @include color-map(color, shade200);
+      @include color-map(color, text1);
       text-align: center;
     }
 
@@ -17,8 +17,8 @@
       margin: 2rem 0;
       font-size: 1.5rem;
       font-style: italic;
-      @include color-map(color, shade100);
-      @include color-map(background-color, shade500);
+      @include color-map(color, text2);
+      @include color-map(background-color, surface3);
       border-radius: $radius;
 
       &:before {
@@ -28,8 +28,8 @@
         width: 8px;
         height: 100%;
         content: "";
-        background: linear-gradient(color(primary), color(accent));
-        background: linear-gradient(var(--primary), var(--accent));
+        background: linear-gradient(color(primary), color(secondary));
+        background: linear-gradient(var(--primary), var(--secondary));
         border-top-left-radius: $radius;
         border-bottom-left-radius: $radius;
       }
@@ -43,7 +43,7 @@
     a:hover,
     a:active,
     a:focus {
-      @include color-map(color, accent);
+      @include color-map(color, secondary);
     }
 
     ul,
@@ -63,7 +63,7 @@
     hr {
       height: 2px;
       margin: 1rem 0;
-      @include color-map(background-color, shade400);
+      @include color-map(background-color, surface4);
       border: none;
     }
 
@@ -72,16 +72,17 @@
       overflow: hidden;
       font-size: 0.935rem;
       border-collapse: collapse;
-      @include color-map(border-color, shade400);
+      @include color-map(border-color, surface1);
       border-collapse: collapse;
       border-style: solid;
       border-width: 1px;
+      border-radius: $radius;
     }
 
     thead {
       & > tr {
-        @include color-map(color, shade900);
-        @include color-map(background-color, shade100);
+        @include color-map(color, text1);
+        @include color-map(background-color, surface2);
       }
 
       th {
@@ -93,14 +94,14 @@
     }
     tbody {
       tr:nth-child(even) {
-        @include color-map(background-color, shade900);
+        @include color-map(background-color, surface3);
       }
 
       td {
         padding: 0.25rem 0.5rem;
         text-align: left;
         vertical-align: top;
-        @include color-map(border-color, shade400);
+        @include color-map(border-color, text1);
         border-style: solid;
         border-width: 1px;
       }
