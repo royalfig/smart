@@ -151,7 +151,7 @@
   grid-row-gap: 0.5rem;
   border-top-style: solid;
   border-top-width: 2px;
-  @include color-map(border-top-color, surface);
+  @include color-map(border-top-color, text4);
 
   @include respond-between($tablet, $laptop) {
     grid-template-areas:

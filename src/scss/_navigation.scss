@@ -61,7 +61,7 @@
       display: block;
       width: 100%;
       height: calc(#{$hamburger-base} / 5);
-      @include color-map(background-color, surface2);
+      @include color-map(background-color, text1);
       opacity: 1;
       transition: 0.25s ease-in-out;
       transform: rotate(0deg);
@@ -112,7 +112,7 @@
       width: 1.5rem;
       height: 1.5rem;
       fill: none;
-      @include color-map(stroke, text2);
+      @include color-map(stroke, text1);
       stroke-width: 2px;
       @include transition(stroke);
 
@@ -146,7 +146,7 @@
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  @include color-map(color, text);
+  @include color-map(color, text1);
   @include color-map(background-color, surface2);
   box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);

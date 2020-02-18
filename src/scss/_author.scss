@@ -8,7 +8,7 @@
     padding: 2rem 1rem;
     border-bottom-style: solid;
     border-bottom-width: 2px;
-    @include color-map(border-bottom-color, surface2);
+    @include color-map(border-bottom-color, text4);
 
     @include respond-above($tablet) {
       flex-direction: row;
@@ -67,7 +67,7 @@
     margin-top: 1rem;
     font-size: 0.8rem;
     font-weight: 700;
-    @include color-map(color, text2);
+    @include color-map(color, text3);
     text-transform: uppercase;
   }
 

@@ -63,7 +63,7 @@
       width: calc(100% - 2rem);
       height: calc(100% - 2rem);
       margin: 1rem;
-      @include color-map(background-color, surface3);
+      @include color-map(background-color, surface1);
       content: "";
     }
   }
@@ -102,7 +102,7 @@
     padding: 1px;
     font-size: 0.75rem;
     font-weight: 400;
-    @include color-map(color, text2);
+    @include color-map(color, text1);
     text-transform: uppercase;
   }
 
@@ -137,6 +137,6 @@
 
   &__excerpt {
     margin: 0.5em 0;
-    @include color-map(color, text2);
+    @include color-map(color, text1);
   }
 }

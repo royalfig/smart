@@ -95,6 +95,8 @@
     width: initial;
     margin: 0;
     margin-left: -200px;
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
 
     &__title,
     &__link {

@@ -132,12 +132,13 @@
     border: none;
     border-radius: $radius;
     box-shadow: $box-shadow;
-    @include transition(background);
+    @include transition(background-color);
 
     &:hover,
     &:focus {
       background: linear-gradient(45deg, color(primary), color(secondary));
       background: linear-gradient(45deg, var(--primary), var(--secondary));
+      @include transition(background-color);
       outline: none;
     }
 
@@ -163,6 +164,7 @@
     font-size: 1rem;
     @include color-map(color, surface);
     @include color-map(background-color, text);
+    border-radius: $radius;
   }
 
   &__item {
