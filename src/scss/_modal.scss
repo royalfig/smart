@@ -1,12 +1,17 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
+.expanded-modal-search,
+.expanded-menu {
+  overflow: hidden;
+}
+
 .content-wrap {
   &:before {
     z-index: 1000;
     width: 100%;
     height: 100%;
-    content: "";
+    content: '';
     background: #000;
     opacity: 0;
     transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
@@ -44,7 +49,7 @@
     padding: 1rem 1.5rem;
   }
 
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transform: translate3d(0, 0, 0);
   }
@@ -126,19 +131,20 @@
     margin-left: 0.5rem;
     font-weight: 700;
     line-height: 1;
-    @include color-map(color, text4);
+    @include color-map(color, surface);
     vertical-align: bottom;
     @include color-map(background, surface4);
+    background: linear-gradient(45deg, color(primary), color(secondary));
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
     border: none;
     border-radius: $radius;
     box-shadow: $box-shadow;
-    @include transition(background-color);
+    @include transition(background);
 
     &:hover,
     &:focus {
-      background: linear-gradient(45deg, color(primary), color(secondary));
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
-      @include transition(background-color);
+      @include color-map(background, primary);
+      @include transition(background);
       outline: none;
     }
 

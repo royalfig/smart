@@ -139,6 +139,10 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
 }
 
+.no-scroll {
+  overflow: hidden;
+}
+
 .grid-container {
   display: grid;
   grid-gap: 1.5rem;
@@ -148,16 +152,16 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   position: relative;
   width: 100%;
   padding: 1em;
-  border-bottom-style: solid;
-  border-bottom-width: 0.5rem;
-  @include color-map(border-bottom-color, surface);
+  // border-bottom-style: solid;
+  // border-bottom-width: 0.5rem;
+  // @include color-map(border-bottom-color, surface);
 
   @include respond-between($tablet, $laptop) {
-    padding: 1rem 3rem;
+    padding: 2rem 3rem;
   }
 
   @include respond-above($laptop) {
-    padding: 1rem 4rem;
+    padding: 2rem 4rem;
   }
 }
 

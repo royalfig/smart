@@ -16,7 +16,7 @@
     background: radial-gradient(
       rgba(105, 105, 105, 0.15) 25%,
       rgba(55, 55, 55, 0.5) 75%,
-      rgba(20, 20, 20, 0.25)
+      rgba(20, 20, 20, 0.5)
     );
   }
 
@@ -41,11 +41,11 @@
     text-align: center;
 
     @include respond-between($tablet, $laptop) {
-      font-size: 3.5rem;
+      font-size: 3.25rem;
     }
 
     @include respond-above($laptop) {
-      font-size: 4rem;
+      font-size: 3.75rem;
     }
   }
 
@@ -63,7 +63,7 @@
     padding: 0 0 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 0.3em;
+    font-size: 0.5em;
     font-weight: 400;
     font-weight: 700;
     line-height: 1.2;
