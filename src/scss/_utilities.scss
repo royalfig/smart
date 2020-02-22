@@ -8,7 +8,7 @@ $tw: #1da1f2;
 $li: #0077b5;
 
 // Bright Mode
-:root[color-mode="bright"] {
+:root[color-mode='bright'] {
   --text: rgb(10, 10, 10);
   --text1: rgb(23, 23, 23);
   --text2: rgb(57, 57, 58);
@@ -26,7 +26,7 @@ $li: #0077b5;
 }
 
 // Dark Mode (Default)
-:root[color-mode="dark"] {
+:root[color-mode='dark'] {
   --text: rgb(245, 245, 245);
   --text1: rgb(232, 233, 233);
   --text2: rgb(198, 198, 199);
@@ -45,18 +45,18 @@ $li: #0077b5;
 
 // Fallback (defaults to Dark Mode)
 $colors: (
-  "text": #f5f5f5,
-  "text1": #e8e9e9,
-  "text2": #c7c7c8,
-  "text3": #a5a5a7,
-  "text4": #616264,
-  "surface": #09090a,
-  "surface1": #0d0e0f,
-  "surface2": #111214,
-  "surface3": #1a1b1f,
-  "surface4": #1d1e22,
-  "primary": #80deea,
-  "secondary": #ffab91
+  'text': #f5f5f5,
+  'text1': #e8e9e9,
+  'text2': #c7c7c8,
+  'text3': #a5a5a7,
+  'text4': #616264,
+  'surface': #09090a,
+  'surface1': #0d0e0f,
+  'surface2': #111214,
+  'surface3': #1a1b1f,
+  'surface4': #1d1e22,
+  'primary': #80deea,
+  'secondary': #ffab91
 );
 
 @function color($key) {
@@ -76,10 +76,10 @@ $colors: (
 //-------------------------------------------
 // Fonts
 //-------------------------------------------
-$sans: "Lato", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen,
-  ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+$sans: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+  ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-$serif: "DM Serif Text", georgia, times, serif;
+$serif: 'DM Serif Text', georgia, times, serif;
 
 .serif {
   font-family: $serif;
@@ -151,7 +151,7 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 .outer-container {
   position: relative;
   width: 100%;
-  padding: 1em;
+  padding: 1rem;
   // border-bottom-style: solid;
   // border-bottom-width: 0.5rem;
   // @include color-map(border-bottom-color, surface);
@@ -197,7 +197,7 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   left: 0;
   z-index: -1;
   height: 0.5em;
-  content: "";
+  content: '';
   @include color-map(background, text4);
   opacity: 0.75;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -216,8 +216,8 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 .underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px color("surface1"), 2px -2px color("surface1"),
-    -2px 2px color("surface1"), -2px -2px color("surface1");
+  text-shadow: 2px 2px color('surface1'), 2px -2px color('surface1'),
+    -2px 2px color('surface1'), -2px -2px color('surface1');
   text-shadow: 2px 2px var(--surface1), 2px -2px var(--surface1),
     -2px 2px var(--surface1), -2px -2px var(--surface1);
   border-bottom: 2px solid currentColor;
@@ -226,8 +226,8 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 @mixin underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px color("surface1"), 2px -2px color("surface1"),
-    -2px 2px color("surface1"), -2px -2px color("surface1");
+  text-shadow: 2px 2px color('surface1'), 2px -2px color('surface1'),
+    -2px 2px color('surface1'), -2px -2px color('surface1');
   text-shadow: 2px 2px var(--surface1), 2px -2px var(--surface1),
     -2px 2px var(--surface1), -2px -2px var(--surface1);
   border-bottom: 2px solid currentColor;

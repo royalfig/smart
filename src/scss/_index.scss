@@ -20,6 +20,10 @@
   }
 
   &__read-more {
+    &:hover svg {
+      @include color-map(stroke, secondary);
+    }
+
     svg {
       width: 2rem;
       height: 2rem;
@@ -27,6 +31,7 @@
       fill: none;
       stroke-width: 2px;
       @include color-map(stroke, text);
+      @include transition(stroke);
     }
   }
 }
