@@ -8,7 +8,7 @@
   align-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
   max-width: 100%;
-  margin: 2em 0;
+  margin: 1rem 0;
 }
 
 // Tablets
@@ -16,9 +16,26 @@
   .grid-container-home-1 {
     grid-template-columns: minmax(292px, 1fr);
 
-    .card-1 .card {
-      &__img-container {
-        padding-top: 35%;
+    .card-1 {
+      .card {
+        &__link {
+          flex-direction: row;
+        }
+        &__img-container {
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
+        }
       }
     }
   }
@@ -38,8 +55,23 @@
       grid-area: one;
 
       .card {
+        &__link {
+          flex-direction: row;
+        }
         &__img-container {
-          padding-top: 35%;
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
         }
       }
     }
@@ -64,8 +96,23 @@
       grid-area: one;
 
       .card {
+        &__link {
+          flex-direction: row;
+        }
         &__img-container {
-          padding-top: 35%;
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
         }
       }
     }
@@ -92,6 +139,29 @@
 @media (min-width: $laptop) and (max-width: $desktop - 1) {
   .grid-container-home-1 {
     grid-template-columns: minmax(292px, 1fr);
+
+    .card-1 {
+      .card {
+        &__link {
+          flex-direction: row;
+        }
+        &__img-container {
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
+        }
+      }
+    }
   }
 
   .grid-container-home-2,
@@ -107,6 +177,27 @@
 
     .card-1 {
       grid-area: one;
+
+      .card {
+        &__link {
+          flex-direction: row;
+        }
+        &__img-container {
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
+        }
+      }
     }
 
     .card-2 {
@@ -127,6 +218,27 @@
 
     .card-1 {
       grid-area: one;
+
+      .card {
+        &__link {
+          flex-direction: row;
+        }
+        &__img-container {
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
+        }
+      }
     }
 
     .card-2 {

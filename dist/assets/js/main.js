@@ -376,3 +376,7 @@ searchInput.addEventListener('keyup', (e) => {
 searchInput.addEventListener('focus', (e) => {
   e.target.value = '';
 });
+
+//-------------------------------------------
+// Secondary Navigation - Social Media Icons
+//-------------------------------------------

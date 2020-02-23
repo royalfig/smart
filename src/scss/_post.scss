@@ -49,7 +49,7 @@
       width: calc(100% - 2rem);
       height: calc(100% - 2rem);
       margin: 1rem;
-      content: "";
+      content: '';
       @include color-map(background-color, surface);
     }
   }
@@ -142,11 +142,11 @@
   @extend .grid-container;
   padding-top: 0.5rem;
   grid-template-areas:
-    "title-1"
-    "author"
-    "title-2"
-    "post-1"
-    "post-2";
+    'title-1'
+    'author'
+    'title-2'
+    'post-1'
+    'post-2';
   grid-template-columns: 1fr;
   grid-row-gap: 0.5rem;
   border-top-style: solid;
@@ -155,17 +155,17 @@
 
   @include respond-between($tablet, $laptop) {
     grid-template-areas:
-      "title-1 title-1"
-      "author author"
-      "title-2 title-2"
-      "post-1 post-2";
+      'title-1 title-1'
+      'author author'
+      'title-2 title-2'
+      'post-1 post-2';
     grid-template-columns: 1fr 1fr;
   }
 
   @include respond-above($laptop) {
     grid-template-areas:
-      "title-1 title-2 title-2"
-      "author post-1 post-2";
+      'title-1 title-2 title-2'
+      'author post-1 post-2';
     grid-template-columns: repeat(3, minmax(200px, 1fr));
   }
 
@@ -280,4 +280,15 @@
 
 .related-posts:nth-child(7) {
   display: none;
+}
+
+//-------------------------------------------
+// Medium Zoom plugin style
+//-------------------------------------------
+.medium-zoom-overlay {
+  z-index: 1002;
+}
+
+.medium-zoom-image--opened {
+  z-index: 1003;
 }
