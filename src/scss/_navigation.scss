@@ -19,7 +19,7 @@
   width: 100%;
   height: $navbar;
   padding: 0.5rem 1rem;
-  @include color-map(background-color, shade700);
+  @include color-map(background-color, surface2);
   font-size: 0.975rem;
   box-shadow: $box-shadow;
   @include transition(all);
@@ -61,7 +61,7 @@
       display: block;
       width: 100%;
       height: calc(#{$hamburger-base} / 5);
-      @include color-map(background-color, shade100);
+      @include color-map(background-color, text1);
       opacity: 1;
       transition: 0.25s ease-in-out;
       transform: rotate(0deg);
@@ -112,7 +112,7 @@
       width: 1.5rem;
       height: 1.5rem;
       fill: none;
-      @include color-map(stroke, shade100);
+      @include color-map(stroke, text1);
       stroke-width: 2px;
       @include transition(stroke);
 
@@ -146,8 +146,8 @@
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  @include color-map(color, text);
-  @include color-map(background-color, shade700);
+  @include color-map(color, text1);
+  @include color-map(background-color, surface2);
   box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translate3d(-100vw, 0, 0);
@@ -169,7 +169,7 @@
 
   &__site-description {
     font-size: 0.975rem;
-    @include color-map(color, shade200);
+    @include color-map(color, text1);
   }
 
   &__main-nav {
@@ -194,7 +194,7 @@
     svg {
       width: 1.25rem;
       height: 1.25rem;
-      @include color-map(fill, shade200);
+      @include color-map(fill, text1);
     }
   }
 }
@@ -225,7 +225,7 @@
     height: $navbar;
     padding: 0.5rem 1rem;
     font-size: 0.975rem;
-    @include color-map(background-color, shade700);
+    @include color-map(background-color, surface2);
     box-shadow: $box-shadow;
     @include transition(all);
 
@@ -264,7 +264,7 @@
       svg {
         width: 1.25rem;
         height: 1.25rem;
-        @include color-map(fill, shade100);
+        @include color-map(fill, text1);
       }
 
       &--search {
@@ -274,7 +274,7 @@
           width: 1.25rem;
           height: 1.25rem;
           fill: none;
-          @include color-map(stroke, shade100);
+          @include color-map(stroke, text1);
           stroke-width: 2px;
           @include transition(stroke);
 
@@ -297,7 +297,7 @@
     width: 1.25rem;
     height: 1.25rem;
     fill: none;
-    @include color-map(stroke, shade100);
+    @include color-map(stroke, text1);
     stroke-width: 2px;
     @include transition(stroke);
     stroke-linecap: round;
@@ -344,7 +344,7 @@
 .pagination {
   display: flex;
   justify-content: center;
-  @include color-map(color, shade200);
+  @include color-map(color, text2);
 
   > * {
     margin: 1rem;

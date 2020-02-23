@@ -1,66 +1,62 @@
+//-------------------------------------------
+// Colors
+//-------------------------------------------
+
 // Social Media
 $fb: #1877f2;
 $tw: #1da1f2;
 $li: #0077b5;
 
-// :root[color-mode="dark"] {
-//   --text: #ffffff;
-//   --primary: #fac21b;
-//   --accent: #ed5107;
-//   --shade100: #e7ebeb;
-//   --shade200: #c4ccce;
-//   --shade300: #a0aeb1;
-//   --shade400: #597176;
-//   --shade500: #12343b;
-//   --shade600: #102f35;
-//   --shade700: #0b1f23;
-//   --shade800: #08171b;
-//   --shade900: #051214;
-// }
+// Bright Mode
+:root[color-mode='bright'] {
+  --text: rgb(10, 10, 10);
+  --text1: rgb(23, 23, 23);
+  --text2: rgb(57, 57, 58);
+  --text3: rgb(90, 90, 92);
+  --text4: rgb(158, 160, 162);
 
-:root[color-mode="bright"] {
-  --text: #000000;
-  --primary: #02769d;
-  --accent: #9d023b;
-  --shade100: #484848;
-  --shade200: #6c6c6c;
-  --shade300: #8f8f90;
-  --shade400: #d7d7d8;
-  --shade500: #efeff0;
-  --shade600: #f4f4f5;
-  --shade700: #f9f9f9;
-  --shade800: #fbfbfb;
-  --shade900: #fdfdfe;
+  --surface: #dcdcdc;
+  --surface1: #e8e8e8;
+  --surface2: #f0f0f0;
+  --surface3: #f5f5f5;
+  --surface4: #f8f8f8;
+
+  --primary: rgb(13, 72, 160);
+  --secondary: rgb(255, 87, 34);
 }
 
-:root[color-mode="dark"] {
-  --text: #ffffff;
-  --primary: #02b0eb;
-  --accent: #ebc002;
-  --shade100: #e8e9e9;
-  --shade200: #c7c7c8;
-  --shade300: #a5a5a7;
-  --shade400: #616264;
-  --shade500: #1d1e22;
-  --shade600: #1a1b1f;
-  --shade700: #111214;
-  --shade800: #0d0e0f;
-  --shade900: #09090a;
+// Dark Mode (Default)
+:root[color-mode='dark'] {
+  --text: rgb(245, 245, 245);
+  --text1: rgb(232, 233, 233);
+  --text2: rgb(198, 198, 199);
+  --text3: rgb(165, 165, 167);
+  --text4: rgb(97, 99, 101);
+
+  --surface: #181818;
+  --surface1: #202020;
+  --surface2: #282828;
+  --surface3: #303030;
+  --surface4: #383838;
+
+  --primary: rgb(128, 222, 234);
+  --secondary: rgb(255, 171, 145);
 }
 
+// Fallback (defaults to Dark Mode)
 $colors: (
-  "text": #ffffff,
-  "primary": #fac21b,
-  "accent": #ed5107,
-  "shade100": #e7ebeb,
-  "shade200": #c4ccce,
-  "shade300": #a0aeb1,
-  "shade400": #597176,
-  "shade500": #12343b,
-  "shade600": #102f35,
-  "shade700": #0b1f23,
-  "shade800": #08171b,
-  "shade900": #051012
+  'text': #f5f5f5,
+  'text1': #e8e9e9,
+  'text2': #c7c7c8,
+  'text3': #a5a5a7,
+  'text4': #616264,
+  'surface': #09090a,
+  'surface1': #0d0e0f,
+  'surface2': #111214,
+  'surface3': #1a1b1f,
+  'surface4': #1d1e22,
+  'primary': #80deea,
+  'secondary': #ffab91
 );
 
 @function color($key) {
@@ -77,42 +73,52 @@ $colors: (
   #{$property}: var(--#{$color});
 }
 
-// Font styles
-$sans: "Lato", -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen,
-  ubuntu, cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+//-------------------------------------------
+// Fonts
+//-------------------------------------------
+$sans: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+  ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-$serif: "DM Serif Text", georgia, times, serif;
+$serif: 'DM Serif Text', georgia, times, serif;
+
+.serif {
+  font-family: $serif;
+  font-weight: 400;
+}
+
+//-------------------------------------------
+// Sizes, Breakpoints, Variables
+//-------------------------------------------
 
 // Breakpoints
 $tablet: 640px;
 $laptop: 1024px;
 $desktop: 1280px;
 
+$sm: 640px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1280px;
+
 // Sizes
-$base: 11rem;
+$base: 9rem;
 $navbar: 3rem;
+$radius: 4px;
 
 // Box Shadow
 $box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
   -3px 2px 4px rgba(0, 0, 0, 0.12), 5px 10px 15px rgba(0, 0, 0, 0.14),
   -5px 5px 15px rgba(0, 0, 0, 0.14);
 
-$box-shadow: 0 8px 17px 2px rgba(0, 0, 0, 0.14),
-  0 3px 14px 2px rgba(0, 0, 0, 0.12), 0 5px 5px -3px rgba(0, 0, 0, 0.2);
-
-$box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+$box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
 @mixin transition($property) {
   transition: $property 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 }
 
-// Typography
-.serif {
-  font-family: $serif;
-  font-weight: 400;
-}
-
+//-------------------------------------------
+// Utility Classes and Mixins
+//------------------------ -------------------
 @mixin flex($direction, $justify, $align) {
   display: flex;
   flex-direction: $direction;
@@ -138,23 +144,29 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   }
 }
 
-//-------------------------------------------
-// Utility Classes
-//-------------------------------------------
+.no-scroll {
+  overflow: hidden;
+}
+
 .grid-container {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1.5rem;
 }
 
 .outer-container {
   position: relative;
   width: 100%;
-  padding: 1em;
-  border-bottom-style: solid;
-  border-bottom-width: 0.5rem;
-  @include color-map(border-bottom-color, shade800);
-  @include respond-above(tablet) {
-    padding: 1rem 4rem;
+  padding: 1rem;
+  // border-bottom-style: solid;
+  // border-bottom-width: 0.5rem;
+  // @include color-map(border-bottom-color, surface);
+
+  @include respond-between($tablet, $laptop) {
+    padding: 2rem 3rem;
+  }
+
+  @include respond-above($laptop) {
+    padding: 2rem 4rem;
   }
 }
 
@@ -176,7 +188,6 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 .hvr-underline-from-left {
   position: relative;
   display: inline-block;
-  // padding: 0 1px;
   overflow: hidden;
   line-height: 1.2;
   vertical-align: middle;
@@ -191,9 +202,9 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
   left: 0;
   z-index: -1;
   height: 0.5em;
-  content: "";
-  background: color("shade400");
-  background: var(--shade400);
+  content: '';
+  @include color-map(background, text4);
+  opacity: 0.75;
   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   transition-duration: 0.4s;
   transition-property: right;
@@ -210,19 +221,19 @@ $box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
 .underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"),
-    -2px 2px color("shade700"), -2px -2px color("shade700");
-  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700),
-    -2px 2px var(--shade700), -2px -2px var(--shade700);
+  text-shadow: 2px 2px color('surface1'), 2px -2px color('surface1'),
+    -2px 2px color('surface1'), -2px -2px color('surface1');
+  text-shadow: 2px 2px var(--surface1), 2px -2px var(--surface1),
+    -2px 2px var(--surface1), -2px -2px var(--surface1);
   border-bottom: 2px solid currentColor;
 }
 
 @mixin underline {
   display: inline-block;
   line-height: 0.95;
-  text-shadow: 2px 2px color("shade700"), 2px -2px color("shade700"),
-    -2px 2px color("shade700"), -2px -2px color("shade700");
-  text-shadow: 2px 2px var(--shade700), 2px -2px var(--shade700),
-    -2px 2px var(--shade700), -2px -2px var(--shade700);
+  text-shadow: 2px 2px color('surface1'), 2px -2px color('surface1'),
+    -2px 2px color('surface1'), -2px -2px color('surface1');
+  text-shadow: 2px 2px var(--surface1), 2px -2px var(--surface1),
+    -2px 2px var(--surface1), -2px -2px var(--surface1);
   border-bottom: 2px solid currentColor;
 }

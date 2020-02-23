@@ -6,7 +6,7 @@
 .grid-container-home {
   @extend .grid-container;
   align-content: stretch;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
   max-width: 100%;
   margin: 2em 0;
 }
@@ -14,7 +14,13 @@
 // Tablets
 @media (min-width: $tablet) and (max-width: $laptop - 1) {
   .grid-container-home-1 {
-    grid-template-columns: minmax(250px, 500px);
+    grid-template-columns: minmax(292px, 1fr);
+
+    .card-1 .card {
+      &__img-container {
+        padding-top: 35%;
+      }
+    }
   }
 
   .grid-container-home-2,
@@ -24,18 +30,16 @@
 
   .grid-container-home-3 {
     grid-template-areas:
-      "one one"
-      "two three";
+      'one one'
+      'two three';
     grid-template-columns: 1fr 1fr;
 
     .card-1 {
       grid-area: one;
 
       .card {
-        &__img,
-        &__no-img {
-          height: 2 * $base;
-          // max-height: 60vh;
+        &__img-container {
+          padding-top: 35%;
         }
       }
     }
@@ -51,23 +55,21 @@
 
   .grid-container-home-5 {
     grid-template-areas:
-      "one one"
-      "two three"
-      "four five";
-
+      'one one'
+      'two three'
+      'four five';
     grid-template-columns: 1fr 1fr;
 
     .card-1 {
       grid-area: one;
 
       .card {
-        &__img,
-        &__no-img {
-          height: 2 * $base;
-          // max-height: 60vh;
+        &__img-container {
+          padding-top: 35%;
         }
       }
     }
+
     .card-2 {
       grid-area: two;
     }
@@ -82,13 +84,6 @@
 
     .card-5 {
       grid-area: five;
-    }
-
-    .card {
-      &__img,
-      &__no-img {
-        height: 1.5 * $base;
-      }
     }
   }
 }
@@ -96,7 +91,7 @@
 // Laptops
 @media (min-width: $laptop) and (max-width: $desktop - 1) {
   .grid-container-home-1 {
-    grid-template-columns: minmax(250px, 500px);
+    grid-template-columns: minmax(292px, 1fr);
   }
 
   .grid-container-home-2,
@@ -106,18 +101,12 @@
 
   .grid-container-home-3 {
     grid-template-areas:
-      "one one"
-      "two three";
+      'one one'
+      'two three';
     grid-template-columns: 1fr 1fr;
 
     .card-1 {
       grid-area: one;
-
-      .card-img,
-      .no-img {
-        height: 2 * $base;
-        // max-height: 60vh;
-      }
     }
 
     .card-2 {
@@ -131,21 +120,13 @@
 
   .grid-container-home-5 {
     grid-template-areas:
-      "one one"
-      "two three"
-      "four five";
+      'one one'
+      'two three'
+      'four five';
     grid-template-columns: 1fr 1fr;
 
     .card-1 {
       grid-area: one;
-
-      .card {
-        &__img,
-        &__no-img {
-          height: 2 * $base;
-          // max-height: 60vh;
-        }
-      }
     }
 
     .card-2 {
@@ -164,19 +145,12 @@
       grid-area: five;
     }
   }
-
-  .card {
-    &__img,
-    &__no-img {
-      height: 1.5 * $base;
-    }
-  }
 }
 
 // Desktops
 @media (min-width: $desktop) {
   .grid-container-home-1 {
-    grid-template-columns: minmax(250px, 500px);
+    grid-template-columns: minmax(292px, 1fr);
   }
 
   .grid-container-home-2 {
@@ -189,20 +163,12 @@
 
   .grid-container-home-4 {
     grid-template-areas:
-      "one one one"
-      "two three four";
+      'one one one'
+      'two three four';
     grid-template-columns: 1fr 1fr 1fr;
 
     .card-1 {
       grid-area: one;
-
-      .card {
-        &__img,
-        &__no-img {
-          height: 2 * $base;
-          // max-height: 60vh;
-        }
-      }
     }
 
     .card-2 {
@@ -216,41 +182,20 @@
     .card-4 {
       grid-area: four;
     }
-
-    .card-img,
-    .no-img {
-      height: 1.75 * $base;
-    }
   }
 
   .grid-container-home-5 {
     grid-template-areas:
-      "one one one two two two"
-      "three three four four five five";
+      'one one one two two two'
+      'three three four four five five';
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
     .card-1 {
       grid-area: one;
-
-      .card {
-        &__img,
-        &__no-img {
-          height: 1.75 * $base;
-          // max-height: 60vh;
-        }
-      }
     }
 
     .card-2 {
       grid-area: two;
-
-      .card {
-        &__img,
-        &__no-img {
-          height: 1.75 * $base;
-          // max-height: 60vh;
-        }
-      }
     }
 
     .card-3 {
@@ -263,14 +208,6 @@
 
     .card-5 {
       grid-area: five;
-    }
-  }
-
-  .card {
-    &__img,
-    &__no-img {
-      height: 1.75 * $base;
-      // max-height: 50vh;
     }
   }
 }

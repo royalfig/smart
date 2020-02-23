@@ -2,8 +2,9 @@
   position: relative;
   width: 100%;
   height: 70vh;
+  max-height: 30rem;
   margin-top: $navbar;
-  @include color-map(background-color, shade700);
+  @include color-map(background-color, surface1);
   background-position: center;
   background-size: cover;
 
@@ -15,7 +16,7 @@
     background: radial-gradient(
       rgba(105, 105, 105, 0.15) 25%,
       rgba(55, 55, 55, 0.5) 75%,
-      rgba(20, 20, 20, 0.25)
+      rgba(20, 20, 20, 0.5)
     );
   }
 
@@ -36,15 +37,15 @@
     z-index: 1;
     max-width: $laptop;
     margin: 1rem;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: center;
 
     @include respond-between($tablet, $laptop) {
-      font-size: 3.5rem;
+      font-size: 3.25rem;
     }
 
     @include respond-above($laptop) {
-      font-size: 4rem;
+      font-size: 3.75rem;
     }
   }
 
@@ -53,7 +54,7 @@
     padding: 1rem 0;
     margin: 0;
     @extend .serif;
-    font-size: 1.4em;
+    font-size: 1.25em;
     line-height: 1;
     color: #ffffff;
   }
@@ -62,7 +63,7 @@
     padding: 0 0 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 0.35em;
+    font-size: 0.3em;
     font-weight: 400;
     font-weight: 700;
     line-height: 1.2;
@@ -91,8 +92,7 @@
     @extend .outer-container;
     padding: 0 0 1rem;
     @include flex(column, center, flex-start);
-    border-bottom-color: color("shade800");
-    border-bottom-color: var(--shade800);
+    @include color-map(border-bottom, surface);
     border-bottom-style: solid;
     border-bottom-width: 0.5rem;
   }
@@ -125,9 +125,30 @@
     z-index: 1;
     width: 100%;
     margin-bottom: 1rem;
-    background-color: color(shade600);
-    background-color: var(--shade600);
+    @include color-map(background-color, surface2);
+    border-radius: $radius;
     box-shadow: $box-shadow;
+
+    &-link {
+      display: flex;
+      width: 100%;
+
+      @include respond-above($laptop) {
+        flex-direction: column;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 2px color(primary);
+      box-shadow: 0 0 0 2px var(--primary);
+
+      .hero {
+        &__card-title--serif {
+          @include color-map(color, primary);
+        }
+      }
+    }
 
     &:last-child {
       margin-bottom: 0;
@@ -136,7 +157,7 @@
     @include respond-above($laptop) {
       @include flex(column, flex-start, flex-start);
       max-width: 20rem;
-      margin: 0 1rem 1rem;
+      margin: 0 0.5rem 1rem;
 
       &:last-child {
         margin-bottom: 1rem;
@@ -149,11 +170,6 @@
     width: $base;
     height: $base;
     @include transition(all);
-
-    &:hover {
-      filter: saturate(125%) contrast(125%);
-    }
-
     @include respond-above($laptop) {
       width: 100%;
     }
@@ -165,11 +181,19 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+
+    @include respond-above($laptop) {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      border-bottom-left-radius: 0;
+    }
   }
 
   &__card-no-img {
-    background: linear-gradient(45deg, color(primary), color(accent));
-    background: linear-gradient(45deg, var(--primary), var(--accent));
+    background: linear-gradient(45deg, color(primary), color(secondary));
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
   }
 
   &__card-body {
@@ -179,14 +203,9 @@
     padding: 0.5rem 0.75rem;
   }
 
-  &__card-body-wrapper {
-    margin-bottom: 3rem;
-  }
-
   &__card-date {
     font-size: 0.75rem;
-    color: color(shade200);
-    color: var(--shade200);
+    @include color-map(color, text1);
     text-transform: uppercase;
   }
 
@@ -205,8 +224,7 @@
   &__tag-link {
     @include flex(row, flex-start, center);
     font-size: 0.75rem;
-    color: color(shade200);
-    color: var(--shade200);
+    @include color-map(color, text1);
     text-transform: uppercase;
 
     svg {
@@ -215,18 +233,17 @@
       width: 0.75rem;
       height: 0.75rem;
       transform: translateY(0.2em);
-      stroke: color(shade200);
-      stroke: var(--shade200);
+      @include color-map(stroke, text1);
       stroke-width: 2px;
     }
 
     &:hover {
-      color: color(accent);
-      color: var(--accent);
+      color: color(secondary);
+      color: var(--secondary);
 
       svg {
-        color: color(accent);
-        stroke: var(--accent);
+        color: color(secondary);
+        stroke: var(--secondary);
       }
     }
   }

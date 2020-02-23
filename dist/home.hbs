@@ -45,45 +45,15 @@ into the {body} of the default.hbs template --}}
 
 {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
 {{#if featured}}
-<div class="hero__bottom">
-    <div class="hero__container">
-        <div class="hero__header-container">
-            <h2 class="hero__header--serif--underline">Featured</h2>
-        </div>
-        <div class="hero__card-container">
-            {{#foreach featured}}
-            <article class="hero__card">
-                <a class="hero__card-img-container" href="{{url}}" aria-label="{{title}}">
-                    {{#if feature_image}}<img class="hero__card-img lazyload" alt="{{title}}" data-srcset="{{img_url feature_image size="s"}} 300w,
-            {{img_url feature_image size="m"}} 600w,
-            {{img_url feature_image size="l"}} 1000w" sizes="(max-width: 640px) 90vw,
-            (max-width: 1280px) 50vw,
-            1000px" data-src="{{img_url feature_image size="l"}}" />{{else}}<div class="hero__card-no-img"></div>
-                    {{/if}}
-                </a>
-                <div class="hero__card-body">
-                    <div class="hero__card-body-wrapper">
-                        <p class="hero__card-date"><time
-                                datetime="{{date published_at}}">{{date published_at timeago="true"}}
-                        </p>
+<div class="main--outer-container">
+    <div class="main--inner-container">
+        <h2 class="main__header--serif--underline">Featured</h2>
 
-                        <a href="{{url}}">
-                            <p class="hero__card-title--serif">{{title}}</p>
-                        </a>
-                    </div>
-                    <div class="hero__card-tag">
-                        {{#primary_tag}}
-                        <a class="hero__tag-link" href="{{url}}"><svg aria-hidden="true">
-                                <use href="#hash"></use>
-                                <p>{{name}}
-                                </p>
-                        </a>
-                        {{/primary_tag}}
-                    </div>
-                </div>
-            </article>
+        <section class="grid-container-home">
+            {{#foreach featured}}
+            {{> "card"}}
             {{/foreach}}
-        </div>
+        </section>
     </div>
 </div>
 {{/if}}

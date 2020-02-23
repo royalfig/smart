@@ -10,10 +10,10 @@
   &__text {
     font-size: 2rem;
     text-align: center;
-    @include color-map(color, shade100);
+    @include color-map(color, text1);
   }
 
   &__divider {
-    @include color-map(color, shade400);
+    @include color-map(color, text4);
   }
 }
