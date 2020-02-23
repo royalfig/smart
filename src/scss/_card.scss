@@ -64,7 +64,7 @@
       height: calc(100% - 2rem);
       margin: 1rem;
       @include color-map(background-color, surface1);
-      content: "";
+      content: '';
     }
   }
 
@@ -88,8 +88,8 @@
   &__body {
     @include flex(column, flex-start, flex-start);
     height: 100%;
-    padding: 0 1rem;
-    margin: 1rem 0;
+    padding: 0 1.5rem;
+    margin: 1.5rem 0;
   }
 
   &__date-tag {
