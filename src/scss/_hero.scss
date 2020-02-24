@@ -37,7 +37,9 @@
     position: relative;
     @include flex(column, center, stretch);
     z-index: 1;
+    width: 100%;
     max-width: $laptop;
+    margin: 0 auto;
   }
 
   &__site-title {

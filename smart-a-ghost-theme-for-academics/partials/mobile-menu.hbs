@@ -1,0 +1,39 @@
+<div class="mobile-nav-menu" id="menu" aria-expanded="false" aria-hidden="true">
+    <div class="mobile-nav-menu__inner">
+        <a href="{{@site.url}}">
+            <p class="mobile-nav-menu__site-title--serif">{{@site.title}}</p>
+        </a>
+        {{#if @site.description}}
+        <p class="mobile-nav-menu__site-description">{{@site.description}}</p>
+        {{/if}}
+        {{#if @site.navigation}}
+        {{navigation}}
+        {{/if}}
+        <div class="mobile-nav-menu__social-media">
+
+            {{#if @site.twitter}}
+            <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+                aria-label="Twitter">
+                <svg>
+                    <title>Twitter</title>
+                    <use href="#twitter"></use>
+                </svg>
+            </a>
+            {{/if}}
+
+            {{#if @site.facebook}}
+            <a class="mobile-nav-menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+                aria-label="Facebook">
+                <svg>
+                    <title>Facebook</title>
+                    <use href="#facebook"></use>
+                </svg>
+            </a>
+            {{/if}}
+
+            {{#if @site.secondary_navigation}}
+            {{navigation type="secondary"}}
+            {{/if}}
+        </div>
+    </div>
+</div>

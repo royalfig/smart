@@ -133,6 +133,11 @@
     line-height: 1.1;
     @include color-map(color, text);
     @include transition(color);
+
+    &--tags {
+      @extend .card__title;
+      margin: 0.25rem 0;
+    }
   }
 
   &__excerpt {
