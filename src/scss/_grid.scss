@@ -263,6 +263,29 @@
 @media (min-width: $desktop) {
   .grid-container-home-1 {
     grid-template-columns: minmax(292px, 1fr);
+
+    .card-1 {
+      .card {
+        &__link {
+          flex-direction: row;
+        }
+        &__img-container {
+          flex: 1;
+          height: auto;
+          padding: 0;
+        }
+        &__img {
+          border-top-left-radius: $radius;
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: $radius;
+        }
+        &__body {
+          flex: 2;
+          height: auto;
+        }
+      }
+    }
   }
 
   .grid-container-home-2 {
@@ -275,9 +298,9 @@
 
   .grid-container-home-4 {
     grid-template-areas:
-      'one one one'
-      'two three four';
-    grid-template-columns: 1fr 1fr 1fr;
+      'one two'
+      'three four';
+    grid-template-columns: 1fr 1fr;
 
     .card-1 {
       grid-area: one;
