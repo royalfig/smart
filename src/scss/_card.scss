@@ -88,8 +88,8 @@
   &__body {
     @include flex(column, flex-start, flex-start);
     height: 100%;
-    padding: 0 1.5rem;
-    margin: 1.5rem 0;
+    padding: 0 1.25rem;
+    margin: 1.25rem 0;
   }
 
   &__date-tag {
@@ -128,11 +128,16 @@
 
   &__title {
     position: relative;
-    margin: 0.25rem 0 1rem;
+    margin: 0.25rem 0 1.5rem;
     font-size: 1.5rem;
     line-height: 1.1;
     @include color-map(color, text);
     @include transition(color);
+
+    &--tags {
+      @extend .card__title;
+      margin: 0.25rem 0;
+    }
   }
 
   &__excerpt {

@@ -2,9 +2,11 @@
   &__content {
     figcaption {
       padding: 0.5rem;
-      font-size: 0.9375rem;
+      font-size: 0.8375rem;
       @include color-map(color, text1);
-      text-align: center;
+      @include color-map(background-color, surface2);
+      border-bottom-right-radius: $radius;
+      border-bottom-left-radius: $radius;
     }
 
     blockquote {
@@ -27,7 +29,7 @@
         left: 0;
         width: 8px;
         height: 100%;
-        content: "";
+        content: '';
         background: linear-gradient(color(primary), color(secondary));
         background: linear-gradient(var(--primary), var(--secondary));
         border-top-left-radius: $radius;

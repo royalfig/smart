@@ -1,3 +1,13 @@
+{{#if isSecondary}}
+{{#foreach navigation}}
+<a class="mobile-nav-menu__social-media-item" href="{{url}}" aria-label="{{label}}">
+    <svg>
+        <title>{{label}}</title>
+        <use href="#{{slug}}"></use>
+    </svg>
+</a>
+{{/foreach}}
+{{else}}
 {{!-- Mobile Navbar --}}
 <nav class="navbar-mobile">
     <div class="navbar-mobile__left">
@@ -157,3 +167,4 @@
     </div>
 </nav>
 {{!-- Fixed Navbar --}}
+{{/if}}

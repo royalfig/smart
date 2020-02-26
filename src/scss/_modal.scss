@@ -1,11 +1,6 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
-.expanded-modal-search,
-.expanded-menu {
-  overflow: hidden;
-}
-
 .content-wrap {
   &:before {
     z-index: 1000;
@@ -131,20 +126,19 @@
     margin-left: 0.5rem;
     font-weight: 700;
     line-height: 1;
-    @include color-map(color, surface);
+    @include color-map(color, textInverse);
     vertical-align: bottom;
-    @include color-map(background, surface4);
-    background: linear-gradient(45deg, color(primary), color(secondary));
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    @include color-map(background-color, primary);
+
     border: none;
     border-radius: $radius;
     box-shadow: $box-shadow;
-    @include transition(background);
+    @include transition(background-color);
 
     &:hover,
     &:focus {
-      @include color-map(background, primary);
-      @include transition(background);
+      @include color-map(background-color, secondary);
+      @include transition(background-color);
       outline: none;
     }
 

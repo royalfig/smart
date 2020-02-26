@@ -13,11 +13,12 @@
     flex: 1;
     width: 100%;
     height: 100%;
-    background: radial-gradient(
-      rgba(105, 105, 105, 0.15) 25%,
-      rgba(55, 55, 55, 0.5) 75%,
-      rgba(20, 20, 20, 0.5)
-    );
+    // background: radial-gradient(
+    //   rgba(105, 105, 105, 0.15) 25%,
+    //   rgba(55, 55, 55, 0.5) 75%,
+    //   rgba(20, 20, 20, 0.5)
+    // );
+    background: rgba(10, 10, 20, 0.5);
   }
 
   &__top,
@@ -28,48 +29,37 @@
   }
 
   &__top {
-    @include flex(column, center, center);
+    @extend .outer-container;
+    @include flex(column, center, flex-start);
   }
 
   &__text-container {
     position: relative;
     @include flex(column, center, stretch);
     z-index: 1;
+    width: 100%;
     max-width: $laptop;
-    margin: 1rem;
-    font-size: 3rem;
-    text-align: center;
-
-    @include respond-between($tablet, $laptop) {
-      font-size: 3.25rem;
-    }
-
-    @include respond-above($laptop) {
-      font-size: 3.75rem;
-    }
+    margin: 0.5rem auto;
   }
 
   &__site-title {
     z-index: 3;
-    padding: 1rem 0;
-    margin: 0;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
     @extend .serif;
-    font-size: 1.25em;
+    font-size: 3.488rem;
     line-height: 1;
     color: #ffffff;
+    text-align: left;
   }
 
   &__site-description {
-    padding: 0 0 1rem;
     margin: 0;
     font-family: $sans;
-    font-size: 0.3em;
-    font-weight: 400;
-    font-weight: 700;
+    font-size: 1.65rem;
     line-height: 1.2;
-    color: #ffffff;
-    text-transform: uppercase;
-    letter-spacing: 4px;
+    color: #eeeeee;
+    text-align: left;
   }
 
   &__header-container {
