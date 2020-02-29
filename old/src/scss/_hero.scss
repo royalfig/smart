@@ -1,0 +1,240 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  max-height: 30rem;
+  margin-top: $navbar;
+  @include color-map(background-color, surface1);
+  background-position: center;
+  background-size: cover;
+
+  &__overlay {
+    @include flex(column, center, center);
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    // background: radial-gradient(
+    //   rgba(105, 105, 105, 0.15) 25%,
+    //   rgba(55, 55, 55, 0.5) 75%,
+    //   rgba(20, 20, 20, 0.5)
+    // );
+    background: rgba(10, 10, 20, 0.5);
+  }
+
+  &__top,
+  &__bottom {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__top {
+    @extend .outer-container;
+    @include flex(column, center, flex-start);
+  }
+
+  &__text-container {
+    position: relative;
+    @include flex(column, center, stretch);
+    z-index: 1;
+    width: 100%;
+    max-width: $laptop;
+    margin: 0.5rem auto;
+  }
+
+  &__site-title {
+    z-index: 3;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    @extend .serif;
+    font-size: 3.488rem;
+    line-height: 1;
+    color: #ffffff;
+    text-align: left;
+  }
+
+  &__site-description {
+    margin: 0;
+    font-family: $sans;
+    font-size: 1.65rem;
+    line-height: 1.2;
+    color: #eeeeee;
+    text-align: left;
+  }
+
+  &__header-container {
+    @include flex(row, flex-start, center);
+    width: 100%;
+    padding: 1rem 0;
+    margin: 0 auto;
+
+    @include respond-above($laptop) {
+      padding: 1rem;
+    }
+  }
+
+  &__header--serif--underline {
+    @extend .serif;
+    @extend .underline;
+  }
+
+  &__bottom {
+    @extend .outer-container;
+    padding: 0 0 1rem;
+    @include flex(column, center, flex-start);
+    @include color-map(border-bottom, surface);
+    border-bottom-style: solid;
+    border-bottom-width: 0.5rem;
+  }
+
+  &__container {
+    @include flex(column, flex-start, center);
+    width: 100%;
+    padding: 1rem;
+
+    @include respond-above($laptop) {
+      width: auto;
+      margin: 0 auto;
+    }
+  }
+
+  &__card-container {
+    @include flex(column, center, stretch);
+    width: 100%;
+    padding: 0;
+    margin: 0 0 1rem;
+
+    @include respond-above($laptop) {
+      @include flex(row, center, stretch);
+    }
+  }
+
+  &__card {
+    position: relative;
+    @include flex(row, flex-start, flex-start);
+    z-index: 1;
+    width: 100%;
+    margin-bottom: 1rem;
+    @include color-map(background-color, surface2);
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+
+    &-link {
+      display: flex;
+      width: 100%;
+
+      @include respond-above($laptop) {
+        flex-direction: column;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 2px color(primary);
+      box-shadow: 0 0 0 2px var(--primary);
+
+      .hero {
+        &__card-title--serif {
+          @include color-map(color, primary);
+        }
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @include respond-above($laptop) {
+      @include flex(column, flex-start, flex-start);
+      max-width: 20rem;
+      margin: 0 0.5rem 1rem;
+
+      &:last-child {
+        margin-bottom: 1rem;
+      }
+    }
+  }
+
+  &__card-img-container {
+    flex-shrink: 0;
+    width: $base;
+    height: $base;
+    @include transition(all);
+    @include respond-above($laptop) {
+      width: 100%;
+    }
+  }
+
+  &__card-img,
+  &__card-no-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    border-top-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+
+    @include respond-above($laptop) {
+      border-top-left-radius: $radius;
+      border-top-right-radius: $radius;
+      border-bottom-left-radius: 0;
+    }
+  }
+
+  &__card-no-img {
+    background: linear-gradient(45deg, color(primary), color(secondary));
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+  }
+
+  &__card-body {
+    @include flex(column, space-between, flex-start);
+    width: 100%;
+    height: $base;
+    padding: 0.5rem 0.75rem;
+  }
+
+  &__card-date {
+    font-size: 0.75rem;
+    @include color-map(color, text1);
+    text-transform: uppercase;
+  }
+
+  &__card-title--serif {
+    font-size: 1rem;
+    line-height: 1.2;
+    @extend .serif;
+    @include transition(color);
+
+    &:hover {
+      color: color(primary);
+      color: var(--primary);
+    }
+  }
+
+  &__tag-link {
+    @include flex(row, flex-start, center);
+    font-size: 0.75rem;
+    @include color-map(color, text1);
+    text-transform: uppercase;
+
+    svg {
+      flex-shrink: 0;
+      align-self: flex-start;
+      width: 0.75rem;
+      height: 0.75rem;
+      transform: translateY(0.2em);
+      @include color-map(stroke, text1);
+      stroke-width: 2px;
+    }
+
+    &:hover {
+      color: color(secondary);
+      color: var(--secondary);
+
+      svg {
+        color: color(secondary);
+        stroke: var(--secondary);
+      }
+    }
+  }
+}

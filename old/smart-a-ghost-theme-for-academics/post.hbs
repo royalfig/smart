@@ -157,6 +157,9 @@ into the {body} of the default.hbs template --}}
         };
         document.addEventListener('DOMContentLoaded', resizeImagesInGalleries);
     })(window, document);
-
+    fluidvids.init({
+        selector: ['iframe', 'object'],
+        players: ['www.youtube.com', 'player.vimeo.com']
+    });
 </script>
 {{/contentFor}}

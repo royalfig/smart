@@ -8,8 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{meta_title}}</title>
+
     {{!-- CSS  --}}
-    <link rel="stylesheet" href="{{asset 'css/app.css'}}">
+    <link rel="stylesheet" href="{{asset 'css/style.css'}}">
     <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     <style>
         @font-face {
@@ -52,6 +53,7 @@
             font-family: 'Lato', sans-serif;
         }
     </style>
+
     {{!-- Optimize font loading for repeat views --}}
     <script>
         (function () {
@@ -72,16 +74,13 @@
             }
         })();
     </script>
-    <script>
-        if (localStorage.getItem("pref") === "bright" || window.matchMedia('(prefers-color-scheme: light)').matches && !localStorage.getItem("pref")) {
-            document.documentElement.setAttribute("color-mode", "bright");
-        }
-    </script>
+
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
 
 <body class="{{body_class}}">
+
     {{!-- SVG Sprite  --}}
     <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol viewBox="0 0 24 24" id="close">
@@ -196,10 +195,14 @@
         </symbol>
     </svg>
     {{!-- SVG Sprite  --}}
+
     {{navigation}}
+
     <div class="content-wrap">
+
         {{!-- All the main content is inserted here --}}
         {{{body}}}
+
         {{!-- Footer Module --}}
         <footer class="footer--outer-container">
             <div class="footer--inner-container">
@@ -219,6 +222,7 @@
                                 </svg>
                             </a>
                             {{/if}}
+
                             {{#if @site.facebook}}
                             <a class="facebook" href="{{facebook_url}}" class="nav-item" aria-label="Facebook">
                                 <svg>
@@ -227,13 +231,16 @@
                                 </svg>
                             </a>
                             {{/if}}
+
                             {{navigation type="secondary"}}
                         </div>
                     </div>
+
                     {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
                     {{#if tags}}
                     <div class="footer__section">
                         <p class="footer__header--serif">Tags</p>
+
                         {{#foreach tags}}
                         <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
                             <svg>
@@ -247,14 +254,13 @@
                     </div>
                     {{/if}}
                     {{/get}}
+
                     {{#get "posts" limit="6"}}
                     <div class="footer__section--latest">
                         <p class="footer__header--serif">Latest</p>
                         {{#foreach posts limit="3"}}
-                        <p class="footer__date">
-                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
-                            </time>
-                        </p>
+                        <p class="footer__date"><time
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></p>
                         <a class="footer__title" href="{{url}}">{{title}}</a>
                         {{/foreach}}
                     </div>
@@ -262,14 +268,14 @@
                         <p class="footer__header--serif">&nbsp;</p>
                         {{#foreach posts from="4" to="6"}}
                         <p class="footer__date"><time
-                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-                        </p>
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time></p>
                         <a class="footer__title" href="{{url}}">{{title}}</a>
                         {{/foreach}}
                     </div>
                     {{/get}}
                 </div>
             </div>
+
             <div class="footer__published-by-ghost">
                 <p>
                     &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Published by <a
@@ -278,8 +284,10 @@
             </div>
         </footer>
         {{!-- Footer --}}
+
     </div>
     {{!-- end content-wrap --}}
+
     {{!-- Search Modal --}}
     <aside class="modal-search" id="modal-search" aria-expanded="false" aria-hidden="true">
         <div class="modal-search__container">
@@ -302,14 +310,16 @@
     </aside>
     {{!-- Search Modal --}}
 
-    <script src=" {{asset 'js/app.js'}}"></script>
-    {{^is "home"}}
-    <script src=" {{asset 'js/post.js'}}"></script>
-    {{/is}}
-    {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
-    {{{block "scripts"}}}
-    {{!-- Ghost footer required, right before the closing body tag --}}
-    {{ghost_foot}}
+    <script src=" {{asset 'js/main.js'}}">
+    </script>
+
+                        {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
+                        {{{block "scripts"}}}
+
+
+                        {{!-- Ghost footer required, right before the closing body tag --}}
+                        {{ghost_foot}}
+
 </body>
 
 </html>

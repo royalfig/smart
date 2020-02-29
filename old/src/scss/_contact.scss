@@ -1,0 +1,36 @@
+.contact {
+  @include flex(column, flex-start, flex-start);
+  font-size: 1rem;
+
+  &__label {
+    @extend .author__small-header;
+  }
+
+  &__input {
+    @extend .modal-search__input;
+    width: 100%;
+    padding-bottom: 0.15rem;
+    margin: 0;
+  }
+
+  textarea {
+    flex-basis: auto;
+    height: 8rem;
+    padding: 0.15rem;
+    margin: 0.5rem 0;
+    font-family: $sans;
+    font-size: 1rem;
+    border: 1px solid currentColor;
+    border-radius: $radius;
+
+    &:focus {
+      border: 1px solid color(primary);
+      border: 1px solid var(--primary);
+    }
+  }
+
+  &__btn {
+    @extend .modal-search__btn;
+    margin: 1rem 0;
+  }
+}
