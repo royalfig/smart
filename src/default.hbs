@@ -14,34 +14,42 @@
     <style>
         @font-face {
             font-family: 'Lato';
-            src: url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
+            font-style: normal;
+            font-weight: 400;
             font-display: swap;
+            src: local('Lato'),
+                 url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
+                 url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
         }
 
         @font-face {
             font-family: 'Lato';
-            src: url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
+            font-style: normal;
             font-weight: 700;
             font-display: swap;
+            src: local('Lato'),
+                 url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
+                 url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
         }
 
         @font-face {
             font-family: 'Lato';
-            src: url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
             font-style: italic;
+            font-weight: 400;
             font-display: swap;
+            src: local('Lato'),
+                 url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
+                 url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
         }
 
         @font-face {
             font-family: 'Lato';
-            src: url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
+            font-style: italic;
             font-weight: 700;
-            font-style: italic;
             font-display: swap;
+            src: local('Lato'),
+                 url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
+                 url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
         }
 
         body {
@@ -49,7 +57,8 @@
         }
 
         .fonts-loaded body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+            ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     </style>
     {{!-- Optimize font loading for repeat views --}}
@@ -61,10 +70,10 @@
             }
             if ("fonts" in document) {
                 Promise.all([
-                    document.fonts.load("1rem 'Lato'"),
-                    document.fonts.load("700 1rem 'Lato'"),
-                    document.fonts.load("italic 1rem 'Lato'"),
-                    document.fonts.load("italic 700 1rem 'Lato'")
+                    document.fonts.load("1em 'Lato'"),
+                    document.fonts.load("700 1em 'Lato'"),
+                    document.fonts.load("italic 1em 'Lato'"),
+                    document.fonts.load("italic 700 1em 'Lato'")
                 ]).then(function () {
                     document.documentElement.className += " fonts-loaded";
                     sessionStorage.fontsLoadedFoutWithClass = true;
