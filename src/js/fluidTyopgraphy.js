@@ -1,4 +1,4 @@
-export class FluidTypography {
+class FluidTypography {
   constructor(minVW, maxVW, minFontSize, maxFontSize) {
     this.minVW = minVW;
     this.maxVW = maxVW;
@@ -11,7 +11,7 @@ export class FluidTypography {
   computeMaxRem() {
     const body = document.documentElement;
     const properties = window.getComputedStyle(body);
-    const baseFontSize = properties.fontSize.replace(/px/, "");
+    const baseFontSize = properties.fontSize.replace(/px/, '');
     const relativeMax = (this.maxFontSize * baseFontSize) / this.minFontSize;
     const maxRem = relativeMax / baseFontSize;
     return maxRem;
@@ -37,6 +37,6 @@ export class FluidTypography {
 
   resizeHandler() {
     this.fontSize();
-    window.addEventListener("resize", this.fontSize.bind(this));
+    window.addEventListener('resize', this.fontSize.bind(this));
   }
 }

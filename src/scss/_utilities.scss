@@ -22,7 +22,7 @@ $li: #0077b5;
   --surface3: #f5f5f5;
   --surface4: #f8f8f8;
 
-  --primary: rgb(13, 72, 160);
+  --primary: #0d48a0;
   --secondary: rgb(255, 87, 34);
 }
 
@@ -41,7 +41,7 @@ $li: #0077b5;
   --surface3: #303030;
   --surface4: #383838;
 
-  --primary: rgb(128, 222, 234);
+  --primary: #80deea;
   --secondary: rgb(255, 171, 145);
 }
 
@@ -67,13 +67,12 @@ $colors: (
     @return map-get($colors, $key);
   }
 
-  @warn "Unknown `#{$key}` in $colors.";
+  @warn 'Unknown `#{$key}` in $colors.';
   @return null;
 }
 
 @mixin color-map($property, $color) {
-  #{$property}: color($color);
-  #{$property}: var(--#{$color});
+  #{$property}: var(--#{$color}, color($color));
 }
 
 //-------------------------------------------
@@ -148,7 +147,7 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .no-scroll {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .grid-container {

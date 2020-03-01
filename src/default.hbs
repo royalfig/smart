@@ -77,6 +77,69 @@
             document.documentElement.setAttribute("color-mode", "bright");
         }
     </script>
+    <script>
+        function _instanceof(left, right) { if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) { return !!right[Symbol.hasInstance](left); } else { return left instanceof right; } }
+
+        function _classCallCheck(instance, Constructor) { if (!_instanceof(instance, Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+        function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+        function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+        var FluidTypography = /*#__PURE__*/function () {
+        "use strict";
+
+        function FluidTypography(minVW, maxVW, minFontSize, maxFontSize) {
+            _classCallCheck(this, FluidTypography);
+
+            this.minVW = minVW;
+            this.maxVW = maxVW;
+            this.minFontSize = minFontSize;
+            this.maxFontSize = maxFontSize;
+            this.maxRem = this.computeMaxRem();
+        } // Compute the maxRem based on arguments and user's browser preferences
+
+
+        _createClass(FluidTypography, [{
+            key: "computeMaxRem",
+            value: function computeMaxRem() {
+            var body = document.documentElement;
+            var properties = window.getComputedStyle(body);
+            var baseFontSize = properties.fontSize.replace(/px/, '');
+            var relativeMax = this.maxFontSize * baseFontSize / this.minFontSize;
+            var maxRem = relativeMax / baseFontSize;
+            return maxRem;
+            } // Calculate font size based on arguments and user's browser preferences
+
+        }, {
+            key: "fontSize",
+            value: function fontSize() {
+            var width = document.documentElement.offsetWidth;
+            var rem = 1;
+
+            if (width > this.minVW && width < this.maxVW) {
+                rem = 1 + (this.maxRem - 1) * (width - this.minVW) / (this.maxVW - this.minVW);
+            }
+
+            if (width > this.maxVW) {
+                rem = this.maxRem;
+            }
+
+            document.documentElement.style = "font-size: ".concat(rem, "rem");
+            }
+        }, {
+            key: "resizeHandler",
+            value: function resizeHandler() {
+            this.fontSize();
+            window.addEventListener('resize', this.fontSize.bind(this));
+            }
+        }]);
+
+        return FluidTypography;
+        }();
+
+        new FluidTypography(640, 1440, 16, 21).resizeHandler();
+    </script>
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
