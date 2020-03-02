@@ -28,14 +28,7 @@ const months = [
 ];
 
 const options = {
-  keys: ['title', 'plaintext', 'tags.name'],
-  id: 'id',
-  shouldSort: true,
-  threshold: 0.3,
-  location: 0,
-  distance: 50,
-  maxPatternLength: 32,
-  minMatchCharLength: 1
+  keys: ['title', 'plaintext', 'tags.name']
 };
 
 const posts = api.posts
@@ -61,11 +54,8 @@ const searchPosts = (term) => {
     } else {
       searchResultHeader.textContent = 'No results';
     }
-    const matchingPosts = queriedPosts.filter((post) =>
-      result.includes(post.id)
-    );
 
-    matchingPosts.forEach((post) => {
+    result.forEach((post) => {
       const day = post.published_at.substring(8, 10);
       const year = post.published_at.substring(0, 4);
       const month = months[parseInt(post.published_at.substring(5, 7), 10) - 1];
