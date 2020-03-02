@@ -1,3 +1,21 @@
+(function() {
+  if (sessionStorage.fontsLoadedFoutWithClass) {
+    document.documentElement.className += ' fonts-loaded';
+    return;
+  }
+  if ('fonts' in document) {
+    Promise.all([
+      document.fonts.load("1em 'Lato'"),
+      document.fonts.load("700 1em 'Lato'"),
+      document.fonts.load("italic 1em 'Lato'"),
+      document.fonts.load("italic 700 1em 'Lato'")
+    ]).then(() => {
+      document.documentElement.className += ' fonts-loaded';
+      sessionStorage.fontsLoadedFoutWithClass = true;
+    });
+  }
+})();
+
 class FluidTypography {
   constructor(minVW, maxVW, minFontSize, maxFontSize) {
     this.minVW = minVW;
@@ -39,4 +57,14 @@ class FluidTypography {
     this.fontSize();
     window.addEventListener('resize', this.fontSize.bind(this));
   }
+}
+
+new FluidTypography(640, 1280, 16, 21).resizeHandler();
+
+if (
+  localStorage.getItem('pref') === 'bright' ||
+  (window.matchMedia('(prefers-color-scheme: light)').matches &&
+    !localStorage.getItem('pref'))
+) {
+  document.documentElement.setAttribute('color-mode', 'bright');
 }

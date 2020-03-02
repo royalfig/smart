@@ -1,7 +1,7 @@
 // import lunr from "lunr";
 import './scss/style.scss';
-import GhostContentAPI from '@tryghost/content-api';
 // import { FluidTypography } from './js/fluidTyopgraphy';
+import search from './js/search';
 
 import 'lazysizes';
 // import "lunr";

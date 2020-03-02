@@ -1,7 +1,0 @@
-<svg role="img" 
-    xmlns="http://www.w3.org/2000/svg" width="48px" height="48px" viewBox="0 0 24 24" aria-labelledby="arrowLeftIconTitle" stroke="#181818" stroke-width="1" stroke-linecap="square" stroke-linejoin="miter" fill="none" color="#181818">
-    <title id="arrowLeftIconTitle">Arrow Left</title>
-    <path d="M9 6l-6 6 6 6"/>
-    <path d="M21 12H4"/>
-    <path stroke-linecap="round" d="M3 12h1"/>
-</svg>
