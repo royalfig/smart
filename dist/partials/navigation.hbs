@@ -47,12 +47,6 @@
 {{!-- Mobile Nav Menu --}}
 <div class="mobile-nav-menu" id="menu" aria-expanded="false" aria-hidden="true">
     <div class="mobile-nav-menu__inner">
-        <a href="{{@site.url}}">
-            <p class="mobile-nav-menu__site-title--serif">{{@site.title}}</p>
-        </a>
-        {{#if @site.description}}
-        <p class="mobile-nav-menu__site-description">{{@site.description}}</p>
-        {{/if}}
         {{!-- Main Navigation --}}
         {{#if @site.navigation}}
         <ul class="mobile-nav-menu__main-nav">
@@ -84,14 +78,6 @@
                     <use href="#facebook"></use>
                 </svg>
             </a>
-            {{/if}}
-            {{#if @labs.subscribers}}
-            <button class="navbar-subscribe-btn nav-item" data-id="subscribe" aria-label="Subscribe">
-                <svg>
-                    <title>Subscribe</title>
-                    <use href="#clipboard"></use>
-                </svg>
-            </button>
             {{/if}}
         </div>
         {{/has}}
