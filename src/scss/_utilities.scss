@@ -246,3 +246,85 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     -2px 2px var(--surface1), -2px -2px var(--surface1);
   border-bottom: 2px solid currentColor;
 }
+
+//-------------------------------------------
+// SVG Icon Colors
+//-------------------------------------------
+
+.academia svg {
+  @include transition(all);
+  &:hover {
+    @include color-map(fill, primary);
+  }
+}
+.facebook svg {
+  stroke: none;
+  @include transition(all);
+
+  &:hover {
+    fill: $fb;
+  }
+}
+
+.github svg {
+  @include transition(all);
+  &:hover {
+    fill: $gh;
+  }
+}
+
+.gitlab svg {
+  @include transition(all);
+  &:hover {
+    fill: $gl;
+  }
+}
+
+.instagram svg {
+  @include transition(all);
+  fill: none;
+  stroke: currentColor;
+  &:hover {
+    stroke: $ig;
+  }
+}
+
+.linkedin svg {
+  @include transition(all);
+  &:hover {
+    fill: $li;
+  }
+}
+
+.rss svg {
+  @include transition(all);
+  fill: none;
+  stroke: currentColor;
+  &:hover {
+    stroke: $rs;
+  }
+}
+
+.twitch svg {
+  @include transition(all);
+  &:hover {
+    fill: $ch;
+  }
+}
+.twitter svg {
+  stroke: none;
+  @include transition(all);
+
+  &:hover {
+    fill: $tw;
+  }
+}
+
+.youtube svg {
+  @include transition(all);
+  fill: none;
+  stroke: currentColor;
+  &:hover {
+    stroke: $yt;
+  }
+}
