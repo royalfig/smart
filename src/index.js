@@ -24,30 +24,43 @@ gridContainers.forEach((element) => {
 // Color Mode Toggle
 //-------------------------------------------
 
-const sun = document.querySelectorAll('.color-mode-btn--sun');
-const moon = document.querySelectorAll('.color-mode-btn--moon');
+// const sun = document.querySelectorAll('.color-mode-btn--sun');
+// const moon = document.querySelectorAll('.color-mode-btn--moon');
 
-const toggleBrightMode = () => {
-  document.documentElement.setAttribute('color-mode', 'bright');
-  localStorage.setItem('pref', 'bright');
-};
+// const toggleBrightMode = () => {
+//   document.documentElement.setAttribute('color-mode', 'bright');
+//   localStorage.setItem('pref', 'bright');
+// };
 
-const toggleDarkMode = () => {
+// const toggleDarkMode = () => {
+//   document.documentElement.setAttribute('color-mode', 'dark');
+//   localStorage.setItem('pref', 'dark');
+// };
+
+// sun.forEach((btn) => {
+//   btn.addEventListener('click', toggleBrightMode);
+// });
+
+// moon.forEach((btn) => {
+//   btn.addEventListener('click', toggleDarkMode);
+// });
+
+const toggleColorMode = (e) => {
+  if (e.currentTarget.dataset.color === 'bright') {
+    document.documentElement.setAttribute('color-mode', 'bright');
+    localStorage.setItem('pref', 'bright');
+    return;
+  }
+  console.log('going dark');
   document.documentElement.setAttribute('color-mode', 'dark');
   localStorage.setItem('pref', 'dark');
 };
 
-sun.forEach((btn) => {
-  btn.addEventListener('click', toggleBrightMode);
-});
+const toggleColorButtons = document.querySelectorAll('.color-mode-btn');
 
-moon.forEach((btn) => {
-  btn.addEventListener('click', toggleDarkMode);
+toggleColorButtons.forEach((btn) => {
+  btn.addEventListener('click', toggleColorMode);
 });
-
-// if (localStorage.getItem("pref") === "bright") {
-//   toggleBrightMode();
-// }
 
 // animate navbar on desktop
 const siteTitles = document.querySelectorAll('.site-title');

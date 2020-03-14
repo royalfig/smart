@@ -307,15 +307,13 @@
       @include color-map(stroke, primary);
     }
   }
-  &--sun {
-    @extend .color-mode-btn;
-    [color-mode='bright'] & {
+  &[data-color='bright'] {
+    :root[color-mode='bright'] & {
       display: none;
     }
   }
-  &--moon {
-    @extend .color-mode-btn;
-    [color-mode='dark'] & {
+  &[data-color='dark'] {
+    :root[color-mode='dark'] & {
       display: none;
     }
   }
