@@ -62,9 +62,9 @@ class FluidTypography {
 new FluidTypography(640, 1280, 16, 21).resizeHandler();
 
 if (
-  localStorage.getItem('pref') === 'bright' ||
+  localStorage.getItem('pref') === 'light' ||
   (window.matchMedia('(prefers-color-scheme: light)').matches &&
     !localStorage.getItem('pref'))
 ) {
-  document.documentElement.setAttribute('color-mode', 'bright');
+  document.documentElement.setAttribute('color-mode', 'light');
 }

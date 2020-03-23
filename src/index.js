@@ -23,35 +23,12 @@ gridContainers.forEach((element) => {
 //-------------------------------------------
 // Color Mode Toggle
 //-------------------------------------------
-
-// const sun = document.querySelectorAll('.color-mode-btn--sun');
-// const moon = document.querySelectorAll('.color-mode-btn--moon');
-
-// const toggleBrightMode = () => {
-//   document.documentElement.setAttribute('color-mode', 'bright');
-//   localStorage.setItem('pref', 'bright');
-// };
-
-// const toggleDarkMode = () => {
-//   document.documentElement.setAttribute('color-mode', 'dark');
-//   localStorage.setItem('pref', 'dark');
-// };
-
-// sun.forEach((btn) => {
-//   btn.addEventListener('click', toggleBrightMode);
-// });
-
-// moon.forEach((btn) => {
-//   btn.addEventListener('click', toggleDarkMode);
-// });
-
 const toggleColorMode = (e) => {
-  if (e.currentTarget.dataset.color === 'bright') {
-    document.documentElement.setAttribute('color-mode', 'bright');
-    localStorage.setItem('pref', 'bright');
+  if (e.currentTarget.classList.contains('light')) {
+    document.documentElement.setAttribute('color-mode', 'light');
+    localStorage.setItem('pref', 'light');
     return;
   }
-  console.log('going dark');
   document.documentElement.setAttribute('color-mode', 'dark');
   localStorage.setItem('pref', 'dark');
 };

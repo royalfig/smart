@@ -22,20 +22,20 @@
         </a>
     </div>
     <div class="navbar-mobile__right">
-        <button class="color-mode-btn" aria-label="Toggle dark or bright mode" data-color="bright">
-            <svg>
-                <title>Bright Mode</title>
+        <button class="color-mode-btn light" aria-label="Toggle light mode">
+            <svg aria-hidden="true">
+                <title>light Mode</title>
                 <use href="#sun"></use>
             </svg>
         </button>
-        <button class="color-mode-btn" aria-label="Toggle dark or bright mode" data-color="dark">
-            <svg>
+        <button class="color-mode-btn dark" aria-label="Toggle dark mode">
+            <svg aria-hidden="true">
                 <title>Dark Mode</title>
                 <use href="#moon"></use>
             </svg>
         </button>
         <button class="navbar-mobile__search-btn" data-target="modal-search" aria-label="Search {{@site.title}}">
-            <svg>
+            <svg aria-hidden="true">
                 <title>Search {{@site.title}}</title>
                 <use href="#search"></use>
             </svg>
@@ -64,7 +64,7 @@
             {{#if @site.twitter}}
             <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
                 aria-label="Twitter">
-                <svg>
+                <svg aria-hidden="true">
                     <title>Twitter</title>
                     <use href="#twitter"></use>
                 </svg>
@@ -73,7 +73,7 @@
             {{#if @site.facebook}}
             <a class="mobile-nav-menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
                 aria-label="Facebook">
-                <svg>
+                <svg aria-hidden="true">
                     <title>Facebook</title>
                     <use href="#facebook"></use>
                 </svg>
@@ -110,7 +110,7 @@
     <div class="navbar__right">
         {{#if @site.twitter}}
         <a class="navbar__right-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
-            <svg>
+            <svg aria-hidden="true">
                 <title>Twitter</title>
                 <use href="#twitter"></use>
             </svg>
@@ -118,7 +118,7 @@
         {{/if}}
         {{#if @site.facebook}}
         <a class="navbar__right-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
-            <svg>
+            <svg aria-hidden="true">
                 <title>Facebook</title>
                 <use href="#facebook"></use>
             </svg>
@@ -126,26 +126,26 @@
         {{/if}}
         {{#if @labs.subscribers}}
         <button class="navbar__right-item" data-id="subscribe" aria-label="Subscribe">
-            <svg>
+            <svg aria-hidden="true">
                 <title>Subscribe</title>
                 <use href="#clipboard"></use>
             </svg>
         </button>
         {{/if}}
-        <button class="color-mode-btn" aria-label="Toggle dark or bright mode" data-color="bright">
-            <svg>
-                <title>Bright Mode</title>
+        <button class="color-mode-btn light" aria-label="Toggle light mode">
+            <svg aria-hidden="true">
+                <title>light Mode</title>
                 <use href="#sun"></use>
             </svg>
         </button>
-        <button class="color-mode-btn" aria-label="Toggle dark or bright mode" data-color="dark">
-            <svg>
+        <button class="color-mode-btn dark" aria-label="Toggle dark mode">
+            <svg aria-hidden="true">
                 <title>Dark Mode</title>
                 <use href="#moon"></use>
             </svg>
         </button>
         <button class="navbar__right-item--search" data-target="modal-search" aria-label="Search {{@site.title}}">
-            <svg>
+            <svg aria-hidden="true">
                 <title>Search {{@site.title}}</title>
                 <use href="#search"></use>
             </svg>

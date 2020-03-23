@@ -307,12 +307,12 @@
       @include color-map(stroke, primary);
     }
   }
-  &[data-color='bright'] {
-    :root[color-mode='bright'] & {
+  &.light {
+    :root[color-mode='light'] & {
       display: none;
     }
   }
-  &[data-color='dark'] {
+  &.dark {
     :root[color-mode='dark'] & {
       display: none;
     }
