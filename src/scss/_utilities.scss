@@ -31,6 +31,14 @@ $yt: #ff0000;
   --primary: #0d48a0;
   // --secondary: rgb(255, 87, 34);
   --secondary: #a4002e;
+  --gradient: linear-gradient(
+    to right top,
+    #0d48a0,
+    #643791,
+    #8b1c76,
+    #a00053,
+    #a4002e
+  );
   --tertiary: #63309f;
 }
 
@@ -50,7 +58,15 @@ $yt: #ff0000;
   --surface4: #383838;
 
   --primary: #80deea;
-  --secondary: rgb(255, 171, 145);
+  --secondary: #ffab91;
+  --gradient: linear-gradient(
+    to right top,
+    #80deea,
+    #8cdbbf,
+    #b4d195,
+    #e0c081,
+    #ffab91
+  );
 }
 
 // Fallback (defaults to Dark Mode)

@@ -53,8 +53,8 @@
   }
 
   &__no-img {
-    background: linear-gradient(to bottom, color(primary), color(secondary));
-    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+    background: linear-gradient(to top right, color(primary), color(secondary));
+    background: var(--gradient);
 
     &:after {
       position: absolute;

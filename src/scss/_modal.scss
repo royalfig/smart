@@ -68,28 +68,19 @@
     height: 1.5rem;
     margin-left: auto;
 
-    span {
-      position: absolute;
-      left: 0;
-      display: block;
-      width: 100%;
-      height: calc(1rem / 5);
-      background-color: #ffffff;
-      opacity: 1;
-      transition: 0.25s ease-in-out;
-
-      &:first-child {
-        transform: rotate(45deg);
-      }
-
-      &:last-child {
-        transform: rotate(-45deg);
-      }
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      stroke: #ffffff;
+      stroke-width: 3;
+      @include transition(all);
     }
 
-    &:hover {
-      span {
-        @include color-map(background-color, primary);
+    &:hover,
+    &:focus {
+      outline: none;
+      svg {
+        stroke-width: 5;
       }
     }
 

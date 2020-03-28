@@ -1,10 +1,7 @@
-// import lunr from "lunr";
 import './scss/style.scss';
-// import { FluidTypography } from './js/fluidTyopgraphy';
 import search from './js/search';
 
 import 'lazysizes';
-// import "lunr";
 
 // Instantiate the class with your arguments in px (min vw, max vw, min font size, max font size)
 
