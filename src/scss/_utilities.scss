@@ -29,7 +29,9 @@ $yt: #ff0000;
   --surface4: #f8f8f8;
 
   --primary: #0d48a0;
-  --secondary: rgb(255, 87, 34);
+  // --secondary: rgb(255, 87, 34);
+  --secondary: #a4002e;
+  --tertiary: #63309f;
 }
 
 // Dark Mode (Default)
@@ -78,6 +80,7 @@ $colors: (
 }
 
 @mixin color-map($property, $color) {
+  #{$property}: color($color);
   #{$property}: var(--#{$color}, color($color));
 }
 

@@ -3,7 +3,9 @@
 //-------------------------------------------
 .content-wrap {
   &:before {
-    z-index: 1000;
+    top: 0;
+    left: 0;
+    z-index: 7;
     width: 100%;
     height: 100%;
     content: '';
@@ -16,7 +18,7 @@
   .expanded-menu & {
     &:before {
       position: fixed;
-      opacity: 0.75;
+      opacity: 0.9;
       transition: opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
     }
   }
@@ -24,20 +26,28 @@
 
 .modal-search {
   position: fixed;
-  top: $navbar;
+  top: 0;
   right: 0;
-  z-index: 1001;
+  z-index: 10;
   width: 20rem;
   max-width: 100vw;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   @include color-map(color, text);
   text-align: center;
   @include color-map(background-color, surface2);
   box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   transform: translate3d(100vw, 0, 0);
+
+  &__header {
+    @include flex(row, space-between, center);
+    width: 100%;
+
+    label {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+  }
 
   &__container {
     @include flex(column, center, flex-start);
@@ -50,10 +60,12 @@
   }
 
   &__close-btn {
-    position: relative;
+    position: absolute;
+    top: 1rem;
+    left: -2rem;
     display: block;
     width: 1.5rem;
-    height: 1rem;
+    height: 1.5rem;
     margin-left: auto;
 
     span {
@@ -62,7 +74,7 @@
       display: block;
       width: 100%;
       height: calc(1rem / 5);
-      @include color-map(background-color, text);
+      background-color: #ffffff;
       opacity: 1;
       transition: 0.25s ease-in-out;
 

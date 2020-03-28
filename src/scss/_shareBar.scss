@@ -11,10 +11,10 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1em;
+  padding: 0.5rem 0.25rem;
   margin: 0;
   margin-bottom: -100px;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   font-weight: 700;
   @include color-map(color, text2);
   text-align: center;
@@ -89,7 +89,7 @@
   }
 
   @include respond-above($laptop) {
-    top: $navbar + 1rem;
+    top: 50%;
     bottom: initial;
     flex-direction: column;
     width: initial;
@@ -97,6 +97,7 @@
     margin-left: -200px;
     border-top-right-radius: $radius;
     border-bottom-right-radius: $radius;
+    transform: translate3d(0, -50%, 0);
 
     &__title,
     &__link {

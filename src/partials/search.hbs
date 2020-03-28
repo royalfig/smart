@@ -1,0 +1,24 @@
+{{!-- Search Modal --}}
+    <aside class="modal-search" id="modal-search" role="search" aria-expanded="false" aria-hidden="true">
+        <button class="modal-search__close-btn" data-target="modal-search" title="Close" aria-label="close">
+            <span></span>
+            <span></span>
+        </button>
+        <div class="modal-search__container">
+            <header class="modal-search__header">
+                <label for="search">Search</label>
+            </header>
+            <div class="modal-search__inner-container">
+                <div class="modal-search__input-container">
+                    <input class="modal-search__input" id="search" type="text" placeholder="I'm looking for..."
+                        aria-label="Enter your search term" autocomplete="off">
+                    <button class="modal-search__btn" type="button" aria-label="search">Search</button>
+                </div>
+                <div class="search-results">
+                    <header class="search-results__header"></header>
+                    <div class="search-results__container""></div>
+                </div>
+            </div>
+        </div>
+    </aside>
+    {{!-- Search Modal --}}
