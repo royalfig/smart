@@ -1,7 +1,7 @@
 {{#if isSecondary}}
 {{#foreach navigation}}
 <a class="mobile-nav-menu__social-media-item {{slug}}" href="{{url}}" aria-label="{{label}}">
-    <svg>
+    <svg aria-hidden="true">
         <title>{{label}}</title>
         <use href="#{{slug}}"></use>
     </svg>
@@ -49,7 +49,7 @@
     <div class="mobile-nav-menu__inner">
         {{!-- Main Navigation --}}
         {{#if @site.navigation}}
-        <ul class="mobile-nav-menu__main-nav">
+        <ul class="mobile-nav-menu__main-nav" role="menu">
             {{#foreach navigation}}
             <li class="mobile-nav-menu__main-nav-list-item"><a href="{{url}}"
                     class="mobile-nav-menu__main-nav-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}
@@ -97,7 +97,7 @@
 
     <div class="navbar__center">
         {{#if @site.navigation}}
-        <ul class="navbar__ul">
+        <ul class="navbar__ul" role="menu">
             {{#foreach navigation}}
             <li class="navbar__list-item"><a href="{{url}}"
                     class="navbar__list-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>

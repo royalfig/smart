@@ -20,12 +20,12 @@
             <h3 class="card__title">{{title}}</h3>
             {{!-- <p class="card__excerpt">{{excerpt characters="75"}}</p> --}}
             {{#primary_tag}}
-            <div class="card__tag {{slug}}">
+            <a href="{{url}}" class="card__tag {{slug}}">
                 <svg aria-hidden="true">
                     <use href="#hash"></use>
                 </svg>
                 <p>{{name}}</p>
-            </div>
+            </a>
             {{/primary_tag}}
         </div>
     </a>
