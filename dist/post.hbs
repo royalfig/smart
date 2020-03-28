@@ -32,6 +32,7 @@ into the {body} of the default.hbs template --}}
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
 
                         {{! Tags }}
+                        {{#if tags}}
                         <section class="post__tag-bar">
                             <svg aria-hidden="true">
                                 <title>Filed under</title>
@@ -47,6 +48,7 @@ into the {body} of the default.hbs template --}}
                             </a>
                             {{/foreach}}
                         </section>
+                        {{/if}}
                         {{! Tags }}
                 </header>
 
