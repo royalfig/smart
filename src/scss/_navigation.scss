@@ -107,8 +107,6 @@
   width: 20rem;
   max-width: 100vw;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   @include color-map(color, text1);
   @include color-map(background-color, surface2);
   box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.25);
@@ -120,9 +118,21 @@
     transform: translate3d(0, 0, 0);
   }
 
+  &__close-btn {
+    position: absolute;
+    top: 0;
+    right: -3rem;
+    width: 2rem;
+    height: 2rem;
+    svg {
+      width: 2rem;
+      height: 2rem;
+      stroke: #ffffff;
+    }
+  }
   &__inner {
     @include flex(column, center, flex-start);
-    padding: 2rem 1rem 1rem;
+    padding: 1rem;
   }
 
   &__site-title--serif {

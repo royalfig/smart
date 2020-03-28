@@ -3,7 +3,10 @@ import search from './js/search';
 
 import 'lazysizes';
 
-// Instantiate the class with your arguments in px (min vw, max vw, min font size, max font size)
+// Polyfill forEach
+if (window.NodeList && !NodeList.prototype.forEach) {
+  NodeList.prototype.forEach = Array.prototype.forEach;
+}
 
 //-------------------------------------------
 // Grid Styles
