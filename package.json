@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "browser-sync start --server --files dist/** --startPath dist/home.html"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "keywords": [
     "Ghost",
@@ -23,36 +24,43 @@
   "author": "Ryan Feigenbaum",
   "license": "ISC",
   "devDependencies": {
-    "@babel/preset-env": "^7.6.3",
-    "browserslist": "^4.7.1",
-    "caniuse-lite": "^1.0.30001002",
-    "eslint": "^6.5.1",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^6.1.0",
-    "gulp-babel": "^8.0.0",
-    "gulp-clean-css": "^4.2.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-evil-icons": "^0.3.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-stylelint": "^9.0.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-zip": "^5.0.1",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-loader": "^8.1.0",
+    "babel-polyfill": "^6.26.0",
+    "browserslist": "^4.9.1",
+    "caniuse-lite": "^1.0.30001030",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "cssnano": "^4.1.10",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "file-loader": "^5.1.0",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "postcss-import": "^12.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.7.0",
+    "sass-loader": "^8.0.2",
     "stylelint": "^10.1.0",
     "stylelint-config-twbs-bootstrap": "^0.4.0",
-    "stylelint-order": "^3.1.1"
+    "stylelint-order": "^3.1.1",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "zip-webpack-plugin": "^3.0.0"
   },
-  "browserslist": [
-    "last 2 versions"
-  ],
   "dependencies": {
-    "@tryghost/content-api": "^1.3.5",
+    "@tryghost/content-api": "^1.3.7",
+    "autoprefixer": "^9.7.4",
+    "fluidvids.js": "github:toddmotto/fluidvids",
+    "fuse.js": "^3.6.1",
     "hamburgers": "^1.1.3",
     "hover.css": "^2.3.2",
     "lazysizes": "^5.2.0",
     "lunr": "^2.3.8",
+    "medium-zoom": "^1.0.5",
     "normalize.css": "^8.0.1"
   }
 }

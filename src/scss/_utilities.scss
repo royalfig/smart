@@ -3,12 +3,18 @@
 //-------------------------------------------
 
 // Social Media
+$ch: #6441a5; //Twitch
 $fb: #1877f2;
-$tw: #1da1f2;
+$gh: #4078c0;
+$gl: #fca326;
+$ig: #c13584;
 $li: #0077b5;
+$rs: #f26522; //RSS
+$tw: #1da1f2;
+$yt: #ff0000;
 
 // Bright Mode
-:root[color-mode='bright'] {
+:root[color-mode='light'] {
   --text: rgb(10, 10, 10);
   --textInverse: rgb(245, 245, 245);
   --text1: rgb(23, 23, 23);
@@ -22,8 +28,18 @@ $li: #0077b5;
   --surface3: #f5f5f5;
   --surface4: #f8f8f8;
 
-  --primary: rgb(13, 72, 160);
-  --secondary: rgb(255, 87, 34);
+  --primary: #0d48a0;
+  // --secondary: rgb(255, 87, 34);
+  --secondary: #a4002e;
+  --gradient: linear-gradient(
+    to right top,
+    #0d48a0,
+    #643791,
+    #8b1c76,
+    #a00053,
+    #a4002e
+  );
+  --tertiary: #63309f;
 }
 
 // Dark Mode (Default)
@@ -41,8 +57,16 @@ $li: #0077b5;
   --surface3: #303030;
   --surface4: #383838;
 
-  --primary: rgb(128, 222, 234);
-  --secondary: rgb(255, 171, 145);
+  --primary: #80deea;
+  --secondary: #ffab91;
+  --gradient: linear-gradient(
+    to right top,
+    #80deea,
+    #8cdbbf,
+    #b4d195,
+    #e0c081,
+    #ffab91
+  );
 }
 
 // Fallback (defaults to Dark Mode)
@@ -67,18 +91,19 @@ $colors: (
     @return map-get($colors, $key);
   }
 
-  @warn "Unknown `#{$key}` in $colors.";
+  @warn 'Unknown `#{$key}` in $colors.';
   @return null;
 }
 
 @mixin color-map($property, $color) {
   #{$property}: color($color);
-  #{$property}: var(--#{$color});
+  #{$property}: var(--#{$color}, color($color));
 }
 
 //-------------------------------------------
 // Fonts
 //-------------------------------------------
+
 $sans: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
   ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
@@ -148,12 +173,12 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 }
 
 .no-scroll {
-  overflow: hidden;
+  // overflow: hidden;
 }
 
 .grid-container {
   display: grid;
-  grid-gap: 1.5rem;
+  gap: 1.5rem;
 }
 
 .outer-container {
@@ -239,4 +264,86 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   text-shadow: 2px 2px var(--surface1), 2px -2px var(--surface1),
     -2px 2px var(--surface1), -2px -2px var(--surface1);
   border-bottom: 2px solid currentColor;
+}
+
+//-------------------------------------------
+// SVG Icon Colors
+//-------------------------------------------
+
+.academia svg {
+  @include transition(all);
+  &:hover {
+    @include color-map(fill, primary);
+  }
+}
+.facebook svg {
+  stroke: none;
+  @include transition(all);
+
+  &:hover {
+    fill: $fb;
+  }
+}
+
+.github svg {
+  @include transition(all);
+  &:hover {
+    fill: $gh;
+  }
+}
+
+.gitlab svg {
+  @include transition(all);
+  &:hover {
+    fill: $gl;
+  }
+}
+
+.instagram svg {
+  @include transition(all);
+  fill: none;
+  stroke: currentColor;
+  &:hover {
+    stroke: $ig;
+  }
+}
+
+.linkedin svg {
+  @include transition(all);
+  &:hover {
+    fill: $li;
+  }
+}
+
+.rss svg {
+  @include transition(all);
+  fill: none;
+  stroke: currentColor;
+  &:hover {
+    stroke: $rs;
+  }
+}
+
+.twitch svg {
+  @include transition(all);
+  &:hover {
+    fill: $ch;
+  }
+}
+.twitter svg {
+  stroke: none;
+  @include transition(all);
+
+  &:hover {
+    fill: $tw;
+  }
+}
+
+.youtube svg {
+  @include transition(all);
+  fill: none;
+  stroke: currentColor;
+  &:hover {
+    stroke: $yt;
+  }
 }

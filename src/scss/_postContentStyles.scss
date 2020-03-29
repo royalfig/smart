@@ -9,7 +9,7 @@
       border-bottom-left-radius: $radius;
     }
 
-    blockquote {
+    & > blockquote {
       position: relative;
       display: flex;
       flex-direction: column;

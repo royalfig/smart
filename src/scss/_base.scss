@@ -11,21 +11,12 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
   @include color-map(color, text);
   @include color-map(background-color, surface1);
   scroll-behavior: smooth;
-
-  @include respond-between($tablet, $desktop) {
-    font-size: 19px;
-    font-size: calc(16px + (21 - 16) * (100vw - 640px) / (1280 - 640));
-  }
-
-  @include respond-above($desktop) {
-    font-size: 21px;
-  }
 }
 
 button {

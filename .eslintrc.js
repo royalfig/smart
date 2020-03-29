@@ -12,5 +12,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module'
   },
-  rules: {}
+  rules: {
+    'comma-dangle': ['error', 'never']
+  }
 };
