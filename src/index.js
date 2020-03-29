@@ -74,19 +74,24 @@ const mobileSearchBtn = document.querySelector('.navbar-mobile__search-btn');
 const navSearchBtn = document.querySelector('.navbar__right-item--search');
 const hamburgerBtn = document.querySelector('.navbar-mobile__hamburger-btn');
 const mobileNavMenu = document.querySelector('.mobile-nav-menu');
+const mobileNavMenuCloseBtn = document.querySelector(
+  '.mobile-nav-menu__close-btn'
+);
 const modalSearch = document.querySelector('.modal-search');
 const modalSearchCloseBtn = document.querySelector('.modal-search__close-btn');
-const modalSearchInnerDiv = document.querySelector(
-  '.modal-search__inner-container'
-);
-const mobileNavMenuInner = document.querySelector('.mobile-nav-menu__inner');
 
 if (typeof SEARCH_API !== 'undefined') {
   mobileSearchBtn.style.display = 'block';
   navSearchBtn.style.display = 'block';
 }
 
-const btns = [mobileSearchBtn, navSearchBtn, hamburgerBtn, modalSearchCloseBtn];
+const btns = [
+  mobileSearchBtn,
+  navSearchBtn,
+  hamburgerBtn,
+  modalSearchCloseBtn,
+  mobileNavMenuCloseBtn
+];
 
 const closeMenu = (input, target) => {
   document.body.classList.remove(`expanded-${target}`);

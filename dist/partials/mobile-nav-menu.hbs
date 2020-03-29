@@ -1,6 +1,6 @@
 {{!-- Mobile Nav Menu --}}
 <div class="mobile-nav-menu" id="menu" aria-expanded="false" aria-hidden="true">
-    <button class="mobile-nav-menu__close-btn" aria-label="Close Menu">
+    <button class="mobile-nav-menu__close-btn" aria-label="Close Menu" data-target="menu">
         <svg aria-hidden="true">
             <title>Close Menu</title>
             <use href="#close"></use>
@@ -25,6 +25,7 @@
 
         {{!-- Social Media  --}}
         {{#has any="@site.twitter, @site.facebook"}}
+        <p class="mobile-nav-menu__social-media-header">Social Media</p>
         <div class="mobile-nav-menu__social-media">
             {{#if @site.twitter}}
             <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"

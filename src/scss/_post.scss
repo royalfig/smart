@@ -4,7 +4,7 @@
 .post-reading-progress {
   position: fixed;
   top: 0;
-  z-index: 1003;
+  z-index: 6;
   width: 0;
   max-width: 100%;
   height: 3px;
@@ -149,7 +149,6 @@
     'post-1'
     'post-2';
   grid-template-columns: 1fr;
-  grid-row-gap: 0.5rem;
   border-top-style: solid;
   border-top-width: 2px;
   @include color-map(border-top-color, text4);
@@ -173,6 +172,7 @@
   &__title-1,
   &__title-2 {
     @extend .serif;
+    margin-bottom: 0;
   }
 
   &__title-1 {
