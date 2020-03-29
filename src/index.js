@@ -115,6 +115,8 @@ const openMenu = (input, target) => {
   document.body.classList.add(`expanded-${target}`);
   input.setAttribute('aria-expanded', 'true');
   input.setAttribute('aria-hidden', 'false');
+  input.setAttribute('tabindex', '-1');
+  input.focus();
 
   const closeAll = (input) => {
     const wrapper = document.querySelector('.content-wrap');
