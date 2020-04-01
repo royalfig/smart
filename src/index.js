@@ -108,15 +108,14 @@ const openMenu = (input, target) => {
   }
 
   if (target === 'modal-search') {
-    const textInput = document.querySelector('.modal-search__input');
-    textInput.focus();
+    document.getElementById('search-input').focus();
+  } else {
+    mobileNavMenuCloseBtn.focus();
   }
 
   document.body.classList.add(`expanded-${target}`);
   input.setAttribute('aria-expanded', 'true');
   input.setAttribute('aria-hidden', 'false');
-  input.setAttribute('tabindex', '-1');
-  input.focus();
 
   const closeAll = (input) => {
     const wrapper = document.querySelector('.content-wrap');

@@ -19,7 +19,7 @@
     &:before {
       position: fixed;
       opacity: 0.9;
-      transition: opacity 0.2s cubic-bezier(0.755, 0.05, 0.855, 0.06);
+      transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
     }
   }
 }
@@ -44,6 +44,7 @@
     width: 100%;
 
     label {
+      @extend .serif;
       font-size: 1.5rem;
       line-height: 1;
     }
