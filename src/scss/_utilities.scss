@@ -100,6 +100,13 @@ $colors: (
   #{$property}: var(--#{$color}, color($color));
 }
 
+@mixin outline {
+  outline-width: 2px;
+  outline-style: solid;
+  @include color-map(outline-color, primary);
+  outline-offset: 1px;
+}
+
 //-------------------------------------------
 // Fonts
 //-------------------------------------------
@@ -271,79 +278,90 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 //-------------------------------------------
 
 .academia svg {
+  fill: currentColor;
   @include transition(all);
-  &:hover {
+  &:hover,
+  &:focus {
     @include color-map(fill, primary);
   }
 }
 .facebook svg {
-  stroke: none;
+  stroke: currentColor;
   @include transition(all);
-
-  &:hover {
-    fill: $fb;
+  &:hover,
+  &:focus {
+    stroke: $fb;
   }
 }
 
 .github svg {
+  stroke: currentColor;
   @include transition(all);
-  &:hover {
-    fill: $gh;
+  &:hover,
+  &:focus {
+    stroke: $gh;
   }
 }
 
 .gitlab svg {
+  stroke: currentColor;
   @include transition(all);
-  &:hover {
-    fill: $gl;
+  &:hover,
+  &:focus {
+    stroke: $gl;
   }
 }
 
 .instagram svg {
-  @include transition(all);
-  fill: none;
   stroke: currentColor;
-  &:hover {
+  @include transition(all);
+  &:hover,
+  &:focus {
     stroke: $ig;
   }
 }
 
 .linkedin svg {
+  stroke: currentColor;
   @include transition(all);
-  &:hover {
-    fill: $li;
+  &:hover,
+  &:focus {
+    stroke: $li;
   }
 }
 
 .rss svg {
-  @include transition(all);
-  fill: none;
   stroke: currentColor;
-  &:hover {
+  @include transition(all);
+  &:hover,
+  &:focus {
     stroke: $rs;
   }
 }
 
 .twitch svg {
+  stroke: currentColor;
   @include transition(all);
-  &:hover {
-    fill: $ch;
+  &:hover,
+  &:focus {
+    stroke: $ch;
   }
 }
-.twitter svg {
-  stroke: none;
-  @include transition(all);
 
-  &:hover {
-    fill: $tw;
+.twitter svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $tw;
   }
 }
 
 .youtube svg {
-  @include transition(all);
-  fill: none;
   stroke: currentColor;
-  &:hover {
+  @include transition(all);
+  &:hover,
+  &:focus {
     stroke: $yt;
   }
 }
