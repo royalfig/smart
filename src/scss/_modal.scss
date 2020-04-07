@@ -1,6 +1,11 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
+.expanded-modal-search,
+.expanded-menu {
+  overflow: hidden;
+}
+
 .content-wrap {
   &:before {
     top: 0;
@@ -51,8 +56,10 @@
   }
 
   &__container {
-    @include flex(column, center, flex-start);
+    @include flex(column, flex-start, flex-start);
+    height: 100%;
     padding: 1rem 1.5rem;
+    overflow-y: auto;
   }
 
   &[aria-expanded='true'] {
