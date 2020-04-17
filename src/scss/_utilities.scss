@@ -39,6 +39,16 @@ $yt: #ff0000;
     #a00053,
     #a4002e
   );
+
+  --gradient-reverse: linear-gradient(
+    to left top,
+    #0d48a0,
+    #643791,
+    #8b1c76,
+    #a00053,
+    #a4002e
+  );
+
   --tertiary: #63309f;
 }
 
@@ -59,8 +69,18 @@ $yt: #ff0000;
 
   --primary: #80deea;
   --secondary: #ffab91;
+
   --gradient: linear-gradient(
     to right top,
+    #80deea,
+    #8cdbbf,
+    #b4d195,
+    #e0c081,
+    #ffab91
+  );
+
+  --gradient-reverse: linear-gradient(
+    to left top,
     #80deea,
     #8cdbbf,
     #b4d195,
@@ -83,7 +103,7 @@ $colors: (
   'surface3': #1a1b1f,
   'surface4': #1d1e22,
   'primary': #80deea,
-  'secondary': #ffab91
+  'secondary': #ffab91,
 );
 
 @function color($key) {

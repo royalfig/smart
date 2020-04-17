@@ -53,7 +53,7 @@
   }
 
   &__no-img {
-    background: linear-gradient(to top right, color(primary), color(secondary));
+    background: linear-gradient(to right top, color(primary), color(secondary));
     background: var(--gradient);
 
     &:after {
@@ -63,8 +63,9 @@
       width: calc(100% - 2rem);
       height: calc(100% - 2rem);
       margin: 1rem;
-      @include color-map(background-color, surface1);
       content: '';
+      border-radius: $radius;
+      @include color-map(background-color, surface1);
     }
   }
 
@@ -72,15 +73,12 @@
     & .card {
       &__no-img {
         background: linear-gradient(
-          to bottom,
-          color(secondary),
-          color(primary)
+          to left top,
+          color(primary),
+          color(secondary)
         );
-        background: linear-gradient(
-          to bottom,
-          var(--secondary),
-          var(--primary)
-        );
+
+        background: var(--gradient-reverse);
       }
     }
   }
