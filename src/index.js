@@ -14,7 +14,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 
 const gridContainers = document.querySelectorAll('.grid-container-home');
 
-gridContainers.forEach((element) => {
+gridContainers.forEach(element => {
   const gridItems = element.querySelectorAll('.card');
 
   element.classList.add(`grid-container-home-${gridItems.length}`);
@@ -23,7 +23,7 @@ gridContainers.forEach((element) => {
 //-------------------------------------------
 // Color Mode Toggle
 //-------------------------------------------
-const toggleColorMode = (e) => {
+const toggleColorMode = e => {
   if (e.currentTarget.classList.contains('light')) {
     document.documentElement.setAttribute('color-mode', 'light');
     localStorage.setItem('pref', 'light');
@@ -35,7 +35,7 @@ const toggleColorMode = (e) => {
 
 const toggleColorButtons = document.querySelectorAll('.color-mode-btn');
 
-toggleColorButtons.forEach((btn) => {
+toggleColorButtons.forEach(btn => {
   btn.addEventListener('click', toggleColorMode);
 });
 
@@ -45,11 +45,11 @@ const hero = document.querySelector('.hero');
 let scrollPosHero = 0;
 let tickingHero = false;
 
-const animateNav = (pos) => {
+const animateNav = pos => {
   if (pos > hero.offsetHeight + 25) {
-    siteTitles.forEach((item) => item.classList.add('show-nav'));
+    siteTitles.forEach(item => item.classList.add('show-nav'));
   } else {
-    siteTitles.forEach((item) => item.classList.remove('show-nav'));
+    siteTitles.forEach(item => item.classList.remove('show-nav'));
   }
 };
 
@@ -117,7 +117,7 @@ const openMenu = (input, target) => {
   input.setAttribute('aria-expanded', 'true');
   input.setAttribute('aria-hidden', 'false');
 
-  const closeAll = (input) => {
+  const closeAll = input => {
     const wrapper = document.querySelector('.content-wrap');
     if (input.target === wrapper) {
       closeMenu(mobileNavMenu, 'menu');
@@ -129,7 +129,7 @@ const openMenu = (input, target) => {
   document.body.addEventListener('click', closeAll);
 };
 
-const closeByEsc = (key) => {
+const closeByEsc = key => {
   if (key.key === 'Escape') {
     closeMenu(mobileNavMenu, 'menu');
     closeMenu(modalSearch, 'modal-search');
@@ -138,8 +138,8 @@ const closeByEsc = (key) => {
 
 document.body.addEventListener('keyup', closeByEsc);
 
-btns.forEach((item) => {
-  item.addEventListener('click', (e) => {
+btns.forEach(item => {
+  item.addEventListener('click', e => {
     const { target } = e.currentTarget.dataset;
     const targetEl = document.getElementById(target);
     if (targetEl.getAttribute('aria-expanded') === 'false') {

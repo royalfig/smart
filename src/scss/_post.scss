@@ -19,7 +19,7 @@
 //-------------------------------------------
 .post {
   max-width: $tablet;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
 
   &__img,
   &__no-img {
@@ -149,9 +149,6 @@
     'post-1'
     'post-2';
   grid-template-columns: 1fr;
-  border-top-style: solid;
-  border-top-width: 2px;
-  @include color-map(border-top-color, text4);
 
   @include respond-between($tablet, $laptop) {
     grid-template-areas:

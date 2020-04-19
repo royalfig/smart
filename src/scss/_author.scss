@@ -7,9 +7,6 @@
     @include flex(column, center, center);
     @extend .inner-container;
     padding-bottom: 1rem;
-    border-bottom-style: solid;
-    border-bottom-width: 2px;
-    @include color-map(border-bottom-color, text4);
 
     @include respond-above($tablet) {
       flex-direction: row;
@@ -87,19 +84,8 @@
     svg {
       width: 1rem;
       height: 1rem;
-      fill: currentColor;
-      stroke: none;
+
       @include transition(all);
-    }
-
-    .website svg {
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2px;
-
-      &:hover {
-        @include color-map(stroke, primary);
-      }
     }
   }
 
@@ -113,10 +99,6 @@
     svg {
       width: 1rem;
       height: 1rem;
-      transform: translateY(-0.1em);
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2px;
     }
   }
 }
