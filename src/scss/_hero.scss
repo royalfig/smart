@@ -1,22 +1,21 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 30rem;
+  height: 20rem;
   margin-top: $navbar;
   @include color-map(background-color, surface1);
   background-position: center;
   background-size: cover;
+
+  @media (min-height: 50rem) {
+    height: 30rem;
+  }
 
   &__overlay {
     @include flex(column, center, center);
     flex: 1;
     width: 100%;
     height: 100%;
-    // background: radial-gradient(
-    //   rgba(105, 105, 105, 0.15) 25%,
-    //   rgba(55, 55, 55, 0.5) 75%,
-    //   rgba(20, 20, 20, 0.5)
-    // );
     background: rgba(10, 10, 20, 0.5);
   }
 
@@ -46,10 +45,13 @@
     margin-top: 0;
     margin-bottom: 0.5rem;
     @extend .serif;
-    font-size: 3.488rem;
+    font-size: 3rem;
     line-height: 1;
     color: #ffffff;
     text-align: left;
+    @include respond-above($laptop) {
+      font-size: 3.488rem;
+    }
   }
 
   &__site-description {

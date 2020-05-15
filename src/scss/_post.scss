@@ -19,7 +19,7 @@
 //-------------------------------------------
 .post {
   max-width: $tablet;
-  margin: 0 auto 4rem;
+  margin: 0 auto 3rem;
 
   &__img,
   &__no-img {
@@ -149,9 +149,6 @@
     'post-1'
     'post-2';
   grid-template-columns: 1fr;
-  border-top-style: solid;
-  border-top-width: 2px;
-  @include color-map(border-top-color, text4);
 
   @include respond-between($tablet, $laptop) {
     grid-template-areas:
@@ -207,10 +204,15 @@
 
   &__author-name {
     @extend .serif;
+    line-height: 1;
     @include transition(color);
 
     &:hover {
       @include color-map(color, primary);
+    }
+
+    &:focus {
+      @include outline;
     }
   }
 
@@ -219,10 +221,11 @@
     @include flex(row, flex-start, center);
 
     a {
-      padding: 0.1rem 0.25rem;
+      @include flex(row, flex-start, center);
+      margin-right: 0.25rem;
 
-      &:first-child {
-        padding-left: 0;
+      &:last-child {
+        margin-right: 0;
       }
     }
 
@@ -233,20 +236,26 @@
   }
 
   &__author-social {
+    margin: 0.5rem 0;
     svg {
       width: 1rem;
       height: 1rem;
-      @include color-map(fill, text1);
+      @include color-map(stroke, text2);
       @include transition(all);
     }
-    .website svg {
-      fill: none;
-      @include color-map(stroke, text1);
-      stroke-width: 2px;
-
-      &:hover,
+    .website {
+      svg {
+        fill: none;
+        @include color-map(stroke, text2);
+        stroke-width: 2px;
+      }
       &:focus {
-        @include color-map(stroke, primary);
+        @include outline;
+      }
+      &:hover {
+        svg {
+          @include color-map(stroke, primary);
+        }
       }
     }
   }
@@ -255,10 +264,13 @@
     svg {
       width: 1rem;
       height: 1rem;
-      margin-right: 0.2rem;
+      margin-right: 0.25rem;
       fill: none;
-      @include color-map(stroke, text1);
+      @include color-map(stroke, text2);
       stroke-width: 2px;
+    }
+    &:focus {
+      @include outline;
     }
   }
 

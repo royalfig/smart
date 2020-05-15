@@ -1,4 +1,4 @@
-(function() {
+const fontLoader = () => {
   if (sessionStorage.fontsLoadedFoutWithClass) {
     document.documentElement.className += ' fonts-loaded';
     return;
@@ -14,7 +14,9 @@
       sessionStorage.fontsLoadedFoutWithClass = true;
     });
   }
-})();
+};
+
+fontLoader();
 
 class FluidTypography {
   constructor(minVW, maxVW, minFontSize, maxFontSize) {
