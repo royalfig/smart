@@ -113,7 +113,7 @@
     }
     code {
       font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
-        'Cascadia Code', 'Droid Sans Mono', Consolas, Monospace;
+        'Cascadia Code', 'Droid Sans Mono', Consolas, monospace;
       @include color-map(color, textInverse);
       @include color-map(background-color, primary);
       a {

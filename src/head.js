@@ -24,15 +24,16 @@ class FluidTypography {
     this.maxVW = maxVW;
     this.minFontSize = minFontSize;
     this.maxFontSize = maxFontSize;
-    this.maxRem = this.computeMaxRem().maxRem;
-    this.minRem = this.computeMaxRem().minRem;
+    this.maxRem = this.computeRem().maxRem;
+    this.minRem = this.computeRem().minRem;
   }
 
   // Compute the maxRem based on arguments and user's browser preferences
-  computeMaxRem() {
+  computeRem() {
     const body = document.documentElement;
     const properties = window.getComputedStyle(body);
     const baseFontSize = properties.fontSize.replace(/px/, '');
+    // Gets the max font size of either the browser or the dev
     const max = Math.max(this.minFontSize, baseFontSize);
     const relativeMax = (this.maxFontSize * max) / this.minFontSize;
     const maxRem = relativeMax / baseFontSize;
@@ -65,7 +66,8 @@ class FluidTypography {
   }
 }
 
-new FluidTypography(640, 1280, 17.5, 22).resizeHandler();
+const ft = new FluidTypography(640, 1280, 17.5, 22);
+ft.resizeHandler();
 
 if (
   localStorage.getItem('pref') === 'light' ||
