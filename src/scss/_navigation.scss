@@ -64,7 +64,7 @@
 
   &__right {
     @include flex(row, flex-end, center);
-    flex: 1;
+    // flex: 1;
   }
 
   &__search-btn {

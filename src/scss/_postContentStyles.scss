@@ -5,6 +5,7 @@
       font-size: 0.8375rem;
       @include color-map(color, text1);
       @include color-map(background-color, surface2);
+      text-align: center;
       border-bottom-right-radius: $radius;
       border-bottom-left-radius: $radius;
     }
@@ -108,6 +109,24 @@
         padding: 0.25rem 0.5rem;
         text-align: left;
         vertical-align: top;
+      }
+    }
+    code {
+      font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
+        'Cascadia Code', 'Droid Sans Mono', Consolas, Monospace;
+      @include color-map(color, textInverse);
+      @include color-map(background-color, primary);
+      a {
+        @include color-map(color, textInverse);
+        @include transition(background-color);
+        text-decoration: underline;
+
+        &:hover,
+        &:focus,
+        &:active {
+          @include color-map(color, textInverse);
+          @include color-map(background-color, secondary);
+        }
       }
     }
   }

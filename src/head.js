@@ -24,7 +24,8 @@ class FluidTypography {
     this.maxVW = maxVW;
     this.minFontSize = minFontSize;
     this.maxFontSize = maxFontSize;
-    this.maxRem = this.computeMaxRem();
+    this.maxRem = this.computeMaxRem().maxRem;
+    this.minRem = this.computeMaxRem().minRem;
   }
 
   // Compute the maxRem based on arguments and user's browser preferences
@@ -32,20 +33,23 @@ class FluidTypography {
     const body = document.documentElement;
     const properties = window.getComputedStyle(body);
     const baseFontSize = properties.fontSize.replace(/px/, '');
-    const relativeMax = (this.maxFontSize * baseFontSize) / this.minFontSize;
+    const max = Math.max(this.minFontSize, baseFontSize);
+    const relativeMax = (this.maxFontSize * max) / this.minFontSize;
     const maxRem = relativeMax / baseFontSize;
-    return maxRem;
+    const minRem = max / baseFontSize;
+    return { maxRem, minRem };
   }
 
   // Calculate font size based on arguments and user's browser preferences
   fontSize() {
     const width = document.documentElement.offsetWidth;
-    let rem = 1;
+    let rem = this.minRem;
 
     if (width > this.minVW && width < this.maxVW) {
       rem =
-        1 +
-        ((this.maxRem - 1) * (width - this.minVW)) / (this.maxVW - this.minVW);
+        this.minRem +
+        ((this.maxRem - this.minRem) * (width - this.minVW)) /
+          (this.maxVW - this.minVW);
     }
 
     if (width > this.maxVW) {
@@ -61,7 +65,7 @@ class FluidTypography {
   }
 }
 
-new FluidTypography(640, 1280, 16, 21).resizeHandler();
+new FluidTypography(640, 1280, 17.5, 22).resizeHandler();
 
 if (
   localStorage.getItem('pref') === 'light' ||
