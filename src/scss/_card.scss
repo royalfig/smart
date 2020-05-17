@@ -69,19 +69,18 @@
     }
   }
 
-  &:nth-of-type(even) {
-    & .card {
-      &__no-img {
-        background: linear-gradient(
-          to left top,
-          color(primary),
-          color(secondary)
-        );
-
-        background: var(--gradient-reverse);
-      }
-    }
-  }
+  // &:nth-child(2n) {
+  //   .card {
+  //     &__no-img {
+  //       background: linear-gradient(
+  //         to left top,
+  //         color(primary),
+  //         color(secondary)
+  //       );
+  //       background: var(--gradient-reverse);
+  //     }
+  //   }
+  // }
 
   &__body {
     @include flex(column, flex-start, flex-start);
@@ -131,15 +130,116 @@
     line-height: 1.1;
     @include color-map(color, text);
     @include transition(color);
-
-    &--tags {
-      @extend .card__title;
-      margin: 0.25rem 0;
-    }
   }
 
-  &__excerpt {
-    margin: 0.5em 0;
-    @include color-map(color, text1);
+  // Card on Tags Page
+  &--tags {
+    @extend .card;
+    overflow: hidden;
+
+    &__link {
+      @extend .card__link;
+
+      &:hover,
+      &:focus {
+        .card--tags {
+          &__title {
+            color: #ffffff;
+            transition: none;
+          }
+
+          &__img-container:after {
+            background: transparent;
+          }
+        }
+      }
+    }
+
+    &__img-container {
+      @extend .card__img-container;
+      &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        content: '';
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: $radius;
+        @include transition(all);
+      }
+    }
+
+    &__img {
+      @extend .card__img;
+    }
+
+    &__no-img {
+      @extend .card__no-img;
+      @include color-map(background, primary);
+
+      &:after {
+        background: none;
+      }
+    }
+
+    &__img,
+    &__no-img {
+      border-radius: $radius;
+    }
+
+    &__body {
+      @extend .card__body;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      height: auto;
+    }
+    &__date {
+      @extend .card__date;
+    }
+    &__title {
+      @extend .card__title;
+      margin: 0 0 0.25rem;
+      font-size: 2rem;
+      @media (min-width: $tablet) {
+        font-size: 1.5rem;
+      }
+    }
+
+    &__date,
+    &__title {
+      color: #ffffff;
+    }
+
+    &:nth-child(2n) {
+      .card {
+        &__no-img {
+          @include color-map(background-color, three);
+        }
+      }
+    }
+    &:nth-child(3n) {
+      .card {
+        &__no-img {
+          @include color-map(background-color, four);
+        }
+      }
+    }
+    &:nth-child(4n) {
+      .card {
+        &__no-img {
+          @include color-map(background-color, five);
+        }
+      }
+    }
+    &:nth-child(5n) {
+      .card {
+        &__no-img {
+          @include color-map(background-color, secondary);
+        }
+      }
+    }
   }
 }
