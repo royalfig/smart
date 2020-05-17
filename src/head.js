@@ -65,7 +65,7 @@ class FluidTypography {
   }
 }
 
-new FluidTypography(640, 1280, 17, 21).resizeHandler();
+new FluidTypography(640, 1280, 17.5, 22).resizeHandler();
 
 if (
   localStorage.getItem('pref') === 'light' ||
