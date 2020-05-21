@@ -40,11 +40,9 @@ into the {body} of the default.hbs template --}}
                             <div class="card--tags__no-img card--tags__no-img-{{@number}}"></div>
                             {{/if}}
                             <div class="card--tags__body">
-                                <h2 class="card--tags__title">{{name}}</h2>
-                                <div class="card--tags__date-tag">
+                                <h2 class="card--tags__title">{{name}}
                                     <p class="card--tags__date">{{plural count.posts empty='' singular='% post' plural='% posts'}}
                                     </p>
-                                </div>
                             </div>
                         </div>
                     </a>
