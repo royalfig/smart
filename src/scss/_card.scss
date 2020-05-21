@@ -201,8 +201,8 @@
       @extend .card__date;
       display: inline-block;
       padding: 0.3em;
-      @include color-map(color, textInverse);
-      @include color-map(background-color, primary);
+      @include color-map(color, text3);
+      @include color-map(background-color, surface3);
       font-family: $sans;
       font-size: 0.45em;
       line-height: 1;
