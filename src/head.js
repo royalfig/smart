@@ -43,17 +43,19 @@ class FluidTypography {
 
   // Calculate font size based on arguments and user's browser preferences
   fontSize() {
-    const width = document.documentElement.offsetWidth;
+    const width = window.innerWidth;
+    const height = window.outerHeight;
     let rem = this.minRem;
+    const HEIGHT_THRESHOLD = 599;
 
-    if (width > this.minVW && width < this.maxVW) {
+    if (width > this.minVW && width < this.maxVW && height > HEIGHT_THRESHOLD) {
       rem =
         this.minRem +
         ((this.maxRem - this.minRem) * (width - this.minVW)) /
           (this.maxVW - this.minVW);
     }
 
-    if (width > this.maxVW) {
+    if (width > this.maxVW && height > HEIGHT_THRESHOLD) {
       rem = this.maxRem;
     }
 
@@ -66,7 +68,7 @@ class FluidTypography {
   }
 }
 
-const ft = new FluidTypography(640, 1280, 17.5, 22);
+const ft = new FluidTypography(640, 1280, 17, 21);
 ft.resizeHandler();
 
 if (

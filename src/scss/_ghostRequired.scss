@@ -46,6 +46,10 @@
   border-width: 1px;
   border-radius: $radius;
   @include transition(all);
+
+  @media (min-width: $laptop) {
+    flex-wrap: nowrap;
+  }
 }
 
 .kg-bookmark-container:hover {
@@ -61,7 +65,7 @@
 .kg-bookmark-title {
   @extend .serif;
   margin-bottom: 1rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 .kg-bookmark-metadata,
@@ -76,8 +80,8 @@
 
 .kg-bookmark-description {
   margin-bottom: 1rem;
-  overflow: hidden;
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
+  text-overflow: ellipsis;
   @include color-map(color, text);
 
   &:hover,
@@ -98,34 +102,37 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 1rem;
 }
 
 .kg-bookmark-thumbnail img {
-  width: auto;
-  max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
   max-height: 15rem;
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+  object-fit: cover;
   @include transition(all);
+
+  @media (min-width: $laptop) {
+    max-height: initial;
+    border-top-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+  }
 }
 
 .kg-bookmark-author {
   margin-right: 0.5rem;
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
   & ~ .kg-bookmark-publisher {
     margin-left: auto;
   }
 }
 
 .kg-bookmark-publisher {
-  font-size: 0.9375rem;
+  font-size: 0.9rem;
 }
 
 @media (min-width: $laptop) {
-  .kg-bookmark-container {
-    flex-wrap: nowrap;
-  }
-
   .kg-bookmark-content,
   .kg-bookmark-thumbnail {
     width: 50%;

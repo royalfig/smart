@@ -144,7 +144,7 @@
       &:focus {
         .card--tags {
           &__title {
-            color: #ffffff;
+            @include color-map(color, text);
             transition: none;
           }
 
@@ -194,23 +194,33 @@
       top: 0;
       left: 0;
       z-index: 2;
+      display: block;
       height: auto;
     }
     &__date {
       @extend .card__date;
+      display: inline-block;
+      padding: 0.3em;
+      @include color-map(color, text3);
+      @include color-map(background-color, surface3);
+      font-family: $sans;
+      font-size: 0.45em;
+      line-height: 1;
+      text-transform: capitalize;
+      border-radius: $radius;
+      transform: translate3d(0, -0.3em, 0);
     }
     &__title {
       @extend .card__title;
+      padding: 0.25rem 0.5rem;
       margin: 0 0 0.25rem;
       font-size: 2rem;
+      @include color-map(color, text);
+      @include color-map(background-color, surface1);
+      border-radius: $radius;
       @media (min-width: $tablet) {
         font-size: 1.5rem;
       }
-    }
-
-    &__date,
-    &__title {
-      color: #ffffff;
     }
 
     &:nth-child(2n) {
