@@ -42,16 +42,16 @@
 
   &__no-img {
     width: auto;
-    margin: 4rem 1rem 1rem;
+    max-width: $laptop + 100;
+    margin: 4rem auto 0;
     background: linear-gradient(45deg, color(primary), color(secondary));
-    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    background: var(--gradient);
     border-radius: $radius;
+
     .post-template & {
-      @extend .post__img;
-      img {
-        max-width: $tablet + 100;
-      }
+      max-width: $tablet + 100;
     }
+
     &:after {
       position: absolute;
       top: 0;
@@ -60,14 +60,17 @@
       height: calc(100% - 2rem);
       margin: 1rem;
       content: '';
-      @include color-map(background-color, surface);
+      @include color-map(background-color, surface1);
       border-radius: $radius;
+    }
+
+    &--container {
+      padding: 0 1rem;
     }
   }
 
   &__img {
     .post-template & {
-      @extend .post__img;
       img {
         max-width: $tablet + 100;
       }

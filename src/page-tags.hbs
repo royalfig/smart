@@ -4,12 +4,15 @@ into the {body} of the default.hbs template --}}
 
 {{#post}}
 {{!-- Header --}}
-<header class="{{^if feature_image}}post__no-img">{{else}}post__img">
+<header class="{{^if feature_image}}post__no-img--container">{{else}}post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 600w,
                  {{img_url feature_image size="l"}} 1000w,
                  {{img_url feature_image size="xl"}} 2000w" sizes="100vw" src="{{img_url feature_image size="xl"}}"
         alt="{{title}}">
+    {{/if}}
+    {{^if feature_image}}
+    <div class="post__no-img"></div>
     {{/if}}
 </header>
 {{!-- Header --}}
@@ -40,9 +43,9 @@ into the {body} of the default.hbs template --}}
                             <div class="card--tags__no-img card--tags__no-img-{{@number}}"></div>
                             {{/if}}
                             <div class="card--tags__body">
-                                <h2 class="card--tags__title">{{name}}
-                                    <p class="card--tags__date">{{plural count.posts empty='' singular='% post' plural='% posts'}}
-                                    </p>
+                                <h2 class="card--tags__title">{{name}}</h2>
+                                <p class="card--tags__date">{{count.posts}}
+                                </p>
                             </div>
                         </div>
                     </a>
