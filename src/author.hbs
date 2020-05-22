@@ -12,7 +12,7 @@ into the {body} of the default.hbs template --}}
                  {{img_url cover_image size="xl"}} 2000w" sizes="100vw" src="{{img_url cover_image size="xl"}}"
         alt="{{name}}">
     {{/if}}
-    {{^if feature_image}}
+    {{^if cover_image}}
     <div class="post__no-img"></div>
     {{/if}}
 </header>
