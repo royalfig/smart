@@ -36,6 +36,7 @@
 
   &__btn {
     @extend .modal-search__btn;
+    padding: 0.5rem 0.75rem;
     margin: 0.5rem 0;
   }
 }

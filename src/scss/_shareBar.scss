@@ -32,11 +32,6 @@
     height: 1.25rem;
     margin-right: 1.5rem;
 
-    &:focus {
-      outline: 2px dotted currentColor;
-      outline-offset: 1px;
-    }
-
     svg {
       width: 100%;
       height: 100%;

@@ -85,3 +85,14 @@ h6,
   padding-top: $navbar;
   margin-top: -$navbar;
 }
+
+:focus {
+  outline-width: 2px;
+  outline-style: dotted;
+  @include color-map(outline-color, primary);
+  outline-offset: 1px;
+}
+::-moz-focus-inner {
+  border: none;
+  outline: none;
+}

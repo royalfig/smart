@@ -210,13 +210,13 @@
   }
 
   &__author-img-link {
+    margin-right: 1rem;
     line-height: 0;
   }
 
   &__author-img {
     width: 0.5 * $base;
     height: 0.5 * $base;
-    margin-right: 1rem;
     object-fit: cover;
     border-radius: 50%;
   }
@@ -228,10 +228,6 @@
 
     &:hover {
       @include color-map(color, primary);
-    }
-
-    &:focus {
-      @include outline;
     }
   }
 
@@ -268,9 +264,7 @@
         @include color-map(stroke, text2);
         stroke-width: 2px;
       }
-      &:focus {
-        @include outline;
-      }
+
       &:hover {
         svg {
           @include color-map(stroke, primary);
@@ -287,9 +281,6 @@
       fill: none;
       @include color-map(stroke, text2);
       stroke-width: 2px;
-    }
-    &:focus {
-      @include outline;
     }
   }
 

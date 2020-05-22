@@ -112,22 +112,12 @@
       }
     }
     code {
+      padding: 0 4px;
       font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
         'Cascadia Code', 'Droid Sans Mono', Consolas, monospace;
-      @include color-map(color, textInverse);
-      @include color-map(background-color, primary);
-      a {
-        @include color-map(color, textInverse);
-        @include transition(background-color);
-        text-decoration: underline;
-
-        &:hover,
-        &:focus,
-        &:active {
-          @include color-map(color, textInverse);
-          @include color-map(background-color, secondary);
-        }
-      }
+      @include color-map(color, text2);
+      @include color-map(background-color, surface3);
+      border-radius: 4px;
     }
   }
 }

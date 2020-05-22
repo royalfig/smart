@@ -93,10 +93,6 @@
       width: 1rem;
       height: 1rem;
       margin: 0 0.5rem 0.5rem 0;
-
-      &:focus {
-        @include outline;
-      }
     }
 
     svg {
@@ -137,10 +133,6 @@
       svg {
         @include color-map(stroke, secondary);
       }
-    }
-
-    &:focus {
-      @include outline;
     }
   }
 

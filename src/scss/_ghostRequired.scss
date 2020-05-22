@@ -41,14 +41,17 @@
   display: flex;
   flex-wrap: wrap-reverse;
   @include color-map(background-color, surface2);
-  @include color-map(border-color, text2);
-  border-style: solid;
-  border-width: 1px;
   border-radius: $radius;
+  box-shadow: $box-shadow;
   @include transition(all);
 
   @media (min-width: $laptop) {
     flex-wrap: nowrap;
+  }
+
+  &:focus,
+  &:hover {
+    box-shadow: 0 0 0 4px var(--surface4);
   }
 }
 

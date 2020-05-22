@@ -53,9 +53,7 @@
       @include color-map(stroke, text2);
     }
 
-    &:focus,
     &:hover {
-      outline: none;
       svg {
         @include color-map(stroke, primary);
       }
@@ -126,16 +124,17 @@
     right: -2rem;
     width: 1.5rem;
     height: 1.5rem;
+    line-height: 1;
     svg {
       width: 100%;
       height: 100%;
       stroke: #ffffff;
     }
+
     &:focus,
     &:hover {
       svg {
-        outline: 2px solid #ffffff;
-        outline-offset: 1px;
+        outline-color: #ffffff;
       }
     }
   }
@@ -339,8 +338,7 @@
   a {
     @include transition(color);
 
-    &:hover,
-    &:focus {
+    &:hover {
       @include color-map(color, primary);
     }
   }

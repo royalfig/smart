@@ -74,6 +74,12 @@
     display: block;
     width: 1.5rem;
     height: 1.5rem;
+    line-height: 0;
+
+    &:focus,
+    &:hover {
+      outline-color: #ffffff;
+    }
 
     svg {
       width: 1.5rem;
@@ -81,21 +87,6 @@
       stroke: #ffffff;
       stroke-width: 3;
       @include transition(all);
-    }
-
-    &:hover,
-    &:focus {
-      outline: none;
-      svg {
-        stroke-width: 5;
-      }
-    }
-
-    &:focus {
-      outline-width: 2px;
-      outline-style: dotted;
-      @include color-map(outline-color, text);
-      outline-offset: 1px;
     }
   }
 
@@ -142,7 +133,7 @@
 
   &__btn {
     height: 50%;
-    padding: 0.25rem 0.5rem;
+    padding: 0.5rem 0.75rem;
     margin-bottom: 1rem;
     font-weight: 700;
     line-height: 1;
@@ -164,11 +155,6 @@
 
     &:active {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
-    }
-
-    &::-moz-focus-inner {
-      border: none;
-      outline: none;
     }
   }
 }
