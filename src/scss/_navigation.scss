@@ -130,12 +130,9 @@
       height: 100%;
       stroke: #ffffff;
     }
-
     &:focus,
     &:hover {
-      svg {
-        outline-color: #ffffff;
-      }
+      outline-color: #ffffff;
     }
   }
 
