@@ -30,7 +30,10 @@ into the {body} of the default.hbs template --}}
 
                 <header class="post__header">
                     <h1 class="post__title--serif">{{title}}</h1>
-                    {{#primary_author}}<a href="{{url}}" class="post__author">{{name}}</a>{{/primary_author}}
+                    {{!-- {{#foreach authors}}<a href="{{url}}" class="post__author">{{name}}</a>{{/foreach}} --}}
+                    <div class="post__author">
+                        {{authors}}
+                    </div>
                     <p class="post__date">
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
 
@@ -61,8 +64,13 @@ into the {body} of the default.hbs template --}}
             </article>
 
             <footer class="post-footer">
-                <h3 class="post-footer__title-1">About the Author</h3>
+                {{#has author="count:<2"}}
+                    <h3 class="post-footer__title-1">About the Author</h3>
+                {{else}}
+                    <h3 class="post-footer__title-1">About the Authors</h3>
+                {{/has}}
                 <h3 class="post-footer__title-2">More to Read</h3>
+                {{#has author="count:<2"}}
                 {{#primary_author}}
                 <div class="post-footer__author">
                     <div class="post-footer__author-img-container">
@@ -118,6 +126,62 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 </div>
                 {{/primary_author}}
+                {{! If multiple authors }}
+                {{else}}
+                <div class="post-footer__author">
+                    {{#foreach authors}}
+                    <div class="post-footer__author-img-container--authors">
+                        <a href="{{url}}" class="post-footer__author-img-link" aria-label="{{name}}">
+                            {{#if profile_image}}
+                            <img class="post-footer__author-img" src="{{img_url profile_image size="s"}}"
+                                alt="{{name}}" />
+                            {{else}}
+                            <div class="post-footer__no-author-img">
+                            </div>
+                            {{/if}}
+                        </a>
+                        <div>
+                            <a class="post-footer__author-name" href="{{url}}">{{name}}</a>
+                            <div class="post-footer__author-social">
+                                {{#if twitter}}
+                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                    <svg>
+                                        <title>Twitter</title>
+                                        <use href="#twitter"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                                {{#if facebook}}
+                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                    <svg>
+                                        <title>Facebook</title>
+                                        <use href="#facebook"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                                {{#if website}}
+                                <a class="website" href="{{website}}" aria-label="{{website}}">
+                                    <svg>
+                                        <title>{{website}}</title>
+                                        <use href="#website"></use>
+                                    </svg>
+                                </a>
+                                {{/if}}
+                            </div>
+                            {{#if location}}
+                            <div class="post-footer__author-location">
+                                <svg aria-label="location">
+                                    <title>Location</title>
+                                    <use href="#location"></use>
+                                </svg>
+                                <p>{{location}}</p>
+                            </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                    {{/foreach}}
+                </div>
+                {{/has}}
 
                 {{#prev_post in="primary_tag"}}
                 <div class="related-posts related-posts-1">

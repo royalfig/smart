@@ -20,6 +20,10 @@
     margin-bottom: 2rem;
     border-radius: 50%;
 
+    @include respond-above($tablet) {
+      margin-bottom: 0;
+    }
+
     &:before {
       position: absolute;
       top: 0;
@@ -28,12 +32,8 @@
       height: 100%;
       content: '';
       background: linear-gradient(45deg, color(primary), color(secondary));
-      background: linear-gradient(45deg, var(--primary), var(--secondary));
+      background: var(--gradient);
       border-radius: 50%;
-    }
-
-    @include respond-above($tablet) {
-      margin-bottom: 0;
     }
   }
 
@@ -46,6 +46,36 @@
     border-radius: 50%;
     box-shadow: $box-shadow;
   }
+
+  &__no-img {
+    @extend .author__img;
+    overflow: hidden;
+    background: linear-gradient(45deg, color(primary), color(secondary));
+    background: var(--gradient);
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      @include color-map(background-color, surface4);
+    }
+    &:before {
+      bottom: -37%;
+      left: -20%;
+      width: 80%;
+      height: 80%;
+      transform: translate3d(40%, 0, 0);
+    }
+    &:after {
+      top: 0.5rem;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      transform: translate3d(50%, 0, 0);
+    }
+  }
+
   &__text {
     @include respond-above($tablet) {
       margin-left: 4rem;
