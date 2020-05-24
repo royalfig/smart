@@ -26,11 +26,13 @@ into the {body} of the default.hbs template --}}
 
                 <header class="author__header">
                     <div class="author__container">
-                        {{#if profile_image}}
                         <div class="author__img-container">
+                        {{#if profile_image}}
                             <img class="author__img" src="{{img_url profile_image size="m"}}" alt="{{name}}">
-                        </div>
+                        {{else}}
+                            <div class="author__no-img"></div>
                         {{/if}}
+                        </div>
                         <div class="author__text">
                             <div class="author__text-container">
                                 <h1 class="author__name">{{name}}</h1>

@@ -86,7 +86,7 @@
 
   &__title--serif {
     position: relative;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     @extend .serif;
   }
 
@@ -213,6 +213,15 @@
   &__author-img-container {
     @include flex(row, flex-start, center);
     margin-bottom: 1rem;
+
+    &--authors {
+      @extend .post-footer__author-img-container;
+      padding-bottom: 0.5rem;
+      margin-bottom: 0.5rem;
+      border-bottom-style: solid;
+      border-bottom-width: 1px;
+      @include color-map(border-bottom-color, surface4);
+    }
   }
 
   &__author-img-link {
@@ -223,8 +232,41 @@
   &__author-img {
     width: 0.5 * $base;
     height: 0.5 * $base;
-    object-fit: cover;
+    // object-fit: cover;
     border-radius: 50%;
+  }
+
+  &__no-author-img {
+    @extend .post-footer__author-img;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(45deg, color(primary), color(secondary));
+    background: var(--gradient);
+    border-style: solid;
+    border-width: 0.25rem;
+    @include color-map(border-color, surface4);
+
+    &:before,
+    &:after {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      @include color-map(background-color, surface4);
+    }
+    &:before {
+      bottom: -37%;
+      left: -20%;
+      width: 80%;
+      height: 80%;
+      transform: translate3d(40%, 0, 0);
+    }
+    &:after {
+      top: 0.5rem;
+      left: 0;
+      width: 50%;
+      height: 50%;
+      transform: translate3d(50%, 0, 0);
+    }
   }
 
   &__author-name {
