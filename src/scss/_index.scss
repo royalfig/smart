@@ -15,8 +15,8 @@
   }
 
   &__header--serif--underline {
+    display: inline;
     @extend .serif;
-    @extend .underline;
   }
 
   &__read-more {
@@ -34,4 +34,13 @@
       @include transition(stroke);
     }
   }
+}
+
+.post__title--number {
+  padding: 2px 4px;
+  font-family: $sans;
+  font-size: 75%;
+  border-radius: $radius;
+  @include color-map(color, textInverse);
+  @include color-map(background-color, primary);
 }
