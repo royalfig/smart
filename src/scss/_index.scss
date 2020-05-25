@@ -14,7 +14,7 @@
     @extend .inner-container;
   }
 
-  &__header--serif--underline {
+  &__header {
     display: inline;
     @extend .serif;
   }
@@ -27,20 +27,11 @@
     svg {
       width: 2rem;
       height: 2rem;
-      transform: translateY(0.5em);
+      vertical-align: middle;
       fill: none;
       stroke-width: 2px;
       @include color-map(stroke, text);
       @include transition(stroke);
     }
   }
-}
-
-.post__title--number {
-  padding: 2px 4px;
-  font-family: $sans;
-  font-size: 75%;
-  border-radius: $radius;
-  @include color-map(color, textInverse);
-  @include color-map(background-color, primary);
 }
