@@ -51,7 +51,7 @@
 
     ul,
     ol {
-      margin: 1em 2em;
+      margin: 1rem 2rem;
       @include color-map(color, text);
     }
 
@@ -60,7 +60,7 @@
     }
 
     li {
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     hr {

@@ -42,25 +42,27 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 </section>
-
-{{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
-{{#if featured}}
-<div class="main--outer-container">
-    <div class="main--inner-container">
-        <h2 class="main__header">Featured</h2>
-        <section class="grid-container-home">
-            {{#foreach featured}}
-            {{> "card"}}
-            {{/foreach}}
-        </section>
-    </div>
-</div>
-{{/if}}
-{{/get}}
 {{!-- Hero  --}}
 
-
 <main class="main">
+
+    {{!-- Featured  --}}
+    {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
+    {{#if featured}}
+    <div class="main--outer-container">
+        <div class="main--inner-container">
+            <h2 class="main__header">Featured</h2>
+            <section class="grid-container-home">
+                {{#foreach featured}}
+                {{> "card"}}
+                {{/foreach}}
+            </section>
+        </div>
+    </div>
+    {{/if}}
+    {{/get}}
+    {{!-- Featured --}}
+
     {{!-- Latest --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |latest|}}
     {{#if latest}}

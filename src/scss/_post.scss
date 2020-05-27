@@ -81,12 +81,15 @@
   }
 
   &__header {
-    margin: 1rem 0 3rem;
+    margin: 1rem 0;
+
+    .post-template & {
+      margin: 1rem 0 2rem;
+    }
   }
 
   &__title--serif {
     position: relative;
-    margin-bottom: 1rem;
     @extend .serif;
   }
 

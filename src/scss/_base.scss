@@ -25,7 +25,7 @@ button {
 }
 
 %headings {
-  margin: 0.5rem 0;
+  margin: 1em 0 0.35em;
   font-family: $serif;
   font-weight: 400;
   line-height: 1.2;
@@ -33,8 +33,9 @@ button {
 
 h1,
 .h1 {
-  font-size: 2.488rem;
   @extend %headings;
+  margin-top: 0;
+  font-size: 2.488rem;
 }
 
 h2,
