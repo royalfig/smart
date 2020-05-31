@@ -1,0 +1,38 @@
+{{!-- signin Modal --}}
+<aside class="modal member" id="signin" aria-expanded="false" aria-hidden="true">
+    <button class="member__close-btn close-btn" id="signin-close-btn" data-target="signin" title="Close signin" aria-label="close">
+        <svg aria-hidden="true">
+            <title>Close</title>
+            <use href="#close"></use>
+        </svg>
+    </button>
+    <div class="member__container">
+    {{#if @member.paid}}
+    {{!-- A logged-in, paying member shouldn't get here, but if they do. Redirect them home --}}
+    <script>window.location = '{{@site.url}}';</script>
+    {{else if @member}}
+    {{!-- For those who have subscribed but who haven't paid --}}
+        <h2 class="member__title">Buy Me</h2>
+
+    {{else }}
+    {{!-- For those who have not yet subscribed --}}
+        <h2 class="member__title">Sign In</h2>
+        <form class="member__form" data-members-form="signin">
+                <div class="member__input-container">
+                    <div class="member__label-container">
+                        <label class="member__label" for="signin">Email</label>
+                        <input  class="member__input" data-members-email id="signin" type="email" required="true" autocomplete="false" />
+                    </div>
+                    <button class="member__btn" type="submit">
+                        <span class="member__btn--content">Sign In</span>
+                        <span class="member__btn--loading"></span>
+                    </button>
+                </div>
+                <p class="member__subtext">Don't have an account?</p>
+                <div class="member__error">Please enter a valid email address!</div>
+                <div class="member__success"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription</div>
+        </form>
+    {{/if}}
+    </div>
+</aside>
+{{!-- End signin Modal --}}

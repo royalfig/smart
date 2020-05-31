@@ -1,1 +1,100 @@
-!function(e){var t={};function n(o){if(t[o])return t[o].exports;var i=t[o]={i:o,l:!1,exports:{}};return e[o].call(i.exports,i,i.exports,n),i.l=!0,i.exports}n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&"object"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,"default",{enumerable:!0,value:e}),2&t&&"string"!=typeof e)for(var i in e)n.d(o,i,function(t){return e[t]}.bind(null,i));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,"a",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p="",n(n.s=6)}({6:function(e,t){function n(e,t){for(var n=0;n<t.length;n++){var o=t[n];o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(e,o.key,o)}}sessionStorage.fontsLoadedFoutWithClass?document.documentElement.className+=" fonts-loaded":"fonts"in document&&Promise.all([document.fonts.load("1em 'Lato'"),document.fonts.load("700 1em 'Lato'"),document.fonts.load("italic 1em 'Lato'"),document.fonts.load("italic 700 1em 'Lato'")]).then((function(){document.documentElement.className+=" fonts-loaded",sessionStorage.fontsLoadedFoutWithClass=!0})),new(function(){function e(t,n,o,i){!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,e),this.minVW=t,this.maxVW=n,this.minFontSize=o,this.maxFontSize=i,this.maxRem=this.computeRem().maxRem,this.minRem=this.computeRem().minRem}var t,o,i;return t=e,(o=[{key:"computeRem",value:function(){var e=document.documentElement,t=window.getComputedStyle(e).fontSize.replace(/px/,""),n=Math.max(this.minFontSize,t);return{maxRem:this.maxFontSize*n/this.minFontSize/t,minRem:n/t}}},{key:"fontSize",value:function(){var e=window.innerWidth,t=window.outerHeight,n=this.minRem;e>this.minVW&&e<this.maxVW&&t>599&&(n=this.minRem+(this.maxRem-this.minRem)*(e-this.minVW)/(this.maxVW-this.minVW)),e>this.maxVW&&t>599&&(n=this.maxRem),document.documentElement.style="font-size: ".concat(n,"rem")}},{key:"resizeHandler",value:function(){this.fontSize(),window.addEventListener("resize",this.fontSize.bind(this))}}])&&n(t.prototype,o),i&&n(t,i),e}())(640,1280,17,21).resizeHandler(),("light"===localStorage.getItem("pref")||window.matchMedia("(prefers-color-scheme: light)").matches&&!localStorage.getItem("pref"))&&document.documentElement.setAttribute("color-mode","light")}});
+/******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+/******/
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+/******/
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId]) {
+/******/ 			return installedModules[moduleId].exports;
+/******/ 		}
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+/******/
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+/******/
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+/******/
+/******/
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+/******/
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+/******/
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, { enumerable: true, get: getter });
+/******/ 		}
+/******/ 	};
+/******/
+/******/ 	// define __esModule on exports
+/******/ 	__webpack_require__.r = function(exports) {
+/******/ 		if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 			Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 		}
+/******/ 		Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 	};
+/******/
+/******/ 	// create a fake namespace object
+/******/ 	// mode & 1: value is a module id, require it
+/******/ 	// mode & 2: merge all properties of value into the ns
+/******/ 	// mode & 4: return value when already ns object
+/******/ 	// mode & 8|1: behave like require
+/******/ 	__webpack_require__.t = function(value, mode) {
+/******/ 		if(mode & 1) value = __webpack_require__(value);
+/******/ 		if(mode & 8) return value;
+/******/ 		if((mode & 4) && typeof value === 'object' && value && value.__esModule) return value;
+/******/ 		var ns = Object.create(null);
+/******/ 		__webpack_require__.r(ns);
+/******/ 		Object.defineProperty(ns, 'default', { enumerable: true, value: value });
+/******/ 		if(mode & 2 && typeof value != 'string') for(var key in value) __webpack_require__.d(ns, key, function(key) { return value[key]; }.bind(null, key));
+/******/ 		return ns;
+/******/ 	};
+/******/
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+/******/
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+/******/
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+/******/
+/******/
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/head.js");
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ "./src/head.js":
+/*!*********************!*\
+  !*** ./src/head.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function () {\n  if (sessionStorage.fontsLoadedFoutWithClass) {\n    document.documentElement.className += ' fonts-loaded';\n    return;\n  }\n\n  if ('fonts' in document) {\n    Promise.all([document.fonts.load(\"1em 'Lato'\"), document.fonts.load(\"700 1em 'Lato'\"), document.fonts.load(\"italic 1em 'Lato'\"), document.fonts.load(\"italic 700 1em 'Lato'\")]).then(function () {\n      document.documentElement.className += ' fonts-loaded';\n      sessionStorage.fontsLoadedFoutWithClass = true;\n    });\n  }\n})();\n\n(function (minVW, maxVW, minFontSize, maxFontSize) {\n  var computeRem = function computeRem() {\n    var body = document.documentElement;\n    var properties = window.getComputedStyle(body);\n    var baseFontSize = properties.fontSize.replace(/px/, ''); // Gets the max font size of either the browser or the dev\n\n    var max = Math.max(minFontSize, baseFontSize);\n    var relativeMax = maxFontSize * max / minFontSize;\n    var maxRem = relativeMax / baseFontSize;\n    var minRem = max / baseFontSize;\n    return {\n      maxRem: maxRem,\n      minRem: minRem\n    };\n  };\n\n  var _computeRem = computeRem(),\n      maxRem = _computeRem.maxRem;\n\n  var _computeRem2 = computeRem(),\n      minRem = _computeRem2.minRem;\n\n  var fontSize = function fontSize() {\n    var width = window.innerWidth;\n    var height = window.outerHeight;\n    var rem = minRem;\n    var HEIGHT_THRESHOLD = 599;\n\n    if (width > minVW && width < maxVW && height > HEIGHT_THRESHOLD) {\n      rem = minRem + (maxRem - minRem) * (width - minVW) / (maxVW - minVW);\n    }\n\n    if (width > maxVW && height > HEIGHT_THRESHOLD) {\n      rem = maxRem;\n    }\n\n    document.documentElement.style = \"font-size: \".concat(rem, \"rem\");\n  };\n\n  var resizeHandler = function resizeHandler() {\n    fontSize();\n    window.addEventListener('resize', fontSize);\n  };\n\n  resizeHandler();\n})(640, 1280, 16, 20);\n\nif (localStorage.getItem('pref') === 'light' || window.matchMedia('(prefers-color-scheme: light)').matches && !localStorage.getItem('pref')) {\n  document.documentElement.setAttribute('color-mode', 'light');\n}\n\n//# sourceURL=webpack:///./src/head.js?");
+
+/***/ })
+
+/******/ });

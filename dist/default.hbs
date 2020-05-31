@@ -63,7 +63,7 @@
         }
     </style>
     {{!-- Load scripts to execute before render --}}
-    <script src="{{asset 'js/head.js'}}"></script>
+    <script type="text/javascript" src="{{asset 'js/head.js'}}"></script>
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
@@ -73,8 +73,12 @@
     {{> "svg"}}
     {{!-- SVG Sprite  --}}
     <div class="content-wrap">
-    {{navigation}}
-    {{> "search"}}
+        {{navigation}}
+        {{> "search"}}
+        {{#if @labs.members}}
+        {{> "subscribe"}}
+        {{> "signin"}}
+        {{/if}}
         {{!-- All the main content is inserted here --}}
         {{{body}}}
         {{!-- Footer Module --}}

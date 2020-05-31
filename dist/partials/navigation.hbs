@@ -11,7 +11,7 @@
 {{!-- Mobile Navbar --}}
 <nav class="navbar-mobile">
     <div class="navbar-mobile__left">
-        <button class="navbar-mobile__hamburger-btn" data-target="menu" aria-label="menu">
+        <button class="navbar-mobile__hamburger-btn" id="menu-btn" data-target="menu" aria-label="menu">
             <svg aria-hidden="true">
             <title>Menu</title>
             <use href="#menu-icon"></use>
@@ -23,6 +23,22 @@
         </a>
     </div>
     <div class="navbar-mobile__right">
+        {{!-- Member functionality --}}
+        {{#if @labs.members}}
+        {{#if @member}}
+        <button class="navbar-mobile__right-item--member-button" id="m-account-btn" data-target="account">
+            {{#if @member.avatar_image}}
+                <img class="navbar-mobile__right-item--avatar" src="{{@member.avatar_image}}" />
+            {{else}}
+                <div class="navbar-mobile__right-item--no-member-avatar"></div>
+            {{/if}}
+        </button>
+        {{else}}
+            <button class="navbar__right-item--signin hvr-underline-from-left" id="m-signin-btn" data-target="signin">Sign In</button>
+            <button class="navbar__right-item--subscribe" id="m-subscribe-btn" data-target="subscribe">Subscribe</button>
+        {{/if}}
+        {{/if}}
+        {{!-- End Member functionality --}}
         <button class="color-mode-btn light" aria-label="Toggle light mode">
             <svg aria-hidden="true">
                 <title>Toggle Light Mode</title>
@@ -35,7 +51,7 @@
                 <use href="#moon"></use>
             </svg>
         </button>
-        <button class="navbar-mobile__search-btn" data-target="modal-search" aria-label="Search {{@site.title}}">
+        <button class="navbar-mobile__search-btn" id="m-search-btn" data-target="search-modal" aria-label="Search {{@site.title}}">
             <svg aria-hidden="true">
                 <title>Search {{@site.title}}</title>
                 <use href="#search"></use>
@@ -71,6 +87,22 @@
     </div>
 
     <div class="navbar__right">
+        {{!-- Member functionality --}}
+        {{#if @labs.members}}
+        {{#if @member}}
+        <button class="navbar__right-item--member-button" id="account-btn" data-target="account">
+            {{#if @member.avatar_image}}
+                <img class="navbar__right-item--avatar" src="{{@member.avatar_image}}" />
+            {{else}}
+                <div class="navbar__right-item--no-member-avatar"></div>
+            {{/if}}
+        </button>
+        {{else}}
+            <button class="navbar__right-item--signin hvr-underline-from-left" id="signin-btn" data-target="signin">Sign In</button>
+            <button class="navbar__right-item--subscribe" id="subscribe-btn" data-target="subscribe">Subscribe</button>
+        {{/if}}
+        {{/if}}
+        {{!-- Member functionality --}}
         {{#if @site.twitter}}
         <a class="navbar__right-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
             <svg aria-hidden="true">
@@ -87,14 +119,6 @@
             </svg>
         </a>
         {{/if}}
-        {{#if @labs.subscribers}}
-        <button class="navbar__right-item" data-id="subscribe" aria-label="Subscribe">
-            <svg aria-hidden="true">
-                <title>Subscribe</title>
-                <use href="#clipboard"></use>
-            </svg>
-        </button>
-        {{/if}}
         <button class="color-mode-btn light" aria-label="Toggle light mode">
             <svg aria-hidden="true">
                 <title>Toggle Light Mode</title>
@@ -107,7 +131,7 @@
                 <use href="#moon"></use>
             </svg>
         </button>
-        <button class="navbar__right-item--search" data-target="modal-search" aria-label="Search {{@site.title}}">
+        <button class="navbar__right-item--search" id="search-btn" data-target="search-modal" aria-label="Search {{@site.title}}">
             <svg aria-hidden="true">
                 <title>Search {{@site.title}}</title>
                 <use href="#search"></use>

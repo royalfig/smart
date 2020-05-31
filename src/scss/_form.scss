@@ -1,4 +1,4 @@
-.contact {
+.form {
   @include flex(column, flex-start, flex-start);
   font-size: 1rem;
 
@@ -35,8 +35,6 @@
   }
 
   &__btn {
-    @extend .modal-search__btn;
-    padding: 0.5rem 0.75rem;
-    margin: 0.5rem 0;
+    @extend .btn;
   }
 }

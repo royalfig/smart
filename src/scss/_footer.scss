@@ -5,7 +5,7 @@
   &--outer-container {
     @extend .outer-container;
     min-height: 250px;
-    font-size: 0.9375rem;
+    font-size: 0.9rem;
     @include color-map(background-color, surface);
     @include color-map(color, text1);
     border-bottom: none;

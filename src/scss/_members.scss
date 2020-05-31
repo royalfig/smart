@@ -1,0 +1,94 @@
+// Ghost States
+// .loading {
+
+// }
+
+// .success {
+
+// }
+
+// .error {
+
+// }
+.member {
+  @extend .modal;
+  text-align: initial;
+
+  &[aria-expanded='true'] {
+    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translate3d(0, 0, 0);
+  }
+
+  &__container {
+    @extend .modal__container;
+  }
+
+  &__close-btn {
+    @extend .modal__close-btn;
+  }
+
+  &__title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  &__form {
+    @extend .modal__inner-container;
+  }
+
+  &__input-container {
+    // @extend .modal__input-container;
+  }
+
+  &__label {
+    @extend .form__label;
+  }
+
+  &__input {
+    @extend .form__input;
+  }
+
+  &__btn {
+    @extend .btn;
+
+    &--loading {
+      display: none;
+
+      .loading & {
+        display: block;
+      }
+    }
+  }
+
+  &__subtext {
+    font-size: 80%;
+    @include color-map(color, text2);
+  }
+
+  %state {
+    display: none;
+    padding: 2px 4px;
+    margin-top: 0.25rem;
+    border-radius: $radius;
+  }
+
+  &__success {
+    @extend %state;
+    color: #000000;
+    background-color: #40da3b;
+
+    .success & {
+      display: block;
+    }
+  }
+  &__error {
+    @extend %state;
+    color: #ffffff;
+    background-color: #da3b3b;
+
+    .error & {
+      display: block;
+    }
+  }
+}

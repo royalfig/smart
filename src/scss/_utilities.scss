@@ -212,6 +212,54 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   }
 }
 
+@mixin btn {
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
+
+  @include color-map(color, textInverse);
+  @include color-map(background-color, primary);
+  @include transition(background-color);
+
+  &:hover,
+  &:focus {
+    outline: none;
+    @include color-map(background-color, secondary);
+    @include transition(background-color);
+  }
+
+  &:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.btn {
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  line-height: 1;
+  border: none;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
+
+  @include color-map(color, textInverse);
+  @include color-map(background-color, primary);
+  @include transition(background-color);
+
+  &:hover,
+  &:focus {
+    outline: none;
+    @include color-map(background-color, secondary);
+    @include transition(background-color);
+  }
+
+  &:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+  }
+}
+
 .grid-container {
   display: grid;
   gap: 1.5rem;

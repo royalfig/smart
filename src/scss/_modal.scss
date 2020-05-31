@@ -1,10 +1,10 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
-.expanded-modal-search,
-.expanded-menu {
-  overflow: hidden;
-}
+// .expanded-modal-search,
+// .expanded-menu {
+//   overflow: hidden;
+// }
 
 .content-wrap {
   &:before {
@@ -19,7 +19,7 @@
     transition: opacity 0.1s cubic-bezier(0.755, 0.05, 0.855, 0.06);
   }
 
-  .expanded-modal-search &,
+  .expanded-modal &,
   .expanded-menu & {
     &:before {
       position: fixed;
@@ -29,7 +29,7 @@
   }
 }
 
-.modal-search {
+.modal {
   position: fixed;
   top: 0;
   right: 0;
@@ -132,30 +132,7 @@
   }
 
   &__btn {
-    height: 50%;
-    padding: 0.5rem 0.75rem;
-    margin-bottom: 1rem;
-    font-weight: 700;
-    line-height: 1;
-    @include color-map(color, textInverse);
-    vertical-align: bottom;
-    @include color-map(background-color, primary);
-
-    border: none;
-    border-radius: $radius;
-    box-shadow: $box-shadow;
-    @include transition(background-color);
-
-    &:hover,
-    &:focus {
-      @include color-map(background-color, secondary);
-      @include transition(background-color);
-      outline: none;
-    }
-
-    &:active {
-      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
-    }
+    @extend .btn;
   }
 }
 

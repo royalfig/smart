@@ -1,20 +1,20 @@
 {{!-- Search Modal --}}
-    <aside class="modal-search" id="modal-search" role="search" aria-expanded="false" aria-hidden="true">
-        <button class="modal-search__close-btn" data-target="modal-search" title="Close Search" aria-label="close">
+    <aside class="modal" id="search-modal" role="search" aria-expanded="false" aria-hidden="true">
+        <button class="modal__close-btn close-btn" title="Close Search" aria-label="close">
             <svg aria-hidden="true">
                 <title>Close</title>
                 <use href="#close"></use>
             </svg>
         </button>
-        <div class="modal-search__container">
-            <header class="modal-search__header">
+        <div class="modal__container">
+            <header class="modal__header">
                 <label for="search">Search</label>
             </header>
-            <div class="modal-search__inner-container">
-                <div class="modal-search__input-container">
-                    <input class="modal-search__input" id="search-input" type="text" placeholder="I'm looking for..."
+            <div class="modal__inner-container">
+                <div class="modal__input-container">
+                    <input class="modal__input" id="search-input" type="text" placeholder="I'm looking for..."
                         aria-label="Enter your search term" autocomplete="off">
-                    <button class="modal-search__btn" type="button" aria-label="search">Search</button>
+                    <button class="modal__btn" type="button" id="run-search-btn" aria-label="search">Search</button>
                 </div>
                 <div class="search-results">
                     <header class="search-results__header"></header>

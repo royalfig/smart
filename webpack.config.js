@@ -22,6 +22,7 @@ module.exports = {
     new CopyWebpackPlugin([
       { context: `${__dirname}/src`, from: '*.hbs' },
       { context: `${__dirname}/src/partials`, from: '*.hbs', to: 'partials' },
+      { context: `${__dirname}/src/members`, from: '*.hbs', to: 'members' },
       { context: `${__dirname}/src/fonts`, from: '*', to: 'assets/fonts' },
       { context: `${__dirname}/src`, from: 'package.json' }
     ]),
