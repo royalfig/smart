@@ -66,10 +66,11 @@
   }
 
   &--signin {
+    @include btn(outline);
   }
 
   &--subscribe {
-    @extend .btn;
+    @include btn(color);
   }
 
   &__search-btn {
@@ -268,14 +269,12 @@
 
       &--signin {
         margin: 0 0.5rem;
-        font-family: $sans;
-        font-size: 1em;
-        @include color-map(color, text2);
+        @include btn(outline);
       }
 
       &--subscribe {
         margin: 0 0.5rem;
-        @include btn;
+        @include btn(color);
       }
 
       &--member-button {

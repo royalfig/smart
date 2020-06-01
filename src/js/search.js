@@ -4,6 +4,7 @@ import GhostContentAPI from '@tryghost/content-api';
 const search = () => {
   const api = new GhostContentAPI({
     url: `${window.location.protocol}//${window.location.host}`,
+    // eslint-disable-next-line no-undef
     key: SEARCH_API,
     version: 'v3'
   });

@@ -39,6 +39,11 @@
 
   &__input-container {
     // @extend .modal__input-container;
+    @include flex(row, flex-start, flex-end);
+  }
+
+  &__label-container {
+    margin-right: 0.5rem;
   }
 
   &__label {
@@ -47,10 +52,12 @@
 
   &__input {
     @extend .form__input;
+    margin-bottom: 0;
   }
 
   &__btn {
-    @extend .btn;
+    @include btn(color);
+    flex-shrink: 0;
 
     &--loading {
       display: none;
@@ -62,8 +69,16 @@
   }
 
   &__subtext {
-    font-size: 80%;
+    font-size: 0.85em;
     @include color-map(color, text2);
+
+    p {
+      display: inline-block;
+    }
+
+    button {
+      @include btn(outline);
+    }
   }
 
   %state {
@@ -75,8 +90,8 @@
 
   &__success {
     @extend %state;
-    color: #000000;
-    background-color: #40da3b;
+    color: #111111;
+    background-color: #b4d195;
 
     .success & {
       display: block;

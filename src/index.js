@@ -1,6 +1,6 @@
 import './scss/style.scss';
 import search from './js/search';
-import modal from './js/modal';
+import modalFn from './js/modal';
 
 import 'lazysizes';
 
@@ -8,10 +8,12 @@ if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
 
+// eslint-disable-next-line no-undef
 if (SEARCH_API) {
   search();
 }
 
+modalFn();
 // Polyfill forEach
 
 //-------------------------------------------

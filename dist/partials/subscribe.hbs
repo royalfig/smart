@@ -19,10 +19,13 @@
                         <span class="member__btn--loading"></span>
                     </button>
                 </div>
-                <p class="member__subtext">Already have an account? <a href="{{@site.url}}/signin/">Sign in</a></p>
                 <div class="member__error">Please enter a valid email address!</div>
                 <div class="member__success"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription</div>
         </form>
+            <div class="member__subtext">
+                <p class="member__subtext">Already have an account?</p>
+                <button id="subtext-signin" data-target="signin">Sign In</button>
+            </div>
     </div>
 </aside>
 {{!-- End Subscribe Modal --}}
