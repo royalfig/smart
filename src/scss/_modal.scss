@@ -44,14 +44,9 @@
   @include color-map(background-color, surface2);
 
   &__header {
-    @include flex(row, space-between, center);
-    width: 100%;
-
-    label {
-      @extend .serif;
-      font-size: 1.5rem;
-      line-height: 1;
-    }
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: 1;
   }
 
   &__container {
@@ -94,12 +89,51 @@
     padding: 2rem 0;
   }
 
+  &__input-container {
+    @include flex(row, flex-start, flex-end);
+  }
+
+  &__label-container {
+    margin-right: 0.5rem;
+  }
+  &__label {
+    @extend .form__label;
+  }
+
   &__input {
     @extend .form__input;
+    margin-bottom: 0;
   }
 
   &__btn {
     @include btn(color);
+    flex-shrink: 0;
+
+    &--content {
+      .loading &,
+      .success & {
+        display: none;
+      }
+    }
+
+    &--loading {
+      display: none;
+      .loading & {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+        animation: rotate 1s linear infinite;
+      }
+    }
+
+    &--success {
+      display: none;
+      .success & {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
   }
 }
 
@@ -110,6 +144,7 @@
   padding: 0.5rem 0;
 
   &__header {
+    padding: 0.5rem 0;
     font-size: 1rem;
     @include color-map(color, surface);
     @include color-map(background-color, text);
@@ -122,13 +157,13 @@
     text-align: left;
     border-bottom-style: solid;
     border-bottom-width: 1px;
-    @include color-map(border-bottom-color, text1);
+    @include color-map(border-bottom-color, text4);
   }
 
   &__date {
     margin-top: 1rem;
-    font-size: 0.9em;
-    @include color-map(color, text1);
+    font-size: 0.8rem;
+    @include color-map(color, text2);
     background: none;
   }
 

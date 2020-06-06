@@ -59,11 +59,28 @@
     @include btn(color);
     flex-shrink: 0;
 
+    &--content {
+      .loading &,
+      .success & {
+        display: none;
+      }
+    }
     &--loading {
       display: none;
 
       .loading & {
-        display: block;
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+        animation: rotate 1s linear infinite;
+      }
+    }
+    &--success {
+      display: none;
+      .success & {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
       }
     }
   }
@@ -83,15 +100,15 @@
 
   %state {
     display: none;
-    padding: 2px 4px;
-    margin-top: 0.25rem;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.5rem;
     border-radius: $radius;
   }
 
   &__success {
     @extend %state;
-    color: #111111;
-    background-color: #b4d195;
+    @include color-map(color, text2);
+    @include color-map(background-color, surface4);
 
     .success & {
       display: block;
@@ -105,5 +122,17 @@
     .error & {
       display: block;
     }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+  }
+  50% {
+    rotate: 180deg;
+  }
+  100% {
+    rotate: 360deg;
   }
 }

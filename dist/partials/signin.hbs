@@ -12,7 +12,44 @@
     <script>window.location = '{{@site.url}}';</script>
     {{else if @member}}
     {{!-- For those who have subscribed but who haven't paid --}}
-        <h2 class="member__title">Buy Me</h2>
+        {{!-- Logged in, not paying: Check out --}}
+        <div class="checkout-form">
+            <h1 class="checkout-title">Choose your subscription</h1>
+            <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
+            <div class="checkout-box">
+                <div class="checkout-plan">
+                    <header class="checkout-plan-header">
+                        <h3>Monthly</h3>
+                        <span>{{@price.currency_symbol}}</span><strong>{{@price.monthly}}</strong> / month
+                    </header>
+                    <div class="checkout-plan-content">
+                        <ul>
+                            <li>Full access to all private posts</li>
+                            <li>Regular updates with new content</li>
+                            <li>Support independent publishing</li>
+                            <li>Simple, secure card payment</li>
+                        </ul>
+                        <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choose this plan</a>
+                    </div>
+                </div>
+                <div class="checkout-plan">
+                    <header class="checkout-plan-header">
+                        <h3>Yearly</h3>
+                        <span>{{@price.currency_symbol}}</span><strong>{{@price.yearly}}</strong> / year
+                    </header>
+                    <div class="checkout-plan-content">
+                        <ul>
+                            <li>Full access to all private posts</li>
+                            <li>Regular updates with new content</li>
+                            <li>Support independent publishing</li>
+                            <li>Simple, secure card payment</li>
+                            <li>One easy payment instead of 12!</li>
+                        </ul>
+                        <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choose this plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     {{else }}
     {{!-- For those who have not yet subscribed --}}
@@ -25,7 +62,12 @@
                     </div>
                     <button class="member__btn" type="submit">
                         <span class="member__btn--content">Sign In</span>
-                        <span class="member__btn--loading"></span>
+                        <svg class="member__btn--loading" aria-label="Loading...">
+                            <use href="#loader"></use>
+                        </svg>
+                        <svg class="member__btn--success" aria-label="Success!">
+                            <use href="#check"></use>
+                        </svg>
                     </button>
                 </div>
                 <div class="member__error">Please enter a valid email address!</div>

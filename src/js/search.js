@@ -1,6 +1,15 @@
 import Fuse from 'fuse.js';
 import GhostContentAPI from '@tryghost/content-api';
 
+const searchModal = document.getElementById('search-modal');
+const stateLoader = (state, status) => {
+  if (status) {
+    searchModal.classList.add(state);
+  } else {
+    searchModal.classList.remove(state);
+  }
+};
+
 const search = () => {
   const api = new GhostContentAPI({
     url: `${window.location.protocol}//${window.location.host}`,
@@ -45,6 +54,7 @@ const search = () => {
     });
 
   const searchPosts = (term) => {
+    stateLoader('loading', true);
     searchResult.innerHTML = '';
     posts.then((queriedPosts) => {
       const index = new Fuse(queriedPosts, options);
@@ -67,6 +77,8 @@ const search = () => {
                   <a class="search-results__link" href="${post.url}">${post.title}</a></article>`;
       });
     });
+    stateLoader('loading', false);
+    stateLoader('success', true);
   };
 
   runSearchBtn.addEventListener('click', () => {
@@ -88,6 +100,7 @@ const search = () => {
   });
 
   searchInput.addEventListener('focus', (e) => {
+    stateLoader('success', false);
     e.target.value = '';
   });
 };

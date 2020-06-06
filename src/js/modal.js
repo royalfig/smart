@@ -40,7 +40,9 @@ const modalFn = () => {
     document.body.classList.remove('expanded-modal');
     modal.setAttribute('aria-expanded', 'false');
     const input = modal.querySelector('input');
-    input.value = '';
+    if (input) {
+      input.value = '';
+    }
   };
 
   const closeHandler = (e) => {
@@ -56,7 +58,9 @@ const modalFn = () => {
     document.body.classList.add('expanded-modal');
     modal.setAttribute('aria-expanded', 'true');
     const input = modal.querySelector('input');
-    input.focus();
+    if (input) {
+      input.focus();
+    }
     const nonTargetCloseHandler = (ev) => {
       if (ev.target.classList.contains('content-wrap')) {
         close(modal);
