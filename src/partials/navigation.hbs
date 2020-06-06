@@ -74,19 +74,19 @@
         </a>
     </div>
 
-    <div class="navbar__center">
-        {{#if @site.navigation}}
-        <ul class="navbar__ul" role="menu">
-            {{#foreach navigation}}
-            <li class="navbar__list-item"><a href="{{url}}"
-                    class="navbar__list-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
-            </li>
-            {{/foreach}}
-        </ul>
-        {{/if}}
-    </div>
 
     <div class="navbar__right">
+        <div class="navbar__center">
+            {{#if @site.navigation}}
+            <ul class="navbar__ul" role="menu">
+                {{#foreach navigation}}
+                <li class="navbar__list-item"><a href="{{url}}"
+                        class="navbar__list-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+                </li>
+                {{/foreach}}
+            </ul>
+            {{/if}}
+        </div>
         {{!-- Member functionality --}}
         {{#if @labs.members}}
         {{#if @member}}

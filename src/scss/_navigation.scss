@@ -245,6 +245,9 @@
 
     &__center {
       @include flex(row, space-between, center);
+      border-right-style: solid;
+      border-right-width: 1px;
+      @include color-map(border-right-color, text4);
     }
 
     &__right {

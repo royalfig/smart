@@ -94,6 +94,7 @@
   }
 
   &__label-container {
+    min-width: 70%;
     margin-right: 0.5rem;
   }
   &__label {
@@ -107,7 +108,6 @@
 
   &__btn {
     @include btn(color);
-    flex-shrink: 0;
 
     &--content {
       .loading &,
@@ -141,10 +141,10 @@
 // Search Styles
 //-------------------------------------------
 .search-results {
-  padding: 0.5rem 0;
+  padding: 1rem 0;
 
   &__header {
-    padding: 0.5rem 0;
+    padding: 0 0.25rem;
     font-size: 1rem;
     @include color-map(color, surface);
     @include color-map(background-color, text);
@@ -158,10 +158,13 @@
     border-bottom-style: solid;
     border-bottom-width: 1px;
     @include color-map(border-bottom-color, text4);
+
+    &:first-child {
+      margin-top: 0.5rem;
+    }
   }
 
   &__date {
-    margin-top: 1rem;
     font-size: 0.8rem;
     @include color-map(color, text2);
     background: none;
@@ -177,6 +180,23 @@
     &:active {
       @include color-map(color, primary);
       @include transition(color);
+    }
+  }
+
+  &__match {
+    font-size: 0.9rem;
+    @include color-map(color, text3);
+
+    .match-key {
+      padding: 2px 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      @include color-map(color, text4);
+      border: 1px solid currentColor;
+    }
+
+    .match-text {
+      @include color-map(color, text1);
     }
   }
 }
