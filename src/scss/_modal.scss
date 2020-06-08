@@ -94,7 +94,7 @@
   }
 
   &__label-container {
-    min-width: 70%;
+    min-width: calc(70% - 0.25rem);
     margin-right: 0.5rem;
   }
   &__label {
@@ -108,6 +108,7 @@
 
   &__btn {
     @include btn(color);
+    min-width: calc(30% - 0.25rem);
 
     &--content {
       .loading &,
@@ -184,15 +185,19 @@
   }
 
   &__match {
+    overflow: hidden;
     font-size: 0.9rem;
+    text-overflow: ellipsis;
     @include color-map(color, text3);
 
     .match-key {
       padding: 2px 4px;
+      margin-right: 0.25rem;
       font-size: 0.75rem;
       font-weight: 700;
       @include color-map(color, text4);
       border: 1px solid currentColor;
+      border-radius: $radius;
     }
 
     .match-text {

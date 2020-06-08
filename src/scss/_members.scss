@@ -43,6 +43,7 @@
   }
 
   &__label-container {
+    width: calc(70% - 0.25rem);
     margin-right: 0.5rem;
   }
 
@@ -57,7 +58,7 @@
 
   &__btn {
     @include btn(color);
-    flex-shrink: 0;
+    width: calc(30% - 0.25rem);
 
     &--content {
       .loading &,
@@ -127,12 +128,13 @@
 
 @keyframes rotate {
   0% {
-    rotate: 0deg;
+    transform: rotate(0deg);
   }
   50% {
-    rotate: 180deg;
+    transform: rotate(180deg);
   }
+
   100% {
-    rotate: 360deg;
+    transform: rotate(360deg);
   }
 }

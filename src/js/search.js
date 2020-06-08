@@ -3,6 +3,11 @@ import GhostContentAPI from '@tryghost/content-api';
 
 const searchModal = document.getElementById('search-modal');
 
+const createTimestamp = (minutes = 60) => {
+  const timestamp = Date.now() + minutes * 60000;
+  return timestamp;
+};
+
 const stateLoader = (state, status) => {
   if (status) {
     searchModal.classList.add(state);
@@ -12,11 +17,36 @@ const stateLoader = (state, status) => {
 };
 
 const search = () => {
-  const api = new GhostContentAPI({
+  const freshApi = new GhostContentAPI({
     url: `${window.location.protocol}//${window.location.host}`,
     // eslint-disable-next-line no-undef
     key: SEARCH_API,
     version: 'v3'
+  });
+
+  const api = new Promise((resolve, reject) => {
+    const timestamp = parseInt(localStorage.getItem('timestamp'), 10);
+    const now = Date.now();
+
+    if (!timestamp || now > timestamp) {
+      freshApi.posts
+        .browse({
+          include: 'tags',
+          formats: 'plaintext',
+          limit: 'all'
+        })
+        .then((data) => {
+          localStorage.setItem('posts', JSON.stringify(data));
+          localStorage.setItem('timestamp', createTimestamp());
+          resolve(data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } else {
+      const posts = JSON.parse(localStorage.getItem('posts'));
+      resolve(posts);
+    }
   });
 
   // Page Elements
@@ -40,29 +70,18 @@ const search = () => {
   ];
 
   const options = {
-    threshold: 0.2,
-    distance: 500,
+    threshold: 0.3,
+    distance: 50000,
     minMatchCharLength: 3,
     includeMatches: true,
     keys: ['title', 'plaintext', 'tags.name']
   };
 
-  const posts = api.posts
-    .browse({
-      include: 'tags',
-      formats: 'plaintext',
-      limit: 'all'
-    })
-    .then((data) => data)
-    .catch((err) => {
-      console.log(err);
-    });
-
   const searchPosts = (term) => {
     stateLoader('loading', true);
     searchResult.innerHTML = '';
-    posts.then((queriedPosts) => {
-      const index = new Fuse(queriedPosts, options);
+    api.then((posts) => {
+      const index = new Fuse(posts, options);
       const result = index.search(term);
 
       if (result.length > 1) {
@@ -75,16 +94,16 @@ const search = () => {
 
       result.forEach((post) => {
         const match = post.matches;
-        let matchText = '...';
+        let matchText = '';
         let matchKey = '';
         const matchKeyTransform = (input) => {
           if (input.toUpperCase() === 'PLAINTEXT') {
-            return 'TEXT';
+            return '<span class="match-key">TEXT</span> ';
           }
           if (input.toUpperCase() === 'TAGS.NAME') {
-            return 'TAG';
+            return '<span class="match-key">TAG</span> ';
           }
-          return input.toUpperCase();
+          return `<span class="match-key">${input.toUpperCase()}</span>`;
         };
 
         if (match.length) {
@@ -114,11 +133,13 @@ const search = () => {
               <p class="search-results__date">${publishedString}</p>
               <a class="search-results__link" href="${post.item.url}">${post.item.title}</a>
               <p class="search-results__match">
-                <span class="match-key">${matchKey}</span> ${matchText}</p>
+                ${matchKey}${matchText}</p>
             </article>`;
       });
+
+      stateLoader('loading', false);
+      stateLoader('success', true);
     });
-    stateLoader('loading', false);
   };
 
   runSearchBtn.addEventListener('click', () => {
@@ -140,7 +161,14 @@ const search = () => {
   });
 
   searchInput.addEventListener('focus', (e) => {
+    stateLoader('loading', false);
+    stateLoader('success', false);
     e.target.value = '';
+  });
+
+  searchInput.addEventListener('input', () => {
+    stateLoader('loading', false);
+    stateLoader('success', false);
   });
 };
 

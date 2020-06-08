@@ -11,12 +11,17 @@
         <form class="member__form" data-members-form="signup">
                 <div class="member__input-container">
                     <div class="member__label-container">
-                        <label class="member__label" for="subscribe">Email</label>
-                        <input  class="member__input" data-members-email id="subscribe" type="email" required="true" autocomplete="false" />
+                        <label class="member__label" for="email">Email</label>
+                        <input  class="member__input" data-members-email id="email" type="email" required="true" autocomplete="false" />
                     </div>
                     <button class="member__btn" type="submit">
                         <span class="member__btn--content">Subscribe</span>
-                        <span class="member__btn--loading"></span>
+                        <svg class="member__btn--loading" aria-label="Loading...">
+                            <use href="#loader"></use>
+                        </svg>
+                        <svg class="member__btn--success" aria-label="Success!">
+                            <use href="#check"></use>
+                        </svg>
                     </button>
                 </div>
                 <div class="member__error">Please enter a valid email address!</div>
