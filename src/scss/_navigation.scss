@@ -66,10 +66,13 @@
   }
 
   &--signin {
-    @include btn(outline);
+    font-family: $sans;
+    font-size: 0.9rem;
+    line-height: 1.2;
+    @include color-map(color, text1);
   }
 
-  &--subscribe {
+  &--signup {
     @include btn(color);
   }
 
@@ -272,10 +275,13 @@
 
       &--signin {
         margin: 0 0.5rem;
-        @include btn(outline);
+        font-family: $sans;
+        font-size: 0.9rem;
+        line-height: 1.2;
+        @include color-map(color, text1);
       }
 
-      &--subscribe {
+      &--signup {
         margin: 0 0.5rem;
         @include btn(color);
       }

@@ -2,15 +2,15 @@ const modalFn = () => {
   // Desktop buttons
   const accountBtn = document.getElementById('account-btn');
   const signinBtn = document.getElementById('signin-btn');
-  const subscribeBtn = document.getElementById('subscribe-btn');
+  const signupBtn = document.getElementById('signup-btn');
   const searchBtn = document.getElementById('search-btn');
-  const subtextSubBtn = document.getElementById('subtext-subscribe');
+  const subtextSignupBtn = document.getElementById('subtext-signup');
   const subtextSigninBtn = document.getElementById('subtext-signin');
 
   // Mobile buttons
   const mAccountBtn = document.getElementById('m-account-btn');
   const mSigninBtn = document.getElementById('m-signin-btn');
-  const mSubscribeBtn = document.getElementById('m-subscribe-btn');
+  const mSignupBtn = document.getElementById('m-signup-btn');
   const mSearchBtn = document.getElementById('m-search-btn');
   const menuBtn = document.getElementById('menu-btn');
 
@@ -25,13 +25,13 @@ const modalFn = () => {
   const btns = [
     accountBtn,
     signinBtn,
-    subscribeBtn,
+    signupBtn,
     searchBtn,
-    subtextSubBtn,
+    subtextSignupBtn,
     subtextSigninBtn,
     mAccountBtn,
     mSigninBtn,
-    mSubscribeBtn,
+    mSignupBtn,
     mSearchBtn,
     menuBtn
   ];

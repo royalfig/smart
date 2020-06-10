@@ -142,10 +142,14 @@ const search = () => {
     });
   };
 
+  const enterSearchTermCheck = () => {
+    searchResultHeader.textContent = 'Enter a search term';
+    searchResult.innerHTML = ''; // Remove?
+  };
+
   runSearchBtn.addEventListener('click', () => {
     if (searchInput.value === '') {
-      searchResultHeader.textContent = 'Enter a search term';
-      searchResult.innerHTML = '';
+      enterSearchTermCheck();
     } else {
       searchPosts(searchInput.value);
     }
@@ -153,22 +157,24 @@ const search = () => {
 
   searchInput.addEventListener('keyup', (e) => {
     if (searchInput.value === '') {
-      searchResultHeader.textContent = 'Enter a search term';
-      searchResult.innerHTML = '';
+      enterSearchTermCheck();
     } else if (e.keyCode === 13) {
       searchPosts(searchInput.value);
     }
   });
 
-  searchInput.addEventListener('focus', (e) => {
+  const resetState = () => {
     stateLoader('loading', false);
     stateLoader('success', false);
+  };
+
+  searchInput.addEventListener('focus', (e) => {
+    resetState();
     e.target.value = '';
   });
 
   searchInput.addEventListener('input', () => {
-    stateLoader('loading', false);
-    stateLoader('success', false);
+    resetState();
   });
 };
 

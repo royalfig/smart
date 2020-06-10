@@ -11,46 +11,7 @@
     {{!-- A logged-in, paying member shouldn't get here, but if they do. Redirect them home --}}
     <script>window.location = '{{@site.url}}';</script>
     {{else if @member}}
-    {{!-- For those who have subscribed but who haven't paid --}}
-        {{!-- Logged in, not paying: Check out --}}
-        <div class="checkout-form">
-            <h1 class="checkout-title">Choose your subscription</h1>
-            <p>Unlock full access to {{@site.title}} and see the entire library of members-only content & updates</p>
-            <div class="checkout-box">
-                <div class="checkout-plan">
-                    <header class="checkout-plan-header">
-                        <h3>Monthly</h3>
-                        <span>{{@price.currency_symbol}}</span><strong>{{@price.monthly}}</strong> / month
-                    </header>
-                    <div class="checkout-plan-content">
-                        <ul>
-                            <li>Full access to all private posts</li>
-                            <li>Regular updates with new content</li>
-                            <li>Support independent publishing</li>
-                            <li>Simple, secure card payment</li>
-                        </ul>
-                        <a class="button primary fit" href="javascript:" data-members-plan="Monthly">Choose this plan</a>
-                    </div>
-                </div>
-                <div class="checkout-plan">
-                    <header class="checkout-plan-header">
-                        <h3>Yearly</h3>
-                        <span>{{@price.currency_symbol}}</span><strong>{{@price.yearly}}</strong> / year
-                    </header>
-                    <div class="checkout-plan-content">
-                        <ul>
-                            <li>Full access to all private posts</li>
-                            <li>Regular updates with new content</li>
-                            <li>Support independent publishing</li>
-                            <li>Simple, secure card payment</li>
-                            <li>One easy payment instead of 12!</li>
-                        </ul>
-                        <a class="button primary fit" href="javascript:" data-members-plan="Yearly">Choose this plan</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+    <script>window.location = '{{@site.url}}';</script>
     {{else }}
     {{!-- For those who have not yet subscribed --}}
         <h2 class="member__title">Sign In</h2>
@@ -75,7 +36,7 @@
         </form>
         <div class="member__subtext">
             <p class="member__subtext">Don't have an account?</p>
-            <button id="subtext-subscribe" data-target="subscribe">Subscribe</button>
+            <button id="subtext-signup" data-target="signup">Sign Up</button>
         </div>
     {{/if}}
     </div>

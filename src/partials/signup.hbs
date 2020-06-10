@@ -1,13 +1,13 @@
-{{!-- Subscribe Modal --}}
-<aside class="modal member" id="subscribe" aria-expanded="false" aria-hidden="true">
-    <button class="member__close-btn close-btn" id="subscribe-close-btn" data-target="subscribe" title="Close Subscribe" aria-label="close">
+{{!-- Sign Up Modal --}}
+<aside class="modal member" id="signup" aria-expanded="false" aria-hidden="true">
+    <button class="member__close-btn close-btn" id="signup-close-btn" data-target="signup" title="Close Subscribe" aria-label="close">
         <svg aria-hidden="true">
             <title>Close</title>
             <use href="#close"></use>
         </svg>
     </button>
     <div class="member__container">
-        <h2 class="member__title">Subscribe</h2>
+        <h2 class="member__title">Sign Up</h2>
         <form class="member__form" data-members-form="signup">
                 <div class="member__input-container">
                     <div class="member__label-container">
@@ -15,7 +15,7 @@
                         <input  class="member__input" data-members-email id="email" type="email" required="true" autocomplete="false" />
                     </div>
                     <button class="member__btn" type="submit">
-                        <span class="member__btn--content">Subscribe</span>
+                        <span class="member__btn--content">Sign Up</span>
                         <svg class="member__btn--loading" aria-label="Loading...">
                             <use href="#loader"></use>
                         </svg>
@@ -33,4 +33,4 @@
             </div>
     </div>
 </aside>
-{{!-- End Subscribe Modal --}}
+{{!-- End Sign Up Modal --}}
