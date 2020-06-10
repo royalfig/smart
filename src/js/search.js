@@ -1,4 +1,6 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 import Fuse from 'fuse.js/dist/fuse.basic.esm';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import GhostContentAPI from '@tryghost/content-api';
 
 const searchModal = document.getElementById('search-modal');
@@ -85,11 +87,11 @@ const search = () => {
       const result = index.search(term);
 
       if (result.length > 1) {
-        searchResultHeader.textContent = `${result.length} Results`;
+        searchResultHeader.textContent = `${result.length} Results for “${term}”`;
       } else if (result.length !== 0) {
-        searchResultHeader.textContent = `${result.length} Result`;
+        searchResultHeader.textContent = `${result.length} Result for “${term}”`;
       } else {
-        searchResultHeader.textContent = 'No results';
+        searchResultHeader.textContent = `No results for “${term}”`;
       }
 
       result.forEach((post) => {
