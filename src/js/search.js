@@ -1,6 +1,5 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
+/* eslint-disable import/no-extraneous-dependencies */
 import Fuse from 'fuse.js/dist/fuse.basic.esm';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import GhostContentAPI from '@tryghost/content-api';
 
 const searchModal = document.getElementById('search-modal');
@@ -49,6 +48,7 @@ const search = () => {
       const posts = JSON.parse(localStorage.getItem('posts'));
       resolve(posts);
     }
+    reject(new Error("Couldn't fetch posts"));
   });
 
   // Page Elements

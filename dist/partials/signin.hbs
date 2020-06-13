@@ -9,9 +9,9 @@
     <div class="member__container">
     {{#if @member.paid}}
     {{!-- A logged-in, paying member shouldn't get here, but if they do. Redirect them home --}}
-    <script>window.location = '{{@site.url}}';</script>
+    <p>Paid</p>
     {{else if @member}}
-    <script>window.location = '{{@site.url}}';</script>
+    <p>Subbed</p>
     {{else }}
     {{!-- For those who have not yet subscribed --}}
         <h2 class="member__title">Sign In</h2>

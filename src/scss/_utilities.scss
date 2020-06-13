@@ -35,6 +35,8 @@ $yt: #ff0000;
   --three: #643791;
   --four: #8b1c76;
   --five: #a00053;
+  --success: #008a64;
+  --error: #971333;
 
   --gradient: linear-gradient(
     to right top,
@@ -53,31 +55,30 @@ $yt: #ff0000;
     #a00053,
     #a4002e
   );
-
-  --tertiary: #63309f;
 }
 
 // Dark Mode (Default)
 :root[color-mode='dark'] {
-  --text: rgb(245, 245, 245);
-  --textInverse: rgb(10, 10, 10);
-  --text1: rgb(232, 233, 233);
-  --text2: rgb(198, 198, 199);
-  --text3: rgb(165, 165, 167);
-  --text4: rgb(97, 99, 101);
-
+  --text: #f5f5f5;
+  --textInverse: #0a0a0a;
+  --text1: #e8e9e9;
+  --text2: #c6c6c7;
+  --text3: #a5a5a7;
+  --text4: #616365;
   --surface: #181818;
   --surface1: #202020;
   --surface1-75: rgba(33, 33, 33, 0.75);
   --surface2: #282828;
   --surface3: #303030;
   --surface4: #383838;
-
   --primary: #80deea;
   --secondary: #ffab91;
   --three: #8cdbbf;
   --four: #b4d195;
   --five: #e0c081;
+
+  --success: #12884e;
+  --error: #852500;
 
   --gradient: linear-gradient(
     to right top,
@@ -101,22 +102,24 @@ $yt: #ff0000;
 // Fallback (defaults to Dark Mode)
 $colors: (
   'text': #f5f5f5,
-  'textInverse': rgb(10, 10, 10),
+  'textInverse': #0a0a0a,
   'text1': #e8e9e9,
   'text2': #c7c7c8,
   'text3': #a5a5a7,
   'text4': #616264,
-  'surface': #09090a,
-  'surface1': #0d0e0f,
+  'surface': #181818,
+  'surface1': #202020,
   'surface1-75': rgba(33, 33, 33, 0.75),
-  'surface2': #111214,
-  'surface3': #1a1b1f,
-  'surface4': #1d1e22,
+  'surface2': #282828,
+  'surface3': #303030,
+  'surface4': #383838,
   'primary': #80deea,
   'secondary': #ffab91,
   'three': #8cdbbf,
   'four': #b4d195,
-  'five': #e0c081
+  'five': #e0c081,
+  'success': #12884e,
+  'error': #852500
 );
 
 @function color($key) {
@@ -246,6 +249,17 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
     &:focus {
       outline: none;
       @include color-map(color, text);
+    }
+  }
+
+  @if $type == link {
+    @extend .hvr-underline-from-left;
+    font-size: 1em;
+    font-weight: 400;
+    color: currentColor;
+
+    &:focus {
+      outline: none;
     }
   }
 

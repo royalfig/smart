@@ -8,29 +8,78 @@
     </button>
     <div class="member__container">
         <h2 class="member__title">Sign Up</h2>
-        <form class="member__form" data-members-form="signup">
-                <div class="member__input-container">
-                    <div class="member__label-container">
-                        <label class="member__label" for="email">Email</label>
-                        <input  class="member__input" data-members-email id="email" type="email" required="true" autocomplete="false" />
-                    </div>
-                    <button class="member__btn" type="submit">
-                        <span class="member__btn--content">Sign Up</span>
-                        <svg class="member__btn--loading" aria-label="Loading...">
-                            <use href="#loader"></use>
-                        </svg>
-                        <svg class="member__btn--success" aria-label="Success!">
-                            <use href="#check"></use>
-                        </svg>
-                    </button>
-                </div>
-                <div class="member__error">Please enter a valid email address!</div>
-                <div class="member__success"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription</div>
-        </form>
-            <div class="member__subtext">
-                <p class="member__subtext">Already have an account?</p>
-                <button id="subtext-signin" data-target="signin">Sign In</button>
+        <div class="member__subtext">
+            <p class="member__subtext">Already have an account?</p>
+            <button id="subtext-signin" data-target="signin">Sign In</button>
+        </div>
+        <article class="member__card">
+            <header class="member__header">
+                <h3 class="member__card--title">
+                    Yearly Subscription
+                </h3>
+            </header>
+            <div class="member__body">
+                <p class="member__price">{{@price.currency_symbol}}{{@price.yearly}} ({{@price.currency}}) / year</p>
+                <ul>
+                    <li>Full access to all private posts</li>
+                    <li>Regular updates with new content</li>
+                    <li>Support independent publishing</li>
+                    <li>Simple, secure card payment</li>
+                </ul>
             </div>
+            <footer class="member__footer">
+                <a class="member__checkout"href="javascript:" data-members-plan="Yearly">Get Yearly Plan</a>
+            </footer>
+        </article>
+        <article class="member__card">
+            <header class="member__header">
+                <h3 class="member__card--title">
+                    Monthly Subscription
+                </h3>
+            </header>
+            <div class="member__body">
+                <p class="member__price">{{@price.currency_symbol}}{{@price.monthly}} ({{@price.currency}}) / month</p>
+                <ul>
+                    <li>Full access to all private posts</li>
+                    <li>Regular updates with new content</li>
+                    <li>Support independent publishing</li>
+                    <li>Simple, secure card payment</li>
+                    <li>One easy payment instead of 12!</li>
+                </ul>
+            </div>
+            <footer class="member__footer">
+                <a class="member__checkout"href="javascript:" data-members-plan="Monthly">Get Monthly Plan</a>
+            </footer>
+        </article>
+        <article class="member__card">
+            <header class="member__header">
+                <h3 class="member__card--title">
+                    Free Subscription
+                </h3>
+            </header>
+            <div class="member__body">
+                <p class="member__price">Regular updates with new content</p>
+                <form class="member__form" data-members-form="signup">
+                        <div class="member__input-container">
+                            <div class="member__label-container">
+                                <label class="member__label" for="email">Email</label>
+                                <input  class="member__input" data-members-email id="email" type="email" required="true" autocomplete="false" />
+                            </div>
+                            <button class="member__btn" type="submit">
+                                <span class="member__btn--content">Sign Up</span>
+                                <svg class="member__btn--loading" aria-label="Loading...">
+                                    <use href="#loader"></use>
+                                </svg>
+                                <svg class="member__btn--success" aria-label="Success!">
+                                    <use href="#check"></use>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="member__error">Please enter a valid email address!</div>
+                        <div class="member__success"><strong>Great!</strong> Check your inbox and click the link to confirm your subscription</div>
+                </form>
+            </div>
+        </article>
     </div>
 </aside>
 {{!-- End Sign Up Modal --}}

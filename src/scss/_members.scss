@@ -33,18 +33,29 @@
     line-height: 1;
   }
 
+  &__subtext {
+    margin: 0.25rem 0;
+    font-size: 0.85rem;
+    @include color-map(color, text2);
+
+    p {
+      display: inline-block;
+    }
+
+    button {
+      @include btn(link);
+    }
+  }
   &__form {
     @extend .modal__inner-container;
+    padding: 0;
   }
 
   &__input-container {
     // @extend .modal__input-container;
-    @include flex(row, flex-start, flex-end);
   }
 
   &__label-container {
-    width: calc(70% - 0.25rem);
-    margin-right: 0.5rem;
   }
 
   &__label {
@@ -58,7 +69,8 @@
 
   &__btn {
     @include btn(color);
-    width: calc(30% - 0.25rem);
+    width: 100%;
+    margin-top: 0.5rem;
 
     &--content {
       .loading &,
@@ -82,20 +94,8 @@
         display: inline-block;
         max-width: 100%;
         max-height: 100%;
+        @include color-map(background-color, success);
       }
-    }
-  }
-
-  &__subtext {
-    font-size: 0.85em;
-    @include color-map(color, text2);
-
-    p {
-      display: inline-block;
-    }
-
-    button {
-      @include btn(outline);
     }
   }
 
@@ -115,14 +115,53 @@
       display: block;
     }
   }
+
   &__error {
     @extend %state;
     color: #ffffff;
-    background-color: #da3b3b;
+    @include color-map(background-color, error);
 
     .error & {
       display: block;
     }
+  }
+
+  // Sign Up Card Options
+  &__card {
+    padding: 0.5rem 1rem;
+    margin: 1.5rem 0 0;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+    @include color-map(background-color, surface4);
+
+    &--title {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    ul,
+    ol {
+      margin: 1rem 2rem;
+      @include color-map(color, text);
+    }
+
+    ul {
+      list-style-type: square;
+    }
+  }
+
+  &__price {
+    margin: 0.25rem 0;
+    font-size: 0.9rem;
+    @include color-map(color, text2);
+  }
+
+  &__checkout {
+    @include btn(color);
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    text-align: center;
   }
 }
 
