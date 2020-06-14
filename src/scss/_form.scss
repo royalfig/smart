@@ -6,11 +6,6 @@
     @extend .author__small-header;
   }
 
-  &__input {
-    height: calc(1.4rem + 2px);
-    line-height: 1;
-  }
-
   &__input,
   textarea {
     width: 100%;

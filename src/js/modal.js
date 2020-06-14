@@ -59,7 +59,7 @@ const modalFn = () => {
     modal.setAttribute('aria-expanded', 'true');
     const input = modal.querySelector('input');
     if (input) {
-      input.focus();
+      // input.focus();
     }
     const nonTargetCloseHandler = (ev) => {
       if (ev.target.classList.contains('content-wrap')) {

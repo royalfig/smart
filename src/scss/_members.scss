@@ -1,15 +1,3 @@
-// Ghost States
-// .loading {
-
-// }
-
-// .success {
-
-// }
-
-// .error {
-
-// }
 .member {
   @extend .modal;
   text-align: initial;
@@ -28,14 +16,14 @@
   }
 
   &__title {
-    margin: 0;
+    margin: 0 0 2rem;
     font-size: 1.5rem;
     line-height: 1;
   }
 
   &__subtext {
-    margin: 0.25rem 0;
-    font-size: 0.85rem;
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
     @include color-map(color, text2);
 
     p {
@@ -46,16 +34,10 @@
       @include btn(link);
     }
   }
+
   &__form {
     @extend .modal__inner-container;
     padding: 0;
-  }
-
-  &__input-container {
-    // @extend .modal__input-container;
-  }
-
-  &__label-container {
   }
 
   &__label {
@@ -130,7 +112,7 @@
   &__card {
     width: 100%;
     padding: 0.5rem 1rem;
-    margin: 1.5rem 0 0;
+    margin: 1rem 0;
     border-radius: $radius;
     box-shadow: $box-shadow;
     @include color-map(background-color, surface4);
@@ -142,7 +124,7 @@
 
     ul,
     ol {
-      margin: 1rem 2rem;
+      margin: 0.5rem 1rem;
       @include color-map(color, text);
     }
 

@@ -7,13 +7,68 @@
         </svg>
     </button>
     <div class="member__container">
+        <h2 class="member__title">Account</h2>
     {{#if @member.paid}}
 
         {{!-- Logged in, paying member: Show account info --}}
-       
+        <article class="member__card">
+            <header class="member__header">
+                <div class="member__img">
+                    <img src="{{@member.avatar_image}}" alt="">
+                </div>
+                <div class="member__name">
+                    {{#if @member.firstname}}
+                        <h3 class="member__card--title">
+                            Hello, {{@member.firstname}}!
+                        </h3>
+                    {{else}}
+                        <h3 class="member__card--title">
+                            Hello!
+                        </h3>
+                    {{/if}}
+                </div>
+            </header>
+            <div class="member__body">
+                <p>{{@member.email}}</p>
+            </div>
+            <footer class="member__footer">
+                <a href="javascript:" data-members-signout>Sign out</a>
+            </footer>
+        </article>
 
-            {{!-- {{#foreach @member.subscriptions}} --}}
-                
+        {{#foreach @member.subscriptions}}
+        <article class="member__card">
+                <header class="member__header">
+                <h3 class="member__card--title">
+                    Subscription
+                </h3>
+            </header>
+            <div class="member__body">
+                <p class="member__price">{{@price.currency_symbol}}{{@price.yearly}} ({{@price.currency}}) / year</p>
+                <ul>
+                    <li>{{plan.currency_symbol}}{{price plan.amount}}/{{plan.interval}}</li>
+                    <li>CARD: **** **** **** {{default_payment_card_last4}}</li>
+                    <li></li>
+                    {{#if cancel_at_period_end}}
+                        <li>
+                            <strong class="subscription-expiration-warning">Your subscription will expire on {{date current_period_end format="DD MMM YYYY"}}.</strong> If you change your mind in the meantime you can turn auto-renew back on to continue your subscription.
+                        </li>
+                    {{else}}
+                        <li>
+                            Hey! You have an active <strong>{{@site.title}}</strong> account with access to all areas. Get in touch if have any problems or need some help getting things updated, and thanks for subscribing.
+                        </li>
+                    {{/if}}
+                    <li><a href="javascript:"
+                                data-members-edit-billing
+                                data-members-success="{{@site.url}}/account/?stripe=billing-update-success"
+                                data-members-cancel="{{@site.url}}/account/?stripe=billing-update-cancel">Edit billing info</a></li>
+                    <li>{{cancel_link}}</li>
+                </ul>
+            </div>
+            <footer class="member__footer">
+            </footer>
+        </article>
+        {{/foreach}}
 
     {{else if @member}}
 
@@ -26,3 +81,6 @@
     </div>
 </aside>
 {{!-- End signin Modal --}}
+
+        
+        
