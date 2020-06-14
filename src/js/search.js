@@ -40,16 +40,13 @@ const search = () => {
           localStorage.setItem('posts', JSON.stringify(data));
           localStorage.setItem('timestamp', createTimestamp());
           resolve(data);
-        })
-        .catch((err) => {
-          console.log(err);
         });
     } else {
       const posts = JSON.parse(localStorage.getItem('posts'));
       resolve(posts);
+      reject(new Error("Couldn't fetch posts"));
     }
-    reject(new Error("Couldn't fetch posts"));
-  });
+  }).catch((err) => console.error(err));
 
   // Page Elements
   const searchInput = document.getElementById('search-input');
