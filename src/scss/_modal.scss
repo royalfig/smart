@@ -1,10 +1,6 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
-// .expanded-modal-search,
-// .expanded-menu {
-//   overflow: hidden;
-// }
 
 .content-wrap {
   &:before {
@@ -54,11 +50,9 @@
   &__container {
     height: 100%;
     padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
 
-    // Create spacing at bottom of modal
     & > *:last-child {
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
   }
 
@@ -149,22 +143,18 @@
   &__header {
     padding: 0 0.25rem;
     font-size: 1rem;
-    @include color-map(color, surface);
-    @include color-map(background-color, text);
+    @include color-map(color, text1);
+    @include color-map(background-color, surface4);
     border-radius: $radius;
   }
 
   &__item {
-    padding-bottom: 0.5rem;
+    padding: 1rem;
     margin-top: 1rem;
     text-align: left;
-    border-bottom-style: solid;
-    border-bottom-width: 1px;
-    @include color-map(border-bottom-color, text4);
-
-    &:first-child {
-      margin-top: 0.5rem;
-    }
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+    @include color-map(background-color, surface3);
   }
 
   &__date {
@@ -203,8 +193,9 @@
     }
 
     .match-text {
-      color: #000000;
-      background-color: #ccff00;
+      @include color-map(color, surface);
+      @include color-map(background-color, text1);
+      border-radius: $radius;
     }
   }
 }

@@ -4,6 +4,7 @@ import modalFn from './js/modal';
 
 import 'lazysizes';
 
+// Polyfill forEach
 if (window.NodeList && !NodeList.prototype.forEach) {
   NodeList.prototype.forEach = Array.prototype.forEach;
 }
@@ -14,7 +15,6 @@ if (SEARCH_API) {
 }
 
 modalFn();
-// Polyfill forEach
 
 //-------------------------------------------
 // Grid Styles
@@ -50,34 +50,5 @@ if (window.CSS && CSS.supports('color', 'var(--primary)')) {
 } else {
   toggleColorBtns.forEach((e) => {
     e.style.display = 'none';
-  });
-}
-
-// animate navbar on desktop
-const siteTitles = document.querySelectorAll('.site-title');
-const hero = document.querySelector('.hero');
-let scrollPosHero = 0;
-let tickingHero = false;
-
-const animateNav = (pos) => {
-  if (pos > hero.offsetHeight + 25) {
-    siteTitles.forEach((item) => item.classList.add('show-nav'));
-  } else {
-    siteTitles.forEach((item) => item.classList.remove('show-nav'));
-  }
-};
-
-if (hero !== null) {
-  window.addEventListener('scroll', () => {
-    scrollPosHero = window.scrollY;
-
-    if (!tickingHero) {
-      window.requestAnimationFrame(() => {
-        animateNav(scrollPosHero);
-        tickingHero = false;
-      });
-
-      tickingHero = true;
-    }
   });
 }
