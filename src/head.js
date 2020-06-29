@@ -55,7 +55,7 @@
   };
 
   resizeHandler();
-})(640, 1280, 16, 21);
+})(640, 1280, 16, 20);
 
 if (
   localStorage.getItem('pref') === 'light' ||

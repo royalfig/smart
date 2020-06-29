@@ -69,9 +69,9 @@ const search = () => {
   ];
 
   const options = {
-    threshold: 0.3,
-    distance: 50000,
-    minMatchCharLength: 3,
+    threshold: 0.2,
+    ignoreLocation: true,
+    minMatchCharLength: 2,
     includeMatches: true,
     keys: ['title', 'plaintext', 'tags.name']
   };

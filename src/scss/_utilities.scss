@@ -175,7 +175,7 @@ $xl: 1280px;
 
 // Sizes
 $base: 9rem;
-$navbar: 3rem;
+$navbar: 5rem;
 $radius: 4px;
 
 // Box Shadow
@@ -220,7 +220,7 @@ $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 @mixin btn($type) {
   font-family: $sans;
   font-weight: 700;
-  line-height: 1;
+  // line-height: 1;
   border: none;
   border-radius: $radius;
   box-shadow: $box-shadow;
