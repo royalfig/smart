@@ -17,7 +17,7 @@ const modalFn = () => {
   const closeBtns = document.querySelectorAll('.close-btn');
 
   // eslint-disable-next-line no-undef
-  if (SEARCH_API) {
+  if (typeof SEARCH_API !== "undefined") {
     searchBtn.style.display = 'block';
     mSearchBtn.style.display = 'block';
   }

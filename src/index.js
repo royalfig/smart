@@ -10,7 +10,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 }
 
 // eslint-disable-next-line no-undef
-if (SEARCH_API) {
+if (typeof SEARCH_API !== "undefined") {
   search();
 }
 
