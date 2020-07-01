@@ -2,10 +2,10 @@
   position: relative;
   width: 100%;
   height: 20rem;
-  margin-top: $navbar;
-  @include color-map(background-color, surface1);
   background-position: center;
   background-size: cover;
+  @include navbar(margin-top);
+  @include color-map(background-color, surface1);
 
   @media (min-height: 50rem) {
     height: 30rem;

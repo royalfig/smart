@@ -27,13 +27,14 @@
     width: 100%;
     height: 20rem;
     padding: 1rem 1rem 0;
-    margin-top: $navbar;
+    @include navbar(margin-top);
   }
 
   &__no-img {
     width: auto;
     max-width: $laptop + 100;
-    margin: ($navbar + 1rem) auto 0;
+    margin: 0 auto;
+    @include navbar(margin-top, $increase: 1);
     background: linear-gradient(45deg, color(primary), color(secondary));
     background: var(--gradient);
     border-radius: $radius;

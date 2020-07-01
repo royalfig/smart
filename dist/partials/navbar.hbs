@@ -45,7 +45,7 @@
         </div>
         {{!-- Mobile Hamburger Menu  --}}
         <div class="navbar__bottom--right--mobile">
-            <button class="navbar-mobile__hamburger-btn" data-target="menu" aria-label="menu">
+            <button class="navbar__hamburger-btn" id="menu-btn" data-target="menu" aria-label="menu">
                 <svg aria-hidden="true">
                     <title>Menu</title>
                     <use href="#menu-icon"></use>
@@ -74,8 +74,7 @@
                         {{/if}}
                     </button>
                 {{else}}
-                    <button class="navbar__signin" id="signin-btn" data-target="signin">Sign
-                        In</button>
+                    <button class="navbar__signin" id="signin-btn" data-target="signin">Sign In</button>
                     <button class="navbar__signup" id="signup-btn" data-target="signup">Sign Up</button>
                 {{/if}}
             </div>

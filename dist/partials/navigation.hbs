@@ -2,8 +2,7 @@
     <ul class="navigation__ul" role="menu">
         {{#foreach navigation}}
             <li class="navigation__li">
-                <a href="{{url}}"
-                    class="navigation__list-link hvr-underline-from-left {{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+                <a href="{{url}}" class="navigation__list-link hvr-underline-from-left {{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
             </li>
         {{/foreach}}
     </ul>

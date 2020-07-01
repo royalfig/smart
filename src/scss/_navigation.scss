@@ -25,7 +25,7 @@
 
   &__li {
     display: inline-block;
-    margin: 0.25rem 0.5rem 0;
+    margin: 0.31rem 0.5rem 0;
     line-height: 1.6;
 
     &:first-child {
@@ -40,19 +40,20 @@
 //-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------
+// TODO -> Combine with other modal styles
 .mobile-nav-menu {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   z-index: 10;
   width: 20rem;
   max-width: calc(100vw - 3.5rem);
   height: 100%;
   @include color-map(color, text1);
   @include color-map(background-color, surface2);
-  box-shadow: 3px 10px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: -3px 10px 10px rgba(0, 0, 0, 0.25);
   transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  transform: translate3d(-100vw, 0, 0);
+  transform: translate3d(100vw, 0, 0);
 
   &[aria-expanded='true'] {
     transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -142,8 +143,6 @@
   z-index: 5;
   display: block;
   width: 100%;
-  // height: $navbar;
-  // padding: 0.5rem 1rem;
   font-size: 0.9rem;
   box-shadow: $box-shadow;
   @include color-map(background-color, surface2);
@@ -203,7 +202,12 @@
     @include flex(row, flex-start, center);
 
     &--center {
+      display: none;
       margin-left: 2rem;
+
+      @media (min-width: $laptop) {
+        display: block;
+      }
     }
 
     // If member functionality isn't enabled, then shift nav links to far right
@@ -212,9 +216,16 @@
     }
 
     &--right {
+      display: none;
       margin-left: auto;
 
+      @media (min-width: $laptop) {
+        display: block;
+      }
+
       &--mobile {
+        margin: 0.5rem 0 0 auto;
+        line-height: 1.6;
         @media (min-width: $laptop) {
           display: none;
         }
@@ -239,7 +250,7 @@
   // Member button styling
   &__signin,
   &__signup {
-    margin: 0.35rem 0.5rem 0 0;
+    margin: 0.31rem 0.5rem 0 0;
     font-family: $sans;
     font-size: 0.8rem;
     line-height: 1.8;
@@ -284,10 +295,19 @@
     }
   }
 
-  svg {
-    width: 100%;
-    height: 100%;
-    @include color-map(stroke, text2);
+  &__hamburger-btn {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      @include color-map(stroke, text2);
+
+      &:hover {
+        @include color-map(stroke, text);
+      }
+    }
   }
 
   // Search button

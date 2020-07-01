@@ -84,8 +84,8 @@ h6,
 }
 
 :target {
-  padding-top: $navbar;
-  margin-top: -$navbar;
+  @include navbar(padding-top);
+  @include navbar(margin-top, $negative: true);
 }
 
 :focus {
