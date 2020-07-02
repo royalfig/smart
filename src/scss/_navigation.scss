@@ -168,7 +168,7 @@
     &--right {
       @include flex(row, flex-start, center);
 
-      &:last-child {
+      button {
         margin-right: 0;
       }
     }

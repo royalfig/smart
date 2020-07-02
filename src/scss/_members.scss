@@ -112,6 +112,7 @@
     width: 100%;
     padding: 0.5rem 1rem;
     margin: 1rem 0;
+    font-size: 0.9rem;
     border-radius: $radius;
     box-shadow: $box-shadow;
     @include color-map(background-color, surface4);
@@ -130,6 +131,10 @@
     ul {
       list-style-type: square;
     }
+  }
+
+  &__body {
+    margin: 0.5rem 0;
   }
 
   &__price {
