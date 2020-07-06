@@ -52,7 +52,6 @@
   &__btn {
     @include btn(color);
     width: 100%;
-    margin-top: 0.5rem;
 
     &--content {
       .loading &,
@@ -124,17 +123,13 @@
 
     ul,
     ol {
-      margin: 0.5rem 1rem;
+      margin: 1rem;
       @include color-map(color, text);
     }
 
     ul {
       list-style-type: square;
     }
-  }
-
-  &__body {
-    margin: 0.5rem 0;
   }
 
   &__price {

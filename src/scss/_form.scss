@@ -4,13 +4,14 @@
 
   &__label {
     @extend .author__small-header;
+    display: block;
   }
 
   &__input,
   textarea {
     width: 100%;
     padding: 0.25rem;
-    margin: 0.5rem 0;
+    margin: 0.25rem 0;
     font-family: $sans;
     font-size: 0.9rem;
     border: 1px solid currentColor;

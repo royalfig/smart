@@ -27,37 +27,32 @@ into the {body} of the default.hbs template --}}
     <div class="outer-container">
         <div class="inner-container">
             <article class="{{post_class}}">
-
                 <header class="post__header">
                     <h1 class="post__title--serif">{{title}}</h1>
-                    {{!-- {{#foreach authors}}<a href="{{url}}" class="post__author">{{name}}</a>{{/foreach}} --}}
                     <div class="post__author">
                         {{authors}}
                     </div>
                     <p class="post__date">
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-
-                        {{! Tags }}
-                        {{#if tags}}
-                        <section class="post__tag-bar">
+                    {{! Tags }}
+                    {{#if tags}}
+                    <section class="post__tag-bar">
+                        <svg aria-hidden="true">
+                            <title>Filed under</title>
+                            <use href="#folder"></use>
+                        </svg>
+                        {{#foreach tags}}
+                        <a href="{{url}}" class="post__tag-link">
                             <svg aria-hidden="true">
-                                <title>Filed under</title>
-                                <use href="#folder"></use>
+                                <use href="#hash"></use>
                             </svg>
-                            {{#foreach tags}}
-                            <a href="{{url}}" class="post__tag-link"><svg aria-hidden="true">
-                                    <use href="#hash"></use>
-                                </svg>
-                                <p>
-                                    {{name}}
-                                </p>
-                            </a>
-                            {{/foreach}}
-                        </section>
-                        {{/if}}
-                        {{! Tags }}
+                            <p>{{name}}</p>
+                        </a>
+                        {{/foreach}}
+                    </section>
+                    {{/if}}
+                    {{! Tags }}
                 </header>
-
                 <div class="post__content">
                     {{content}}
                 </div>
@@ -65,9 +60,9 @@ into the {body} of the default.hbs template --}}
 
             <footer class="post-footer">
                 {{#has author="count:<2"}}
-                    <h3 class="post-footer__title-1">About the Author</h3>
+                <h3 class="post-footer__title-1">About the Author</h3>
                 {{else}}
-                    <h3 class="post-footer__title-1">About the Authors</h3>
+                <h3 class="post-footer__title-1">About the Authors</h3>
                 {{/has}}
                 <h3 class="post-footer__title-2">More to Read</h3>
                 {{#has author="count:<2"}}
