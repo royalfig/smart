@@ -111,13 +111,25 @@
         vertical-align: top;
       }
     }
-    code {
+    pre {
+      max-width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      overflow-x: auto;
+      @include color-map(background-color, surface);
+      border-radius: $radius;
+    }
+    kbd {
       padding: 0 4px;
       font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
         'Cascadia Code', 'Droid Sans Mono', Consolas, monospace;
       @include color-map(color, text2);
       @include color-map(background-color, surface3);
       border-radius: 4px;
+    }
+    code {
+      font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
+        'Cascadia Code', 'Droid Sans Mono', Consolas, monospace;
     }
   }
 }
