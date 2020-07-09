@@ -25,6 +25,11 @@
   }
 }
 
+.expanded-modal {
+  // prevent double scroll bars when modal opens
+  overflow: hidden;
+}
+
 .modal {
   position: fixed;
   top: 0;
