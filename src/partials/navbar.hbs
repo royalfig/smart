@@ -1,15 +1,14 @@
 {{!-- Navbar --}}
 <nav class="navbar">
-
     {{!-- Navbar top  --}}
     <div class="navbar__top">
         <div class="navbar__top--left">
-            <p><span class="navbar__new-tag">New</span>
-                {{#get "posts" limit="1"}}
-                    {{#foreach posts}}
-                        {{#link href=(url) class="navbar__new-link"}}{{title}}{{/link}}
-                    {{/foreach}}
-                {{/get}}</p>
+            <span class="navbar__new-tag">New</span>
+            {{#get "posts" limit="1"}}
+                {{#foreach posts}}
+                    {{#link href=(url) class="navbar__new-link"}}{{title}}{{/link}}
+                {{/foreach}}
+            {{/get}}
         </div>
         <div class="navbar__top--right">
             <button class="color-mode-btn light" aria-label="Toggle light mode">
@@ -34,7 +33,6 @@
         </div>
     </div>
     {{!-- End navbar top  --}}
-
     {{!-- Navbar bottom --}}
     <div class="navbar__bottom">
         <div class="navbar__bottom--left">
@@ -53,7 +51,6 @@
             </button>
         </div>
         {{!-- End Mobile Hamburger Menu  --}}
-
         {{!-- If the site has links, they appear below  --}}
         {{#if @site.navigation}}
             <div class="navbar__bottom--center">
@@ -61,7 +58,6 @@
             </div>
         {{/if}}
         {{!-- End navigation  --}}
-
         {{!-- Member functionality --}}
         {{#if @labs.members}}
             <div class="navbar__bottom--right">
@@ -80,9 +76,7 @@
             </div>
         {{/if}}
         {{!-- Member functionality --}}
-
     </div>
     {{!-- End Navbar bottom --}}
-
 </nav>
 {{!-- End Navbar --}}

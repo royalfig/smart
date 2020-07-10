@@ -175,17 +175,18 @@
   }
 
   &__new-tag {
-    padding: 0.25em;
-    margin-right: 0.25em;
+    padding: 0.15em;
+    margin-right: 0.35em;
     font-size: 0.85em;
-    border: 1px solid;
+    line-height: 1;
     border-radius: $radius;
-    @include color-map(color, primary);
-    @include color-map(border-color, primary);
+    @include color-map(color, textInverse);
+    @include color-map(background-color, secondary);
   }
 
   &__new-link {
     font-size: 0.95em;
+    line-height: 1;
     @include transition(color);
     @include color-map(color, text2);
 
