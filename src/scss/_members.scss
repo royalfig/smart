@@ -21,18 +21,14 @@
     line-height: 1;
   }
 
-  &__subtext {
-    margin: 0.15rem 0 0;
-    font-size: 0.75rem;
-    @include color-map(color, text2);
+  &__info {
+    font-weight: 700;
+  }
 
-    p {
-      display: inline-block;
-    }
-
-    button {
-      @include btn(link);
-    }
+  &__ul {
+    padding-left: 2rem;
+    margin: 0.5rem 0 1rem;
+    list-style-type: square;
   }
 
   &__form {
@@ -109,9 +105,10 @@
   // Sign Up Card Options
   &__card {
     width: 100%;
-    padding: 0.5rem 1rem;
-    margin: 1rem 0;
+    padding: 1rem;
+    margin: 2rem 0;
     font-size: 0.9rem;
+    text-align: center;
     border-radius: $radius;
     box-shadow: $box-shadow;
     @include color-map(background-color, surface4);
@@ -120,22 +117,24 @@
       margin: 0;
       font-size: 1.3rem;
     }
-
-    ul,
-    ol {
-      margin: 1rem;
-      @include color-map(color, text);
-    }
-
-    ul {
-      list-style-type: square;
-    }
   }
 
   &__price {
+    display: inline-block;
     margin: 0.25rem 0;
-    font-size: 0.9rem;
-    @include color-map(color, text2);
+    font-size: 2em;
+    font-weight: 700;
+  }
+
+  &__term {
+    display: inline-block;
+    margin: 0.5rem 0 0 3px;
+    font-size: smaller;
+    vertical-align: top;
+  }
+
+  &__discount {
+    font-style: italic;
   }
 
   &__checkout {
@@ -148,7 +147,6 @@
 
   // Account options
   &__header {
-    @include flex(row, flex-start, center);
     margin-bottom: 0.5rem;
   }
 
@@ -164,6 +162,20 @@
       height: 100%;
       padding: 3px;
       border-radius: 50%;
+    }
+  }
+
+  &__subtext {
+    margin: 0.15rem 0 0;
+    font-size: 0.75rem;
+    @include color-map(color, text2);
+
+    p {
+      display: inline-block;
+    }
+
+    button {
+      @include btn(link);
     }
   }
 }

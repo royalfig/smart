@@ -10,16 +10,16 @@ if (window.NodeList && !NodeList.prototype.forEach) {
 }
 
 // eslint-disable-next-line no-undef
-if (typeof SEARCH_API !== "undefined") {
+if (typeof SEARCH_API !== 'undefined') {
   search();
 }
 
 modalFn();
 
-//-------------------------------------------
-// Grid Styles
-//-------------------------------------------
-
+/**
+ * Grid styles
+ * * Counts & adds the number of items to the grid container
+ */
 const gridContainers = document.querySelectorAll('.grid-container-home');
 
 gridContainers.forEach((element) => {
@@ -28,9 +28,10 @@ gridContainers.forEach((element) => {
   element.classList.add(`grid-container-home-${gridItems.length}`);
 });
 
-//-------------------------------------------
-// Color Mode Toggle
-//-------------------------------------------
+/**
+ * Color mode toggle
+ * ? Is the color mode button hidden on unsupported browsers?
+ */
 const toggleColorBtns = document.querySelectorAll('.color-mode-btn');
 
 if (window.CSS && CSS.supports('color', 'var(--primary)')) {
@@ -43,7 +44,6 @@ if (window.CSS && CSS.supports('color', 'var(--primary)')) {
     document.documentElement.setAttribute('color-mode', 'dark');
     localStorage.setItem('pref', 'dark');
   };
-
   toggleColorBtns.forEach((btn) => {
     btn.addEventListener('click', toggleColorMode);
   });
@@ -51,4 +51,46 @@ if (window.CSS && CSS.supports('color', 'var(--primary)')) {
   toggleColorBtns.forEach((e) => {
     e.style.display = 'none';
   });
+}
+
+/**
+ * Member annual price discount check
+ * * Checks whether annual price is better than monthly and adds a span with the discount info
+ */
+const extractNumber = (input) => {
+  const num = /\d+/.exec(input)[0];
+  return parseInt(num, 10);
+};
+
+const yearEl = document.getElementById('yearly-price');
+
+const yearlyPrice = extractNumber(yearEl.textContent);
+
+const monthlyPrice = extractNumber(
+  document.getElementById('monthly-price').textContent
+);
+
+const calculatePercentageDiscount = (monthToYear, year) => {
+  const diff = monthToYear - year;
+  const percentage = ((diff * 100) / monthToYear).toFixed();
+  return `${percentage}%`;
+};
+
+const determineDiscount = (month, year) => {
+  const monthlyToAnnual = month * 12;
+  if (year < monthlyToAnnual) {
+    const percentageDiscount = calculatePercentageDiscount(
+      monthlyToAnnual,
+      year
+    );
+    const percentOffEl = document.createElement('p');
+    percentOffEl.classList.add('member__discount');
+    const percentOffText = `${percentageDiscount} off the monthly price!`;
+    percentOffEl.append(percentOffText);
+    yearEl.parentElement.append(percentOffEl);
+  }
+};
+
+if (monthlyPrice && yearlyPrice) {
+  determineDiscount(monthlyPrice, yearlyPrice);
 }

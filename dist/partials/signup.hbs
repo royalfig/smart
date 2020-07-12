@@ -19,11 +19,14 @@
       Sign Up
     </h2>
     <p class='member__info'>
-      See all that {{@site.title}} has to offer
+      <strong>{{@site.title}}</strong>
     </p>
-    <ul>
+    {{#if @site.description}}
+    <p>{{@site.description}}</p>
+    {{/if}}
+    <ul class="member__ul">
       <li>
-        Full access to all private posts
+        Full access to all posts
       </li>
       <li>
         Regular updates with new content
@@ -34,9 +37,6 @@
       <li>
         Simple, secure card payment
       </li>
-      <li>
-        One easy payment instead of 12!
-      </li>
     </ul>
     <article class='member__card'>
       <header class='member__header'>
@@ -45,11 +45,9 @@
         </h3>
       </header>
       <div class='member__body'>
-        <p class='member__price'>
-          {{@price.currency_symbol}}{{@price.yearly}} ({{
-            @price.currency
-          }}) / year
-        </p>
+        <p class='member__price' id="yearly-price">
+          {{@price.currency_symbol}}{{@price.yearly}}
+        </p><p class="member__term">per year</p>
       </div>
       <footer class='member__footer'>
         <a
@@ -68,11 +66,9 @@
         </h3>
       </header>
       <div class='member__body'>
-        <p class='member__price'>
-          {{@price.currency_symbol}}{{@price.monthly}} ({{
-            @price.currency
-          }}) / month
-        </p>
+        <p class='member__price' id="monthly-price">
+          {{@price.currency_symbol}}{{@price.monthly}}
+        </p><p class="member__term">per month</p>
       </div>
       <footer class='member__footer'>
         <a
@@ -91,7 +87,7 @@
         </h3>
       </header>
       <div class='member__body'>
-        <p class='member__price'>
+        <p>
           Regular updates with new content
         </p>
         <form class='member__form' data-members-form='signup'>
