@@ -25,9 +25,13 @@
     font-weight: 700;
   }
 
+  &__benefits {
+    margin-top: 1rem;
+  }
+
   &__ul {
     padding-left: 2rem;
-    margin: 0.5rem 0 1rem;
+    margin: 0.25rem 0 1rem;
     list-style-type: square;
   }
 
@@ -106,7 +110,7 @@
   &__card {
     width: 100%;
     padding: 1rem;
-    margin: 2rem 0;
+    margin: 1rem 0;
     font-size: 0.9rem;
     text-align: center;
     border-radius: $radius;
@@ -121,16 +125,17 @@
 
   &__price {
     display: inline-block;
-    margin: 0.25rem 0;
-    font-size: 2em;
+    font-size: 2rem;
     font-weight: 700;
   }
 
   &__term {
     display: inline-block;
-    margin: 0.5rem 0 0 3px;
-    font-size: smaller;
+    margin: 0.25rem 0 0 3px;
+    font-size: 0.9em;
+    font-weight: 400;
     vertical-align: top;
+    @include color-map(color, text1);
   }
 
   &__discount {

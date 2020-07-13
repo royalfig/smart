@@ -1,4 +1,3 @@
-{{! Sign Up Modal }}
 <aside class='modal member' id='signup' aria-expanded='false'>
   <button
     class='member__close-btn close-btn'
@@ -19,17 +18,26 @@
       Sign Up
     </h2>
     <p class='member__info'>
-      <strong>{{@site.title}}</strong>
+      <strong>
+        {{@site.title}}
+      </strong>
     </p>
     {{#if @site.description}}
-    <p>{{@site.description}}</p>
+      <p>
+        {{@site.description}}
+      </p>
     {{/if}}
-    <ul class="member__ul">
+    <p class='member__benefits'>
+      <strong>
+        Subscription Benefits
+      </strong>
+    </p>
+    <ul class='member__ul'>
       <li>
-        Full access to all posts
+        Gain full access to all posts
       </li>
       <li>
-        Regular updates with new content
+        Receive regular updates with new content
       </li>
       <li>
         Support independent publishing
@@ -38,16 +46,14 @@
         Simple, secure card payment
       </li>
     </ul>
-    <article class='member__card'>
+    <div class='member__card'>
       <header class='member__header'>
         <h3 class='member__card--title'>
           Yearly Subscription
         </h3>
       </header>
       <div class='member__body'>
-        <p class='member__price' id="yearly-price">
-          {{@price.currency_symbol}}{{@price.yearly}}
-        </p><p class="member__term">per year</p>
+        <p class='member__price' id='yearly-price'>{{@price.currency_symbol}}{{@price.yearly}}</p><p class='member__term'>per year</p>
       </div>
       <footer class='member__footer'>
         <a
@@ -58,17 +64,15 @@
           Get Yearly Plan
         </a>
       </footer>
-    </article>
-    <article class='member__card'>
+    </div>
+    <div class='member__card'>
       <header class='member__header'>
         <h3 class='member__card--title'>
           Monthly Subscription
         </h3>
       </header>
       <div class='member__body'>
-        <p class='member__price' id="monthly-price">
-          {{@price.currency_symbol}}{{@price.monthly}}
-        </p><p class="member__term">per month</p>
+        <p class='member__price' id='monthly-price'>{{@price.currency_symbol}}{{@price.monthly}}</p><p class='member__term'>per month</p>
       </div>
       <footer class='member__footer'>
         <a
@@ -79,8 +83,8 @@
           Get Monthly Plan
         </a>
       </footer>
-    </article>
-    <article class='member__card'>
+    </div>
+    <div class='member__card'>
       <header class='member__header'>
         <h3 class='member__card--title'>
           Free Subscription
@@ -128,7 +132,7 @@
           </div>
         </form>
       </div>
-    </article>
+    </div>
     <div class='member__subtext'>
       <p class='member__subtext'>
         Already have an account?
@@ -139,4 +143,3 @@
     </div>
   </div>
 </aside>
-{{! End Sign Up Modal }}
