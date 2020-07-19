@@ -96,7 +96,9 @@
                             <p class="footer__description">{{@site.description}}</p>
                         {{/if}}
                         {{#if @site.secondary_navigation}}
-                            {{navigation type="secondary"}}
+                        <div class="footer__social">
+                        {{navigation type="secondary"}}
+                        </div>
                         {{/if}}
                     </div>
                     {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}

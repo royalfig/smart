@@ -124,17 +124,16 @@
   }
 
   &__price {
-    display: inline-block;
-    font-size: 2rem;
+    margin-top: 1rem;
+    font-size: 2.4rem;
     font-weight: 700;
+    line-height: 1;
   }
 
   &__term {
-    display: inline-block;
-    margin: 0.25rem 0 0 3px;
-    font-size: 0.9em;
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
     font-weight: 400;
-    vertical-align: top;
     @include color-map(color, text1);
   }
 

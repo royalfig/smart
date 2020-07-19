@@ -87,6 +87,7 @@
   &__social {
     @include flex(row, flex-start, center);
     flex-wrap: wrap;
+    margin-top: 0.5rem;
     @include transition(all);
 
     a {

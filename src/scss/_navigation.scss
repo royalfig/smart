@@ -110,6 +110,11 @@
     }
   }
 
+  &__search-btn {
+    @include btn('link');
+    font-size: 1.25rem;
+  }
+
   &__social-media {
     @include flex(row, flex-start, center);
   }
