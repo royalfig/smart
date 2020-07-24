@@ -1,0 +1,155 @@
+<aside class='modal member' id='signup' aria-expanded='false'>
+  <button
+    class='member__close-btn close-btn'
+    id='signup-close-btn'
+    data-target='signup'
+    title='Close Subscribe'
+    aria-label='Close Sign Up'
+  >
+    <svg aria-hidden='true'>
+      <title>
+        Close
+      </title>
+      <use href='#close'></use>
+    </svg>
+  </button>
+  <div class='member__container'>
+    <h2 class='member__title'>
+      Sign Up
+    </h2>
+    <p class='member__info'>
+      <strong>
+        {{@site.title}}
+      </strong>
+    </p>
+    {{#if @site.description}}
+      <p>
+        {{@site.description}}
+      </p>
+    {{/if}}
+    <p class='member__benefits'>
+      <strong>
+        Subscription Benefits
+      </strong>
+    </p>
+    <ul class='member__ul'>
+      <li>
+        Gain full access to all posts
+      </li>
+      <li>
+        Receive regular updates with new content
+      </li>
+      <li>
+        Support independent publishing
+      </li>
+      <li>
+        Simple, secure card payment
+      </li>
+    </ul>
+    <div class='member__card'>
+      <header class='member__header'>
+        <h3 class='member__card--title'>
+          Yearly
+        </h3>
+      </header>
+      <div class='member__body'>
+        <p class='member__price' id='yearly-price'>
+          {{@price.currency_symbol}}{{@price.yearly}}
+        </p>
+        <p class='member__term'>
+          per year
+        </p>
+      </div>
+      <footer class='member__footer'>
+        <a
+          class='member__checkout'
+          href='javascript:'
+          data-members-plan='Yearly'
+        >
+          Get Yearly Subscription
+        </a>
+      </footer>
+    </div>
+    <div class='member__card'>
+      <header class='member__header'>
+        <h3 class='member__card--title'>
+          Monthly
+        </h3>
+      </header>
+      <div class='member__body'>
+        <p class='member__price' id='monthly-price'>
+          {{@price.currency_symbol}}{{@price.monthly}}
+        </p>
+        <p class='member__term'>
+          per month
+        </p>
+      </div>
+      <footer class='member__footer'>
+        <a
+          class='member__checkout'
+          href='javascript:'
+          data-members-plan='Monthly'
+        >
+          Get Monthly Subscription
+        </a>
+      </footer>
+    </div>
+    <div class='member__card'>
+      <header class='member__header'>
+        <h3 class='member__card--title'>
+          Free Subscription
+        </h3>
+      </header>
+      <div class='member__body'>
+        <p>
+          Regular updates with new content
+        </p>
+        <form class='member__form' data-members-form='signup'>
+          <div class='member__input-container'>
+            <div class='member__label-container'>
+              <label class='member__label' for='email'>
+                Email
+              </label>
+              <input
+                class='member__input'
+                data-members-email
+                id='email'
+                type='email'
+                required='true'
+                autocomplete='false'
+              />
+            </div>
+            <button class='member__btn' type='submit'>
+              <span class='member__btn--content'>
+                Sign Up
+              </span>
+              <svg class='member__btn--loading' aria-label='Loading...'>
+                <use href='#loader'></use>
+              </svg>
+              <svg class='member__btn--success' aria-label='Success!'>
+                <use href='#check'></use>
+              </svg>
+            </button>
+          </div>
+          <div class='member__error'>
+            Please enter a valid email address!
+          </div>
+          <div class='member__success'>
+            <strong>
+              Great!
+            </strong>
+            Check your inbox and click the link to confirm your subscription
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class='member__subtext'>
+      <p class='member__subtext'>
+        Already have an account?
+      </p>
+      <button id='subtext-signin' data-target='signin'>
+        Sign In
+      </button>
+    </div>
+  </div>
+</aside>

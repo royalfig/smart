@@ -18,8 +18,8 @@
             font-weight: 400;
             font-display: swap;
             src: local('Lato'),
-                 url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
-                 url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
+            url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
         }
 
         @font-face {
@@ -28,8 +28,8 @@
             font-weight: 700;
             font-display: swap;
             src: local('Lato'),
-                 url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
-                 url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
+            url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
         }
 
         @font-face {
@@ -38,8 +38,8 @@
             font-weight: 400;
             font-display: swap;
             src: local('Lato'),
-                 url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
-                 url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
+            url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
         }
 
         @font-face {
@@ -48,22 +48,22 @@
             font-weight: 700;
             font-display: swap;
             src: local('Lato'),
-                 url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
-                 url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
+            url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
         }
 
         body {
             font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
-            ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
 
         .fonts-loaded body {
             font-family: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
-            ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     </style>
     {{!-- Load scripts to execute before render --}}
-    <script src="{{asset 'js/head.js'}}"></script>
+    <script type="text/javascript" src="{{asset 'js/head.js'}}"></script>
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
@@ -73,8 +73,16 @@
     {{> "svg"}}
     {{!-- SVG Sprite  --}}
     <div class="content-wrap">
-    {{navigation}}
-    {{> "search"}}
+        {{> "navbar"}}
+        {{> "search"}}
+        {{#if @labs.members}}
+            {{> "signup"}}
+            {{> "signin"}}
+            {{> "account"}}
+        {{/if}}
+        {{!-- Mobile Nav Menu --}}
+        {{> "mobile-nav-menu"}}
+        {{!-- End Mobile Nav Menu --}}
         {{!-- All the main content is inserted here --}}
         {{{body}}}
         {{!-- Footer Module --}}
@@ -85,65 +93,51 @@
                         <p class="footer__header--serif">About</p>
                         <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
                         {{#if @site.description}}
-                        <p class="footer__description">{{@site.description}}</p>
+                            <p class="footer__description">{{@site.description}}</p>
                         {{/if}}
+                        {{#if @site.secondary_navigation}}
                         <div class="footer__social">
-                            {{#if @site.twitter}}
-                            <a class="twitter" href="{{twitter_url}}" class="nav-item" aria-label="Twitter">
-                                <svg>
-                                    <title>Twitter</title>
-                                    <use href="#twitter"></use>
-                                </svg>
-                            </a>
-                            {{/if}}
-                            {{#if @site.facebook}}
-                            <a class="facebook" href="{{facebook_url}}" class="nav-item" aria-label="Facebook">
-                                <svg>
-                                    <title>Facebook</title>
-                                    <use href="#facebook"></use>
-                                </svg>
-                            </a>
-                            {{/if}}
-                            {{navigation type="secondary"}}
+                        {{navigation type="secondary"}}
                         </div>
+                        {{/if}}
                     </div>
                     {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
-                    {{#if tags}}
-                    <div class="footer__section">
-                        <p class="footer__header--serif">Tags</p>
-                        {{#foreach tags}}
-                        <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
-                            <svg>
-                                <use href="#hash"></use>
-                            </svg>
-                            <p>
-                                {{name}}
-                            </p>
-                        </a>
-                        {{/foreach}}
-                    </div>
-                    {{/if}}
+                        {{#if tags}}
+                            <div class="footer__section">
+                                <p class="footer__header--serif">Tags</p>
+                                {{#foreach tags}}
+                                    <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
+                                        <svg>
+                                            <use href="#hash"></use>
+                                        </svg>
+                                        <p>
+                                            {{name}}
+                                        </p>
+                                    </a>
+                                {{/foreach}}
+                            </div>
+                        {{/if}}
                     {{/get}}
                     {{#get "posts" limit="6"}}
-                    <div class="footer__section--latest">
-                        <p class="footer__header--serif">Latest</p>
-                        {{#foreach posts limit="3"}}
-                        <p class="footer__date">
-                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
-                            </time>
-                        </p>
-                        <a class="footer__title" href="{{url}}">{{title}}</a>
-                        {{/foreach}}
-                    </div>
-                    <div class="footer__section--latest">
-                        <p class="footer__header--serif">&nbsp;</p>
-                        {{#foreach posts from="4" to="6"}}
-                        <p class="footer__date"><time
-                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-                        </p>
-                        <a class="footer__title" href="{{url}}">{{title}}</a>
-                        {{/foreach}}
-                    </div>
+                        <div class="footer__section--latest">
+                            <p class="footer__header--serif">Latest</p>
+                            {{#foreach posts limit="3"}}
+                                <p class="footer__date">
+                                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
+                                    </time>
+                                </p>
+                                <a class="footer__title" href="{{url}}">{{title}}</a>
+                            {{/foreach}}
+                        </div>
+                        <div class="footer__section--latest">
+                            <p class="footer__header--serif">&nbsp;</p>
+                            {{#foreach posts from="4" to="6"}}
+                                <p class="footer__date"><time
+                                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                                </p>
+                                <a class="footer__title" href="{{url}}">{{title}}</a>
+                            {{/foreach}}
+                        </div>
                     {{/get}}
                 </div>
             </div>
@@ -157,11 +151,11 @@
         {{!-- Footer --}}
     </div>
     {{!-- end content-wrap --}}
-    
+
 
     <script src=" {{asset 'js/app.js'}}"></script>
     {{^is "home"}}
-    <script src=" {{asset 'js/post.js'}}"></script>
+        <script src=" {{asset 'js/post.js'}}"></script>
     {{/is}}
     {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
     {{{block "scripts"}}}

@@ -1,18 +1,20 @@
-.contact {
+.form {
   @include flex(column, flex-start, flex-start);
   font-size: 1rem;
 
   &__label {
     @extend .author__small-header;
+    display: block;
+    text-align: left;
   }
 
   &__input,
   textarea {
     width: 100%;
-    padding: 0.2rem 0.1rem;
-    margin: 0 0 0.5rem;
+    padding: 0.25rem;
+    margin: 0.25rem 0;
     font-family: $sans;
-    font-size: 1rem;
+    font-size: 0.9rem;
     border: 1px solid currentColor;
     border-radius: $radius;
     @include color-map(color, text1);
@@ -20,7 +22,7 @@
     @include transition(all);
 
     &:focus {
-      @include color-map(color, primary);
+      @include color-map(color, text);
       @include color-map(background-color, surface3);
       border: 1px solid color(primary);
       border: 1px solid var(--primary);
@@ -35,8 +37,6 @@
   }
 
   &__btn {
-    @extend .modal-search__btn;
-    padding: 0.5rem 0.75rem;
-    margin: 0.5rem 0;
+    @include btn(color);
   }
 }

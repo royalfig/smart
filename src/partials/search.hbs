@@ -1,26 +1,53 @@
-{{!-- Search Modal --}}
-    <aside class="modal-search" id="modal-search" role="search" aria-expanded="false" aria-hidden="true">
-        <button class="modal-search__close-btn" data-target="modal-search" title="Close Search" aria-label="close">
-            <svg aria-hidden="true">
-                <title>Close</title>
-                <use href="#close"></use>
-            </svg>
-        </button>
-        <div class="modal-search__container">
-            <header class="modal-search__header">
-                <label for="search">Search</label>
-            </header>
-            <div class="modal-search__inner-container">
-                <div class="modal-search__input-container">
-                    <input class="modal-search__input" id="search-input" type="text" placeholder="I'm looking for..."
-                        aria-label="Enter your search term" autocomplete="off">
-                    <button class="modal-search__btn" type="button" aria-label="search">Search</button>
-                </div>
-                <div class="search-results">
-                    <header class="search-results__header"></header>
-                    <div class="search-results__container"></div>
-                </div>
-            </div>
+{{! Search Modal }}
+<aside class='modal' id='search-modal' role='search' aria-expanded='false'>
+  <button
+    class='modal__close-btn close-btn'
+    title='Close Search'
+    aria-label='close'
+  >
+    <svg aria-hidden='true'>
+      <title>
+        Close
+      </title>
+      <use href='#close'></use>
+    </svg>
+  </button>
+  <div class='modal__container'>
+    <header>
+      <h2 class='modal__header'>
+        Search
+      </h2>
+    </header>
+    <div class='modal__inner-container'>
+      <div class='modal__input-container'>
+        <div class='modal__label-container'>
+          <label class='modal__label' for='search-input'>
+            Enter Query
+          </label>
+          <input
+            class='modal__input'
+            id='search-input'
+            placeholder="I'm looking for..."
+            autocomplete='false'
+          />
         </div>
-    </aside>
-    {{!-- Search Modal --}}
+        <button class='modal__btn' id='run-search-btn'>
+          <span class='modal__btn--content'>
+            Search
+          </span>
+          <svg class='modal__btn--loading' aria-label='Loading...'>
+            <use href='#loader'></use>
+          </svg>
+          <svg class='modal__btn--success' aria-label='Success!'>
+            <use href='#check'></use>
+          </svg>
+        </button>
+      </div>
+      <div class='search-results'>
+        <header class='search-results__header'></header>
+        <div class='search-results__container'></div>
+      </div>
+    </div>
+  </div>
+</aside>
+{{! Search Modal }}

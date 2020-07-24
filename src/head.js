@@ -1,4 +1,4 @@
-const fontLoader = () => {
+(() => {
   if (sessionStorage.fontsLoadedFoutWithClass) {
     document.documentElement.className += ' fonts-loaded';
     return;
@@ -14,62 +14,48 @@ const fontLoader = () => {
       sessionStorage.fontsLoadedFoutWithClass = true;
     });
   }
-};
+})();
 
-fontLoader();
-
-class FluidTypography {
-  constructor(minVW, maxVW, minFontSize, maxFontSize) {
-    this.minVW = minVW;
-    this.maxVW = maxVW;
-    this.minFontSize = minFontSize;
-    this.maxFontSize = maxFontSize;
-    this.maxRem = this.computeRem().maxRem;
-    this.minRem = this.computeRem().minRem;
-  }
-
-  // Compute the maxRem based on arguments and user's browser preferences
-  computeRem() {
+((minVW, maxVW, minFontSize, maxFontSize) => {
+  const computeRem = () => {
     const body = document.documentElement;
     const properties = window.getComputedStyle(body);
     const baseFontSize = properties.fontSize.replace(/px/, '');
     // Gets the max font size of either the browser or the dev
-    const max = Math.max(this.minFontSize, baseFontSize);
-    const relativeMax = (this.maxFontSize * max) / this.minFontSize;
+    const max = Math.max(minFontSize, baseFontSize);
+    const relativeMax = (maxFontSize * max) / minFontSize;
     const maxRem = relativeMax / baseFontSize;
     const minRem = max / baseFontSize;
     return { maxRem, minRem };
-  }
+  };
 
-  // Calculate font size based on arguments and user's browser preferences
-  fontSize() {
+  const { maxRem } = computeRem();
+  const { minRem } = computeRem();
+
+  const fontSize = () => {
     const width = window.innerWidth;
     const height = window.outerHeight;
-    let rem = this.minRem;
+    let rem = minRem;
     const HEIGHT_THRESHOLD = 599;
 
-    if (width > this.minVW && width < this.maxVW && height > HEIGHT_THRESHOLD) {
-      rem =
-        this.minRem +
-        ((this.maxRem - this.minRem) * (width - this.minVW)) /
-          (this.maxVW - this.minVW);
+    if (width > minVW && width < maxVW && height > HEIGHT_THRESHOLD) {
+      rem = minRem + ((maxRem - minRem) * (width - minVW)) / (maxVW - minVW);
     }
 
-    if (width > this.maxVW && height > HEIGHT_THRESHOLD) {
-      rem = this.maxRem;
+    if (width > maxVW && height > HEIGHT_THRESHOLD) {
+      rem = maxRem;
     }
 
     document.documentElement.style = `font-size: ${rem}rem`;
-  }
+  };
 
-  resizeHandler() {
-    this.fontSize();
-    window.addEventListener('resize', this.fontSize.bind(this));
-  }
-}
+  const resizeHandler = () => {
+    fontSize();
+    window.addEventListener('resize', fontSize);
+  };
 
-const ft = new FluidTypography(640, 1280, 17, 21);
-ft.resizeHandler();
+  resizeHandler();
+})(640, 1280, 16, 20);
 
 if (
   localStorage.getItem('pref') === 'light' ||

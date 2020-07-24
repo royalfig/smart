@@ -1,119 +1,18 @@
-{{#if isSecondary}}
-{{#foreach navigation}}
-<a class="mobile-nav-menu__social-media-item {{slug}}" href="{{url}}" aria-label="{{label}}">
-    <svg aria-hidden="true">
-        <title>{{label}}</title>
-        <use href="#{{slug}}"></use>
-    </svg>
-</a>
-{{/foreach}}
-{{else}}
-{{!-- Mobile Navbar --}}
-<nav class="navbar-mobile">
-    <div class="navbar-mobile__left">
-        <button class="navbar-mobile__hamburger-btn" data-target="menu" aria-label="menu">
-            <svg aria-hidden="true">
-            <title>Menu</title>
-            <use href="#menu-icon"></use>
-    </svg>
-        </button>
-        <a class="navbar-mobile__site-title--serif" href="{{@site.url}}" aria-labelledby="site-title">
-            {{#if @site.icon}} <img src="{{@site.icon}}" alt="">{{/if}}
-            <p class="{{#is "home"}}site-title{{/is}}" id="site-title-mobile">{{@site.title}}</p>
-        </a>
-    </div>
-    <div class="navbar-mobile__right">
-        <button class="color-mode-btn light" aria-label="Toggle light mode">
-            <svg aria-hidden="true">
-                <title>Toggle Light Mode</title>
-                <use href="#sun"></use>
-            </svg>
-        </button>
-        <button class="color-mode-btn dark" aria-label="Toggle dark mode">
-            <svg aria-hidden="true">
-                <title>Toggle Dark Mode</title>
-                <use href="#moon"></use>
-            </svg>
-        </button>
-        <button class="navbar-mobile__search-btn" data-target="modal-search" aria-label="Search {{@site.title}}">
-            <svg aria-hidden="true">
-                <title>Search {{@site.title}}</title>
-                <use href="#search"></use>
-            </svg>
-        </button>
-    </div>
-</nav>
-{{!-- End Mobile Navbar --}}
-
-{{!-- Mobile Nav Menu --}}
-{{> "mobile-nav-menu"}}
-{{!-- End Mobile Nav Menu --}}
-
-{{!-- Navbar --}}
-<nav class="navbar">
-    <div class="navbar__left">
-        <a class="navbar__brand--serif" href="{{@site.url}}" aria-labelledby="site-title">
-            {{#if @site.icon}}<img src="{{@site.icon}}" alt="">{{/if}}
-            <p class="{{#is "home"}}site-title{{/is}}" id="site-title">{{@site.title}}</p>
-        </a>
-    </div>
-
-    <div class="navbar__center">
-        {{#if @site.navigation}}
-        <ul class="navbar__ul" role="menu">
-            {{#foreach navigation}}
-            <li class="navbar__list-item"><a href="{{url}}"
-                    class="navbar__list-link hvr-underline-from-left nav-{{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+{{^if isSecondary}}
+    <ul class="navigation__ul" role="menu">
+        {{#foreach navigation}}
+            <li class="navigation__li">
+                <a href="{{url}}" class="navigation__list-link hvr-underline-from-left {{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
             </li>
-            {{/foreach}}
-        </ul>
-        {{/if}}
-    </div>
-
-    <div class="navbar__right">
-        {{#if @site.twitter}}
-        <a class="navbar__right-item twitter" href="{{twitter_url @site.twitter}}" aria-label="Twitter">
+        {{/foreach}}
+    </ul>
+{{else}}
+    {{#foreach navigation}}
+        <a class="navigation__social-media-item {{slug}}" href="{{url}}" aria-label="{{label}}">
             <svg aria-hidden="true">
-                <title>Twitter</title>
-                <use href="#twitter"></use>
+                <title>{{label}}</title>
+                <use href="#{{slug}}"></use>
             </svg>
         </a>
-        {{/if}}
-        {{#if @site.facebook}}
-        <a class="navbar__right-item facebook" href="{{facebook_url @site.facebook}}" aria-label="Facebook">
-            <svg aria-hidden="true">
-                <title>Facebook</title>
-                <use href="#facebook"></use>
-            </svg>
-        </a>
-        {{/if}}
-        {{#if @labs.subscribers}}
-        <button class="navbar__right-item" data-id="subscribe" aria-label="Subscribe">
-            <svg aria-hidden="true">
-                <title>Subscribe</title>
-                <use href="#clipboard"></use>
-            </svg>
-        </button>
-        {{/if}}
-        <button class="color-mode-btn light" aria-label="Toggle light mode">
-            <svg aria-hidden="true">
-                <title>Toggle Light Mode</title>
-                <use href="#sun"></use>
-            </svg>
-        </button>
-        <button class="color-mode-btn dark" aria-label="Toggle dark mode">
-            <svg aria-hidden="true">
-                <title>Toggle Dark Mode</title>
-                <use href="#moon"></use>
-            </svg>
-        </button>
-        <button class="navbar__right-item--search" data-target="modal-search" aria-label="Search {{@site.title}}">
-            <svg aria-hidden="true">
-                <title>Search {{@site.title}}</title>
-                <use href="#search"></use>
-            </svg>
-        </button>
-    </div>
-</nav>
-{{!-- End Navbar --}}
+    {{/foreach}}
 {{/if}}
