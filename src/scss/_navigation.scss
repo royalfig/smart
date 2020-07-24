@@ -138,7 +138,8 @@
     margin: 1rem 0 0.25rem;
   }
 
-  &__social-media-item {
+  &__social-media-item,
+  .navigation__social-media-item {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;

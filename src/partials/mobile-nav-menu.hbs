@@ -1,32 +1,36 @@
 {{! Mobile Nav Menu }}
-<nav class='modal mobile-nav-menu' id='menu' aria-expanded='false'>
-  <button class='modal__close-btn close-btn' data-target='menu' aria-label='Close Menu'>
-    <svg aria-hidden='true'>
+<nav class="modal mobile-nav-menu" id="menu" aria-expanded="false">
+  <button
+    class="modal__close-btn close-btn"
+    data-target="menu"
+    aria-label="Close Menu"
+  >
+    <svg aria-hidden="true">
       <title>
         Close Menu
       </title>
-      <use href='#close'></use>
+      <use href="#close"></use>
     </svg>
   </button>
-  <div class='mobile-nav-menu__container'>
+  <div class="mobile-nav-menu__container">
     {{#link href=@site.url class='mobile-nav-menu__title-link'}}
-      <h2 class='mobile-nav-menu__title'>
-        {{@site.title}}
-      </h2>
+    <h2 class="mobile-nav-menu__title">
+      {{@site.title}}
+    </h2>
     {{/link}}
 
     <div class="mobile-nav-menu__inner-container">
       {{! Main Navigation }}
       {{#if @site.navigation}}
-        {{navigation}}
+      {{ navigation }}
       {{/if}}
       {{! End Main Navigation }}
 
       {{! Search }}
       <button
-        class='mobile-nav-menu__search-btn'
-        id='m-search-btn'
-        data-target='search-modal'
+        class="mobile-nav-menu__search-btn"
+        id="m-search-btn"
+        data-target="search-modal"
       >
         Search
       </button>
@@ -34,49 +38,52 @@
 
       {{! Social Media  }}
       {{#has any='@site.twitter, @site.facebook'}}
-        <p class='mobile-nav-menu__social-media-header'>
-          Social Media
-        </p>
-        <div class='mobile-nav-menu__social-media'>
-          {{#if @site.twitter}}
-            <a
-              class='mobile-nav-menu__social-media-item twitter'
-              href="{{twitter_url @site.twitter}}"
-              aria-label='Twitter'
-            >
-              <svg aria-hidden='true'>
-                <title>
-                  Follow me on Twitter
-                </title>
-                <use href='#twitter'></use>
-              </svg>
-            </a>
-          {{/if}}
-          {{#if @site.facebook}}
-            <a
-              class='mobile-nav-menu__social-media-item facebook'
-              href="{{facebook_url @site.facebook}}"
-              aria-label='Facebook'
-            >
-              <svg aria-hidden='true'>
-                <title>
-                  Follow me on Facebook
-                </title>
-                <use href='#facebook'></use>
-              </svg>
-            </a>
-          {{/if}}
-      {{/has}}
-      {{#if @site.secondary_navigation}}
-          {{navigation type='secondary'}}
-      {{/if}}
+      <p class="mobile-nav-menu__social-media-header">
+        Social Media
+      </p>
+      <div class="mobile-nav-menu__social-media">
+        {{#if @site.twitter}}
+        <a
+          class="mobile-nav-menu__social-media-item twitter"
+          href="{{twitter_url @site.twitter}}"
+          aria-label="Twitter"
+        >
+          <svg aria-hidden="true">
+            <title>
+              Follow me on Twitter
+            </title>
+            <use href="#twitter"></use>
+          </svg>
+        </a>
+        {{/if}}
+        {{#if @site.facebook}}
+        <a
+          class="mobile-nav-menu__social-media-item facebook"
+          href="{{facebook_url @site.facebook}}"
+          aria-label="Facebook"
+        >
+          <svg aria-hidden="true">
+            <title>
+              Follow me on Facebook
+            </title>
+            <use href="#facebook"></use>
+          </svg>
+        </a>
+        {{/if}}
+        {{/has}}
+        {{#if @site.secondary_navigation}}
+        {{navigation type='secondary'}}
+        {{/if}}
       </div>
       {{! End Social Media }}
       {{! Member }}
-      {{#if @labs.members}}
-      <p class='mobile-nav-menu__social-media-header'>
-          Subscribe
+      <p class="mobile-nav-menu__social-media-header">
+        Membership
       </p>
+      {{#if @labs.members}}
+      <button id="m-signup-btn">Sign Up</button>
+      <button id="m-signin-btn">Sign In</button>
+      <button id="m-account-btn">Account</button>
       {{/if}}
       {{! End Member}}
     </div>
