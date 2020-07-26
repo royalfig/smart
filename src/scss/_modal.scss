@@ -201,9 +201,8 @@
     }
 
     .match-text {
-      @include color-map(color, surface);
-      @include color-map(background-color, text1);
-      border-radius: $radius;
+      text-decoration: underline;
+      text-decoration-style: dashed;
     }
   }
 }
