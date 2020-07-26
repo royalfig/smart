@@ -13,7 +13,8 @@ into the {body} of the default.hbs template --}}
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 600w,
                  {{img_url feature_image size="l"}} 1000w,
-                 {{img_url feature_image size="xl"}} 2000w" sizes="100vw" src="{{img_url feature_image size="xl"}}"
+                 {{img_url feature_image size="xl"}} 2000w" 
+                 sizes="(min-width: 640px) 740px, 100vw" src="{{img_url feature_image size="l"}}"
         alt="{{title}}">
     {{/if}}
     {{^if feature_image}}
