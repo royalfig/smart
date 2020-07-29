@@ -1,6 +1,6 @@
-<aside class='modal member' id='signup' aria-expanded='false'>
+<aside class='modal' id='signup' aria-expanded='false'>
   <button
-    class='member__close-btn close-btn'
+    class='modal__close-btn'
     id='signup-close-btn'
     data-target='signup'
     title='Close Subscribe'
@@ -13,8 +13,8 @@
       <use href='#close'></use>
     </svg>
   </button>
-  <div class='member__container'>
-    <h2 class='member__title'>
+  <div class='modal__container'>
+    <h2 class='modal__title'>
       Sign Up
     </h2>
     <p class='member__info'>
@@ -104,14 +104,14 @@
         <p>
           Regular updates with new content
         </p>
-        <form class='member__form' data-members-form='signup'>
-          <div class='member__input-container'>
-            <div class='member__label-container'>
-              <label class='member__label' for='email'>
+        <form class='modal__form' data-members-form='signup'>
+          <div class='modal__input-container'>
+            <div class='modal__label-container'>
+              <label class='modal__label' for='email'>
                 Email
               </label>
               <input
-                class='member__input'
+                class='modal__input'
                 data-members-email
                 id='email'
                 type='email'
@@ -119,22 +119,22 @@
                 autocomplete='false'
               />
             </div>
-            <button class='member__btn' type='submit'>
-              <span class='member__btn--content'>
+            <button class='modal__btn' type='submit'>
+              <span class='modal__btn--content'>
                 Sign Up
               </span>
-              <svg class='member__btn--loading' aria-label='Loading...'>
+              <svg class='modal__btn--loading' aria-label='Loading...'>
                 <use href='#loader'></use>
               </svg>
-              <svg class='member__btn--success' aria-label='Success!'>
+              <svg class='modal__btn--success' aria-label='Success!'>
                 <use href='#check'></use>
               </svg>
             </button>
           </div>
-          <div class='member__error'>
+          <div class='modal__error'>
             Please enter a valid email address!
           </div>
-          <div class='member__success'>
+          <div class='modal__success'>
             <strong>
               Great!
             </strong>

@@ -138,8 +138,8 @@
     margin: 1rem 0 0.25rem;
   }
 
-  &__social-media-item,
-  .navigation__social-media-item {
+  &__social-media .navigation__social-media-item,
+  &__social-media-item {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
@@ -149,7 +149,7 @@
     svg {
       width: 100%;
       height: 100%;
-      @include color-map(stroke, text2);
+      // @include color-map(stroke, text2);
     }
   }
 }
@@ -171,7 +171,7 @@
   // Top navbar includes social media and utilities, move to navmenu on mobile
   &__top {
     display: none;
-    height: 2rem;
+    height: 2.25rem;
     padding: 0.25rem 1rem;
     border-bottom: 1px solid;
     @include color-map(border-color, surface3);
@@ -217,7 +217,7 @@
 
   // Bottom navbar -> Brand, Links, Member
   &__bottom {
-    height: 3rem;
+    height: 3.25rem;
     padding: 0.5rem 1rem;
 
     @include flex(row, flex-start, center);
