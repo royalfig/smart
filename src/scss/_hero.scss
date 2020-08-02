@@ -63,6 +63,24 @@
     text-align: left;
   }
 
+  &__contact {
+    display: none;
+    margin-top: 1rem;
+    a {
+      padding: 0.25rem 0.5rem;
+      font-family: $sans;
+      font-size: 1rem;
+      border-radius: $radius;
+      @include color-map(background-color, primary);
+      @include color-map(color, textInverse);
+      @include transition(background-color);
+
+      &:hover {
+        @include color-map(background-color, secondary);
+      }
+    }
+  }
+
   &__header-container {
     @include flex(row, flex-start, center);
     width: 100%;

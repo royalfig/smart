@@ -1,6 +1,6 @@
-<aside class='modal member' id='signup' aria-expanded='false'>
+<aside class='modal' id='signup' aria-expanded='false'>
   <button
-    class='member__close-btn close-btn'
+    class='modal__close-btn'
     id='signup-close-btn'
     data-target='signup'
     title='Close Subscribe'
@@ -13,11 +13,11 @@
       <use href='#close'></use>
     </svg>
   </button>
-  <div class='member__container'>
-    <h2 class='member__title'>
+  <div class='modal__container'>
+    <h2 class='modal__header'>
       Sign Up
     </h2>
-    <p class='member__info'>
+    <p class='modal__info'>
       <strong>
         {{@site.title}}
       </strong>
@@ -27,12 +27,19 @@
         {{@site.description}}
       </p>
     {{/if}}
-    <p class='member__benefits'>
+    <div class="divider">
+      <div class="divider__rule"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__lg-block"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__rule"></div>
+    </div>
+    <p class='modal__benefits'>
       <strong>
         Subscription Benefits
       </strong>
     </p>
-    <ul class='member__ul'>
+    <ul class='modal__ul'>
       <li>
         Gain full access to all posts
       </li>
@@ -46,23 +53,30 @@
         Simple, secure card payment
       </li>
     </ul>
-    <div class='member__card'>
-      <header class='member__header'>
-        <h3 class='member__card--title'>
+    <div class="divider">
+      <div class="divider__rule"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__lg-block"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__rule"></div>
+    </div>
+    <div class='modal__card'>
+      <header class='modal__header'>
+        <h3 class='modal__card--title'>
           Yearly
         </h3>
       </header>
-      <div class='member__body'>
-        <p class='member__price' id='yearly-price'>
+      <div class='modal__body'>
+        <p class='modal__price' id='yearly-price'>
           {{@price.currency_symbol}}{{@price.yearly}}
         </p>
-        <p class='member__term'>
+        <p class='modal__term'>
           per year
         </p>
       </div>
-      <footer class='member__footer'>
+      <footer class='modal__footer'>
         <a
-          class='member__checkout'
+          class='modal__checkout'
           href='javascript:'
           data-members-plan='Yearly'
         >
@@ -70,23 +84,23 @@
         </a>
       </footer>
     </div>
-    <div class='member__card'>
-      <header class='member__header'>
-        <h3 class='member__card--title'>
+    <div class='modal__card'>
+      <header class='modal__header'>
+        <h3 class='modal__card--title'>
           Monthly
         </h3>
       </header>
-      <div class='member__body'>
-        <p class='member__price' id='monthly-price'>
+      <div class='modal__body'>
+        <p class='modal__price' id='monthly-price'>
           {{@price.currency_symbol}}{{@price.monthly}}
         </p>
-        <p class='member__term'>
+        <p class='modal__term'>
           per month
         </p>
       </div>
-      <footer class='member__footer'>
+      <footer class='modal__footer'>
         <a
-          class='member__checkout'
+          class='modal__checkout'
           href='javascript:'
           data-members-plan='Monthly'
         >
@@ -94,24 +108,24 @@
         </a>
       </footer>
     </div>
-    <div class='member__card'>
-      <header class='member__header'>
-        <h3 class='member__card--title'>
+    <div class='modal__card'>
+      <header class='modal__header'>
+        <h3 class='modal__card--title'>
           Free Subscription
         </h3>
       </header>
-      <div class='member__body'>
+      <div class='modal__body'>
         <p>
           Regular updates with new content
         </p>
-        <form class='member__form' data-members-form='signup'>
-          <div class='member__input-container'>
-            <div class='member__label-container'>
-              <label class='member__label' for='email'>
+        <form class='modal__form' data-members-form='signup'>
+          <div class='modal__input-container'>
+            <div class='modal__label-container'>
+              <label class='modal__label' for='email'>
                 Email
               </label>
               <input
-                class='member__input'
+                class='modal__input'
                 data-members-email
                 id='email'
                 type='email'
@@ -119,22 +133,22 @@
                 autocomplete='false'
               />
             </div>
-            <button class='member__btn' type='submit'>
-              <span class='member__btn--content'>
+            <button class='modal__btn' type='submit'>
+              <span class='modal__btn--content'>
                 Sign Up
               </span>
-              <svg class='member__btn--loading' aria-label='Loading...'>
+              <svg class='modal__btn--loading' aria-label='Loading...'>
                 <use href='#loader'></use>
               </svg>
-              <svg class='member__btn--success' aria-label='Success!'>
+              <svg class='modal__btn--success' aria-label='Success!'>
                 <use href='#check'></use>
               </svg>
             </button>
           </div>
-          <div class='member__error'>
+          <div class='modal__error'>
             Please enter a valid email address!
           </div>
-          <div class='member__success'>
+          <div class='modal__success'>
             <strong>
               Great!
             </strong>
@@ -143,8 +157,8 @@
         </form>
       </div>
     </div>
-    <div class='member__subtext'>
-      <p class='member__subtext'>
+    <div class='modal__subtext'>
+      <p class='modal__subtext'>
         Already have an account?
       </p>
       <button id='subtext-signin' data-target='signin'>

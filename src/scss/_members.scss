@@ -1,20 +1,4 @@
-.member {
-  @extend .modal;
-  text-align: initial;
-
-  &[aria-expanded='true'] {
-    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translate3d(0, 0, 0);
-  }
-
-  &__container {
-    @extend .modal__container;
-  }
-
-  &__close-btn {
-    @extend .modal__close-btn;
-  }
-
+.modal {
   &__title {
     margin: 0 0 2rem;
     font-size: 1.5rem;
@@ -22,6 +6,7 @@
   }
 
   &__info {
+    margin-top: 1rem;
     font-weight: 700;
   }
 
@@ -83,7 +68,9 @@
     display: none;
     padding: 0.25rem 0.5rem;
     margin-top: 0.5rem;
+    text-align: left;
     border-radius: $radius;
+    @include color-map(color, textInverse);
   }
 
   &__success {
@@ -194,5 +181,32 @@
 
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.divider {
+  @include flex(row, flex-start, center);
+  margin: 1rem 0;
+
+  &__rule {
+    flex: 1;
+    height: 1px;
+    border-radius: $radius;
+    @include color-map(background-color, text4);
+  }
+
+  &__sm-block {
+    width: 5px;
+    height: 5px;
+    margin: 0 2px;
+    border-radius: $radius;
+    @include color-map(background-color, text4);
+  }
+
+  &__lg-block {
+    width: 8px;
+    height: 8px;
+    border-radius: $radius;
+    @include color-map(background-color, text4);
   }
 }

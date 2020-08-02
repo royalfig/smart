@@ -94,3 +94,16 @@ const determineDiscount = (month, year) => {
 if (monthlyPrice && yearlyPrice) {
   determineDiscount(monthlyPrice, yearlyPrice);
 }
+
+// Hero -> Contact
+const contactEl = document.querySelector('.hero__contact');
+
+const navLinks = document.querySelectorAll('.navigation__list-link');
+
+// eslint-disable-next-line no-restricted-syntax
+for (const el of navLinks) {
+  if (el.pathname === '/contact/') {
+    contactEl.style.display = 'block';
+    break;
+  }
+}

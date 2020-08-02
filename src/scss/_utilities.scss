@@ -35,8 +35,8 @@ $yt: #ff0000;
   --three: #643791;
   --four: #8b1c76;
   --five: #a00053;
-  --success: #008a64;
-  --error: #971333;
+  --success: #48a00d;
+  --error: #a4002e;
 
   --gradient: linear-gradient(
     to right top,
@@ -77,8 +77,8 @@ $yt: #ff0000;
   --four: #b4d195;
   --five: #e0c081;
 
-  --success: #12884e;
-  --error: #852500;
+  --success: #b4d195;
+  --error: #ffab91;
 
   --gradient: linear-gradient(
     to right top,
@@ -118,8 +118,8 @@ $colors: (
   'three': #8cdbbf,
   'four': #b4d195,
   'five': #e0c081,
-  'success': #12884e,
-  'error': #852500,
+  'success': #b4d195,
+  'error': #ffab91,
   'gradient':
     linear-gradient(to right top, #80deea, #8cdbbf, #b4d195, #e0c081, #ffab91)
 );
