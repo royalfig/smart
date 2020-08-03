@@ -39,12 +39,9 @@
         <a
           class="mobile-nav-menu__social-media-item twitter"
           href="{{twitter_url @site.twitter}}"
-          aria-label="Twitter"
+          aria-label="Follow {{@site.title}} on Twitter"
         >
           <svg aria-hidden="true">
-            <title>
-              Follow me on Twitter
-            </title>
             <use href="#twitter"></use>
           </svg>
         </a>
@@ -53,12 +50,9 @@
         <a
           class="mobile-nav-menu__social-media-item facebook"
           href="{{facebook_url @site.facebook}}"
-          aria-label="Facebook"
+          aria-label="Follow {{@site.title}} on Facebook"
         >
           <svg aria-hidden="true">
-            <title>
-              Follow me on Facebook
-            </title>
             <use href="#facebook"></use>
           </svg>
         </a>
@@ -75,7 +69,7 @@
       {{!-- Member functionality --}}
       {{#if @labs.members}}
         {{#if @member}}
-            <button class="mobile-nav-menu__member-button" id="m-account-btn" data-target="account">
+            <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account">
                 {{#if @member.avatar_image}}
                     <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
                 {{else}}

@@ -45,6 +45,17 @@
 // Mobile Nav Menu
 //-------------------------------------------
 // TODO -> Combine with other modal styles
+%subscribe-btns {
+  display: block;
+  width: 100px;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0;
+  font-family: $sans;
+  font-size: 1rem;
+  border-radius: $radius;
+  @include transition(all);
+}
+
 .mobile-nav-menu {
   @extend .modal;
   // position: fixed;
@@ -152,7 +163,29 @@
     svg {
       width: 100%;
       height: 100%;
-      // @include color-map(stroke, text2);
+      @include color-map(stroke, text2);
+    }
+  }
+
+  &__signin {
+    @extend %subscribe-btns;
+    margin-top: 0;
+    background-color: transparent;
+    border: 1px solid currentColor;
+    @include color-map(color, text2);
+    &:hover {
+      @include color-map(color, text);
+    }
+  }
+
+  &__signup {
+    @extend %subscribe-btns;
+    border: 1px solid transparent;
+    @include color-map(color, textInverse);
+    @include color-map(background-color, primary);
+
+    &:hover {
+      @include color-map(background-color, secondary);
     }
   }
 }
