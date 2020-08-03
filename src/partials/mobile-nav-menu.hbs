@@ -72,11 +72,22 @@
       <p class="mobile-nav-menu__social-media-header">
         Membership
       </p>
+      {{!-- Member functionality --}}
       {{#if @labs.members}}
-      <button id="m-signup-btn">Sign Up</button>
-      <button id="m-signin-btn">Sign In</button>
-      <button id="m-account-btn">Account</button>
+        {{#if @member}}
+            <button class="mobile-nav-menu__member-button" id="m-account-btn" data-target="account">
+                {{#if @member.avatar_image}}
+                    <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+                {{else}}
+                    <div class="mobile-nav-menu__no-member-avatar"></div>
+                {{/if}}
+            </button>
+        {{else}}
+            <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin">Sign In</button>
+            <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup">Sign Up</button>
+        {{/if}}
       {{/if}}
+      {{!-- Member functionality --}}
     </div>
   </div>
 </nav>

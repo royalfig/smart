@@ -39,7 +39,11 @@ into the {body} of the default.hbs template --}}
                 <h2 class="hero__site-description">{{@site.description}}
                 </h2>
                 <div class="hero__contact">
-                    <a href="/contact/">Contact</a>
+                    <a href="/contact/">
+                        <svg aria-hidden="true">
+                            <use href="#chat"></use>
+                        </svg>Contact
+                    </a>
                 </div>
             </div>
         </div>
