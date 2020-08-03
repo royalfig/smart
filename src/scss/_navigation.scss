@@ -24,16 +24,20 @@
   }
 
   &__li {
-    display: inline-block;
-    margin: 0.31rem 0.5rem 0;
-    line-height: 1.6;
+    margin: 0.5rem 0;
 
-    &:first-child {
-      margin-left: 0;
-    }
+    @media (min-width: $laptop) {
+      display: inline-block;
+      margin: 0.31rem 0.5rem 0;
+      line-height: 1.6;
 
-    &:last-child {
-      margin-right: 0;
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
     }
   }
 }
@@ -41,6 +45,17 @@
 // Mobile Nav Menu
 //-------------------------------------------
 // TODO -> Combine with other modal styles
+%subscribe-btns {
+  display: block;
+  width: 100px;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 0;
+  font-family: $sans;
+  font-size: 1rem;
+  border-radius: $radius;
+  @include transition(all);
+}
+
 .mobile-nav-menu {
   @extend .modal;
   // position: fixed;
@@ -126,7 +141,6 @@
   &__search-btn {
     display: none;
     @include btn('link');
-    font-size: 1.25rem;
   }
 
   &__social-media {
@@ -138,8 +152,8 @@
     margin: 1rem 0 0.25rem;
   }
 
-  &__social-media-item,
-  .navigation__social-media-item {
+  &__social-media .navigation__social-media-item,
+  &__social-media-item {
     width: 1.5rem;
     height: 1.5rem;
     margin-right: 0.5rem;
@@ -150,6 +164,28 @@
       width: 100%;
       height: 100%;
       @include color-map(stroke, text2);
+    }
+  }
+
+  &__signin {
+    @extend %subscribe-btns;
+    margin-top: 0;
+    background-color: transparent;
+    border: 1px solid currentColor;
+    @include color-map(color, text2);
+    &:hover {
+      @include color-map(color, text);
+    }
+  }
+
+  &__signup {
+    @extend %subscribe-btns;
+    border: 1px solid transparent;
+    @include color-map(color, textInverse);
+    @include color-map(background-color, primary);
+
+    &:hover {
+      @include color-map(background-color, secondary);
     }
   }
 }
@@ -171,10 +207,10 @@
   // Top navbar includes social media and utilities, move to navmenu on mobile
   &__top {
     display: none;
-    height: 2rem;
+    height: 2.25rem;
     padding: 0.25rem 1rem;
     border-bottom: 1px solid;
-    @include color-map(border-color, surface3);
+    @include color-map(border-bottom-color, surface4);
 
     @media (min-width: $laptop) {
       @include flex(row, space-between, center);
@@ -217,7 +253,7 @@
 
   // Bottom navbar -> Brand, Links, Member
   &__bottom {
-    height: 3rem;
+    height: 3.25rem;
     padding: 0.5rem 1rem;
 
     @include flex(row, flex-start, center);

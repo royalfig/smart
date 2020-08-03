@@ -1,31 +1,26 @@
 {{! Mobile Nav Menu }}
-<nav class="modal mobile-nav-menu" id="menu" aria-expanded="false">
+<nav class="modal" id="menu" aria-expanded="false">
   <button
-    class="modal__close-btn close-btn"
+    class="modal__close-btn"
     data-target="menu"
-    aria-label="Close Menu"
+    aria-label="Close menu"
   >
     <svg aria-hidden="true">
-      <title>
-        Close Menu
-      </title>
       <use href="#close"></use>
     </svg>
   </button>
-  <div class="mobile-nav-menu__container">
+  <div class="modal__container">
     {{#link href=@site.url class='mobile-nav-menu__title-link'}}
     <h2 class="mobile-nav-menu__title">
       {{@site.title}}
     </h2>
     {{/link}}
 
-    <div class="mobile-nav-menu__inner-container">
+    <div class="modal__inner-container">
       {{! Main Navigation }}
       {{#if @site.navigation}}
       {{ navigation }}
       {{/if}}
-      {{! End Main Navigation }}
-
       {{! Search }}
       <button
         class="mobile-nav-menu__search-btn"
@@ -34,8 +29,6 @@
       >
         Search
       </button>
-      {{! End Search }}
-
       {{! Social Media  }}
       {{#has any='@site.twitter, @site.facebook'}}
       <p class="mobile-nav-menu__social-media-header">
@@ -46,12 +39,9 @@
         <a
           class="mobile-nav-menu__social-media-item twitter"
           href="{{twitter_url @site.twitter}}"
-          aria-label="Twitter"
+          aria-label="Follow {{@site.title}} on Twitter"
         >
           <svg aria-hidden="true">
-            <title>
-              Follow me on Twitter
-            </title>
             <use href="#twitter"></use>
           </svg>
         </a>
@@ -60,12 +50,9 @@
         <a
           class="mobile-nav-menu__social-media-item facebook"
           href="{{facebook_url @site.facebook}}"
-          aria-label="Facebook"
+          aria-label="Follow {{@site.title}} on Facebook"
         >
           <svg aria-hidden="true">
-            <title>
-              Follow me on Facebook
-            </title>
             <use href="#facebook"></use>
           </svg>
         </a>
@@ -75,17 +62,26 @@
         {{navigation type='secondary'}}
         {{/if}}
       </div>
-      {{! End Social Media }}
       {{! Member }}
       <p class="mobile-nav-menu__social-media-header">
         Membership
       </p>
+      {{!-- Member functionality --}}
       {{#if @labs.members}}
-      <button id="m-signup-btn">Sign Up</button>
-      <button id="m-signin-btn">Sign In</button>
-      <button id="m-account-btn">Account</button>
+        {{#if @member}}
+            <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account">
+                {{#if @member.avatar_image}}
+                    <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+                {{else}}
+                    <div class="mobile-nav-menu__no-member-avatar"></div>
+                {{/if}}
+            </button>
+        {{else}}
+            <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin">Sign In</button>
+            <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup">Sign Up</button>
+        {{/if}}
       {{/if}}
-      {{! End Member}}
+      {{!-- Member functionality --}}
     </div>
   </div>
 </nav>

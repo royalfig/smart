@@ -47,6 +47,7 @@
   @include color-map(background-color, surface2);
 
   &__header {
+    display: inline-block;
     margin: 0;
     font-size: 1.5rem;
     line-height: 1;
@@ -82,7 +83,7 @@
     }
 
     &:hover svg {
-      @include color-map(stroke, primary);
+      @include color-map(stroke, secondary);
     }
 
     svg {
@@ -96,7 +97,8 @@
 
   &__inner-container {
     width: 100%;
-    padding: 2rem 0;
+    // padding: 2rem 0;
+    margin: 1rem 0;
   }
 
   &__label {

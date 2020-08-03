@@ -46,7 +46,10 @@ const search = () => {
       resolve(posts);
       reject(new Error("Couldn't fetch posts"));
     }
-  }).catch((err) => console.error(err));
+  }).catch((err) => {
+    // eslint-disable-next-line no-alert
+    alert(`Something went wrong. Please try again.\nError Details: ${err} err`);
+  });
 
   // Page Elements
   const searchInput = document.getElementById('search-input');
@@ -68,21 +71,22 @@ const search = () => {
     'Dec'
   ];
 
-  const options = {
-    threshold: 0.2,
-    ignoreLocation: true,
-    minMatchCharLength: 2,
-    includeMatches: true,
-    keys: ['title', 'plaintext', 'tags.name']
-  };
-
   const searchPosts = (term) => {
+    const options = {
+      threshold: 0.2,
+      // ignoreLocation: true,
+      location: 5000,
+      distance: 10000,
+      minMatchCharLength: term.length - 1,
+      includeMatches: true,
+      keys: ['title', 'plaintext', 'tags.name']
+    };
     stateLoader('loading', true);
     searchResult.innerHTML = '';
     api.then((posts) => {
       const index = new Fuse(posts, options);
       const result = index.search(term);
-
+      console.log(result);
       if (result.length > 1) {
         searchResultHeader.textContent = `${result.length} Results for “${term}”`;
       } else if (result.length !== 0) {

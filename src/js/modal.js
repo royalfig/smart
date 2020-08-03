@@ -14,7 +14,7 @@ const modalFn = () => {
   const mSearchBtn = document.getElementById('m-search-btn');
   const menuBtn = document.getElementById('menu-btn');
 
-  const closeBtns = document.querySelectorAll('.close-btn');
+  const closeBtns = document.querySelectorAll('.modal__close-btn');
 
   // eslint-disable-next-line no-undef
   if (typeof SEARCH_API !== 'undefined') {
