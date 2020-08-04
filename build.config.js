@@ -5,6 +5,7 @@ const ZipPlugin = require('zip-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: {
     app: './src/index.js',
     post: './src/post.js',
