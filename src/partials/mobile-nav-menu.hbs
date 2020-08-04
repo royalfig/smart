@@ -63,26 +63,29 @@
         {{/if}}
       </div>
       {{! Member }}
+      {{#if @labs.members}}
       <p class="mobile-nav-menu__social-media-header">
         Membership
       </p>
-      {{!-- Member functionality --}}
-      {{#if @labs.members}}
-        {{#if @member}}
-            <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account">
-                {{#if @member.avatar_image}}
-                    <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
-                {{else}}
-                    <div class="mobile-nav-menu__no-member-avatar"></div>
-                {{/if}}
-            </button>
-        {{else}}
-            <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin">Sign In</button>
-            <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup">Sign Up</button>
-        {{/if}}
+      {{#if @member}}
+        <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account">
+          {{#if @member.avatar_image}}
+              <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+          {{else}}
+              <div class="mobile-nav-menu__no-member-avatar"></div>
+          {{/if}}
+        </button>
+      {{else}}
+        <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin">Sign In</button>
+        <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup">Sign Up</button>
       {{/if}}
-      {{!-- Member functionality --}}
+      {{/if}}
+      {{!-- Dark Mode Toggle --}}
+      <p class="mobile-nav-menu__social-media-header">
+        Turn On the Lights
+      </p>
+        <button class="mobile-nav-menu__dark-mode-toggle" aria-label="Turn on the Lights">Sun</button>
+        <button class="mobile-nav-menu__dark-mode-toggle" aria-label="Turn off the Lights">Moon</button>
     </div>
   </div>
 </nav>
-{{! End Mobile Nav Menu }}

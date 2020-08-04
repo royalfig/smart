@@ -148,11 +148,14 @@
   }
 
   &__social-media-header {
-    @extend .author__small-header;
-    margin: 1rem 0 0.25rem;
+    margin: 2rem 0 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include color-map(color, text3);
   }
 
-  &__social-media .navigation__social-media-item,
+  // &__social-media .navigation__social-media-item,
   &__social-media-item {
     width: 1.5rem;
     height: 1.5rem;
@@ -167,7 +170,8 @@
     }
   }
 
-  &__signin {
+  &__signin,
+  &__dark-mode-toggle {
     @extend %subscribe-btns;
     margin-top: 0;
     background-color: transparent;
