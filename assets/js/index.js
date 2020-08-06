@@ -1,6 +1,6 @@
-import './scss/style.scss';
-import search from './js/search';
-import modalFn from './js/modal';
+import '../scss/style.scss';
+import search from './search';
+import modalFn from './modal';
 
 import 'lazysizes';
 

@@ -1,14 +1,23 @@
 {
   "name": "smart-a-ghost-theme-for-academics",
   "version": "1.0.0",
-  "description": "A Smart Theme for Smart People",
+  "description": "A Ghost Theme for Scholars and Scientists",
   "main": "index.js",
+  "engines": {
+    "ghost": ">=2.0.0",
+    "ghost-api": "v2"
+  },
+  "author": {
+    "name": "Ryan Feigenbaum",
+    "email": "ryan.feigenbaum@gmail.com",
+    "url": "https://ryanfeigenbaum.com"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --config dev.config.js",
-    "build": "webpack --config build.config.js"
+    "build": "rm default.zip; webpack --config build.config.js && zip -r default.zip . -x *.git* -x\\node_modules/* -x*.zip"
   },
   "keywords": [
+    "ghost-theme",
     "Ghost",
     "Theme",
     "Academics",
@@ -21,7 +30,6 @@
     "Masters",
     "Profile"
   ],
-  "author": "Ryan Feigenbaum",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.10.2",
@@ -38,6 +46,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-plugin-import": "^2.20.2",
     "file-loader": "^6.0.0",
+    "filemanager-webpack-plugin": "^2.0.5",
     "mini-css-extract-plugin": "^0.9.0",
     "node-sass": "^4.14.1",
     "postcss-import": "^12.0.1",
@@ -48,8 +57,7 @@
     "stylelint-config-twbs-bootstrap": "^2.0.3",
     "stylelint-order": "^4.1.0",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "zip-webpack-plugin": "^3.0.0"
+    "webpack-cli": "^3.3.11"
   },
   "dependencies": {
     "@tryghost/content-api": "^1.4.1",
@@ -62,5 +70,28 @@
     "lunr": "^2.3.8",
     "medium-zoom": "^1.0.5",
     "normalize.css": "^8.0.1"
+  },
+  "config": {
+    "posts_per_page": 5,
+    "image_sizes": {
+      "xxs": {
+        "width": 30
+      },
+      "xs": {
+        "width": 100
+      },
+      "s": {
+        "width": 300
+      },
+      "m": {
+        "width": 600
+      },
+      "l": {
+        "width": 1000
+      },
+      "xl": {
+        "width": 2000
+      }
+    }
   }
 }
