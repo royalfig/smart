@@ -86,7 +86,6 @@ const search = () => {
     api.then((posts) => {
       const index = new Fuse(posts, options);
       const result = index.search(term);
-      console.log(result);
       if (result.length > 1) {
         searchResultHeader.textContent = `${result.length} Results for “${term}”`;
       } else if (result.length !== 0) {
@@ -115,8 +114,8 @@ const search = () => {
           const startMatch = indices[0][0];
           const endMatch = indices[0][1];
           const matchArr = Array.from(firstMatch.value);
-          matchArr.splice(startMatch, 0, '<span class="match-text">');
-          matchArr.splice(endMatch + 2, 0, '</span>');
+          matchArr.splice(startMatch, 0, '»');
+          matchArr.splice(endMatch + 2, 0, '«');
           const excerptStart = startMatch - 10 > 0 ? startMatch - 10 : 0;
           matchKey = matchKeyTransform(firstMatch.key);
           matchText = matchArr
@@ -125,6 +124,7 @@ const search = () => {
             .trim();
           matchText = excerptStart === 0 ? matchText : `...${matchText}`;
           matchText = matchText.length > 254 ? `${matchText}...` : matchText;
+          matchText = matchText.replace(/<.+?>/g, '');
         }
 
         const day = post.item.published_at.substring(8, 10);
