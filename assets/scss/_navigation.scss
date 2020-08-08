@@ -157,8 +157,8 @@
 
   // &__social-media .navigation__social-media-item,
   &__social-media-item {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
     margin-right: 0.5rem;
     &:last-child {
       margin-right: 0;
@@ -190,6 +190,39 @@
 
     &:hover {
       @include color-map(background-color, secondary);
+    }
+  }
+}
+
+.modal {
+  .color-mode-btn {
+    width: auto;
+    height: auto;
+    margin-right: 0;
+    margin-left: 0;
+    border-width: 1px;
+    @include transition(all);
+
+    svg {
+      // display: inline;
+      width: 1rem;
+      height: 1rem;
+      vertical-align: middle;
+    }
+    span {
+      display: inline;
+      font-family: $sans;
+      font-size: 1rem;
+      vertical-align: middle;
+      @include color-map(color, text2);
+    }
+    &:hover {
+      svg {
+        @include color-map(stroke, text);
+      }
+      span {
+        @include color-map(color, text);
+      }
     }
   }
 }

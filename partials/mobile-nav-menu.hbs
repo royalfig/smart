@@ -82,10 +82,20 @@
       {{/if}}
       {{!-- Dark Mode Toggle --}}
       <p class="mobile-nav-menu__social-media-header">
-        Turn On the Lights
+        Change Color Mode
       </p>
-        <button class="mobile-nav-menu__dark-mode-toggle" aria-label="Turn on the Lights">Sun</button>
-        <button class="mobile-nav-menu__dark-mode-toggle" aria-label="Turn off the Lights">Moon</button>
+      <button class="color-mode-btn light" aria-label="Toggle light mode">
+          <svg aria-hidden="true">
+              <use href="#sun"></use>
+          </svg>
+          <span>Toggle Light Mode</span>
+      </button>
+      <button class="color-mode-btn dark" aria-label="Toggle dark mode">
+          <svg aria-hidden="true">
+              <use href="#moon"></use>
+          </svg>
+          <span>Toggle Dark Mode</span>
+      </button>
     </div>
   </div>
 </nav>
