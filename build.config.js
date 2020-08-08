@@ -1,35 +1,23 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ZipPlugin = require('zip-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
+  mode: 'production',
   entry: {
-    app: './src/index.js',
-    post: './src/post.js',
-    head: './src/head.js'
+    app: './assets/js/index.js',
+    post: './assets/js/post.js',
+    head: './assets/js/head.js'
   },
 
   output: {
-    filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].js',
+    path: path.join(__dirname, 'assets', 'built')
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css'
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { context: `${__dirname}/src`, from: '*.hbs' },
-        { context: `${__dirname}/src/partials`, from: '*.hbs', to: 'partials' },
-        { context: `${__dirname}/src/fonts`, from: '*', to: 'assets/fonts' },
-        { context: `${__dirname}/src`, from: 'package.json' }
-      ]
-    }),
-    new ZipPlugin({
-      path: __dirname,
-      filename: 'default.zip'
+      filename: '[name].css',
+      path: path.join(__dirname, 'assets', 'built')
     }),
     new CleanWebpackPlugin()
   ],

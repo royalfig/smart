@@ -14,8 +14,7 @@
   },
   "scripts": {
     "dev": "webpack --config dev.config.js",
-    "watch": "webpack --watch --config dev.config.js",
-    "build": "rm smart.zip; webpack --config build.config.js && zip -r smart.zip . -x *.git* -x\\node_modules/* -x*.zip"
+    "build": "rm default.zip; webpack --config build.config.js && zip -r default.zip . -x *.git* -x\\node_modules/* -x*.zip"
   },
   "keywords": [
     "ghost-theme",
