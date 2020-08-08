@@ -64,35 +64,37 @@ const extractNumber = (input) => {
 
 const yearEl = document.getElementById('yearly-price');
 
-const yearlyPrice = extractNumber(yearEl.textContent);
+if (yearEl) {
+  const yearlyPrice = extractNumber(yearEl.textContent);
 
-const monthlyPrice = extractNumber(
-  document.getElementById('monthly-price').textContent
-);
+  const monthlyPrice = extractNumber(
+    document.getElementById('monthly-price').textContent
+  );
 
-const calculatePercentageDiscount = (monthToYear, year) => {
-  const diff = monthToYear - year;
-  const percentage = ((diff * 100) / monthToYear).toFixed();
-  return `${percentage}%`;
-};
+  const calculatePercentageDiscount = (monthToYear, year) => {
+    const diff = monthToYear - year;
+    const percentage = ((diff * 100) / monthToYear).toFixed();
+    return `${percentage}%`;
+  };
 
-const determineDiscount = (month, year) => {
-  const monthlyToAnnual = month * 12;
-  if (year < monthlyToAnnual) {
-    const percentageDiscount = calculatePercentageDiscount(
-      monthlyToAnnual,
-      year
-    );
-    const percentOffEl = document.createElement('p');
-    percentOffEl.classList.add('member__discount');
-    const percentOffText = `${percentageDiscount} off the monthly price!`;
-    percentOffEl.append(percentOffText);
-    yearEl.parentElement.append(percentOffEl);
+  const determineDiscount = (month, year) => {
+    const monthlyToAnnual = month * 12;
+    if (year < monthlyToAnnual) {
+      const percentageDiscount = calculatePercentageDiscount(
+        monthlyToAnnual,
+        year
+      );
+      const percentOffEl = document.createElement('p');
+      percentOffEl.classList.add('member__discount');
+      const percentOffText = `${percentageDiscount} off the monthly price!`;
+      percentOffEl.append(percentOffText);
+      yearEl.parentElement.append(percentOffEl);
+    }
+  };
+
+  if (monthlyPrice && yearlyPrice) {
+    determineDiscount(monthlyPrice, yearlyPrice);
   }
-};
-
-if (monthlyPrice && yearlyPrice) {
-  determineDiscount(monthlyPrice, yearlyPrice);
 }
 
 // Hero -> Contact

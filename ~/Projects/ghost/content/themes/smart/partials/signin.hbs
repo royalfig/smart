@@ -1,0 +1,77 @@
+{{! signin Modal }}
+<aside class='modal' id='signin' aria-expanded='false'>
+  <button
+    class='modal__close-btn'
+    id='signin-close-btn'
+    data-target='signin'
+    data-tt='Close signin'
+    aria-label='close'
+  >
+    <svg aria-hidden='true'>
+      <use href='#close'></use>
+    </svg>
+  </button>
+  <div class='modal__container'>
+    {{#if @member.paid}}
+      {{! A logged-in, paying member shouldn't get here, but if they do. Redirect them home }}
+      <p>
+        Paid
+      </p>
+    {{else if @member}}
+      <p>
+        Subbed
+      </p>
+    {{else}}
+      {{! For those who have not yet subscribed }}
+      <h2 class='modal__header'>
+        Sign In
+      </h2>
+      <form class='modal__form' data-members-form='signin'>
+        <div class='modal__input-container'>
+          <div class='modal__label-container'>
+            <label class='modal__label' for='signin'>
+              Email
+            </label>
+            <input
+              class='modal__input'
+              data-members-email
+              id='signin'
+              type='email'
+              required='true'
+              autocomplete='false'
+            />
+          </div>
+          <button class='modal__btn' type='submit'>
+            <span class='modal__btn--content'>
+              Sign In
+            </span>
+            <svg class='modal__btn--loading' aria-label='Loading...'>
+              <use href='#loader'></use>
+            </svg>
+            <svg class='modal__btn--success' aria-label='Success!'>
+              <use href='#check'></use>
+            </svg>
+          </button>
+        </div>
+        <div class='modal__error'>
+          Please enter a valid email address!
+        </div>
+        <div class='modal__success'>
+          <strong>
+            Great!
+          </strong>
+          Check your inbox and click the link to confirm your subscription
+        </div>
+      </form>
+      <div class='modal__subtext'>
+        <p class='modal__subtext'>
+          Don't have an account?
+        </p>
+        <button id='subtext-signup' data-target='signup'>
+          Sign Up
+        </button>
+      </div>
+    {{/if}}
+  </div>
+</aside>
+{{! End signin Modal }}

@@ -1,0 +1,169 @@
+<aside class='modal' id='signup' aria-expanded='false'>
+  <button
+    class='modal__close-btn'
+    id='signup-close-btn'
+    data-target='signup'
+    title='Close Subscribe'
+    aria-label='Close Sign Up'
+  >
+    <svg aria-hidden='true'>
+      <title>
+        Close
+      </title>
+      <use href='#close'></use>
+    </svg>
+  </button>
+  <div class='modal__container'>
+    <h2 class='modal__header'>
+      Sign Up
+    </h2>
+    <p class='modal__info'>
+      <strong>
+        {{@site.title}}
+      </strong>
+    </p>
+    {{#if @site.description}}
+      <p>
+        {{@site.description}}
+      </p>
+    {{/if}}
+    <div class="divider">
+      <div class="divider__rule"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__lg-block"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__rule"></div>
+    </div>
+    <p class='modal__benefits'>
+      <strong>
+        Subscription Benefits
+      </strong>
+    </p>
+    <ul class='modal__ul'>
+      <li>
+        Gain full access to all posts
+      </li>
+      <li>
+        Receive regular updates with new content
+      </li>
+      <li>
+        Support independent publishing
+      </li>
+      <li>
+        Simple, secure card payment
+      </li>
+    </ul>
+    <div class="divider">
+      <div class="divider__rule"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__lg-block"></div>
+      <div class="divider__sm-block"></div>
+      <div class="divider__rule"></div>
+    </div>
+    <div class='modal__card'>
+      <header class='modal__header'>
+        <h3 class='modal__card--title'>
+          Yearly
+        </h3>
+      </header>
+      <div class='modal__body'>
+        <p class='modal__price' id='yearly-price'>
+          {{@price.currency_symbol}}{{@price.yearly}}
+        </p>
+        <p class='modal__term'>
+          per year
+        </p>
+      </div>
+      <footer class='modal__footer'>
+        <a
+          class='modal__checkout'
+          href='javascript:'
+          data-members-plan='Yearly'
+        >
+          Get Yearly Subscription
+        </a>
+      </footer>
+    </div>
+    <div class='modal__card'>
+      <header class='modal__header'>
+        <h3 class='modal__card--title'>
+          Monthly
+        </h3>
+      </header>
+      <div class='modal__body'>
+        <p class='modal__price' id='monthly-price'>
+          {{@price.currency_symbol}}{{@price.monthly}}
+        </p>
+        <p class='modal__term'>
+          per month
+        </p>
+      </div>
+      <footer class='modal__footer'>
+        <a
+          class='modal__checkout'
+          href='javascript:'
+          data-members-plan='Monthly'
+        >
+          Get Monthly Subscription
+        </a>
+      </footer>
+    </div>
+    <div class='modal__card'>
+      <header class='modal__header'>
+        <h3 class='modal__card--title'>
+          Free Subscription
+        </h3>
+      </header>
+      <div class='modal__body'>
+        <p>
+          Regular updates with new content
+        </p>
+        <form class='modal__form' data-members-form='signup'>
+          <div class='modal__input-container'>
+            <div class='modal__label-container'>
+              <label class='modal__label' for='email'>
+                Email
+              </label>
+              <input
+                class='modal__input'
+                data-members-email
+                id='email'
+                type='email'
+                required='true'
+                autocomplete='false'
+              />
+            </div>
+            <button class='modal__btn' type='submit'>
+              <span class='modal__btn--content'>
+                Sign Up
+              </span>
+              <svg class='modal__btn--loading' aria-label='Loading...'>
+                <use href='#loader'></use>
+              </svg>
+              <svg class='modal__btn--success' aria-label='Success!'>
+                <use href='#check'></use>
+              </svg>
+            </button>
+          </div>
+          <div class='modal__error'>
+            Please enter a valid email address!
+          </div>
+          <div class='modal__success'>
+            <strong>
+              Great!
+            </strong>
+            Check your inbox and click the link to confirm your subscription
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class='modal__subtext'>
+      <p class='modal__subtext'>
+        Already have an account?
+      </p>
+      <button id='subtext-signin' data-target='signin'>
+        Sign In
+      </button>
+    </div>
+  </div>
+</aside>

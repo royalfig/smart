@@ -1,0 +1,53 @@
+{{! Search Modal }}
+<aside class='modal' id='search-modal' role='search' aria-expanded='false'>
+  <button
+    class='modal__close-btn'
+    data-tooltip='Close Search'
+    aria-label='close'
+  >
+    <svg aria-hidden='true'>
+      <title>
+        Close
+      </title>
+      <use href='#close'></use>
+    </svg>
+  </button>
+  <div class='modal__container'>
+    <header>
+      <h2 class='modal__header'>
+        Search
+      </h2>
+    </header>
+    <div class='modal__inner-container'>
+      <div class='modal__input-container'>
+        <div class='modal__label-container'>
+          <label class='modal__label' for='search-input'>
+            Enter Query
+          </label>
+          <input
+            class='modal__input'
+            id='search-input'
+            placeholder="I'm looking for..."
+            autocomplete='false'
+          />
+        </div>
+        <button class='modal__btn' id='run-search-btn'>
+          <span class='modal__btn--content'>
+            Search
+          </span>
+          <svg class='modal__btn--loading' aria-label='Loading...'>
+            <use href='#loader'></use>
+          </svg>
+          <svg class='modal__btn--success' aria-label='Success!'>
+            <use href='#check'></use>
+          </svg>
+        </button>
+      </div>
+      <div class='search-results'>
+        <header class='search-results__header'></header>
+        <div class='search-results__container'></div>
+      </div>
+    </div>
+  </div>
+</aside>
+{{! Search Modal }}

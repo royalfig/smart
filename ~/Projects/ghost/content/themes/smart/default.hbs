@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}" color-mode="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{meta_title}}</title>
+    {{!-- CSS  --}}
+    <link rel="stylesheet" href="{{asset 'built/app.css'}}">
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
+        }
+
+        body {
+            font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        .fonts-loaded body {
+            font-family: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+    {{!-- Load scripts to execute before render --}}
+    <script type="text/javascript" src="{{asset 'built/head.js'}}"></script>
+    {{!-- Output SEO + Meta data and other settings by Ghost --}}
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+    {{!-- SVG Sprite  --}}
+    {{> "svg"}}
+    {{!-- SVG Sprite  --}}
+    <div class="content-wrap">
+        {{> "navbar"}}
+        {{> "search"}}
+        {{#if @labs.members}}
+            {{> "signup"}}
+            {{> "signin"}}
+            {{> "account"}}
+        {{/if}}
+        {{!-- Mobile Nav Menu --}}
+        {{> "mobile-nav-menu"}}
+        {{!-- End Mobile Nav Menu --}}
+        {{!-- All the main content is inserted here --}}
+        {{{body}}}
+        {{!-- Footer Module --}}
+        <footer class="footer--outer-container">
+            <div class="footer--inner-container">
+                <div class="footer--grid-container">
+                    <div class="footer__section">
+                        <p class="footer__header--serif">About</p>
+                        <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
+                        {{#if @site.description}}
+                            <p class="footer__description">{{@site.description}}</p>
+                        {{/if}}
+                        {{#if @site.secondary_navigation}}
+                        <div class="footer__social">
+                        {{navigation type="secondary"}}
+                        </div>
+                        {{/if}}
+                    </div>
+                    {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
+                        {{#if tags}}
+                            <div class="footer__section">
+                                <p class="footer__header--serif">Tags</p>
+                                {{#foreach tags}}
+                                    <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
+                                        <svg>
+                                            <use href="#hash"></use>
+                                        </svg>
+                                        <p>
+                                            {{name}}
+                                        </p>
+                                    </a>
+                                {{/foreach}}
+                            </div>
+                        {{/if}}
+                    {{/get}}
+                    {{#get "posts" limit="6"}}
+                        <div class="footer__section--latest">
+                            <p class="footer__header--serif">Latest</p>
+                            {{#foreach posts limit="3"}}
+                                <p class="footer__date">
+                                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
+                                    </time>
+                                </p>
+                                <a class="footer__title" href="{{url}}">{{title}}</a>
+                            {{/foreach}}
+                        </div>
+                        <div class="footer__section--latest">
+                            <p class="footer__header--serif">&nbsp;</p>
+                            {{#foreach posts from="4" to="6"}}
+                                <p class="footer__date"><time
+                                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                                </p>
+                                <a class="footer__title" href="{{url}}">{{title}}</a>
+                            {{/foreach}}
+                        </div>
+                    {{/get}}
+                </div>
+            </div>
+            <div class="footer__published-by-ghost">
+                <p>
+                    &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Published by <a
+                        href="https://ghost.org/">Ghost</a>
+                </p>
+            </div>
+        </footer>
+        {{!-- Footer --}}
+    </div>
+    {{!-- end content-wrap --}}
+
+
+    <script src=" {{asset 'built/app.js'}}"></script>
+    {{^is "home"}}
+        <script src=" {{asset 'built/post.js'}}"></script>
+    {{/is}}
+    {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
+    {{{block "scripts"}}}
+    {{!-- Ghost footer required, right before the closing body tag --}}
+    {{ghost_foot}}
+</body>
+
+</html>

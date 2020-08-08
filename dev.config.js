@@ -1,36 +1,58 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const ZipPlugin = require('zip-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const FileManager = require('filemanager-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
-    app: './src/index.js',
-    post: './src/post.js',
-    head: './src/head.js'
+    app: './assets/js/index.js',
+    post: './assets/js/post.js',
+    head: './assets/js/head.js'
   },
   output: {
-    filename: 'assets/js/[name].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: '[name].js',
+    path: path.join(__dirname, 'assets', 'built')
   },
   devtool: 'inline-source-map',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css'
+      filename: '[name].css',
+      path: path.join(__dirname, 'assets', 'built')
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-        { context: `${__dirname}/src`, from: '*.hbs' },
-        { context: `${__dirname}/src/partials`, from: '*.hbs', to: 'partials' },
-        { context: `${__dirname}/src/fonts`, from: '*', to: 'assets/fonts' },
-        { context: `${__dirname}/src`, from: 'package.json' }
-      ]
-    }),
-    new ZipPlugin({
-      path: __dirname,
-      filename: 'default.zip'
+    new FileManager({
+      onEnd: {
+        copy: [
+          {
+            source: './package.json',
+            destination: '/home/ryan/Projects/ghost/content/themes/smart'
+          },
+          {
+            source: './*.hbs',
+            destination: '/home/ryan/Projects/ghost/content/themes/smart'
+          },
+          {
+            source: './partials/*.hbs',
+            destination:
+              '/home/ryan/Projects/ghost/content/themes/smart/partials'
+          },
+          {
+            source: './assets/built/*.css',
+            destination:
+              '/home/ryan/Projects/ghost/content/themes/smart/assets/built'
+          },
+          {
+            source: './assets/built/*.js',
+            destination:
+              '/home/ryan/Projects/ghost/content/themes/smart/assets/built'
+          },
+          {
+            source: './assets/fonts/*.woff2',
+            destination:
+              '/home/ryan/Projects/ghost/content/themes/smart/assets/fonts'
+          }
+        ]
+      }
     }),
     new CleanWebpackPlugin()
   ],
