@@ -102,10 +102,12 @@ const contactEl = document.querySelector('.hero__contact');
 
 const navLinks = document.querySelectorAll('.navigation__list-link');
 
-// eslint-disable-next-line no-restricted-syntax
-for (const el of navLinks) {
-  if (el.pathname === '/contact/') {
-    contactEl.style.display = 'block';
-    break;
+if (contactEl && navLinks) {
+  // eslint-disable-next-line no-restricted-syntax
+  for (const el of navLinks) {
+    if (el.pathname === '/contact/') {
+      contactEl.style.display = 'block';
+      break;
+    }
   }
 }

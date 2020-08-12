@@ -43,21 +43,21 @@
   &__site-title {
     z-index: 3;
     margin-top: 0;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
     @extend .serif;
-    font-size: 3rem;
+    font-size: 2, 75rem;
     line-height: 1;
     color: #ffffff;
     text-align: left;
     @include respond-above($laptop) {
-      font-size: 3.488rem;
+      font-size: 3.4rem;
     }
   }
 
   &__site-description {
     margin: 0;
     font-family: $sans;
-    font-size: 1.65rem;
+    font-size: 1.5rem;
     line-height: 1.2;
     color: rgba(238, 238, 238, 0.75);
     text-align: left;
@@ -69,7 +69,7 @@
     a {
       padding: 0.25rem 0.5rem;
       font-family: $sans;
-      font-size: 1.25rem;
+      font-size: 1rem;
       border-radius: $radius;
       @include color-map(background-color, primary);
       @include color-map(color, textInverse);
