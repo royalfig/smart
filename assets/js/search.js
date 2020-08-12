@@ -77,7 +77,7 @@ const search = () => {
       // ignoreLocation: true,
       location: 5000,
       distance: 10000,
-      minMatchCharLength: term.length - 1,
+      minMatchCharLength: term.length - 2,
       includeMatches: true,
       keys: ['title', 'plaintext', 'tags.name']
     };
