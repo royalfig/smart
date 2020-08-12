@@ -142,16 +142,12 @@
                 </div>
             </div>
             <div class="footer__published-by-ghost">
-                <p>
-                    &copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Published by <a
-                        href="https://ghost.org/">Ghost</a>
-                </p>
+                <p>&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Powered by <a href="https://ghost.org/">Ghost</a></p>
             </div>
         </footer>
         {{!-- Footer --}}
     </div>
     {{!-- end content-wrap --}}
-
 
     <script src=" {{asset 'built/app.js'}}"></script>
     {{^is "home"}}
