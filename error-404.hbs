@@ -13,7 +13,7 @@ into the {body} of the default.hbs template --}}
                  {{img_url @site.cover_image size="m"}} 600w,
                  {{img_url @site.cover_image size="l"}} 1000w,
                  {{img_url @site.cover_image size="xl"}} 2000w" sizes="(min-width: 640px) 740px, 100vw"
-        src="{{img_url @site.cover_image size="xl"}}" alt="{{title}}">
+        src="{{img_url @site.cover_image size="l"}}" alt="{{title}}">
     {{/if}}
     {{^if @site.cover_image}}
     <div class="post__no-img"></div>

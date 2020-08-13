@@ -26,6 +26,7 @@
         class="mobile-nav-menu__search-btn"
         id="m-search-btn"
         data-target="search-modal"
+        data-tt="Search"
       >
         Search
       </button>
@@ -38,6 +39,7 @@
         {{#if @site.twitter}}
         <a
           class="mobile-nav-menu__social-media-item twitter"
+          data-tt="Twitter"
           href="{{twitter_url @site.twitter}}"
           aria-label="Follow {{@site.title}} on Twitter"
         >
@@ -49,6 +51,7 @@
         {{#if @site.facebook}}
         <a
           class="mobile-nav-menu__social-media-item facebook"
+          data-tt="Facebook"
           href="{{facebook_url @site.facebook}}"
           aria-label="Follow {{@site.title}} on Facebook"
         >
@@ -68,7 +71,7 @@
         Membership
       </p>
       {{#if @member}}
-        <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account">
+        <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account" data-tt="Account">
           {{#if @member.avatar_image}}
               <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
           {{else}}

@@ -39,7 +39,6 @@ into the {body} of the default.hbs template --}}
                     {{#if tags}}
                     <section class="post__tag-bar">
                         <svg aria-hidden="true">
-                            <title>Filed under</title>
                             <use href="#folder"></use>
                         </svg>
                         {{#foreach tags}}
@@ -82,25 +81,22 @@ into the {body} of the default.hbs template --}}
                             <a class="post-footer__author-name" href="{{url}}">{{name}}</a>
                             <div class="post-footer__author-social">
                                 {{#if twitter}}
-                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                <a class="twitter" data-tt="Twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
-                                        <title>Twitter</title>
                                         <use href="#twitter"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if facebook}}
-                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                <a class="facebook" data-tt="Facebook" href="{{facebook_url}}" aria-label="Facebook">
                                     <svg>
-                                        <title>Facebook</title>
                                         <use href="#facebook"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if website}}
-                                <a class="website" href="{{website}}" aria-label="{{website}}">
+                                <a class="website" data-tt="{{website}}" href="{{website}}" aria-label="{{website}}">
                                     <svg>
-                                        <title>{{website}}</title>
                                         <use href="#website"></use>
                                     </svg>
                                 </a>
@@ -108,8 +104,7 @@ into the {body} of the default.hbs template --}}
                             </div>
                             {{#if location}}
                             <div class="post-footer__author-location">
-                                <svg aria-label="location">
-                                    <title>Location</title>
+                                <svg aria-hidden="true">
                                     <use href="#location"></use>
                                 </svg>
                                 <p>{{location}}</p>
@@ -140,25 +135,22 @@ into the {body} of the default.hbs template --}}
                             <a class="post-footer__author-name" href="{{url}}">{{name}}</a>
                             <div class="post-footer__author-social">
                                 {{#if twitter}}
-                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                <a class="twitter" data-tt="Twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
-                                        <title>Twitter</title>
                                         <use href="#twitter"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if facebook}}
-                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                <a class="facebook" data-tt="Facebook" href="{{facebook_url}}" aria-label="Facebook">
                                     <svg>
-                                        <title>Facebook</title>
                                         <use href="#facebook"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if website}}
-                                <a class="website" href="{{website}}" aria-label="{{website}}">
+                                <a class="website" data-tt="{{website}}" href="{{website}}" aria-label="{{website}}">
                                     <svg>
-                                        <title>{{website}}</title>
                                         <use href="#website"></use>
                                     </svg>
                                 </a>
@@ -166,8 +158,7 @@ into the {body} of the default.hbs template --}}
                             </div>
                             {{#if location}}
                             <div class="post-footer__author-location">
-                                <svg aria-label="location">
-                                    <title>Location</title>
+                                <svg aria-hidden="true">
                                     <use href="#location"></use>
                                 </svg>
                                 <p>{{location}}</p>
@@ -222,6 +213,5 @@ into the {body} of the default.hbs template --}}
         };
         document.addEventListener('DOMContentLoaded', resizeImagesInGalleries);
     })(window, document);
-
 </script>
 {{/contentFor}}

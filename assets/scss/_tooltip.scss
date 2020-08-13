@@ -1,0 +1,49 @@
+*[data-tt] {
+  position: relative;
+
+  &:hover .tt {
+    display: block;
+  }
+}
+
+.tt {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  z-index: 11;
+  display: none;
+  padding: 0.25rem;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.12));
+  border-radius: $radius;
+  //   box-shadow: $box-shadow;
+  transform: translateX(-50%);
+  @include color-map(background-color, surface4);
+
+  &:after {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    content: ' ';
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px;
+    @include color-map(border-bottom-color, surface4);
+  }
+
+  &.right {
+    top: 0;
+    left: 200%;
+
+    &:after {
+      border-color: transparent;
+      @include color-map(border-left-color, surface4);
+    }
+  }
+
+  p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    @include color-map(color, text3);
+  }
+}
