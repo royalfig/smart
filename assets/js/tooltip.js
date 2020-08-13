@@ -1,4 +1,5 @@
 const ttEl = document.querySelectorAll('[data-tt]');
+const THRESHOLD = 50;
 
 const createHTML = (text, orientation) => {
   const div = document.createElement('div');
@@ -22,29 +23,29 @@ ttEl.forEach((el) => {
     const docWidth = document.documentElement.clientWidth;
     const docHeight = document.documentElement.clientHeight;
     const text = el.dataset.tt;
-    if (docWidth - coords.x < 20) {
+
+    // Proximity check for right side
+    if (docWidth - coords.x < THRESHOLD) {
       const tt = createHTML(text, 'left');
       el.append(tt);
       return;
     }
 
-    if (coords.x < 20) {
+    // Proximity check for left side
+    if (coords.x < THRESHOLD) {
       const tt = createHTML(text, 'right');
       el.append(tt);
       return;
     }
 
-    if (coords.y < 20) {
-      const tt = createHTML(text, 'bottom');
-      el.append(tt);
-      return;
-    }
-
-    if (docHeight - coords.y < 20) {
+    // Proximity check for bottom side
+    if (docHeight - coords.y < THRESHOLD) {
       const tt = createHTML(text, 'top');
       el.append(tt);
       return;
     }
+
+    // Defaults to bottom
     const tt = createHTML(text, 'bottom');
     el.append(tt);
   });
