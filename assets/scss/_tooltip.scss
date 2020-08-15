@@ -5,7 +5,14 @@
     display: block;
   }
 }
-
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .tt {
   position: absolute;
   top: 2rem;
@@ -13,11 +20,12 @@
   z-index: 11;
   display: none;
   padding: 0.25rem;
+  font-weight: 300;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.12));
   border-radius: $radius;
-  //   box-shadow: $box-shadow;
   transform: translateX(-50%);
   @include color-map(background-color, surface4);
+  animation: fade $transition;
 
   &:after {
     position: absolute;
@@ -34,16 +42,53 @@
   &.right {
     top: 0;
     left: 200%;
+    white-space: nowrap;
+    transform: initial;
 
     &:after {
+      top: 25%;
+      left: 0;
+      margin-left: -10px;
       border-color: transparent;
+      transform: translate3d(0, 25%, 0);
+      @include color-map(border-right-color, surface4);
+    }
+  }
+
+  &.left {
+    top: 0;
+    left: -200%;
+    white-space: nowrap;
+    transform: translate3d(-50%, 0, 0);
+
+    &:after {
+      top: 25%;
+      right: 0;
+      left: initial;
+      margin-right: -10px;
+      border-color: transparent;
+      transform: translate3d(0, 25%, 0);
       @include color-map(border-left-color, surface4);
+    }
+  }
+  &.top {
+    top: -2rem;
+    left: 0;
+    transform: translate3d(-25%, 0, 0);
+
+    &:after {
+      top: 100%;
+      left: 50%;
+      margin-right: -5px;
+      border-color: transparent;
+      transform: translate3d(-25%, 0, 0);
+      @include color-map(border-top-color, surface4);
     }
   }
 
   p {
     font-size: 0.8rem;
     line-height: 1.2;
-    @include color-map(color, text3);
+    @include color-map(color, text1);
   }
 }
