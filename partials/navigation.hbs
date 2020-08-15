@@ -1,13 +1,12 @@
 {{^if isSecondary}}
     <ul class="navigation__ul" role="menu">
-        {{!-- Unexpected formatting used to avoid extra whitespace --}}
         {{#foreach navigation}}<li class="navigation__li">
             <a href="{{url}}" class="navigation__list-link hvr-underline-from-left {{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
         </li>{{/foreach}}
     </ul>
 {{else}}
     {{#foreach navigation}}
-    <a class="navigation__social-media-item {{slug}}" href="{{url}}" aria-label="{{label}}">
+    <a class="navigation__social-media-item {{slug}}" href="{{url}}" aria-label="{{label}}" data-tt="{{label}}">
         <svg aria-hidden="true">
             <use href="#{{slug}}"></use>
         </svg>

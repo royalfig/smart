@@ -42,7 +42,6 @@ into the {body} of the default.hbs template --}}
                             <p class="author__small-header">Location</p>
                             <div class="author__location map">
                                 <svg aria-hidden="true">
-                                    <title>Location</title>
                                     <use href="#location"></use>
                                 </svg>
                                 <p>{{location}}</p>
@@ -57,25 +56,22 @@ into the {body} of the default.hbs template --}}
                             {{/has}}
                             <div class="author__meta">
                                 {{#if twitter}}
-                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                <a class="twitter" data-tt="Twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
-                                        <title>Twitter</title>
                                         <use href="#twitter"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if facebook}}
-                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                <a class="facebook" data-tt="Facebook" href="{{facebook_url}}" aria-label="Facebook">
                                     <svg>
-                                        <title>Facebook</title>
                                         <use href="#facebook"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if website}}
-                                <a class="website" href="{{website}}" aria-label="{{website}}">
+                                <a class="website" data-tt="{{website}}" href="{{website}}" aria-label="{{website}}">
                                     <svg>
-                                        <title>{{website}}</title>
                                         <use href="#website"></use>
                                     </svg>
                                 </a>
