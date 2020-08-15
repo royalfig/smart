@@ -64,6 +64,11 @@
     </style>
     {{!-- Load scripts to execute before render --}}
     <script type="text/javascript" src="{{asset 'built/head.js'}}"></script>
+    {{!-- Scripts to be parsed after load --}}
+    <script src="{{asset 'built/app.js'}}" defer></script>
+    {{^is "home"}}
+        <script src="{{asset 'built/post.js'}}" defer></script>
+    {{/is}}
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 </head>
@@ -149,10 +154,6 @@
     </div>
     {{!-- end content-wrap --}}
 
-    <script src=" {{asset 'built/app.js'}}"></script>
-    {{^is "home"}}
-        <script src=" {{asset 'built/post.js'}}"></script>
-    {{/is}}
     {{!-- Bring in scripts only a pages that need them. Post/page fluid vids, etc. --}}
     {{{block "scripts"}}}
     {{!-- Ghost footer required, right before the closing body tag --}}
