@@ -1,10 +1,6 @@
 {{! Mobile Nav Menu }}
 <nav class="modal" id="menu" aria-expanded="false">
-  <button
-    class="modal__close-btn"
-    data-target="menu"
-    aria-label="Close menu"
-  >
+  <button class="modal__close-btn" data-target="menu" data-tt="Close Menu" aria-label="Close menu">
     <svg aria-hidden="true">
       <use href="#close"></use>
     </svg>
@@ -22,12 +18,7 @@
       {{ navigation }}
       {{/if}}
       {{! Search }}
-      <button
-        class="mobile-nav-menu__search-btn"
-        id="m-search-btn"
-        data-target="search-modal"
-        data-tt="Search"
-      >
+      <button class="mobile-nav-menu__search-btn" id="m-search-btn" data-target="search-modal" data-tt="Search">
         Search
       </button>
       {{! Social Media  }}
@@ -37,24 +28,16 @@
       </p>
       <div class="mobile-nav-menu__social-media">
         {{#if @site.twitter}}
-        <a
-          class="mobile-nav-menu__social-media-item twitter"
-          data-tt="Twitter"
-          href="{{twitter_url @site.twitter}}"
-          aria-label="Follow {{@site.title}} on Twitter"
-        >
+        <a class="mobile-nav-menu__social-media-item twitter" data-tt="Twitter" href="{{twitter_url @site.twitter}}"
+          aria-label="Follow {{@site.title}} on Twitter">
           <svg aria-hidden="true">
             <use href="#twitter"></use>
           </svg>
         </a>
         {{/if}}
         {{#if @site.facebook}}
-        <a
-          class="mobile-nav-menu__social-media-item facebook"
-          data-tt="Facebook"
-          href="{{facebook_url @site.facebook}}"
-          aria-label="Follow {{@site.title}} on Facebook"
-        >
+        <a class="mobile-nav-menu__social-media-item facebook" data-tt="Facebook" href="{{facebook_url @site.facebook}}"
+          aria-label="Follow {{@site.title}} on Facebook">
           <svg aria-hidden="true">
             <use href="#facebook"></use>
           </svg>
@@ -71,16 +54,16 @@
         Membership
       </p>
       {{#if @member}}
-        <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account" data-tt="Account">
-          {{#if @member.avatar_image}}
-              <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
-          {{else}}
-              <div class="mobile-nav-menu__no-member-avatar"></div>
-          {{/if}}
-        </button>
+      <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account" data-tt="Account">
+        {{#if @member.avatar_image}}
+        <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+        {{else}}
+        <div class="mobile-nav-menu__no-member-avatar"></div>
+        {{/if}}
+      </button>
       {{else}}
-        <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin">Sign In</button>
-        <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup">Sign Up</button>
+      <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin">Sign In</button>
+      <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup">Sign Up</button>
       {{/if}}
       {{/if}}
       {{!-- Dark Mode Toggle --}}
@@ -88,16 +71,16 @@
         Change Color Mode
       </p>
       <button class="color-mode-btn light" aria-label="Toggle light mode">
-          <svg aria-hidden="true">
-              <use href="#sun"></use>
-          </svg>
-          <span>Toggle Light Mode</span>
+        <svg aria-hidden="true">
+          <use href="#sun"></use>
+        </svg>
+        <span>Toggle Light Mode</span>
       </button>
       <button class="color-mode-btn dark" aria-label="Toggle dark mode">
-          <svg aria-hidden="true">
-              <use href="#moon"></use>
-          </svg>
-          <span>Toggle Dark Mode</span>
+        <svg aria-hidden="true">
+          <use href="#moon"></use>
+        </svg>
+        <span>Toggle Dark Mode</span>
       </button>
     </div>
   </div>

@@ -13,76 +13,75 @@
     opacity: 1;
   }
 }
+$borderWidth: 5px;
 .tt {
   position: absolute;
-  top: 2rem;
-  left: 50%;
   z-index: 11;
   display: none;
-  padding: 0.25rem;
+  padding: 0.25rem 0.5rem;
   font-weight: 300;
+  text-align: center;
+  white-space: nowrap;
   filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.12));
   border-radius: $radius;
-  transform: translateX(-50%);
-  @include color-map(background-color, surface4);
   animation: fade $transition;
+  @include color-map(background-color, surface4);
 
   &:after {
     position: absolute;
-    bottom: 100%;
-    left: 50%;
-    margin-left: -5px;
-    content: ' ';
+    content: '';
     border-color: transparent;
     border-style: solid;
-    border-width: 5px;
-    @include color-map(border-bottom-color, surface4);
+    border-width: $borderWidth;
   }
 
   &.right {
-    top: 0;
-    left: 200%;
-    white-space: nowrap;
-    transform: initial;
+    top: 50%;
+    left: calc(100% + #{$borderWidth});
+    transform: translate3d(0, -50%, 0);
 
     &:after {
-      top: 25%;
-      left: 0;
-      margin-left: -10px;
-      border-color: transparent;
-      transform: translate3d(0, 25%, 0);
+      top: 50%;
+      left: $borderWidth * -2;
+      transform: translate3d(0, -50%, 0);
       @include color-map(border-right-color, surface4);
     }
   }
 
   &.left {
-    top: 0;
-    left: -200%;
-    white-space: nowrap;
-    transform: translate3d(-50%, 0, 0);
+    top: 50%;
+    right: calc(100% + #{$borderWidth});
+    transform: translate3d(0, -50%, 0);
 
     &:after {
-      top: 25%;
-      right: 0;
-      left: initial;
-      margin-right: -10px;
-      border-color: transparent;
-      transform: translate3d(0, 25%, 0);
+      top: 50%;
+      right: $borderWidth * -2;
+      transform: translate3d(0, -50%, 0);
       @include color-map(border-left-color, surface4);
     }
   }
   &.top {
-    top: -2rem;
-    left: 0;
-    transform: translate3d(-25%, 0, 0);
+    top: 0;
+    left: 50%;
+    transform: translate3d(-50%, calc(-100% - #{$borderWidth}), 0);
 
     &:after {
-      top: 100%;
+      bottom: $borderWidth * -2;
       left: 50%;
-      margin-right: -5px;
-      border-color: transparent;
-      transform: translate3d(-25%, 0, 0);
+      transform: translate3d(-50%, 0, 0);
       @include color-map(border-top-color, surface4);
+    }
+  }
+  &.bottom {
+    bottom: 0;
+    left: 50%;
+    transform: translate3d(-50%, calc(100% + #{$borderWidth}), 0);
+
+    &:after {
+      top: $borderWidth * -2;
+      left: 50%;
+      transform: translate3d(-50%, 0, 0);
+      @include color-map(border-bottom-color, surface4);
     }
   }
 
