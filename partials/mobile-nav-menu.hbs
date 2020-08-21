@@ -1,6 +1,6 @@
 {{! Mobile Nav Menu }}
 <nav class="modal" id="menu" aria-expanded="false">
-  <button class="modal__close-btn" data-target="menu" data-tt="Close Menu" aria-label="Close menu">
+  <button class="modal__close-btn" data-target="menu" aria-label="Close menu">
     <svg aria-hidden="true">
       <use href="#close"></use>
     </svg>
@@ -28,7 +28,7 @@
       </p>
       <div class="mobile-nav-menu__social-media">
         {{#if @site.twitter}}
-        <a class="mobile-nav-menu__social-media-item twitter" data-tt="Twitter" href="{{twitter_url @site.twitter}}"
+        <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
           aria-label="Follow {{@site.title}} on Twitter">
           <svg aria-hidden="true">
             <use href="#twitter"></use>
@@ -36,7 +36,7 @@
         </a>
         {{/if}}
         {{#if @site.facebook}}
-        <a class="mobile-nav-menu__social-media-item facebook" data-tt="Facebook" href="{{facebook_url @site.facebook}}"
+        <a class="mobile-nav-menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
           aria-label="Follow {{@site.title}} on Facebook">
           <svg aria-hidden="true">
             <use href="#facebook"></use>

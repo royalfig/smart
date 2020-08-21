@@ -27,11 +27,11 @@ into the {body} of the default.hbs template --}}
                 <header class="author__header">
                     <div class="author__container">
                         <div class="author__img-container">
-                        {{#if profile_image}}
+                            {{#if profile_image}}
                             <img class="author__img" src="{{img_url profile_image size="m"}}" alt="{{name}}">
-                        {{else}}
+                            {{else}}
                             <div class="author__no-img"></div>
-                        {{/if}}
+                            {{/if}}
                         </div>
                         <div class="author__text">
                             <div class="author__text-container">
@@ -56,21 +56,21 @@ into the {body} of the default.hbs template --}}
                             {{/has}}
                             <div class="author__meta">
                                 {{#if twitter}}
-                                <a class="twitter" data-tt="Twitter" href="{{twitter_url}}" aria-label="Twitter">
+                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
                                         <use href="#twitter"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if facebook}}
-                                <a class="facebook" data-tt="Facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
                                     <svg>
                                         <use href="#facebook"></use>
                                     </svg>
                                 </a>
                                 {{/if}}
                                 {{#if website}}
-                                <a class="website" data-tt="{{website}}" href="{{website}}" aria-label="{{website}}">
+                                <a class="website" href="{{website}}" aria-label="{{website}}">
                                     <svg>
                                         <use href="#website"></use>
                                     </svg>
