@@ -1,6 +1,7 @@
 import '../scss/style.scss';
 import search from './search';
 import modalFn from './modal';
+import toast from './toast';
 
 import 'lazysizes';
 

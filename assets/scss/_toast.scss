@@ -1,0 +1,45 @@
+.toast {
+  position: fixed;
+  top: -100%;
+  left: 50%;
+  z-index: 15;
+  transform: translate3d(-50%, 0, 0);
+  animation: slide-in 0.3s forwards;
+
+  &__inner {
+    padding: 0.5rem 1rem;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+    @include color-map(background-color, primary);
+    @include color-map(color, textInverse);
+
+    p {
+      font-weight: 700;
+    }
+  }
+  &__slide-out {
+    animation: slide-out 0.3s;
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  100% {
+    top: 1rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    top: 1rem;
+    opacity: 1;
+  }
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}
