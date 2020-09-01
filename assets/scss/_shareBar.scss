@@ -50,6 +50,7 @@
       }
     }
   }
+
   &__link--facebook {
     @extend .post-share-bar__link;
 
@@ -60,6 +61,7 @@
       }
     }
   }
+
   &__link--linkedin {
     @extend .post-share-bar__link;
 
@@ -70,6 +72,7 @@
       }
     }
   }
+
   &__link--copy {
     @extend .post-share-bar__link;
     @include color-map(color, text2);
