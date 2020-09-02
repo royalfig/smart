@@ -1,3 +1,5 @@
+const { trapFocus, releaseFocus } = require('./focusTrap');
+
 const modalFn = () => {
   // Desktop buttons
   const accountBtn = document.getElementById('account-btn');
@@ -43,6 +45,7 @@ const modalFn = () => {
     if (input) {
       input.value = '';
     }
+    releaseFocus(modal);
   };
 
   const closeHandler = (e) => {
@@ -55,6 +58,7 @@ const modalFn = () => {
       close(e.currentTarget.closest('.modal'));
     }
     const modal = document.getElementById(e.currentTarget.dataset.target);
+    trapFocus(modal);
     document.body.classList.add('expanded-modal');
     modal.setAttribute('aria-expanded', 'true');
     const input = modal.querySelector('input');
