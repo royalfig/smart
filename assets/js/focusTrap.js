@@ -17,7 +17,26 @@ const getNonHiddenLastEl = (el) => {
   return penultimateEl;
 };
 
-const tabKeyHandler = (tabs, e) => {
+// Need to run a function that runs when modal opens and sets focus
+// Need to run a different function to handle keypresses
+
+const configureFocusableElements = (containerEl) => {
+  const focusableEl = containerEl.querySelectorAll(FOCUSABLE_EL);
+  focusableEl.forEach((el) => el.setAttribute('tabindex', '0'));
+  const firstElToFocus = focusableEl[1];
+  const firstTabStop = focusableEl[0];
+  const lastTabStop = getNonHiddenLastEl(focusableEl);
+  return [firstTabStop, lastTabStop, firstElToFocus];
+};
+
+export const trapFocus = (sideMenuEl) => {
+  currentFocus = document.activeElement;
+  const firstElToFocus = configureFocusableElements(sideMenuEl);
+  firstElToFocus[2].focus();
+};
+
+export function tabKeyHandler(e) {
+  const tabs = configureFocusableElements(this);
   const firstTabStop = tabs[0];
   const lastTabStop = tabs[1];
   if (e.keyCode === 9) {
@@ -33,25 +52,11 @@ const tabKeyHandler = (tabs, e) => {
       firstTabStop.focus();
     }
   }
-};
+}
 
-const trapFocus = (sideMenuEl) => {
-  currentFocus = document.activeElement;
+export const releaseFocus = (sideMenuEl) => {
   const focusableEl = sideMenuEl.querySelectorAll(FOCUSABLE_EL);
-  focusableEl[1].focus();
-  const firstTabStop = focusableEl[0];
-  const lastTabStop = getNonHiddenLastEl(focusableEl);
-
-  sideMenuEl.addEventListener(
-    'keydown',
-    tabKeyHandler.bind(null, [firstTabStop, lastTabStop])
-  );
-};
-
-const releaseFocus = (sideMenuEl) => {
+  focusableEl.forEach((el) => el.setAttribute('tabindex', '-1'));
   sideMenuEl.removeEventListener('keydown', tabKeyHandler);
   currentFocus.focus();
 };
-
-exports.trapFocus = trapFocus;
-exports.releaseFocus = releaseFocus;

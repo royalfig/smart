@@ -1,4 +1,4 @@
-const { trapFocus, releaseFocus } = require('./focusTrap');
+const { trapFocus, releaseFocus, tabKeyHandler } = require('./focusTrap');
 
 const modalFn = () => {
   // Desktop buttons
@@ -58,13 +58,10 @@ const modalFn = () => {
       close(e.currentTarget.closest('.modal'));
     }
     const modal = document.getElementById(e.currentTarget.dataset.target);
-    trapFocus(modal);
     document.body.classList.add('expanded-modal');
     modal.setAttribute('aria-expanded', 'true');
-    const input = modal.querySelector('input');
-    if (input) {
-      // input.focus();
-    }
+    trapFocus(modal);
+    modal.addEventListener('keydown', tabKeyHandler);
     const nonTargetCloseHandler = (ev) => {
       if (ev.target.classList.contains('content-wrap')) {
         close(modal);
