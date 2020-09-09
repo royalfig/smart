@@ -101,6 +101,13 @@
 
   &__title {
     @extend .modal__header;
+    &-link {
+      @include transition(color);
+      &:focus {
+        outline: none;
+        @include color-map(color, primary);
+      }
+    }
   }
 
   &__inner-container {
