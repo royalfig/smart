@@ -52,8 +52,9 @@
   margin: 0.5rem 0;
   font-family: $sans;
   font-size: 1rem;
+  font-weight: 700;
   border-radius: $radius;
-  @include transition(all);
+  @include transition(color);
 }
 
 .mobile-nav-menu {
@@ -201,7 +202,7 @@
     margin-right: 0;
     margin-left: 0;
     border-width: 1px;
-    @include transition(all);
+    @include transition(color);
 
     svg {
       // display: inline;

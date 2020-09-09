@@ -28,13 +28,6 @@ const createToast = (value) => {
   setTimeout(destroyToast.bind(null, container), 3000);
 };
 
-if (copyBtn) {
-  copyBtn.addEventListener(
-    'click',
-    createToast.bind(null, 'Link copied to clipboard')
-  );
-}
-
 const testWindowLocation = (testCase1, testCase2) => {
   const regEx1 = new RegExp(testCase1);
   const regEx2 = new RegExp(testCase2);
@@ -52,32 +45,41 @@ const cleanUrl = () => {
   window.history.replaceState({}, document.title, window.location.origin);
 };
 
-if (testWindowLocation('signin', 'true')) {
-  createToast('Log in successful!');
-  cleanUrl();
-}
+export default function toast() {
+  if (copyBtn) {
+    copyBtn.addEventListener(
+      'click',
+      createToast.bind(null, 'Link copied to clipboard')
+    );
+  }
 
-if (testWindowLocation('signup', 'true')) {
-  createToast('Sign up successful!');
-  cleanUrl();
-}
+  if (testWindowLocation('signin', 'true')) {
+    createToast('Log in successful!');
+    cleanUrl();
+  }
 
-if (testWindowLocation('subscribe', 'true')) {
-  createToast('Sign up successful!');
-  cleanUrl();
-}
+  if (testWindowLocation('signup', 'true')) {
+    createToast('Sign up successful!');
+    cleanUrl();
+  }
 
-if (testWindowLocation('checkout', 'true')) {
-  createToast('Checkout successful!');
-  cleanUrl();
-}
+  if (testWindowLocation('subscribe', 'true')) {
+    createToast('Sign up successful!');
+    cleanUrl();
+  }
 
-if (testWindowLocation('billing-update-success', 'true')) {
-  createToast('Billing update successful!');
-  cleanUrl();
-}
+  if (testWindowLocation('checkout', 'true')) {
+    createToast('Checkout successful!');
+    cleanUrl();
+  }
 
-if (testWindowLocation('billing-update-cancel', 'true')) {
-  createToast('Subscription cancelled');
-  cleanUrl();
+  if (testWindowLocation('billing-update-success', 'true')) {
+    createToast('Billing update successful!');
+    cleanUrl();
+  }
+
+  if (testWindowLocation('billing-update-cancel', 'true')) {
+    createToast('Subscription cancelled');
+    cleanUrl();
+  }
 }

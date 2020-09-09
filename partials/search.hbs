@@ -1,10 +1,6 @@
 {{! Search Modal }}
 <aside class='modal' id='search-modal' role='search' aria-expanded='false'>
-  <button
-    class='modal__close-btn'
-    data-tt='Close Search'
-    aria-label='close'
-  >
+  <button class='modal__close-btn' aria-label='close' tabindex="-1">
     <svg aria-hidden='true'>
       <use href='#close'></use>
     </svg>
@@ -21,14 +17,10 @@
           <label class='modal__label' for='search-input'>
             Enter Query
           </label>
-          <input
-            class='modal__input'
-            id='search-input'
-            placeholder="I'm looking for..."
-            autocomplete='false'
-          />
+          <input class='modal__input' id='search-input' placeholder="I'm looking for..." autocomplete='false'
+            tabindex="-1" />
         </div>
-        <button class='modal__btn' id='run-search-btn'>
+        <button class='modal__btn' id='run-search-btn' tabindex="-1">
           <span class='modal__btn--content'>
             Search
           </span>

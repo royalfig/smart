@@ -50,14 +50,14 @@ const shareBarAnimation = () => {
     shareBar.getBoundingClientRect().bottom <
       footer.getBoundingClientRect().top - buffer
   ) {
-    if (window.innerWidth > 1024) {
+    if (window.innerWidth >= 1024) {
       shareBar.style.marginLeft = '0';
       shareBar.style.opacity = '1';
     } else {
       shareBar.style.marginBottom = '0';
       shareBar.style.opacity = '1';
     }
-  } else if (window.innerWidth > 1024) {
+  } else if (window.innerWidth >= 1024) {
     shareBar.style.marginLeft = '-200px';
     shareBar.style.opacity = '0';
   } else {
