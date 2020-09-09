@@ -90,8 +90,8 @@ h6,
 
 :focus {
   outline-width: 2px;
-  outline-style: dotted;
-  @include color-map(outline-color, primary);
+  outline-style: dashed;
+  @include color-map(outline-color, text3);
   outline-offset: 1px;
 }
 ::-moz-focus-inner {

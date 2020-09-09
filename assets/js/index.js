@@ -1,6 +1,7 @@
 import '../scss/style.scss';
 import search from './search';
 import modalFn from './modal';
+import toast from './toast';
 
 import 'lazysizes';
 
@@ -15,8 +16,8 @@ if (typeof SEARCH_API !== 'undefined') {
 }
 
 modalFn();
-
-/**
+toast();
+/*
  * Grid styles
  * * Counts & adds the number of items to the grid container
  */
@@ -28,7 +29,7 @@ gridContainers.forEach((element) => {
   element.classList.add(`grid-container-home-${gridItems.length}`);
 });
 
-/**
+/*
  * Color mode toggle
  * ? Is the color mode button hidden on unsupported browsers?
  */
@@ -111,3 +112,10 @@ if (contactEl && navLinks) {
     }
   }
 }
+
+/*
+ * Remove menu nav links from the DOM
+ */
+const menuNavLinks = document.querySelectorAll('#menu a');
+
+menuNavLinks.forEach((el) => el.setAttribute('tabindex', '-1'));

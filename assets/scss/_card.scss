@@ -6,9 +6,8 @@
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  @include color-map(background, surface2);
+  @include color-map(background-color, surface2);
   border-radius: $radius;
-  @include transition(all);
   box-shadow: $box-shadow;
 
   &__link {
@@ -16,7 +15,8 @@
     flex-direction: column;
     height: 100%;
     border-radius: $radius;
-    @include transition(all);
+    transition: box-shadow 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95),
+      color 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 
     &:hover,
     &:focus {
@@ -49,7 +49,7 @@
     object-fit: cover;
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
-    @include transition(all);
+    // @include transition(all);
   }
 
   &__no-img {

@@ -80,10 +80,6 @@
     margin: 1rem 1rem 0 0;
     line-height: 0;
 
-    &:focus {
-      @include color-map(outline-color, text1);
-    }
-
     &:hover svg {
       @include color-map(stroke, secondary);
     }
