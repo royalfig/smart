@@ -67,7 +67,7 @@
     {{!-- Scripts to be parsed after load --}}
     <script src="{{asset 'built/app.js'}}" defer></script>
     {{^is "home"}}
-        <script src="{{asset 'built/post.js'}}" defer></script>
+    <script src="{{asset 'built/post.js'}}" defer></script>
     {{/is}}
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
@@ -81,9 +81,9 @@
         {{> "navbar"}}
         {{> "search"}}
         {{#if @labs.members}}
-            {{> "signup"}}
-            {{> "signin"}}
-            {{> "account"}}
+        {{> "signup"}}
+        {{> "signin"}}
+        {{> "account"}}
         {{/if}}
         {{!-- Mobile Nav Menu --}}
         {{> "mobile-nav-menu"}}
@@ -98,56 +98,74 @@
                         <p class="footer__header--serif">About</p>
                         <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
                         {{#if @site.description}}
-                            <p class="footer__description">{{@site.description}}</p>
+                        <p class="footer__description">{{@site.description}}</p>
                         {{/if}}
-                        {{#if @site.secondary_navigation}}
                         <div class="footer__social">
-                        {{navigation type="secondary"}}
+
+                            {{#if @site.twitter}}
+                            <a class="navigation__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+                                aria-label="Follow {{@site.title}} on Twitter">
+                                <svg aria-hidden="true">
+                                    <use href="#twitter"></use>
+                                </svg>
+                            </a>
+                            {{/if}}
+                            {{#if @site.facebook}}
+                            <a class="navigation__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+                                aria-label="Follow {{@site.title}} on Facebook">
+                                <svg aria-hidden="true">
+                                    <use href="#facebook"></use>
+                                </svg>
+                            </a>
+                            {{/if}}
+                            {{#if @site.secondary_navigation}}
+                            {{navigation type="secondary"}}
+                            {{/if}}
                         </div>
-                        {{/if}}
                     </div>
                     {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
-                        {{#if tags}}
-                            <div class="footer__section">
-                                <p class="footer__header--serif">Tags</p>
-                                {{#foreach tags}}
-                                    <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
-                                        <svg>
-                                            <use href="#hash"></use>
-                                        </svg>
-                                        <p>
-                                            {{name}}
-                                        </p>
-                                    </a>
-                                {{/foreach}}
-                            </div>
-                        {{/if}}
+                    {{#if tags}}
+                    <div class="footer__section">
+                        <p class="footer__header--serif">Tags</p>
+                        {{#foreach tags}}
+                        <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
+                            <svg>
+                                <use href="#hash"></use>
+                            </svg>
+                            <p>
+                                {{name}}
+                            </p>
+                        </a>
+                        {{/foreach}}
+                    </div>
+                    {{/if}}
                     {{/get}}
                     {{#get "posts" limit="6"}}
-                        <div class="footer__section--latest">
-                            <p class="footer__header--serif">Latest</p>
-                            {{#foreach posts limit="3"}}
-                                <p class="footer__date">
-                                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
-                                    </time>
-                                </p>
-                                <a class="footer__title" href="{{url}}">{{title}}</a>
-                            {{/foreach}}
-                        </div>
-                        <div class="footer__section--latest">
-                            <p class="footer__header--serif">&nbsp;</p>
-                            {{#foreach posts from="4" to="6"}}
-                                <p class="footer__date"><time
-                                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-                                </p>
-                                <a class="footer__title" href="{{url}}">{{title}}</a>
-                            {{/foreach}}
-                        </div>
+                    <div class="footer__section--latest">
+                        <p class="footer__header--serif">Latest</p>
+                        {{#foreach posts limit="3"}}
+                        <p class="footer__date">
+                            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
+                            </time>
+                        </p>
+                        <a class="footer__title" href="{{url}}">{{title}}</a>
+                        {{/foreach}}
+                    </div>
+                    <div class="footer__section--latest">
+                        <p class="footer__header--serif">&nbsp;</p>
+                        {{#foreach posts from="4" to="6"}}
+                        <p class="footer__date"><time
+                                datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                        </p>
+                        <a class="footer__title" href="{{url}}">{{title}}</a>
+                        {{/foreach}}
+                    </div>
                     {{/get}}
                 </div>
             </div>
             <div class="footer__published-by-ghost">
-                <p>&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Powered by <a href="https://ghost.org/">Ghost</a></p>
+                <p>&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> | Powered by <a
+                        href="https://ghost.org/">Ghost</a></p>
             </div>
         </footer>
         {{!-- Footer --}}

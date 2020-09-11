@@ -16,18 +16,27 @@
 
   &__header {
     display: inline;
+    margin: 0;
     @extend .serif;
   }
 
   &__read-more {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1.2;
+
+    h2 {
+      margin: 0;
+    }
+
     &:hover svg {
       @include color-map(stroke, secondary);
     }
 
     svg {
-      width: 2rem;
-      height: 2rem;
-      vertical-align: middle;
+      width: 2.074rem;
+      height: 2.074rem;
+      vertical-align: text-top;
       fill: none;
       stroke-width: 2px;
       @include color-map(stroke, text);
