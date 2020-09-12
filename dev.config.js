@@ -7,8 +7,7 @@ module.exports = {
   mode: 'development',
   entry: {
     app: './assets/js/index.js',
-    post: './assets/js/post.js',
-    head: './assets/js/head.js'
+    post: './assets/js/post.js'
   },
   output: {
     filename: '[name].js',
