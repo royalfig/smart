@@ -40,6 +40,10 @@
       }
     }
   }
+
+  &__list-link {
+    @extend .link;
+  }
 }
 //-------------------------------------------
 // Mobile Nav Menu
@@ -125,6 +129,10 @@
       margin: 1rem 0;
       font-size: 1.25rem;
       line-height: 1.2;
+    }
+
+    &__list-link {
+      @extend .link;
     }
   }
 
