@@ -95,6 +95,10 @@
     @include color-map(color, text3);
   }
 
+  &__location svg:hover {
+    stroke: currentColor;
+  }
+
   &__meta {
     @include flex(row, flex-start, center);
     justify-content: flex-start;

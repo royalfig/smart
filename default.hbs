@@ -3,14 +3,22 @@
 
 <head>
     <meta charset="UTF-8">
-    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{meta_title}}</title>
     {{!-- CSS  --}}
-    <link rel="stylesheet" href="{{asset 'built/app.css'}}">
-    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Regular.woff2'}}" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Bold.woff2'}}" type="font/woff2" crossorigin="anonymous">
+
+
     <style>
         @font-face {
             font-family: 'Lato';
@@ -53,17 +61,21 @@
         }
 
         body {
-            font-family: -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
-                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        .fonts-loaded body {
             font-family: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
                 ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     </style>
+    <link rel="stylesheet" href="{{asset 'built/app.css'}}">
     {{!-- Load scripts to execute before render --}}
-    <script type="text/javascript" src="{{asset 'built/head.js'}}"></script>
+    <script>
+        if (
+            localStorage.getItem('pref') === 'light' ||
+            (window.matchMedia('(prefers-color-scheme: light)').matches &&
+                !localStorage.getItem('pref'))
+        ) {
+            document.documentElement.setAttribute('color-mode', 'light');
+        }
+    </script>
     {{!-- Scripts to be parsed after load --}}
     <script src="{{asset 'built/app.js'}}" defer></script>
     {{^is "home"}}
