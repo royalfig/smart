@@ -258,12 +258,12 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 
   @if $type == outline {
     border: 1px solid currentColor;
-    @include color-map(color, text2);
+    @include color-map(color, $text);
     @include transition(color);
 
     &:hover {
       outline: none;
-      @include color-map(color, text);
+      @include color-map(color, $text);
     }
     &:active {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
@@ -284,7 +284,6 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
   @if $type == icon {
     @include color-map(background-color, $bgColor);
     @include color-map(color, $text);
-    border: 1px solid currentColor;
 
     svg {
       width: 1em;

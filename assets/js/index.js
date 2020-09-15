@@ -107,7 +107,7 @@ if (contactEl && navLinks) {
   // eslint-disable-next-line no-restricted-syntax
   for (const el of navLinks) {
     if (el.pathname === '/contact/') {
-      contactEl.style.display = 'block';
+      contactEl.style.display = 'inline-block';
       break;
     }
   }
