@@ -11,21 +11,65 @@
       {{@site.title}}
     </h2>
     {{/link}}
-
     <div class="modal__inner-container">
       {{! Main Navigation }}
       {{#if @site.navigation}}
       {{ navigation }}
       {{/if}}
+
+      {{#if @labs.members}}
+      <div class="divider">
+        <div class="divider__rule"></div>
+      </div>
+      {{! Member }}
+      <p class="mobile-nav-menu__social-media-header">
+        Membership
+      </p>
+      {{#if @member}}
+      <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account" tabindex="-1">
+        {{#if @member.avatar_image}}
+        <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+        {{else}}
+        <div class="mobile-nav-menu__no-member-avatar"></div>
+        {{/if}}
+      </button>
+      {{else}}
+      <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
+      <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup" tabindex="-1">Sign Up</button>
+      {{/if}}
+      {{/if}}
+      <div class="divider">
+        <div class="divider__rule"></div>
+      </div>
       {{! Search }}
       <button class="mobile-nav-menu__search-btn" id="m-search-btn" data-target="search-modal" tabindex="-1">
+        <svg aria-hidden="true">
+          <use href="#search"></use>
+        </svg>
         Search
+      </button>
+      {{!-- Dark Mode Toggle --}}
+      <button class="color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
+        <svg aria-hidden="true">
+          <use href="#sun"></use>
+        </svg>
+        Light Mode
+      </button>
+      <button class="color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
+        <svg aria-hidden="true">
+          <use href="#moon"></use>
+        </svg>
+        Dark Mode
       </button>
       {{! Social Media  }}
       {{#has any='@site.twitter, @site.facebook'}}
-      <p class="mobile-nav-menu__social-media-header">
+      <div class="divider">
+        <div class="divider__rule"></div>
+      </div>
+      {{! Member }}
+      {{!-- <p class="mobile-nav-menu__social-media-header">
         Social Media
-      </p>
+      </p> --}}
       <div class="mobile-nav-menu__social-media">
         {{#if @site.twitter}}
         <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
@@ -48,40 +92,6 @@
         {{navigation type='secondary'}}
         {{/if}}
       </div>
-      {{! Member }}
-      {{#if @labs.members}}
-      <p class="mobile-nav-menu__social-media-header">
-        Membership
-      </p>
-      {{#if @member}}
-      <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account" tabindex="-1">
-        {{#if @member.avatar_image}}
-        <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
-        {{else}}
-        <div class="mobile-nav-menu__no-member-avatar"></div>
-        {{/if}}
-      </button>
-      {{else}}
-      <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
-      <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup" tabindex="-1">Sign Up</button>
-      {{/if}}
-      {{/if}}
-      {{!-- Dark Mode Toggle --}}
-      <p class="mobile-nav-menu__social-media-header">
-        Change Color Mode
-      </p>
-      <button class="color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
-        <svg aria-hidden="true">
-          <use href="#sun"></use>
-        </svg>
-        <span>Toggle Light Mode</span>
-      </button>
-      <button class="color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
-        <svg aria-hidden="true">
-          <use href="#moon"></use>
-        </svg>
-        <span>Toggle Dark Mode</span>
-      </button>
     </div>
   </div>
 </nav>

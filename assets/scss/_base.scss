@@ -104,11 +104,17 @@ h6,
 }
 
 :focus {
-  outline-width: 2px;
-  outline-style: dashed;
+  outline-width: 1px;
+  outline-style: dotted;
   @include color-map(outline-color, text3);
-  outline-offset: 1px;
+  outline-offset: 3px;
 }
+
+a:active,
+button:active {
+  outline: none;
+}
+
 ::-moz-focus-inner {
   border: none;
   outline: none;

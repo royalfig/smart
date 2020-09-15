@@ -199,14 +199,14 @@
     width: 5px;
     height: 5px;
     margin: 0 2px;
-    border-radius: $radius;
+    border-radius: $radius - 3;
     @include color-map(background-color, text4);
   }
 
   &__lg-block {
     width: 8px;
     height: 8px;
-    border-radius: $radius;
+    border-radius: $radius - 2;
     @include color-map(background-color, text4);
   }
 }
