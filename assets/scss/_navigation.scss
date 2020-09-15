@@ -43,6 +43,9 @@
 
   &__list-link {
     @extend .link;
+    // &.nav-current:before {
+    //   clip-path: none;
+    // }
   }
 }
 //-------------------------------------------
@@ -156,15 +159,31 @@
 
   &__search-btn {
     display: none;
-    @include btn('link');
+    @include btn('list');
+    margin-top: 1rem;
+    @include transition(color);
   }
 
   &__social-media {
-    @include flex(row, flex-start, center);
+    @include flex(row, space-between, center);
+    flex-wrap: wrap;
+    a {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 0.5rem 1rem 0;
+      &:last-child {
+        margin-right: 0;
+      }
+      svg {
+        width: 100%;
+        height: 100%;
+        @include color-map(stroke, text2);
+      }
+    }
   }
 
   &__social-media-header {
-    margin: 2rem 0 0.25rem;
+    margin: 1rem 0 0.25rem;
     font-size: 0.8rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -172,19 +191,6 @@
   }
 
   // &__social-media .navigation__social-media-item,
-  &__social-media-item {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.5rem;
-    &:last-child {
-      margin-right: 0;
-    }
-    svg {
-      width: 100%;
-      height: 100%;
-      @include color-map(stroke, text2);
-    }
-  }
 
   &__signin,
   &__dark-mode-toggle {
@@ -212,34 +218,9 @@
 
 .modal {
   .color-mode-btn {
-    width: auto;
-    height: auto;
-    margin-right: 0;
-    margin-left: 0;
-    border-width: 1px;
+    @include btn('list');
+    margin-top: 1rem;
     @include transition(color);
-
-    svg {
-      // display: inline;
-      width: 1rem;
-      height: 1rem;
-      vertical-align: middle;
-    }
-    span {
-      display: inline;
-      font-family: $sans;
-      font-size: 1rem;
-      vertical-align: middle;
-      @include color-map(color, text2);
-    }
-    &:hover {
-      svg {
-        @include color-map(stroke, text);
-      }
-      span {
-        @include color-map(color, text);
-      }
-    }
   }
 }
 
@@ -438,23 +419,27 @@
       }
     }
   }
+
+  .color-mode-btn {
+    width: 1.5em;
+    height: 1.5em;
+    margin: 0 0.5rem;
+    line-height: 1;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      @include color-map(stroke, text2);
+      @include transition(stroke);
+
+      &:hover {
+        @include color-map(stroke, text);
+      }
+    }
+  }
 }
 
 .color-mode-btn {
-  width: 1.5em;
-  height: 1.5em;
-  margin: 0 0.5rem;
-  line-height: 1;
-  svg {
-    width: 100%;
-    height: 100%;
-    @include color-map(stroke, text2);
-    @include transition(stroke);
-
-    &:hover {
-      @include color-map(stroke, text);
-    }
-  }
   &.light {
     :root[color-mode='light'] & {
       display: none;
