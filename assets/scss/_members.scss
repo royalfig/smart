@@ -108,6 +108,11 @@
       margin: 0;
       font-size: 1.3rem;
     }
+
+    &--account {
+      @extend .modal__card;
+      text-align: left;
+    }
   }
 
   &__price {
@@ -137,8 +142,10 @@
   }
 
   // Account options
-  &__header {
-    margin-bottom: 0.5rem;
+  &__header--account {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
   }
 
   &__img {
@@ -167,7 +174,51 @@
 
     button {
       @include btn(link);
+      padding: 0;
     }
+  }
+
+  &__account-info {
+    margin-bottom: 1rem;
+    svg {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      margin-right: 2px;
+      vertical-align: text-top;
+    }
+  }
+
+  &__account-btn {
+    @include btn(link);
+    display: inline-block;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    &--cancel {
+      @include btn(icon, secondary, secondary, textInverse, textInverse);
+      display: block;
+      margin-bottom: 0;
+      line-height: 1.5;
+      text-align: center;
+    }
+  }
+
+  &__footer {
+    margin-top: 1rem;
+  }
+
+  &__upgrade {
+    @include btn(icon, primary, secondary, textInverse, textInverse);
+    width: 100%;
+    line-height: 1.5;
+  }
+
+  &__logout {
+    @include btn(outline, '', '', text2, text);
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
 
@@ -184,6 +235,7 @@
   }
 }
 
+// TODO Move to separate file
 .divider {
   @include flex(row, flex-start, center);
   margin: 1rem 0;

@@ -238,6 +238,14 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
   border-radius: $radius;
   box-shadow: $box-shadow;
 
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 1px;
+    vertical-align: text-top;
+    stroke: currentColor;
+  }
+
   @if $type == color {
     height: 2em;
     padding: 0.25rem;
@@ -263,7 +271,7 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 
     &:hover {
       outline: none;
-      @include color-map(color, $text);
+      @include color-map(color, $hvrText);
     }
     &:active {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
@@ -285,14 +293,6 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
     @include color-map(background-color, $bgColor);
     @include color-map(color, $text);
 
-    svg {
-      width: 1em;
-      height: 1em;
-      margin-right: 1px;
-      vertical-align: text-top;
-      stroke: currentColor;
-    }
-
     &:hover {
       @include color-map(background-color, $hvrColor);
       @include color-map(color, $hvrText);
@@ -309,14 +309,6 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
     text-align: left;
     background-color: transparent;
     box-shadow: none;
-
-    svg {
-      width: 1em;
-      height: 1em;
-      margin-right: 1px;
-      vertical-align: text-top;
-      stroke: currentColor;
-    }
   }
 }
 

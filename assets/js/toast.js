@@ -42,6 +42,7 @@ const testWindowLocation = (testCase1, testCase2) => {
 };
 
 const cleanUrl = () => {
+  console.log(window.location);
   window.history.replaceState({}, document.title, window.location.origin);
 };
 
@@ -55,6 +56,11 @@ export default function toast() {
 
   if (testWindowLocation('signin', 'true')) {
     createToast('Log in successful!');
+    cleanUrl();
+  }
+
+  if (testWindowLocation('signin', 'false')) {
+    createToast('Error signing in. Please try again.');
     cleanUrl();
   }
 
@@ -73,13 +79,24 @@ export default function toast() {
     cleanUrl();
   }
 
-  if (testWindowLocation('billing-update-success', 'true')) {
-    createToast('Billing update successful!');
+  if (testWindowLocation('stripe', 'cancel')) {
+    createToast('Checkout cancelled');
     cleanUrl();
   }
 
-  if (testWindowLocation('billing-update-cancel', 'true')) {
-    createToast('Subscription cancelled');
+  if (testWindowLocation('stripe', 'success')) {
+    createToast('Checkout successful!');
+    cleanUrl();
+  }
+
+  // For success on account billing edit
+  if (testWindowLocation('stripe', 'billing-update-success')) {
+    createToast('Billing update successful!');
+    cleanUrl();
+  }
+  // For success on account billing cancel
+  if (testWindowLocation('stripe', 'billing-update-cancel')) {
+    createToast('Billing update cancelled');
     cleanUrl();
   }
 }

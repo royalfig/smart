@@ -6,14 +6,10 @@
     </svg>
   </button>
   <div class='modal__container'>
-    {{#if @member.paid}}
+    {{#if @member}}
     {{! A logged-in, paying member shouldn't get here, but if they do. Redirect them home }}
     <p>
-      Paid
-    </p>
-    {{else if @member}}
-    <p>
-      Subbed
+      Add redirect
     </p>
     {{else}}
     {{! For those who have not yet subscribed }}
