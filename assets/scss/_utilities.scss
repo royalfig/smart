@@ -1,7 +1,6 @@
 //-------------------------------------------
 // Colors
 //-------------------------------------------
-
 // Social Media
 $ch: #6441a5; //Twitch
 $fb: #1877f2;
@@ -36,7 +35,8 @@ $yt: #ff0000;
   --four: #8b1c76;
   --five: #a00053;
   --success: #48a00d;
-  --error: #a4002e;
+  --error: #a40000;
+  --error-hover: hsl(0, 100%, 16%);
 
   --gradient: linear-gradient(
     to right top,
@@ -78,7 +78,8 @@ $yt: #ff0000;
   --five: #e0c081;
 
   --success: #b4d195;
-  --error: #ffab91;
+  --error: hsl(0, 100%, 78%);
+  --error-hover: hsl(0, 100%, 68%);
 
   --gradient: linear-gradient(
     to right top,
@@ -119,7 +120,8 @@ $colors: (
   'four': #b4d195,
   'five': #e0c081,
   'success': #b4d195,
-  'error': #ffab91,
+  'error': hsl(0, 100%, 78%),
+  'error-hover': hsl(0, 100%, 68%),
   'gradient':
     linear-gradient(to right top, #80deea, #8cdbbf, #b4d195, #e0c081, #ffab91)
 );
@@ -238,6 +240,14 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
   border-radius: $radius;
   box-shadow: $box-shadow;
 
+  svg {
+    width: 1em;
+    height: 1em;
+    margin-right: 1px;
+    vertical-align: text-top;
+    stroke: currentColor;
+  }
+
   @if $type == color {
     height: 2em;
     padding: 0.25rem;
@@ -263,7 +273,7 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 
     &:hover {
       outline: none;
-      @include color-map(color, $text);
+      @include color-map(color, $hvrText);
     }
     &:active {
       box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
@@ -285,14 +295,6 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
     @include color-map(background-color, $bgColor);
     @include color-map(color, $text);
 
-    svg {
-      width: 1em;
-      height: 1em;
-      margin-right: 1px;
-      vertical-align: text-top;
-      stroke: currentColor;
-    }
-
     &:hover {
       @include color-map(background-color, $hvrColor);
       @include color-map(color, $hvrText);
@@ -309,14 +311,6 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
     text-align: left;
     background-color: transparent;
     box-shadow: none;
-
-    svg {
-      width: 1em;
-      height: 1em;
-      margin-right: 1px;
-      vertical-align: text-top;
-      stroke: currentColor;
-    }
   }
 }
 

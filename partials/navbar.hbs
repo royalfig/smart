@@ -58,12 +58,8 @@
         {{#if @labs.members}}
         <div class="navbar__bottom--right">
             {{#if @member}}
-            <button class="navbar__member-button" id="account-btn" data-target="account" data-tt="Account">
-                {{#if @member.avatar_image}}
+            <button class="navbar__member-btn" id="account-btn" data-target="account" data-tt="Account">
                 <img class="navbar__avatar" src="{{@member.avatar_image}}" />
-                {{else}}
-                <div class="navbar__no-member-avatar"></div>
-                {{/if}}
             </button>
             {{else}}
             <button class="navbar__signin" id="signin-btn" data-target="signin">Sign In</button>

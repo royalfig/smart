@@ -8,6 +8,7 @@ const modalFn = () => {
   const searchBtn = document.getElementById('search-btn');
   const subtextSignupBtn = document.getElementById('subtext-signup');
   const subtextSigninBtn = document.getElementById('subtext-signin');
+  const upgrade = document.getElementById('upgrade');
 
   // Mobile buttons
   const mAccountBtn = document.getElementById('m-account-btn');
@@ -31,6 +32,7 @@ const modalFn = () => {
     searchBtn,
     subtextSignupBtn,
     subtextSigninBtn,
+    upgrade,
     mAccountBtn,
     mSigninBtn,
     mSignupBtn,

@@ -311,7 +311,8 @@
       margin-left: auto;
 
       @media (min-width: $laptop) {
-        display: block;
+        display: flex;
+        align-items: center;
       }
 
       &--mobile {
@@ -367,17 +368,19 @@
     }
   }
 
-  &__member-button {
+  &__member-btn {
+    position: relative;
     margin: 0;
 
     img {
-      width: 1.5rem;
-      height: 1.5rem;
+      width: 2rem;
+      height: 2rem;
       border-style: solid;
       border-width: 2px;
       border-radius: 50%;
       border-radius: 50%;
       @include color-map(border-color, text2);
+      @include color-map(background, gradient);
       @include transition(border-color);
     }
 
