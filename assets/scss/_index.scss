@@ -31,16 +31,18 @@
 
     &:hover svg {
       @include color-map(stroke, secondary);
+      margin-left: 0.5rem;
     }
 
     svg {
+      align-self: flex-end;
       width: 2.074rem;
       height: 2.074rem;
       vertical-align: text-top;
       fill: none;
       stroke-width: 2px;
       @include color-map(stroke, text);
-      @include transition(stroke);
+      @include transition(all);
     }
   }
 }

@@ -49,6 +49,11 @@ module.exports = {
             source: './assets/fonts/*.woff2',
             destination:
               '/home/ryan/Projects/ghost/content/themes/smart/assets/fonts'
+          },
+          {
+            source: './assets/img/*.svg',
+            destination:
+              '/home/ryan/Projects/ghost/content/themes/smart/assets/img'
           }
         ]
       }

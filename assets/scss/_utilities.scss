@@ -1,7 +1,6 @@
 //-------------------------------------------
 // Colors
 //-------------------------------------------
-
 // Social Media
 $ch: #6441a5; //Twitch
 $fb: #1877f2;
@@ -36,7 +35,8 @@ $yt: #ff0000;
   --four: #8b1c76;
   --five: #a00053;
   --success: #48a00d;
-  --error: #a4002e;
+  --error: #a40000;
+  --error-hover: hsl(0, 100%, 16%);
 
   --gradient: linear-gradient(
     to right top,
@@ -78,7 +78,8 @@ $yt: #ff0000;
   --five: #e0c081;
 
   --success: #b4d195;
-  --error: #ffab91;
+  --error: hsl(0, 100%, 78%);
+  --error-hover: hsl(0, 100%, 68%);
 
   --gradient: linear-gradient(
     to right top,
@@ -119,7 +120,8 @@ $colors: (
   'four': #b4d195,
   'five': #e0c081,
   'success': #b4d195,
-  'error': #ffab91,
+  'error': hsl(0, 100%, 78%),
+  'error-hover': hsl(0, 100%, 68%),
   'gradient':
     linear-gradient(to right top, #80deea, #8cdbbf, #b4d195, #e0c081, #ffab91)
 );

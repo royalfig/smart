@@ -368,7 +368,8 @@
     }
   }
 
-  &__member-button {
+  &__member-btn {
+    position: relative;
     margin: 0;
 
     img {
@@ -379,6 +380,7 @@
       border-radius: 50%;
       border-radius: 50%;
       @include color-map(border-color, text2);
+      @include color-map(background, gradient);
       @include transition(border-color);
     }
 

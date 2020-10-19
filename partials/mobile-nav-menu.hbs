@@ -26,15 +26,17 @@
         Membership
       </p>
       {{#if @member}}
-      <button class="mobile-nav-menu__account-button" id="m-account-btn" data-target="account" tabindex="-1">
-        {{#if @member.avatar_image}}
-        <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
-        {{else}}
-        <div class="mobile-nav-menu__no-member-avatar"></div>
-        {{/if}}
+      <button class="mobile-nav-menu__account-btn" id="m-account-btn" data-target="account" tabindex="-1">
+        <div class="mobile-nav-menu__img-container">
+          <svg aria-hidden="true">
+            <use href="#user"></use>
+          </svg>
+          <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+        </div>
+        Account
       </button>
       {{else}}
-      <button class="mobile-nav-menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
+      <button class=" mobile-nav-menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
       <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup" tabindex="-1">Sign Up</button>
       {{/if}}
       {{/if}}
