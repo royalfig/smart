@@ -294,6 +294,7 @@ $transition: 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
   @if $type == icon {
     @include color-map(background-color, $bgColor);
     @include color-map(color, $text);
+    @include transition(all);
 
     &:hover {
       @include color-map(background-color, $hvrColor);

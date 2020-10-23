@@ -1,5 +1,4 @@
-/* eslint-disable import/no-extraneous-dependencies */
-import Fuse from 'fuse.js/dist/fuse.basic.esm';
+import * as JsSearch from 'js-search';
 import GhostContentAPI from '@tryghost/content-api';
 
 const searchModal = document.getElementById('search-modal');
@@ -48,7 +47,7 @@ const search = () => {
     }
   }).catch((err) => {
     // eslint-disable-next-line no-alert
-    alert(`Something went wrong. Please try again.\nError Details: ${err} err`);
+    alert(`Something went wrong. Please try again.\nError Details: ${err}`);
   });
 
   // Page Elements
@@ -56,36 +55,29 @@ const search = () => {
   const runSearchBtn = document.getElementById('run-search-btn');
   const searchResultHeader = document.querySelector('.search-results__header');
   const searchResult = document.querySelector('.search-results__container');
-  const months = [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec'
-  ];
+
+  const dateFormatter = (isoDate) => {
+    const options = {
+      year: 'numeric',
+      month: 'short',
+      day: '2-digit'
+    };
+    const date = new Date(isoDate);
+
+    return date.toLocaleDateString(undefined, options);
+  };
 
   const searchPosts = (term) => {
-    const options = {
-      threshold: 0.2,
-      // ignoreLocation: true,
-      location: 5000,
-      distance: 10000,
-      minMatchCharLength: term.length - 2,
-      includeMatches: true,
-      keys: ['title', 'plaintext', 'tags.name']
-    };
     stateLoader('loading', true);
     searchResult.innerHTML = '';
     api.then((posts) => {
-      const index = new Fuse(posts, options);
-      const result = index.search(term);
+      const newSearch = new JsSearch.Search('id');
+      newSearch.addIndex('title');
+      newSearch.addIndex('plaintext');
+
+      newSearch.addDocuments(posts);
+      const result = newSearch.search(term);
+
       if (result.length > 1) {
         searchResultHeader.textContent = `${result.length} Results for “${term}”`;
       } else if (result.length !== 0) {
@@ -95,48 +87,15 @@ const search = () => {
       }
 
       result.forEach((post) => {
-        const match = post.matches;
-        let matchText = '';
-        let matchKey = '';
-        const matchKeyTransform = (input) => {
-          if (input.toUpperCase() === 'PLAINTEXT') {
-            return '<span class="match-key">TEXT</span> ';
-          }
-          if (input.toUpperCase() === 'TAGS.NAME') {
-            return '<span class="match-key">TAG</span> ';
-          }
-          return `<span class="match-key">${input.toUpperCase()}</span>`;
-        };
-
-        if (match.length) {
-          const firstMatch = match[0];
-          const { indices } = firstMatch;
-          const startMatch = indices[0][0];
-          const endMatch = indices[0][1];
-          const matchArr = Array.from(firstMatch.value);
-          matchArr.splice(startMatch, 0, '»');
-          matchArr.splice(endMatch + 2, 0, '«');
-          const excerptStart = startMatch - 10 > 0 ? startMatch - 10 : 0;
-          matchKey = matchKeyTransform(firstMatch.key);
-          matchText = matchArr
-            .join('')
-            .substring(excerptStart, excerptStart + 255)
-            .trim();
-          matchText = excerptStart === 0 ? matchText : `...${matchText}`;
-          matchText = matchText.length > 254 ? `${matchText}...` : matchText;
-          matchText = matchText.replace(/<.+?>/g, '');
-        }
-
-        const day = post.item.published_at.substring(8, 10);
-        const year = post.item.published_at.substring(0, 4);
-        const month =
-          months[parseInt(post.item.published_at.substring(5, 7), 10) - 1];
-        const publishedString = `${day} ${month} ${year}`;
         searchResult.innerHTML += `<article class="search-results__item">
-              <p class="search-results__date">${publishedString}</p>
-              <a class="search-results__link" href="${post.item.url}">${post.item.title}</a>
-              <p class="search-results__match">
-                ${matchKey}${matchText}</p>
+        <a class="search-results__link" href="${post.url}">
+              <p class="search-results__date">${dateFormatter(
+                post.published_at
+              )}</p>
+              <p class="search-results__title">${post.title}</p>
+              <p class="search-results__excerpt">
+                ${post.excerpt}</p>
+                </a>
             </article>`;
       });
 
