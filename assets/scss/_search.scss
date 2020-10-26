@@ -1,0 +1,72 @@
+//-------------------------------------------
+// Search Styles
+//-------------------------------------------
+.modal__btn--search {
+  @include btn(icon, primary, secondary, textInverse, textInverse);
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+.search-results {
+  padding: 1rem 0;
+
+  &__header {
+    @extend .modal__label;
+  }
+
+  &__item {
+    margin-top: 1rem;
+    text-align: left;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+    @include color-map(background-color, surface3);
+
+    &:first-child {
+      margin-top: 0.25rem;
+    }
+  }
+
+  &__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border: 3px solid transparent;
+    border-radius: $radius;
+    @include transition(box-shadow);
+
+    &:hover {
+      box-shadow: 0 0 0 4px color(surface4);
+      box-shadow: 0 0 0 4px var(--surface4);
+    }
+  }
+
+  &__date {
+    font-size: 0.8rem;
+    @include color-map(color, text1);
+    background: none;
+  }
+
+  &__title {
+    margin: 0.25rem 0;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    @extend .serif;
+    @include transition(color);
+
+    .search-results__link:hover & {
+      @include color-map(color, primary);
+    }
+  }
+
+  &__excerpt {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.95rem;
+    -webkit-line-clamp: 3;
+    text-overflow: ellipsis;
+    @include color-map(color, text1);
+  }
+}

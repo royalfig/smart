@@ -66,6 +66,7 @@
     "fuse.js": "^6.4.1",
     "hamburgers": "^1.1.3",
     "hover.css": "^2.3.2",
+    "js-search": "^2.0.0",
     "lazysizes": "^5.2.2",
     "medium-zoom": "^1.0.6",
     "normalize.css": "^8.0.1"

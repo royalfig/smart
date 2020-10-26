@@ -18,15 +18,15 @@
           <input class='modal__input' id='search-input' placeholder="I'm looking for..." autocomplete='false'
             tabindex="-1" />
         </div>
-        <button class='modal__btn' id='run-search-btn' tabindex="-1">
+        <button class='modal__btn--search' id='run-search-btn' tabindex="-1">
+          <svg>
+            <use href="#search"></use>
+          </svg>
           <span class='modal__btn--content'>
             Search
           </span>
           <svg class='modal__btn--loading' aria-label='Loading...'>
             <use href='#loader'></use>
-          </svg>
-          <svg class='modal__btn--success' aria-label='Success!'>
-            <use href='#check'></use>
           </svg>
         </button>
       </div>
