@@ -88,7 +88,7 @@ const search = () => {
 
       result.forEach((post) => {
         searchResult.innerHTML += `<article class="search-results__item">
-        <a class="search-results__link" href="${post.url}">
+            <a class="search-results__link" href="${post.url}">
               <p class="search-results__date">${dateFormatter(
                 post.published_at
               )}</p>
@@ -100,13 +100,12 @@ const search = () => {
       });
 
       stateLoader('loading', false);
-      stateLoader('success', true);
     });
   };
 
   const enterSearchTermCheck = () => {
-    searchResultHeader.textContent = 'Enter a search term';
-    searchResult.innerHTML = ''; // Remove?
+    if (!searchResult.innerHTML)
+      searchResultHeader.textContent = 'Enter a search term';
   };
 
   runSearchBtn.addEventListener('click', () => {
@@ -120,23 +119,18 @@ const search = () => {
   searchInput.addEventListener('keyup', (e) => {
     if (searchInput.value === '') {
       enterSearchTermCheck();
-    } else if (e.keyCode === 13) {
+    } else if (e.key === 'Enter') {
       searchPosts(searchInput.value);
     }
   });
 
-  const resetState = () => {
-    stateLoader('loading', false);
-    stateLoader('success', false);
-  };
-
   searchInput.addEventListener('focus', (e) => {
-    resetState();
+    stateLoader('loading', false);
     e.target.value = '';
   });
 
   searchInput.addEventListener('input', () => {
-    resetState();
+    stateLoader('loading', false);
   });
 };
 
