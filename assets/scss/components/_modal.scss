@@ -95,7 +95,6 @@
 
   &__inner-container {
     width: 100%;
-    // padding: 2rem 0;
     margin: 1rem 0;
   }
 
@@ -153,10 +152,12 @@
     &:hover,
     &:hover img,
     &:hover svg,
-    &:hover .menu__img-container {
-      @include color-map(color, text);
-      @include color-map(stroke, text);
-      @include color-map(border-color, text);
+    &:hover .menu {
+      &__img-container {
+        @include color-map(color, text);
+        @include color-map(stroke, text);
+        @include color-map(border-color, text);
+      }
     }
   }
 
