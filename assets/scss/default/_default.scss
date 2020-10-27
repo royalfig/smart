@@ -1,0 +1,185 @@
+//-------------------------------------------
+// Element reset
+//-------------------------------------------
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+//-------------------------------------------
+// Global Styles
+//-------------------------------------------
+
+html {
+  font-size: 1rem;
+  font-size: clamp(1rem, #{'1rem + 0.2vw'}, 1.25rem);
+  font-weight: 400;
+  line-height: 1.5;
+  @include color-map(color, text);
+  @include color-map(background-color, surface1);
+  scroll-behavior: smooth;
+
+  // Fallback for older browsers
+  @include respond-above($tablet) {
+    font-size: 1.0625rem; //17px
+    font-size: clamp(1rem, #{'1rem + 0.2vw'}, 20px);
+  }
+
+  @include respond-above($laptop) {
+    font-size: 1.125rem; //18px
+    font-size: clamp(1rem, #{'1rem + 0.2vw'}, 20px);
+  }
+
+  @include respond-above($desktop) {
+    font-size: 1.25rem; //20px
+    font-size: clamp(1rem, #{'1rem + 0.2vw'}, 20px);
+  }
+}
+
+//-------------------------------------------
+// Tyopgraphy
+//-------------------------------------------
+.serif {
+  font-family: $serif;
+  font-weight: 400;
+}
+
+%headings {
+  margin: 1em 0 0.35em;
+  @extend .serif;
+  line-height: 1.2;
+}
+
+h1 {
+  @extend %headings;
+  margin-top: 0;
+  font-size: 2.488rem;
+}
+
+h2 {
+  font-size: 2.074rem;
+  @extend %headings;
+}
+
+h3 {
+  font-size: 1.728rem;
+  @extend %headings;
+}
+
+h4 {
+  font-size: 1.44rem;
+  @extend %headings;
+}
+
+h5 {
+  font-size: 1.2rem;
+  @extend %headings;
+}
+
+h6 {
+  font-size: 1rem;
+  @extend %headings;
+}
+
+//-------------------------------------------
+// Psuedoselectors
+//-------------------------------------------
+:link {
+  color: currentColor;
+  text-decoration: none;
+}
+
+:visited {
+  color: currentColor;
+}
+
+::selection {
+  color: #000000;
+  background-color: #ccff00;
+}
+
+:target {
+  @include navbar(padding-top);
+  @include navbar(margin-top, $negative: true);
+}
+
+:focus {
+  outline-width: 1px;
+  outline-style: dotted;
+  @include color-map(outline-color, text3);
+  outline-offset: 3px;
+}
+
+a:active,
+button:active {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: none;
+  outline: none;
+}
+
+//-------------------------------------------
+// Containers & Dividers
+//-------------------------------------------
+.outer-container {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+
+  @include respond-between($tablet, $laptop) {
+    padding: 1rem 3rem 2rem;
+  }
+
+  @include respond-above($laptop) {
+    padding: 1rem 4rem 2rem;
+  }
+}
+
+.inner-container {
+  max-width: $laptop;
+  margin: 0 auto 1rem;
+}
+
+// is this in use?
+// .header {
+//   position: relative;
+//   margin: 0;
+// }
+
+.divider {
+  @include flex(row, flex-start, center);
+  margin: 1rem 0;
+
+  &__rule {
+    flex: 1;
+    height: 1px;
+    border-radius: $radius;
+    @include color-map(background-color, text4);
+  }
+
+  &__sm-block {
+    width: 5px;
+    height: 5px;
+    margin: 0 2px;
+    border-radius: $radius - 3;
+    @include color-map(background-color, text4);
+  }
+
+  &__lg-block {
+    width: 8px;
+    height: 8px;
+    border-radius: $radius - 2;
+    @include color-map(background-color, text4);
+  }
+}

@@ -38,6 +38,7 @@
     background: linear-gradient(45deg, color(primary), color(secondary));
     background: var(--gradient);
     border-radius: $radius;
+    box-shadow: $box-shadow;
 
     .post-template & {
       max-width: $tablet + 100;
@@ -69,6 +70,7 @@
       margin: 0 auto;
       object-fit: cover;
       border-radius: $radius;
+      box-shadow: $box-shadow;
 
       @supports (object-fit: cover) {
         width: 100%;

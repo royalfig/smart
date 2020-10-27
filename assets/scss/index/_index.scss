@@ -1,11 +1,11 @@
 //-------------------------------------------
 // For Home, Index, and Tag pages
 //-------------------------------------------
-
 .main {
   width: 100%;
   margin: 0 auto;
   overflow-x: hidden;
+
   &--outer-container {
     @extend .outer-container;
   }
@@ -45,4 +45,8 @@
       @include transition(all);
     }
   }
+}
+
+.index {
+  @include navbar(margin-top);
 }

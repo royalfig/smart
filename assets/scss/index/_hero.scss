@@ -67,26 +67,6 @@
     @include btn(icon, primary, secondary, textInverse, textInverse);
 
     margin-top: 1rem;
-    // a {
-    //   padding: 0.25rem 0.5rem;
-    //   font-family: $sans;
-    //   font-size: 1rem;
-    //   border-radius: $radius;
-    //   @include color-map(background-color, primary);
-    //   @include color-map(color, textInverse);
-    //   @include transition(background-color);
-
-    //   &:hover {
-    //     @include color-map(background-color, secondary);
-    //   }
-
-    //   svg {
-    //     width: 0.9em;
-    //     height: 0.9em;
-    //     margin-right: 0.25em;
-    //     vertical-align: text-top;
-    //   }
-    // }
   }
 
   &__header-container {

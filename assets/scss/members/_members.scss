@@ -1,0 +1,108 @@
+.modal {
+  &__title {
+    margin: 0 0 2rem;
+    font-size: 1.5rem;
+    line-height: 1;
+  }
+
+  &__info {
+    margin-top: 1rem;
+    font-weight: 700;
+  }
+
+  &__benefits {
+    margin-top: 1rem;
+  }
+
+  &__ul {
+    padding-left: 2rem;
+    margin: 0.25rem 0 1rem;
+    list-style-type: square;
+  }
+
+  &__form {
+    @extend .modal__inner-container;
+    padding: 0;
+  }
+
+  &__label {
+    @extend .form__label;
+  }
+
+  &__input {
+    @extend .form__input;
+    margin-bottom: 0;
+  }
+
+  &__btn {
+    @include btn(color);
+    width: 100%;
+
+    &--content {
+      .loading &,
+      .success & {
+        display: none;
+      }
+    }
+    &--loading {
+      display: none;
+
+      .loading & {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+        animation: rotate 1s linear infinite;
+      }
+    }
+    &--success {
+      display: none;
+      .success & {
+        display: inline-block;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+  }
+
+  %state {
+    display: none;
+    padding: 0.25rem 0.5rem;
+    margin-top: 0.5rem;
+    text-align: left;
+    border-radius: $radius;
+    @include color-map(color, textInverse);
+  }
+
+  &__success {
+    @extend %state;
+    @include color-map(color, text2);
+    @include color-map(background-color, success);
+
+    .success & {
+      display: block;
+    }
+  }
+
+  &__error {
+    @extend %state;
+    color: #ffffff;
+    @include color-map(background-color, error);
+
+    .error & {
+      display: block;
+    }
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,51 @@
+//-------------------------------------------
+// Sign Up
+//-------------------------------------------
+.modal {
+  &__card {
+    width: 100%;
+    padding: 1rem;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    text-align: center;
+    border-radius: $radius;
+    box-shadow: $box-shadow;
+    @include color-map(background-color, surface4);
+
+    &--title {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    &--account {
+      @extend .modal__card;
+      text-align: left;
+    }
+  }
+
+  &__price {
+    margin-top: 1rem;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__term {
+    margin-bottom: 1rem;
+    font-size: 0.8rem;
+    font-weight: 400;
+    @include color-map(color, text1);
+  }
+
+  &__discount {
+    font-style: italic;
+  }
+
+  &__checkout {
+    @include btn(color);
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+}

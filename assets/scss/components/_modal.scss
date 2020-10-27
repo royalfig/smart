@@ -142,7 +142,7 @@
   }
 }
 
-.mobile-nav-menu {
+.menu {
   &__account-btn {
     display: flex;
     align-items: center;
@@ -153,7 +153,7 @@
     &:hover,
     &:hover img,
     &:hover svg,
-    &:hover .mobile-nav-menu__img-container {
+    &:hover .menu__img-container {
       @include color-map(color, text);
       @include color-map(stroke, text);
       @include color-map(border-color, text);
