@@ -38,7 +38,7 @@ into the {body} of the default.hbs template --}}
             {{#get "posts" limit="3" include="authors,tags"}}
             <section>
                 <h2>Recent Posts</h2>
-                <div class="grid-container-home">
+                <div class="grid-container">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}

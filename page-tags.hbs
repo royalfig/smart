@@ -26,7 +26,7 @@ into the {body} of the default.hbs template --}}
             </header>
             {{/post}}
             {{#get "tags" include="count.posts" limit="all"}}
-            <section class="grid-container-home">
+            <section class="grid-container">
                 {{#foreach tags}}
                 {{!-- Card  --}}
                 <article class="card--tags card-{{@number}} {{slug}}">

@@ -32,9 +32,18 @@
 //------------------------ -------------------
 @mixin flex($direction, $justify, $align) {
   display: flex;
-  flex-direction: $direction;
-  align-items: $align;
-  justify-content: $justify;
+
+  @if $direction == column {
+    flex-direction: $direction;
+  }
+
+  @if $justify != flex-start {
+    justify-content: $justify;
+  }
+
+  @if $align != stretch {
+    align-items: $align;
+  }
 }
 
 @mixin respond-above($breakpoint) {

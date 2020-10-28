@@ -1,14 +1,14 @@
 //-------------------------------------------
 // Grid Styles
 //-------------------------------------------
-.grid-container {
+.grid {
   display: grid;
   gap: 1.5rem;
 }
 
 // Mobile phones
-.grid-container-home {
-  @extend .grid-container;
+.grid-container {
+  @extend .grid;
   align-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
   max-width: 100%;
@@ -17,7 +17,7 @@
 
 // Tablets
 @media (min-width: $tablet) and (max-width: $laptop - 1) {
-  .grid-container-home-1 {
+  .grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
     .card-1 {
@@ -45,12 +45,12 @@
     }
   }
 
-  .grid-container-home-2,
-  .grid-container-home-4 {
+  .grid-container-2,
+  .grid-container-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-home-3 {
+  .grid-container-3 {
     grid-template-areas:
       'one one'
       'two three';
@@ -91,7 +91,7 @@
     }
   }
 
-  .grid-container-home-5 {
+  .grid-container-5 {
     grid-template-areas:
       'one one'
       'two three'
@@ -144,7 +144,7 @@
 
 // Laptops
 @media (min-width: $laptop) and (max-width: $desktop - 1) {
-  .grid-container-home-1 {
+  .grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
     .card-1 {
@@ -172,12 +172,12 @@
     }
   }
 
-  .grid-container-home-2,
-  .grid-container-home-4 {
+  .grid-container-2,
+  .grid-container-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-home-3 {
+  .grid-container-3 {
     grid-template-areas:
       'one one'
       'two three';
@@ -218,7 +218,7 @@
     }
   }
 
-  .grid-container-home-5 {
+  .grid-container-5 {
     grid-template-areas:
       'one one'
       'two three'
@@ -271,7 +271,7 @@
 
 // Desktops
 @media (min-width: $desktop) {
-  .grid-container-home-1 {
+  .grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
     .card-1 {
@@ -299,15 +299,15 @@
     }
   }
 
-  .grid-container-home-2 {
+  .grid-container-2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-home-3 {
+  .grid-container-3 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .grid-container-home-4 {
+  .grid-container-4 {
     grid-template-areas:
       'one two'
       'three four';
@@ -330,7 +330,7 @@
     }
   }
 
-  .grid-container-home-5 {
+  .grid-container-5 {
     grid-template-areas:
       'one one one two two two'
       'three three four four five five';
