@@ -38,7 +38,6 @@ const testWindowLocation = (test) => {
 };
 
 const cleanUrl = () => {
-  console.log(window.location);
   window.history.replaceState({}, document.title, window.location.origin);
 };
 

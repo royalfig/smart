@@ -21,12 +21,12 @@ toast();
  * Grid styles
  * * Counts & adds the number of items to the grid container
  */
-const gridContainers = document.querySelectorAll('.grid-container-home');
+const gridContainers = document.querySelectorAll('.grid-container');
 
 gridContainers.forEach((element) => {
   const gridItems = element.querySelectorAll('.card');
 
-  element.classList.add(`grid-container-home-${gridItems.length}`);
+  element.classList.add(`grid-container-${gridItems.length}`);
 });
 
 /*

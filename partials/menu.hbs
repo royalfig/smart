@@ -6,8 +6,8 @@
     </svg>
   </button>
   <div class="modal__container">
-    {{#link href=@site.url class='mobile-nav-menu__title-link'}}
-    <h2 class="mobile-nav-menu__title">
+    {{#link href=@site.url class='menu__link'}}
+    <h2 class="modal__header">
       {{@site.title}}
     </h2>
     {{/link}}
@@ -17,34 +17,34 @@
       {{ navigation }}
       {{/if}}
 
+      {{! Member }}
       {{#if @labs.members}}
       <div class="divider">
         <div class="divider__rule"></div>
       </div>
-      {{! Member }}
-      <p class="mobile-nav-menu__social-media-header">
+      <p class="menu__social-media-header">
         Membership
       </p>
       {{#if @member}}
-      <button class="mobile-nav-menu__account-btn" id="m-account-btn" data-target="account" tabindex="-1">
-        <div class="mobile-nav-menu__img-container">
+      <button class="menu__account-btn" id="m-account-btn" data-target="account" tabindex="-1">
+        <div class="menu__img-container">
           <svg aria-hidden="true">
             <use href="#user"></use>
           </svg>
-          <img class="mobile-nav-menu__avatar" src="{{@member.avatar_image}}" />
+          <img class="menu__avatar" src="{{@member.avatar_image}}" />
         </div>
         Account
       </button>
       {{else}}
-      <button class=" mobile-nav-menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
-      <button class="mobile-nav-menu__signup" id="m-signup-btn" data-target="signup" tabindex="-1">Sign Up</button>
+      <button class="menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
+      <button class="menu__signup" id="m-signup-btn" data-target="signup" tabindex="-1">Sign Up</button>
       {{/if}}
       {{/if}}
       <div class="divider">
         <div class="divider__rule"></div>
       </div>
       {{! Search }}
-      <button class="mobile-nav-menu__search-btn" id="m-search-btn" data-target="search-modal" tabindex="-1">
+      <button class="menu__search-btn" id="m-search-btn" data-target="search-modal" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#search"></use>
         </svg>
@@ -69,12 +69,9 @@
         <div class="divider__rule"></div>
       </div>
       {{! Member }}
-      {{!-- <p class="mobile-nav-menu__social-media-header">
-        Social Media
-      </p> --}}
-      <div class="mobile-nav-menu__social-media">
+      <div class="menu__social-media">
         {{#if @site.twitter}}
-        <a class="mobile-nav-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+        <a class="menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
           aria-label="Follow {{@site.title}} on Twitter" tabindex="-1">
           <svg aria-hidden="true">
             <use href="#twitter"></use>
@@ -82,7 +79,7 @@
         </a>
         {{/if}}
         {{#if @site.facebook}}
-        <a class="mobile-nav-menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+        <a class="menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
           aria-label="Follow {{@site.title}} on Facebook" tabindex="-1">
           <svg aria-hidden="true">
             <use href="#facebook"></use>

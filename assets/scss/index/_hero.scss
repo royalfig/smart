@@ -1,0 +1,70 @@
+.hero {
+  position: relative;
+  width: 100%;
+  height: 20rem;
+  background-position: center;
+  background-size: cover;
+  @include navbar(margin-top);
+  @include color-map(background-color, surface1);
+
+  @media (min-height: 50rem) {
+    height: 30rem;
+  }
+
+  &__overlay {
+    @include flex(column, center, center);
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background: rgba(10, 10, 20, 0.5);
+  }
+
+  &__top,
+  &__bottom {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__top {
+    @extend .outer-container;
+    @include flex(column, center, flex-start);
+  }
+
+  &__text-container {
+    position: relative;
+    @include flex(column, center, flex-start);
+    width: 100%;
+    max-width: $laptop;
+    margin: 0.5rem auto;
+  }
+
+  &__site-title {
+    z-index: 3;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    @extend .serif;
+    font-size: 2.75rem;
+    line-height: 1;
+    color: #ffffff;
+    text-align: left;
+    @include respond-above($laptop) {
+      font-size: 3.4rem;
+    }
+  }
+
+  &__site-description {
+    margin: 0;
+    font-family: $sans;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: rgba(238, 238, 238, 0.75);
+    text-align: left;
+  }
+
+  &__contact {
+    display: none;
+    @include btn(icon, primary, secondary, textInverse, textInverse);
+    margin-top: 1rem;
+  }
+}

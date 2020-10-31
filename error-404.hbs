@@ -21,12 +21,12 @@ into the {body} of the default.hbs template --}}
 </header>
 {{!-- Post Header  --}}
 
-<main class="error">
-    <div class="outer-container">
-        <div class="inner-container">
+<main class="main--error">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <header class="post__header">
-                <h1 class="error__heading">{{statusCode}}</h1>
-                <p class="error__text">{{message}}</p>
+                <h1 class="main--error__heading">{{statusCode}}</h1>
+                <p class="main--error__text">{{message}}</p>
             </header>
             <div class="divider">
                 <div class="divider__rule"></div>
@@ -38,7 +38,7 @@ into the {body} of the default.hbs template --}}
             {{#get "posts" limit="3" include="authors,tags"}}
             <section>
                 <h2>Recent Posts</h2>
-                <div class="grid-container-home">
+                <div class="grid-container">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}

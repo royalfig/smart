@@ -1,0 +1,102 @@
+//-------------------------------------------
+// SVG Icon Colors
+//-------------------------------------------
+.academia svg {
+  fill: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    @include color-map(fill, primary);
+  }
+}
+
+.facebook svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $fb;
+  }
+}
+
+.github svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $gh;
+  }
+}
+
+.gitlab svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $gl;
+  }
+}
+
+.instagram svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $ig;
+  }
+}
+
+.linkedin svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $li;
+  }
+}
+
+.rss svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $rs;
+  }
+}
+
+.twitch svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $ch;
+  }
+}
+
+.twitter svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $tw;
+  }
+}
+
+.map svg,
+.website svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    @include color-map(stroke, primary);
+  }
+}
+
+.youtube svg {
+  stroke: currentColor;
+  @include transition(all);
+  &:hover,
+  &:focus {
+    stroke: $yt;
+  }
+}

@@ -18,15 +18,15 @@ into the {body} of the default.hbs template --}}
 {{!-- Header --}}
 
 {{!-- Main --}}
-<main class="main index" id="main">
-    <div class="outer-container">
-        <div class="inner-container">
+<main class="main--index" id="main">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <header class="post__header">
                 <h1 class="post__title--serif underline">{{title}}</h1>
             </header>
             {{/post}}
             {{#get "tags" include="count.posts" limit="all"}}
-            <section class="grid-container-home">
+            <section class="grid-container">
                 {{#foreach tags}}
                 {{!-- Card  --}}
                 <article class="card--tags card-{{@number}} {{slug}}">

@@ -1,0 +1,47 @@
+//-------------------------------------------
+// Navigation Partial
+//-------------------------------------------
+.navigation {
+  // Social Media icons in footer
+  &__social-media-item {
+    width: 1.25em;
+    height: 1.25em;
+    margin-right: 0.5rem;
+    @include color-map(color, text2);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  // Nav links
+  &__ul {
+    list-style-type: none;
+  }
+
+  &__li {
+    margin: 0.5rem 0;
+
+    @media (min-width: $laptop) {
+      display: inline-block;
+      margin: 0.31rem 0.5rem 0;
+      line-height: 1.6;
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__list-link {
+    @extend .link;
+  }
+}

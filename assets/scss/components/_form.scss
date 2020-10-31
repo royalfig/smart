@@ -37,6 +37,8 @@
   }
 
   &__btn {
-    @include btn(color);
+    @include btn(color, primary, secondary, textInverse, textInverse);
+    min-width: 150px;
+    margin-top: 1rem;
   }
 }

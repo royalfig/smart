@@ -9,15 +9,12 @@
             (max-width: 1280px) 60vw,
             1000px" data-src="{{img_url feature_image size="l"}}" alt="" />
             {{else}}
-            <div class="card__no-img card__no-img-{{@number}}"></div>
+            <div class="card__no-img"></div>
             {{/if}}
         </div>
         <div class="card__body">
-            <div class="card__date-tag">
-                <p class="card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMMM YYYY'}}</p>
-            </div>
+            <p class="card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMMM YYYY'}}</p>
             <h3 class="card__title">{{title}}</h3>
-            {{!-- <p class="card__excerpt">{{excerpt characters="75"}}</p> --}}
             {{#primary_tag}}
             <div class="card__tag {{slug}}">
                 <svg aria-hidden="true">
