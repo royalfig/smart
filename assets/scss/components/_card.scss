@@ -76,10 +76,6 @@
     margin: 1.25rem 0;
   }
 
-  &__date-tag {
-    @include flex(row, space-between, flex-start);
-  }
-
   &__date,
   &__tag {
     display: flex;
@@ -119,7 +115,9 @@
     @include transition(color);
   }
 
-  // Card on Tags Page
+  //-------------------------------------------
+  // Cards on Tag page
+  //-------------------------------------------
   &--tags {
     @extend .card;
     overflow: hidden;

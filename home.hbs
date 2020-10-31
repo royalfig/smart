@@ -49,7 +49,6 @@ into the {body} of the default.hbs template --}}
 {{!-- Hero  --}}
 
 <main class="main">
-
     {{!-- Featured  --}}
     {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
     {{#if featured}}

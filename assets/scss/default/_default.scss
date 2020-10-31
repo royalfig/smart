@@ -151,12 +151,6 @@ button:active {
   margin: 0 auto 1rem;
 }
 
-// is this in use?
-// .header {
-//   position: relative;
-//   margin: 0;
-// }
-
 .divider {
   @include flex(row, flex-start, center);
   margin: 1rem 0;

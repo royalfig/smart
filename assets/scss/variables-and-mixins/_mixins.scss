@@ -74,8 +74,6 @@
   padding: 0.25rem 0.5rem;
   font-family: $sans;
   font-size: 1em;
-  // font-weight: 700;
-  // line-height: 1;
   cursor: pointer;
   background: none;
   border: none;
@@ -91,16 +89,13 @@
   }
 
   @if $type == color {
-    height: 2em;
-    padding: 0.25rem;
-    margin: 0.75rem 0;
-    font-size: 0.9rem;
-    @include color-map(color, textInverse);
-    @include color-map(background-color, primary);
+    font-size: 1em;
+    @include color-map(color, $text);
+    @include color-map(background-color, $bgColor);
     @include transition(background-color);
 
     &:hover {
-      @include color-map(background-color, secondary);
+      @include color-map(background-color, $hvrColor);
     }
 
     &:active {
