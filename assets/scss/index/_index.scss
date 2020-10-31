@@ -6,11 +6,16 @@
   margin: 0 auto;
   overflow-x: hidden;
 
-  &--outer-container {
+  &--index {
+    @extend .main;
+    @include navbar(margin-top);
+  }
+
+  &__outer-container {
     @extend .outer-container;
   }
 
-  &--inner-container {
+  &__inner-container {
     @extend .inner-container;
   }
 
@@ -45,8 +50,4 @@
       @include transition(all);
     }
   }
-}
-
-.index {
-  @include navbar(margin-top);
 }

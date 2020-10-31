@@ -12,7 +12,6 @@
   @include color-map(background-color, surface2);
   @include transition(all);
 
-  // Top navbar includes social media and utilities, move to navmenu on mobile
   &__top {
     display: none;
     height: 2.25rem;

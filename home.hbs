@@ -48,12 +48,12 @@ into the {body} of the default.hbs template --}}
 </section>
 {{!-- Hero  --}}
 
-<main class="main">
+<main class="main" id="main">
     {{!-- Featured  --}}
     {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
     {{#if featured}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <h2 class="main__header">Featured</h2>
             <section class="grid-container">
                 {{#foreach featured}}
@@ -69,8 +69,8 @@ into the {body} of the default.hbs template --}}
     {{!-- Latest --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |latest|}}
     {{#if latest}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <a class="main__read-more" href="/page/2/">
                 <h2 class="main__header">Latest</h2>
                 <svg aria-label="See more posts">
@@ -91,8 +91,8 @@ into the {body} of the default.hbs template --}}
     {{!-- Publications --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |publications|}}
     {{#if publications}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <a class="main__read-more" href="/tag/publications/">
                 <h2 class="main__header">Publications</h2>
                 <svg aria-label="See more publications">
@@ -113,8 +113,8 @@ into the {body} of the default.hbs template --}}
     {{!-- Presentations --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications+tag:-outreach+tag:-teaching+tag:-dissertation" as |presentations|}}
     {{#if presentations}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <a class="main__read-more" href="/tag/presentations/">
                 <h2 class="main__header">Presentations</h2>
                 <svg aria-label="See more presentations">
@@ -135,8 +135,8 @@ into the {body} of the default.hbs template --}}
     {{!-- Teaching --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations+tag:-outreach+tag:-dissertation" as |teaching|}}
     {{#if teaching}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <a class="main__read-more" href="/tag/teaching/">
                 <h2 class="main__header">Teaching</h2>
                 <svg aria-label="See more teaching">
@@ -157,8 +157,8 @@ into the {body} of the default.hbs template --}}
     {{!-- Outreach --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching+tag:-dissertation" as |outreach|}}
     {{#if outreach}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <a class="main__read-more" href="/tag/outreach/">
                 <h2 class="main__header">Outreach</h2>
                 <svg aria-label="See more outreach">
@@ -179,8 +179,8 @@ into the {body} of the default.hbs template --}}
     {{!-- Dissertation --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:dissertation+tag:-publications+tag:-presentations+tag:-teaching" as |dissertation|}}
     {{#if dissertation}}
-    <div class="main--outer-container">
-        <div class="main--inner-container">
+    <div class="main__outer-container">
+        <div class="main__inner-container">
             <a class="main__read-more" href="/tag/dissertation/">
                 <h2 class="main__header">Dissertation</h2>
                 <svg aria-label="See more dissertation">

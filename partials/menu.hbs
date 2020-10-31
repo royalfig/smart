@@ -6,8 +6,8 @@
     </svg>
   </button>
   <div class="modal__container">
-    {{#link href=@site.url class='menu__title-link'}}
-    <h2 class="menu__title">
+    {{#link href=@site.url class='menu__link'}}
+    <h2 class="modal__header">
       {{@site.title}}
     </h2>
     {{/link}}
@@ -17,11 +17,11 @@
       {{ navigation }}
       {{/if}}
 
+      {{! Member }}
       {{#if @labs.members}}
       <div class="divider">
         <div class="divider__rule"></div>
       </div>
-      {{! Member }}
       <p class="menu__social-media-header">
         Membership
       </p>
@@ -36,7 +36,7 @@
         Account
       </button>
       {{else}}
-      <button class=" menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
+      <button class="menu__signin" id="m-signin-btn" data-target="signin" tabindex="-1">Sign In</button>
       <button class="menu__signup" id="m-signup-btn" data-target="signup" tabindex="-1">Sign Up</button>
       {{/if}}
       {{/if}}
@@ -69,9 +69,6 @@
         <div class="divider__rule"></div>
       </div>
       {{! Member }}
-      {{!-- <p class="menu__social-media-header">
-        Social Media
-      </p> --}}
       <div class="menu__social-media">
         {{#if @site.twitter}}
         <a class="menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"

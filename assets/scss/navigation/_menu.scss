@@ -14,73 +14,27 @@
 }
 
 .menu {
-  @extend .modal;
-
-  &[aria-expanded='true'] {
-    transition: transform 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    transform: translate3d(0, 0, 0);
-  }
-
-  &__container {
-    @extend .modal__container;
-  }
-
-  &__title {
-    @extend .modal__header;
-    &-link {
-      @include transition(color);
-      &:focus {
-        outline: none;
-        @include color-map(color, primary);
-      }
+  &__link {
+    @include transition(color);
+    &:focus {
+      outline: none;
+      @include color-map(color, primary);
     }
-  }
-
-  &__inner-container {
-    @extend .modal__inner-container;
-  }
-
-  &__site-title--serif {
-    font-size: 1.25rem;
-    @extend .serif;
-  }
-
-  .navigation {
-    &__li {
-      display: block;
-      margin: 1rem 0;
-      font-size: 1.25rem;
-      line-height: 1.2;
-    }
-
-    &__list-link {
-      @extend .link;
-    }
-  }
-
-  &__main-nav {
-    margin: 1rem 0 0;
-    list-style-type: none;
-  }
-
-  &__main-nav-list-item {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
-
-    &:first-child {
-      margin-top: 0;
-    }
-
-    // &:last-child {
-    //   margin-bottom: 0;
-    // }
   }
 
   &__search-btn {
     display: none;
-    @include btn('list');
+    @include btn(outline, transparent, transparent, text2, text);
+    min-width: 50%;
     margin-top: 1rem;
-    @include transition(color);
+  }
+
+  &__social-media-header {
+    margin: 1rem 0 0.25rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    @include color-map(color, text3);
   }
 
   &__social-media {
@@ -101,18 +55,7 @@
     }
   }
 
-  &__social-media-header {
-    margin: 1rem 0 0.25rem;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    @include color-map(color, text3);
-  }
-
-  // &__social-media .navigation__social-media-item,
-
-  &__signin,
-  &__dark-mode-toggle {
+  &__signin {
     @extend %subscribe-btns;
     margin-top: 0;
     background-color: transparent;
@@ -135,10 +78,8 @@
   }
 }
 
-.modal {
-  .color-mode-btn {
-    @include btn('list');
-    margin-top: 1rem;
-    @include transition(color);
-  }
+.modal .color-mode-btn {
+  @include btn(outline, transparent, transparent, text2, text);
+  min-width: 50%;
+  margin-top: 1rem;
 }

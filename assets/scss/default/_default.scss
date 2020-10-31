@@ -177,3 +177,62 @@ button:active {
     @include color-map(background-color, text4);
   }
 }
+
+//-------------------------------------------
+// Pagination
+//-------------------------------------------
+.pagination {
+  @include flex(row, space-between, center);
+  @include color-map(color, text2);
+
+  > * {
+    margin: 2rem 1rem 0;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @include transition(color);
+
+    &:hover {
+      @include color-map(color, primary);
+    }
+  }
+}
+
+//-------------------------------------------
+// Link styling
+//-------------------------------------------
+.link {
+  position: relative;
+  display: inline;
+  text-decoration: none;
+
+  &:before {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 2px;
+    /* values are from-top, from-right, from-bottom, from-left */
+    clip-path: inset(0 100% 0 0);
+    content: '';
+    @include color-map(background, primary);
+    border-radius: $radius;
+    @include transition(clip-path);
+  }
+
+  &:hover:before {
+    clip-path: inset(0 0 0 0);
+    @include transition(clip-path);
+  }
+
+  &.nav-current:before {
+    clip-path: none;
+  }
+}

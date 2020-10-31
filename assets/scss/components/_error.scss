@@ -1,19 +1,16 @@
-.error {
+.main--error {
   @extend .main;
 
   &__heading {
     @extend .post__title--serif;
+    margin-bottom: 0;
     font-size: 4rem;
     text-align: center;
   }
 
   &__text {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     @include color-map(color, text1);
-  }
-
-  &__divider {
-    @include color-map(color, text4);
   }
 }
