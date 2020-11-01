@@ -89,7 +89,7 @@ into the {body} of the default.hbs template --}}
     {{!-- Latest --}}
 
     {{!-- Publications --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |publications|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications" as |publications|}}
     {{#if publications}}
     <div class="main__outer-container">
         <div class="main__inner-container">
@@ -111,7 +111,7 @@ into the {body} of the default.hbs template --}}
     {{!-- Publications --}}
 
     {{!-- Presentations --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications+tag:-outreach+tag:-teaching+tag:-dissertation" as |presentations|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications" as |presentations|}}
     {{#if presentations}}
     <div class="main__outer-container">
         <div class="main__inner-container">
@@ -133,7 +133,7 @@ into the {body} of the default.hbs template --}}
     {{!-- Presentations --}}
 
     {{!-- Teaching --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations+tag:-outreach+tag:-dissertation" as |teaching|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations" as |teaching|}}
     {{#if teaching}}
     <div class="main__outer-container">
         <div class="main__inner-container">
@@ -155,7 +155,7 @@ into the {body} of the default.hbs template --}}
     {{!-- Teaching --}}
 
     {{!-- Outreach --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching+tag:-dissertation" as |outreach|}}
+    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching" as |outreach|}}
     {{#if outreach}}
     <div class="main__outer-container">
         <div class="main__inner-container">
@@ -175,27 +175,4 @@ into the {body} of the default.hbs template --}}
     {{/if}}
     {{/get}}
     {{!-- Outreach --}}
-
-    {{!-- Dissertation --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:dissertation+tag:-publications+tag:-presentations+tag:-teaching" as |dissertation|}}
-    {{#if dissertation}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <a class="main__read-more" href="/tag/dissertation/">
-                <h2 class="main__header">Dissertation</h2>
-                <svg aria-label="See more dissertation">
-                    <use href="#arrow-right"></use>
-                </svg>
-            </a>
-            <section class="grid-container">
-                {{#foreach dissertation}}
-                {{> "card"}}
-                {{/foreach}}
-            </section>
-        </div>
-    </div>
-    {{/if}}
-    {{/get}}
-    {{!-- Dissertation --}}
-
 </main>
