@@ -66,9 +66,10 @@
 }
 
 .kg-bookmark-title {
-  @extend .serif;
   margin-bottom: 1rem;
+  font-family: $serif;
   font-size: 0.95rem;
+  font-weight: 400;
 }
 
 .kg-bookmark-metadata,

@@ -1,3 +1,4 @@
+import '../scss/post.scss';
 import mediumZoom from 'medium-zoom';
 
 const fluidvids = require('fluidvids.js/dist/fluidvids.js');

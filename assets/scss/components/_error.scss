@@ -2,7 +2,7 @@
   @extend .main;
 
   &__heading {
-    @extend .post__title--serif;
+    @include header;
     margin-bottom: 0;
     font-size: 4rem;
     text-align: center;

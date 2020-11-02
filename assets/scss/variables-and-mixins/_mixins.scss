@@ -167,3 +167,33 @@
     }
   }
 }
+
+@mixin header {
+  position: relative;
+  font-family: $serif;
+  font-weight: 400;
+}
+
+@mixin inner-container {
+  max-width: $laptop;
+  margin: 0 auto 1rem;
+}
+
+@mixin outer-container {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+
+  @include respond-between($tablet, $laptop) {
+    padding: 1rem 3rem 2rem;
+  }
+
+  @include respond-above($laptop) {
+    padding: 1rem 4rem 2rem;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  gap: 1.5rem;
+}

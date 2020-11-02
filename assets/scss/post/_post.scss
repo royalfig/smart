@@ -92,8 +92,7 @@
   }
 
   &__title--serif {
-    position: relative;
-    @extend .serif;
+    @include header;
   }
 
   &__author {
@@ -170,8 +169,8 @@
 // Post Footer: About the Author and Related Posts
 // -------------------------------------------
 .post-footer {
-  @extend .inner-container;
-  @extend .grid;
+  @include inner-container;
+  @include grid;
   padding-top: 0.5rem;
   grid-template-areas:
     'title-1'
@@ -199,8 +198,9 @@
 
   &__title-1,
   &__title-2 {
-    @extend .serif;
     margin-bottom: 0;
+    font-family: $serif;
+    font-weight: 400;
   }
 
   &__title-1 {
@@ -276,7 +276,8 @@
   }
 
   &__author-name {
-    @extend .serif;
+    font-family: $serif;
+    font-weight: 400;
     line-height: 1;
     @include transition(color);
 

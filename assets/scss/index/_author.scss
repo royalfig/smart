@@ -1,6 +1,6 @@
 .author {
   &__header {
-    @extend .post__header;
+    @include header;
   }
 
   &__container {
