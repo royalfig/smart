@@ -23,7 +23,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Post Header  --}}
 
 {{!-- Main  --}}
-<main id="main" class="main">
+<main class="main" id="main">
     <div class="outer-container">
         <div class="inner-container">
             <article class="{{post_class}}">
@@ -56,7 +56,13 @@ into the {body} of the default.hbs template --}}
                     {{content}}
                 </div>
             </article>
-
+            <div class="divider">
+                <div class="divider__rule"></div>
+                <div class="divider__sm-block"></div>
+                <div class="divider__lg-block"></div>
+                <div class="divider__sm-block"></div>
+                <div class="divider__rule"></div>
+            </div>
             <footer class="post-footer">
                 {{#has author="count:<2"}}
                 <h3 class="post-footer__title-1">About the Author</h3>

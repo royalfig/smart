@@ -135,6 +135,25 @@ html {
   }
 }
 
+.skip-to-content {
+  @include btn(color, primary, secondary, textInverse, textInverse);
+  position: fixed;
+  top: 0;
+  left: 50%;
+  z-index: 15;
+  transform: translate3d(0, -100%, 0);
+  @include transition(background-color);
+
+  &:link,
+  &:visited {
+    @include color-map(color, textInverse);
+  }
+
+  &:focus {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
 //-------------------------------------------
 // Tyopgraphy
 //-------------------------------------------
