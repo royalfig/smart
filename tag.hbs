@@ -19,11 +19,10 @@ into the {body} of the default.hbs template --}}
 {{!-- Post Header  --}}
 
 {{!-- Main  --}}
-<main id="main" class="main">
+<main class="main" id="main">
     <div class="outer-container">
         <div class="inner-container">
             <section class="{{slug}}">
-
                 <header class="post__header">
                     <h1 class="post__title--serif">{{name}}</h1>
                     {{#if description}}
@@ -31,7 +30,6 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 </header>
                 {{/tag}}
-
                 <div class="grid-container">
                     {{#foreach posts}}
                     {{> "card"}}
@@ -41,9 +39,6 @@ into the {body} of the default.hbs template --}}
 
             {{pagination}}
 
-            {{#if @labs.subscribers}}
-            {{> "subscribe_inner"}}
-            {{/if}}
         </div>
     </div>
 </main>

@@ -93,6 +93,11 @@
 
   &__title--serif {
     @include header;
+
+    span {
+      font-family: $sans;
+      @include color-map(color, secondary);
+    }
   }
 
   &__author {

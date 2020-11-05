@@ -16,11 +16,12 @@ into the {body} of the default.hbs template --}}
 </header>
 {{!-- Post Header  --}}
 
-<main class="main--index" id="main">
+<main class="main" id="main">
     <div class="main__outer-container">
         <div class="main__inner-container">
             <header class="post__header">
-                <h1 class="post__title--serif">Latest</h1>
+                <h1 class="post__title--serif">Latest
+                    <span>{{plural pagination.page empty='' singular='' plural='%'}}</span></h1>
             </header>
 
             <section class="grid-container">
