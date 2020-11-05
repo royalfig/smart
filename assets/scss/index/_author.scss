@@ -1,8 +1,4 @@
 .author {
-  &__header {
-    @include header;
-  }
-
   &__container {
     @include flex(column, center, center);
     @extend .inner-container;
