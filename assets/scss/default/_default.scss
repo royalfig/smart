@@ -26,12 +26,12 @@ button {
   --text3: #5a5a5c;
   --text4: #9ea0a2;
 
-  --surface: #dcdcdc;
-  --surface1: #e8e8e8;
-  --surface1-75: rgba(232, 232, 232, 0.75);
-  --surface2: #f0f0f0;
-  --surface3: #f5f5f5;
-  --surface4: #f8f8f8;
+  --surface: hsl(0, 0%, 92%);
+  --surface1: hsl(0, 0%, 94%);
+  --surface1-75: hsla(0, 0%, 94%, 0.75);
+  --surface2: hsl(0, 0%, 96%);
+  --surface3: hsl(0, 0%, 98%);
+  --surface4: #ffffff;
 
   --primary: #0d48a0;
   // --secondary: rgb(255, 87, 34);
