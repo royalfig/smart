@@ -23,9 +23,11 @@
 
   &__img,
   &__no-img {
+    box-sizing: content-box;
     position: relative;
-    width: 100%;
-    height: 20rem;
+    width: calc(100% - 2rem);
+    // height: 20rem;
+    height: 340px;
     padding: 1rem 1rem 0;
     @include navbar(margin-top);
   }
