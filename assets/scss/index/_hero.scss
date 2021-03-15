@@ -1,15 +1,16 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 20rem;
+  // height: 20rem;
   background-position: center;
   background-size: cover;
   @include navbar(margin-top);
   @include color-map(background-color, surface1);
 
-  @media (min-height: 50rem) {
-    height: 30rem;
-  }
+  // @media (min-height: 50rem) {
+  //   height: 30rem;
+  // }
+  height: 450px;
 
   &__overlay {
     @include flex(column, center, center);
