@@ -35,7 +35,7 @@
   }
 
   &__btn {
-    @include btn(color);
+    @include btn(color, primary, secondary, textInverse, textInverse);
     width: 100%;
 
     &--content {

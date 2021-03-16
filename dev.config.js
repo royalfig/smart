@@ -20,42 +20,45 @@ module.exports = {
       path: path.join(__dirname, 'assets', 'built')
     }),
     new FileManager({
-      onEnd: {
-        copy: [
-          {
-            source: './package.json',
-            destination: '/home/ryan/Projects/ghost/content/themes/smart'
-          },
-          {
-            source: './*.hbs',
-            destination: '/home/ryan/Projects/ghost/content/themes/smart'
-          },
-          {
-            source: './partials/*.hbs',
-            destination:
-              '/home/ryan/Projects/ghost/content/themes/smart/partials'
-          },
-          {
-            source: './assets/built/*.css',
-            destination:
-              '/home/ryan/Projects/ghost/content/themes/smart/assets/built'
-          },
-          {
-            source: './assets/built/*.js',
-            destination:
-              '/home/ryan/Projects/ghost/content/themes/smart/assets/built'
-          },
-          {
-            source: './assets/fonts/*.woff2',
-            destination:
-              '/home/ryan/Projects/ghost/content/themes/smart/assets/fonts'
-          },
-          {
-            source: './assets/img/*.svg',
-            destination:
-              '/home/ryan/Projects/ghost/content/themes/smart/assets/img'
-          }
-        ]
+      events: {
+        onEnd: {
+          copy: [
+            {
+              source: './package.json',
+              destination:
+                '/home/royalfig/projects/ghost/content/themes/smart/package.json'
+            },
+            {
+              source: './*.hbs',
+              destination: '/home/royalfig/projects/ghost/content/themes/smart'
+            },
+            {
+              source: './partials/*.hbs',
+              destination:
+                '/home/royalfig/projects/ghost/content/themes/smart/partials'
+            },
+            {
+              source: './assets/built/*.css',
+              destination:
+                '/home/royalfig/projects/ghost/content/themes/smart/assets/built'
+            },
+            {
+              source: './assets/built/*.js',
+              destination:
+                '/home/royalfig/projects/ghost/content/themes/smart/assets/built'
+            },
+            {
+              source: './assets/fonts/*.woff2',
+              destination:
+                '/home/royalfig/projects/ghost/content/themes/smart/assets/fonts'
+            },
+            {
+              source: './assets/img/*.svg',
+              destination:
+                '/home/royalfig/projects/ghost/content/themes/smart/assets/img'
+            }
+          ]
+        }
       }
     }),
     new CleanWebpackPlugin()
