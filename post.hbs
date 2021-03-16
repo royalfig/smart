@@ -17,6 +17,7 @@ into the {body} of the default.hbs template --}}
         src="{{img_url feature_image size="l"}}" alt="{{title}}" height="340">
     {{/if}}
     {{^if feature_image}}
+
     <div class="post__no-img"></div>
     {{/if}}
 </header>
@@ -53,7 +54,56 @@ into the {body} of the default.hbs template --}}
                     {{! Tags }}
                 </header>
                 <div class="post__content">
+                {{#if access}}
                     {{content}}
+                {{else}}
+                    {{!-- Free member --}}
+                    {{#if @member}}
+                        <p>You currently have a free subscription to {{@site.title}}.</p>
+                        <p>Upgrade to a paid subscription to gain access to this content.</p>
+                        <button class="modal__upgrade" data-target="signup">
+                            <svg aria-hidden="true">
+                                <use href="#user-plus"></use>
+                            </svg>
+                        Upgrade Subscription
+                        </button>
+                    {{else}}
+                    <p>Upgrade to a paid subscription to gain access to this content.</p>
+
+                    <p>Already have an account?</p>
+                    <form class='modal__form' data-members-form='signin'>
+                    <div class='modal__input-container'>
+                        <div class='modal__label-container'>
+                        <label class='modal__label' for='signin'>
+                            Email
+                        </label>
+                        <input class='modal__input' data-members-email id='signin' type='email' required='true' autocomplete='false'
+                            tabindex="-1" />
+                        </div>
+                        <button class='modal__btn' type='submit' tabindex="-1">
+                        <span class='modal__btn--content'>
+                            Sign In
+                        </span>
+                        <svg class='modal__btn--loading' aria-label='Loading...'>
+                            <use href='#loader'></use>
+                        </svg>
+                        <svg class='modal__btn--success' aria-label='Success!'>
+                            <use href='#check'></use>
+                        </svg>
+                        </button>
+                    </div>
+                    <div class='modal__error'>
+                        Please enter a valid email address!
+                    </div>
+                    <div class='modal__success'>
+                        <strong>
+                        Great!
+                        </strong>
+                        Check your inbox and click the link to confirm your subscription
+                    </div>
+                    </form>
+                    {{/if}}
+                {{/if}}
                 </div>
             </article>
             <div class="divider">

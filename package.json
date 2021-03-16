@@ -4,8 +4,8 @@
   "description": "A Ghost Theme for Scholars and Scientists",
   "main": "index.js",
   "engines": {
-    "ghost": ">=2.0.0",
-    "ghost-api": "v2"
+    "ghost": ">=3.0.0",
+    "ghost-api": "v3"
   },
   "author": {
     "name": "Ryan Feigenbaum",

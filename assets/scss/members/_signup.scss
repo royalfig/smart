@@ -42,7 +42,7 @@
   }
 
   &__checkout {
-    @include btn(color);
+    @include btn(color, primary, secondary, textInverse, textInverse);
     display: block;
     width: 100%;
     margin: 0.5rem 0;
