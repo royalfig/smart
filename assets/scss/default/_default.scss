@@ -121,17 +121,17 @@ html {
   // Fallback for older browsers
   @include respond-above($tablet) {
     font-size: 1.0625rem; //17px
-    font-size: clamp(1rem, #{'1rem + 0.2vw'}, 20px);
+    font-size: clamp(1rem, #{'1rem + 0.2vw'},  1.25rem);
   }
 
   @include respond-above($laptop) {
     font-size: 1.125rem; //18px
-    font-size: clamp(1rem, #{'1rem + 0.2vw'}, 20px);
+    font-size: clamp(1rem, #{'1rem + 0.2vw'},  1.25rem);
   }
 
   @include respond-above($desktop) {
-    font-size: 1.25rem; //20px
-    font-size: clamp(1rem, #{'1rem + 0.2vw'}, 20px);
+    font-size: 1.25rem; // 1.25rem
+    font-size: clamp(1rem, #{'1rem + 0.2vw'},  1.25rem);
   }
 }
 

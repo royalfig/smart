@@ -57,6 +57,7 @@
 
   &__signin {
     @extend %subscribe-btns;
+    min-width: 50%;
     margin-top: 0;
     background-color: transparent;
     border: 1px solid currentColor;
@@ -68,6 +69,7 @@
 
   &__signup {
     @extend %subscribe-btns;
+    min-width: 50%;
     border: 1px solid transparent;
     @include color-map(color, textInverse);
     @include color-map(background-color, primary);
