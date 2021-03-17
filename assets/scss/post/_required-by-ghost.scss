@@ -13,12 +13,14 @@
 .kg-image-card img {
   display: block;
   width: 100%;
+  height: auto;
 }
 
 .kg-width-wide {
   position: relative;
   width: 75vw;
   min-width: 100%;
+  height: auto;
   margin: auto calc(50% - 50vw) 1rem;
   transform: translateX(calc(50vw - 50%));
 }
@@ -27,6 +29,7 @@
   position: relative;
   width: 100vw;
   min-width: 100%;
+  height: auto;
   margin: auto calc(50% - 50vw) 1rem;
   transform: translateX(calc(50vw - 50%));
 }

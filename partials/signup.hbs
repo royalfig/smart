@@ -26,7 +26,7 @@
       </header>
       <div class='modal__body'>
         <p class='modal__price' id='yearly-price'>
-          {{@price.currency_symbol}}{{@price.yearly}}
+          {{@price.currency}}{{@price.yearly}}
         </p>
         <p class='modal__term'>
           per year
@@ -79,7 +79,7 @@
       </header>
       <div class='modal__body'>
         <p class='modal__price' id='monthly-price'>
-          {{price currency=currency}}{{@price.monthly}}
+          {{@price.currency}}{{@price.monthly}}
         </p>
         <p class='modal__term'>
           per month

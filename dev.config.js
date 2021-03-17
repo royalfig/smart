@@ -17,7 +17,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-      path: path.join(__dirname, 'assets', 'built')
     }),
     new FileManager({
       events: {
@@ -84,6 +83,17 @@ module.exports = {
           { loader: 'css-loader', options: { sourceMap: true } },
           { loader: 'postcss-loader', options: { sourceMap: true } },
           { loader: 'sass-loader', options: { sourceMap: true } }
+        ]
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: path.join(__dirname, 'assets', 'built')
+            }
+          }
         ]
       }
     ]
