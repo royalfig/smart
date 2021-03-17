@@ -15,8 +15,8 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
-      path: path.join(__dirname, 'assets', 'built')
+      filename: '[name].css'
+      // path: path.join(__dirname, 'assets', 'built')
     }),
     new CleanWebpackPlugin()
   ],
@@ -41,6 +41,17 @@ module.exports = {
           'css-loader',
           'postcss-loader',
           'sass-loader'
+        ]
+      },
+      {
+        test: /\.css$/i,
+        use: [
+          {
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: path.join(__dirname, 'assets', 'built')
+            }
+          }
         ]
       }
     ]

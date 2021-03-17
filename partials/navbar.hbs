@@ -55,18 +55,16 @@
         {{/if}}
         {{!-- End navigation  --}}
         {{!-- Member functionality --}}
-        {{#if @labs.members}}
         <div class="navbar__bottom--right">
             {{#if @member}}
             <button class="navbar__member-btn" id="account-btn" data-target="account" data-tt="Account">
                 <img class="navbar__avatar" src="{{@member.avatar_image}}" />
             </button>
             {{else}}
-            <button class="navbar__signin" id="signin-btn" data-target="signin">Sign In</button>
-            <button class="navbar__signup" id="signup-btn" data-target="signup">Sign Up</button>
+            <a href="#/portal/signin" class="navbar__signin">Sign In</a>
+            <a href="#/portal/signup" class="navbar__signup">Sign Up</a>
             {{/if}}
         </div>
-        {{/if}}
         {{!-- Member functionality --}}
     </div>
     {{!-- End Navbar bottom --}}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{@site.lang}}" color-mode="dark">
+<html lang="{{@site.locale}}" color-mode="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -90,11 +90,9 @@
     <div class="content-wrap">
         {{> "navbar"}}
         {{> "search"}}
-        {{#if @labs.members}}
         {{> "signup"}}
         {{> "signin"}}
         {{> "account"}}
-        {{/if}}
         {{> "menu"}}
         {{{body}}}
         {{> "footer"}}
