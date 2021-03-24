@@ -1,11 +1,15 @@
 //-------------------------------------------
 // Search Styles
 //-------------------------------------------
-.modal__btn--search {
-  @include btn(icon, primary, secondary, textInverse, textInverse);
-  display: block;
-  width: 100%;
-  margin-top: 0.5rem;
+.modal {
+  &__btn {
+    &--search {
+      @include btn(icon, primary, secondary, textInverse, textInverse);
+      display: block;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+  }
 }
 
 .search-results {
@@ -21,7 +25,6 @@
     border-radius: $radius;
     box-shadow: $box-shadow;
     @include color-map(background-color, surface3);
-
     &:first-child {
       margin-top: 0.25rem;
     }
@@ -37,8 +40,8 @@
     @include transition(box-shadow);
 
     &:hover {
-      box-shadow: 0 0 0 4px color(surface4);
-      box-shadow: 0 0 0 4px var(--surface4);
+      box-shadow: 0 0 0 4px color(primary);
+      box-shadow: 0 0 0 4px var(--primary);
     }
   }
 

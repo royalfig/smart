@@ -113,24 +113,41 @@ html {
   @include color-map(background-color, surface1);
   scroll-behavior: smooth;
   font-size: 1rem;
-  font-size: clamp(1rem, 0.8863636364rem + 0.5681818182vw, 1.25rem);
+  font-size: clamp(
+    1rem,
+    0.9421296296296297rem + 0.30864197530864196vw,
+    1.3125rem
+  );
+
   font-weight: 400;
   line-height: 1.5;
 
   // Fallback for older browsers
   @include respond-above($tablet) {
     font-size: 1.0625rem; //17px
-    font-size: clamp(1rem, 0.8863636364rem + 0.5681818182vw, 1.25rem);
+    font-size: clamp(
+      1rem,
+      0.9421296296296297rem + 0.30864197530864196vw,
+      1.3125rem
+    );
   }
 
   @include respond-above($laptop) {
     font-size: 1.125rem; //18px
-    font-size: clamp(1rem, 0.8863636364rem + 0.5681818182vw, 1.25rem);
+    font-size: clamp(
+      1rem,
+      0.9421296296296297rem + 0.30864197530864196vw,
+      1.3125rem
+    );
   }
 
   @include respond-above($desktop) {
     font-size: 1.25rem; // 1.25rem
-    font-size: clamp(1rem, 0.8863636364rem + 0.5681818182vw, 1.25rem);
+    font-size: clamp(
+      1rem,
+      0.9421296296296297rem + 0.30864197530864196vw,
+      1.3125rem
+    );
   }
 }
 
@@ -140,8 +157,9 @@ html {
   top: 0;
   left: 50%;
   z-index: 15;
-  transform: translate3d(0, -100%, 0);
-  @include transition(background-color);
+  opacity: 0;
+  transition: background-color 0.2s, transform 0.25s ease-out, opacity 0.25s;
+  transform: translate3d(-50%, -125%, 0);
 
   &:link,
   &:visited {
@@ -149,7 +167,9 @@ html {
   }
 
   &:focus {
-    transform: translate3d(0, 0, 0);
+    opacity: 1;
+    transition: transform 0.25s ease-in, opacity 0.25s;
+    transform: translate3d(-50%, 0.5rem, 0);
   }
 }
 
