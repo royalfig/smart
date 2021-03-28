@@ -2,6 +2,9 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FileManager = require('filemanager-webpack-plugin');
+require('dotenv').config();
+
+const LOCAL = process.env.LOCAL;
 
 module.exports = {
   mode: 'development',
@@ -16,7 +19,7 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css',
+      filename: '[name].css'
     }),
     new FileManager({
       events: {
@@ -24,37 +27,31 @@ module.exports = {
           copy: [
             {
               source: './package.json',
-              destination:
-                '/home/royalfig/projects/ghost/content/themes/smart/package.json'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/package.json`
             },
             {
               source: './*.hbs',
-              destination: '/home/royalfig/projects/ghost/content/themes/smart'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart`
             },
             {
               source: './partials/*.hbs',
-              destination:
-                '/home/royalfig/projects/ghost/content/themes/smart/partials'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/partials`
             },
             {
               source: './assets/built/*.css',
-              destination:
-                '/home/royalfig/projects/ghost/content/themes/smart/assets/built'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/built`
             },
             {
               source: './assets/built/*.js',
-              destination:
-                '/home/royalfig/projects/ghost/content/themes/smart/assets/built'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/built`
             },
             {
               source: './assets/fonts/*.woff2',
-              destination:
-                '/home/royalfig/projects/ghost/content/themes/smart/assets/fonts'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/fonts`
             },
             {
               source: './assets/img/*.svg',
-              destination:
-                '/home/royalfig/projects/ghost/content/themes/smart/assets/img'
+              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/img`
             }
           ]
         }
