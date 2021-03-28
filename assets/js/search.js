@@ -21,7 +21,7 @@ const search = () => {
     url: `${window.location.protocol}//${window.location.host}`,
     // eslint-disable-next-line no-undef
     key: SEARCH_API,
-    version: 'v3'
+    version: 'v4'
   });
 
   const api = new Promise((resolve, reject) => {
