@@ -51,7 +51,7 @@ const modalFn = () => {
   };
 
   const closeHandler = (e) => {
-    const modal = e.currentTarget.parentElement;
+    const modal = e.currentTarget.closest('.modal');
     close(modal);
   };
 
