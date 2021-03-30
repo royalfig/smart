@@ -1,5 +1,6 @@
 const AdmZip = require('adm-zip');
 const path = require('path');
+
 const zip = new AdmZip();
 
 zip.addLocalFolder(path.join(__dirname, 'assets'), '/assets');
