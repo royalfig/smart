@@ -1,22 +1,12 @@
 //-------------------------------------------
 // Search Styles
 //-------------------------------------------
-.modal {
-  &__btn {
-    &--search {
-      @include btn(icon, primary, secondary, textInverse, textInverse);
-      display: block;
-      width: 100%;
-      margin-top: 0.5rem;
-    }
-  }
-}
 
 .search-results {
   padding: 1rem 0;
 
   &__header {
-    @extend .modal__label;
+    @extend .form__label;
   }
 
   &__item {

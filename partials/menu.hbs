@@ -12,8 +12,6 @@
         {{@site.title}}
       </h2>
       {{/link}}
-    </header>
-    <div class="modal__body">
       {{! Main Navigation }}
       {{#if @site.navigation}}
       {{ navigation }}
@@ -21,33 +19,34 @@
       {{! Member }}
 
       {{#if @member}}
-      <a class="menu__signup" href="#/portal/account" tabindex="-1">Account</a>
+      <a class="sm-button--color" href="#/portal/account" tabindex="-1">Account</a>
       {{else}}
-      <a class="menu__signin" href="#/portal/signin" tabindex="-1">Sign In</a>
-      <a class="menu__signup" href="#/portal/signup" tabindex="-1">Sign Up</a>
+      <a class="sm-button" href="#/portal/signin" tabindex="-1">Sign In</a>
+      <a class="sm-button--color" href="#/portal/signup" tabindex="-1">Sign Up</a>
       {{/if}}
   
       {{! Search }}
-      <button class="menu__search-btn" id="m-search-btn" data-target="search-modal" tabindex="-1">
+      <button class="sm-button--search" id="m-search-btn" data-target="search-modal" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#search"></use>
         </svg>
         Search
       </button>
       {{!-- Dark Mode Toggle --}}
-      <button class="color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
+      <button class="sm-button color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#sun"></use>
         </svg>
         Light Mode
       </button>
-      <button class="color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
+      <button class="sm-button color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#moon"></use>
         </svg>
         Dark Mode
       </button>
-    </div>
+    </header>
+
     <footer class="modal__footer">
       {{! Social Media  }}
         {{#has any='@site.twitter, @site.facebook'}}

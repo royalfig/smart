@@ -1,0 +1,61 @@
+.sm-button {
+  display: block;
+  width: 10rem;
+  padding: 0.25rem 0.5rem;
+  margin-right: auto;
+  margin-left: auto;
+  font-family: inherit;
+  font-size: 1rem;
+  line-height: inherit;
+  color: currentColor;
+  cursor: pointer;
+  background-color: none;
+  border: none;
+  border-radius: $radius;
+  box-shadow: $box-shadow;
+  @include color-map(background-color, surface3);
+  @include transition(background-color);
+
+  & + .sm-button {
+    margin-top: 1rem;
+  }
+
+  &:hover {
+    outline: none;
+    @include color-map(background-color, surface4);
+  }
+
+  &:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 1px;
+    vertical-align: text-top;
+    stroke: currentColor;
+  }
+
+  &--color {
+    @extend .sm-button;
+    @include color-map(color, textInverse);
+    @include color-map(background-color, primary);
+    @include transition(background-color);
+
+    &:hover {
+      @include color-map(color, textInverse);
+      @include color-map(background-color, secondary);
+    }
+
+    &:active {
+      box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  // Hide search button unless enabled in dashboard
+  &--search {
+    @extend .sm-button;
+    display: none;
+  }
+}

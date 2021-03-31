@@ -49,7 +49,7 @@
   @include color-map(color, text);
   @include color-map(background-color, surface2);
 
-  @media (min-width: $sm) {
+  @media (min-width: $laptop) {
     left: 50%;
     width: 380px;
     max-width: 100vw;
@@ -81,12 +81,15 @@
   &__header {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    .navigation {
+      &__ul {
+        margin: 2rem;
+      }
+    }
   }
 
   &__close-btn {
-    // position: absolute;
-    // top: 0;
-    // right: 0;
     align-self: flex-end;
     width: 1.5rem;
     height: 1.5rem;
@@ -110,34 +113,11 @@
     margin: 0;
   }
 
-  &__label {
-    @extend .form__label;
-  }
-
-  &__input {
-    @extend .form__input;
-    margin-bottom: 0;
-  }
-
-  &__btn {
-    @include btn(color, primary, secondary, textInverse, textInverse);
-    display: block;
-    width: 100%;
-    margin-top: 0.5rem;
-  }
-
-  &__body {
-    .navigation {
-      &__ul {
-        margin: 1rem 0 2rem;
-      }
-    }
-  }
-
   &__footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    width: 100%;
     a {
       width: 1.25rem;
       height: 1.25rem;

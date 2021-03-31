@@ -26,8 +26,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -38,7 +38,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -64,8 +64,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -76,7 +76,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -106,8 +106,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -118,7 +118,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -153,8 +153,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -165,7 +165,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -191,8 +191,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -203,7 +203,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -233,8 +233,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -245,7 +245,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -280,8 +280,8 @@
           flex-direction: row;
         }
         &__img-container {
-          flex: 1;
-          height: auto;
+          width: 50%;
+          height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -292,7 +292,7 @@
           border-bottom-left-radius: $radius;
         }
         &__body {
-          flex: 2;
+          width: calc(50% - 2.5rem);
           height: auto;
         }
       }
@@ -365,3 +365,5 @@
     }
   }
 }
+
+// 17.1875rem
