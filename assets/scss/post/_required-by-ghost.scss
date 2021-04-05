@@ -195,3 +195,36 @@
 .kg-code-card > pre {
   margin: 0 !important;
 }
+
+// Content CTA
+.sm-post-upgrade-cta-content,
+.sm-post-upgrade-cta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  @include color-map(color, text);
+  @include color-map(background-color, surface2);
+}
+
+.sm-post-upgrade-cta-content {
+  padding: 1.25rem;
+  border-radius: $radius;
+  h2 {
+    margin-top: 0;
+  }
+  .sm-button--color {
+    margin: 1rem 0 0.25rem;
+
+    @include color-map(color, textInverse);
+    &:hover {
+      @include color-map(color, textInverse);
+    }
+  }
+}
+
+.sm-post-upgrade-cta small {
+  font-size: 0.8rem;
+  cursor: pointer;
+}

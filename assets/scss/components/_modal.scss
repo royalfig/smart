@@ -57,7 +57,7 @@
     margin-top: 15vmin;
     border-radius: $radius;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
-    transform: translate(-50%, 0) scale(1);
+    transform: translate(-50%, 0);
   }
 
   &__container {
@@ -73,7 +73,7 @@
     overflow-y: auto;
     pointer-events: all;
     opacity: 1;
-    @media (min-width: $sm) {
+    @media (min-width: $laptop) {
       animation: popup 0.25s ease-out;
     }
   }
@@ -137,12 +137,12 @@
 @keyframes popup {
   0% {
     opacity: 0;
-    transform: translate(0, 20px);
+    transform: translate(-50%, 20px) scale(0.8);
   }
   75% {
     opacity: 1;
   }
   100% {
-    transform: translate(0, 0);
+    transform: translate(-50%, 0) scale(1);
   }
 }

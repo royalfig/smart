@@ -4,6 +4,18 @@
 .grid {
   display: grid;
   gap: 1.5rem;
+  // IE Support
+  @supports not (gap: 1.5rem) {
+    display: flex;
+    flex-wrap: wrap;
+    .card {
+      width: 50%;
+      min-width: 14.375rem;
+      &:first-child {
+        width: 100%;
+      }
+    }
+  }
 }
 
 // Mobile phones
@@ -27,7 +39,7 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 12rem;
           padding: 0;
         }
         &__img,
@@ -65,7 +77,7 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 12rem;
           padding: 0;
         }
         &__img,
@@ -107,7 +119,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 100%;
+          min-height: 12rem;
           padding: 0;
         }
         &__img,
@@ -154,7 +167,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 100%;
+          min-height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -192,7 +206,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 100%;
+          min-height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -234,7 +249,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 100%;
+          min-height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -281,7 +297,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 17.1875rem;
+          height: 50%;
+          min-height: 17.1875rem;
           padding: 0;
         }
         &__img,
@@ -365,5 +382,3 @@
     }
   }
 }
-
-// 17.1875rem

@@ -24,7 +24,7 @@ into the {body} of the default.hbs template --}}
 {{!-- Post Header  --}}
 
 {{!-- Main  --}}
-<main class="main" id="main">
+<main class="main" id="sm-main">
     <div class="outer-container">
         <div class="inner-container">
             <article class="{{post_class}}">
@@ -82,7 +82,11 @@ into the {body} of the default.hbs template --}}
                             <img class="post-footer__author-img" src="{{img_url profile_image size="s"}}"
                                 alt="{{name}}" />
                             {{else}}
-                            <div class="post-footer__no-author-img"></div>
+                            <div class="post-footer__no-author-img">
+                                <svg>
+                                    <use href="#user"/>
+                                </svg>
+                            </div>
                             {{/if}}
                         </a>
                         <div>

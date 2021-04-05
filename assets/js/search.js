@@ -3,6 +3,7 @@ import GhostContentAPI from '@tryghost/content-api';
 
 const searchModal = document.getElementById('search-modal');
 
+const htmlReplace = (str) => str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const createTimestamp = (minutes = 60) => {
   const timestamp = Date.now() + minutes * 60000;
   return timestamp;
@@ -94,7 +95,7 @@ const search = () => {
               )}</p>
               <p class="search-results__title">${post.title}</p>
               <p class="search-results__excerpt">
-                ${post.excerpt}</p>
+                ${htmlReplace(post.excerpt)}</p>
                 </a>
             </article>`;
       });

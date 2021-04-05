@@ -8,7 +8,6 @@ into the {body} of the default.hbs template --}}
     .hero {
         background-image: url({{img_url @site.cover_image size='xl'}});
     }
-
     @media(max-width: 1000px) {
         .hero {
             background-image: url({{img_url @site.cover_image size='l'}});
@@ -17,9 +16,7 @@ into the {body} of the default.hbs template --}}
             background-image: image-set(url({{img_url @site.cover_image size='l'}}) 1x,
                 url({{img_url @site.cover_image size='xl'}}) 2x);
         }
-
     }
-
     @media(max-width: 600px) {
         .hero {
             background-image: url({{img_url @site.cover_image size='m'}});
@@ -31,7 +28,7 @@ into the {body} of the default.hbs template --}}
     }
 </style>
 {{/if}}
-<section class="hero">
+<header class="hero">
     <div class="hero__overlay">
         <div class="hero__top">
             <div class="hero__text-container">
@@ -45,48 +42,46 @@ into the {body} of the default.hbs template --}}
             </div>
         </div>
     </div>
-</section>
+</header>
 {{!-- Hero  --}}
 
-<main class="main" id="main">
+<main class="main" id="sm-main">
     {{!-- Featured  --}}
     {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
-    {{#if featured}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <h2 class="main__header">Featured</h2>
-            <section class="grid-container">
-                {{#foreach featured}}
-                {{> "card"}}
-                {{/foreach}}
-            </section>
-        </div>
-    </div>
-    {{/if}}
+        {{#if featured}}
+            <div class="main__outer-container">
+                <div class="main__inner-container">
+                    <h2 class="main__header">Featured</h2>
+                    <section class="grid-container">
+                        {{#foreach featured}}
+                        {{> "card"}}
+                        {{/foreach}}
+                    </section>
+                </div>
+            </div>
+        {{/if}}
     {{/get}}
-    {{!-- Featured --}}
 
     {{!-- Latest --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |latest|}}
-    {{#if latest}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <a class="main__read-more" href="/page/2/">
-                <h2 class="main__header">Latest</h2>
-                <svg aria-label="See more posts">
-                    <use href="#arrow-right"></use>
-                </svg>
-            </a>
-            <section class="grid-container">
-                {{#foreach latest}}
-                {{> "card"}}
-                {{/foreach}}
-            </section>
-        </div>
-    </div>
-    {{/if}}
+        {{#if latest}}
+            <div class="main__outer-container">
+                <div class="main__inner-container">
+                    <a class="main__read-more" href="/page/2/">
+                        <h2 class="main__header">Latest</h2>
+                        <svg aria-label="See more posts">
+                            <use href="#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <section class="grid-container">
+                        {{#foreach latest}}
+                        {{> "card"}}
+                        {{/foreach}}
+                    </section>
+                </div>
+            </div>
+        {{/if}}
     {{/get}}
-    {{!-- Latest --}}
 
     {{!-- Publications --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications" as |publications|}}
@@ -134,45 +129,44 @@ into the {body} of the default.hbs template --}}
 
     {{!-- Teaching --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations" as |teaching|}}
-    {{#if teaching}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <a class="main__read-more" href="/tag/teaching/">
-                <h2 class="main__header">Teaching</h2>
-                <svg aria-label="See more teaching">
-                    <use href="#arrow-right"></use>
-                </svg>
-            </a>
-            <section class="grid-container">
-                {{#foreach teaching}}
-                {{> "card"}}
-                {{/foreach}}
-            </section>
-        </div>
-    </div>
-    {{/if}}
+        {{#if teaching}}
+            <div class="main__outer-container">
+                <div class="main__inner-container">
+                    <a class="main__read-more" href="/tag/teaching/">
+                        <h2 class="main__header">Teaching</h2>
+                        <svg aria-label="See more teaching">
+                            <use href="#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <section class="grid-container">
+                        {{#foreach teaching}}
+                        {{> "card"}}
+                        {{/foreach}}
+                    </section>
+                </div>
+            </div>
+        {{/if}}
     {{/get}}
     {{!-- Teaching --}}
 
     {{!-- Outreach --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching" as |outreach|}}
-    {{#if outreach}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <a class="main__read-more" href="/tag/outreach/">
-                <h2 class="main__header">Outreach</h2>
-                <svg aria-label="See more outreach">
-                    <use href="#arrow-right"></use>
-                </svg>
-            </a>
-            <section class="grid-container">
-                {{#foreach outreach}}
-                {{> "card"}}
-                {{/foreach}}
-            </section>
-        </div>
-    </div>
-    {{/if}}
+        {{#if outreach}}
+            <div class="main__outer-container">
+                <div class="main__inner-container">
+                    <a class="main__read-more" href="/tag/outreach/">
+                        <h2 class="main__header">Outreach</h2>
+                        <svg aria-label="See more outreach">
+                            <use href="#arrow-right"></use>
+                        </svg>
+                    </a>
+                    <section class="grid-container">
+                        {{#foreach outreach}}
+                        {{> "card"}}
+                        {{/foreach}}
+                    </section>
+                </div>
+            </div>
+        {{/if}}
     {{/get}}
-    {{!-- Outreach --}}
 </main>

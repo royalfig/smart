@@ -1,7 +1,7 @@
 {{!-- Card  --}}
 <article class="card card-{{@number}} {{slug}}">
     <a class="card__link" href="{{url}}" aria-label="{{title}}">
-        <div class="card__img-container">
+        <div class="card__img-container {{visibility}}">
             {{#if feature_image}}
             <img class="card__img lazyload" data-srcset="{{img_url feature_image size="s"}} 300w,
             {{img_url feature_image size="m"}} 600w,

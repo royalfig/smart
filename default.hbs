@@ -2,7 +2,7 @@
 <html lang="{{@site.locale}}" color-mode="dark">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{meta_title}}</title>
@@ -85,12 +85,12 @@
 </head>
 
 <body class="{{body_class}}">
-    <a href="#main" class="skip-to-content">Skip to content</a>
+    <a href="#sm-main" class="skip-to-content">Skip to content</a>
     {{> "svg"}}
     <div class="content-wrap">
         {{> "navbar"}}
-        {{> "search"}}
         {{> "menu"}}
+        {{> "search"}}
         {{{body}}}
         {{> "footer"}}
     </div>
