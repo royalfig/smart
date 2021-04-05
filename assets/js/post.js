@@ -111,7 +111,7 @@ function tablePrepend(e) {
   const responsiveWrapper = document.createElement('div');
   responsiveWrapper.setAttribute(
     'style',
-    'width: 100%; overflow-x: auto; margin: 1em 0;'
+    'width: 100%; overflow-x: auto; margin: 1em 0; border-radius: 4px; border: 1px solid var(--text4)'
   );
   e.parentNode.insertBefore(responsiveWrapper, e);
   responsiveWrapper.appendChild(e);

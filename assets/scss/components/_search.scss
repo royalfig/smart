@@ -1,22 +1,62 @@
 //-------------------------------------------
 // Search Styles
 //-------------------------------------------
-.modal {
-  &__btn {
-    &--search {
-      @include btn(icon, primary, secondary, textInverse, textInverse);
-      display: block;
-      width: 100%;
-      margin-top: 0.5rem;
+
+.search {
+  &__modal {
+    .modal {
+      &__container {
+        justify-content: flex-start;
+      }
+    }
+  }
+  &__button {
+    &--loading {
+      display: none;
+      animation: rotate 1s linear infinite;
+      .loading & {
+        display: inline-block;
+      }
+    }
+    &--content {
+      .loading & {
+        display: none;
+      }
+    }
+  }
+
+  &__input-container {
+    display: flex;
+    input,
+    button {
+      margin: 0;
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+
+    input {
+      flex: 2;
+      margin-right: 0.25rem;
+    }
+
+    button {
+      flex: 1;
     }
   }
 }
 
+@keyframes rotate {
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
 .search-results {
-  padding: 1rem 0;
+  width: 100%;
+  height: 100%;
 
   &__header {
-    @extend .modal__label;
+    @extend .form__label;
   }
 
   &__item {
@@ -42,6 +82,12 @@
     &:hover {
       box-shadow: 0 0 0 4px color(primary);
       box-shadow: 0 0 0 4px var(--primary);
+
+      .search-results {
+        &__link {
+          @include color-map(color, primary);
+        }
+      }
     }
   }
 
@@ -58,18 +104,18 @@
     @extend .serif;
     @include transition(color);
 
-    .search-results__link:hover & {
-      @include color-map(color, primary);
-    }
+    // .search-results__link:hover & {
+    //   @include color-map(color, primary);
+    // }
   }
 
   &__excerpt {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     -webkit-line-clamp: 3;
     text-overflow: ellipsis;
-    @include color-map(color, text1);
+    @include color-map(color, text2);
   }
 }

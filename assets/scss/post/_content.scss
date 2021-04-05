@@ -64,42 +64,49 @@
     }
 
     hr {
-      height: 2px;
-      margin: 1rem 0;
-      @include color-map(background-color, text4);
+      height: 0.15rem;
+      margin: 2rem 0;
+      background: linear-gradient(
+        to right,
+        var(--surface2),
+        var(--surface3),
+        var(--surface4),
+        var(--surface3),
+        var(--surface2)
+      );
       border: none;
+      border-radius: $radius;
     }
 
     table {
       width: 100%;
       overflow: hidden;
       font-size: 0.935rem;
-      border-collapse: collapse;
+
       @include color-map(border-color, text4);
       border-collapse: collapse;
-      border-style: solid;
-      border-width: 1px;
-
+      border: none;
       tr {
         @include color-map(background-color, surface1);
-        @include color-map(border-color, text4);
-        border-style: solid;
-        border-width: 1px;
+        // @include color-map(border-color, text4);
+        // border-style: solid;
+        // border-width: 1px;
       }
+    }
+
+    th {
+      padding: 0.25rem 0.5rem;
+      font-family: $serif;
+      font-weight: 400;
+      text-align: left;
     }
 
     thead {
       & > tr {
         @include color-map(background-color, surface2);
       }
-
-      th {
-        padding: 0.25rem 0.5rem;
-        font-family: $serif;
-        font-weight: 400;
-        text-align: left;
-      }
     }
+
     tbody {
       tr:nth-child(even) {
         @include color-map(background-color, surface2);
@@ -107,10 +114,12 @@
 
       td {
         padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
         text-align: left;
         vertical-align: top;
       }
     }
+
     pre {
       max-width: 100%;
       padding: 0.5rem;
@@ -119,6 +128,7 @@
       @include color-map(background-color, surface);
       border-radius: $radius;
     }
+
     kbd {
       padding: 0 4px;
       font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
@@ -127,6 +137,7 @@
       @include color-map(background-color, surface3);
       border-radius: 4px;
     }
+
     code {
       font-family: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono',
         'Cascadia Code', 'Droid Sans Mono', Consolas, monospace;

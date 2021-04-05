@@ -6,9 +6,10 @@ import toast from './toast';
 import 'lazysizes';
 
 // Polyfill forEach
-if (window.NodeList && !NodeList.prototype.forEach) {
-  NodeList.prototype.forEach = Array.prototype.forEach;
-}
+// TODO Needed?
+// if (window.NodeList && !NodeList.prototype.forEach) {
+//   NodeList.prototype.forEach = Array.prototype.forEach;
+// }
 
 // eslint-disable-next-line no-undef
 if (typeof SEARCH_API !== 'undefined') {

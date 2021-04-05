@@ -2,9 +2,10 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FileManager = require('filemanager-webpack-plugin');
+const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
 require('dotenv').config();
 
-const LOCAL = process.env.LOCAL;
+const { LOCAL } = process.env;
 
 module.exports = {
   mode: 'development',
@@ -18,6 +19,10 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   plugins: [
+    new ExtraWatchWebpackPlugin({
+      files: [path.join(__dirname, '/*.hbs')],
+      dirs: [path.join(__dirname, '/partials')]
+    }),
     new MiniCssExtractPlugin({
       filename: '[name].css'
     }),
@@ -27,31 +32,31 @@ module.exports = {
           copy: [
             {
               source: './package.json',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/package.json`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart/package.json`
             },
             {
               source: './*.hbs',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart`
             },
             {
               source: './partials/*.hbs',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/partials`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart/partials`
             },
             {
               source: './assets/built/*.css',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/built`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart/assets/built`
             },
             {
               source: './assets/built/*.js',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/built`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart/assets/built`
             },
             {
               source: './assets/fonts/*.woff2',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/fonts`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart/assets/fonts`
             },
             {
               source: './assets/img/*.svg',
-              destination: `/home/${LOCAL}/projects/ghost/content/themes/smart/assets/img`
+              destination: `/home/${LOCAL}/ghost/content/themes/smart/assets/img`
             }
           ]
         }

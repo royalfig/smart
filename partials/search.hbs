@@ -1,39 +1,37 @@
 {{! Search Modal }}
-<aside class='modal' id='search-modal' role='search' aria-expanded='false'>
-  <button class='modal__close-btn' aria-label='close' tabindex="-1">
-    <svg aria-hidden='true'>
-      <use href='#close'></use>
-    </svg>
-  </button>
+<aside class='modal search__modal' id='search-modal' role='search' aria-expanded='false'>
   <div class='modal__container'>
-    <h2 class='modal__header'>
-      Search
-    </h2>
-    <div class='modal__inner-container'>
-      <div class='modal__input-container'>
-        <div class='modal__label-container'>
-          <label class='modal__label' for='search-input'>
-            Enter Query
-          </label>
-          <input class='modal__input' id='search-input' placeholder="I'm looking for..." autocomplete='false'
-            tabindex="-1" />
-        </div>
-        <button class='modal__btn--search' id='run-search-btn' tabindex="-1">
-          <svg>
+    <header class="modal__header">
+      <button class='modal__close-btn' aria-label='close' tabindex="-1">
+        <svg aria-hidden='true'>
+          <use href='#close'></use>
+        </svg>
+      </button>
+      <h2 class='modal__title'>
+        Search
+      </h2>
+        <label class='form__label' for='search-input'>
+          Enter Query
+        </label>
+      <div class='search__input-container'>
+        <input class='form__input' id='search-input' placeholder="I'm looking for..."
+          tabindex="-1" />
+        <button class='sm-button--color search__btn' id='run-search-btn' tabindex="-1">
+          <svg class='search__button--content'>
             <use href="#search"></use>
           </svg>
-          <span class='modal__btn--content'>
+          <span class='search__button--content'>
             Search
           </span>
-          <svg class='modal__btn--loading' aria-label='Loading...'>
+          <svg class='search__button--loading' aria-label='Loading...'>
             <use href='#loader'></use>
           </svg>
         </button>
       </div>
-      <div class='search-results'>
-        <header class='search-results__header'></header>
-        <div class='search-results__container'></div>
-      </div>
+    </header>
+    <div class='search-results'>
+      <header class='search-results__header'></header>
+      <div class='search-results__container'></div>
     </div>
   </div>
 </aside>

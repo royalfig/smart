@@ -1,94 +1,75 @@
 {{! Mobile Nav Menu }}
 <nav class="modal" id="menu" aria-expanded="false">
-  <button class="modal__close-btn" data-target="menu" aria-label="Close menu" tabindex="-1">
-    <svg aria-hidden="true">
-      <use href="#close"></use>
-    </svg>
-  </button>
   <div class="modal__container">
-    {{#link href=@site.url class='menu__link'}}
-    <h2 class="modal__header">
-      {{@site.title}}
-    </h2>
-    {{/link}}
-    <div class="modal__inner-container">
+    <header class="modal__header">
+      <button class="modal__close-btn" data-target="menu" aria-label="Close menu" tabindex="-1">
+        <svg aria-hidden="true">
+          <use href="#close"></use>
+        </svg>
+      </button>
+      {{#link href=@site.url class='menu__link'}}
+      <h2 class="modal__title">
+        {{@site.title}}
+      </h2>
+      {{/link}}
       {{! Main Navigation }}
       {{#if @site.navigation}}
       {{ navigation }}
       {{/if}}
-
       {{! Member }}
-      <div class="divider">
-        <div class="divider__rule"></div>
-      </div>
-      <p class="menu__social-media-header">
-        Membership
-      </p>
+
       {{#if @member}}
-      <button class="menu__account-btn" id="m-account-btn" data-target="account" tabindex="-1">
-        <div class="menu__img-container">
-          <svg aria-hidden="true">
-            <use href="#user"></use>
-          </svg>
-          <img class="menu__avatar" src="{{@member.avatar_image}}" />
-        </div>
-        Account
-      </button>
+      <a class="sm-button--color" href="#/portal/account" tabindex="-1">Account</a>
       {{else}}
-      <a class="menu__signin" href="#/portal/signin" tabindex="-1">Sign In</a>
-      <a class="menu__signup" href="#/portal/signup" data-target="signup" tabindex="-1">Sign Up</a>
+      <a class="sm-button" href="#/portal/signin" tabindex="-1">Sign In</a>
+      <a class="sm-button--color" href="#/portal/signup" tabindex="-1">Sign Up</a>
       {{/if}}
-      <div class="divider">
-        <div class="divider__rule"></div>
-      </div>
+  
       {{! Search }}
-      <button class="menu__search-btn" id="m-search-btn" data-target="search-modal" tabindex="-1">
+      <button class="sm-button--search" id="m-search-btn" data-target="search-modal" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#search"></use>
         </svg>
         Search
       </button>
       {{!-- Dark Mode Toggle --}}
-      <button class="color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
+      <button class="sm-button color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#sun"></use>
         </svg>
         Light Mode
       </button>
-      <button class="color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
+      <button class="sm-button color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#moon"></use>
         </svg>
         Dark Mode
       </button>
+    </header>
+
+    <footer class="modal__footer">
       {{! Social Media  }}
-      {{#has any='@site.twitter, @site.facebook'}}
-      <div class="divider">
-        <div class="divider__rule"></div>
-      </div>
-      {{! Member }}
-      <div class="menu__social-media">
-        {{#if @site.twitter}}
-        <a class="menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
-          aria-label="Follow {{@site.title}} on Twitter" tabindex="-1">
-          <svg aria-hidden="true">
-            <use href="#twitter"></use>
-          </svg>
-        </a>
-        {{/if}}
-        {{#if @site.facebook}}
-        <a class="menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
-          aria-label="Follow {{@site.title}} on Facebook" tabindex="-1">
-          <svg aria-hidden="true">
-            <use href="#facebook"></use>
-          </svg>
-        </a>
-        {{/if}}
+        {{#has any='@site.twitter, @site.facebook'}}
+          {{#if @site.twitter}}
+          <a class="menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+            aria-label="Follow {{@site.title}} on Twitter" tabindex="-1">
+            <svg aria-hidden="true">
+              <use href="#twitter"></use>
+            </svg>
+          </a>
+          {{/if}}
+          {{#if @site.facebook}}
+          <a class="menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+            aria-label="Follow {{@site.title}} on Facebook" tabindex="-1">
+            <svg aria-hidden="true">
+              <use href="#facebook"></use>
+            </svg>
+          </a>
+          {{/if}}
         {{/has}}
         {{#if @site.secondary_navigation}}
-        {{navigation type='secondary'}}
+          {{navigation type='secondary'}}
         {{/if}}
-      </div>
-    </div>
+    </footer>
   </div>
 </nav>

@@ -1,44 +1,19 @@
 const { trapFocus, releaseFocus, tabKeyHandler } = require('./focusTrap');
 
+const searchBtn = document.getElementById('search-btn');
+const mSearchBtn = document.getElementById('m-search-btn');
+const menuBtn = document.getElementById('menu-btn');
+const closeBtns = document.querySelectorAll('.modal__close-btn');
+
+if (typeof SEARCH_API !== 'undefined') {
+  searchBtn.style.display = 'block';
+  mSearchBtn.style.display = 'block';
+}
+
+const btns = [searchBtn, mSearchBtn, menuBtn];
+
 const modalFn = () => {
-  // Desktop buttons
-  const accountBtn = document.getElementById('account-btn');
-  const signinBtn = document.getElementById('signin-btn');
-  const signupBtn = document.getElementById('signup-btn');
-  const searchBtn = document.getElementById('search-btn');
-  const subtextSignupBtn = document.getElementById('subtext-signup');
-  const subtextSigninBtn = document.getElementById('subtext-signin');
-  const upgrade = document.getElementById('upgrade');
-
-  // Mobile buttons
-  const mAccountBtn = document.getElementById('m-account-btn');
-  const mSigninBtn = document.getElementById('m-signin-btn');
-  const mSignupBtn = document.getElementById('m-signup-btn');
-  const mSearchBtn = document.getElementById('m-search-btn');
-  const menuBtn = document.getElementById('menu-btn');
-
-  const closeBtns = document.querySelectorAll('.modal__close-btn');
-
   // eslint-disable-next-line no-undef
-  if (typeof SEARCH_API !== 'undefined') {
-    searchBtn.style.display = 'block';
-    mSearchBtn.style.display = 'block';
-  }
-
-  const btns = [
-    accountBtn,
-    signinBtn,
-    signupBtn,
-    searchBtn,
-    subtextSignupBtn,
-    subtextSigninBtn,
-    upgrade,
-    mAccountBtn,
-    mSigninBtn,
-    mSignupBtn,
-    mSearchBtn,
-    menuBtn
-  ];
 
   const close = (modal) => {
     document.body.classList.remove('expanded-modal');
@@ -51,14 +26,14 @@ const modalFn = () => {
   };
 
   const closeHandler = (e) => {
-    const modal = e.currentTarget.parentElement;
+    const modal = e.currentTarget.closest('.modal');
     close(modal);
   };
 
   const openHandler = (e) => {
-    if (e.currentTarget.closest('.modal')) {
-      close(e.currentTarget.closest('.modal'));
-    }
+    // if (e.currentTarget.closest('.modal')) {
+    //   close(e.currentTarget.closest('.modal'));
+    // }
     const modal = document.getElementById(e.currentTarget.dataset.target);
     document.body.classList.add('expanded-modal');
     modal.setAttribute('aria-expanded', 'true');
