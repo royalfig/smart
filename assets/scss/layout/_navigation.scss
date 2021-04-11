@@ -1,13 +1,16 @@
 //-------------------------------------------
 // Navigation Partial
 //-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
 .navigation {
   // Social Media icons in footer
   &__social-media-item {
     width: 1.25em;
     height: 1.25em;
     margin-right: 0.5rem;
-    @include color-map(color, text2);
+    @include mixins.color-map(color, text2);
 
     &:last-child {
       margin-right: 0;
@@ -27,7 +30,7 @@
     margin: 0.5rem 0;
     font-size: 1.25rem;
 
-    @media (min-width: $laptop) {
+    @include mixins.respond-above(variables.$laptop) {
       display: inline-block;
       margin: 0.31rem 0.5rem 0;
       font-size: 0.9rem;
@@ -41,9 +44,5 @@
         margin-right: 0;
       }
     }
-  }
-
-  &__list-link {
-    @extend .link;
   }
 }

@@ -1,13 +1,13 @@
 //-------------------------------------------
 // Mobile Nav Menu
 //-------------------------------------------
-
+@use '../abstracts/mixins';
 .menu {
   &__link {
-    @include transition(color);
+    @include mixins.transition(color);
     &:focus {
       outline: none;
-      @include color-map(color, primary);
+      @include mixins.color-map(color, primary);
     }
   }
 }

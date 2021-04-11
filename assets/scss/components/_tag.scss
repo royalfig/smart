@@ -1,0 +1,29 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.sm-tag {
+  display: inline-block;
+  @include mixins.color-map(color, text2);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  @include mixins.transition(color);
+
+  &::before {
+    content: '#';
+  }
+
+  &:not(.card &):hover {
+    @include mixins.color-map(color, text);
+  }
+
+  .card & {
+    margin-top: auto;
+  }
+
+  &:not(:last-child) {
+    .post__tag-bar & {
+      margin-right: 0.5rem;
+    }
+  }
+}

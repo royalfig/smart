@@ -1,31 +1,35 @@
 //-------------------------------------------
 // Card Styles
 //-------------------------------------------
+@use '../abstracts/_variables';
+@use '../abstracts/_mixins';
+@use '../abstracts/functions';
+
 .card {
   position: relative;
   display: flex;
   flex-direction: column;
   max-width: 100%;
-  @include color-map(background-color, surface2);
-  border-radius: $radius;
-  box-shadow: $box-shadow;
+  @include mixins.color-map(background-color, surface2);
+  border-radius: variables.$radius;
+  box-shadow: variables.$box-shadow;
 
   &__link {
     display: flex;
     flex-direction: column;
     height: 100%;
-    border-radius: $radius;
+    border-radius: variables.$radius;
     transition: box-shadow 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95),
       color 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
 
     &:hover,
     &:focus {
-      box-shadow: 0 0 0 4px color(primary);
+      box-shadow: 0 0 0 4px functions.color(primary);
       box-shadow: 0 0 0 4px var(--primary, color(primary));
 
       .card {
         &__title {
-          @include color-map(color, primary);
+          @include mixins.color-map(color, primary);
         }
       }
     }
@@ -47,8 +51,8 @@
         text-transform: uppercase;
         letter-spacing: -0.2px;
         content: 'Members';
-        @include color-map(background-color, text1);
-        @include color-map(color, surface1);
+        @include mixins.color-map(background-color, text1);
+        @include mixins.color-map(color, surface1);
       }
     }
   }
@@ -62,13 +66,16 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-top-left-radius: $radius;
-    border-top-right-radius: $radius;
-    // @include transition(all);
+    border-top-left-radius: variables.$radius;
+    border-top-right-radius: variables.$radius;
   }
 
   &__no-img {
-    background: linear-gradient(to right top, color(primary), color(secondary));
+    background: linear-gradient(
+      to right top,
+      functions.color(primary),
+      functions.color(secondary)
+    );
     background: var(--gradient);
 
     &:after {
@@ -79,46 +86,27 @@
       height: calc(100% - 2rem);
       margin: 1rem;
       content: '';
-      border-radius: $radius;
-      @include color-map(background, surface1);
+      border-radius: variables.$radius;
+      @include mixins.color-map(background, surface1);
     }
   }
 
   &__body {
-    @include flex(column, flex-start, flex-start);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     height: 100%;
     padding: 0 1.25rem;
     margin: 1.25rem 0;
   }
 
-  &__date,
-  &__tag {
+  &__date {
     display: flex;
     padding: 1px;
     font-size: 0.75rem;
     font-weight: 400;
-    @include color-map(color, text1);
+    @include mixins.color-map(color, text1);
     text-transform: uppercase;
-  }
-
-  &__tag {
-    @include flex(row, flex-end, center);
-    margin-top: auto;
-
-    svg {
-      flex-shrink: 0;
-      align-self: flex-start;
-      width: 0.75rem;
-      height: 0.75rem;
-      transform: translateY(0.2em);
-      stroke: currentColor;
-      stroke-width: 2px;
-      @include transition(all);
-    }
-
-    p {
-      @include transition(all);
-    }
   }
 
   &__title {
@@ -126,31 +114,26 @@
     margin: 0.25rem 0 1.5rem;
     font-size: 1.5rem;
     line-height: 1.1;
-    @include color-map(color, text);
-    @include transition(color);
+    @include mixins.color-map(color, text);
+    @include mixins.transition(color);
   }
 
-  //-------------------------------------------
-  // Cards on Tag page
-  //-------------------------------------------
   &--tags {
     @extend .card;
     overflow: hidden;
 
     &__link {
-      @extend .card__link;
-
       &:hover,
       &:focus {
         .card--tags {
           &__title {
-            @include color-map(color, text);
-            @include color-map(background, surface1-75);
+            @include mixins.color-map(color, text);
+            @include mixins.color-map(background, surface1-75);
             transition: none;
           }
 
           &__date {
-            @include color-map(background, surface1-75);
+            @include mixins.color-map(background, surface1-75);
           }
 
           &__img-container:after {
@@ -170,8 +153,8 @@
         height: 100%;
         content: '';
         background: rgba(0, 0, 0, 0.5);
-        border-radius: $radius;
-        @include transition(all);
+        border-radius: variables.$radius;
+        @include mixins.transition(all);
       }
     }
 
@@ -181,7 +164,7 @@
 
     &__no-img {
       @extend .card__no-img;
-      @include color-map(background, primary);
+      @include mixins.color-map(background, primary);
 
       &:after {
         background: none;
@@ -190,7 +173,7 @@
 
     &__img,
     &__no-img {
-      border-radius: $radius;
+      border-radius: variables.$radius;
     }
 
     &__body {
@@ -208,28 +191,28 @@
       padding: 0.25rem 0 0.25rem 0.5rem;
       margin: 0;
       font-size: 2rem;
-      @include color-map(color, text);
-      @include color-map(background, surface1);
-      border-top-left-radius: $radius;
-      border-bottom-left-radius: $radius;
+      @include mixins.color-map(color, text);
+      @include mixins.color-map(background, surface1);
+      border-top-left-radius: variables.$radius;
+      border-bottom-left-radius: variables.$radius;
 
-      @media (min-width: $tablet) {
+      @media (min-width: variables.$tablet) {
         font-size: 1.5rem;
       }
     }
     &__date {
       @extend .card__date;
       padding: 0.375rem 0.5rem;
-      @include color-map(color, secondary);
-      @include color-map(background, surface1);
-      font-family: $sans;
+      @include mixins.color-map(color, secondary);
+      @include mixins.color-map(background, surface1);
+      font-family: variables.$sans;
       font-size: 2rem;
       line-height: 1;
-      border-top-right-radius: $radius;
-      border-bottom-right-radius: $radius;
+      border-top-right-radius: variables.$radius;
+      border-bottom-right-radius: variables.$radius;
       font-variant-numeric: tabular-nums;
 
-      @media (min-width: $tablet) {
+      @media (min-width: variables.$tablet) {
         font-size: 1.5rem;
       }
     }
@@ -237,28 +220,28 @@
     &:nth-child(2n) {
       .card {
         &__no-img {
-          @include color-map(background, three);
+          @include mixins.color-map(background, three);
         }
       }
     }
     &:nth-child(3n) {
       .card {
         &__no-img {
-          @include color-map(background, four);
+          @include mixins.color-map(background, four);
         }
       }
     }
     &:nth-child(4n) {
       .card {
         &__no-img {
-          @include color-map(background, five);
+          @include mixins.color-map(background, five);
         }
       }
     }
     &:nth-child(5n) {
       .card {
         &__no-img {
-          @include color-map(background, secondary);
+          @include mixins.color-map(background, secondary);
         }
       }
     }

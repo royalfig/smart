@@ -28,7 +28,7 @@ let ticking = false;
 // Variables for reading progress
 const progressBar = document.querySelector('.post-reading-progress');
 const shareBar = document.querySelector('.post-share-bar');
-const footer = document.querySelector('.footer--outer-container');
+const footer = document.querySelector('.outer-container--footer');
 const buffer = 50;
 
 // Variables for share bar

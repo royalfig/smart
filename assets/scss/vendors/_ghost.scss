@@ -1,4 +1,9 @@
-// Required KG Styles
+//-------------------------------------------
+// ? Styles required by Ghost
+//-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
 .kg-card {
   margin: 2rem 0;
 }
@@ -43,23 +48,22 @@
 .kg-bookmark-container {
   display: flex;
   flex-wrap: wrap-reverse;
-  @include color-map(background-color, surface2);
-  border-radius: $radius;
-  box-shadow: $box-shadow;
-  @include transition(all);
+  @include mixins.color-map(background-color, surface2);
+  border-radius: variables.$radius;
+  box-shadow: variables.$box-shadow;
+  @include mixins.transition(box-shadow);
 
-  @media (min-width: $laptop) {
+  @include mixins.respond-above(variables.$laptop) {
     flex-wrap: nowrap;
   }
 
   &:focus,
   &:hover {
-    box-shadow: 0 0 0 4px var(--surface4);
+    box-shadow: 0 0 0 4px var(--primary);
+    .kg-bookmark-title {
+      @include mixins.color-map(color, primary);
+    }
   }
-}
-
-.kg-bookmark-container:hover {
-  text-decoration: none;
 }
 
 .kg-bookmark-content {
@@ -70,14 +74,15 @@
 
 .kg-bookmark-title {
   margin-bottom: 1rem;
-  font-family: $serif;
+  font-family: variables.$serif;
   font-size: 0.95rem;
   font-weight: 400;
+  @include mixins.transition(color);
 }
 
 .kg-bookmark-metadata,
 .kg-bookmark-description {
-  font-family: $sans;
+  font-family: variables.$sans;
 }
 
 .kg-bookmark-metadata {
@@ -89,12 +94,12 @@
   margin-bottom: 1rem;
   font-size: 0.9rem;
   text-overflow: ellipsis;
-  @include color-map(color, text);
+  @include mixins.color-map(color, text);
 
   &:hover,
   &:active,
   &:focus {
-    @include color-map(color, text);
+    @include mixins.color-map(color, text);
   }
 }
 
@@ -115,15 +120,15 @@
   width: 100%;
   height: 100%;
   max-height: 15rem;
-  border-top-left-radius: $radius;
-  border-top-right-radius: $radius;
+  border-top-left-radius: variables.$radius;
+  border-top-right-radius: variables.$radius;
   object-fit: cover;
-  @include transition(all);
+  @include mixins.transition(all);
 
-  @media (min-width: $laptop) {
+  @media (min-width: variables.$laptop) {
     max-height: initial;
-    border-top-right-radius: $radius;
-    border-bottom-right-radius: $radius;
+    border-top-right-radius: variables.$radius;
+    border-bottom-right-radius: variables.$radius;
   }
 }
 
@@ -139,7 +144,7 @@
   font-size: 0.9rem;
 }
 
-@media (min-width: $laptop) {
+@media (min-width: variables.$laptop) {
   .kg-bookmark-content,
   .kg-bookmark-thumbnail {
     width: 50%;
@@ -204,22 +209,23 @@
   align-items: center;
   width: 100%;
   text-align: center;
-  @include color-map(color, text);
-  @include color-map(background-color, surface2);
+  @include mixins.color-map(color, text);
+  @include mixins.color-map(background-color, surface2);
 }
 
 .sm-post-upgrade-cta-content {
   padding: 1.25rem;
-  border-radius: $radius;
+  border-radius: variables.$radius;
   h2 {
     margin-top: 0;
   }
   .sm-button--color {
     margin: 1rem 0 0.25rem;
+    text-decoration: none;
+    @include mixins.color-map(color, textInverse);
 
-    @include color-map(color, textInverse);
     &:hover {
-      @include color-map(color, textInverse);
+      @include mixins.color-map(color, textInverse);
     }
   }
 }

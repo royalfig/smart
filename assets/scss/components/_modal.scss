@@ -1,6 +1,9 @@
 //-------------------------------------------
 // General Modal Styles
 //-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
 .content-wrap {
   &:before {
     top: 0;
@@ -46,16 +49,16 @@
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.2s ease-in;
-  @include color-map(color, text);
-  @include color-map(background-color, surface2);
+  @include mixins.color-map(color, text);
+  @include mixins.color-map(background-color, surface2);
 
-  @media (min-width: $laptop) {
+  @media (min-width: variables.$laptop) {
     left: 50%;
     width: 380px;
     max-width: 100vw;
     max-height: 75%;
     margin-top: 15vmin;
-    border-radius: $radius;
+    border-radius: variables.$radius;
     box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
     transform: translate(-50%, 0);
   }
@@ -73,7 +76,7 @@
     overflow-y: auto;
     pointer-events: all;
     opacity: 1;
-    @media (min-width: $laptop) {
+    @media (min-width: variables.$laptop) {
       animation: popup 0.25s ease-out;
     }
   }
@@ -97,15 +100,15 @@
     line-height: 0;
 
     &:hover svg {
-      @include color-map(stroke, secondary);
+      @include mixins.color-map(stroke, secondary);
     }
 
     svg {
       width: 1.5rem;
       height: 1.5rem;
       stroke-width: 3;
-      @include color-map(stroke, text1);
-      @include transition(all);
+      @include mixins.color-map(stroke, text1);
+      @include mixins.transition(all);
     }
   }
 
@@ -128,21 +131,8 @@
       svg {
         width: 100%;
         height: 100%;
-        @include color-map(stroke, text2);
+        @include mixins.color-map(stroke, text2);
       }
     }
-  }
-}
-
-@keyframes popup {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, 20px) scale(0.8);
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, 0) scale(1);
   }
 }

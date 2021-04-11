@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
 //-------------------------------------------
 // Post Reading Progress Bar
 //-------------------------------------------
@@ -8,9 +10,9 @@
   width: 0;
   max-width: 100%;
   height: 3px;
-  @include color-map(background-color, text4);
-  border-top-right-radius: $radius;
-  border-bottom-right-radius: $radius;
+  @include mixins.color-map(background-color, text4);
+  border-top-right-radius: variables.$radius;
+  border-bottom-right-radius: variables.$radius;
   transition: all 0.1s ease;
 }
 
@@ -18,7 +20,7 @@
 // Post Styles
 //-------------------------------------------
 .post {
-  max-width: $tablet;
+  max-width: variables.$tablet;
   margin: 0 auto 3rem;
 
   &__img,
@@ -26,24 +28,23 @@
     position: relative;
     box-sizing: content-box;
     width: calc(100% - 2rem);
-    // height: 20rem;
     height: 340px;
     padding: 1rem 1rem 0;
-    @include navbar(margin-top);
+    @include mixins.navbar(margin-top);
   }
 
   &__no-img {
     width: auto;
-    max-width: $laptop + 100;
+    max-width: variables.$laptop + 100;
     margin: 0 auto;
-    @include navbar(margin-top, $increase: 1);
+    @include mixins.navbar(margin-top, $increase: 1);
     background: linear-gradient(45deg, color(primary), color(secondary));
     background: var(--gradient);
-    border-radius: $radius;
-    box-shadow: $box-shadow;
+    border-radius: variables.$radius;
+    box-shadow: variables.$box-shadow;
 
     .post-template & {
-      max-width: $tablet + 100;
+      max-width: variables.$tablet + 100;
     }
 
     &:after {
@@ -54,8 +55,8 @@
       height: calc(100% - 2rem);
       margin: 1rem;
       content: '';
-      @include color-map(background-color, surface);
-      border-radius: $radius;
+      @include mixins.color-map(background-color, surface);
+      border-radius: variables.$radius;
       box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.15);
       mix-blend-mode: soft-light;
       opacity: 0.75;
@@ -70,12 +71,12 @@
     img {
       display: block;
       width: auto;
-      max-width: $laptop + 100;
+      max-width: variables.$laptop + 100;
       height: 100%;
       margin: 0 auto;
       object-fit: cover;
-      border-radius: $radius;
-      box-shadow: $box-shadow;
+      border-radius: variables.$radius;
+      box-shadow: variables.$box-shadow;
 
       @supports (object-fit: cover) {
         width: 100%;
@@ -83,7 +84,7 @@
     }
     .post-template & {
       img {
-        max-width: $tablet + 100;
+        max-width: variables.$tablet + 100;
       }
     }
   }
@@ -97,18 +98,19 @@
   }
 
   &__title--serif {
-    @include header;
+    font-family: variables.$serif;
+    font-weight: 400;
 
     span {
-      font-family: $sans;
-      @include color-map(color, secondary);
+      font-family: variables.$sans;
+      @include mixins.color-map(color, secondary);
     }
   }
 
   &__author {
     font-size: 1.1rem;
     font-weight: 700;
-    @include color-map(color, primary);
+    @include mixins.color-map(color, primary);
   }
 
   &__date {
@@ -116,8 +118,9 @@
   }
 
   &__tag-bar {
-    @include flex(row, flex-start, center);
+    display: flex;
     flex-wrap: wrap;
+    align-items: center;
     margin-top: 0.25rem;
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -127,17 +130,17 @@
       width: 1rem;
       height: 1rem;
       fill: none;
-      @include color-map(stroke, text1);
+      @include mixins.color-map(stroke, text1);
     }
   }
 
   &__tag-link {
-    @include flex(row, flex-start, flex-start);
+    display: flex;
     margin-right: 0.25rem;
 
     p {
-      @include color-map(color, text1);
-      @include transition(color);
+      @include mixins.color-map(color, text1);
+      @include mixins.transition(color);
     }
 
     &:first-child {
@@ -149,20 +152,20 @@
 
     &:hover {
       p {
-        @include color-map(color, secondary);
+        @include mixins.color-map(color, secondary);
       }
 
       svg {
-        @include color-map(stroke, secondary);
+        @include mixins.color-map(stroke, secondary);
       }
     }
     svg {
       width: 0.75rem;
       height: 0.75rem;
-      @include color-map(stroke, text1);
+      @include mixins.color-map(stroke, text1);
       stroke-width: 2px;
       transform: translateY(0.2em);
-      @include transition(stroke);
+      @include mixins.transition(stroke);
     }
   }
 
@@ -179,8 +182,8 @@
 // Post Footer: About the Author and Related Posts
 // -------------------------------------------
 .post-footer {
-  @include inner-container;
-  @include grid;
+  @include mixins.inner-container;
+  @include mixins.grid;
   padding-top: 0.5rem;
   grid-template-areas:
     'title-1'
@@ -190,7 +193,7 @@
     'post-2';
   grid-template-columns: 1fr;
 
-  @include respond-between($tablet, $laptop) {
+  @include mixins.respond-between(variables.$tablet, variables.$laptop) {
     grid-template-areas:
       'title-1 title-1'
       'author author'
@@ -199,7 +202,7 @@
     grid-template-columns: 1fr 1fr;
   }
 
-  @include respond-above($laptop) {
+  @include mixins.respond-above(variables.$laptop) {
     grid-template-areas:
       'title-1 title-2 title-2'
       'author post-1 post-2';
@@ -209,7 +212,7 @@
   &__title-1,
   &__title-2 {
     margin-bottom: 0;
-    font-family: $serif;
+    font-family: variables.$serif;
     font-weight: 400;
   }
 
@@ -227,7 +230,8 @@
   }
 
   &__author-img-container {
-    @include flex(row, flex-start, center);
+    display: flex;
+    align-items: center;
     margin-bottom: 1rem;
 
     &--authors {
@@ -236,7 +240,7 @@
       margin-bottom: 0.5rem;
       border-bottom-style: solid;
       border-bottom-width: 1px;
-      @include color-map(border-bottom-color, surface4);
+      @include mixins.color-map(border-bottom-color, surface4);
     }
   }
 
@@ -246,9 +250,8 @@
   }
 
   &__author-img {
-    width: 0.5 * $base;
-    height: 0.5 * $base;
-    // object-fit: cover;
+    width: 0.5 * variables.$base;
+    height: 0.5 * variables.$base;
     border-radius: 50%;
   }
 
@@ -260,33 +263,35 @@
     background: var(--gradient);
     border-style: solid;
     border-width: 0.25rem;
-    @include color-map(border-color, surface4);
+    @include mixins.color-map(border-color, surface4);
     svg {
       display: block;
       width: 75%;
       height: 75%;
       margin: 12.5% auto 0;
-      @include color-map(color, textInverse);
+      @include mixins.color-map(color, textInverse);
     }
   }
 
   &__author-name {
-    font-family: $serif;
+    font-family: variables.$serif;
     font-weight: 400;
     line-height: 1;
-    @include transition(color);
+    @include mixins.transition(color);
 
     &:hover {
-      @include color-map(color, primary);
+      @include mixins.color-map(color, primary);
     }
   }
 
   &__author-social,
   &__author-location {
-    @include flex(row, flex-start, center);
+    display: flex;
+    align-items: center;
 
     a {
-      @include flex(row, flex-start, center);
+      display: flex;
+      align-items: center;
       margin-right: 0.25rem;
 
       &:last-child {
@@ -296,7 +301,7 @@
 
     p {
       font-size: 0.85rem;
-      @include color-map(color, text1);
+      @include mixins.color-map(color, text1);
     }
   }
 
@@ -305,19 +310,19 @@
     svg {
       width: 1rem;
       height: 1rem;
-      @include color-map(stroke, text2);
-      @include transition(all);
+      @include mixins.color-map(stroke, text2);
+      @include mixins.transition(all);
     }
     .website {
       svg {
         fill: none;
-        @include color-map(stroke, text2);
+        @include mixins.color-map(stroke, text2);
         stroke-width: 2px;
       }
 
       &:hover {
         svg {
-          @include color-map(stroke, primary);
+          @include mixins.color-map(stroke, primary);
         }
       }
     }
@@ -329,7 +334,7 @@
       height: 1rem;
       margin-right: 0.25rem;
       fill: none;
-      @include color-map(stroke, text2);
+      @include mixins.color-map(stroke, text2);
       stroke-width: 2px;
     }
   }
@@ -353,15 +358,4 @@
 
 .related-posts:nth-child(7) {
   display: none;
-}
-
-//-------------------------------------------
-// Medium Zoom plugin style
-//-------------------------------------------
-.medium-zoom-overlay {
-  z-index: 1002;
-}
-
-.medium-zoom-image--opened {
-  z-index: 1003;
 }

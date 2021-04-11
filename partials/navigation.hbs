@@ -1,7 +1,7 @@
 {{^if isSecondary}}
 <ul class="navigation__ul" role="menu">
     {{#foreach navigation}}<li class="navigation__li" role="menuitem">
-        <a href="{{url}}" class="navigation__list-link {{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
+        <a href="{{url}}" class="link {{slug}} {{#if current}}nav-current{{/if}}">{{label}}</a>
     </li>{{/foreach}}
 </ul>
 {{else}}

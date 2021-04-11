@@ -55,65 +55,6 @@ if (window.CSS && CSS.supports('color', 'var(--primary)')) {
   });
 }
 
-/**
- * Member annual price discount check
- * * Checks whether annual price is better than monthly and adds a span with the discount info
- */
-const extractNumber = (input) => {
-  const num = /\d+/.exec(input)[0];
-  return parseInt(num, 10);
-};
-
-const yearEl = document.getElementById('yearly-price');
-
-if (yearEl) {
-  const yearlyPrice = extractNumber(yearEl.textContent);
-
-  const monthlyPrice = extractNumber(
-    document.getElementById('monthly-price').textContent
-  );
-
-  const calculatePercentageDiscount = (monthToYear, year) => {
-    const diff = monthToYear - year;
-    const percentage = ((diff * 100) / monthToYear).toFixed();
-    return `${percentage}%`;
-  };
-
-  const determineDiscount = (month, year) => {
-    const monthlyToAnnual = month * 12;
-    if (year < monthlyToAnnual) {
-      const percentageDiscount = calculatePercentageDiscount(
-        monthlyToAnnual,
-        year
-      );
-      const percentOffEl = document.createElement('p');
-      percentOffEl.classList.add('member__discount');
-      const percentOffText = `${percentageDiscount} off the monthly price!`;
-      percentOffEl.append(percentOffText);
-      yearEl.parentElement.append(percentOffEl);
-    }
-  };
-
-  if (monthlyPrice && yearlyPrice) {
-    determineDiscount(monthlyPrice, yearlyPrice);
-  }
-}
-
-// Hero -> Contact
-const contactEl = document.querySelector('.hero__contact');
-
-const navLinks = document.querySelectorAll('.navigation__list-link');
-
-if (contactEl && navLinks) {
-  // eslint-disable-next-line no-restricted-syntax
-  for (const el of navLinks) {
-    if (el.pathname === '/contact/') {
-      contactEl.style.display = 'inline-block';
-      break;
-    }
-  }
-}
-
 /*
  * Remove menu nav links from the DOM
  */

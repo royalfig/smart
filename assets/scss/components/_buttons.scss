@@ -1,3 +1,5 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
 .sm-button {
   display: block;
   width: 10rem;
@@ -11,10 +13,10 @@
   cursor: pointer;
   background-color: none;
   border: none;
-  border-radius: $radius;
-  box-shadow: $box-shadow;
-  @include color-map(background-color, surface3);
-  @include transition(background-color);
+  border-radius: variables.$radius;
+  box-shadow: variables.$box-shadow;
+  @include mixins.color-map(background-color, surface3);
+  @include mixins.transition(background-color);
 
   & + .sm-button {
     margin-top: 1rem;
@@ -22,7 +24,7 @@
 
   &:hover {
     outline: none;
-    @include color-map(background-color, surface4);
+    @include mixins.color-map(background-color, surface4);
   }
 
   &:active {
@@ -39,13 +41,13 @@
 
   &--color {
     @extend .sm-button;
-    @include color-map(color, textInverse);
-    @include color-map(background-color, primary);
-    @include transition(background-color);
+    @include mixins.color-map(color, textInverse);
+    @include mixins.color-map(background-color, primary);
+    @include mixins.transition(background-color);
 
     &:hover {
-      @include color-map(color, textInverse);
-      @include color-map(background-color, secondary);
+      @include mixins.color-map(color, textInverse);
+      @include mixins.color-map(background-color, secondary);
     }
 
     &:active {

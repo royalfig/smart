@@ -1,6 +1,9 @@
 //-------------------------------------------
 // Navbar
 //-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
 .navbar {
   position: fixed;
   top: 0;
@@ -8,28 +11,32 @@
   display: block;
   width: 100%;
   font-size: 0.9rem;
-  box-shadow: $box-shadow;
-  @include color-map(background-color, surface2);
-  @include transition(all);
+  box-shadow: variables.$box-shadow;
+  @include mixins.color-map(background-color, surface2);
+  @include mixins.transition(all);
 
   &__top {
     display: none;
     height: 2.25rem;
     padding: 0.25rem 1rem;
     border-bottom: 1px solid;
-    @include color-map(border-bottom-color, surface4);
+    @include mixins.color-map(border-bottom-color, surface4);
 
-    @media (min-width: $laptop) {
-      @include flex(row, space-between, center);
+    @include mixins.respond-above(variables.$laptop) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-size: 0.8rem;
     }
 
     &--left {
-      @include flex(row, flex-start, center);
+      display: flex;
+      align-items: center;
     }
 
     &--right {
-      @include flex(row, flex-start, center);
+      display: flex;
+      align-items: center;
 
       button {
         margin-right: 0;
@@ -42,34 +49,34 @@
     margin-right: 0.35em;
     font-size: 0.85em;
     line-height: 1;
-    border-radius: $radius;
-    @include color-map(color, textInverse);
-    @include color-map(background-color, secondary);
+    border-radius: variables.$radius;
+    @include mixins.color-map(color, textInverse);
+    @include mixins.color-map(background-color, secondary);
   }
 
   &__new-link {
     font-size: 0.95em;
     line-height: 1;
-    @include transition(color);
-    @include color-map(color, text2);
+    @include mixins.transition(color);
+    @include mixins.color-map(color, text2);
 
     &:hover {
-      @include color-map(color, text);
+      @include mixins.color-map(color, text);
     }
   }
 
   // Bottom navbar -> Brand, Links, Member
   &__bottom {
+    display: flex;
+    align-items: center;
     height: 3.25rem;
     padding: 0.5rem 1rem;
-
-    @include flex(row, flex-start, center);
 
     &--center {
       display: none;
       margin-left: 2rem;
 
-      @media (min-width: $laptop) {
+      @include mixins.respond-above(variables.$laptop) {
         display: block;
       }
     }
@@ -83,7 +90,7 @@
       display: none;
       margin-left: auto;
 
-      @media (min-width: $laptop) {
+      @include mixins.respond-above(variables.$laptop) {
         display: flex;
         align-items: center;
       }
@@ -91,7 +98,7 @@
       &--mobile {
         margin: 0.5rem 0 0 auto;
         line-height: 1.6;
-        @media (min-width: $laptop) {
+        @include mixins.respond-above(variables.$laptop) {
           display: none;
         }
       }
@@ -99,8 +106,9 @@
   }
 
   &__brand--serif {
-    @include flex(row, flex-start, center);
-    font-family: $serif;
+    display: flex;
+    align-items: center;
+    font-family: variables.$serif;
     font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.6;
@@ -116,28 +124,28 @@
   &__signin,
   &__signup {
     margin: 0.31rem 0.5rem 0 0;
-    font-family: $sans;
+    font-family: variables.$sans;
     font-size: 0.8rem;
     line-height: 1.8;
-    @include color-map(color, text2);
-    @include transition(color);
+    @include mixins.color-map(color, text2);
+    @include mixins.transition(color);
   }
 
   &__signin:hover {
-    @include color-map(color, text);
+    @include mixins.color-map(color, text);
   }
 
   &__signup {
     padding: 0 0.25rem;
     margin-right: 0;
     font-weight: 700;
-    border-radius: $radius;
-    box-shadow: $box-shadow;
-    @include color-map(color, textInverse);
-    @include color-map(background-color, primary);
-    @include transition(background-color);
+    border-radius: variables.$radius;
+    box-shadow: variables.$box-shadow;
+    @include mixins.color-map(color, textInverse);
+    @include mixins.color-map(background-color, primary);
+    @include mixins.transition(background-color);
     &:hover {
-      @include color-map(background-color, secondary);
+      @include mixins.color-map(background-color, secondary);
     }
   }
 
@@ -148,10 +156,10 @@
     svg {
       width: 100%;
       height: 100%;
-      @include color-map(stroke, text2);
+      @include mixins.color-map(stroke, text2);
 
       &:hover {
-        @include color-map(stroke, text);
+        @include mixins.color-map(stroke, text);
       }
     }
   }
@@ -166,11 +174,11 @@
     svg {
       width: 100%;
       height: 100%;
-      @include color-map(stroke, text2);
-      @include transition(stroke);
+      @include mixins.color-map(stroke, text2);
+      @include mixins.transition(stroke);
 
       &:hover {
-        @include color-map(stroke, text);
+        @include mixins.color-map(stroke, text);
       }
     }
   }
@@ -184,11 +192,11 @@
     svg {
       width: 100%;
       height: 100%;
-      @include color-map(stroke, text2);
-      @include transition(stroke);
+      @include mixins.color-map(stroke, text2);
+      @include mixins.transition(stroke);
 
       &:hover {
-        @include color-map(stroke, text);
+        @include mixins.color-map(stroke, text);
       }
     }
   }

@@ -1,0 +1,154 @@
+//-------------------------------------------
+// Post Content Styles
+//-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+@use '../abstracts/functions';
+
+.post {
+  &__content {
+    figcaption {
+      padding: 0.5rem;
+      font-size: 0.8375rem;
+      @include mixins.color-map(color, text1);
+      @include mixins.color-map(background-color, surface2);
+      text-align: center;
+      border-bottom-right-radius: variables.$radius;
+      border-bottom-left-radius: variables.$radius;
+    }
+
+    & > blockquote {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 200px;
+      padding: 1rem 2rem;
+      margin: 2rem 0;
+      font-size: 1.5rem;
+      font-style: italic;
+      @include mixins.color-map(color, text2);
+      @include mixins.color-map(background-color, surface3);
+      border-radius: variables.$radius;
+
+      &:before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 8px;
+        height: 100%;
+        content: '';
+        background: linear-gradient(
+          functions.color(primary),
+          functions.color(secondary)
+        );
+        background: linear-gradient(var(--primary), var(--secondary));
+        border-top-left-radius: variables.$radius;
+        border-bottom-left-radius: variables.$radius;
+      }
+    }
+
+    a:not(.kg-bookmark-container) {
+      text-decoration: underline from-font;
+      @include mixins.transition(text-decoration-color);
+    }
+
+    a:not(.kg-bookmark-container):hover,
+    a:not(.kg-bookmark-container):active {
+      @include mixins.color-map(text-decoration-color, secondary);
+    }
+
+    a:not(.kg-bookmark-container):visited {
+      @include mixins.color-map(color, text2);
+    }
+
+    ul,
+    ol {
+      margin: 1rem 2rem;
+      @include mixins.color-map(color, text);
+    }
+
+    ul {
+      list-style-type: square;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    hr {
+      height: 0.15rem;
+      margin: 2rem 0;
+      background: linear-gradient(
+        to right,
+        var(--surface2),
+        var(--surface3),
+        var(--surface4),
+        var(--surface3),
+        var(--surface2)
+      );
+      border: none;
+      border-radius: variables.$radius;
+    }
+
+    table {
+      width: 100%;
+      overflow: hidden;
+      font-size: 0.935rem;
+
+      @include mixins.color-map(border-color, text4);
+      border-collapse: collapse;
+      border: none;
+      tr {
+        @include mixins.color-map(background-color, surface1);
+      }
+    }
+
+    th {
+      padding: 0.25rem 0.5rem;
+      font-family: variables.$serif;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    thead {
+      & > tr {
+        @include mixins.color-map(background-color, surface2);
+      }
+    }
+
+    tbody {
+      tr:nth-child(even) {
+        @include mixins.color-map(background-color, surface2);
+      }
+
+      td {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
+        text-align: left;
+        vertical-align: top;
+      }
+    }
+
+    pre {
+      max-width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      overflow-x: auto;
+      @include mixins.color-map(background-color, surface);
+      border-radius: variables.$radius;
+    }
+
+    kbd {
+      padding: 0 4px;
+      font-family: variables.$mono;
+      @include mixins.color-map(color, text2);
+      @include mixins.color-map(background-color, surface3);
+      border-radius: 4px;
+    }
+
+    code {
+      font-family: variables.$mono;
+    }
+  }
+}
