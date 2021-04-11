@@ -18,3 +18,4 @@ zip.addLocalFile(path.join(__dirname, 'post.hbs'));
 zip.addLocalFile(path.join(__dirname, 'tag.hbs'));
 
 zip.writeZip(path.join(__dirname, 'smart.zip'));
+console.log('🐶 Zipped this puppy up');

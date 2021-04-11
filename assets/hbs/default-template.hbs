@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" color-mode="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{meta_title}}</title>
+    {{!-- CSS and Fonts  --}}
+    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
+    <link rel="preload" as="style" href="{{asset 'built/app.css'}}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
+        onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Regular.woff2'}}" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Bold.woff2'}}" type="font/woff2" crossorigin="anonymous">
+    {{!-- critical-css --}}
+
+    <style>
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: normal;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 400;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
+        }
+
+        @font-face {
+            font-family: 'Lato';
+            font-style: italic;
+            font-weight: 700;
+            font-display: swap;
+            src: local('Lato'),
+            url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
+            url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
+        }
+
+        body {
+            font-family: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
+                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{{asset 'built/app.css'}}">
+    {{!-- Load scripts to execute before render --}}
+    <script>
+        if (
+            localStorage.getItem('pref') === 'light' ||
+            (window.matchMedia('(prefers-color-scheme: light)').matches &&
+                !localStorage.getItem('pref'))
+        ) {
+            document.documentElement.setAttribute('color-mode', 'light');
+        }
+    </script>
+    {{!-- Scripts to be parsed after load --}}
+    <script src="{{asset 'built/app.js'}}" defer></script>
+    {{^is "home"}}
+    <link rel="stylesheet" href="{{asset 'built/post.css'}}">
+    <script src="{{asset 'built/post.js'}}" defer></script>
+    {{/is}}
+
+    {{!-- Output SEO + Meta data and other settings by Ghost --}}
+    {{ghost_head}}
+</head>
+
+<body class="{{body_class}}">
+    <a href="#sm-main" class="sm-button--color skip-to-content">Skip to content</a>
+    {{> "svg"}}
+    <div class="content-wrap">
+        {{> "navbar"}}
+        {{> "menu"}}
+        {{> "search"}}
+        {{{body}}}
+        {{> "footer"}}
+    </div>
+    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
+    {{{block "scripts"}}}
+    {{!-- Ghost footer required, right before the closing body tag --}}
+    {{ghost_foot}}
+</body>
+
+</html>

@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const FileManager = require('filemanager-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+
 require('dotenv').config();
 
 const { LOCAL } = process.env;
@@ -10,6 +11,7 @@ const { LOCAL } = process.env;
 module.exports = {
   mode: 'development',
   entry: {
+    critical: './assets/scss/critical.scss',
     app: './assets/js/index.js',
     post: './assets/js/post.js'
   },
@@ -20,7 +22,13 @@ module.exports = {
   devtool: 'inline-source-map',
   plugins: [
     new ExtraWatchWebpackPlugin({
-      files: [path.join(__dirname, '/*.hbs')],
+      files: [
+        '/author.hbs',
+        '/error-404.hbs',
+        '/home.hbs',
+        '/index.hbs',
+        '/assets/hbs/default-template.hbs'
+      ],
       dirs: [path.join(__dirname, '/partials')]
     }),
     new MiniCssExtractPlugin({
