@@ -5,6 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 module.exports = {
   mode: 'production',
   entry: {
+    critical: './assets/scss/critical.scss',
     app: './assets/js/index.js',
     post: './assets/js/post.js'
   },
