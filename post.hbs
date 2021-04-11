@@ -33,23 +33,16 @@ into the {body} of the default.hbs template --}}
                     <div class="post__author">
                         {{authors}}
                     </div>
-                    <p class="post__date">
-                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                    <div class="post__date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                    </div>
                         {{! Tags }}
                         {{#if tags}}
-                    <section class="post__tag-bar">
-                        <svg aria-hidden="true">
-                            <use href="#folder"></use>
-                        </svg>
+                    <div class="post__tag-bar">
                         {{#foreach tags}}
-                        <a href="{{url}}" class="post__tag-link">
-                            <svg aria-hidden="true">
-                                <use href="#hash"></use>
-                            </svg>
-                            <p>{{name}}</p>
-                        </a>
+                        <a href="{{url}}" class="sm-tag">{{name}}  </a>
                         {{/foreach}}
-                    </section>
+                    </div>
                     {{/if}}
                     {{! Tags }}
                 </header>

@@ -1,0 +1,34 @@
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 20px) scale(0.8);
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
+@keyframes slide-in {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  100% {
+    top: 1rem;
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    top: 1rem;
+    opacity: 1;
+  }
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,29 @@
+//-------------------------------------------
+// Pagination
+//-------------------------------------------
+@use '../abstracts/mixins';
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include mixins.color-map(color, text2);
+
+  > * {
+    margin: 2rem 1rem 0;
+    &:first-child {
+      margin-left: 0;
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  a {
+    @include mixins.transition(color);
+
+    &:hover {
+      @include mixins.color-map(color, primary);
+    }
+  }
+}

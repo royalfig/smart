@@ -1,0 +1,9 @@
+@use '../abstracts/mixins' as *;
+
+.small-header {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  @include color-map(color, text3);
+}

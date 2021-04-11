@@ -1,9 +1,14 @@
+@use '../abstracts/variables';
+@use '../abstracts/functions';
+@use '../abstracts/mixins';
+
 .form {
-  @include flex(column, flex-start, flex-start);
+  display: flex;
+  flex-direction: column;
   font-size: 1rem;
 
   &__label {
-    @extend .author__small-header;
+    // @extend .small-header;
     display: block;
     text-align: left;
   }
@@ -13,21 +18,21 @@
     width: 100%;
     padding: 0.25rem;
     margin: 0.25rem 0;
-    font-family: $sans;
+    font-family: variables.$sans;
     font-size: 1rem;
     border: 1px solid currentColor;
-    border-radius: $radius;
-    @include color-map(color, text1);
-    @include color-map(background-color, surface2);
-    @include transition(all);
+    border-radius: variables.$radius;
+    @include mixins.color-map(color, text1);
+    @include mixins.color-map(background-color, surface2);
+    @include mixins.transition(all);
 
     &:focus {
-      @include color-map(color, text);
-      @include color-map(background-color, surface3);
-      border: 1px solid color(primary);
+      @include mixins.color-map(color, text);
+      @include mixins.color-map(background-color, surface3);
+      border: 1px solid functions.color(primary);
       border: 1px solid var(--primary);
       outline: none;
-      @include transition(all);
+      @include mixins.transition(all);
     }
   }
 
@@ -37,8 +42,7 @@
   }
 
   &__btn {
-    @include btn(color, primary, secondary, textInverse, textInverse);
-    min-width: 150px;
+    // @extend .sm-button--color;
     margin-top: 1rem;
   }
 }

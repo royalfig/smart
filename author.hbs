@@ -42,7 +42,7 @@ into the {body} of the default.hbs template --}}
                             </div>
 
                             {{#if location}}
-                            <p class="author__small-header">Location</p>
+                            <p class="small-header">Location</p>
                             <div class="author__location map">
                                 <svg aria-hidden="true">
                                     <use href="#location"></use>
@@ -51,11 +51,11 @@ into the {body} of the default.hbs template --}}
                             </div>
                             {{/if}}
                             {{#if bio}}
-                            <p class="author__small-header">Bio</p>
+                            <p class="small-header">Bio</p>
                             <p class="author__bio">{{bio}}</p>
                             {{/if}}
                             {{#has any="twitter, facebook, website"}}
-                            <p class="author__small-header">Social</p>
+                            <p class="small-header">Social</p>
                             {{/has}}
                             <div class="author__meta">
                                 {{#if twitter}}

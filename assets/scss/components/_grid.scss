@@ -1,6 +1,9 @@
 //-------------------------------------------
 // Grid Styles
 //-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
 .grid {
   display: grid;
   gap: 1.5rem;
@@ -25,10 +28,27 @@
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
   max-width: 100%;
   margin: 1rem 0;
+  &--footer {
+    @extend .grid-container;
+    grid-gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include mixins.respond-above(variables.$laptop) {
+      grid-gap: 2rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+@mixin horizontal-card {
+  border-top-left-radius: variables.$radius;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: variables.$radius;
 }
 
 // Tablets
-@media (min-width: $tablet) and (max-width: $laptop - 1) {
+@include mixins.respond-between(variables.$tablet, variables.$laptop) {
   .grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
@@ -44,10 +64,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -82,10 +99,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -125,10 +139,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -156,7 +167,7 @@
 }
 
 // Laptops
-@media (min-width: $laptop) and (max-width: $desktop - 1) {
+@include mixins.respond-between(variables.$laptop, variables.$desktop) {
   .grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
@@ -173,10 +184,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -212,10 +220,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -255,10 +260,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -286,7 +288,7 @@
 }
 
 // Desktops
-@media (min-width: $desktop) {
+@include mixins.respond-above(variables.$desktop) {
   .grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
@@ -303,10 +305,7 @@
         }
         &__img,
         &__no-img {
-          border-top-left-radius: $radius;
-          border-top-right-radius: 0;
-          border-bottom-right-radius: 0;
-          border-bottom-left-radius: $radius;
+          @include horizontal-card;
         }
         &__body {
           width: calc(50% - 2.5rem);
@@ -358,10 +357,7 @@
 
       &__img,
       &__no-img {
-        border-top-left-radius: $radius;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: $radius;
+        @include horizontal-card;
       }
     }
 

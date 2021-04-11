@@ -1,0 +1,36 @@
+//-------------------------------------------
+// Containers
+//-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.outer-container {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+
+  @include mixins.respond-between(variables.$tablet, variables.$laptop) {
+    padding: 1rem 3rem 2rem;
+  }
+
+  @include mixins.respond-above(variables.$laptop) {
+    padding: 1rem 4rem 2rem;
+  }
+
+  &--footer {
+    @extend .outer-container;
+    min-height: 250px;
+    font-size: 0.9rem;
+    @include mixins.color-map(background-color, surface);
+    @include mixins.color-map(color, text1);
+    border-bottom: none;
+  }
+}
+
+.inner-container {
+  max-width: variables.$laptop;
+  margin: 0 auto 1rem;
+  &--footer {
+    @extend .inner-container;
+  }
+}

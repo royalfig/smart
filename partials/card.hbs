@@ -16,12 +16,7 @@
             <p class="card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMMM YYYY'}}</p>
             <h3 class="card__title">{{title}}</h3>
             {{#primary_tag}}
-            <div class="card__tag {{slug}}">
-                <svg aria-hidden="true">
-                    <use href="#hash"></use>
-                </svg>
-                <p>{{name}}</p>
-            </div>
+            <p class="sm-tag {{slug}}">{{name}}</p>
             {{/primary_tag}}
         </div>
     </a>

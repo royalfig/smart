@@ -1,0 +1,43 @@
+//-------------------------------------------
+// For Home, Index, and Tag pages
+//-------------------------------------------
+@use '../abstracts/mixins';
+.main {
+  width: 100%;
+  overflow-x: hidden;
+
+  &--index {
+    @extend .main;
+    @include mixins.navbar(margin-top);
+  }
+
+  &__outer-container {
+    // @extend .outer-container;
+    @include mixins.outer-container;
+  }
+
+  &__inner-container {
+    // @extend .inner-container;
+    @include mixins.inner-container;
+  }
+
+  &__header {
+    display: inline;
+    margin: 0;
+    // @extend .serif;
+  }
+
+  &__read-more {
+    display: inline-block;
+    @include mixins.color-map(color, text);
+    @include mixins.transition(color);
+
+    h2 {
+      margin: 0;
+    }
+
+    &:hover {
+      @include mixins.color-map(color, secondary);
+    }
+  }
+}

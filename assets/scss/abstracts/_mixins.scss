@@ -1,0 +1,90 @@
+@use 'variables';
+//-------------------------------------------
+// Color
+//-------------------------------------------
+@mixin color-map($property, $color) {
+  @if $color == transparent {
+    #{$property}: $color;
+  } @else {
+    #{$property}: color($color);
+    #{$property}: var(--#{$color}, color($color));
+  }
+}
+
+@mixin outline {
+  outline-width: 2px;
+  outline-style: solid;
+  @include color-map(outline-color, primary);
+  outline-offset: 1px;
+}
+
+//-------------------------------------------
+// Transition
+//-------------------------------------------
+@mixin transition($property) {
+  transition: $property 0.2s;
+}
+
+//-------------------------------------------
+// Breakpoints
+//-------------------------------------------
+@mixin respond-above($breakpoint) {
+  @media (min-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-below($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+@mixin respond-between($min, $max) {
+  @media (min-width: $min) and (max-width: $max - 1) {
+    @content;
+  }
+}
+
+//-------------------------------------------
+// Layout
+//-------------------------------------------
+@mixin navbar($property, $negative: false, $increase: 0) {
+  #{$property}: 3.25rem + $increase;
+
+  @media (min-width: variables.$laptop) {
+    #{$property}: 5.5rem + $increase;
+  }
+
+  @if $negative {
+    #{$property}: -3.25rem + -$increase;
+
+    @media (min-width: variables.$laptop) {
+      #{$property}: -5.5rem + -$increase;
+    }
+  }
+}
+
+@mixin inner-container {
+  max-width: variables.$laptop;
+  margin: 0 auto 1rem;
+}
+
+@mixin outer-container {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+
+  @include respond-between(variables.$tablet, variables.$laptop) {
+    padding: 1rem 3rem 2rem;
+  }
+
+  @include respond-above(variables.$laptop) {
+    padding: 1rem 4rem 2rem;
+  }
+}
+
+@mixin grid {
+  display: grid;
+  gap: 1.5rem;
+}

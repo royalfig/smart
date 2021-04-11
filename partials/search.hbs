@@ -10,17 +10,15 @@
       <h2 class='modal__title'>
         Search
       </h2>
-        <label class='form__label' for='search-input'>
+        <label class='small-header' for='search-input'>
           Enter Query
         </label>
       <div class='search__input-container'>
-        <input class='form__input' id='search-input' placeholder="I'm looking for..."
-          tabindex="-1" />
+        <input class='form__input' id='search-input' tabindex="-1" />
         <button class='sm-button--color search__btn' id='run-search-btn' tabindex="-1">
           <svg class='search__button--content'>
             <use href="#search"></use>
-          </svg>
-          <span class='search__button--content'>
+          </svg><span class='search__button--content'>
             Search
           </span>
           <svg class='search__button--loading' aria-label='Loading...'>
@@ -30,7 +28,7 @@
       </div>
     </header>
     <div class='search-results'>
-      <header class='search-results__header'></header>
+      <header class='search-results__header small-header'></header>
       <div class='search-results__container'></div>
     </div>
   </div>

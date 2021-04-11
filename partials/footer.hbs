@@ -1,7 +1,7 @@
 {{!-- Footer Module --}}
-<footer class="footer--outer-container">
-    <div class="footer--inner-container">
-        <div class="footer--grid-container">
+<footer class="outer-container--footer">
+    <div class="inner-container--footer">
+        <div class="grid-container--footer">
             <div class="footer__section">
                 <p class="footer__header--serif">About</p>
                 <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
@@ -9,7 +9,6 @@
                 <p class="footer__description">{{@site.description}}</p>
                 {{/if}}
                 <div class="footer__social">
-
                     {{#if @site.twitter}}
                     <a class="navigation__social-media-item twitter" href="{{twitter_url @site.twitter}}"
                         aria-label="Follow {{@site.title}} on Twitter">
@@ -36,14 +35,7 @@
             <div class="footer__section">
                 <p class="footer__header--serif">Tags</p>
                 {{#foreach tags}}
-                <a class="footer__card-tag" href="{{url}}" aria-label="{{name}}">
-                    <svg>
-                        <use href="#hash"></use>
-                    </svg>
-                    <p>
-                        {{name}}
-                    </p>
-                </a>
+                <a class="sm-tag" href="{{url}}">{{name}}</a>
                 {{/foreach}}
             </div>
             {{/if}}
@@ -53,7 +45,7 @@
                 <p class="footer__header--serif">Latest</p>
                 {{#foreach posts limit="3"}}
                 <p class="footer__date">
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}
                     </time>
                 </p>
                 <a class="footer__title" href="{{url}}">{{title}}</a>
@@ -63,7 +55,7 @@
                 <p class="footer__header--serif">&nbsp;</p>
                 {{#foreach posts from="4" to="6"}}
                 <p class="footer__date"><time
-                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                        datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
                 </p>
                 <a class="footer__title" href="{{url}}">{{title}}</a>
                 {{/foreach}}

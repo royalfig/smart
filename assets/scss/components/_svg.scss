@@ -1,102 +1,72 @@
 //-------------------------------------------
 // SVG Icon Colors
 //-------------------------------------------
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+@mixin svg($sm) {
+  @include mixins.transition(color);
+  svg {
+    stroke: currentColor;
+    @include mixins.transition(stroke);
+  }
+  &:hover {
+    color: $sm;
+    stroke: $sm;
+  }
+}
+
 .academia svg {
   fill: currentColor;
-  @include transition(all);
+  @include mixins.transition(all);
   &:hover,
   &:focus {
-    @include color-map(fill, primary);
+    @include mixins.color-map(fill, primary);
   }
 }
 
-.facebook svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $fb;
-  }
+.facebook {
+  @include svg(variables.$fb);
 }
 
-.github svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $gh;
-  }
+.github {
+  @include svg(variables.$gh);
 }
 
-.gitlab svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $gl;
-  }
+.gitlab {
+  @include svg(variables.$gl);
 }
 
-.instagram svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $ig;
-  }
+.instagram {
+  @include svg(variables.$ig);
 }
 
-.linkedin svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $li;
-  }
+.linkedin {
+  @include svg(variables.$li);
 }
 
-.rss svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $rs;
-  }
+.rss {
+  @include svg(variables.$rs);
 }
 
-.twitch svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $ch;
-  }
+.twitch {
+  @include svg(variables.$ch);
 }
 
-.twitter svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $tw;
-  }
+.twitter {
+  @include svg(variables.$tw);
 }
 
 .map svg,
 .website svg {
   stroke: currentColor;
-  @include transition(all);
+  @include mixins.transition(all);
   &:hover,
   &:focus {
-    @include color-map(stroke, primary);
+    @include mixins.color-map(stroke, primary);
   }
 }
 
-.youtube svg {
-  stroke: currentColor;
-  @include transition(all);
-  &:hover,
-  &:focus {
-    stroke: $yt;
-  }
+.youtube {
+  @include svg(variables.$yt);
 }
