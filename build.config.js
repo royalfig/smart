@@ -17,7 +17,6 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css'
-      // path: path.join(__dirname, 'assets', 'built')
     }),
     new CleanWebpackPlugin()
   ],

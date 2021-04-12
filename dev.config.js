@@ -16,8 +16,9 @@ module.exports = {
     post: './assets/js/post.js'
   },
   output: {
-    filename: '[name].js',
-    path: path.join(__dirname, 'assets', 'built')
+    // filename: '[name].js',
+    path: path.join(__dirname, 'assets', 'built'),
+    clean: true
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -76,7 +77,7 @@ module.exports = {
     rules: [
       {
         test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
           options: {

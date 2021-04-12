@@ -1,3 +1,7 @@
+/* Good resource on fs and promises
+ https://puruvj.dev/blog/fs-promises
+ */
+
 const { writeFile, readFile } = require('fs').promises;
 
 async function injectCss() {

@@ -30,7 +30,20 @@
 .inner-container {
   max-width: variables.$laptop;
   margin: 0 auto 1rem;
+
   &--footer {
     @extend .inner-container;
+  }
+
+  &--author {
+    @extend .inner-container;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 1rem;
+    @include mixins.respond-above(variables.$tablet) {
+      flex-direction: row;
+    }
   }
 }

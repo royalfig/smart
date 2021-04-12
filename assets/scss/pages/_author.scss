@@ -3,19 +3,6 @@
 @use '../abstracts/functions';
 
 .author {
-  &__container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    // @extend .inner-container;
-    padding-bottom: 1rem;
-
-    @include mixins.respond-above(variables.$tablet) {
-      flex-direction: row;
-    }
-  }
-
   &__img-container {
     position: relative;
     display: flex;
@@ -57,7 +44,7 @@
   }
 
   &__no-img {
-    // @extend .author__img;
+    @extend .author__img;
     overflow: hidden;
     background: linear-gradient(
       45deg,
@@ -83,7 +70,8 @@
 
   &__name {
     margin: 0;
-    // @extend .serif;
+    font-family: variables.$serif;
+    font-weight: 400;
   }
 
   &__location svg:hover {

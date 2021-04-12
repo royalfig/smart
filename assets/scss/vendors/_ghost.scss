@@ -213,19 +213,22 @@
   @include mixins.color-map(background-color, surface2);
 }
 
-.sm-post-upgrade-cta-content {
-  padding: 1.25rem;
-  border-radius: variables.$radius;
-  h2 {
-    margin-top: 0;
-  }
-  .sm-button--color {
-    margin: 1rem 0 0.25rem;
-    text-decoration: none;
-    @include mixins.color-map(color, textInverse);
+.post__content {
+  .sm-post-upgrade-cta-content {
+    padding: 1.25rem;
+    border-radius: variables.$radius;
+    h2 {
+      margin-top: 0;
+    }
 
-    &:hover {
+    .sm-button--color {
+      margin: 1rem 0 0.25rem;
+      text-decoration: none;
       @include mixins.color-map(color, textInverse);
+
+      &:hover {
+        @include mixins.color-map(color, textInverse);
+      }
     }
   }
 }
