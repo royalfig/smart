@@ -59,7 +59,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 12rem;
+          height: 100%;
+          min-height: 12rem;
           padding: 0;
         }
         &__img,
@@ -94,7 +95,8 @@
         }
         &__img-container {
           width: 50%;
-          height: 12rem;
+          height: 100%;
+          min-height: 12rem;
           padding: 0;
         }
         &__img,
