@@ -15,9 +15,10 @@
   "scripts": {
     "dev": "webpack --config dev.config.js && node helpers/inline-css.js",
     "watch": "webpack --watch --config dev.config.js & node helpers/inline-css.js",
-    "build": "webpack --config build.config.js && node helpers/inline-css.js && helpers/node zip"
+    "build": "webpack --config build.config.js && node helpers/inline-css.js && node helpers/zip"
   },
   "keywords": [
+    "ghost-theme",
     "Ghost",
     "Theme"
   ],
