@@ -5,14 +5,13 @@
 @use '../abstracts/mixins';
 
 @mixin svg($sm) {
-  @include mixins.transition(color);
   svg {
+    fill: transparent;
     stroke: currentColor;
-    @include mixins.transition(stroke);
-  }
-  &:hover {
-    color: $sm;
-    stroke: $sm;
+    @include mixins.transition(fill);
+    &:hover {
+      fill: $sm;
+    }
   }
 }
 

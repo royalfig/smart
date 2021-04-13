@@ -73,15 +73,7 @@
     a {
       width: 1.5rem;
       height: 1.5rem;
-      padding: 0.25rem;
       margin: 0;
-      border: 1px solid;
-      border-radius: 50%;
-      transition: color 0.2s, background-color 0.2s;
-
-      &:hover {
-        @include mixins.color-map(background-color, surface1);
-      }
     }
 
     svg {

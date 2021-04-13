@@ -44,7 +44,9 @@ $colors: (
 $sans: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
   ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-$serif: 'DM Serif Text', georgia, times, serif;
+$serif: 'DM Serif Text', 'Iowan Old Style', 'Apple Garamond', 'Baskerville',
+  'Times New Roman', 'Droid Serif, Times', 'Source Serif Pro', serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 $mono: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono', 'Cascadia Code',
   'Droid Sans Mono', consolas, monospace;
 //-------------------------------------------
