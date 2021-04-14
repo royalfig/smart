@@ -35,7 +35,7 @@ $colors: (
   'error': hsl(0, 100%, 78%),
   'error-hover': hsl(0, 100%, 68%),
   'gradient':
-    linear-gradient(to right top, #80deea, #8cdbbf, #b4d195, #e0c081, #ffab91)
+    linear-gradient(to right top, #80deea, #8cdbbf, #b4d195, #e0c081, #ffab91),
 );
 
 //-------------------------------------------
@@ -44,11 +44,9 @@ $colors: (
 $sans: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
   ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
-$serif: 'DM Serif Text', 'Iowan Old Style', 'Apple Garamond', 'Baskerville',
-  'Times New Roman', 'Droid Serif, Times', 'Source Serif Pro', serif,
-  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$serif: 'DM Serif Text', georgia, serif;
 $mono: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono', 'Cascadia Code',
-  'Droid Sans Mono', consolas, monospace;
+  'Droid Sans Mono', 'Fira Mono', 'Fira Code', consolas, monospace;
 //-------------------------------------------
 // Sizes, Breakpoints, Variables
 //-------------------------------------------

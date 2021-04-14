@@ -38,6 +38,7 @@
     svg {
       width: 100%;
       height: 100%;
+      fill: transparent;
       @include mixins.color-map(stroke, text2);
       @include mixins.transition(stroke);
     }

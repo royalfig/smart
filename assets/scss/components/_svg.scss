@@ -6,11 +6,11 @@
 
 @mixin svg($sm) {
   svg {
-    fill: transparent;
+    fill: none;
     stroke: currentColor;
-    @include mixins.transition(fill);
+    @include mixins.transition(stroke);
     &:hover {
-      fill: $sm;
+      stroke: $sm;
     }
   }
 }

@@ -1,7 +1,9 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 .sm-button {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 10rem;
   padding: 0.25rem 0.5rem;
   margin-right: auto;
@@ -26,7 +28,9 @@
     outline: none;
     @include mixins.color-map(background-color, surface4);
   }
-
+  &.color-mode-btn:hover svg {
+    fill: #eee8aa;
+  }
   &:active {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.35);
   }
@@ -34,9 +38,11 @@
   svg {
     width: 1rem;
     height: 1rem;
-    margin-right: 1px;
-    vertical-align: text-top;
+    margin-right: 0.15rem;
+    transform: translateY(-1px);
+    fill: transparent;
     stroke: currentColor;
+    @include mixins.transition(fill);
   }
 
   &--color {

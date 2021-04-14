@@ -6,8 +6,8 @@ const menuBtn = document.getElementById('menu-btn');
 const closeBtns = document.querySelectorAll('.modal__close-btn');
 
 if (typeof SEARCH_API !== 'undefined') {
-  searchBtn.style.display = 'block';
-  mSearchBtn.style.display = 'block';
+  searchBtn.style.display = 'flex';
+  mSearchBtn.style.display = 'flex';
 }
 
 const btns = [searchBtn, mSearchBtn, menuBtn];

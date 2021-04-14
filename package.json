@@ -13,7 +13,7 @@
     "url": "https://ryanfeigenbaum.com"
   },
   "scripts": {
-    "dev": "webpack --config dev.config.js && node helpers/inline-css.js",
+    "dev": "node helpers/inline-css.js && webpack --config dev.config.js",
     "watch": "webpack --watch --config dev.config.js & node helpers/inline-css.js",
     "build": "webpack --config build.config.js && node helpers/inline-css.js && node helpers/zip"
   },
