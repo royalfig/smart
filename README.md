@@ -27,13 +27,22 @@ There are three customizable options:
 
 #### Custom homepage sections
 
-The homepage is divided into three areas: (1) featured, (2) custom sectinons, and (3) latest.
+The homepage is divided into three areas: (1) featured, (2) custom sections, and (3) latest.
 
 **Featured** posts are designated by the author in the Ghost editor. If you want to highlight content, this is the place to do it. The theme will show up to three of the newest featured posts. In the customizer, you have the option to omit the featured section altogether.
 
-**Custom sections** are up to three categories of your choice. These sections contain the five latest posts tagged with that category that are not featured. For example, if you had a music blog, your sections might be "Music News," "Album Reviews," and "New Releases." Any posts tagged with these categories would be collected in these sections. You can turn off this function if you wish.
+**Custom sections** are up to four categories of your choice. These sections contain the five latest posts tagged with that category that are not featured. For example, if you had a music blog, your sections might be "Music News," "Album Reviews," and "New Releases." Any posts tagged with these categories would be collected in these sections. You can turn off this function if you wish.
 
-The customizer has a few presets available of possible categories: Academic, Music, Blog, Food, Developer, Designer.
+The customizer has a few presets available of possible categories:
+
+| Preset    | Tag 1        | Tag 2         | Tag 3       | Tag 4    |
+| --------- | ------------ | ------------- | ----------- | -------- |
+| Academic  | Publications | Presentations | Teaching    | Outreach |
+| Music     | News         | Reviews       | Playlists   | Etc      |
+| Blog      | Travel       | Reviews       | Series      | ETc      |
+| Food      | Recipes      | Reviews       | Ingredients | Tools    |
+| Developer | Portfolio    | Tutorials     | Tools       | Etc      |
+| Designer  | Portfolio    | Designs       | Art         | Tools    |
 
 **Latest** refers to the five newest published posts that are neither featured nor included in one of your custom sections. The customizer allows you turn off the latest section if you wish.
 
@@ -61,23 +70,67 @@ Go to Settings > Navigation. Add additional social media accounts in the Seconda
 
 #### Supported Social Media Accounts
 
-- Twitter
+- Academia
 - Facebook
-- LinkedIn
 - Github
 - Gitlab
 - Instagram
-- Academia
-- Twitch
-- YouTube
+- LinkedIn
 - RSS
+- Twitch
+- Twitter
 - Website (for a global icon)
+- YouTube
 
 Don't see your social media service? Get in touch.
 
 ### Add a Tags Page
 
+Go to `Pages`. Add a page called "Tags." You can add a custom cover image and additional text if desired. Ghost will use the custom template to render all your tags in alphabetical order, showing the number of posts for each tag. Tag information is customizable via the `Tags` menu in the Ghost admin.
+
+[Learn more about Tags](https://ghost.org/help/organising-content/#tagging-content)
+
 ### Add a Contact Form
+
+1. Create a [Formspree account](https://formspree.io/)
+   Ghost doesn't support forms natively. Including a contact form requires the use of a service like Formspree. Once you create your form on Formspree, copy the custom URL for use in step three.
+
+2. Create a new page for the contact form. You can call it whatever you want.
+
+3. Add an HTML card to the new page, using the code below. Remember to add the custom URL you copied from Formspree.
+
+```html
+<form
+  class="sm-form"
+  action="ENTER YOUR CUSTOME URL FROM FORMSPREE"
+  method="POST"
+>
+  <label class="sm-form__label" for="name">Name</label>
+  <input
+    class="sm-form__input"
+    id="name"
+    name="name"
+    type="text"
+    required
+    autofocus
+  />
+
+  <label class="sm-form__label" for="email">Email</label>
+  <input class="sm-form__input" id="email" name="email" type="text" required />
+
+  <label class="sm-form__label" for="message">Message</label>
+  <textarea
+    class="sm-form__input"
+    id="message"
+    name="message"
+    required
+  ></textarea>
+
+  <button class="sm-button--color" type="submit" value="Send">Send</button>
+</form>
+```
+
+[Learn more about integrating Formspree into Ghost](https://ghost.org/integrations/formspree/)
 
 ### Supported Browsers
 
