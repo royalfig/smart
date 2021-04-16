@@ -7,8 +7,8 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     critical: './src/scss/critical.scss',
-    app: './src/js/index.js',
-    post: './src/js/post.js',
+    app: './src/js/app/index.js',
+    post: './src/js/post/index.js',
   },
 
   output: {

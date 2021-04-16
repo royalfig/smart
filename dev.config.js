@@ -1,13 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const FileManager = require('filemanager-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
-
-require('dotenv').config();
-
-const { LOCAL } = process.env;
 
 module.exports = {
   mode: 'development',
@@ -17,8 +11,7 @@ module.exports = {
     post: './src/js/post/index.js',
   },
   output: {
-    // filename: '[name].js',
-    path: '/home/ryan/Projects/ghost/content/themes/smart/assets/built/',
+    path: path.join(__dirname, 'assets/built'),
   },
   devtool: 'inline-source-map',
   plugins: [
@@ -34,30 +27,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: './package.json',
-          to: `/home/${LOCAL}/ghost/content/themes/smart/package.json`,
-        },
-        {
-          from: './*.hbs',
-          to: `/home/${LOCAL}/ghost/content/themes/smart`,
-        },
-        {
-          from: './partials/*.hbs',
-          to: `/home/${LOCAL}/ghost/content/themes/smart/`,
-        },
-        {
-          from: './assets/fonts/*.woff2',
-          to: `/home/${LOCAL}/ghost/content/themes/smart/`,
-        },
-        {
-          from: './assets/img/*.svg',
-          to: `/home/${LOCAL}/ghost/content/themes/smart/`,
-        },
-      ],
     }),
     new CleanWebpackPlugin(),
   ],
