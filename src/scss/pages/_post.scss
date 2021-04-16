@@ -169,7 +169,7 @@
   }
 
   &__content {
-    margin: 0 auto 4rem;
+    margin: 0 auto;
 
     p {
       margin-bottom: 1rem;
@@ -183,7 +183,7 @@
 .post-footer {
   @include mixins.inner-container;
   @include mixins.grid;
-  padding-top: 0.5rem;
+  margin-top: 3rem;
   grid-template-areas:
     'title-1'
     'author'
@@ -210,7 +210,7 @@
 
   &__title-1,
   &__title-2 {
-    margin-bottom: 0;
+    margin: 0;
     font-family: variables.$serif;
     font-weight: 400;
   }

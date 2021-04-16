@@ -66,7 +66,7 @@
   &__social {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, 1.25rem);
+    grid-template-columns: repeat(auto-fit, 1rem);
     margin-top: 0.5rem;
     @include mixins.transition(all);
 

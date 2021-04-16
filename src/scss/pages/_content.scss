@@ -76,21 +76,6 @@
       margin-bottom: 0.5rem;
     }
 
-    hr {
-      height: 0.15rem;
-      margin: 2rem 0;
-      background: linear-gradient(
-        to right,
-        var(--surface2),
-        var(--surface3),
-        var(--surface4),
-        var(--surface3),
-        var(--surface2)
-      );
-      border: none;
-      border-radius: variables.$radius;
-    }
-
     table {
       width: 100%;
       overflow: hidden;
