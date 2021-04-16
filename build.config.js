@@ -4,21 +4,22 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
   mode: 'production',
+  devtool: 'source-map',
   entry: {
-    critical: './assets/scss/critical.scss',
-    app: './assets/js/index.js',
-    post: './assets/js/post.js'
+    critical: './src/scss/critical.scss',
+    app: './src/js/index.js',
+    post: './src/js/post.js',
   },
 
   output: {
     filename: '[name].js',
-    path: path.join(__dirname, 'assets', 'built')
+    path: path.join(__dirname, 'assets', 'built'),
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: '[name].css'
+      filename: '[name].css',
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
   ],
   module: {
     rules: [
@@ -28,20 +29,20 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
+            presets: ['@babel/preset-env'],
+          },
+        },
       },
       {
         test: /\.s[ac]ss$/i,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           'css-loader',
           'postcss-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.css$/i,
@@ -49,11 +50,11 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: path.join(__dirname, 'assets', 'built')
-            }
-          }
-        ]
-      }
-    ]
-  }
+              publicPath: path.join(__dirname, 'assets', 'built'),
+            },
+          },
+        ],
+      },
+    ],
+  },
 };

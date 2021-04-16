@@ -6,7 +6,9 @@ const { writeFile, readFile } = require('fs').promises;
 
 async function injectCss() {
   const template = await readFile('./assets/hbs/default-template.hbs');
-  const css = await readFile('./assets/built/critical.css');
+  const css = await readFile(
+    '/home/ryan/Projects/ghost/content/themes/smart/assets/built/critical.css',
+  );
 
   const inlinedCss = template
     .toString()
