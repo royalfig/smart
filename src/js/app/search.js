@@ -22,7 +22,7 @@ const search = () => {
     url: `${window.location.protocol}//${window.location.host}`,
     // eslint-disable-next-line no-undef
     key: SEARCH_API,
-    version: 'v4'
+    version: 'v4',
   });
 
   const api = new Promise((resolve, reject) => {
@@ -34,7 +34,7 @@ const search = () => {
         .browse({
           include: 'tags',
           formats: 'plaintext',
-          limit: 'all'
+          limit: 'all',
         })
         .then((data) => {
           localStorage.setItem('posts', JSON.stringify(data));
@@ -61,7 +61,7 @@ const search = () => {
     const options = {
       year: 'numeric',
       month: 'short',
-      day: '2-digit'
+      day: '2-digit',
     };
     const date = new Date(isoDate);
 
@@ -91,7 +91,7 @@ const search = () => {
         searchResult.innerHTML += `<article class="search-results__item">
             <a class="search-results__link" href="${post.url}">
               <p class="search-results__date">${dateFormatter(
-                post.published_at
+                post.published_at,
               )}</p>
               <p class="search-results__title">${post.title}</p>
               <p class="search-results__excerpt">
@@ -105,8 +105,9 @@ const search = () => {
   };
 
   const enterSearchTermCheck = () => {
-    if (!searchResult.innerHTML)
+    if (!searchResult.innerHTML) {
       searchResultHeader.textContent = 'Enter a search term';
+    }
   };
 
   runSearchBtn.addEventListener('click', () => {

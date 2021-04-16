@@ -17,5 +17,6 @@ module.exports = {
     'operator-linebreak': 0,
     'implicit-arrow-linebreak': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    indent: 'off',
   },
 };
