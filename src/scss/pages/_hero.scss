@@ -26,20 +26,9 @@
   &__text-container {
     position: absolute;
     top: 50%;
-    left: 50%;
     width: 100%;
-    max-width: variables.$laptop;
-    padding: 1rem;
 
-    @include mixins.respond-between(variables.$tablet, variables.$laptop) {
-      padding: 1rem 3rem 2rem;
-    }
-
-    @include mixins.respond-above(variables.$laptop) {
-      padding: 0;
-    }
-
-    transform: translate(-50%, -50%);
+    transform: translateY(-50%);
   }
 
   &__site-title {

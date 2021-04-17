@@ -25,11 +25,13 @@ into the {body} of the default.hbs template --}}
     }
 </style>
 {{/if}}
-<header class="hero">
-    <div class="hero__text-container">
-        <h1 class="hero__site-title">{{@site.title}}</h1>
-        <p class="hero__site-description">{{@site.description}}
-        </p>
+<header class="hero main__outer-container">
+    <div class="inner-container--hero">
+        <div class="hero__text-container">
+            <h1 class="hero__site-title">{{@site.title}}</h1>
+            <p class="hero__site-description">{{@site.description}}
+            </p>
+        </div>
     </div>
 </header>
 

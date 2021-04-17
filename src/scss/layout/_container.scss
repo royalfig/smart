@@ -31,6 +31,13 @@
   max-width: variables.$laptop;
   margin: 0 auto 1rem;
 
+  &--hero {
+    @extend .inner-container;
+    position: relative;
+    height: 100%;
+    margin-bottom: 0;
+  }
+
   &--footer {
     @extend .inner-container;
   }
