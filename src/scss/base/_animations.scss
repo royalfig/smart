@@ -32,3 +32,27 @@
     opacity: 0;
   }
 }
+
+@keyframes mesh {
+  0% {
+    background-position: 0 0, 0 100%, 50% 0, 50% 25%, 50% 100%;
+  }
+  15% {
+    background-position: 1% 1%, 1% 101%, 51% 1%, 51% 26%, 51% 101%;
+  }
+  30% {
+    background-position: 2% 2%, 2% 102%, 52% 2%, 52% 26%, 52% 102%;
+  }
+  45% {
+    background-position: 3% 3%, 3% 103%, 53% 3%, 53% 27%, 53% 103%;
+  }
+  60% {
+    background-position: 4% 4%, 4% 104%, 54% 4%, 54% 28%, 54% 104%;
+  }
+  75% {
+    background-position: 5% 5%, 5% 105%, 55% 5%, 55% 29%, 55% 105%;
+  }
+  90% {
+    background-position: 6% 6%, 6% 106%, 56% 6%, 56% 30%, 56% 106%;
+  }
+}

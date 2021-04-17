@@ -12,12 +12,10 @@
   }
 
   &__outer-container {
-    // @extend .outer-container;
     @include mixins.outer-container;
   }
 
   &__inner-container {
-    // @extend .inner-container;
     @include mixins.inner-container;
   }
 

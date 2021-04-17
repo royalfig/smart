@@ -58,6 +58,7 @@
       width: 90%;
       height: 90%;
       margin: 0 auto;
+      fill: transparent;
       @include mixins.color-map(color, textInverse);
     }
   }

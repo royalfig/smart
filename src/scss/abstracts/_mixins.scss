@@ -18,6 +18,25 @@
   outline-offset: 1px;
 }
 
+@mixin mesh {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  content: '';
+  background: radial-gradient(var(--primary) 25%, transparent 50%),
+    radial-gradient(var(--secondary) 25%, transparent 50%),
+    radial-gradient(var(--three) 25%, transparent 50%),
+    radial-gradient(var(--four) 25%, transparent 50%),
+    radial-gradient(var(--five) 25%, transparent 50%);
+  background-repeat: no-repeat;
+  background-position: 0 0, 0 100%, 50% 0, 50% 25%, 50% 100%;
+  background-size: 60% 80%, 70% 80%, 80% 80%, 60% 60%, 80% 80%;
+  transition: background-position 2s;
+  transform: scale(4);
+}
 //-------------------------------------------
 // Transition
 //-------------------------------------------

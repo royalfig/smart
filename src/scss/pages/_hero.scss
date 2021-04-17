@@ -9,6 +9,7 @@
   @include mixins.respond-above(variables.$laptop) {
     height: calc(50vh - 5.5rem);
   }
+  margin-bottom: 2rem;
   background-position: center;
   background-size: cover;
   @include mixins.navbar(margin-top);

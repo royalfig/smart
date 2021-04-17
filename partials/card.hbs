@@ -3,15 +3,15 @@
     <a class="card__link" href="{{url}}" aria-label="{{title}}">
         <div class="card__img-container {{visibility}}">
             {{#if feature_image}}
-            <img class="card__img lazyload" data-srcset="{{img_url feature_image size="s"}} 300w,
-            {{img_url feature_image size="m"}} 600w" data-sizes="(max-width: 640px) 90vw,
-            600px" data-src="{{img_url feature_image size="m"}}" alt="" />
+            <img class="card__img {{^if featured}}lazyload{{/if}}" {{^if featured}}data-{{/if}}srcset="{{img_url feature_image size="s"}} 300w,
+            {{img_url feature_image size="m"}} 600w" {{^if featured}}data-{{/if}}sizes="(max-width: 640px) 90vw,
+            600px" {{^if featured}}data-{{/if}}src="{{img_url feature_image size="m"}}" alt="" />
             {{else}}
             <div class="card__no-img"></div>
             {{/if}}
         </div>
         <div class="card__body">
-            <p class="card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='DD MMMM YYYY'}}</p>
+            <p class="card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='MMMM DD, YYYY'}}</p>
             <h3 class="card__title">{{title}}</h3>
             {{#primary_tag}}
             <p class="sm-tag {{slug}}">{{name}}</p>

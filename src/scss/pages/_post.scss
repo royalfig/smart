@@ -1,5 +1,6 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
+@use '../components/link';
 //-------------------------------------------
 // Post Reading Progress Bar
 //-------------------------------------------
@@ -30,6 +31,7 @@
     width: calc(100% - 2rem);
     height: 340px;
     padding: 1rem 1rem 0;
+    overflow: hidden;
     @include mixins.navbar(margin-top);
   }
 
@@ -38,8 +40,6 @@
     max-width: variables.$laptop + 100;
     margin: 0 auto;
     @include mixins.navbar(margin-top, $increase: 1);
-    background: linear-gradient(45deg, color(primary), color(secondary));
-    background: var(--gradient);
     border-radius: variables.$radius;
     box-shadow: variables.$box-shadow;
 
@@ -48,18 +48,7 @@
     }
 
     &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: calc(100% - 2rem);
-      height: calc(100% - 2rem);
-      margin: 1rem;
-      content: '';
-      @include mixins.color-map(background-color, surface);
-      border-radius: variables.$radius;
-      box-shadow: 0 0 1rem 1rem rgba(0, 0, 0, 0.15);
-      mix-blend-mode: soft-light;
-      opacity: 0.75;
+      @include mixins.mesh();
     }
 
     &--container {
@@ -107,20 +96,29 @@
   }
 
   &__author {
-    font-size: 1.1rem;
-    font-weight: 700;
-    @include mixins.color-map(color, primary);
+    a {
+      font-size: 1.15rem;
+      font-weight: 700;
+      @include link.link;
+      // @include mixins.color-map(color, text);
+      // @include mixins.transition(color);
+
+      // &:hover {
+      //   @include mixins.color-map(color, primary);
+      // }
+    }
   }
 
   &__date {
-    font-size: 0.9375rem;
+    font-size: 0.9rem;
+    @include mixins.color-map(color, text2);
+    font-variant-numeric: oldstyle-nums;
   }
 
   &__tag-bar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin-top: 0.25rem;
     font-size: 0.75rem;
     text-transform: uppercase;
 
@@ -268,6 +266,7 @@
       width: 75%;
       height: 75%;
       margin: 12.5% auto 0;
+      fill: transparent;
       @include mixins.color-map(color, textInverse);
     }
   }

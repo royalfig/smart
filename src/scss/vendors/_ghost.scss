@@ -214,6 +214,7 @@
     border-radius: variables.$radius;
     h2 {
       margin-top: 0;
+      font-size: 1.5rem;
     }
 
     .sm-button--color {
@@ -225,10 +226,14 @@
         @include mixins.color-map(color, textInverse);
       }
     }
-  }
-}
 
-.sm-post-upgrade-cta small {
-  font-size: 0.8rem;
-  cursor: pointer;
+    .sm-post-upgrade-cta {
+      small {
+        font-size: 0.8rem;
+      }
+      a {
+        cursor: pointer;
+      }
+    }
+  }
 }

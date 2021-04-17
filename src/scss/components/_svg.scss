@@ -58,6 +58,7 @@
 
 .map svg,
 .website svg {
+  fill: transparent;
   stroke: currentColor;
   @include mixins.transition(all);
   &:hover,

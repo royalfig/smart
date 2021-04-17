@@ -1,7 +1,7 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.link {
+@mixin link {
   position: relative;
   display: inline;
   text-decoration: none;
@@ -24,6 +24,10 @@
     clip-path: inset(0 0 0 0);
     @include mixins.transition(clip-path);
   }
+}
+
+.link {
+  @include link;
 
   &.nav-current:before {
     clip-path: none;
