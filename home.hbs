@@ -26,14 +26,10 @@ into the {body} of the default.hbs template --}}
 </style>
 {{/if}}
 <header class="hero">
-    <div class="hero__overlay">
-        <div class="hero__top">
-            <div class="hero__text-container">
-                <h1 class="hero__site-title">{{@site.title}}</h1>
-                <p class="hero__site-description">{{@site.description}}
-                </p>
-            </div>
-        </div>
+    <div class="hero__text-container">
+        <h1 class="hero__site-title">{{@site.title}}</h1>
+        <p class="hero__site-description">{{@site.description}}
+        </p>
     </div>
 </header>
 
@@ -60,7 +56,7 @@ into the {body} of the default.hbs template --}}
             <div class="main__outer-container">
                 <div class="main__inner-container">
                     <a class="main__read-more" href="/page/2/">
-                        <h2 class="main__header">Latest &rarr;</h2>
+                        <h2 class="main__header">Latest</h2>
                     </a>
                     <section class="grid-container grid-container-{{latest.length}}">
                         {{#foreach latest}}
@@ -78,7 +74,7 @@ into the {body} of the default.hbs template --}}
     <div class="main__outer-container">
         <div class="main__inner-container">
             <a class="main__read-more" href="/tag/publications/">
-                <h2 class="main__header">Publications &rarr;</h2>
+                <h2 class="main__header">Publications</h2>
             </a>
             <section class="grid-container grid-container-{{publications.length}}">
                 {{#foreach publications}}
@@ -96,7 +92,7 @@ into the {body} of the default.hbs template --}}
     <div class="main__outer-container">
         <div class="main__inner-container">
             <a class="main__read-more" href="/tag/presentations/">
-                <h2 class="main__header">Presentations &rarr;</h2>
+                <h2 class="main__header">Presentations</h2>
             </a>
             <section class="grid-container grid-container-{{presentations.length}}">
                 {{#foreach presentations}}
@@ -114,7 +110,7 @@ into the {body} of the default.hbs template --}}
             <div class="main__outer-container">
                 <div class="main__inner-container">
                     <a class="main__read-more" href="/tag/teaching/">
-                        <h2 class="main__header">Teaching &rarr;</h2>
+                        <h2 class="main__header">Teaching</h2>
                     </a>
                     <section class="grid-container grid-container-{{teaching.length}}">
                         {{#foreach teaching}}
@@ -132,7 +128,7 @@ into the {body} of the default.hbs template --}}
             <div class="main__outer-container">
                 <div class="main__inner-container">
                     <a class="main__read-more" href="/tag/outreach/">
-                        <h2 class="main__header">Outreach &rarr;</h2>
+                        <h2 class="main__header">Outreach</h2>
                     </a>
                     <section class="grid-container grid-container-{{outreach.length}}">
                         {{#foreach outreach}}
