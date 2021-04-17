@@ -4,49 +4,42 @@
 .hero {
   position: relative;
   width: 100%;
-  height: calc(50vh - 3.25rem);
+  height: 50vh;
   min-height: 12rem;
-  @include mixins.respond-above(variables.$laptop) {
-    height: calc(50vh - 5.5rem);
-  }
+  @include mixins.navbar(margin-top);
   margin-bottom: 2rem;
+  overflow: hidden;
   background-position: center;
   background-size: cover;
-  @include mixins.navbar(margin-top);
   @include mixins.color-map(background-color, surface1);
 
-  &__overlay {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  &::before {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(10, 10, 20, 0.5);
-  }
-
-  &__top,
-  &__bottom {
-    flex: 1;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__top {
-    @include mixins.outer-container;
-    // @extend .outer-container;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    content: '';
+    background: radial-gradient(rgba(#000, 0.25), rgba(#000, 0.5));
   }
 
   &__text-container {
-    position: relative;
-    z-index: 3;
-    display: flex;
-    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100%;
     max-width: variables.$laptop;
-    margin: 0.5rem auto;
+    padding: 1rem;
+
+    @include mixins.respond-between(variables.$tablet, variables.$laptop) {
+      padding: 1rem 3rem 2rem;
+    }
+
+    @include mixins.respond-above(variables.$laptop) {
+      padding: 0;
+    }
+
+    transform: translate(-50%, -50%);
   }
 
   &__site-title {
