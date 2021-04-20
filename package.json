@@ -1,6 +1,6 @@
 {
   "name": "smart",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A customizable Ghost theme",
   "main": "index.js",
   "engines": {
@@ -22,7 +22,7 @@
     "Ghost",
     "Theme"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
