@@ -100,12 +100,6 @@
       font-size: 1.15rem;
       font-weight: 700;
       @include link.link;
-      // @include mixins.color-map(color, text);
-      // @include mixins.transition(color);
-
-      // &:hover {
-      //   @include mixins.color-map(color, primary);
-      // }
     }
   }
 

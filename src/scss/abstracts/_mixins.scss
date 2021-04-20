@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'functions';
 //-------------------------------------------
 // Color
 //-------------------------------------------
@@ -6,8 +7,8 @@
   @if $color == transparent {
     #{$property}: $color;
   } @else {
-    #{$property}: color($color);
-    #{$property}: var(--#{$color}, color($color));
+    #{$property}: functions.color($color);
+    #{$property}: var(--#{$color}, functions.color($color));
   }
 }
 

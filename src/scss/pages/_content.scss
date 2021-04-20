@@ -49,13 +49,14 @@
     }
 
     a:not(.kg-bookmark-container) {
-      text-decoration: underline from-font;
-      @include mixins.transition(text-decoration-color);
+      @include mixins.color-map(color, primary);
+      @include mixins.transition(color);
     }
 
     a:not(.kg-bookmark-container):hover,
     a:not(.kg-bookmark-container):active {
-      @include mixins.color-map(text-decoration-color, secondary);
+      @include mixins.color-map(color, secondary);
+      @include mixins.color-map(color, secondary);
     }
 
     a:not(.kg-bookmark-container):visited {
