@@ -14,26 +14,21 @@
   align-items: center;
   justify-content: center;
   width: 100%;
-  padding: 0.5rem 0.25rem;
-  margin: 0;
-  margin-bottom: -100px;
-  font-size: 0.8rem;
   font-weight: 700;
   @include mixins.color-map(color, text2);
   text-align: center;
   @include mixins.color-map(background-color, surface3);
+  border-bottom: 3px solid var(--text4);
+
   opacity: 0;
 
-  @include mixins.transition(all);
-
-  &__title {
-    margin-right: 1.5rem;
-  }
-
+  transition: transform 0.2s ease-in, opacity 0.2s;
+  transform: translate3d(0, 100%, 0);
   &__link {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    @include mixins.transition(background-color);
 
     svg {
       width: 100%;
@@ -42,15 +37,25 @@
       @include mixins.color-map(stroke, text2);
       @include mixins.transition(stroke);
     }
+
+    @include mixins.respond-above(variables.$laptop) {
+      &:first-child {
+        border-top-right-radius: variables.$radius;
+      }
+      &:last-child {
+        border-bottom-right-radius: variables.$radius;
+      }
+    }
   }
 
   &__link--twitter {
     @extend .post-share-bar__link;
 
-    svg {
-      &:hover,
-      &:active {
-        stroke: variables.$tw;
+    &:hover,
+    &:active {
+      background-color: variables.$tw;
+      svg {
+        stroke: #fff;
       }
     }
   }
@@ -58,10 +63,11 @@
   &__link--facebook {
     @extend .post-share-bar__link;
 
-    svg {
-      &:hover,
-      &:active {
-        stroke: variables.$fb;
+    &:hover,
+    &:active {
+      background-color: variables.$fb;
+      svg {
+        stroke: #fff;
       }
     }
   }
@@ -69,24 +75,25 @@
   &__link--linkedin {
     @extend .post-share-bar__link;
 
-    svg {
-      &:hover,
-      &:active {
-        stroke: variables.$li;
+    &:hover,
+    &:active {
+      background-color: variables.$li;
+      svg {
+        stroke: #fff;
       }
     }
   }
 
   &__link--copy {
     @extend .post-share-bar__link;
-    @include mixins.color-map(color, text2);
-
-    svg {
-      @include mixins.color-map(stroke, text2);
-
-      &:hover,
-      &:active {
-        @include mixins.color-map(stroke, primary);
+    &:hover,
+    &:active {
+      @include mixins.color-map(background-color, primary);
+      svg {
+        stroke: #fff;
+        :root[color-mode='dark'] & {
+          stroke: #000;
+        }
       }
     }
   }
@@ -96,20 +103,9 @@
     bottom: initial;
     flex-direction: column;
     width: initial;
-    margin: 0;
-    margin-left: -200px;
+    border-bottom: none;
     border-top-right-radius: variables.$radius;
     border-bottom-right-radius: variables.$radius;
-    transform: translate3d(0, -50%, 0);
-
-    &__title,
-    &__link {
-      margin-right: 0;
-      margin-bottom: 1rem;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
+    transform: translate3d(-100%, -50%, 0);
   }
 }

@@ -31,17 +31,17 @@ const shareBarAnimation = () => {
       footer.getBoundingClientRect().top - buffer
   ) {
     if (window.innerWidth >= 1024) {
-      shareBar.style.marginLeft = '0';
+      shareBar.style.transform = 'translate3d(0,-50%,0)';
       shareBar.style.opacity = '1';
     } else {
-      shareBar.style.marginBottom = '0';
+      shareBar.style.transform = 'translate3d(0,0,0)';
       shareBar.style.opacity = '1';
     }
   } else if (window.innerWidth >= 1024) {
-    shareBar.style.marginLeft = '-200px';
+    shareBar.style.transform = 'translate3d(-100%,-50%,0)';
     shareBar.style.opacity = '0';
   } else {
-    shareBar.style.marginBottom = '-100px';
+    shareBar.style.transform = 'translate3d(0,100%,0)';
     shareBar.style.opacity = '0';
   }
 };

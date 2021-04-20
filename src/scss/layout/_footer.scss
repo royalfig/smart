@@ -67,6 +67,15 @@
     display: grid;
     grid-gap: 1rem;
     grid-template-columns: repeat(auto-fit, 1rem);
+
+    @supports not (gap: 1.5rem) {
+      display: flex;
+      flex-wrap: wrap;
+      a {
+        margin: 0.5rem;
+      }
+    }
+    
     margin-top: 0.5rem;
     @include mixins.transition(all);
 
