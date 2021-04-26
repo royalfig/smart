@@ -69,7 +69,7 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    padding: 1rem 1.5rem;
+    padding: 1rem;
   }
 
   &[aria-expanded='true'] {
@@ -122,8 +122,8 @@
     justify-content: center;
     width: 100%;
     a {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 2rem;
+      height: 2rem;
       margin: 0.5rem;
       &:last-child {
         margin-right: 0;

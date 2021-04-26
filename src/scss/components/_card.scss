@@ -126,16 +126,6 @@
       &:hover,
       &:focus {
         .card--tags {
-          &__title {
-            @include mixins.color-map(color, text);
-            @include mixins.color-map(background, surface1-75);
-            transition: none;
-          }
-
-          &__date {
-            @include mixins.color-map(background, surface1-75);
-          }
-
           &__img-container:after {
             background: transparent;
           }

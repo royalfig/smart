@@ -10,11 +10,10 @@
     figcaption {
       padding: 0.5rem;
       font-size: 0.8375rem;
-      @include mixins.color-map(color, text1);
-      @include mixins.color-map(background-color, surface2);
+      @include mixins.color-map(color, text2);
+      font-style: italic;
       text-align: center;
-      border-bottom-right-radius: variables.$radius;
-      border-bottom-left-radius: variables.$radius;
+      border-bottom: 1px solid var(--surface4);
     }
 
     & > blockquote {
@@ -53,14 +52,9 @@
       @include mixins.transition(color);
     }
 
-    a:not(.kg-bookmark-container):hover,
-    a:not(.kg-bookmark-container):active {
+    a:not(.kg-bookmark-container):hover {
       @include mixins.color-map(color, secondary);
       @include mixins.color-map(color, secondary);
-    }
-
-    a:not(.kg-bookmark-container):visited {
-      @include mixins.color-map(color, text2);
     }
 
     ul,
@@ -77,40 +71,30 @@
       margin-bottom: 0.5rem;
     }
 
+    // Tables
     table {
       width: 100%;
       overflow: hidden;
-      font-size: 0.935rem;
-
-      @include mixins.color-map(border-color, text4);
       border-collapse: collapse;
       border: none;
-      tr {
-        @include mixins.color-map(background-color, surface1);
-      }
+    }
+
+    thead {
+      border-bottom: 1px solid var(--surface4);
     }
 
     th {
       padding: 0.25rem 0.5rem;
-      font-family: variables.$serif;
-      font-weight: 400;
+      font-size: 0.95rem;
+      font-weight: 700;
       text-align: left;
     }
 
-    thead {
-      & > tr {
-        @include mixins.color-map(background-color, surface2);
-      }
-    }
-
     tbody {
-      tr:nth-child(even) {
-        @include mixins.color-map(background-color, surface2);
-      }
-
+      border-bottom: 1px solid var(--surface4);
       td {
         padding: 0.25rem 0.5rem;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         text-align: left;
         vertical-align: top;
       }
@@ -122,19 +106,34 @@
       margin-bottom: 1rem;
       overflow-x: auto;
       @include mixins.color-map(background-color, surface);
-      border-radius: variables.$radius;
-    }
-
-    kbd {
-      padding: 0 4px;
-      font-family: variables.$mono;
-      @include mixins.color-map(color, text2);
-      @include mixins.color-map(background-color, surface3);
-      border-radius: 4px;
     }
 
     code {
+      user-select: all;
+    }
+
+    p > code,
+    p > kbd {
+      padding: 2px 5px;
       font-family: variables.$mono;
+      font-size: 0.9rem;
+      color: var(--text1);
+      letter-spacing: 0.2px;
+      background-color: var(--surface3);
+      border-radius: variables.$radius;
+      @include mixins.transition(background-color);
+
+      a:not(.kg-bookmark-container) {
+        color: var(--text1);
+        text-decoration: underline;
+        &:hover {
+          background-color: var(--surface3);
+        }
+      }
+    }
+
+    pre[class*='language-'] {
+      margin: 0;
     }
   }
 }

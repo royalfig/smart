@@ -4,14 +4,17 @@
 .hero {
   position: relative;
   width: 100%;
-  height: 50vh;
-  min-height: 12rem;
+  height: 27.5rem;
   @include mixins.navbar(margin-top);
   margin-bottom: 2rem;
   overflow: hidden;
   background-position: center;
   background-size: cover;
   @include mixins.color-map(background-color, surface1);
+
+  @media (min-height: 60rem) {
+    height: 37.5rem;
+  }
 
   &::before {
     position: absolute;

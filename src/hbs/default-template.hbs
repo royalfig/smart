@@ -10,6 +10,7 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Regular.woff2'}}" type="font/woff2" crossorigin="anonymous">
     <link rel="preload" as="style" href="{{asset 'built/app.css'}}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
@@ -17,7 +18,7 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Bold.woff2'}}" type="font/woff2" crossorigin="anonymous">
+    
     {{!-- critical-css --}}
 
     <style>
@@ -66,8 +67,8 @@
                 ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     </style>
-
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
+
     {{!-- Load scripts to execute before render --}}
     <script>
         if (
@@ -78,6 +79,7 @@
             document.documentElement.setAttribute('color-mode', 'light');
         }
     </script>
+
     {{!-- Scripts to be parsed after load --}}
     <script src="{{asset 'built/app.js'}}" defer></script>
     {{^is "home"}}
