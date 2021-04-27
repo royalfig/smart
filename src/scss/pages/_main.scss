@@ -2,12 +2,12 @@
 // For Home, Index, and Tag pages
 //-------------------------------------------
 @use '../abstracts/mixins';
-.main {
+.sm-main {
   width: 100%;
   overflow-x: hidden;
 
   &--index {
-    @extend .main;
+    @extend .sm-main;
     @include mixins.navbar(margin-top);
   }
 

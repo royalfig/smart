@@ -2,7 +2,7 @@
 // Mobile Nav Menu
 //-------------------------------------------
 @use '../abstracts/mixins';
-.menu {
+.sm-menu {
   &__link {
     @include mixins.transition(color);
     &:focus {

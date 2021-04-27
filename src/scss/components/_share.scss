@@ -4,7 +4,7 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.post-share-bar {
+.sm-post-share-bar {
   position: fixed;
   bottom: 0;
   z-index: 5;
@@ -49,7 +49,7 @@
   }
 
   &__link--twitter {
-    @extend .post-share-bar__link;
+    @extend .sm-post-share-bar__link;
 
     &:hover,
     &:active {
@@ -61,7 +61,7 @@
   }
 
   &__link--facebook {
-    @extend .post-share-bar__link;
+    @extend .sm-post-share-bar__link;
 
     &:hover,
     &:active {
@@ -73,7 +73,7 @@
   }
 
   &__link--linkedin {
-    @extend .post-share-bar__link;
+    @extend .sm-post-share-bar__link;
 
     &:hover,
     &:active {
@@ -85,7 +85,7 @@
   }
 
   &__link--copy {
-    @extend .post-share-bar__link;
+    @extend .sm-post-share-bar__link;
     &:hover,
     &:active {
       @include mixins.color-map(background-color, primary);

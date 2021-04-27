@@ -4,7 +4,7 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.navbar {
+.sm-navbar {
   position: fixed;
   top: 0;
   z-index: 5;
@@ -187,7 +187,7 @@
     }
   }
 
-  .color-mode-btn {
+  .sm-color-mode-btn {
     width: 1.5em;
     height: 1.5em;
     margin: 0 0.5rem;
@@ -196,9 +196,9 @@
     svg {
       width: 100%;
       height: 100%;
+      transition: stroke 0.2s, fill 0.2s;
       fill: transparent;
       @include mixins.color-map(stroke, text2);
-      @include mixins.transition(stroke);
 
       &:hover {
         fill: #eee8aa;

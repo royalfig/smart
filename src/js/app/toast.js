@@ -1,14 +1,14 @@
-const copyBtn = document.getElementById('copy-button');
+const copyBtn = document.getElementById('sm-copy-button');
 
 const destroyToast = (el) => {
-  el.classList.add('toast__slide-out');
+  el.classList.add('sm-toast__slide-out');
   setTimeout(() => {
     el.remove();
   }, 500);
 };
 
 const checkDomForToast = () => {
-  const extantToast = document.querySelectorAll('.toast');
+  const extantToast = document.querySelectorAll('.sm-toast');
   if (extantToast.length) {
     extantToast.forEach((el) => el.remove());
   }
@@ -17,9 +17,9 @@ const checkDomForToast = () => {
 const createToast = (value) => {
   checkDomForToast();
   const container = document.createElement('div');
-  container.classList.add('toast');
+  container.classList.add('sm-toast');
   const innerContainer = document.createElement('div');
-  innerContainer.classList.add('toast__inner');
+  innerContainer.classList.add('sm-toast__inner');
   container.append(innerContainer);
   const p = document.createElement('p');
   p.textContent = value;

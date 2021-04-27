@@ -4,7 +4,7 @@ into the {body} of the default.hbs template --}}
 {{#tag}}
 
 {{!-- Post Header  --}}
-<header class="{{^if feature_image}}post__no-img--container">{{else}}post__img">
+<header class="{{^if feature_image}}sm-post__no-img--container">{{else}}post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 740w,
                  {{img_url feature_image size="l"}} 1000w,
@@ -12,23 +12,23 @@ into the {body} of the default.hbs template --}}
         src="{{img_url feature_image size="l"}}" alt="{{title}}" height="340">
     {{/if}}
     {{^if feature_image}}
-    <div class="post__no-img"></div>
+    <div class="sm-post__no-img"></div>
     {{/if}}
 </header>
 {{!-- Post Header  --}}
 {{!-- Main  --}}
-<main class="main" id="main">
-    <div class="outer-container">
-        <div class="inner-container">
+<main class="sm-main" id="sm-main">
+    <div class="sm-outer-container">
+        <div class="sm-inner-container">
             <section class="{{slug}}">
-                <header class="post__header">
-                    <h1 class="post__title--serif">{{name}}</h1>
+                <header class="sm-post__header">
+                    <h1 class="sm-post__title--serif">{{name}}</h1>
                     {{#if description}}
                     <p>{{description}}</p>
                     {{/if}}
                 </header>
                 {{/tag}}
-                <div class="grid-container grid-container-{{posts.length}}">
+                <div class="sm-grid-container sm-grid-container-{{posts.length}}">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}

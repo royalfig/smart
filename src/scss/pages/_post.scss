@@ -4,7 +4,7 @@
 //-------------------------------------------
 // Post Reading Progress Bar
 //-------------------------------------------
-.post-reading-progress {
+.sm-post-reading-progress {
   position: fixed;
   top: 0;
   z-index: 6;
@@ -20,7 +20,7 @@
 //-------------------------------------------
 // Post Styles
 //-------------------------------------------
-.post {
+.sm-post {
   max-width: variables.$tablet;
   margin: 0 auto 3rem;
 
@@ -172,7 +172,7 @@
 // -------------------------------------------
 // Post Footer: About the Author and Related Posts
 // -------------------------------------------
-.post-footer {
+.sm-post-footer {
   @include mixins.inner-container;
   @include mixins.grid;
   margin-top: 3rem;
@@ -226,7 +226,7 @@
     margin-bottom: 1rem;
 
     &--authors {
-      @extend .post-footer__author-img-container;
+      @extend .sm-post-footer__author-img-container;
       padding-bottom: 0.5rem;
       margin-bottom: 0.5rem;
       border-bottom-style: solid;
@@ -247,7 +247,7 @@
   }
 
   &__no-author-img {
-    @extend .post-footer__author-img;
+    @extend .sm-post-footer__author-img;
     position: relative;
     overflow: hidden;
     background: linear-gradient(45deg, color(primary), color(secondary));
@@ -331,23 +331,23 @@
     }
   }
 
-  .card {
+  .sm-card {
     height: 100%;
   }
 }
 
-.related-posts:nth-child(4) {
+.sm-related-posts:nth-child(4) {
   grid-area: post-1;
 }
 
-.related-posts:nth-child(5) {
+.sm-related-posts:nth-child(5) {
   grid-area: post-2;
 }
 
-.related-posts:nth-child(6) {
+.sm-related-posts:nth-child(6) {
   display: none;
 }
 
-.related-posts:nth-child(7) {
+.sm-related-posts:nth-child(7) {
   display: none;
 }

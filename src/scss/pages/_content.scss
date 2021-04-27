@@ -5,7 +5,7 @@
 @use '../abstracts/mixins';
 @use '../abstracts/functions';
 
-.post {
+.sm-post {
   &__content {
     figcaption {
       padding: 0.5rem;
@@ -103,12 +103,13 @@
     pre {
       max-width: 100%;
       padding: 0.5rem;
-      margin-bottom: 1rem;
+      // margin-bottom: 1rem;
       overflow-x: auto;
       @include mixins.color-map(background-color, surface);
     }
 
     code {
+      font-family: variables.$mono;
       user-select: all;
     }
 
@@ -123,6 +124,7 @@
       border-radius: variables.$radius;
       @include mixins.transition(background-color);
 
+      // TODO improve selector/specificity
       a:not(.kg-bookmark-container) {
         color: var(--text1);
         text-decoration: underline;

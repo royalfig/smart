@@ -3,7 +3,7 @@
 into the {body} of the default.hbs template --}}
 
 {{!-- Post Header  --}}
-<header class="{{^if @site.cover_image}}post__no-img--container">{{else}}post__img">
+<header class="{{^if @site.cover_image}}sm-post__no-img--container">{{else}}post__img">
     <img srcset="{{img_url @site.cover_image size="s"}} 300w,
                  {{img_url @site.cover_image size="m"}} 600w,
                  {{img_url @site.cover_image size="l"}} 1000w,
@@ -11,20 +11,20 @@ into the {body} of the default.hbs template --}}
         src="{{img_url @site.cover_image size="xl"}}" alt="{{meta_title}}">
     {{/if}}
     {{^if @site.cover_image}}
-    <div class="post__no-img"></div>
+    <div class="sm-post__no-img"></div>
     {{/if}}
 </header>
 {{!-- Post Header  --}}
 
-<main class="main" id="main">
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <header class="post__header">
-                <h1 class="post__title--serif">Latest
+<main class="sm-main" id="sm-main">
+    <div class="sm-main__outer-container">
+        <div class="sm-main__inner-container">
+            <header class="sm-post__header">
+                <h1 class="sm-post__title--serif">Latest
                     <span>{{plural pagination.page empty='' singular='' plural='%'}}</span></h1>
             </header>
 
-            <section class="grid-container">
+            <section class="sm-grid-container">
                 {{#foreach posts}}
                 {{> "card"}}
                 {{/foreach}}

@@ -5,44 +5,44 @@ into the {body} of the default.hbs template --}}
 {{! Hero }}
 {{#if @site.cover_image}}
 <style>
-    .hero {
+    .sm-hero {
         background-image: url({{img_url @site.cover_image size='s'}});
     }
     @media(min-width: 300px) {
-        .hero {
+        .sm-hero {
             background-image: url({{img_url @site.cover_image size='m'}});
         }
     }
     @media(min-width: 740px) {
-        .hero {
+        .sm-hero {
             background-image: url({{img_url @site.cover_image size='l'}});
         }
     }
     @media(min-width: 1024px) {
-        .hero {
+        .sm-hero {
             background-image: url({{img_url @site.cover_image size='xl'}});
         }
     }
 </style>
 {{/if}}
-<header class="hero main__outer-container">
-    <div class="inner-container--hero">
-        <div class="hero__text-container">
-            <h1 class="hero__site-title">{{@site.title}}</h1>
-            <p class="hero__site-description">{{@site.description}}
+<header class="sm-hero sm-main__outer-container">
+    <div class="sm-inner-container--hero">
+        <div class="sm-hero__text-container">
+            <h1 class="sm-hero__site-title">{{@site.title}}</h1>
+            <p class="sm-hero__site-description">{{@site.description}}
             </p>
         </div>
     </div>
 </header>
 
-<main class="main" id="sm-main">
+<main class="sm-main" id="sm-main">
     {{!-- Featured  --}}
     {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
         {{#if featured}}
-            <div class="main__outer-container">
-                <div class="main__inner-container">
-                    <h2 class="main__header">Featured</h2>
-                    <section class="grid-container grid-container-{{featured.length}}">
+            <div class="sm-main__outer-container">
+                <div class="sm-main__inner-container">
+                    <h2 class="sm-main__header">Featured</h2>
+                    <section class="sm-grid-container sm-grid-container-{{featured.length}}">
                         {{#foreach featured}}
                         {{> "card"}}
                         {{/foreach}}
@@ -55,12 +55,12 @@ into the {body} of the default.hbs template --}}
     {{!-- Latest --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |latest|}}
         {{#if latest}}
-            <div class="main__outer-container">
-                <div class="main__inner-container">
-                    <a class="main__read-more" href="/page/2/">
-                        <h2 class="main__header">Latest</h2>
+            <div class="sm-main__outer-container">
+                <div class="sm-main__inner-container">
+                    <a class="sm-main__read-more" href="/page/2/">
+                        <h2 class="sm-main__header">Latest</h2>
                     </a>
-                    <section class="grid-container grid-container-{{latest.length}}">
+                    <section class="sm-grid-container sm-grid-container-{{latest.length}}">
                         {{#foreach latest}}
                         {{> "card"}}
                         {{/foreach}}
@@ -73,12 +73,12 @@ into the {body} of the default.hbs template --}}
     {{!-- Publications --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications" as |publications|}}
     {{#if publications}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <a class="main__read-more" href="/tag/publications/">
-                <h2 class="main__header">Publications</h2>
+    <div class="sm-main__outer-container">
+        <div class="sm-main__inner-container">
+            <a class="sm-main__read-more" href="/tag/publications/">
+                <h2 class="sm-main__header">Publications</h2>
             </a>
-            <section class="grid-container grid-container-{{publications.length}}">
+            <section class="sm-grid-container sm-grid-container-{{publications.length}}">
                 {{#foreach publications}}
                 {{> "card"}}
                 {{/foreach}}
@@ -91,12 +91,12 @@ into the {body} of the default.hbs template --}}
     {{!-- Presentations --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications" as |presentations|}}
     {{#if presentations}}
-    <div class="main__outer-container">
-        <div class="main__inner-container">
-            <a class="main__read-more" href="/tag/presentations/">
-                <h2 class="main__header">Presentations</h2>
+    <div class="sm-main__outer-container">
+        <div class="sm-main__inner-container">
+            <a class="sm-main__read-more" href="/tag/presentations/">
+                <h2 class="sm-main__header">Presentations</h2>
             </a>
-            <section class="grid-container grid-container-{{presentations.length}}">
+            <section class="sm-grid-container sm-grid-container-{{presentations.length}}">
                 {{#foreach presentations}}
                 {{> "card"}}
                 {{/foreach}}
@@ -109,12 +109,12 @@ into the {body} of the default.hbs template --}}
     {{!-- Teaching --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations" as |teaching|}}
         {{#if teaching}}
-            <div class="main__outer-container">
-                <div class="main__inner-container">
-                    <a class="main__read-more" href="/tag/teaching/">
-                        <h2 class="main__header">Teaching</h2>
+            <div class="sm-main__outer-container">
+                <div class="sm-main__inner-container">
+                    <a class="sm-main__read-more" href="/tag/teaching/">
+                        <h2 class="sm-main__header">Teaching</h2>
                     </a>
-                    <section class="grid-container grid-container-{{teaching.length}}">
+                    <section class="sm-grid-container sm-grid-container-{{teaching.length}}">
                         {{#foreach teaching}}
                         {{> "card"}}
                         {{/foreach}}
@@ -127,12 +127,12 @@ into the {body} of the default.hbs template --}}
     {{!-- Outreach --}}
     {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching" as |outreach|}}
         {{#if outreach}}
-            <div class="main__outer-container">
-                <div class="main__inner-container">
-                    <a class="main__read-more" href="/tag/outreach/">
+            <div class="sm-main__outer-container">
+                <div class="sm-main__inner-container">
+                    <a class="sm-main__read-more" href="/tag/outreach/">
                         <h2 class="main__header">Outreach</h2>
                     </a>
-                    <section class="grid-container grid-container-{{outreach.length}}">
+                    <section class="sm-grid-container sm-grid-container-{{outreach.length}}">
                         {{#foreach outreach}}
                         {{> "card"}}
                         {{/foreach}}

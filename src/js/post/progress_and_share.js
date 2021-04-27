@@ -5,16 +5,16 @@ let lastKnownScrollPos = 0;
 let ticking = false;
 
 // Variables for reading progress
-const progressBar = document.querySelector('.post-reading-progress');
-const shareBar = document.querySelector('.post-share-bar');
-const footer = document.querySelector('.outer-container--footer');
+const progressBar = document.querySelector('.sm-post-reading-progress');
+const shareBar = document.querySelector('.sm-post-share-bar');
+const footer = document.querySelector('.sm-outer-container--footer');
 const buffer = 50;
 
 // Variables for share bar
 const postImg =
-  document.querySelector('.post__img') ||
-  document.querySelector('.post__no-img');
-const postContentHeight = document.querySelector('.post__content');
+  document.querySelector('.sm-post__img') ||
+  document.querySelector('.sm-post__no-img');
+const postContentHeight = document.querySelector('.sm-post__content');
 
 const readingBarProgress = (scrollPos) => {
   const progress = Math.ceil(

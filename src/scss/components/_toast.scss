@@ -1,7 +1,7 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.toast {
+.sm-toast {
   position: fixed;
   top: -100%;
   left: 50%;

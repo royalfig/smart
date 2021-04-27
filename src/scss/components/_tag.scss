@@ -13,16 +13,16 @@
     content: '#';
   }
 
-  &:not(.card &):hover {
+  &:not(.sm-card &):hover {
     @include mixins.color-map(color, text);
   }
 
-  .card & {
+  .sm-card & {
     margin-top: auto;
   }
 
   &:not(:last-child) {
-    .post__tag-bar & {
+    .sm-post__tag-bar & {
       margin-right: 0.5rem;
     }
   }

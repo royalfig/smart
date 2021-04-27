@@ -1,7 +1,7 @@
 import * as JsSearch from 'js-search';
 import GhostContentAPI from '@tryghost/content-api';
 
-const searchModal = document.getElementById('search-modal');
+const searchModal = document.getElementById('sm-search-modal');
 
 const htmlReplace = (str) => str.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const createTimestamp = (minutes = 60) => {
@@ -52,10 +52,12 @@ const search = () => {
   });
 
   // Page Elements
-  const searchInput = document.getElementById('search-input');
-  const runSearchBtn = document.getElementById('run-search-btn');
-  const searchResultHeader = document.querySelector('.search-results__header');
-  const searchResult = document.querySelector('.search-results__container');
+  const searchInput = document.getElementById('sm-search-input');
+  const runSearchBtn = document.getElementById('sm-run-search-btn');
+  const searchResultHeader = document.querySelector(
+    '.sm-search-results__header',
+  );
+  const searchResult = document.querySelector('.sm-search-results__container');
 
   const dateFormatter = (isoDate) => {
     const options = {

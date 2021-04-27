@@ -2,7 +2,7 @@
 @use '../abstracts/mixins';
 @use '../abstracts/functions';
 
-.author {
+.sm-author {
   &__img-container {
     position: relative;
     display: flex;
@@ -44,7 +44,7 @@
   }
 
   &__no-img {
-    @extend .author__img;
+    @extend .sm-author__img;
     overflow: hidden;
     background: linear-gradient(
       45deg,

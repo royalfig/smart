@@ -208,7 +208,7 @@
   @include mixins.color-map(background-color, surface2);
 }
 
-.post__content {
+.sm-post__content {
   .sm-post-upgrade-cta-content {
     padding: 1.25rem;
     border-radius: variables.$radius;

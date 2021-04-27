@@ -1,7 +1,7 @@
 //-------------------------------------------
 // Copy Function
 //-------------------------------------------
-const copyButton = document.getElementById('copy-button');
+const copyButton = document.getElementById('sm-copy-button');
 
 export default function copyInit() {
   if (copyButton) {

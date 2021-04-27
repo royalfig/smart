@@ -1,7 +1,7 @@
 //-------------------------------------------
 // Make tables responsive
 //-------------------------------------------
-const tables = document.querySelectorAll('.post__content > table');
+const tables = document.querySelectorAll('.sm-post__content > table');
 
 export default function tablePrependInit() {
   function tablePrepend(e) {

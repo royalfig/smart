@@ -1,16 +1,16 @@
 {{!-- Footer Module --}}
-<footer class="outer-container--footer">
-    <div class="inner-container--footer">
-        <div class="grid-container--footer">
-            <div class="footer__section">
-                <p class="footer__header--serif">About</p>
-                <a class="footer__link" href="{{@site.url}}">{{@site.title}}</a>
+<footer class="sm-outer-container--footer">
+    <div class="sm-inner-container--footer">
+        <div class="sm-grid-container--footer">
+            <div class="sm-footer__section">
+                <p class="sm-footer__header--serif">About</p>
+                <a class="sm-footer__link" href="{{@site.url}}">{{@site.title}}</a>
                 {{#if @site.description}}
-                <p class="footer__description">{{@site.description}}</p>
+                <p class="sm-footer__description">{{@site.description}}</p>
                 {{/if}}
-                <div class="footer__social">
+                <div class="sm-footer__social">
                     {{#if @site.twitter}}
-                    <a class="navigation__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+                    <a class="sm-navigation__social-media-item twitter" href="{{twitter_url @site.twitter}}"
                         aria-label="Follow {{@site.title}} on Twitter">
                         <svg aria-hidden="true">
                             <use href="#twitter"></use>
@@ -18,7 +18,7 @@
                     </a>
                     {{/if}}
                     {{#if @site.facebook}}
-                    <a class="navigation__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+                    <a class="sm-navigation__social-media-item facebook" href="{{facebook_url @site.facebook}}"
                         aria-label="Follow {{@site.title}} on Facebook">
                         <svg aria-hidden="true">
                             <use href="#facebook"></use>
@@ -32,7 +32,7 @@
             </div>
             {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
             {{#if tags}}
-            <div class="footer__section">
+            <div class="sm-footer__section">
                 <p class="footer__header--serif">Tags</p>
                 {{#foreach tags}}
                 <a class="sm-tag" href="{{url}}">{{name}}</a>
@@ -41,29 +41,29 @@
             {{/if}}
             {{/get}}
             {{#get "posts" limit="6"}}
-            <div class="footer__section--latest">
-                <p class="footer__header--serif">Latest</p>
+            <div class="sm-footer__section--latest">
+                <p class="sm-footer__header--serif">Latest</p>
                 {{#foreach posts limit="3"}}
-                <p class="footer__date">
+                <p class="sm-footer__date">
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}
                     </time>
                 </p>
-                <a class="footer__title" href="{{url}}">{{title}}</a>
+                <a class="sm-footer__title" href="{{url}}">{{title}}</a>
                 {{/foreach}}
             </div>
-            <div class="footer__section--latest">
-                <p class="footer__header--serif">&nbsp;</p>
+            <div class="sm-footer__section--latest">
+                <p class="sm-footer__header--serif">&nbsp;</p>
                 {{#foreach posts from="4" to="6"}}
-                <p class="footer__date"><time
+                <p class="sm-footer__date"><time
                         datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
                 </p>
-                <a class="footer__title" href="{{url}}">{{title}}</a>
+                <a class="sm-footer__title" href="{{url}}">{{title}}</a>
                 {{/foreach}}
             </div>
             {{/get}}
         </div>
     </div>
-    <div class="footer__published-by-ghost">
+    <div class="sm-footer__published-by-ghost">
         <p>&copy; {{date format="YYYY"}} <a href="{{@site.url}}">{{@site.title}}</a> &middot; Designed by <a href="https://ryanfeigenbaum.com">Ryan Feigenbaum</a> &middot;
             Powered by <a href="https://ghost.org/">Ghost</a></p>
     </div>
