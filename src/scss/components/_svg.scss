@@ -75,6 +75,25 @@
   }
 }
 
+.website {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0.25rem;
+  border-radius: variables.$radius;
+  @include mixins.transition(background-color);
+  &:hover {
+    @include mixins.color-map(background-color, primary);
+    svg {
+      @include mixins.color-map(stroke, textInverse);
+    }
+  }
+  svg {
+    fill: none;
+    stroke: currentColor;
+    @include mixins.transition(stroke);
+  }
+}
+
 .youtube {
   @include svg(variables.$yt);
 }

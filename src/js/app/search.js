@@ -90,13 +90,13 @@ const search = () => {
       }
 
       result.forEach((post) => {
-        searchResult.innerHTML += `<article class="search-results__item">
-            <a class="search-results__link" href="${post.url}">
-              <p class="search-results__date">${dateFormatter(
+        searchResult.innerHTML += `<article class="sm-search-results__item">
+            <a class="sm-search-results__link" href="${post.url}">
+              <p class="sm-search-results__date">${dateFormatter(
                 post.published_at,
               )}</p>
-              <p class="search-results__title">${post.title}</p>
-              <p class="search-results__excerpt">
+              <p class="sm-search-results__title">${post.title}</p>
+              <p class="sm-search-results__excerpt">
                 ${htmlReplace(post.excerpt)}</p>
                 </a>
             </article>`;

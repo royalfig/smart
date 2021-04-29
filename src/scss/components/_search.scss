@@ -84,14 +84,14 @@
     padding: 1rem;
     border: 3px solid transparent;
     border-radius: variables.$radius;
-    @include mixins.transition(box-shadow);
+    transition: box-shadow 0.2s, color 0.2s;
 
     &:hover {
       box-shadow: 0 0 0 4px functions.color(primary);
       box-shadow: 0 0 0 4px var(--primary);
 
       .sm-search-results {
-        &__link {
+        &__title {
           @include mixins.color-map(color, primary);
         }
       }

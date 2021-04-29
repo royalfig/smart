@@ -5,7 +5,7 @@ into the {body} of the default.hbs template --}}
 {{#author}}
 
 {{!-- Post Header  --}}
-<header class="{{^if cover_image}}sm-post__no-img--container">{{else}}post__img">
+<header class="{{^if cover_image}}sm-post__no-img--container">{{else}}sm-post__img">
     <img srcset="{{img_url cover_image size="s"}} 300w,
                  {{img_url cover_image size="m"}} 600w,
                  {{img_url cover_image size="l"}} 1000w,

@@ -4,7 +4,7 @@ into the {body} of the default.hbs template --}}
 {{#tag}}
 
 {{!-- Post Header  --}}
-<header class="{{^if feature_image}}sm-post__no-img--container">{{else}}post__img">
+<header class="{{^if feature_image}}sm-post__no-img--container">{{else}}sm-post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 740w,
                  {{img_url feature_image size="l"}} 1000w,
