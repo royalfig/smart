@@ -1,9 +1,9 @@
 const { trapFocus, releaseFocus, tabKeyHandler } = require('./focusTrap');
 
-const searchBtn = document.getElementById('search-btn');
-const mSearchBtn = document.getElementById('m-search-btn');
-const menuBtn = document.getElementById('menu-btn');
-const closeBtns = document.querySelectorAll('.modal__close-btn');
+const searchBtn = document.getElementById('sm-search-btn');
+const mSearchBtn = document.getElementById('sm-m-search-btn');
+const menuBtn = document.getElementById('sm-menu-btn');
+const closeBtns = document.querySelectorAll('.sm-modal__close-btn');
 
 if (typeof SEARCH_API !== 'undefined') {
   searchBtn.style.display = 'flex';
@@ -16,7 +16,7 @@ const modalFn = () => {
   // eslint-disable-next-line no-undef
 
   const close = (modal) => {
-    document.body.classList.remove('expanded-modal');
+    document.body.classList.remove('sm-expanded-modal');
     modal.setAttribute('aria-expanded', 'false');
     const input = modal.querySelector('input');
     if (input) {
@@ -26,7 +26,7 @@ const modalFn = () => {
   };
 
   const closeHandler = (e) => {
-    const modal = e.currentTarget.closest('.modal');
+    const modal = e.currentTarget.closest('.sm-modal');
     close(modal);
   };
 
@@ -35,12 +35,12 @@ const modalFn = () => {
     //   close(e.currentTarget.closest('.modal'));
     // }
     const modal = document.getElementById(e.currentTarget.dataset.target);
-    document.body.classList.add('expanded-modal');
+    document.body.classList.add('sm-expanded-modal');
     modal.setAttribute('aria-expanded', 'true');
     trapFocus(modal);
     modal.addEventListener('keydown', tabKeyHandler);
     const nonTargetCloseHandler = (ev) => {
-      if (ev.target.classList.contains('content-wrap')) {
+      if (ev.target.classList.contains('sm-content-wrap')) {
         close(modal);
         document.body.removeEventListener('click', nonTargetCloseHandler);
         // eslint-disable-next-line no-use-before-define

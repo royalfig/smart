@@ -6,10 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{meta_title}}</title>
+    
     {{!-- CSS and Fonts  --}}
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Regular.woff2'}}" type="font/woff2" crossorigin="anonymous">
+
+    {{#is home}}
+    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Bold.woff2'}}" type="font/woff2" crossorigin="anonymous">
+    {{/is}}
+
+    {{#if @site.cover_image}}
+        {{#is "home"}}
+    <link rel="preload" as="image" href="{{img_url @site.cover_image size='s'}}" media="(max-width: 299px)">
+    <link rel="preload" as="image" href="{{img_url @site.cover_image size='m'}}" media="(min-width: 300px) and (max-width: 739px)">
+    <link rel="preload" as="image" href="{{img_url @site.cover_image size='l'}}" media="(min-width: 740px) and (max-width: 1023px)">
+    <link rel="preload" as="image" href="{{img_url @site.cover_image size='xl'}}" media="(min-width: 1024px)">
+        {{/is}}
+    {{/if}}
+
     <link rel="preload" as="style" href="{{asset 'built/app.css'}}">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
@@ -17,7 +33,7 @@
     <noscript>
         <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     </noscript>
-    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Bold.woff2'}}" type="font/woff2" crossorigin="anonymous">
+    
     {{!-- critical-css --}}
 
     <style>
@@ -66,8 +82,8 @@
                 ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     </style>
-
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
+
     {{!-- Load scripts to execute before render --}}
     <script>
         if (
@@ -78,6 +94,7 @@
             document.documentElement.setAttribute('color-mode', 'light');
         }
     </script>
+
     {{!-- Scripts to be parsed after load --}}
     <script src="{{asset 'built/app.js'}}" defer></script>
     {{^is "home"}}
@@ -90,9 +107,9 @@
 </head>
 
 <body class="{{body_class}}">
-    <a href="#sm-main" class="sm-button--color skip-to-content">Skip to content</a>
+    <a href="#sm-main" class="sm-button--color sm-skip-to-content">Skip to content</a>
     {{> "svg"}}
-    <div class="content-wrap">
+    <div class="sm-content-wrap">
         {{> "navbar"}}
         {{> "menu"}}
         {{> "search"}}

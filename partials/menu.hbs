@@ -1,14 +1,14 @@
 {{! Mobile Nav Menu }}
-<nav class="modal" id="menu" aria-expanded="false">
-  <div class="modal__container">
-    <header class="modal__header">
-      <button class="modal__close-btn" data-target="menu" aria-label="Close menu" tabindex="-1">
+<nav class="sm-modal" id="sm-menu" aria-expanded="false">
+  <div class="sm-modal__container">
+    <header class="sm-modal__header">
+      <button class="sm-modal__close-btn" data-target="menu" aria-label="Close menu" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#close"></use>
         </svg>
       </button>
-      {{#link href=@site.url class='menu__link'}}
-      <h2 class="modal__title">
+      {{#link href=@site.url class='sm-menu__link'}}
+      <h2 class="sm-modal__title">
         {{@site.title}}
       </h2>
       {{/link}}
@@ -26,20 +26,20 @@
       {{/if}}
   
       {{! Search }}
-      <button class="sm-button--search" id="m-search-btn" data-target="search-modal" tabindex="-1">
+      <button class="sm-button--search" id="sm-m-search-btn" data-target="sm-search-modal" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#search"></use>
         </svg>
         Search
       </button>
       {{!-- Dark Mode Toggle --}}
-      <button class="sm-button color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
+      <button class="sm-button sm-color-mode-btn light" aria-label="Toggle light mode" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#sun"></use>
         </svg>
         Light Mode
       </button>
-      <button class="sm-button color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
+      <button class="sm-button sm-color-mode-btn dark" aria-label="Toggle dark mode" tabindex="-1">
         <svg aria-hidden="true">
           <use href="#moon"></use>
         </svg>
@@ -47,11 +47,11 @@
       </button>
     </header>
 
-    <footer class="modal__footer">
+    <footer class="sm-modal__footer">
       {{! Social Media  }}
         {{#has any='@site.twitter, @site.facebook'}}
           {{#if @site.twitter}}
-          <a class="menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
+          <a class="sm-menu__social-media-item twitter" href="{{twitter_url @site.twitter}}"
             aria-label="Follow {{@site.title}} on Twitter" tabindex="-1">
             <svg aria-hidden="true">
               <use href="#twitter"></use>
@@ -59,7 +59,7 @@
           </a>
           {{/if}}
           {{#if @site.facebook}}
-          <a class="menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
+          <a class="sm-menu__social-media-item facebook" href="{{facebook_url @site.facebook}}"
             aria-label="Follow {{@site.title}} on Facebook" tabindex="-1">
             <svg aria-hidden="true">
               <use href="#facebook"></use>

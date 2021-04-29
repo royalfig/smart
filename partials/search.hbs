@@ -1,35 +1,35 @@
 {{! Search Modal }}
-<aside class='modal search__modal' id='search-modal' role='search' aria-expanded='false'>
-  <div class='modal__container'>
-    <header class="modal__header">
-      <button class='modal__close-btn' aria-label='close' tabindex="-1">
+<aside class='sm-modal sm-search__modal' id='sm-search-modal' role='search' aria-expanded='false'>
+  <div class='sm-modal__container'>
+    <header class="sm-modal__header">
+      <button class='sm-modal__close-btn' aria-label='close' tabindex="-1">
         <svg aria-hidden='true'>
           <use href='#close'></use>
         </svg>
       </button>
-      <h2 class='modal__title'>
+      <h2 class='sm-modal__title'>
         Search
       </h2>
-        <label class='small-header' for='search-input'>
+        <label class='sm-small-header' for='sm-search-input'>
           Enter Query
         </label>
-      <div class='search__input-container'>
-        <input class='form__input' id='search-input' tabindex="-1" />
-        <button class='sm-button--color search__btn' id='run-search-btn' tabindex="-1">
-          <svg class='search__button--content'>
+      <div class='sm-search__input-container'>
+        <input class='sm-form__input' id='sm-search-input' tabindex="-1" />
+        <button class='sm-button--color sm-search__btn' id='sm-run-search-btn' tabindex="-1">
+          <svg class='sm-search__button--content'>
             <use href="#search"></use>
-          </svg><span class='search__button--content'>
+          </svg><span class='sm-search__button--content'>
             Search
           </span>
-          <svg class='search__button--loading' aria-label='Loading...'>
+          <svg class='sm-search__button--loading' aria-label='Loading...'>
             <use href='#loader'></use>
           </svg>
         </button>
       </div>
     </header>
-    <div class='search-results'>
-      <header class='search-results__header small-header'></header>
-      <div class='search-results__container'></div>
+    <div class='sm-search-results'>
+      <header class='sm-search-results__header sm-small-header'></header>
+      <div class='sm-search-results__container'></div>
     </div>
   </div>
 </aside>

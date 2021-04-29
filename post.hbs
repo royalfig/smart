@@ -3,13 +3,13 @@
 into the {body} of the default.hbs template --}}
 
 {{! Post Reading Progress }}
-<div class="post-reading-progress flex-row"></div>
+<div class="sm-post-reading-progress"></div>
 {{! Post Reading Progress }}
 
 {{#post}}
 
 {{!-- Post Header  --}}
-<header class="{{^if feature_image}}post__no-img--container">{{else}}post__img">
+<header class="{{^if feature_image}}sm-post__no-img--container">{{else}}sm-post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 740w,
                  {{img_url feature_image size="l"}} 1000w,
@@ -17,26 +17,26 @@ into the {body} of the default.hbs template --}}
         src="{{img_url feature_image size="l"}}" alt="{{title}}" height="340">
     {{/if}}
     {{^if feature_image}}
-    <div class="post__no-img"></div>
+    <div class="sm-post__no-img"></div>
     {{/if}}
 </header>
 {{!-- Post Header  --}}
 
 {{!-- Main  --}}
-<main class="main" id="sm-main">
-    <div class="outer-container">
-        <div class="inner-container">
-            <article class="{{post_class}}">
-                <header class="post__header">
+<main class="sm-main" id="sm-main">
+    <div class="sm-outer-container">
+        <div class="sm-inner-container">
+            <article class="{{post_class}} sm-post">
+                <header class="sm-post__header">
            
-                    <h1 class="post__title--serif">{{title}}</h1>
-                    <div class="post__author">
+                    <h1 class="sm-post__title--serif">{{title}}</h1>
+                    <div class="sm-post__author">
                         {{authors}} &middot;
                         <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
                     </div>
                         {{! Tags }}
                         {{#if tags}}
-                    <div class="post__tag-bar">
+                    <div class="sm-post__tag-bar">
                         {{#foreach tags}}
                         <a href="{{url}}" class="sm-tag">{{name}}  </a>
                         {{/foreach}}
@@ -44,28 +44,28 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                     {{! Tags }}
                 </header>
-                <div class="post__content">
+                <div class="sm-post__content">
                     {{content}}
                 </div>
             </article>
             <hr>
-            <footer class="post-footer">
+            <footer class="sm-post-footer">
                 {{#has author="count:<2"}}
-                <h3 class="post-footer__title-1">About the Author</h3>
+                <h3 class="sm-post-footer__title-1">About the Author</h3>
                 {{else}}
-                <h3 class="post-footer__title-1">About the Authors</h3>
+                <h3 class="sm-post-footer__title-1">About the Authors</h3>
                 {{/has}}
-                <h3 class="post-footer__title-2">More to Read</h3>
+                <h3 class="sm-post-footer__title-2">More to Read</h3>
                 {{#has author="count:<2"}}
                 {{#primary_author}}
-                <div class="post-footer__author">
-                    <div class="post-footer__author-img-container">
-                        <a href="{{url}}" class="post-footer__author-img-link" aria-label="{{name}}">
+                <div class="sm-post-footer__author">
+                    <div class="sm-post-footer__author-img-container">
+                        <a href="{{url}}" class="sm-post-footer__author-img-link" aria-label="{{name}}">
                             {{#if profile_image}}
-                            <img class="post-footer__author-img" src="{{img_url profile_image size="s"}}"
+                            <img class="sm-post-footer__author-img" src="{{img_url profile_image size="s"}}"
                                 alt="{{name}}" />
                             {{else}}
-                            <div class="post-footer__no-author-img">
+                            <div class="sm-post-footer__no-author-img">
                                 <svg>
                                     <use href="#user"/>
                                 </svg>
@@ -73,8 +73,8 @@ into the {body} of the default.hbs template --}}
                             {{/if}}
                         </a>
                         <div>
-                            <a class="post-footer__author-name" href="{{url}}">{{name}}</a>
-                            <div class="post-footer__author-social">
+                            <a class="sm-post-footer__author-name" href="{{url}}">{{name}}</a>
+                            <div class="sm-post-footer__author-social">
                                 {{#if twitter}}
                                 <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
@@ -98,7 +98,7 @@ into the {body} of the default.hbs template --}}
                                 {{/if}}
                             </div>
                             {{#if location}}
-                            <div class="post-footer__author-location">
+                            <div class="sm-post-footer__author-location">
                                 <svg aria-hidden="true">
                                     <use href="#location"></use>
                                 </svg>
@@ -114,21 +114,21 @@ into the {body} of the default.hbs template --}}
                 {{/primary_author}}
                 {{! If multiple authors }}
                 {{else}}
-                <div class="post-footer__author">
+                <div class="sm-post-footer__author">
                     {{#foreach authors}}
-                    <div class="post-footer__author-img-container--authors">
-                        <a href="{{url}}" class="post-footer__author-img-link" aria-label="{{name}}">
+                    <div class="sm-post-footer__author-img-container--authors">
+                        <a href="{{url}}" class="sm-post-footer__author-img-link" aria-label="{{name}}">
                             {{#if profile_image}}
-                            <img class="post-footer__author-img" src="{{img_url profile_image size="s"}}"
+                            <img class="sm-post-footer__author-img" src="{{img_url profile_image size="s"}}"
                                 alt="{{name}}" />
                             {{else}}
-                            <div class="post-footer__no-author-img">
+                            <div class="sm-post-footer__no-author-img">
                             </div>
                             {{/if}}
                         </a>
                         <div>
-                            <a class="post-footer__author-name" href="{{url}}">{{name}}</a>
-                            <div class="post-footer__author-social">
+                            <a class="sm-post-footer__author-name" href="{{url}}">{{name}}</a>
+                            <div class="sm-post-footer__author-social">
                                 {{#if twitter}}
                                 <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
@@ -152,7 +152,7 @@ into the {body} of the default.hbs template --}}
                                 {{/if}}
                             </div>
                             {{#if location}}
-                            <div class="post-footer__author-location">
+                            <div class="sm-post-footer__author-location">
                                 <svg aria-hidden="true">
                                     <use href="#location"></use>
                                 </svg>
@@ -166,20 +166,20 @@ into the {body} of the default.hbs template --}}
                 {{/has}}
 
                 {{#prev_post in="primary_tag"}}
-                <div class="related-posts related-posts-1">
+                <div class="sm-related-posts sm-related-posts-1">
                     {{> "card"}}
                 </div>
                 {{/prev_post}}
 
                 {{#next_post in="primary_tag"}}
-                <div class="related-posts related-posts-2">
+                <div class="sm-related-posts sm-related-posts-2">
                     {{> "card"}}
                 </div>
                 {{/next_post}}
 
                 {{#get "posts" include="tags" limit="2" filter="primary_tag:-{{primary_tag.slug}}+id:-{{id}}"}}
                 {{#foreach posts}}
-                <div class="related-posts related-posts-3-{{@number}}">
+                <div class="sm-related-posts sm-related-posts-3-{{@number}}">
                     {{> "card"}}
                 </div>
                 {{/foreach}}

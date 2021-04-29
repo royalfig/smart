@@ -26,10 +26,10 @@
   }
 }
 
-.link {
+.sm-link {
   @include link;
 
-  &.nav-current:before {
+  &.sm-nav-current:before {
     clip-path: none;
   }
 }

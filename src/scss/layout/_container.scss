@@ -4,7 +4,7 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.outer-container {
+.sm-outer-container {
   position: relative;
   width: 100%;
   padding: 1rem;
@@ -18,7 +18,7 @@
   }
 
   &--footer {
-    @extend .outer-container;
+    @extend .sm-outer-container;
     min-height: 250px;
     font-size: 0.9rem;
     @include mixins.color-map(background-color, surface);
@@ -27,23 +27,23 @@
   }
 }
 
-.inner-container {
+.sm-inner-container {
   max-width: variables.$laptop;
   margin: 0 auto 1rem;
 
   &--hero {
-    @extend .inner-container;
+    @extend .sm-inner-container;
     position: relative;
     height: 100%;
     margin-bottom: 0;
   }
 
   &--footer {
-    @extend .inner-container;
+    @extend .sm-inner-container;
   }
 
   &--author {
-    @extend .inner-container;
+    @extend .sm-inner-container;
     display: flex;
     flex-direction: column;
     align-items: center;

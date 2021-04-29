@@ -5,7 +5,7 @@ into the {body} of the default.hbs template --}}
 {{#author}}
 
 {{!-- Post Header  --}}
-<header class="{{^if cover_image}}post__no-img--container">{{else}}post__img">
+<header class="{{^if cover_image}}sm-post__no-img--container">{{else}}sm-post__img">
     <img srcset="{{img_url cover_image size="s"}} 300w,
                  {{img_url cover_image size="m"}} 600w,
                  {{img_url cover_image size="l"}} 1000w,
@@ -13,37 +13,37 @@ into the {body} of the default.hbs template --}}
         src="{{img_url cover_image size="l"}}" alt="{{title}}" height="340">
     {{/if}}
     {{^if cover_image}}
-    <div class="post__no-img"></div>
+    <div class="sm-post__no-img"></div>
     {{/if}}
 </header>
 
 {{!-- Main  --}}
-<main class="main" id="sm-main">
-    <div class="main__outer-container">
-        <div class="main__inner-container">
+<main class="sm-main" id="sm-main">
+    <div class="sm-main__outer-container">
+        <div class="sm-main__inner-container">
             <section class="{{slug}}">
 
-                <header class="author__header">
-                    <div class="inner-container--author">
-                        <div class="author__img-container">
+                <header class="sm-author__header">
+                    <div class="sm-inner-container--author">
+                        <div class="sm-author__img-container">
                             {{#if profile_image}}
-                            <img class="author__img" src="{{img_url profile_image size="m"}}" alt="{{name}}">
+                            <img class="sm-author__img" src="{{img_url profile_image size="m"}}" alt="{{name}}">
                             {{else}}
-                            <div class="author__no-img">
+                            <div class="sm-author__no-img">
                                 <svg>
                                     <use href="#user"/>
                                 </svg>
                             </div>
                             {{/if}}
                         </div>
-                        <div class="author__text">
-                            <div class="author__text-container">
-                                <h1 class="author__name">{{name}}</h1>
+                        <div class="sm-author__text">
+                            <div class="sm-author__text-container">
+                                <h1 class="sm-author__name">{{name}}</h1>
                             </div>
 
                             {{#if location}}
-                            <p class="small-header">Location</p>
-                            <div class="author__location map">
+                            <p class="sm-small-header">Location</p>
+                            <div class="sm-author__location map">
                                 <svg aria-hidden="true">
                                     <use href="#location"></use>
                                 </svg>
@@ -51,13 +51,13 @@ into the {body} of the default.hbs template --}}
                             </div>
                             {{/if}}
                             {{#if bio}}
-                            <p class="small-header">Bio</p>
-                            <p class="author__bio">{{bio}}</p>
+                            <p class="sm-small-header">Bio</p>
+                            <p class="sm-author__bio">{{bio}}</p>
                             {{/if}}
                             {{#has any="twitter, facebook, website"}}
-                            <p class="small-header">Social</p>
+                            <p class="sm-small-header">Social</p>
                             {{/has}}
-                            <div class="author__meta">
+                            <div class="sm-author__meta">
                                 {{#if twitter}}
                                 <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
                                     <svg>
@@ -66,7 +66,7 @@ into the {body} of the default.hbs template --}}
                                 </a>
                                 {{/if}}
                                 {{#if facebook}}
-                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
+                                <a class="sm-facebook" href="{{facebook_url}}" aria-label="Facebook">
                                     <svg>
                                         <use href="#facebook"></use>
                                     </svg>
@@ -87,7 +87,7 @@ into the {body} of the default.hbs template --}}
                 <h2>{{plural ../pagination.total empty='No Posts' singular='% Post' plural='% Posts'}}
                 </h2>
                 {{/author}}
-                <div class="grid-container grid-container-{{posts.length}}">
+                <div class="sm-grid-container sm-grid-container-{{posts.length}}">
                     {{#foreach posts}}
                     {{> "card"}}
                     {{/foreach}}
@@ -95,9 +95,6 @@ into the {body} of the default.hbs template --}}
                 {{pagination}}
             </section>
 
-            {{#if @labs.subscribers}}
-            {{> "subscribe_inner"}}
-            {{/if}}
         </div>
     </div>
 </main>

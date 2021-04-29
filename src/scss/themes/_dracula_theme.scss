@@ -1,0 +1,75 @@
+@use 'sass:color';
+// Bright Mode
+
+:root[color-mode='light'] {
+  --surface: hsl(60, 30%, 96%);
+  --surfaceInverse: #0a0a0a;
+  --surface1: hsl(60, 30%, 90%);
+  --surface2: hsl(60, 30%, 86%);
+  --surface3: hsl(60, 30%, 76%);
+  --surface4: hsl(60, 30%, 66%);
+  --text: hsl(231, 15%, 9%);
+  --text1: hsl(231, 15%, 18%);
+  --text2: hsl(232, 14%, 31%);
+  --text3: hsl(232, 14%, 40%);
+  --text4: hsl(232, 14%, 50%);
+  --primary: #8be8fd;
+  --three: #6272a4;
+  --secondary: #ffb86c;
+  --four: #50fa7b;
+  --five: #f1fa8c;
+
+  --gradient: linear-gradient(
+    to right top,
+    #6272a4,
+    #8be9fd,
+    #50fa7b,
+    #f1fa8c,
+    #ffb86c
+  );
+  --gradient-reverse: linear-gradient(
+    to left top,
+    #ffb86c,
+    #f1fa8c,
+    #50fa7b,
+    #8be9fd,
+    #6272a4
+  );
+}
+
+// Dark Mode
+:root[color-mode='dark'] {
+  --text: hsl(60, 30%, 96%);
+  --textInverse: #0a0a0a;
+  --text1: hsl(60, 30%, 90%);
+  --text2: hsl(60, 30%, 86%);
+  --text3: hsl(60, 30%, 76%);
+  --text4: hsl(60, 30%, 66%);
+  --surface: hsl(231, 15%, 9%);
+  --surface1: hsl(231, 15%, 18%);
+  --surface2: hsl(232, 14%, 31%);
+  --surface3: hsl(232, 14%, 40%);
+  --surface4: hsl(232, 14%, 50%);
+  --primary: #8be9fd;
+  --three: #6272a4;
+  --secondary: #ffb86c;
+  --four: #50fa7b;
+  --five: #f1fa8c;
+
+  --gradient: linear-gradient(
+    to right top,
+    #6272a4,
+    #8be9fd,
+    #50fa7b,
+    #f1fa8c,
+    #ffb86c
+  );
+  --gradient-reverse: linear-gradient(
+    to left top,
+    #ffb86c,
+    #f1fa8c,
+    #50fa7b,
+    #8be9fd,
+    #6272a4
+  );
+}

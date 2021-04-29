@@ -4,14 +4,14 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.grid {
+.sm-grid {
   display: grid;
   gap: 1.5rem;
   // IE Support
   @supports not (gap: 1.5rem) {
     display: flex;
     flex-wrap: wrap;
-    .card {
+    .sm-card {
       width: 50%;
       min-width: 14.375rem;
       margin-bottom: 1rem;
@@ -23,14 +23,14 @@
 }
 
 // Mobile phones
-.grid-container {
-  @extend .grid;
+.sm-grid-container {
+  @extend .sm-grid;
   align-content: stretch;
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
   max-width: 100%;
   margin: 1rem 0;
   &--footer {
-    @extend .grid-container;
+    @extend .sm-grid-container;
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
 
@@ -50,11 +50,11 @@
 
 // Tablets
 @include mixins.respond-between(variables.$tablet, variables.$laptop) {
-  .grid-container-1 {
+  .sm-grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
-    .card-1 {
-      .card {
+    .sm-card-1 {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -76,21 +76,21 @@
     }
   }
 
-  .grid-container-2,
-  .grid-container-4 {
+  .sm-grid-container-2,
+  .sm-grid-container-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-3 {
+  .sm-grid-container-3 {
     grid-template-areas:
       'one one'
       'two three';
     grid-template-columns: 1fr 1fr;
 
-    .card-1 {
+    .sm-card-1 {
       grid-area: one;
 
-      .card {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -111,26 +111,26 @@
       }
     }
 
-    .card-2 {
+    .sm-card-2 {
       grid-area: two;
     }
 
-    .card-3 {
+    .sm-card-3 {
       grid-area: three;
     }
   }
 
-  .grid-container-5 {
+  .sm-grid-container-5 {
     grid-template-areas:
       'one one'
       'two three'
       'four five';
     grid-template-columns: 1fr 1fr;
 
-    .card-1 {
+    .sm-card-1 {
       grid-area: one;
 
-      .card {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -151,19 +151,19 @@
       }
     }
 
-    .card-2 {
+    .sm-card-2 {
       grid-area: two;
     }
 
-    .card-3 {
+    .sm-card-3 {
       grid-area: three;
     }
 
-    .card-4 {
+    .sm-card-4 {
       grid-area: four;
     }
 
-    .card-5 {
+    .sm-card-5 {
       grid-area: five;
     }
   }
@@ -171,11 +171,11 @@
 
 // Laptops
 @include mixins.respond-between(variables.$laptop, variables.$desktop) {
-  .grid-container-1 {
+  .sm-grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
-    .card-1 {
-      .card {
+    .sm-card-1 {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -197,21 +197,21 @@
     }
   }
 
-  .grid-container-2,
-  .grid-container-4 {
+  .sm-grid-container-2,
+  .sm-grid-container-4 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-3 {
+  .sm-grid-container-3 {
     grid-template-areas:
       'one one'
       'two three';
     grid-template-columns: 1fr 1fr;
 
-    .card-1 {
+    .sm-card-1 {
       grid-area: one;
 
-      .card {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -232,26 +232,26 @@
       }
     }
 
-    .card-2 {
+    .sm-card-2 {
       grid-area: two;
     }
 
-    .card-3 {
+    .sm-card-3 {
       grid-area: three;
     }
   }
 
-  .grid-container-5 {
+  .sm-grid-container-5 {
     grid-template-areas:
       'one one'
       'two three'
       'four five';
     grid-template-columns: 1fr 1fr;
 
-    .card-1 {
+    .sm-card-1 {
       grid-area: one;
 
-      .card {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -272,19 +272,19 @@
       }
     }
 
-    .card-2 {
+    .sm-card-2 {
       grid-area: two;
     }
 
-    .card-3 {
+    .sm-card-3 {
       grid-area: three;
     }
 
-    .card-4 {
+    .sm-card-4 {
       grid-area: four;
     }
 
-    .card-5 {
+    .sm-card-5 {
       grid-area: five;
     }
   }
@@ -292,11 +292,11 @@
 
 // Desktops
 @include mixins.respond-above(variables.$desktop) {
-  .grid-container-1 {
+  .sm-grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
 
-    .card-1 {
-      .card {
+    .sm-card-1 {
+      .sm-card {
         &__link {
           flex-direction: row;
         }
@@ -318,44 +318,44 @@
     }
   }
 
-  .grid-container-2 {
+  .sm-grid-container-2 {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .grid-container-3 {
+  .sm-grid-container-3 {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .grid-container-4 {
+  .sm-grid-container-4 {
     grid-template-areas:
       'one two'
       'three four';
     grid-template-columns: 1fr 1fr;
 
-    .card-1 {
+    .sm-card-1 {
       grid-area: one;
     }
 
-    .card-2 {
+    .sm-card-2 {
       grid-area: two;
     }
 
-    .card-3 {
+    .sm-card-3 {
       grid-area: three;
     }
 
-    .card-4 {
+    .sm-card-4 {
       grid-area: four;
     }
   }
 
-  .grid-container-5 {
+  .sm-grid-container-5 {
     grid-template-areas:
       'one one one two two two'
       'three three four four five five';
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 
-    .card-1 {
+    .sm-card-1 {
       grid-area: one;
 
       &__img,
@@ -364,19 +364,19 @@
       }
     }
 
-    .card-2 {
+    .sm-card-2 {
       grid-area: two;
     }
 
-    .card-3 {
+    .sm-card-3 {
       grid-area: three;
     }
 
-    .card-4 {
+    .sm-card-4 {
       grid-area: four;
     }
 
-    .card-5 {
+    .sm-card-5 {
       grid-area: five;
     }
   }

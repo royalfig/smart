@@ -3,7 +3,7 @@
  * ? Is the color mode button hidden on unsupported browsers?
  */
 
-const toggleColorBtns = document.querySelectorAll('.color-mode-btn');
+const toggleColorBtns = document.querySelectorAll('.sm-color-mode-btn');
 
 export default function colorModeInit() {
   if (window.CSS && CSS.supports('color', 'var(--primary)')) {
