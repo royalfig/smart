@@ -14,16 +14,16 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  overflow: hidden;
   font-weight: 700;
   @include mixins.color-map(color, text2);
   text-align: center;
   @include mixins.color-map(background-color, surface3);
   border-bottom: 3px solid var(--text4);
-
   opacity: 0;
-
   transition: transform 0.2s ease-in, opacity 0.2s;
   transform: translate3d(0, 100%, 0);
+
   &__link {
     width: 2.5rem;
     height: 2.5rem;
@@ -36,15 +36,6 @@
       fill: transparent;
       @include mixins.color-map(stroke, text2);
       @include mixins.transition(stroke);
-    }
-
-    @include mixins.respond-above(variables.$laptop) {
-      &:first-child {
-        border-top-right-radius: variables.$radius;
-      }
-      &:last-child {
-        border-bottom-right-radius: variables.$radius;
-      }
     }
   }
 
