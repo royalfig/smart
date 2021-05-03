@@ -3,12 +3,17 @@
     {{!-- Navbar top  --}}
     <div class="sm-navbar__top">
         <div class="sm-navbar__top--left">
+            {{#is "home"}}
             <span class="sm-navbar__new-tag">New</span>
-            {{#get "posts" limit="1"}}
-            {{#foreach posts}}
-            {{#link href=(url) class="sm-navbar__new-link"}}{{title}}{{/link}}
-            {{/foreach}}
-            {{/get}}
+                {{#foreach posts limit="1"}}
+                    {{#link href=(url) class="sm-navbar__new-link"}}{{title}}{{/link}}
+                {{/foreach}}
+            {{else}}
+                {{#post}}
+                    {{!-- TODO Put share menu here?  --}}
+                    {{#link href="#sm-main" class="sm-navbar__new-link"}}{{title}}{{/link}}
+                {{/post}}
+            {{/is}}
         </div>
         <div class="sm-navbar__top--right">
             <button class="sm-color-mode-btn light" aria-label="Toggle light mode">

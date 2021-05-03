@@ -40,10 +40,10 @@
             </div>
             {{/if}}
             {{/get}}
-            {{#get "posts" limit="6"}}
+            {{#is "home"}}
             <div class="sm-footer__section--latest">
                 <p class="sm-footer__header--serif">Latest</p>
-                {{#foreach posts limit="3"}}
+                {{#foreach posts from="1" to="3"}}
                 <p class="sm-footer__date">
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}
                     </time>
@@ -60,7 +60,29 @@
                 <a class="sm-footer__title" href="{{url}}">{{title}}</a>
                 {{/foreach}}
             </div>
-            {{/get}}
+            {{else}}
+                {{#get "posts" limit="6"}}
+                <div class="sm-footer__section--latest">
+                    <p class="sm-footer__header--serif">Latest</p>
+                    {{#foreach posts limit="3"}}
+                    <p class="sm-footer__date">
+                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}
+                        </time>
+                    </p>
+                    <a class="sm-footer__title" href="{{url}}">{{title}}</a>
+                    {{/foreach}}
+                </div>
+                <div class="sm-footer__section--latest">
+                    <p class="sm-footer__header--serif">&nbsp;</p>
+                    {{#foreach posts from="4" to="6"}}
+                    <p class="sm-footer__date"><time
+                            datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
+                    </p>
+                    <a class="sm-footer__title" href="{{url}}">{{title}}</a>
+                    {{/foreach}}
+                </div>
+                {{/get}}
+            {{/is}}
         </div>
     </div>
     <div class="sm-footer__published-by-ghost">

@@ -4,21 +4,96 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+@mixin horizontal-card {
+  &__link {
+    flex-direction: row;
+  }
+  &__img-container {
+    width: 50%;
+    height: 100%;
+    min-height: 12rem;
+    @media (min-width: variables.$tablet) {
+      min-height: 17rem;
+    }
+    @media (min-width: variables.$laptop) {
+      min-height: 22rem;
+    }
+    padding: 0;
+    overflow: hidden;
+  }
+
+  &__body {
+    width: calc(50% - 2.5rem);
+    height: auto;
+  }
+}
+
 .sm-grid {
-  display: grid;
-  gap: 1.5rem;
   // IE Support
-  @supports not (gap: 1.5rem) {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  .sm-card {
+    width: 50%;
+    min-width: 14.375rem;
+    margin-bottom: 1rem;
+    &:first-child {
+      width: 100%;
+    }
+  }
+
+  @supports (gap: 1.5rem) {
+    display: grid;
+    gap: 1.5rem;
+
     .sm-card {
-      width: 50%;
-      min-width: 14.375rem;
-      margin-bottom: 1rem;
+      width: initial;
+      min-width: initial;
+      margin-bottom: initial;
       &:first-child {
-        width: 100%;
+        width: initial;
       }
     }
+  }
+}
+
+// .sm-card {
+//       @include horizontal-card();
+//     }
+
+@media (min-width: variables.$tablet) {
+  .sm-card-1 {
+    grid-area: one;
+  }
+
+  .sm-card-2 {
+    grid-area: two;
+  }
+
+  .sm-card-3 {
+    grid-area: three;
+  }
+
+  .sm-card-4 {
+    grid-area: four;
+  }
+
+  .sm-card-5 {
+    grid-area: five;
+  }
+  .sm-card-6 {
+    grid-area: six;
+  }
+  .sm-card-7 {
+    grid-area: seven;
+  }
+  .sm-card-8 {
+    grid-area: eight;
+  }
+  .sm-card-9 {
+    grid-area: nine;
+  }
+  .sm-card-10 {
+    grid-area: ten;
   }
 }
 
@@ -29,301 +104,50 @@
   grid-template-columns: repeat(auto-fit, minmax(292px, 1fr));
   max-width: 100%;
   margin: 1rem 0;
+
+  &--tags {
+    @extend .sm-grid-container;
+  }
+
   &--footer {
     @extend .sm-grid-container;
     grid-gap: 2rem;
     grid-template-columns: repeat(2, 1fr);
 
-    @include mixins.respond-above(variables.$laptop) {
+    @media (min-width: variables.$laptop) {
       grid-gap: 2rem;
       grid-template-columns: repeat(4, 1fr);
     }
   }
 }
 
-@mixin horizontal-card {
-  border-top-left-radius: variables.$radius;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: variables.$radius;
-}
-
 // Tablets
-@include mixins.respond-between(variables.$tablet, variables.$laptop) {
+@media (min-width: variables.$tablet) {
   .sm-grid-container-1 {
     grid-template-columns: minmax(292px, 1fr);
-
+    grid-template-areas: 'one';
     .sm-card-1 {
       .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 100%;
-          min-height: 12rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
-      }
-    }
-  }
-
-  .sm-grid-container-2,
-  .sm-grid-container-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sm-grid-container-3 {
-    grid-template-areas:
-      'one one'
-      'two three';
-    grid-template-columns: 1fr 1fr;
-
-    .sm-card-1 {
-      grid-area: one;
-
-      .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 100%;
-          min-height: 12rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
-      }
-    }
-
-    .sm-card-2 {
-      grid-area: two;
-    }
-
-    .sm-card-3 {
-      grid-area: three;
-    }
-  }
-
-  .sm-grid-container-5 {
-    grid-template-areas:
-      'one one'
-      'two three'
-      'four five';
-    grid-template-columns: 1fr 1fr;
-
-    .sm-card-1 {
-      grid-area: one;
-
-      .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 100%;
-          min-height: 12rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
-      }
-    }
-
-    .sm-card-2 {
-      grid-area: two;
-    }
-
-    .sm-card-3 {
-      grid-area: three;
-    }
-
-    .sm-card-4 {
-      grid-area: four;
-    }
-
-    .sm-card-5 {
-      grid-area: five;
-    }
-  }
-}
-
-// Laptops
-@include mixins.respond-between(variables.$laptop, variables.$desktop) {
-  .sm-grid-container-1 {
-    grid-template-columns: minmax(292px, 1fr);
-
-    .sm-card-1 {
-      .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 100%;
-          min-height: 17.1875rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
-      }
-    }
-  }
-
-  .sm-grid-container-2,
-  .sm-grid-container-4 {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .sm-grid-container-3 {
-    grid-template-areas:
-      'one one'
-      'two three';
-    grid-template-columns: 1fr 1fr;
-
-    .sm-card-1 {
-      grid-area: one;
-
-      .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 100%;
-          min-height: 17.1875rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
-      }
-    }
-
-    .sm-card-2 {
-      grid-area: two;
-    }
-
-    .sm-card-3 {
-      grid-area: three;
-    }
-  }
-
-  .sm-grid-container-5 {
-    grid-template-areas:
-      'one one'
-      'two three'
-      'four five';
-    grid-template-columns: 1fr 1fr;
-
-    .sm-card-1 {
-      grid-area: one;
-
-      .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 100%;
-          min-height: 17.1875rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
-      }
-    }
-
-    .sm-card-2 {
-      grid-area: two;
-    }
-
-    .sm-card-3 {
-      grid-area: three;
-    }
-
-    .sm-card-4 {
-      grid-area: four;
-    }
-
-    .sm-card-5 {
-      grid-area: five;
-    }
-  }
-}
-
-// Desktops
-@include mixins.respond-above(variables.$desktop) {
-  .sm-grid-container-1 {
-    grid-template-columns: minmax(292px, 1fr);
-
-    .sm-card-1 {
-      .sm-card {
-        &__link {
-          flex-direction: row;
-        }
-        &__img-container {
-          width: 50%;
-          height: 50%;
-          min-height: 17.1875rem;
-          padding: 0;
-        }
-        &__img,
-        &__no-img {
-          @include horizontal-card;
-        }
-        &__body {
-          width: calc(50% - 2.5rem);
-          height: auto;
-        }
+        @include horizontal-card();
       }
     }
   }
 
   .sm-grid-container-2 {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'one two';
   }
 
   .sm-grid-container-3 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'one one'
+      'two three';
+    .sm-card-1 {
+      .sm-card {
+        @include horizontal-card();
+      }
+    }
   }
 
   .sm-grid-container-4 {
@@ -331,53 +155,139 @@
       'one two'
       'three four';
     grid-template-columns: 1fr 1fr;
+  }
 
+  .sm-grid-container-5 {
+    grid-template-areas:
+      'one one'
+      'two three'
+      'four five';
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .sm-grid-container-6 {
+    grid-template-areas:
+      'one one one two two two'
+      'three three three four four four'
+      'five five five six six six';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+
+  .sm-grid-container-7 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'one one one one one one'
+      'two two two three three three'
+      'four four four five five five'
+      'six six six seven seven seven';
     .sm-card-1 {
-      grid-area: one;
-    }
-
-    .sm-card-2 {
-      grid-area: two;
-    }
-
-    .sm-card-3 {
-      grid-area: three;
-    }
-
-    .sm-card-4 {
-      grid-area: four;
+      .sm-card {
+        @include horizontal-card();
+      }
     }
   }
 
+  .sm-grid-container-8 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'one one one two two two'
+      'three three three four four four'
+      'five five five six six six'
+      'seven seven seven eight eight eight';
+  }
+
+  .sm-grid-container-9 {
+    grid-template-areas:
+      'one one one one one one'
+      'two two two three three three'
+      'four four four five five five'
+      'six six six seven seven seven'
+      'eight eight eight nine nine nine';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    .sm-card-1 {
+      .sm-card {
+        @include horizontal-card();
+      }
+    }
+  }
+  .sm-grid-container-10 {
+    grid-template-areas:
+      'one one one two two two'
+      'three three three four four four'
+      'five five five six six six'
+      'seven seven seven eight eight eight'
+      'nine nine nine ten ten ten';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
+}
+
+// Laptops and up
+@media (min-width: variables.$laptop) {
   .sm-grid-container-5 {
     grid-template-areas:
       'one one one two two two'
       'three three four four five five';
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  }
 
+  .sm-grid-container-6 {
+    grid-template-areas:
+      'one one one one one one'
+      'two two two three three three'
+      'four four five five six six';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     .sm-card-1 {
-      grid-area: one;
-
-      &__img,
-      &__no-img {
-        @include horizontal-card;
+      .sm-card {
+        @include horizontal-card();
       }
     }
+  }
 
-    .sm-card-2 {
-      grid-area: two;
+  .sm-grid-container-7 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'one one one one one one'
+      'two two three three four four'
+      'five five six six seven seven';
+    .sm-card-1 {
+      .sm-card {
+        @include horizontal-card();
+      }
     }
+  }
 
-    .sm-card-3 {
-      grid-area: three;
+  .sm-grid-container-8 {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      'one one one two two two'
+      'three three four four five five'
+      'six six seven seven eight eight';
+  }
+
+  .sm-grid-container-9 {
+    grid-template-areas:
+      'one one one one one one'
+      'two two two three three three'
+      'four four five five six six'
+      'seven seven eight eight nine nine';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    .sm-card-1 {
+      .sm-card {
+        @include horizontal-card();
+      }
     }
-
-    .sm-card-4 {
-      grid-area: four;
-    }
-
-    .sm-card-5 {
-      grid-area: five;
+  }
+  .sm-grid-container-10 {
+    grid-template-areas:
+      'one one one one one one'
+      'two two three three four four'
+      'five five six six seven seven'
+      'eight eight nine nine ten ten';
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    .sm-card-1 {
+      .sm-card {
+        @include horizontal-card();
+      }
     }
   }
 }
