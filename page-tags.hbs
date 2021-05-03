@@ -25,10 +25,10 @@ into the {body} of the default.hbs template --}}
             </header>
             {{/post}}
             {{#get "tags" include="count.posts" limit="all"}}
-            <section class="sm-grid-container">
+            <section class="sm-grid-container--tags">
                 {{#foreach tags}}
                 {{!-- Card  --}}
-                <article class="sm-card--tags sm-card-{{@number}} {{slug}}">
+                <article class="sm-card--tags {{slug}}">
                     <a class="sm-card--tags__link" href="{{url}}" aria-label="{{name}}">
                         <div class="sm-card--tags__img-container">
                             {{#if feature_image}}

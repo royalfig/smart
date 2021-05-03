@@ -19,8 +19,7 @@
     flex-direction: column;
     height: 100%;
     border-radius: variables.$radius;
-    transition: box-shadow 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95),
-      color 0.2s cubic-bezier(0.41, 0.56, 0.05, 0.95);
+    transition: box-shadow 0.2s, color 0.2s;
 
     &:hover,
     &:focus {
@@ -144,7 +143,7 @@
         content: '';
         background: rgba(0, 0, 0, 0.5);
         border-radius: variables.$radius;
-        @include mixins.transition(all);
+        @include mixins.transition(background);
       }
     }
 
@@ -175,6 +174,7 @@
       flex-direction: row;
       align-items: stretch;
       height: auto;
+      @include mixins.transition(box-shadow);
     }
     &__title {
       @extend .sm-card__title;

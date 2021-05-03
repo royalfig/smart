@@ -36,109 +36,34 @@ into the {body} of the default.hbs template --}}
 </header>
 
 <main class="sm-main" id="sm-main">
-    {{!-- Featured  --}}
-    {{#get "posts" include="tags" limit="3" filter="featured:true" as |featured|}}
-        {{#if featured}}
-            <div class="sm-main__outer-container">
-                <div class="sm-main__inner-container">
-                    <h2 class="sm-main__header">Featured</h2>
-                    <section class="sm-grid-container sm-grid-container-{{featured.length}}">
-                        {{#foreach featured}}
-                        {{> "card"}}
-                        {{/foreach}}
-                    </section>
-                </div>
+    {{!-- Featured ---}}
+  
+    <div class="sm-main__outer-container">
+        <div class="sm-main__inner-container">
+            <h2 class="sm-main__header">Featured</h2>
+                <section class="sm-grid-container">
+                    {{#foreach posts}}
+                        {{#if featured}}
+                            {{> "card"}}
+                        {{/if}}
+                    {{/foreach}}
+                </section>
             </div>
-        {{/if}}
-    {{/get}}
+        </div>
 
     {{!-- Latest --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:-publications+tag:-presentations+tag:-outreach+tag:-teaching+tag:-dissertation" as |latest|}}
-        {{#if latest}}
-            <div class="sm-main__outer-container">
-                <div class="sm-main__inner-container">
-                    <a class="sm-main__read-more" href="/page/2/">
-                        <h2 class="sm-main__header">Latest</h2>
-                    </a>
-                    <section class="sm-grid-container sm-grid-container-{{latest.length}}">
-                        {{#foreach latest}}
-                        {{> "card"}}
-                        {{/foreach}}
-                    </section>
-                </div>
-            </div>
-        {{/if}}
-    {{/get}}
-
-    {{!-- Publications --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:publications" as |publications|}}
-    {{#if publications}}
     <div class="sm-main__outer-container">
         <div class="sm-main__inner-container">
-            <a class="sm-main__read-more" href="/tag/publications/">
-                <h2 class="sm-main__header">Publications</h2>
+            <a class="sm-main__read-more" href="/page/2/">
+                <h2 class="sm-main__header">Latest</h2>
             </a>
-            <section class="sm-grid-container sm-grid-container-{{publications.length}}">
-                {{#foreach publications}}
-                {{> "card"}}
+            <section class="sm-grid-container sm-grid-container-{{latest.length}}">
+                {{#foreach posts}}
+                    {{#unless featured}}
+                        {{> "card"}}
+                    {{/unless}}
                 {{/foreach}}
             </section>
         </div>
     </div>
-    {{/if}}
-    {{/get}}
-
-    {{!-- Presentations --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:presentations+tag:-publications" as |presentations|}}
-    {{#if presentations}}
-    <div class="sm-main__outer-container">
-        <div class="sm-main__inner-container">
-            <a class="sm-main__read-more" href="/tag/presentations/">
-                <h2 class="sm-main__header">Presentations</h2>
-            </a>
-            <section class="sm-grid-container sm-grid-container-{{presentations.length}}">
-                {{#foreach presentations}}
-                {{> "card"}}
-                {{/foreach}}
-            </section>
-        </div>
-    </div>
-    {{/if}}
-    {{/get}}
-
-    {{!-- Teaching --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:teaching+tag:-publications+tag:-presentations" as |teaching|}}
-        {{#if teaching}}
-            <div class="sm-main__outer-container">
-                <div class="sm-main__inner-container">
-                    <a class="sm-main__read-more" href="/tag/teaching/">
-                        <h2 class="sm-main__header">Teaching</h2>
-                    </a>
-                    <section class="sm-grid-container sm-grid-container-{{teaching.length}}">
-                        {{#foreach teaching}}
-                        {{> "card"}}
-                        {{/foreach}}
-                    </section>
-                </div>
-            </div>
-        {{/if}}
-    {{/get}}
-
-    {{!-- Outreach --}}
-    {{#get "posts" limit="5" include="tags" filter="featured:false+tag:outreach+tag:-publications+tag:-presentations+tag:-teaching" as |outreach|}}
-        {{#if outreach}}
-            <div class="sm-main__outer-container">
-                <div class="sm-main__inner-container">
-                    <a class="sm-main__read-more" href="/tag/outreach/">
-                        <h2 class="main__header">Outreach</h2>
-                    </a>
-                    <section class="sm-grid-container sm-grid-container-{{outreach.length}}">
-                        {{#foreach outreach}}
-                        {{> "card"}}
-                        {{/foreach}}
-                    </section>
-                </div>
-            </div>
-        {{/if}}
-    {{/get}}
 </main>

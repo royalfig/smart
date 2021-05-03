@@ -11,11 +11,6 @@
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
-    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Regular.woff2'}}" type="font/woff2" crossorigin="anonymous">
-
-    {{#is home}}
-    <link rel="preload" as="font" href="{{asset 'fonts/Lato-Bold.woff2'}}" type="font/woff2" crossorigin="anonymous">
-    {{/is}}
 
     {{#if @site.cover_image}}
         {{#is "home"}}
@@ -26,15 +21,15 @@
         {{/is}}
     {{/if}}
 
-    <link rel="preload" as="style" href="{{asset 'built/app.css'}}">
+    {{!-- <link rel="preload" as="style" href="{{asset 'built/app.css'}}"> --}}
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
         onload="this.media='all'">
+    
     <noscript>
         <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     </noscript>
     
-    {{!-- critical-css --}}
 
     <style>
         @font-face {
@@ -82,7 +77,9 @@
                 ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
     </style>
-    <link rel="stylesheet" href="{{asset 'built/app.css'}}">
+
+    {{!-- critical-css --}}
+    
 
     {{!-- Load scripts to execute before render --}}
     <script>
@@ -95,7 +92,8 @@
         }
     </script>
 
-    {{!-- Scripts to be parsed after load --}}
+    {{!-- Scripts and styles for after load --}}
+    <link rel="stylesheet" href="{{asset 'built/app.css'}}" defer>
     <script src="{{asset 'built/app.js'}}" defer></script>
     {{^is "home"}}
     <link rel="stylesheet" href="{{asset 'built/post.css'}}">

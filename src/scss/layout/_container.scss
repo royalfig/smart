@@ -49,6 +49,7 @@
     align-items: center;
     justify-content: center;
     padding-bottom: 1rem;
+    margin-top: 1rem;
     @include mixins.respond-above(variables.$tablet) {
       flex-direction: row;
     }
