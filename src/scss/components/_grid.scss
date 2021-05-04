@@ -26,6 +26,12 @@
     width: calc(50% - 2.5rem);
     height: auto;
   }
+
+  &__excerpt {
+    display: block;
+    font-size: 90%;
+    color: var(--text2);
+  }
 }
 
 .sm-grid {
