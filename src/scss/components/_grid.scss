@@ -11,26 +11,19 @@
   &__img-container {
     width: 50%;
     height: 100%;
-    min-height: 12rem;
-    @media (min-width: variables.$tablet) {
-      min-height: 17rem;
-    }
-    @media (min-width: variables.$laptop) {
-      min-height: 22rem;
-    }
+    min-height: 15rem;
     padding: 0;
-    overflow: hidden;
+  }
+
+  &__img {
+    border-radius: 0;
+    border-top-left-radius: variables.$radius;
+    border-bottom-left-radius: variables.$radius;
   }
 
   &__body {
     width: calc(50% - 2.5rem);
     height: auto;
-  }
-
-  &__excerpt {
-    display: block;
-    font-size: 90%;
-    color: var(--text2);
   }
 }
 
