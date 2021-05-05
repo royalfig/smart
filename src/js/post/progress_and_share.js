@@ -46,14 +46,34 @@ const shareBarAnimation = () => {
   }
 };
 
+const headings = document.querySelectorAll('.sm-post__content h2');
+const headingSpace = document.querySelector('.sm-navbar__new-link');
+const defaultHeading = headingSpace.textContent;
+
+const showHeadings = (pos) => {
+  if (!headings) {
+    return null;
+  }
+
+  headings.forEach((heading) => {
+    const text = heading.textContent;
+    const { y } = heading.getBoundingClientRect();
+    console.log(text, y);
+    if (y > -125 && y < 125) {
+      headingSpace.textContent = text;
+    }
+  });
+};
+
 export default function progressAndShareInit() {
   if (shareBar !== null) {
     window.addEventListener('scroll', () => {
       lastKnownScrollPos = window.scrollY;
 
       if (!ticking) {
+        shareBarAnimation();
         window.requestAnimationFrame(() => {
-          shareBarAnimation();
+          showHeadings(lastKnownScrollPos);
           if (progressBar !== null) {
             readingBarProgress(lastKnownScrollPos);
           }
