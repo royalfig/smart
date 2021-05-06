@@ -26,6 +26,12 @@ async function injectCss() {
     }
   });
 
+  unlink(path.join(process.cwd(), '/assets/built/critical.css.map'), (err) => {
+    if (err) {
+      console.log(err);
+    }
+  });
+
   console.log('🥳 Inlined critical css');
 }
 
