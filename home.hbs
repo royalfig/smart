@@ -37,7 +37,7 @@ into the {body} of the default.hbs template --}}
 
 <main class="sm-main" id="sm-main">
     {{!-- Featured ---}}
-    {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+    {{#get "posts" filter="featured:true" include="tags" limit="all" as |featured|}}
         {{#if featured}}
             <div class="sm-main__outer-container">
                 <div class="sm-main__inner-container">
@@ -58,7 +58,7 @@ into the {body} of the default.hbs template --}}
             <a class="sm-main__read-more" href="/page/2/">
                 <h2 class="sm-main__header">Latest</h2>
             </a>
-            <section class="sm-grid-container sm-grid-container-{{latest.length}}">
+            <section class="sm-grid-container">
                 {{#foreach posts}}
                     {{#unless featured}}
                         {{> "card"}}
