@@ -20,17 +20,13 @@ async function injectCss() {
     .replace('{{!-- critical-css --}}', `<style>${css.toString()}</style>`);
   await writeFile('./default.hbs', inlinedCss.toString());
 
-  unlink(path.join(process.cwd(), '/assets/built/critical.css'), (err) => {
-    if (err) {
-      console.log(err);
-    }
-  });
+  unlink(path.join(process.cwd(), '/assets/built/critical.css'))
+    .then(() => console.log('deleted'))
+    .catch((err) => console.log(err));
 
-  unlink(path.join(process.cwd(), '/assets/built/critical.css.map'), (err) => {
-    if (err) {
-      console.log(err);
-    }
-  });
+  unlink(path.join(process.cwd(), '/assets/built/critical.css.map'))
+    .then(() => console.log('deleted'))
+    .catch((err) => console.log(err));
 
   console.log('🥳 Inlined critical css');
 }

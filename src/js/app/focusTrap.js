@@ -17,9 +17,6 @@ const getNonHiddenLastEl = (el) => {
   return penultimateEl;
 };
 
-// Need to run a function that runs when modal opens and sets focus
-// Need to run a different function to handle keypresses
-
 const configureFocusableElements = (containerEl) => {
   const focusableEl = containerEl.querySelectorAll(FOCUSABLE_EL);
   focusableEl.forEach((el) => el.setAttribute('tabindex', '0'));
