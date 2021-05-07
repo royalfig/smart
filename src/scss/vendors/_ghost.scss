@@ -15,6 +15,13 @@
   justify-content: center;
 }
 
+.kg-code-card {
+  @media (min-width: variables.$laptop) {
+    width: 150%;
+    transform: translateX(calc(-50% + 300px));
+  }
+}
+
 .kg-image-card img {
   display: block;
   width: 100%;
