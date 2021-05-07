@@ -19,10 +19,11 @@
   @include mixins.color-map(color, text2);
   text-align: center;
   @include mixins.color-map(background-color, surface3);
-  border-bottom: 3px solid var(--text4);
-  opacity: 0;
-  transition: transform 0.2s ease-in, opacity 0.2s;
-  transform: translate3d(0, 100%, 0);
+  border-bottom: 3px solid var(--surface4);
+
+  @media (min-width: variables.$laptop) {
+    display: none;
+  }
 
   &__link {
     width: 2.5rem;
@@ -36,6 +37,12 @@
       fill: transparent;
       @include mixins.color-map(stroke, text2);
       @include mixins.transition(stroke);
+    }
+
+    @media (min-width: variables.$laptop) {
+      width: 1.8rem;
+      height: 1.8rem;
+      padding: 0.36rem;
     }
   }
 
@@ -87,16 +94,5 @@
         }
       }
     }
-  }
-
-  @include mixins.respond-above(variables.$laptop) {
-    top: 50%;
-    bottom: initial;
-    flex-direction: column;
-    width: initial;
-    border-bottom: none;
-    border-top-right-radius: variables.$radius;
-    border-bottom-right-radius: variables.$radius;
-    transform: translate3d(-100%, -50%, 0);
   }
 }

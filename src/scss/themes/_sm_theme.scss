@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 // Bright Mode
 :root[color-mode='light'] {
   --text: #0a0a0a;
@@ -11,8 +13,7 @@
   --surface2: hsl(0, 0%, 96%);
   --surface3: hsl(0, 0%, 98%);
   --surface4: #ffffff;
-  --primary: #0d48a0;
-  --primary: #0d48a0;
+  --primary: hsl(216, 85%, 34%);
   --secondary: #a4002e;
   --three: #643791;
   --four: #8b1c76;

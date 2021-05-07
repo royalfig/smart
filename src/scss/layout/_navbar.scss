@@ -54,6 +54,12 @@
     border-radius: variables.$radius;
     @include mixins.color-map(color, textInverse);
     @include mixins.color-map(background-color, secondary);
+
+    &--text {
+      @extend .sm-navbar__new-tag;
+      color: var(--text2);
+      background: none;
+    }
   }
 
   &__new-link {

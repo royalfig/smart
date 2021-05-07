@@ -1,5 +1,3 @@
-const copyBtn = document.getElementById('sm-copy-button');
-
 const destroyToast = (el) => {
   el.classList.add('sm-toast__slide-out');
   setTimeout(() => {
@@ -14,7 +12,7 @@ const checkDomForToast = () => {
   }
 };
 
-const createToast = (value) => {
+module.exports = function createToast(value) {
   checkDomForToast();
   const container = document.createElement('div');
   container.classList.add('sm-toast');
@@ -27,12 +25,3 @@ const createToast = (value) => {
   document.body.append(container);
   setTimeout(destroyToast.bind(null, container), 3000);
 };
-
-export default function toast() {
-  if (copyBtn) {
-    copyBtn.addEventListener(
-      'click',
-      createToast.bind(null, 'Link copied to clipboard')
-    );
-  }
-}

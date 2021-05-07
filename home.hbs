@@ -43,7 +43,7 @@ into the {body} of the default.hbs template --}}
                 <div class="sm-main__inner-container">
                     <h2 class="sm-main__header">Featured</h2>
                         <section class="sm-grid-container">
-                            {{#foreach featured}}
+                            {{#foreach featured limit="10"}}
                                 {{> "card"}}
                             {{/foreach}}
                         </section>

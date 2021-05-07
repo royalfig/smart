@@ -4,7 +4,6 @@ import colorMode from './colorModeToggle';
 import grid from './grid';
 import modalFn from './modal';
 import search from './search';
-import toast from './toast';
 import 'lazysizes';
 
 setTabIndex();
@@ -16,5 +15,3 @@ modalFn();
 if (typeof SEARCH_API !== 'undefined') {
   search();
 }
-
-toast();

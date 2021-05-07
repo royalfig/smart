@@ -2,10 +2,6 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{! Post Reading Progress }}
-<div class="sm-post-reading-progress"></div>
-{{! Post Reading Progress }}
-
 {{#post}}
 
 {{!-- Post Header  --}}
@@ -177,7 +173,7 @@ into the {body} of the default.hbs template --}}
                 </div>
                 {{/next_post}}
 
-                {{#get "posts" include="tags" limit="2" filter="primary_tag:-{{primary_tag.slug}}+id:-{{id}}"}}
+                {{#get "posts" include="tags" limit="2" filter="id:-{{id}}+primary_tag:-{{primary_tag.slug}}"}}
                 {{#foreach posts}}
                 <div class="sm-related-posts sm-related-posts-3-{{@number}}">
                     {{> "card"}}
