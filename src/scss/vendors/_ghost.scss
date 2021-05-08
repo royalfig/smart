@@ -16,8 +16,10 @@
 }
 
 .kg-code-card {
+  font-size: max(15px, 0.8rem);
+
   @media (min-width: variables.$laptop) {
-    width: 150%;
+    width: 125%;
     transform: translateX(calc(-50% + 300px));
   }
 }
