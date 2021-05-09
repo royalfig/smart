@@ -4,7 +4,7 @@
  */
 
 const path = require('path');
-const { writeFile, readFile, unlink } = require('fs').promises;
+const { writeFile, readFile } = require('fs').promises;
 
 async function injectCss() {
   try {

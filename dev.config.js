@@ -1,11 +1,12 @@
 const path = require('path');
-const cssPlug = require('./helpers/inline-css');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+const cssPlug = require('./helpers/inline-css');
 
-class inlineCSS {
+class InlineCSS {
+  // eslint-disable-next-line class-methods-use-this
   apply(compiler) {
     compiler.hooks.done.tap('Hello', () => cssPlug());
   }
@@ -37,7 +38,7 @@ module.exports = {
       filename: '[name].css',
     }),
     new CleanWebpackPlugin(),
-    new inlineCSS(),
+    new InlineCSS(),
   ],
   module: {
     rules: [
