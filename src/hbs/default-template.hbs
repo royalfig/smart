@@ -10,7 +10,7 @@
     {{!-- CSS and Fonts  --}}
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap">
 
     {{#if @site.cover_image}}
         {{#is "home"}}
@@ -21,15 +21,13 @@
         {{/is}}
     {{/if}}
 
-    {{!-- <link rel="preload" as="style" href="{{asset 'built/app.css'}}"> --}}
-
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" media="print"
         onload="this.media='all'">
     
     <noscript>
-        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap" rel="stylesheet">
     </noscript>
-    
+
 
     <style>
         @font-face {
@@ -95,7 +93,7 @@
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
     <script src="{{asset 'built/app.js'}}" defer></script>
-    {{^is "home"}}
+    {{^is "home,index"}}
     <link rel="stylesheet" href="{{asset 'built/post.css'}}">
     <script src="{{asset 'built/post.js'}}" defer></script>
     {{/is}}
