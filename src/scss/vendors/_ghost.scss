@@ -26,6 +26,7 @@
 
 .kg-image-card img {
   display: block;
+  // TODO Change to max-width: 100%....? Introduces layout issues with large images. Consider method of larger images by percent, rather than vw...
   width: 100%;
   height: auto;
 }

@@ -8,17 +8,20 @@
   &__link {
     flex-direction: row;
   }
+
   &__img-container {
     width: 50%;
     height: 100%;
     min-height: 15rem;
     padding: 0;
-  }
-
-  &__img {
     border-radius: 0;
     border-top-left-radius: variables.$radius;
     border-bottom-left-radius: variables.$radius;
+  }
+
+  &__img {
+    overflow: hidden;
+    border-radius: inherit;
   }
 
   &__body {
@@ -54,10 +57,6 @@
     }
   }
 }
-
-// .sm-card {
-//       @include horizontal-card();
-//     }
 
 @media (min-width: variables.$tablet) {
   .sm-card-1 {

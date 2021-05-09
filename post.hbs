@@ -160,25 +160,13 @@ into the {body} of the default.hbs template --}}
                     {{/foreach}}
                 </div>
                 {{/has}}
-
-                {{#prev_post in="primary_tag"}}
-                <div class="sm-related-posts sm-related-posts-1">
-                    {{> "card"}}
-                </div>
-                {{/prev_post}}
-
-                {{#next_post in="primary_tag"}}
-                <div class="sm-related-posts sm-related-posts-2">
-                    {{> "card"}}
-                </div>
-                {{/next_post}}
-
-                {{#get "posts" include="tags" limit="2" filter="id:-{{id}}+primary_tag:-{{primary_tag.slug}}"}}
-                {{#foreach posts}}
-                <div class="sm-related-posts sm-related-posts-3-{{@number}}">
-                    {{> "card"}}
-                </div>
-                {{/foreach}}
+                
+                {{#get "posts" include="tags" limit="2" filter="id:-{{id}}"}}
+                    {{#foreach posts}}
+                    <div class="sm-related-posts sm-related-posts-{{@number}}">
+                        {{> "card"}}
+                    </div>
+                    {{/foreach}}
                 {{/get}}
 
             </footer>

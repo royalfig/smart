@@ -46,6 +46,7 @@ $sans: 'Lato', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
 $serif: 'DM Serif Text', georgia, serif;
 $mono: 'JetBrains Mono', 'Roboto Mono', 'IBM Plex Mono', 'Cascadia Code',
   'Droid Sans Mono', 'Fira Mono', 'Fira Code', consolas, monospace;
+
 //-------------------------------------------
 // Sizes, Breakpoints, Variables
 //-------------------------------------------
@@ -63,7 +64,6 @@ $radius: 4px;
 $box-shadow-large: 3px 3px 4px rgba(0, 0, 0, 0.12),
   -3px 2px 4px rgba(0, 0, 0, 0.12), 5px 10px 15px rgba(0, 0, 0, 0.14),
   -5px 5px 15px rgba(0, 0, 0, 0.14);
-
 $box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 
 $transition: 0.2s;

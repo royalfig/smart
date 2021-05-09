@@ -39,6 +39,9 @@
     width: 100%;
     height: 0;
     padding-top: 50%;
+    overflow: hidden;
+    border-top-left-radius: variables.$radius;
+    border-top-right-radius: variables.$radius;
     &.paid,
     &.members {
       &::after {
@@ -65,29 +68,13 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    overflow: hidden;
     border-top-left-radius: variables.$radius;
     border-top-right-radius: variables.$radius;
   }
 
   &__no-img {
-    background: linear-gradient(
-      to right top,
-      functions.color(primary),
-      functions.color(secondary)
-    );
-    background: var(--gradient);
-
-    &:after {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: calc(100% - 2rem);
-      height: calc(100% - 2rem);
-      margin: 1rem;
-      content: '';
-      border-radius: variables.$radius;
-      @include mixins.color-map(background, surface1);
-    }
+    @include mixins.mesh();
   }
 
   &__body {

@@ -32,9 +32,9 @@
 
     @include mixins.respond-above(variables.$laptop) {
       display: inline-block;
-      margin: 0.31rem 0.5rem 0;
-      font-size: 0.9rem;
-      line-height: 1.6;
+      margin: 0 1rem 0 0;
+      font-size: 0.8rem;
+      line-height: 1;
 
       &:first-child {
         margin-left: 0;

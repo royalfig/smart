@@ -1,7 +1,15 @@
 const path = require('path');
+const cssPlug = require('./helpers/inline-css');
+
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const ExtraWatchWebpackPlugin = require('extra-watch-webpack-plugin');
+
+class inlineCSS {
+  apply(compiler) {
+    compiler.hooks.done.tap('Hello', () => cssPlug());
+  }
+}
 
 module.exports = {
   mode: 'development',
@@ -29,6 +37,7 @@ module.exports = {
       filename: '[name].css',
     }),
     new CleanWebpackPlugin(),
+    new inlineCSS(),
   ],
   module: {
     rules: [
