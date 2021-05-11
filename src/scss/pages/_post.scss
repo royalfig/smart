@@ -16,7 +16,6 @@
     width: calc(100% - 2rem);
     height: 340px;
     padding: 1rem 1rem 0;
-    overflow: hidden;
     @include mixins.navbar(margin-top);
   }
 
