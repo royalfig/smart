@@ -24,6 +24,7 @@
     max-width: variables.$laptop + 100;
     margin: 0 auto;
     @include mixins.navbar(margin-top, $increase: 1);
+    overflow: hidden;
     border-radius: variables.$radius;
     box-shadow: variables.$box-shadow;
 

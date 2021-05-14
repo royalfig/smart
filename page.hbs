@@ -24,11 +24,7 @@ into the {body} of the default.hbs template --}}
                     <h1 class="sm-post__title--serif">{{title}}</h1>
                 </header>
                 <div class="sm-post__content">
-                {{#if access}}
                     {{content}}
-                {{else}}
-                <p>You ain't a member, butt</p>
-                {{/if}}
                 </div>
             </article>
         </div>
