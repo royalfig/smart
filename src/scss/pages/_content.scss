@@ -19,34 +19,13 @@
     }
 
     & > blockquote {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      min-height: 200px;
       padding: 1rem 2rem;
       margin: 2rem 0;
-      font-size: 1.5rem;
+      font-size: 1.15rem;
       font-style: italic;
-      @include mixins.color-map(color, text2);
-      @include mixins.color-map(background-color, surface3);
+      background-color: var(--surface3);
+      border-left: 2 * variables.$radius solid var(--secondary);
       border-radius: variables.$radius;
-
-      &:before {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 8px;
-        height: 100%;
-        content: '';
-        background: linear-gradient(
-          functions.color(primary),
-          functions.color(secondary)
-        );
-        background: linear-gradient(var(--primary), var(--secondary));
-        border-top-left-radius: variables.$radius;
-        border-bottom-left-radius: variables.$radius;
-      }
     }
 
     a:not(.kg-bookmark-container) {

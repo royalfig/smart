@@ -9,11 +9,11 @@
   width: 100%;
   padding: 1rem;
 
-  @include mixins.respond-between(variables.$tablet, variables.$laptop) {
+  @media (min-width: variables.$tablet) {
     padding: 1rem 3rem 2rem;
   }
 
-  @include mixins.respond-above(variables.$laptop) {
+  @media (min-width: variables.$laptop) {
     padding: 1rem 4rem 2rem;
   }
 
@@ -50,7 +50,7 @@
     justify-content: center;
     padding-bottom: 1rem;
     margin-top: 1rem;
-    @include mixins.respond-above(variables.$tablet) {
+    @media (min-width: variables.$tablet) {
       flex-direction: row;
     }
   }
