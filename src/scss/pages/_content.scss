@@ -84,7 +84,6 @@
     pre {
       max-width: 100%;
       padding: 0.5rem;
-      margin-bottom: 1rem;
       overflow-x: auto;
       @include mixins.color-map(background-color, surface);
     }

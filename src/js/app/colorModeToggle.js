@@ -1,11 +1,10 @@
 /*
  * Color mode toggle
- * ? Is the color mode button hidden on unsupported browsers?
  */
 
 const toggleColorBtns = document.querySelectorAll('.sm-color-mode-btn');
 
-export default function colorModeInit() {
+export default function setColorMode() {
   if (window.CSS && CSS.supports('color', 'var(--primary)')) {
     const toggleColorMode = (e) => {
       if (e.currentTarget.classList.contains('light')) {

@@ -13,9 +13,9 @@
     "url": "https://ryanfeigenbaum.com"
   },
   "scripts": {
-    "dev": "webpack --config dev.config.js && node helpers/inline-css.js",
+    "dev": "webpack --config dev.config.js",
     "watch": "webpack --watch --config dev.config.js",
-    "build": "webpack --config build.config.js && node helpers/inline-css.js && zip -r smart.zip . -x '*node_modules/*' -x '*.git/*'",
+    "build": "webpack --config build.config.js && zip -r smart.zip . -x '*node_modules/*' -x '*.git/*'",
     "test": "webpack --config dev.config.js"
   },
   "keywords": [

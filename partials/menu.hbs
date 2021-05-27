@@ -12,6 +12,7 @@
         {{@site.title}}
       </h2>
       {{/link}}
+      
       {{! Main Navigation }}
       {{#if @site.navigation}}
       {{ navigation }}
@@ -19,10 +20,10 @@
       {{! Member }}
 
       {{#if @member}}
-      <a class="sm-button--color" href="#/portal/account" tabindex="-1">Account</a>
+      <a class="sm-button--color sm-members" href="#/portal/account" tabindex="-1">Account</a>
       {{else}}
-      <a class="sm-button" href="#/portal/signin" tabindex="-1">Sign In</a>
-      <a class="sm-button--color" href="#/portal/signup" tabindex="-1">Sign Up</a>
+      <a class="sm-button sm-members" href="#/portal/signin" tabindex="-1">Sign In</a>
+      <a class="sm-button--color sm-members" href="#/portal/signup" tabindex="-1">Sign Up</a>
       {{/if}}
   
       {{! Search }}

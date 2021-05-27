@@ -6,11 +6,26 @@ For instructions on how to install or use Ghost, see the [official documentation
 
 ## Download and Install
 
-There are two versions of this theme: (1) memberships and (2) without memberships.
+[Download `Smart.zip` from the Releases page](https://github.com/royalfig/smart/releases)
 
 ## How to Use This Theme
 
 The instructions below explain features included with this theme that build on Ghost's functionality.
+
+Out of the box, this theme offers the following features:
+
+1. Performance & accessibility (a11y) forward
+2. Responsive design
+3. Search
+4. Image zoom on posts
+5. Responsive tables on posts
+6. Lazy loaded images
+7. Share bar with ability to copy URL to clipboard
+8. Contact form (with Formspree)
+9. Easy to remove membership functionality
+10. Add extra social media accounts via the second navigation bar
+11. Custom tags page
+12. Dark mode toggle
 
 ### Configure Your Site
 
@@ -93,6 +108,21 @@ Go to `Pages`. Add a page called "Tags." You can add a custom cover image and ad
 ```
 
 [Learn more about integrating Formspree into Ghost](https://ghost.org/integrations/formspree/)
+
+### Remove Membership
+
+Remove Sign Up and Sign In buttons by adding this code to your Site Footer. This option is accessible via `Settings` > `Code injection`
+
+```js
+<script>
+    function removeMembership() {
+        const memberElements = document.querySelectorAll(".sm-members");
+        memberElements.forEach(el => el.remove())
+    }
+
+    removeMembership()
+</script>
+```
 
 ### Supported Browsers
 

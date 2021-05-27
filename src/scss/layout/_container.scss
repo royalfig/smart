@@ -20,6 +20,12 @@
   &--footer {
     @extend .sm-outer-container;
     min-height: 250px;
+    padding-bottom: 3rem;
+
+    @media (min-width: variables.$laptop) {
+      padding-bottom: 1rem;
+    }
+
     font-size: 0.9rem;
     @include mixins.color-map(background-color, surface);
     @include mixins.color-map(color, text1);
