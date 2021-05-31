@@ -84,8 +84,10 @@
     pre {
       max-width: 100%;
       padding: 0.5rem;
+      margin: 2rem 0;
       overflow-x: auto;
-      @include mixins.color-map(background-color, surface);
+      font-size: max(15px, 0.8rem);
+      background-color: var(--surface);
     }
 
     code {
@@ -112,10 +114,6 @@
           background-color: var(--surface3);
         }
       }
-    }
-
-    pre[class*='language-'] {
-      margin: 0;
     }
   }
 }

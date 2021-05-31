@@ -16,11 +16,15 @@
 }
 
 .kg-code-card {
-  font-size: max(15px, 0.8rem);
+  //   @media (min-width: variables.$laptop) {
+  //     width: 125%;
+  //     transform: translateX(calc(-50% + 300px));
+  //   }
 
-  @media (min-width: variables.$laptop) {
-    width: 125%;
-    transform: translateX(calc(-50% + 300px));
+  .sm-post__content & {
+    pre {
+      margin: 0;
+    }
   }
 }
 
