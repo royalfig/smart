@@ -4,6 +4,9 @@ Smart is a theme for the open-source CMS, [Ghost](https://ghost.org/). It is com
 
 For instructions on how to install or use Ghost, see the [official documentation](https://ghost.org/help/).
 
+![Smart Theme - Dark mode demo](demo-dark-640.png)
+![Smart Theme - Light mode demo](demo-light-640.png)
+
 ## Download and Install
 
 [Download `Smart.zip` from the Releases page](https://github.com/royalfig/smart/releases)
