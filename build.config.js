@@ -6,7 +6,6 @@ module.exports = {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    critical: './src/scss/critical.scss',
     app: './src/js/app/index.js',
     post: './src/js/post/index.js',
   },

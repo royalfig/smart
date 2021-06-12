@@ -9,17 +9,23 @@
   width: 100%;
   padding: 1rem;
 
-  @include mixins.respond-between(variables.$tablet, variables.$laptop) {
+  @media (min-width: variables.$tablet) {
     padding: 1rem 3rem 2rem;
   }
 
-  @include mixins.respond-above(variables.$laptop) {
+  @media (min-width: variables.$laptop) {
     padding: 1rem 4rem 2rem;
   }
 
   &--footer {
     @extend .sm-outer-container;
     min-height: 250px;
+    padding-bottom: 3rem;
+
+    @media (min-width: variables.$laptop) {
+      padding-bottom: 1rem;
+    }
+
     font-size: 0.9rem;
     @include mixins.color-map(background-color, surface);
     @include mixins.color-map(color, text1);
@@ -50,7 +56,7 @@
     justify-content: center;
     padding-bottom: 1rem;
     margin-top: 1rem;
-    @include mixins.respond-above(variables.$tablet) {
+    @media (min-width: variables.$tablet) {
       flex-direction: row;
     }
   }
