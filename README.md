@@ -4,10 +4,15 @@ Smart is a theme for the open-source CMS, [Ghost](https://ghost.org/). It is com
 
 For instructions on how to install or use Ghost, see the [official documentation](https://ghost.org/help/).
 
-<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 400px)); gap: 1rem;">
-![Smart Theme - Dark mode demo](demo-dark-640.png)
-![Smart Theme - Light mode demo](demo-light-640.png)
-</div>
+## Screenshots
+
+<p align="center">
+  <img src="demo-dark-640.png">
+</p>
+
+<p align="center">
+  <img src="demo-light-640.png">
+</p>
 
 ## Download and Install
 
