@@ -4,15 +4,9 @@ Smart is a theme for the open-source CMS, [Ghost](https://ghost.org/). It is com
 
 For instructions on how to install or use Ghost, see the [official documentation](https://ghost.org/help/).
 
-## Screenshots
+## Demo
 
-<p align="center">
-  <img src="demo-dark-640.png">
-</p>
-
-<p align="center">
-  <img src="demo-light-640.png">
-</p>
+[See the theme in action](https://demo.ryanfeigenbaum.com). Screenshots available below.
 
 ## Download and Install
 
@@ -137,3 +131,15 @@ Remove Sign Up and Sign In buttons by adding this code to your Site Footer. This
 ### Supported Browsers
 
 This theme supports the last 2 versions of browsers. It does not actively support IE.
+
+## Screenshots
+
+<p align="center">
+  <img src="demo-dark-640.png">
+</p>
+
+<br>
+
+<p align="center">
+  <img src="demo-light-640.png">
+</p>
