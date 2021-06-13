@@ -12,9 +12,9 @@
   background-size: cover;
   @include mixins.color-map(background-color, surface1);
 
-  @media (min-height: 60rem) {
-    height: 37.5rem;
-  }
+  // @media (min-height: 60rem) and (min-width: variables.$desktop) {
+  //   height: 37.5rem;
+  // }
 
   &::before {
     position: absolute;

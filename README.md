@@ -38,7 +38,7 @@ Out of the box, this theme offers the following features:
 
 ### Add Search
 
-To enable search, go to your Ghost admin dashboard (https://yoursite.com/ghost). In the sidebar, go to Integrations and click "Add Custom Integration." Call it "search" (the name's not important). Copy your Content API key. Click the cogwheel ⚙️ to go to Settings. Go to Code injection. Add the following code to your site header (case sensitive):
+To enable search, go to your Ghost admin dashboard ("https://yoursite.com/ghost"). In the sidebar, go to Integrations and click "Add Custom Integration." Call it "search" (the name's not important). Copy your Content API key. Click the cogwheel ⚙️ to go to Settings. Go to Code injection. Add the following code to your site header (case sensitive):
 
 ```javascript
 <script>const SEARCH_API = 'THE CONTENT API KEY YOU COPIED EARLIER';</script>

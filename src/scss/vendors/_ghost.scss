@@ -30,27 +30,22 @@
 
 .kg-image-card img {
   display: block;
-  // TODO Change to max-width: 100%....? Introduces layout issues with large images. Consider method of larger images by percent, rather than vw...
-  width: 100%;
+  max-width: 100%;
   height: auto;
+  max-height: 100vh;
+  margin: 0 auto;
 }
 
 .kg-width-wide {
   position: relative;
-  width: 75vw;
-  min-width: 100%;
-  height: auto;
-  margin: auto calc(50% - 50vw) 1rem;
-  transform: translateX(calc(50vw - 50%));
+  width: 125%;
+  transform: translateX(calc((100% - (100% / 1.25)) / -2));
 }
 
 .kg-width-full {
   position: relative;
-  width: 100vw;
-  min-width: 100%;
-  height: auto;
-  margin: auto calc(50% - 50vw) 1rem;
-  transform: translateX(calc(50vw - 50%));
+  width: 150%;
+  transform: translateX(calc((100% - (100% / 1.5)) / -2));
 }
 
 // Bookmark Styles

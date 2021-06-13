@@ -212,8 +212,8 @@
 
     &--authors {
       @extend .sm-post-footer__author-img-container;
-      padding-bottom: 0.5rem;
-      margin-bottom: 0.5rem;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
       border-bottom-style: solid;
       border-bottom-width: 1px;
       @include mixins.color-map(border-bottom-color, surface4);
