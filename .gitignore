@@ -1,3 +1,5 @@
 node_modules
 *.zip
-assets/built/**
+assets/built/*.css
+assets/built/*.js
+

@@ -34,7 +34,6 @@
   &__top {
     display: none;
     height: 2.25rem;
-    // padding: 0.25rem 1rem;
     border-bottom: 1px solid;
     @include mixins.color-map(border-bottom-color, surface4);
 
