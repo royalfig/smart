@@ -10,15 +10,31 @@
   z-index: 5;
   display: block;
   width: 100%;
+  padding: 0 1rem;
+
+  @media (min-width: variables.$tablet) {
+    padding: 0 3rem;
+  }
+
+  @media (min-width: variables.$laptop) {
+    padding: 0 4rem;
+  }
+
   font-size: 0.9rem;
   box-shadow: variables.$box-shadow;
   @include mixins.color-map(background-color, surface2);
   @include mixins.transition(all);
 
+  &__top,
+  &__bottom {
+    max-width: variables.$laptop;
+    margin: 0 auto;
+  }
+
   &__top {
     display: none;
     height: 2.25rem;
-    padding: 0.25rem 1rem;
+    // padding: 0.25rem 1rem;
     border-bottom: 1px solid;
     @include mixins.color-map(border-bottom-color, surface4);
 
@@ -78,7 +94,7 @@
     display: flex;
     align-items: center;
     height: 3.25rem;
-    padding: 0.5rem 1rem;
+    // padding: 0.5rem 1rem;
 
     &--center {
       display: none;
