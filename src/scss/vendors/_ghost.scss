@@ -8,11 +8,31 @@
   margin: 2rem 0;
 }
 
+.sm-post__content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  max-height: 100vh;
+  margin: 2rem auto;
+}
+
+.kg-image-card img {
+  margin: 0 auto;
+}
+
 .kg-embed-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.fluidvids {
+  margin: 2rem 0;
+}
+
+.kg-card .fluidvids {
+  margin: 0;
 }
 
 .kg-code-card {
@@ -26,14 +46,6 @@
       margin: 0;
     }
   }
-}
-
-.kg-image-card img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  max-height: 100vh;
-  margin: 0 auto;
 }
 
 .kg-width-wide {
