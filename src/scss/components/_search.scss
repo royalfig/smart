@@ -11,6 +11,10 @@
       &__container {
         justify-content: flex-start;
       }
+      &__header {
+        max-width: 600px;
+        margin: 0 auto;
+      }
     }
     .sm-small-header {
       text-align: left;
@@ -58,8 +62,9 @@
 
 .sm-search-results {
   width: 100%;
+  max-width: 600px;
   height: 100%;
-  margin-top: 1rem;
+  margin: 1rem auto 0;
 
   &__container {
     padding-bottom: 1rem;

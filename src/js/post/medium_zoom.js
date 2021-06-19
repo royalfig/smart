@@ -2,12 +2,9 @@ import mediumZoom from 'medium-zoom';
 
 // Medium Zoom
 export default function initMediumZoom() {
-  const postImages = document.querySelectorAll('.kg-image');
-  const galleryImages = document.querySelectorAll('.kg-gallery-image img');
+  const postImages = document.querySelectorAll('.sm-post__content img');
 
-  const totalImages = [...postImages, ...galleryImages];
-
-  mediumZoom(totalImages, {
+  mediumZoom(postImages, {
     background: 'rgba(0,0,0,0.75)',
   });
 }

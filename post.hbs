@@ -8,15 +8,13 @@ into the {body} of the default.hbs template --}}
 <header class="{{^if feature_image}}sm-post__no-img--container">{{else}}sm-post__img">
     <img srcset="{{img_url feature_image size="s"}} 300w,
                  {{img_url feature_image size="m"}} 740w,
-                 {{img_url feature_image size="l"}} 1000w,
-                 {{img_url feature_image size="xl"}} 2000w" sizes="(min-width: 740px) 740px, 100vw"
+                 {{img_url feature_image size="l"}} 1024w" sizes="(min-width: 740px) 740px, 100vw"
         src="{{img_url feature_image size="l"}}" alt="{{title}}" height="340">
     {{/if}}
     {{^if feature_image}}
     <div class="sm-post__no-img"></div>
     {{/if}}
 </header>
-{{!-- Post Header  --}}
 
 {{!-- Main  --}}
 <main class="sm-main" id="sm-main">
@@ -24,7 +22,6 @@ into the {body} of the default.hbs template --}}
         <div class="sm-inner-container">
             <article class="{{post_class}} sm-post">
                 <header class="sm-post__header">
-           
                     <h1 class="sm-post__title--serif">{{title}}</h1>
                     <div class="sm-post__author">
                         {{authors}} &middot;
@@ -173,7 +170,6 @@ into the {body} of the default.hbs template --}}
         </div>
     </div>
 </main>
-{{!-- Main --}}
 {{/post}}
 
 {{#contentFor "scripts"}}
