@@ -24,12 +24,13 @@
     &--loading {
       display: none;
       animation: rotate 1s linear infinite;
-      .sm-loading & {
+      .loading & {
         display: inline-block;
+        transform: none;
       }
     }
     &--content {
-      .sm-loading & {
+      .loading & {
         display: none;
       }
     }
