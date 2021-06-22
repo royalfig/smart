@@ -27,16 +27,17 @@
   height: 100%;
   overflow: hidden;
   content: '';
-  background: radial-gradient(var(--primary) 25%, transparent 50%),
-    radial-gradient(var(--secondary) 25%, transparent 50%),
-    radial-gradient(var(--three) 25%, transparent 50%),
-    radial-gradient(var(--four) 25%, transparent 50%),
-    radial-gradient(var(--five) 25%, transparent 50%);
+  background-color: var(--secondary);
+  background-image: radial-gradient(var(--primary) 0, transparent 63%),
+    radial-gradient(var(--three) 0, transparent 42%),
+    radial-gradient(var(--four) 0, transparent 59%),
+    radial-gradient(var(--five) 0, transparent 50%),
+    radial-gradient(var(--secondary) 0, transparent 55%);
   background-repeat: no-repeat;
-  background-position: 0 0, 0 100%, 50% 0, 50% 25%, 50% 100%;
-  background-size: 60% 80%, 70% 80%, 80% 80%, 60% 60%, 80% 80%;
+  background-position: -16% -35%, -21% -45%, 5% 10%, 19% 35%, 25% 19%;
+  background-size: 87% 65%, 62% 84%, 69% 68%, 62% 97%, 65% 60%;
   transition: background-position 2s;
-  transform: scale(4);
+  transform: scale(3);
 }
 //-------------------------------------------
 // Transition
