@@ -3,14 +3,18 @@
     {{!-- Navbar top  --}}
     <div class="sm-navbar__top">
         <div class="sm-navbar__top--left">
-            {{#is "home, author, tag"}}
+            {{#is "home, author, tag, paged"}}
             <span class="sm-navbar__new-tag">New</span>
                 {{#foreach posts limit="1"}}
                     {{#link href=(url) class="sm-navbar__new-link"}}{{title}}{{/link}}
                 {{/foreach}}
             {{else}}
                 {{#post}}
-                    {{!-- <span class="sm-navbar__new-tag--text">Share</span> --}}
+                   <span class="sm-post-share-bar__link" aria-label="share">
+                    <svg aria-hidden="true">
+                        <use href="#share"></use>
+                    </svg>
+                    </span>
                     <a class="sm-post-share-bar__link--twitter" 
                     href="https://twitter.com/share?url={{url absolute='true'}}&amp;text={{#if title}}{{title}}{{else}}{{name}}{{/if}}"
                     aria-label="Share on Twitter" target="_blank" rel="noopener noreferrer">

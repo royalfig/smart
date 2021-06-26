@@ -29,6 +29,7 @@
     width: 2.5rem;
     height: 2.5rem;
     padding: 0.5rem;
+    border-radius: variables.$radius;
     @include mixins.transition(background-color);
 
     svg {
