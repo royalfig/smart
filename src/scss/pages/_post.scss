@@ -24,14 +24,14 @@
   .paged & {
     &__no-img,
     &__img img {
-      max-width: variables.$laptop + 100;
+      max-width: variables.$laptop;
     }
   }
 
   &__no-img {
     width: auto;
-    // max-width: variables.$laptop + 100;
-    max-width: variables.$tablet + 100;
+    // max-width: variables.$laptop;
+    max-width: variables.$tablet;
 
     margin: 0 auto;
     @include mixins.navbar(margin-top, $increase: 1);

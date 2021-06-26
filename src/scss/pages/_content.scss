@@ -61,6 +61,10 @@
     }
 
     thead {
+      border-bottom: 1px solid var(--surface3);
+    }
+
+    tr {
       border-bottom: 1px solid var(--surface4);
     }
 
@@ -72,7 +76,7 @@
     }
 
     tbody {
-      border-bottom: 1px solid var(--surface4);
+      border-bottom: 1px solid var(--surface3);
       td {
         padding: 0.25rem 0.5rem;
         font-size: 0.85rem;

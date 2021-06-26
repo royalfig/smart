@@ -4,20 +4,70 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
-.kg-card {
-  margin: 2rem 0;
-}
-
-.sm-post__content img {
+//-------------------------------------------
+// Images
+//-------------------------------------------
+%images {
   display: block;
   max-width: 100%;
   height: auto;
-  max-height: 100vh;
+}
+
+.sm-post__content > img {
+  @extend %images;
   margin: 2rem auto;
 }
 
-.kg-image-card img {
+.kg-image-card > img {
+  @extend %images;
   margin: 0 auto;
+}
+
+.kg-width-wide {
+  position: relative;
+  width: 125%;
+  transform: translateX(calc((100% - (100% / 1.25)) / -2));
+}
+
+.kg-width-full {
+  position: relative;
+  width: 150%;
+  transform: translateX(calc((100% - (100% / 1.5)) / -2));
+}
+
+// Gallery Styles
+.kg-gallery-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.kg-gallery-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.kg-gallery-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+.kg-gallery-row:not(:first-of-type) {
+  margin: 0.75rem 0 0;
+}
+
+.kg-gallery-image:not(:first-of-type) {
+  margin: 0 0 0 0.75rem;
+}
+
+//-------------------------------------------
+// Cards
+//-------------------------------------------
+.kg-card {
+  margin: 2rem 0;
 }
 
 .kg-embed-card {
@@ -25,14 +75,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-}
-
-.fluidvids {
-  margin: 2rem 0;
-}
-
-.kg-card .fluidvids {
-  margin: 0;
 }
 
 .kg-code-card {
@@ -46,18 +88,6 @@
       margin: 0;
     }
   }
-}
-
-.kg-width-wide {
-  position: relative;
-  width: 125%;
-  transform: translateX(calc((100% - (100% / 1.25)) / -2));
-}
-
-.kg-width-full {
-  position: relative;
-  width: 150%;
-  transform: translateX(calc((100% - (100% / 1.5)) / -2));
 }
 
 // Bookmark Styles
@@ -146,6 +176,7 @@
   height: 100%;
   max-height: 15rem;
   margin: 0;
+  border-radius: 0;
   border-top-left-radius: variables.$radius;
   border-top-right-radius: variables.$radius;
   object-fit: cover;
@@ -153,6 +184,7 @@
 
   @media (min-width: variables.$laptop) {
     max-height: initial;
+    border-radius: 0;
     border-top-right-radius: variables.$radius;
     border-bottom-right-radius: variables.$radius;
   }
@@ -160,14 +192,20 @@
 
 .kg-bookmark-author {
   margin-right: 0.5rem;
+  overflow: hidden;
   font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   & ~ .kg-bookmark-publisher {
     margin-left: auto;
   }
 }
 
 .kg-bookmark-publisher {
+  margin-right: 0.5rem;
   font-size: 0.9rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media (min-width: variables.$laptop) {
@@ -177,35 +215,17 @@
   }
 }
 
-// Gallery Styles
-.kg-gallery-container {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
+//-------------------------------------------
+// Fluidvids
+//-------------------------------------------
+.fluidvids {
+  margin: 2rem 0;
 }
 
-.kg-gallery-row {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.kg-gallery-image img {
-  display: block;
-  width: 100%;
-  height: 100%;
+.kg-card .fluidvids {
   margin: 0;
 }
 
-.kg-gallery-row:not(:first-of-type) {
-  margin: 0.75rem 0 0;
-}
-
-.kg-gallery-image:not(:first-of-type) {
-  margin: 0 0 0 0.75rem;
-}
-
-// For sizing embeds
 .fluid-width-video-wrapper {
   position: relative;
   padding-top: 56.25%;
@@ -222,7 +242,9 @@
   height: 100%;
 }
 
+//-------------------------------------------
 // Content CTA
+//-------------------------------------------
 .sm-post-upgrade-cta-content,
 .sm-post-upgrade-cta {
   display: flex;
