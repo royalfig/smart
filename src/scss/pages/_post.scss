@@ -20,7 +20,8 @@
   }
 
   .page-tags &,
-  .author-template & {
+  .author-template &,
+  .paged & {
     &__no-img,
     &__img img {
       max-width: variables.$laptop + 100;
