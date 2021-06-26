@@ -13,7 +13,8 @@
   height: auto;
 }
 
-.sm-post__content > img {
+.sm-post__content > img,
+.sm-post__content > p > img {
   @extend %images;
   margin: 2rem auto;
 }
