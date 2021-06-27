@@ -5,21 +5,21 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 {{!-- Post Header  --}}
-<header class="{{^if feature_image}}sm-post__no-img--container">{{else}}sm-post__img">
-    <img srcset="{{img_url feature_image size="s"}} 300w,
-                 {{img_url feature_image size="m"}} 740w,
-                 {{img_url feature_image size="l"}} 1024w" sizes="(min-width: 740px) 740px, 100vw"
-        src="{{img_url feature_image size="l"}}" alt="{{title}}" height="340">
-    {{/if}}
-    {{^if feature_image}}
-    <div class="sm-post__no-img"></div>
-    {{/if}}
-</header>
 
 {{!-- Main  --}}
 <main class="sm-main" id="sm-main">
     <div class="sm-outer-container">
         <div class="sm-inner-container">
+            <header class="sm-post__img--container">
+                {{#if feature_image}}
+                    <img class="sm-post__img" srcset="{{img_url feature_image size="s"}} 300w,
+                                {{img_url feature_image size="m"}} 740w,
+                                {{img_url feature_image size="l"}} 1024w" sizes="(min-width: 1024px) 1024px, 100vw"
+                        src="{{img_url feature_image size="l"}}" alt="{{title}}" height="576">
+                {{else}}
+                    <div class="sm-post__no-img"></div>
+                {{/if}}
+            </header>
             <article class="{{post_class}} sm-post">
                 <header class="sm-post__header">
                     <h1 class="sm-post__title--serif">{{title}}</h1>

@@ -2,22 +2,19 @@
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-{{!-- Post Header  --}}
-<header class="{{^if @site.cover_image}}sm-post__no-img--container">{{else}}sm-post__img">
-    <img srcset="{{img_url @site.cover_image size="s"}} 300w,
-                 {{img_url @site.cover_image size="m"}} 740w,
-                 {{img_url @site.cover_image size="l"}} 1000w" sizes="(min-width: 1124px) 1000px, 100vw"
-        src="{{img_url @site.cover_image size="l"}}" alt="{{title}}" height="340">
-    {{/if}}
-    {{^if @site.cover_image}}
-    <div class="sm-post__no-img"></div>
-    {{/if}}
-</header>
-{{!-- Post Header  --}}
-
 <main class="sm-main" id="sm-main">
     <div class="sm-main__outer-container">
         <div class="sm-main__inner-container">
+            <div class="sm-post__img--container">
+                {{#if @site.cover_image}}
+                    <img class="sm-post__img" srcset="{{img_url @site.cover_image size="s"}} 300w,
+                    {{img_url @site.cover_image size="m"}} 740w,
+                    {{img_url @site.cover_image size="l"}} 1024w" sizes="(min-width: 1024px) 1024px, 100vw"
+                    src="{{img_url @site.cover_image size="l"}}" alt="{{title}}" height="576">
+                {{else}}
+                    <div class="sm-post__no-img"></div>
+                {{/if}}
+            </div>
             <header class="sm-post__header">
                 <h1 class="sm-post__title--serif">Latest
                     <span>{{plural pagination.page empty='' singular='' plural='%'}}</span></h1>
