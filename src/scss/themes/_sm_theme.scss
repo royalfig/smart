@@ -21,22 +21,7 @@
   --success: #48a00d;
   --error: #a40000;
   --error-hover: hsl(0, 100%, 16%);
-  --gradient: linear-gradient(
-    to right top,
-    #0d48a0,
-    #643791,
-    #8b1c76,
-    #a00053,
-    #a4002e
-  );
-  --gradient-reverse: linear-gradient(
-    to left top,
-    #0d48a0,
-    #643791,
-    #8b1c76,
-    #a00053,
-    #a4002e
-  );
+  --gradient: linear-gradient(to right top, #0d48a0, hsl(226, 85%, 18%));
 }
 
 // Dark Mode
@@ -62,18 +47,7 @@
   --error-hover: hsl(0, 100%, 68%);
   --gradient: linear-gradient(
     to right top,
-    #80deea,
-    #8cdbbf,
-    #b4d195,
-    #e0c081,
-    #ffab91
-  );
-  --gradient-reverse: linear-gradient(
-    to left top,
-    #80deea,
-    #8cdbbf,
-    #b4d195,
-    #e0c081,
-    #ffab91
+    hsl(187, 72%, 71%),
+    hsl(187, 92%, 91%)
   );
 }

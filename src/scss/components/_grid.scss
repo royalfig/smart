@@ -17,6 +17,11 @@
     border-radius: 0;
     border-top-left-radius: variables.$radius;
     border-bottom-left-radius: variables.$radius;
+    & > * {
+      border-radius: 0;
+      border-top-left-radius: variables.$radius;
+      border-bottom-left-radius: variables.$radius;
+    }
   }
 
   &__img {

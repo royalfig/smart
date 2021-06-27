@@ -9,59 +9,56 @@
   max-width: variables.$tablet;
   margin: 0 auto 3rem;
 
+  &__img--container {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    @include mixins.navbar(margin-top, $increase: 1);
+    margin-bottom: 2rem;
+  }
+
   &__img,
   &__no-img {
-    position: relative;
-    box-sizing: content-box;
-    width: calc(100% - 2rem);
-    height: 340px;
-    padding: 2rem 1rem 0;
-    @include mixins.navbar(margin-top);
-  }
-
-  .page-tags &,
-  .author-template &,
-  .paged & {
-    &__no-img,
-    &__img img {
-      max-width: variables.$laptop;
-    }
-  }
-
-  &__no-img {
-    width: auto;
-    // max-width: variables.$laptop;
-    max-width: variables.$tablet;
-
-    margin: 0 auto;
-    @include mixins.navbar(margin-top, $increase: 1);
-    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: variables.$radius;
     box-shadow: variables.$box-shadow;
+  }
 
-    // .post-template & {
-    //   max-width: variables.$tablet + 100;
-    // }
+  // .page-tags &,
+  // .author-template &,
+  // .tag-template &,
+  // .paged & {
+  //   &__no-img,
+  //   &__img img {
+  //     max-width: variables.$laptop;
+  //   }
+  // }
 
-    &:after {
-      @include mixins.mesh();
-    }
+  &__no-img {
+    // width: auto;
+    // // max-width: variables.$laptop;
+    // max-width: variables.$tablet;
 
-    &--container {
-      padding: 0 1rem;
-    }
+    // margin: 0 auto;
+    // overflow: hidden;
+    background-image: var(--gradient);
   }
 
   &__img {
     img {
-      display: block;
-      width: auto;
-      max-width: variables.$tablet + 100;
-      height: 100%;
-      margin: 0 auto;
-      object-fit: cover;
-      border-radius: variables.$radius;
-      box-shadow: variables.$box-shadow;
+      // display: block;
+      // width: auto;
+      // max-width: variables.$tablet + 100;
+      // height: 100%;
+      // margin: 0 auto;
+      // object-fit: cover;
+      // border-radius: variables.$radius;
+      // box-shadow: variables.$box-shadow;
 
       @supports (object-fit: cover) {
         width: 100%;
