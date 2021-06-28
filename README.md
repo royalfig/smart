@@ -138,12 +138,12 @@ This theme supports the last 2 versions of browsers. It does not actively suppor
   <img src="assets/screenshot-desktop.png">
 </p>
 
-<br>
+Standard Dark Theme
 
-<p align="center">
-  <img src="assets/screenshot-mobile.png">
-</p>
+<br>
 
 <p align="center">
   <img src="assets/screenshot-dracula.png">
 </p>
+
+Dracula Dark Theme
