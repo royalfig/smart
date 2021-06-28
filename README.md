@@ -135,11 +135,15 @@ This theme supports the last 2 versions of browsers. It does not actively suppor
 ## Screenshots
 
 <p align="center">
-  <img src="demo-dark-640.png">
+  <img src="assets/screenshot-desktop.png">
 </p>
 
 <br>
 
 <p align="center">
-  <img src="demo-light-640.png">
+  <img src="assets/screenshot-mobile.png">
+</p>
+
+<p align="center">
+  <img src="assets/screenshot-dracula.png">
 </p>
