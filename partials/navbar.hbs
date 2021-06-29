@@ -3,7 +3,7 @@
     {{!-- Navbar top  --}}
     <div class="sm-navbar__top">
         <div class="sm-navbar__top--left">
-            {{#is "home, author, tag, paged"}}
+            {{#is "home, paged, author, index, tag"}}
            <span class="sm-navbar__new-tag"> {{^is "paged"}}New{{else}}Read{{/is}}</span>
                 {{#foreach posts limit="1"}}
                     {{#link href=(url) class="sm-navbar__new-link"}}{{title}}{{/link}}

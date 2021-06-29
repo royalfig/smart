@@ -20,7 +20,11 @@
   &--footer {
     @extend .sm-outer-container;
     min-height: 250px;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
+
+    .post-template &, .page-template &, .tag-template &, .author-template &,   {
+      padding-bottom: 3.5rem;
+    }
 
     @media (min-width: variables.$laptop) {
       padding-bottom: 1rem;

@@ -14,12 +14,13 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  padding: 0.25rem;
   overflow: hidden;
   font-weight: 700;
   @include mixins.color-map(color, text2);
   text-align: center;
   @include mixins.color-map(background-color, surface3);
-  border-bottom: 3px solid var(--surface4);
+  // border-bottom: 3px solid var(--surface4);
 
   @media (min-width: variables.$laptop) {
     display: none;

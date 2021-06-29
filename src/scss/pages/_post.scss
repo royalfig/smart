@@ -12,9 +12,9 @@
   &__img--container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%;
-    @include mixins.navbar(margin-top, $increase: 1);
-    margin-bottom: 2rem;
+    padding-top: 42.8571429%;
+    @include mixins.navbar(margin-top);
+    margin-bottom: 1rem;
   }
 
   &__img,
