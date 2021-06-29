@@ -12,7 +12,17 @@
   &__img--container {
     position: relative;
     width: 100%;
-    padding-top: 42.8571429%;
+    height: 0;
+    padding-top: 75%;
+
+    @media (min-width: variables.$tablet) {
+      padding-top: 56.25%;
+    }
+
+    @media (min-width: variables.$laptop) {
+      padding-top: 42.8571429%;
+    }
+
     @include mixins.navbar(margin-top);
     margin-bottom: 1rem;
   }
