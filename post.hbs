@@ -41,7 +41,9 @@ into the {body} of the default.hbs template --}}
                     {{content}}
                 </div>
             </article>
+            
             <hr>
+
             <footer class="sm-post-footer">
                 {{#has author="count:<2"}}
                 <h3 class="sm-post-footer__title-1">About the Author</h3>
@@ -105,6 +107,7 @@ into the {body} of the default.hbs template --}}
                     {{/if}}
                 </div>
                 {{/primary_author}}
+                
                 {{! If multiple authors }}
                 {{else}}
                 <div class="sm-post-footer__author">
@@ -167,6 +170,8 @@ into the {body} of the default.hbs template --}}
                 {{/get}}
 
             </footer>
+
+            <section class="sm-comments">{{!-- Add comment code here --}}</section>
         </div>
     </div>
 </main>

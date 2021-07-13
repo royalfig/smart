@@ -173,6 +173,44 @@
   }
 }
 
+//-------------------------------------------
+// Comments
+//-------------------------------------------
+.sm-comments {
+  position: relative;
+  padding: 1rem 0;
+  margin: 3rem 0;
+
+  &::before {
+    position: absolute;
+    top: -2rem;
+    left: 0;
+    width: 100%;
+    height: 0.15rem;
+    margin: 2rem 0;
+    content: '';
+    background: linear-gradient(
+      to right,
+      var(--surface2),
+      var(--surface3),
+      var(--surface4),
+      var(--surface3),
+      var(--surface2)
+    );
+    border: none;
+    border-radius: variables.$radius;
+  }
+}
+
+.sm-comments:empty {
+  padding: 0;
+  margin: 0;
+
+  &::before {
+    display: none;
+  }
+}
+
 // -------------------------------------------
 // Post Footer: About the Author and Related Posts
 // -------------------------------------------
