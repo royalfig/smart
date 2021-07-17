@@ -22,12 +22,20 @@
     min-height: 250px;
     padding-bottom: 1rem;
 
-    .post-template &, .page-template &, .tag-template &, .author-template &,   {
+    .post-template &,
+    .page-template &,
+    .tag-template &,
+    .author-template & {
       padding-bottom: 3.5rem;
     }
 
     @media (min-width: variables.$laptop) {
-      padding-bottom: 1rem;
+      .post-template &,
+      .page-template &,
+      .tag-template &,
+      .author-template & {
+        padding-bottom: 1rem;
+      }
     }
 
     font-size: 0.9rem;

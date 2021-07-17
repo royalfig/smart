@@ -33,7 +33,7 @@
             {{#get "tags" include="count.posts" filter="name:-publications+name:-presentations+name:-teaching+name:-outreach+name:-dissertation" limit="10" order="count.posts desc"}}
             {{#if tags}}
             <div class="sm-footer__section">
-                <p class="footer__header--serif">Tags</p>
+                <p class="sm-footer__header--serif">Tags</p>
                 {{#foreach tags}}
                 <a class="sm-tag" href="{{url}}">{{name}}</a>
                 {{/foreach}}
