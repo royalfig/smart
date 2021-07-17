@@ -34,8 +34,8 @@ em {
 }
 
 ::selection {
-  color: #111;
-  background-color: #e0c081;
+  color: var(--textInverse);
+  background-color: var(--secondary);
 }
 
 :target {
