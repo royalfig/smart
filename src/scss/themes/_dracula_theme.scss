@@ -20,6 +20,8 @@
   --four: #61740c;
   --five: #c99618;
   --gradient: linear-gradient(to right top, #02677e, hsl(201, 97%, 15%));
+  --title: var(--surface3);
+  --subtitle: var(--surface2);
 }
 
 // Dark Mode
@@ -40,6 +42,7 @@
   --secondary: #ffb86c;
   --four: #50fa7b;
   --five: #f1fa8c;
-
   --gradient: linear-gradient(to right top, #6272a4, hsl(201, 27%, 71%));
+  --title: var(--text);
+  --subtitle: var(--text4);
 }

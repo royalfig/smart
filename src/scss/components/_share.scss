@@ -4,6 +4,28 @@
 @use '../abstracts/variables';
 @use '../abstracts/mixins';
 
+%svg {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: variables.$radius;
+  @include mixins.transition(background-color);
+
+  svg {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    @include mixins.color-map(stroke, text2);
+    @include mixins.transition(stroke);
+  }
+
+  @media (min-width: variables.$laptop) {
+    width: 1.8rem;
+    height: 1.8rem;
+    padding: 0.36rem;
+  }
+}
+
 .sm-post-share-bar {
   position: fixed;
   bottom: 0;
@@ -27,29 +49,14 @@
   }
 
   &__link {
-    width: 2.5rem;
-    height: 2.5rem;
-    padding: 0.5rem;
-    border-radius: variables.$radius;
-    @include mixins.transition(background-color);
-
+    @extend %svg;
     svg {
-      width: 100%;
-      height: 100%;
-      fill: transparent;
-      @include mixins.color-map(stroke, text2);
-      @include mixins.transition(stroke);
-    }
-
-    @media (min-width: variables.$laptop) {
-      width: 1.8rem;
-      height: 1.8rem;
-      padding: 0.36rem;
+      stroke: var(--secondary);
     }
   }
 
   &__link--twitter {
-    @extend .sm-post-share-bar__link;
+    @extend %svg;
 
     &:hover,
     &:active {
@@ -61,7 +68,7 @@
   }
 
   &__link--facebook {
-    @extend .sm-post-share-bar__link;
+    @extend %svg;
 
     &:hover,
     &:active {
@@ -73,7 +80,7 @@
   }
 
   &__link--linkedin {
-    @extend .sm-post-share-bar__link;
+    @extend %svg;
 
     &:hover,
     &:active {
@@ -85,7 +92,7 @@
   }
 
   &__link--copy {
-    @extend .sm-post-share-bar__link;
+    @extend %svg;
     &:hover,
     &:active {
       @include mixins.color-map(background-color, primary);
