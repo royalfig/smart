@@ -12,7 +12,7 @@
   background-size: cover;
   @include mixins.color-map(background-color, surface1);
 
-  @media (min-height: 60rem) and (min-width: variables.$desktop) {
+  @media (min-height: 75rem) and (min-width: variables.$desktop) {
     height: 37.5rem;
   }
 
@@ -36,13 +36,13 @@
   &__site-title {
     margin: 0 0 0.5rem;
     line-height: 1.1;
-    color: #ffffff;
+    color: var(--title);
   }
 
   &__site-description {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     line-height: 1.2;
-    color: rgba(238, 238, 238);
+    color: var(--subtitle);
   }
 }
