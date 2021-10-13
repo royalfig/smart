@@ -3,7 +3,7 @@
     {{!-- Navbar top  --}}
     <div class="sm-navbar__top">
         <div class="sm-navbar__top--left">
-            <span class="sm-post-share-bar__link" aria-label="share">
+            <span class="sm-post-share-bar__link">
             <svg aria-hidden="true">
                 <use href="#share"></use>
             </svg>
@@ -80,6 +80,7 @@
         {{/if}}
         {{!-- End navigation  --}}
         {{!-- Member functionality --}}
+        {{#if @labs.members}}
         <div class="sm-navbar__bottom--right sm-members">
             {{#if @member}}
             <a href="#/portal/account" class="sm-navbar__signup">Account</a>
@@ -88,6 +89,7 @@
             <a href="#/portal/signup" class="sm-navbar__signup">Sign Up</a>
             {{/if}}
         </div>
+        {{/if}}
         {{!-- Member functionality --}}
     </div>
     {{!-- End Navbar bottom --}}

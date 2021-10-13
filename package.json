@@ -19,8 +19,8 @@
   "scripts": {
     "dev": "webpack --config dev.config.js",
     "watch": "webpack --watch --config dev.config.js",
-    "build": "webpack --config build.config.js && zip -r smart.zip . -x '*node_modules/*' -x '*.git/*'",
-    "test": "webpack --config dev.config.js"
+    "build": "webpack --config build.config.js",
+    "zip": "node zip"
   },
   "keywords": [
     "ghost-theme",
