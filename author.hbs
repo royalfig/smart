@@ -10,16 +10,7 @@ into the {body} of the default.hbs template --}}
 <main class="sm-main" id="sm-main">
     <div class="sm-main__outer-container">
         <div class="sm-main__inner-container">
-            <header class="sm-post__img--container">
-                {{#if cover_image}}
-                    <img class="sm-post__img" srcset="{{img_url cover_image size="s"}} 300w,
-                                {{img_url cover_image size="m"}} 740w,
-                                {{img_url cover_image size="l"}} 1024w" sizes="(min-width: 740px) 740px, 100vw"
-                        src="{{img_url cover_image size="l"}}" alt="{{title}}" height="439" width="1024">
-                {{else}}
-                    <div class="sm-post__no-img"></div>
-                {{/if}}
-            </header>
+            {{> header-img}}
             <section class="{{slug}}">
 
                 <header class="sm-author__header">
