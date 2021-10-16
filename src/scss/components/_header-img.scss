@@ -1,0 +1,51 @@
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.header-img {
+  &__container {
+    margin-bottom: 1rem;
+    @include mixins.navbar(margin-top);
+    //  Todo consolidate caption
+    figcaption {
+      width: 90%;
+      padding: 0.5rem;
+      margin: 0 auto;
+      font-size: 0.8375rem;
+      @include mixins.color-map(color, text2);
+      font-style: italic;
+      text-align: center;
+      border-bottom: 1px solid var(--surface4);
+    }
+  }
+
+  &__aspect-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-top: 75%;
+    overflow: hidden;
+    border-radius: variables.$radius;
+    box-shadow: variables.$box-shadow;
+
+    @media (min-width: variables.$tablet) {
+      padding-top: 56.25%;
+    }
+
+    @media (min-width: variables.$laptop) {
+      padding-top: 42.8571429%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &__no-image {
+    @include mixins.navbar(margin-top);
+  }
+}
