@@ -20,6 +20,7 @@ export default [
         output: 'assets/built/app.css',
         sourceMap: true,
         processor: () => postcss([autoprefixer()]),
+        watch: 'src/scss',
         outputStyle:
           process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       }),
@@ -40,7 +41,7 @@ export default [
         output: 'assets/built/post.css',
         sourceMap: true,
         processor: () => postcss([autoprefixer()]),
-
+        watch: 'src/scss',
         outputStyle:
           process.env.NODE_ENV === 'production' ? 'compressed' : 'expanded',
       }),
