@@ -5,5 +5,5 @@ import fluidvids from './fluidvids';
 import responsiveTableInit from './responsiveTables';
 
 initMediumZoom();
-fluidvids();
+fluidvids.init();
 responsiveTableInit();
