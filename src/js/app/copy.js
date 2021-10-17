@@ -1,4 +1,4 @@
-const toast = require('./toast');
+import toast from './toast';
 
 const copyButtons = document.querySelectorAll('.sm-post-share-bar__link--copy');
 
