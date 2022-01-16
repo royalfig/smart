@@ -25,7 +25,7 @@ into the {body} of the default.hbs template --}}
                             {{img_url feature_image size="m"}} 740w,
                             {{img_url feature_image size="l"}} 1024w"
                                 data-sizes="(max-width: 300px) 300px,740px"
-                                data-src="{{img_url feature_image size="m"}}" alt="{{name}}" />
+                                data-src="{{img_url feature_image size="m"}}" alt="{{name}}" width="1920" height="1080"/>
                             {{else}}
                             <div class="sm-card--tags__no-img sm-card--tags__no-img-{{@number}}"></div>
                             {{/if}}
