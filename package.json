@@ -75,6 +75,39 @@
       "xl": {
         "width": 2000
       }
+    },
+    "custom": {
+      "search": {
+        "type": "text"
+      },
+      "disqus": {
+        "type": "text",
+        "group": "post"
+      },
+      "header": {
+        "type": "select",
+        "options": [
+          "Small",
+          "Large"
+        ],
+        "default": "Large",
+        "group": "Homepage"
+      },
+      "color_scheme": {
+        "type": "select",
+        "options": [
+          "smart",
+          "dracula",
+          "gruvbox",
+          "material",
+          "nord"
+        ],
+        "default": "smart"
+      },
+      "memberships": {
+        "type": "boolean",
+        "default": "true"
+      }
     }
   }
 }
