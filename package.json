@@ -106,7 +106,16 @@
       },
       "memberships": {
         "type": "boolean",
-        "default": "true"
+        "default": true
+      },
+      "syntax_highlighting": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "custom_section": {
+        "type": "text",
+        "group": "Homepage"
       }
     }
   }

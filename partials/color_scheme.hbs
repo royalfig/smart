@@ -1,0 +1,329 @@
+{{#match @custom.color_scheme "smart"}}
+<style>
+    :root[color-mode='light'] {
+  --primary: #0d48a0;
+  --secondary: #a4002e;
+  --three: #643791;
+  --four: #8b1c76;
+  --five: #a00053;
+  --success: #48a00d;
+  --error: #a40000;
+  --error-hover: hsl(0, 100%, 16%);
+  --gradient: linear-gradient(to right top, #0d48a0, hsl(226, 85%, 18%));
+  --text4: #1b222c;
+  --text3: #151b23;
+  --text2: #101319;
+  --text1: #0a0c10;
+  --text: #040506;
+  --surface4: #ffffff;
+  --surface3: #fcfcfd;
+  --surface2: #f3f4f7;
+  --surface1: #eaedf1;
+  --surface: #e0e5eb;
+  --textInverse: #ffffff;
+  --title: var(--surface3);
+  --subtitle: var(--surface2);
+}
+
+// Dark Mode
+:root[color-mode='dark'] {
+  --primary: #80deea;
+  --secondary: #ffab91;
+  --three: #8cdbbf;
+  --four: #b4d195;
+  --five: #e0c081;
+  --success: #b4d195;
+  --error: hsl(0, 100%, 78%);
+  --error-hover: hsl(0, 100%, 68%);
+  --gradient: linear-gradient(
+    to right top,
+    hsl(187, 72%, 71%),
+    hsl(187, 92%, 91%)
+  );
+  --surface: #050506;
+  --surface1: #0c0e0e;
+  --surface2: #131616;
+  --surface3: #1a1e1f;
+  --surface4: #202627;
+  --text: #f5f7f7;
+  --text1: #f1f3f4;
+  --text2: #e8eced;
+  --text3: #e0e6e6;
+  --text4: #d7dfe0;
+  --textInverse: #050506;
+  --title: var(--text);
+  --subtitle: var(--text4);
+}
+</style>
+{{/match}}
+
+{{#match @custom.color_scheme "dracula"}}
+<style>
+:root[color-mode='light'] {
+  --surface4: hsl(60, 15%, 96%);
+  --surfaceInverse: #0a0a0a;
+  --surface3: hsl(60, 15%, 94%);
+  --surface2: hsl(60, 15%, 92%);
+  --surface1: hsl(60, 15%, 90%);
+  --surface: hsl(60, 15%, 88%);
+  --text: hsl(231, 15%, 9%);
+  --textInverse: #f5f5f5;
+  --text1: hsl(231, 15%, 18%);
+  --text2: hsl(232, 14%, 31%);
+  --text3: hsl(232, 14%, 40%);
+  --text4: hsl(232, 14%, 50%);
+  --primary: #02677e;
+  --three: #660f7d;
+  --secondary: #c95f00;
+  --four: #61740c;
+  --five: #c99618;
+  --gradient: linear-gradient(to right top, #02677e, hsl(201, 97%, 15%));
+  --title: var(--surface3);
+  --subtitle: var(--surface2);
+}
+
+:root[color-mode='dark'] {
+  --text: hsl(60, 30%, 96%);
+  --textInverse: #0a0a0a;
+  --text1: hsl(60, 30%, 90%);
+  --text2: hsl(60, 30%, 86%);
+  --text3: hsl(60, 30%, 76%);
+  --text4: hsl(60, 30%, 66%);
+  --surface: hsl(231, 15%, 9%);
+  --surface1: hsl(231, 15%, 18%);
+  --surface2: hsl(232, 14%, 31%);
+  --surface3: hsl(232, 14%, 40%);
+  --surface4: hsl(232, 14%, 50%);
+  --primary: #8be9fd;
+  --three: #6272a4;
+  --secondary: #ffb86c;
+  --four: #50fa7b;
+  --five: #f1fa8c;
+  --gradient: linear-gradient(to right top, #6272a4, hsl(201, 27%, 71%));
+  --title: var(--text);
+  --subtitle: var(--text4);
+}
+</style>
+{{/match}}
+
+{{#match @custom.color_scheme "material"}}
+<style>
+:root[color-mode='light'] {
+  --surface: #fafafa;
+  --surface1: #f5f5f5;
+  --surface2: #eeeeee;
+  --surface3: #e0e0e0;
+  --surface4: #bdbdbd;
+  --text4: #9e9e9e;
+  --text3: #757575;
+  --text2: #616161;
+  --text1: #424242;
+  --text: #212121;
+
+  --primary: #1976d2;
+  --secondary: #d32f2f;
+  --three: #c2185b;
+  --four: #512da8;
+  --five: #00796b;
+
+   --title: var(--surface3);
+  --subtitle: var(--surface2);
+
+  --gradient: linear-gradient(
+    to right top,
+    var(--three),
+    var(--primary),
+    var(--four),
+    var(--secondary),
+    var(--five)
+  );
+  --gradient-reverse: linear-gradient(
+    to left top,
+    var(--five),
+    var(--secondary),
+    var(--four),
+    var(--primary),
+    var(--three)
+  );
+}
+
+:root[color-mode='dark'] {
+  --text: #fafafa;
+  --text1: #f5f5f5;
+  --text2: #eeeeee;
+  --text3: #e0e0e0;
+  --text4: #bdbdbd;
+  --surface4: #9e9e9e;
+  --surface3: #757575;
+  --surface2: #616161;
+  --surface1: #424242;
+  --surface: #212121;
+
+  --primary: #64b5f6;
+  --secondary: #f06292;
+  --three: #9575cd;
+  --four: #dce775;
+  --five: #ffd54f;
+
+  --title: var(--text);
+  --subtitle: var(--text4);
+
+  --gradient: linear-gradient(
+    to right top,
+    var(--three),
+    var(--primary),
+    var(--four),
+    var(--secondary),
+    var(--five)
+  );
+  --gradient-reverse: linear-gradient(
+    to left top,
+    var(--five),
+    var(--secondary),
+    var(--four),
+    var(--primary),
+    var(--three)
+  );
+}
+</style>
+{{/match}}
+
+{{#match @custom.color_scheme "nord"}}
+  <style>
+  :root[color-mode='light'] {
+    --surface: #d8dee9;
+    --surface1: #e5e9f0;
+    --surface2: hsl(218, 27%, 94%);
+    --surface3: hsl(218, 27%, 98%);
+    --surface3: hsl(224, 32%, 98%);
+    --text: #2e3440;
+    --text1: #3b4252;
+    --text2: hsl(220, 17%, 32%);
+    --text3: hsl(220, 16%, 36%);
+    --text4: hsl(220, 16%, 40%);
+    --textInverse: #f5f5f5;
+
+    --primary: #8fbcbb;
+    --secondary: #88c0d0;
+    --three: #81a1c1;
+    --four: #5e81ac;
+    --five: #b48ead;
+
+      --title: var(--surface3);
+  --subtitle: var(--surface2);
+
+    --gradient: linear-gradient(
+      to right top,
+      var(--primary),
+      var(--secondary),
+      var(--three),
+      var(--four),
+      var(--five)
+    );
+    --gradient-reverse: linear-gradient(
+      to left top,
+      var(--four),
+      var(--three),
+      var(--five),
+      var(--primary),
+      var(--secondary)
+    );
+  }
+
+  :root[color-mode='dark'] {
+    --text: #d8dee9;
+    --text1: #e5e9f0;
+    --text2: hsl(218, 27%, 94%);
+    --text3: hsl(218, 27%, 98%);
+    --text3: hsl(224, 32%, 98%);
+    --surface: #2e3440;
+    --surface1: #3b4252;
+    --surface2: hsl(220, 17%, 32%);
+    --surface3: hsl(220, 16%, 36%);
+    --surface4: hsl(220, 16%, 40%);
+    --textInverse: #f5f5f5;
+
+    --primary: #8fbcbb;
+    --secondary: #88c0d0;
+    --three: #81a1c1;
+    --four: #5e81ac;
+    --five: #b48ead;
+
+    --title: var(--text);
+    --subtitle: var(--text4);
+
+    --gradient: linear-gradient(
+      to right top,
+      var(--primary),
+      var(--secondary),
+      var(--three),
+      var(--four),
+      var(--five)
+    );
+    --gradient-reverse: linear-gradient(
+      to left top,
+      var(--four),
+      var(--three),
+      var(--five),
+      var(--primary),
+      var(--secondary)
+    );
+  }
+  </style>
+{{/match}}
+
+{{#match @custom.color_scheme "gruvbox"}}
+  <style>
+    :root[color-mode='light'] {
+    --text: #282828;
+    --textInverse: #f9f5d7;
+    --text1: #3c3836;
+    --text2: #504945;
+    --text3: #665c54;
+    --text4: #7c6f64;
+    --surface: #bdae93;
+    --surface1: #d5c4a1;
+    --surface2: #ebdbb2;
+    --surface3: #fbf1c7;
+    --surface4: #f9f5d7;
+    --primary: hsl(190, 89%, 25%);
+    --primary-light: hsl(183, 33%, 40%);
+    --secondary: #b57614;
+    --secondary-light: #d79921;
+    --three: #8f3f71;
+    --four: #79740e;
+    --five: #af3a03;
+  --title: var(--surface3);
+  --subtitle: var(--surface2);
+
+    --gradient: linear-gradient(
+      to right top,
+      hsl(190, 89%, 25%),
+      hsl(200, 80%, 18%)
+    );
+  }
+
+  :root[color-mode='dark'] {
+    --text: #fbf1c7;
+    --text1: #ebdbb2;
+    --text2: #d5c4a1;
+    --text3: #bdae93;
+    --text4: #a89984;
+    --surface: #1d2021;
+    --surface1: #292929;
+    --surface2: #3b3735;
+    --surface3: #4f4945;
+    --surface4: #655b53;
+    --textInverse: --surface;
+    --primary: hsl(184, 33%, 40%);
+    --primary-light: hsl(157, 16%, 58%);
+    --secondary: #d79921;
+    --secondary-light: #fabd2f;
+    --three: #d3869b;
+    --four: #b8bb26;
+    --five: #fe8019;
+
+    --gradient: linear-gradient(to right top, #d79921, hsl(30, 63%, 79%));
+  }
+  </style>
+{{/match}}
