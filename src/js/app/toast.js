@@ -12,7 +12,7 @@ const checkDomForToast = () => {
   }
 };
 
-module.exports = function createToast(value) {
+export default function createToast(value) {
   checkDomForToast();
   const container = document.createElement('div');
   container.classList.add('sm-toast');
@@ -24,4 +24,4 @@ module.exports = function createToast(value) {
   innerContainer.append(p);
   document.body.append(container);
   setTimeout(destroyToast.bind(null, container), 3000);
-};
+}

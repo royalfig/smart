@@ -1,11 +1,10 @@
-{{!-- Card  --}}
 <article class="sm-card  {{slug}}">
     <a class="sm-card__link" href="{{url}}" aria-label="{{title}}">
         <div class="sm-card__img-container {{visibility}}">
             {{#if feature_image}}
             <img class="sm-card__img {{^if featured}}lazyload{{/if}}" {{^if featured}}data-{{/if}}srcset="{{img_url feature_image size="s"}} 300w,
             {{img_url feature_image size="m"}} 600w" {{^if featured}}data-{{/if}}sizes="(max-width: 640px) 90vw,
-            600px" {{^if featured}}data-{{/if}}src="{{img_url feature_image size="m"}}" alt="" />
+            600px" {{^if featured}}data-{{/if}}src="{{img_url feature_image size="m"}}" alt="{{title}}" width="1920" height="1080" />
             {{else}}
             <div class="sm-card__no-img"></div>
             {{/if}}

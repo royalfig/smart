@@ -1,19 +1,6 @@
-@use 'sass:color';
-
 // Bright Mode
 :root[color-mode='light'] {
-  --text: #0a0a0a;
-  --textInverse: #f5f5f5;
-  --text1: #171717;
-  --text2: #39393a;
-  --text3: #5a5a5c;
-  --text4: #9ea0a2;
-  --surface: hsl(0, 0%, 92%);
-  --surface1: hsl(0, 0%, 94%);
-  --surface2: hsl(0, 0%, 96%);
-  --surface3: hsl(0, 0%, 98%);
-  --surface4: #ffffff;
-  --primary: hsl(216, 85%, 34%);
+  --primary: #0d48a0;
   --secondary: #a4002e;
   --three: #643791;
   --four: #8b1c76;
@@ -22,21 +9,23 @@
   --error: #a40000;
   --error-hover: hsl(0, 100%, 16%);
   --gradient: linear-gradient(to right top, #0d48a0, hsl(226, 85%, 18%));
+  --text4: #1b222c;
+  --text3: #151b23;
+  --text2: #101319;
+  --text1: #0a0c10;
+  --text: #040506;
+  --surface4: #ffffff;
+  --surface3: #fcfcfd;
+  --surface2: #f3f4f7;
+  --surface1: #eaedf1;
+  --surface: #e0e5eb;
+  --textInverse: #ffffff;
+  --title: var(--surface3);
+  --subtitle: var(--surface2);
 }
 
 // Dark Mode
 :root[color-mode='dark'] {
-  --text: #f5f5f5;
-  --textInverse: #0a0a0a;
-  --text1: #e8e9e9;
-  --text2: #c6c6c7;
-  --text3: #a5a5a7;
-  --text4: #616365;
-  --surface: #181818;
-  --surface1: #202020;
-  --surface2: #282828;
-  --surface3: #303030;
-  --surface4: #383838;
   --primary: #80deea;
   --secondary: #ffab91;
   --three: #8cdbbf;
@@ -50,4 +39,17 @@
     hsl(187, 72%, 71%),
     hsl(187, 92%, 91%)
   );
+  --surface: #050506;
+  --surface1: #0c0e0e;
+  --surface2: #131616;
+  --surface3: #1a1e1f;
+  --surface4: #202627;
+  --text: #f5f7f7;
+  --text1: #f1f3f4;
+  --text2: #e8eced;
+  --text3: #e0e6e6;
+  --text4: #d7dfe0;
+  --textInverse: #050506;
+  --title: var(--text);
+  --subtitle: var(--text4);
 }

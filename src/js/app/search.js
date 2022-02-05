@@ -40,15 +40,15 @@ const search = () => {
           localStorage.setItem('posts', JSON.stringify(data));
           localStorage.setItem('timestamp', createTimestamp());
           resolve(data);
+        })
+        .catch((err) => {
+          console.error(`Search is not available!\n${err}`);
         });
     } else {
       const posts = JSON.parse(localStorage.getItem('posts'));
       resolve(posts);
       reject(new Error("Couldn't fetch posts"));
     }
-  }).catch((err) => {
-    // eslint-disable-next-line no-alert
-    alert(`Something went wrong. Please try again.\nError Details: ${err}`);
   });
 
   // Page Elements
@@ -73,24 +73,25 @@ const search = () => {
   const searchPosts = (term) => {
     stateLoader('loading', true);
     searchResult.innerHTML = '';
-    api.then((posts) => {
-      const newSearch = new JsSearch.Search('id');
-      newSearch.addIndex('title');
-      newSearch.addIndex('plaintext');
+    api
+      .then((posts) => {
+        const newSearch = new JsSearch.Search('id');
+        newSearch.addIndex('title');
+        newSearch.addIndex('plaintext');
 
-      newSearch.addDocuments(posts);
-      const result = newSearch.search(term);
+        newSearch.addDocuments(posts);
+        const result = newSearch.search(term);
 
-      if (result.length > 1) {
-        searchResultHeader.textContent = `${result.length} Results for “${term}”`;
-      } else if (result.length !== 0) {
-        searchResultHeader.textContent = `${result.length} Result for “${term}”`;
-      } else {
-        searchResultHeader.textContent = `No results for “${term}”`;
-      }
+        if (result.length > 1) {
+          searchResultHeader.textContent = `${result.length} Results for “${term}”`;
+        } else if (result.length !== 0) {
+          searchResultHeader.textContent = `${result.length} Result for “${term}”`;
+        } else {
+          searchResultHeader.textContent = `No results for “${term}”`;
+        }
 
-      result.forEach((post) => {
-        searchResult.innerHTML += `<article class="sm-search-results__item">
+        result.forEach((post) => {
+          searchResult.innerHTML += `<article class="sm-search-results__item">
             <a class="sm-search-results__link" href="${post.url}">
               <p class="sm-search-results__date">${dateFormatter(
                 post.published_at,
@@ -100,10 +101,14 @@ const search = () => {
                 ${htmlReplace(post.excerpt)}</p>
                 </a>
             </article>`;
-      });
+        });
 
-      stateLoader('loading', false);
-    });
+        stateLoader('loading', false);
+      })
+      .catch((err) => {
+        // eslint-disable-next-line no-console
+        console.error(`Search not available\n${err}`);
+      });
   };
 
   const enterSearchTermCheck = () => {

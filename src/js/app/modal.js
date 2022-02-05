@@ -1,4 +1,4 @@
-const { trapFocus, releaseFocus, tabKeyHandler } = require('./focusTrap');
+import { trapFocus, releaseFocus, tabKeyHandler } from './focusTrap';
 
 const searchBtn = document.getElementById('sm-search-btn');
 const mSearchBtn = document.getElementById('sm-m-search-btn');
