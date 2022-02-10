@@ -91,7 +91,7 @@
           "Large"
         ],
         "default": "Large",
-        "group": "Homepage"
+        "group": "homepage"
       },
       "color_scheme": {
         "type": "select",
@@ -115,7 +115,7 @@
       },
       "custom_section": {
         "type": "text",
-        "group": "Homepage"
+        "group": "homepage"
       }
     }
   }
