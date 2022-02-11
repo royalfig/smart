@@ -25,12 +25,11 @@ into the {body} of the default.hbs template --}}
     }
 </style>
 {{/if}}
-<header class="sm-hero sm-main__outer-container">
+
+<header class="sm-hero--{{@custom.heading}} sm-main__outer-container">
     <div class="sm-inner-container--hero">
         <div class="sm-hero__text-container">
-            <h1 class="sm-hero__site-title">{{@site.title}}</h1>
-            <p class="sm-hero__site-description">{{@site.description}}
-            </p>
+            <h1 class="sm-hero__site-description">{{@site.description}}</h1>
         </div>
     </div>
 </header>
@@ -65,9 +64,8 @@ into the {body} of the default.hbs template --}}
                     {{/unless}}
                 {{/foreach}}
             </section>
-    {{pagination}}
+        {{pagination}}
         </div>
     </div>
-
 
 </main>
