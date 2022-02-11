@@ -53,8 +53,9 @@
             </button>
         </div>
     </div>
-    {{!-- Navbar Divider  --}}
+
     <div class="sm-navbar__divider"></div>
+        
     {{!-- Navbar bottom --}}
     <div class="sm-navbar__bottom">
         <div class="sm-navbar__bottom--left">
@@ -63,6 +64,7 @@
                 <p class="{{#is "home"}}sm-site-title{{/is}}" id="sm-site-title">{{@site.title}}</p>
             </a>
         </div>
+
         {{!-- Mobile Hamburger Menu  --}}
         <div class="sm-navbar__bottom--right--mobile">
             <button class="sm-navbar__hamburger-btn" id="sm-menu-btn" data-target="sm-menu" aria-label="menu">
@@ -71,16 +73,16 @@
                 </svg>
             </button>
         </div>
-        {{!-- End Mobile Hamburger Menu  --}}
+
         {{!-- If the site has links, they appear below  --}}
         {{#if @site.navigation}}
         <div class="sm-navbar__bottom--center">
             {{navigation}}
         </div>
         {{/if}}
-        {{!-- End navigation  --}}
+        
         {{!-- Member functionality --}}
-        {{#if @labs.members}}
+        {{#if @custom.memberships}}
         <div class="sm-navbar__bottom--right sm-members">
             {{#if @member}}
             <a href="#/portal/account" class="sm-navbar__signup">Account</a>
@@ -90,8 +92,5 @@
             {{/if}}
         </div>
         {{/if}}
-        {{!-- Member functionality --}}
     </div>
-    {{!-- End Navbar bottom --}}
 </nav>
-{{!-- End Navbar --}}

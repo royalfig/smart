@@ -75,6 +75,48 @@
       "xl": {
         "width": 2000
       }
+    },
+    "custom": {
+      "search": {
+        "type": "text"
+      },
+      "disqus": {
+        "type": "text",
+        "group": "post"
+      },
+      "header": {
+        "type": "select",
+        "options": [
+          "Small",
+          "Large"
+        ],
+        "default": "Large",
+        "group": "homepage"
+      },
+      "color_scheme": {
+        "type": "select",
+        "options": [
+          "smart",
+          "dracula",
+          "gruvbox",
+          "material",
+          "nord"
+        ],
+        "default": "smart"
+      },
+      "memberships": {
+        "type": "boolean",
+        "default": true
+      },
+      "syntax_highlighting": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
+      },
+      "custom_section": {
+        "type": "text",
+        "group": "homepage"
+      }
     }
   }
 }
