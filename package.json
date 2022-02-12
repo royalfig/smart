@@ -87,10 +87,10 @@
       "header": {
         "type": "select",
         "options": [
-          "Small",
-          "Large"
+          "small",
+          "large"
         ],
-        "default": "Large",
+        "default": "large",
         "group": "homepage"
       },
       "color_scheme": {
