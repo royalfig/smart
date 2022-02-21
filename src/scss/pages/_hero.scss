@@ -3,7 +3,7 @@
 
 .sm-hero {
   position: relative;
-  @include mixins.navbar(margin-top);
+  @include mixins.navbar(padding-top, false, 2rem);
   margin-bottom: 2rem;
   background-position: center;
   background-size: cover;
@@ -16,7 +16,7 @@
     width: 100%;
     height: 100%;
     content: '';
-    background: linear-gradient(to right, rgba(#000, 0.75), rgba(#000, 0.35));
+    // background: linear-gradient(to top, var(--surface1-95) 15%, transparent);
   }
 
   &--small,
@@ -27,21 +27,23 @@
   &__text-container {
     display: flex;
     align-items: center;
-    max-width: 10rem;
+    justify-content: center;
   }
 
   &--small &__site-description {
-    margin: 2rem 0;
+    margin: 4rem 0;
   }
 
   &--large &__site-description {
-    margin: 5rem 0;
+    margin: 8rem 0;
   }
 
   &__site-description {
     margin: 0;
-    font-size: 2rem;
+    font-size: 2.75rem;
     line-height: 1.2;
     color: var(--subtitle);
+    padding: 0.5em 1em;
+    border-radius: var(--radius);
   }
 }

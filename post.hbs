@@ -10,9 +10,10 @@ into the {body} of the default.hbs template --}}
 <main class="sm-main" id="sm-main">
     <div class="sm-outer-container">
         <div class="sm-inner-container">
+            
             {{> header-img}}
-            <article class="{{post_class}} sm-post">
-                <header class="sm-post__header">
+            
+            <header class="sm-post__header">
                     <h1 class="sm-post__title--serif">{{title}}</h1>
                     <div class="sm-post__author">
                         {{authors}} &middot;
@@ -25,9 +26,44 @@ into the {body} of the default.hbs template --}}
                         <a href="{{url}}" class="sm-tag">{{name}}  </a>
                         {{/foreach}}
                     </div>
+
+                    <div class="sm-post__share">
+                    
+                    <span class="sm-post-share-bar__link">
+                                <svg aria-hidden="true">
+                                    <use href="#share"></use>
+                                </svg>
+                                </span>
+                                <a class="sm-post-share-bar__link--twitter" 
+                                href="https://twitter.com/share?url={{url absolute='true'}}&amp;text={{#if title}}{{title}}{{else}}{{name}}{{/if}}"
+                                aria-label="Share on Twitter" target="_blank" rel="noopener noreferrer">
+                                <svg>
+                                    <use href="#twitter"></use>
+                                </svg>
+                            </a>
+                            <a class="sm-post-share-bar__link--facebook" href="http://www.facebook.com/sharer.php?u={{url absolute='true'}}"
+                                aria-label="Share on Facebook" target="_blank" rel="noopener noreferrer">
+                                <svg>
+                                    <use href="#facebook"></use>
+                                </svg>
+                            </a>
+                            <a class="sm-post-share-bar__link--linkedin" data-tt="Share on LinkedIn"
+                                href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}"
+                                aria-label="Share on LinkedIn" target="_blank" rel="noopener noreferrer">
+                                <svg>
+                                    <use href="#linkedin"></use>
+                                </svg>
+                            </a>
+                            <button class="sm-post-share-bar__link--copy" aria-label="Copy to clipboard">
+                                <svg>
+                                    <use href="#copy"></use>
+                                </svg>
+                            </button> 
+                            </div>
                     {{/if}}
-                    {{! Tags }}
-                </header>
+            </header>
+            
+            <article class="{{post_class}} sm-post">
                 <div class="sm-post__content">
                     {{content}}
                 </div>

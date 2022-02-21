@@ -8,6 +8,10 @@
 //-------------------------------------------
 // Global Styles
 //-------------------------------------------
+:root {
+  --radius: 8px;
+}
+
 html {
   @include mixins.color-map(color, text);
   @include mixins.color-map(background-color, surface1);

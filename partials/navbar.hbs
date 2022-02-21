@@ -3,36 +3,11 @@
     {{!-- Navbar top  --}}
     <div class="sm-navbar__top">
         <div class="sm-navbar__top--left">
-            <span class="sm-post-share-bar__link">
-            <svg aria-hidden="true">
-                <use href="#share"></use>
-            </svg>
-            </span>
-            <a class="sm-post-share-bar__link--twitter" 
-            href="https://twitter.com/share?url={{url absolute='true'}}&amp;text={{#if title}}{{title}}{{else}}{{name}}{{/if}}"
-            aria-label="Share on Twitter" target="_blank" rel="noopener noreferrer">
-            <svg>
-                <use href="#twitter"></use>
-            </svg>
-        </a>
-        <a class="sm-post-share-bar__link--facebook" href="http://www.facebook.com/sharer.php?u={{url absolute='true'}}"
-            aria-label="Share on Facebook" target="_blank" rel="noopener noreferrer">
-            <svg>
-                <use href="#facebook"></use>
-            </svg>
-        </a>
-        <a class="sm-post-share-bar__link--linkedin" data-tt="Share on LinkedIn"
-            href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}"
-            aria-label="Share on LinkedIn" target="_blank" rel="noopener noreferrer">
-            <svg>
-                <use href="#linkedin"></use>
-            </svg>
-        </a>
-        <button class="sm-post-share-bar__link--copy" aria-label="Copy to clipboard">
-            <svg>
-                <use href="#copy"></use>
-            </svg>
-        </button>
+            <a class="sm-navbar__brand--serif" href="{{@site.url}}" aria-labelledby="sm-site-title">
+                {{#if @site.icon}}<img src="{{@site.icon}}" alt="">{{/if}}
+                <p class="{{#is "home"}}sm-site-title{{/is}}" id="sm-site-title">{{@site.title}}</p>
+            </a>
+            
         </div>
         <div class="sm-navbar__top--right">
             <button class="sm-color-mode-btn light" aria-label="Toggle light mode">
@@ -45,6 +20,7 @@
                     <use href="#moon"></use>
                 </svg>
             </button>
+            
             <button class="sm-navbar__search" id="sm-search-btn" data-target="sm-search-modal" data-tt="Search"
                 aria-label="Search {{@site.title}}">
                 <svg aria-hidden="true">
@@ -59,10 +35,7 @@
     {{!-- Navbar bottom --}}
     <div class="sm-navbar__bottom">
         <div class="sm-navbar__bottom--left">
-            <a class="sm-navbar__brand--serif" href="{{@site.url}}" aria-labelledby="sm-site-title">
-                {{#if @site.icon}}<img src="{{@site.icon}}" alt="">{{/if}}
-                <p class="{{#is "home"}}sm-site-title{{/is}}" id="sm-site-title">{{@site.title}}</p>
-            </a>
+            
         </div>
 
         {{!-- Mobile Hamburger Menu  --}}

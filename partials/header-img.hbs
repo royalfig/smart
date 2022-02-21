@@ -2,12 +2,10 @@
     {{#if feature_image}}
      <header class="header-img__container">
         <figure>
-            <div class="header-img__aspect-container">
             <img class="header-img__image" srcset="{{img_url feature_image size="s"}} 300w,
                         {{img_url feature_image size="m"}} 740w,
                         {{img_url feature_image size="l"}} 1024w" sizes="(min-width: 1024px) 1024px, 100vw"
                 src="{{img_url feature_image size="l"}}" alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}" width="1920" height="1080">
-            </div>
             {{#if feature_image_caption}}
             <figcaption style="margin-bottom: 1rem;">{{feature_image_caption}}</figcaption>
             {{/if}}
@@ -22,12 +20,10 @@
     {{#if cover_image}}
      <header class="header-img__container">
         <figure>
-            <div class="header-img__aspect-container">
             <img class="header-img__image" srcset="{{img_url cover_image size="s"}} 300w,
                         {{img_url cover_image size="m"}} 740w,
                         {{img_url cover_image size="l"}} 1024w" sizes="(min-width: 1024px) 1024px, 100vw"
                 src="{{img_url cover_image size="l"}}" alt="{{name}}" width="1920" height="1080"> 
-            </div>
         </figure>
     </header>
     {{else}}
@@ -39,13 +35,10 @@
 {{#if @site.cover_image}}
      <header class="header-img__container">
         <figure>
-            <div class="header-img__aspect-container">
             <img class="header-img__image" srcset="{{img_url @site.cover_image size="s"}} 300w,
                         {{img_url @site.cover_image size="m"}} 740w,
                         {{img_url @site.cover_image size="l"}} 1024w" sizes="(min-width: 1024px) 1024px, 100vw"
                 src="{{img_url @site.cover_image size="l"}}" alt="{{@site.title}}" width="1920" height="1080">
-            </div>
-            
         </figure>
     </header> 
     {{else}}

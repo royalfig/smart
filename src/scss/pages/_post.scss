@@ -7,12 +7,19 @@
 //-------------------------------------------
 .sm-post {
   max-width: variables.$tablet;
-  margin: 0 auto 3rem;
+  margin: 2rem auto 3rem;
 
   &__header {
     margin: 1rem 0;
     margin: 1rem 0 2rem;
-
+    width: 85%;
+    background-color: var(--surface2-85);
+    backdrop-filter: blur(20px);
+    padding: var(--gap, 2rem);
+    transform: translateY(-4rem);
+    border-radius: var(--radius, 8px);
+    margin: 0 auto -4rem;
+    text-align: center;
     // .post-template & {
     //   margin: 1rem 0 2rem;
     // }
@@ -33,18 +40,23 @@
       font-weight: 700;
       @include link.link;
     }
+
+    time {
+      font-size: max(15px, 0.9rem);
+      @include mixins.color-map(color, text2);
+
+      text-transform: uppercase;
+    }
   }
 
   &__date {
-    font-size: 0.9rem;
-    @include mixins.color-map(color, text2);
-    font-variant-numeric: oldstyle-nums;
   }
 
   &__tag-bar {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
     font-size: 0.75rem;
     text-transform: uppercase;
 
@@ -90,6 +102,13 @@
       transform: translateY(0.2em);
       @include mixins.transition(stroke);
     }
+  }
+
+  &__share {
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   &__content {

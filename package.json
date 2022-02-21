@@ -116,6 +116,16 @@
       "custom_section": {
         "type": "text",
         "group": "homepage"
+      },
+      "social_media_1": {
+        "type": "select",
+        "options": [
+          "linkedin",
+          "instagram",
+          "twitch",
+          "youtube"
+        ],
+        "default": ""
       }
     }
   }

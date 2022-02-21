@@ -18,6 +18,10 @@
   --surface4: #ffffff;
   --surface3: #fcfcfd;
   --surface2: #f3f4f7;
+  --surface2-95: hsla(225, 20%, 96%, 95%);
+ 
+  --surface2-85: hsla(225, 20%, 96%, 85%);
+  --surface2-50: hsla(225, 20%, 96%, 50%);
   --surface1: #eaedf1;
   --surface: #e0e5eb;
   --textInverse: #ffffff;
@@ -41,7 +45,12 @@
   );
   --surface: #050506;
   --surface1: #0c0e0e;
-  --surface2: #131616;
+  --surface1-95: hsla(180, 8%, 5%, .95);
+  --surface1-45: hsla(180, 8%, 5%, .45);
+  --surface2: rgb(19, 22, 22);
+  --surface2-95: rgba(19, 22, 22, 0.95);
+
+  --surface2-85: rgba(19, 22, 22, 0.85);
   --surface3: #1a1e1f;
   --surface4: #202627;
   --text: #f5f7f7;
@@ -63,6 +72,7 @@
   --surfaceInverse: #0a0a0a;
   --surface3: hsl(60, 15%, 94%);
   --surface2: hsl(60, 15%, 92%);
+  --surface2: hsla(60, 15%, 92%, 85%);
   --surface1: hsl(60, 15%, 90%);
   --surface: hsl(60, 15%, 88%);
   --text: hsl(231, 15%, 9%);
@@ -91,6 +101,7 @@
   --surface: hsl(231, 15%, 9%);
   --surface1: hsl(231, 15%, 18%);
   --surface2: hsl(232, 14%, 31%);
+  --surface2: hsla(232, 14%, 31%, 85%);
   --surface3: hsl(232, 14%, 40%);
   --surface4: hsl(232, 14%, 50%);
   --primary: #8be9fd;
@@ -111,6 +122,8 @@
   --surface: #fff;
   --surface1: #fafafa;
   --surface2: #f5f5f5;
+  --surface2-85: hsla(0, 0%, 96%, 85%);
+
   --surface3: #eeeeee;
   --surface4: #e0e0e0;
   --text4: #757575;
@@ -155,6 +168,7 @@
   --surface4: #757575;
   --surface3: #616161;
   --surface2: #424242;
+  --surface2: hsla(0, 0%, 26%, 85%);
   --surface1: #212121;
   --surface: #000;
 
@@ -193,6 +207,8 @@
     --surface: #d8dee9;
     --surface1: #e5e9f0;
     --surface2: hsl(218, 27%, 94%);
+    --surface2-85: hsla(218, 27%, 94%, 85%);
+  
     --surface3: hsl(218, 27%, 98%);
     --surface3: hsl(224, 32%, 98%);
     --text: #2e3440;
@@ -238,6 +254,7 @@
     --surface: #2e3440;
     --surface1: #3b4252;
     --surface2: hsl(220, 17%, 32%);
+    --surface2-85: hsla(220, 17%, 32%, 85%);
     --surface3: hsl(220, 16%, 36%);
     --surface4: hsl(220, 16%, 40%);
     --textInverse: #f5f5f5;
@@ -274,24 +291,25 @@
 {{#match @custom.color_scheme "gruvbox"}}
   <style>
     :root[color-mode='light'] {
-    --text: #282828;
-    --textInverse: #f9f5d7;
+    --text: hsl(0, 0%, 16%);
+    --textInverse: hsl(53, 74%, 91%);
     --text1: #3c3836;
     --text2: #504945;
     --text3: #665c54;
     --text4: #7c6f64;
-    --surface: #bdae93;
-    --surface1: #d5c4a1;
-    --surface2: #ebdbb2;
-    --surface3: #fbf1c7;
-    --surface4: #f9f5d7;
+    --surface: hsl(39, 24%, 85%);
+    --surface1: hsl(40, 38%, 90%);
+    --surface2: hsl(43, 59%, 93%);
+    --surface2-85: hsla(43, 59%, 93%, 85%);
+    --surface3: hsl(48, 87%, 95%);
+    --surface4: hsl(53, 74%, 99%);
     --primary: hsl(190, 89%, 25%);
     --primary-light: hsl(183, 33%, 40%);
-    --secondary: #b57614;
+    --secondary: #af3a03;
     --secondary-light: #d79921;
     --three: #8f3f71;
     --four: #79740e;
-    --five: #af3a03;
+    --five: #b57614;
   --title: var(--surface3);
   --subtitle: var(--surface2);
 
@@ -303,24 +321,26 @@
   }
 
   :root[color-mode='dark'] {
-    --text: #fbf1c7;
-    --text1: #ebdbb2;
-    --text2: #d5c4a1;
-    --text3: #bdae93;
-    --text4: #a89984;
-    --surface: #1d2021;
-    --surface1: #292929;
-    --surface2: #3b3735;
-    --surface3: #4f4945;
-    --surface4: #655b53;
+    --text: hsl(39, 24%, 89%);
+    --text1: hsl(40, 38%, 90%);
+    --text2: hsl(43, 59%, 93%);
+    --text2-85: hsla(43, 59%, 93%, 85%);
+    --text3: hsl(48, 87%, 95%);
+    --text4: hsl(53, 74%, 99%);
+    --surface: hsl(195, 6%, 4%);
+    --surface1: hsl(0, 0%, 9%);
+    --surface2: hsl(20, 5%, 13%);
+    --surface2-85: hsla(20, 5%, 13%, 85%);
+    --surface3: hsl(24, 7%, 18%);
+    --surface4: hsl(27, 10%, 25%);
     --textInverse: --surface;
-    --primary: hsl(184, 33%, 40%);
-    --primary-light: hsl(157, 16%, 58%);
-    --secondary: #d79921;
-    --secondary-light: #fabd2f;
+    --primary: #87afaf;
+    --primary-light: rgba(135, 175, 175, 85%);
+    --secondary: #ffaf00;
+    --secondary-light: hsl(41, 100%, 80%);
     --three: #d3869b;
-    --four: #b8bb26;
-    --five: #fe8019;
+    --four: #8ec07c;
+    --five: #fb4933;
 
     --gradient: linear-gradient(to right top, #d79921, hsl(30, 63%, 79%));
   }

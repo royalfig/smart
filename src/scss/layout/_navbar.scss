@@ -22,7 +22,13 @@
 
   font-size: 0.9rem;
   box-shadow: variables.$box-shadow;
-  @include mixins.color-map(background-color, surface2);
+  background-color: var(--surface2);
+
+  @supports (backdrop-filter: blur(15px)) {
+    backdrop-filter: blur(15px);
+    background-color: var(--surface2-85);
+  }
+
   @include mixins.transition(all);
 
   &__top,
@@ -39,7 +45,7 @@
     height: 1px;
     background-color: var(--text1);
     opacity: 0.1;
-    transform: translateY(6px);
+    // transform: translateY(6px);
 
     @include mixins.respond-above(variables.$laptop) {
       display: block;
@@ -48,13 +54,13 @@
 
   &__top {
     display: none;
-    height: 2.25rem;
+    height: 3rem;
 
     @include mixins.respond-above(variables.$laptop) {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 0.8rem;
+      font-size: 1rem;
     }
 
     &--left {
@@ -72,45 +78,14 @@
     }
   }
 
-  &__new-tag {
-    padding: 0.15rem;
-    margin-right: 4px;
-    font-size: 0.6rem;
-    line-height: 1;
-    text-transform: uppercase;
-    letter-spacing: 0.2px;
-    border-radius: variables.$radius;
-    @include mixins.color-map(color, textInverse);
-    @include mixins.color-map(background-color, secondary);
-
-    &--text {
-      @extend .sm-navbar__new-tag;
-      color: var(--text2);
-      background: none;
-    }
-  }
-
-  &__new-link {
-    font-size: 0.95em;
-    line-height: 1;
-    @include mixins.transition(color);
-    @include mixins.color-map(color, text2);
-
-    &:hover {
-      @include mixins.color-map(color, text);
-    }
-  }
-
   // Bottom navbar -> Brand, Links, Member
   &__bottom {
     display: flex;
     align-items: center;
-    height: 3.25rem;
+    height: 2.5rem;
 
     &--center {
       display: none;
-      margin-left: 2rem;
-      line-height: 0;
       transform: translateY(1px);
 
       @include mixins.respond-above(variables.$laptop) {
@@ -134,7 +109,6 @@
 
       &--mobile {
         margin: 0 0 0 auto;
-        line-height: 0;
         @include mixins.respond-above(variables.$laptop) {
           display: none;
         }
@@ -146,14 +120,14 @@
     display: flex;
     align-items: center;
     font-family: variables.$serif;
-    font-size: 1.25rem;
+    font-size: 1.25em;
     font-weight: 400;
     line-height: 1;
 
     img {
-      width: 1.25rem;
-      height: 1.25rem;
-      margin-right: 0.25rem;
+      width: 1.25em;
+      height: 1.25em;
+      margin-right: 0.25em;
     }
   }
 
@@ -163,7 +137,6 @@
     margin: 0 0.5rem 0 0;
     font-family: variables.$sans;
     font-size: 0.8rem;
-    line-height: 1;
     @include mixins.color-map(color, text2);
     @include mixins.transition(color);
   }
@@ -175,12 +148,14 @@
   &__signup {
     padding: 0.25rem;
     margin-right: 0;
-    font-weight: 700;
+    line-height: 1;
+    // font-weight: 700;
     border-radius: variables.$radius;
     box-shadow: variables.$box-shadow;
-    @include mixins.color-map(color, textInverse);
-    @include mixins.color-map(background-color, primary);
+    color: var(--surface);
+    background-color: var(--primary);
     @include mixins.transition(background-color);
+
     &:hover {
       @include mixins.color-map(background-color, secondary);
     }
@@ -202,7 +177,8 @@
   }
 
   // Search button
-  &__search {
+  &__search,
+  &__share {
     display: none;
     width: 1.5em;
     height: 1.5em;
@@ -219,6 +195,10 @@
         @include mixins.color-map(stroke, text);
       }
     }
+  }
+
+  &__share {
+    display: inline-block;
   }
 
   .sm-color-mode-btn {
