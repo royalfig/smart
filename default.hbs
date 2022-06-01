@@ -4,13 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{meta_title}}</title>
     
     {{!-- CSS and Fonts  --}}
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap">
 
     {{#if @site.cover_image}}
         {{#is "home"}}
@@ -21,11 +20,11 @@
         {{/is}}
     {{/if}}
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" media="print"
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" media="print"
         onload="this.media='all'">
     
     <noscript>
-        <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
     </noscript>
 
     {{> "color_scheme"}}
@@ -86,7 +85,11 @@
         ) {
             document.documentElement.setAttribute('color-mode', 'light');
         }
+
+        const SEARCH_API = "{{@custom.search}}"
     </script>
+
+    
 
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">

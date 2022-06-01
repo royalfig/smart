@@ -3,7 +3,8 @@
 
 .sm-hero {
   position: relative;
-  @include mixins.navbar(padding-top, false, 2rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   margin-bottom: 2rem;
   background-position: center;
   background-size: cover;
@@ -16,7 +17,7 @@
     width: 100%;
     height: 100%;
     content: '';
-    // background: linear-gradient(to top, var(--surface1-95) 15%, transparent);
+    background: linear-gradient(to top, var(--surface1-95) 15%, transparent);
   }
 
   &--small,
@@ -25,17 +26,12 @@
   }
 
   &__text-container {
+    @include mixins.navbar(padding-top, false, 2rem);
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  &--small &__site-description {
-    margin: 4rem 0;
-  }
-
-  &--large &__site-description {
-    margin: 8rem 0;
+    z-index: 1;
   }
 
   &__site-description {
@@ -43,7 +39,17 @@
     font-size: 2.75rem;
     line-height: 1.2;
     color: var(--subtitle);
-    padding: 0.5em 1em;
+  }
+
+  img {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     border-radius: var(--radius);
+    object-fit: cover;
+    z-index: 0;
   }
 }

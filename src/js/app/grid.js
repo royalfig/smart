@@ -10,7 +10,7 @@ function updateNumber(el, num, type) {
 
 function countChildren(gridContainer) {
   const { children } = gridContainer;
-  children.forEach((el, i) => updateNumber(el, i + 1));
+  Array.from(children).forEach((el, i) => updateNumber(el, i + 1));
   const numOfChildren = children.length;
   updateNumber(gridContainer, numOfChildren, 'container');
   return { children, numOfChildren };
@@ -20,6 +20,7 @@ function gridInit() {
   if (!gridContainers) {
     return;
   }
+  console.log(gridContainers)
   gridContainers.forEach((gridContainer) => countChildren(gridContainer));
 }
 

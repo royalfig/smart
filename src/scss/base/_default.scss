@@ -27,7 +27,7 @@ em {
 }
 
 //-------------------------------------------
-// Psuedoselectors
+// Psuedo elements and classes
 //-------------------------------------------
 :link {
   color: currentColor;
@@ -48,7 +48,7 @@ em {
   @include mixins.navbar(margin-top, $negative: true);
 }
 
-:focus {
+:focus-visible {
   outline-width: 1px;
   outline-style: dotted;
   @include mixins.color-map(outline-color, text3);

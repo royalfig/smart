@@ -1,5 +1,4 @@
 import * as JsSearch from 'js-search';
-import GhostContentAPI from '@tryghost/content-api';
 
 const searchModal = document.getElementById('sm-search-modal');
 
@@ -17,39 +16,29 @@ const stateLoader = (state, status) => {
   }
 };
 
-const search = () => {
-  const freshApi = new GhostContentAPI({
-    url: `${window.location.protocol}//${window.location.host}`,
-    // eslint-disable-next-line no-undef
-    key: SEARCH_API,
-    version: 'v4',
-  });
+async function getPosts() {
+  const timestamp = parseInt(localStorage.getItem('timestamp'), 10);
+  const now = Date.now();
 
-  const api = new Promise((resolve, reject) => {
-    const timestamp = parseInt(localStorage.getItem('timestamp'), 10);
-    const now = Date.now();
-
-    if (!timestamp || now > timestamp) {
-      freshApi.posts
-        .browse({
-          include: 'tags',
-          formats: 'plaintext',
-          limit: 'all',
-        })
-        .then((data) => {
-          localStorage.setItem('posts', JSON.stringify(data));
-          localStorage.setItem('timestamp', createTimestamp());
-          resolve(data);
-        })
-        .catch((err) => {
-          console.error(`Search is not available!\n${err}`);
-        });
-    } else {
-      const posts = JSON.parse(localStorage.getItem('posts'));
-      resolve(posts);
-      reject(new Error("Couldn't fetch posts"));
+  if (!timestamp || now > timestamp) {
+    try {
+      const res = await fetch(
+        `${window.location.protocol}//${window.location.host}/ghost/api/content/posts/?key=${SEARCH_API}&limit=all`,
+      );
+      const { posts } = await res.json();
+      localStorage.setItem('posts', JSON.stringify(posts));
+      localStorage.setItem('timestamp', createTimestamp());
+      return posts;
+    } catch (e) {
+      console.log(e);
     }
-  });
+  } else {
+    return JSON.parse(localStorage.getItem('posts'));
+  }
+}
+
+const search = async () => {
+  const posts = await getPosts();
 
   // Page Elements
   const searchInput = document.getElementById('sm-search-input');
@@ -73,25 +62,24 @@ const search = () => {
   const searchPosts = (term) => {
     stateLoader('loading', true);
     searchResult.innerHTML = '';
-    api
-      .then((posts) => {
-        const newSearch = new JsSearch.Search('id');
-        newSearch.addIndex('title');
-        newSearch.addIndex('plaintext');
 
-        newSearch.addDocuments(posts);
-        const result = newSearch.search(term);
+    const newSearch = new JsSearch.Search('id');
+    newSearch.addIndex('title');
+    newSearch.addIndex('plaintext');
 
-        if (result.length > 1) {
-          searchResultHeader.textContent = `${result.length} Results for “${term}”`;
-        } else if (result.length !== 0) {
-          searchResultHeader.textContent = `${result.length} Result for “${term}”`;
-        } else {
-          searchResultHeader.textContent = `No results for “${term}”`;
-        }
+    newSearch.addDocuments(posts);
+    const result = newSearch.search(term);
 
-        result.forEach((post) => {
-          searchResult.innerHTML += `<article class="sm-search-results__item">
+    if (result.length > 1) {
+      searchResultHeader.textContent = `${result.length} Results for “${term}”`;
+    } else if (result.length !== 0) {
+      searchResultHeader.textContent = `${result.length} Result for “${term}”`;
+    } else {
+      searchResultHeader.textContent = `No results for “${term}”`;
+    }
+
+    result.forEach((post) => {
+      searchResult.innerHTML += `<article class="sm-search-results__item">
             <a class="sm-search-results__link" href="${post.url}">
               <p class="sm-search-results__date">${dateFormatter(
                 post.published_at,
@@ -101,14 +89,9 @@ const search = () => {
                 ${htmlReplace(post.excerpt)}</p>
                 </a>
             </article>`;
-        });
+    });
 
-        stateLoader('loading', false);
-      })
-      .catch((err) => {
-        // eslint-disable-next-line no-console
-        console.error(`Search not available\n${err}`);
-      });
+    stateLoader('loading', false);
   };
 
   const enterSearchTermCheck = () => {

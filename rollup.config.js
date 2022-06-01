@@ -4,7 +4,6 @@ import scss from 'rollup-plugin-scss';
 import postcss from 'postcss';
 import autoprefixer from 'autoprefixer';
 import { terser } from 'rollup-plugin-terser';
-
 export default [
   {
     input: 'src/js/app/index.js',
@@ -14,7 +13,8 @@ export default [
       sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
     },
     plugins: [
-      resolve(),
+      // builtins(),
+      resolve({browser: true}),
       babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
       scss({
         output: 'assets/built/app.css',
@@ -35,8 +35,8 @@ export default [
       sourcemap: process.env.NODE_ENV === 'production' ? false : 'inline',
     },
     plugins: [
-      resolve(),
-      babel({ babelHelpers: 'bundled' }),
+      resolve({browser: true}),
+      babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
       scss({
         output: 'assets/built/post.css',
         sourceMap: true,

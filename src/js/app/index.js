@@ -6,6 +6,7 @@ import copyInit from './copy';
 import modalFn from './modal';
 import search from './search';
 import 'lazysizes';
+console.log(`${window.location.protocol}//${window.location.host}`)
 
 setTabIndex();
 grid();

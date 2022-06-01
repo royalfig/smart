@@ -3,40 +3,26 @@
 into the {body} of the default.hbs template --}}
 
 {{! Hero }}
-{{#if @site.cover_image}}
-<style>
-    .sm-hero {
-        background-image: url({{img_url @site.cover_image size='s'}});
-    }
-    @media(min-width: 300px) {
-        .sm-hero {
-            background-image: url({{img_url @site.cover_image size='m'}});
-        }
-    }
-    @media(min-width: 740px) {
-        .sm-hero {
-            background-image: url({{img_url @site.cover_image size='l'}});
-        }
-    }
-    @media(min-width: 1024px) {
-        .sm-hero {
-            background-image: url({{img_url @site.cover_image size='xl'}});
-        }
-    }
-</style>
-{{/if}}
 
-<header class="sm-hero sm-hero--{{@custom.header}} sm-main__outer-container">
-    <div class="sm-inner-container--hero">
-        <div class="sm-hero__text-container">
-            <h1 class="sm-hero__site-description">{{@site.description}}</h1>
-        </div>
+<div class="sm-main__outer-container">
+        <div class="sm-main__inner-container">
+
+            <header class="sm-hero sm-hero--{{@custom.header}}">
+                <div>
+                    <div class="sm-hero__text-container">
+                        <h1 class="sm-hero__site-description">{{@site.description}}</h1>
+                    </div>
+                </div>
+                <div class=".sm-hero__image"><img src="{{img_url @site.cover_image size='xl'}}" alt=""></div>
+            </header>
+
+
     </div>
-</header>
+</div>
 
 <main class="sm-main" id="sm-main">
     {{!-- Featured ---}}
-    {{#get "posts" filter="featured:true" include="tags" limit="all" as |featured|}}
+    {{#get "posts" filter="featured:true" include="tags" limit="10" as |featured|}}
         {{#if featured}}
             <div class="sm-main__outer-container">
                 <div class="sm-main__inner-container">
@@ -55,7 +41,7 @@ into the {body} of the default.hbs template --}}
     <div class="sm-main__outer-container">
         <div class="sm-main__inner-container">
             <a class="sm-main__read-more" href="/page/2/">
-                <h2 class="sm-main__header">Latest</h2>
+                <h2 class="sm-main__header">Latest &rarr;</h2>
             </a>
             <section class="sm-grid-container">
                 {{#foreach posts}}
@@ -64,8 +50,12 @@ into the {body} of the default.hbs template --}}
                     {{/unless}}
                 {{/foreach}}
             </section>
-        {{pagination}}
+        {{#if pagination.next}} 
+            {{pagination}}
+        {{/if}}
         </div>
     </div>
+
+   
 
 </main>
