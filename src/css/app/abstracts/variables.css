@@ -1,0 +1,30 @@
+/* https://dev.to/sobhandash/media-queries-and-breakpoints-2022-4gkm */
+@custom-media --tablet (min-width: 43rem);
+@custom-media --laptop (min-width: 62rem);
+@custom-media --desktop (min-width: 82rem);
+
+:root {
+  --primary: hsl(127, 9%, 41%);
+  --primary-light: hsl(127, 9%, 51%);
+  --primary-dark: hsl(127, 9%, 31%);
+  --seconary: hsl(134, 12%, 49%);
+  --tertiary: hsl(47, 42%, 89%);
+  --quaternary: hsl(34, 15%, 78%);
+
+  --surface: hsl(127, 1%, 98%);
+  --surface-light: hsl(0, 0%, 100%);
+  --surface-dark: hsl(127, 1%, 89%);
+
+  --element: hsl(127, 1%, 11%);
+  --element-light: hsl(127, 1%, 44%);
+  --element-dark: hsl(127, 1%, 5%);
+
+  --radius: 1em;
+  --gap: 1rem;
+}
+
+@media (--laptop) {
+  :root {
+    --gap: 2rem;
+  }
+}

@@ -1,0 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  line-height: 1.5;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  color: var(--text);
+  background-color: var(--surface);
+}
