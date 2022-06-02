@@ -20,14 +20,14 @@
         {{/is}}
     {{/if}}
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" media="print"
-        onload="this.media='all'">
+
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
     
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
     </noscript>
 
-    {{> "color_scheme"}}
+    {{!-- {{> "color_scheme"}} --}}
 
     <style>
         @font-face {
@@ -104,21 +104,13 @@
 </head>
 
 <body class="{{body_class}}">
-    <a href="#sm-main" class="sm-button--color sm-skip-to-content">Skip to content</a>
-    {{> "svg"}}
-    <div class="sm-content-wrap">
-        {{> "navbar"}}
-        {{> "menu"}}
-        {{> "search"}}
+    
+    <main id="sm-main">
         {{{body}}}
-        {{> "footer"}}
-    </div>
+    </main>    
+        
 
-    {{^is "home, paged, author, index, tag"}}
-        {{> "share"}}
-    {{/is}}
-    {{!-- The #block helper will pull in data from the #contentFor other template files. In this case, there's some JavaScript which we only want to use in post.hbs, but it needs to be included down here, after jQuery has already loaded. --}}
-    {{{block "scripts"}}}
+   
     {{!-- Ghost footer required, right before the closing body tag --}}
     {{ghost_foot}}
 </body>
