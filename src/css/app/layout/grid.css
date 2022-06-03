@@ -1,0 +1,55 @@
+[class*='grid'] {
+  display: grid;
+}
+
+.sm-grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: var(--gap) 1fr minmax(min(500px, 100%), 1200px) 1fr var(
+      --gap
+    );
+}
+
+.sm-inner-container {
+  grid-column: 3 / 4;
+  padding: var(--gap) 0;
+}
+
+.sm-grid-12 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: auto;
+  grid-template-areas:
+    'cta card-1 card-1'
+    'cta card-2 card-2'
+    'card-3 card-4 card-5';
+  gap: 1rem;
+}
+
+.sm-cta {
+  grid-area: cta;
+}
+
+.sm-card-1,
+.sm-card-6 {
+  grid-area: card-1;
+}
+
+.sm-card-2,
+.sm-card-7 {
+  grid-area: card-2;
+}
+
+.sm-card-3,
+.sm-card-8 {
+  grid-area: card-3;
+}
+
+.sm-card-4,
+.sm-card-9 {
+  grid-area: card-4;
+}
+
+.sm-card-5,
+.sm-card-10 {
+  grid-area: card-5;
+}
