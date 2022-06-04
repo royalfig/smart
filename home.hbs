@@ -20,6 +20,9 @@ into the {body} of the default.hbs template --}}
 <div class="sm-grid">
     <div class="sm-inner-container sm-grid-feature-left">
         <aside class="sm-feature-card sm-cta-card">
+            {{#if @site.icon}}
+                <img src="{{img_url @site.icon}}">
+            {{/if}}
             <h2>Don't miss out</h2>
             <p>Sign up for the newsletter</p>
 

@@ -3,19 +3,19 @@
   /* max-width: 600px; */
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s, box-shadow .3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .sm-card:hover {
   box-shadow: var(--box-shadow);
-  transform: translate(-4px,-5px);
+  transform: translate(-4px, -5px);
 }
 
 .sm-card-link {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  
+
   height: 100%;
 }
 
@@ -25,10 +25,14 @@
   border: 1px solid var(--surface-dark);
 }
 
-.home-template .sm-card, .sm-cta-card {
-  border-color: var(--surface-darker)
+.home-template .sm-card,
+.sm-cta-card {
+  border-color: var(--surface-darker);
 }
 
+.home-template .sm-tag {
+  background-color: var(--surface-darker);
+}
 
 .sm-card img {
   width: 100%;
@@ -51,7 +55,7 @@
   font-size: 1.35rem;
 }
 .sm-card-body {
-padding: 1rem;
+  padding: 1rem;
 }
 
 .sm-card .sm-excerpt {
@@ -68,33 +72,31 @@ padding: 1rem;
 }
 
 .sm-card .sm-tag {
-  font-size: 14px;
+  font-size: var(--small);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
   padding: 0 0.75em;
   background-color: var(--surface-dark);
   color: var(--element-light);
   border-radius: var(--radius);
+  display: inline-block;
 }
 
 .sm-card .sm-reading-time {
-  font-size: 0.75rem;
+  font-size: var(--x-small);
   color: var(--element-light);
 }
 
 .sm-card-horizontal {
   flex-direction: row;
-  
 }
 
-.sm-card-horizontal > div {
+.sm-card-horizontal > .sm-card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: var(--content-width);
 }
-
 
 .sm-grid-feature .sm-card-horizontal:first-child img {
   max-width: 50%;
@@ -109,6 +111,10 @@ padding: 1rem;
   flex: 1;
 }
 
+.sm-card-1 .sm-excerpt {
+  font-size: 1.15rem;
+}
+
 /* Feature cards */
 .sm-feature-card {
   border-radius: var(--radius);
@@ -119,8 +125,18 @@ padding: 1rem;
   margin-top: 0;
 }
 
+/* CTA */
 .sm-cta-card {
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sm-cta-card img {
+  max-width: 12.5rem;
+  display: block;
+  margin-inline: auto;
 }
 
 .sm-cta-card h2 {
@@ -154,6 +170,12 @@ padding: 1rem;
 .sm-cta-card input::placeholder {
   color: var(--secondary);
 }
+
+.sm-cta-card button {
+  margin-top: 1rem;
+}
+
+/* Tags */
 
 .sm-tags-card {
   display: flex;
