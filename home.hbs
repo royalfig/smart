@@ -3,107 +3,64 @@
 into the {body} of the default.hbs template --}}
 
 {{! Hero }}
-{{log posts.length}}
-
 <div class="sm-grid">
-    <div class="sm-inner-container sm-grid-12">
-        <aside class="sm-cta">
-            <h2>CTA headline</h2>
-            <p>cta copy</p>
+    <div class="sm-inner-container sm-grid-feature">
+    {{#foreach posts from="1" to="5"}}
+        {{#if @first}}
+            {{> "card" horizontal="true" premiere="true"}}
+        {{else}}
+            {{> "card"}}
+        {{/if}}
+    {{/foreach}}
 
-            <form action="post">
-                <input type="email" placeholder="email">
-                <button>subscribe</button>
-            </form>
-
-        </aside>
-        {{#foreach posts from="1" to="2"}}
-            
-            <article class="sm-card sm-card-{{@number}}">
-                <a href="{{url}}"></a>
-                {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
-                <div>
-                    <h2 class="sm-title {{^if feature_image}}large{{/if}}">{{title}}</h2>
-                    {{^if feature_image}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}
-                                    
-                    <div class="sm-card-footer">
-                    {{#if primary_tag}}<p class="sm-tag">{{primary_tag.name}}</p>{{/if}}
-                    <p class="sm-reading-time">{{reading_time}}</p>
-                </div>
-                </div>
-            </article>
-        {{/foreach}}
-
-        {{#foreach posts from="3" to="5"}}
-            
-            <article class="sm-card sm-card-{{@number}}">
-                <a href="{{url}}"></a>
-                
-                <div>
-                    {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
-                    <h2 class="sm-title {{^if feature_image}}large{{/if}}">{{title}}</h2>
-                    {{^if feature_image}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}
-                </div>
-                
-                <div class="sm-card-footer">
-                    {{#if primary_tag}}<p class="sm-tag">{{primary_tag.name}}</p>{{/if}}
-                    <p class="sm-reading-time">{{reading_time}}</p>
-                </div>
-            </article>
-        {{/foreach}}
     </div>
 </div>
 
-
+{{#match posts.length ">" "5"}}
 <div class="sm-grid">
-    <div class="sm-inner-container sm-grid-12">
-        <aside class="sm-cta">
-            <h2>CTA headline</h2>
-            <p>cta copy</p>
+    <div class="sm-inner-container sm-grid-feature-left">
+        <aside class="sm-feature-card sm-cta-card">
+            <h2>Don't miss out</h2>
+            <p>Sign up for the newsletter</p>
 
             <form action="post">
                 <input type="email" placeholder="email">
-                <button>subscribe</button>
+                <button class="sm-button">subscribe</button>
             </form>
-
         </aside>
         {{#foreach posts from="6" to="7"}}
-            
-            <article class="sm-card sm-card-{{@number}}">
-                <a href="{{url}}"></a>
-                {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
-                <div>
-                    <h2 class="sm-title {{^if feature_image}}large{{/if}}">{{title}}</h2>
-                    {{^if feature_image}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}
-                                    
-                    <div class="sm-card-footer">
-                    {{#if primary_tag}}<p class="sm-tag">{{primary_tag.name}}</p>{{/if}}
-                    <p class="sm-reading-time">{{reading_time}}</p>
-                </div>
-                </div>
-            </article>
+            {{> "card" horizontal="true"}}
         {{/foreach}}
 
         {{#foreach posts from="8" to="10"}}
-            
-            <article class="sm-card sm-card-{{@number}}">
-                <a href="{{url}}"></a>
-                
-                <div>
-                    {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
-                    <h2 class="sm-title {{^if feature_image}}large{{/if}}">{{title}}</h2>
-                    {{^if feature_image}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}
-                </div>
-                
-                <div class="sm-card-footer">
-                    {{#if primary_tag}}<p class="sm-tag">{{primary_tag.name}}</p>{{/if}}
-                    <p class="sm-reading-time">{{reading_time}}</p>
-                </div>
-            </article>
+            {{> "card"}}
         {{/foreach}}
     </div>
 </div>
+{{/match}}
 
+{{#match posts.length ">" "10"}}
+<div class="sm-grid">
+    <div class="sm-inner-container sm-grid-feature-right">
+        {{#foreach posts from="11" to="12"}}
+            {{> "card" horizontal="true"}}
+        {{/foreach}}
+
+        {{#foreach posts from="13" to="15"}}
+            {{> "card"}}
+        {{/foreach}}
+
+        {{#get "tags" include="count.posts" limit="5" order="count.posts desc"}}
+            <aside class="sm-feature-card sm-tags-card">
+                <h2>Hot Topics</h2>
+                {{#foreach tags}}
+                <a href="{{url}}">{{name}} <span>{{count.posts}}</span></a>
+                {{/foreach}}
+            </aside>
+        {{/get}}
+    </div>
+</div>
+{{/match}}
    
 
 </main>

@@ -5,51 +5,100 @@
 .sm-grid {
   display: grid;
   gap: var(--gap);
-  grid-template-columns: var(--gap) 1fr minmax(min(500px, 100%), 1200px) 1fr var(
+  grid-template-columns: var(--gap) 1fr minmax(min(500px, 100%), var(--width)) 1fr var(
       --gap
     );
 }
 
 .sm-inner-container {
+  gap: var(--gap);
   grid-column: 3 / 4;
-  padding: var(--gap) 0;
-}
+  padding: 5rem 0;
 
-.sm-grid-12 {
+
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: auto;
+}
+
+.sm-grid-feature {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+
   grid-template-areas:
-    'cta card-1 card-1'
-    'cta card-2 card-2'
-    'card-3 card-4 card-5';
-  gap: 1rem;
+  'card-1 card-1 card-1 card-1'
+  'card-2 card-2 card-3 card-3'
+  'card-4 card-4 card-5 card-5';
 }
 
-.sm-cta {
-  grid-area: cta;
-}
-
-.sm-card-1,
-.sm-card-6 {
+.sm-card-1 {
   grid-area: card-1;
 }
 
-.sm-card-2,
-.sm-card-7 {
+
+
+.sm-card-2 {
   grid-area: card-2;
 }
 
-.sm-card-3,
-.sm-card-8 {
+
+.sm-card-3 {
   grid-area: card-3;
 }
 
-.sm-card-4,
-.sm-card-9 {
+.sm-card-4 {
   grid-area: card-4;
 }
-
-.sm-card-5,
-.sm-card-10 {
+.sm-card-5 {
   grid-area: card-5;
 }
+
+.sm-grid-feature-left {
+
+  grid-template-areas:
+    'feature card-6 card-6'
+    'feature card-7 card-7'
+    'card-8 card-9 card-10';
+}
+
+.sm-grid-feature-right {
+
+  grid-template-areas:
+    'card-11 card-11 feature'
+    'card-12 card-12 feature'
+    'card-13 card-14 card-15';
+}
+
+.sm-feature-card {
+  grid-area: feature;
+}
+
+.sm-card-6 {
+  grid-area: card-6;
+}
+.sm-card-7  {
+  grid-area: card-7;
+}
+.sm-card-8 {
+  grid-area: card-8;
+}
+.sm-card-9 {
+  grid-area: card-9;
+}
+.sm-card-10 {
+  grid-area: card-10;
+}
+.sm-card-11 {
+  grid-area: card-11;
+}
+.sm-card-12 {
+  grid-area: card-12;
+}
+.sm-card-13 {
+  grid-area: card-13;
+}
+.sm-card-14 {
+  grid-area: card-14;
+}
+.sm-card-15 {
+  grid-area: card-15;
+}
+

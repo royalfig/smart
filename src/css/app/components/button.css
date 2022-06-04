@@ -1,0 +1,9 @@
+.sm-button {
+    text-transform: uppercase;
+    font-size: var(--small);
+    border-radius: var(--radius);
+    background-color: var(--primary);
+    color: var(--surface-light);
+    letter-spacing: var(--letter-spacing);
+    padding: var(--button-padding);
+}

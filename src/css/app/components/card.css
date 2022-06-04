@@ -1,32 +1,38 @@
 .sm-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1rem;
   border-radius: var(--radius);
-  border: 1px solid var(--surface-dark);
   /* max-width: 600px; */
   position: relative;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow .3s;
 }
 
 .sm-card:hover {
-  transform: translateY(-5px);
+  box-shadow: var(--box-shadow);
+  transform: translate(-4px,-5px);
 }
 
-.sm-card a {
-  position: absolute;
+.sm-card-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  
   height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
 }
+
+.sm-card,
+.sm-tags-card,
+.sm-cta-card {
+  border: 1px solid var(--surface-dark);
+}
+
+.home-template .sm-card, .sm-cta-card {
+  border-color: var(--surface-darker)
+}
+
 
 .sm-card img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  border-radius: var(--radius);
   object-fit: cover;
 }
 
@@ -44,6 +50,9 @@
 .sm-card h2:not(.large) {
   font-size: 1.35rem;
 }
+.sm-card-body {
+padding: 1rem;
+}
 
 .sm-card .sm-excerpt {
   margin-block-start: 0.75rem;
@@ -59,13 +68,13 @@
 }
 
 .sm-card .sm-tag {
-  font-size: 0.8rem;
-  text-transform: lowercase;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
   padding: 0 0.75em;
-  border: 1px solid;
+  background-color: var(--surface-dark);
   color: var(--element-light);
   border-radius: var(--radius);
-  display: inline-block;
 }
 
 .sm-card .sm-reading-time {
@@ -73,23 +82,136 @@
   color: var(--element-light);
 }
 
-.sm-card-1,
-.sm-card-2,
-.sm-card-6,
-.sm-card-7 {
+.sm-card-horizontal {
   flex-direction: row;
+  
 }
 
-.sm-card-1 img,
-.sm-card-2 img,
-.sm-card-6 img,
-.sm-card-7 img {
-  max-width: 200px;
+.sm-card-horizontal > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-width: var(--content-width);
 }
 
-.sm-cta {
-  background-color: var(--primary);
+
+.sm-grid-feature .sm-card-horizontal:first-child img {
+  max-width: 50%;
+}
+
+.sm-card-horizontal img {
+  max-width: 12.5rem;
+}
+
+.sm-card-1 .sm-card-horizontal img {
+  width: 50%;
+  flex: 1;
+}
+
+/* Feature cards */
+.sm-feature-card {
   border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sm-feature-card h2 {
+  margin-top: 0;
+}
+
+.sm-cta-card {
   padding: 1rem;
+}
+
+.sm-cta-card h2 {
+  background: linear-gradient(45deg, var(--primary), var(--secondary));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sm-cta-card p {
+  font-size: 1.2rem;
+}
+
+.sm-cta-card form {
+  margin-block-start: 2rem;
+}
+
+.sm-cta-card input {
+  border: 1px solid hsla(var(--secondary-hsl) / 0.5);
+  padding: 0.5em;
+  color: var(--secondary);
+  transition: border-color 0.3s;
+  border-radius: var(--radius);
+  width: 100%;
+}
+
+.sm-cta-card input:focus-visible {
+  border-color: var(--secondary);
+  outline: none;
+}
+
+.sm-cta-card input::placeholder {
+  color: var(--secondary);
+}
+
+.sm-tags-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sm-tags-card > * {
+  flex: 1;
+}
+
+.sm-tags-card h2 {
+  margin: 1rem;
+}
+
+.sm-tags-card a {
+  padding: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing);
+  border-bottom: 1px solid var(--surface-dark);
+  color: var(--element-light);
+  transition: background-color 0.1s, color 0.1s;
+}
+
+.sm-tags-card a:first-of-type {
+  border-top: 1px solid var(--surface-dark);
+}
+
+.sm-tags-card a:last-child {
+  border-bottom: none;
+}
+
+.sm-tags-card span {
+  float: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.sm-tags-card a:hover {
+  background-color: var(--secondary);
   color: var(--surface-light);
+}
+
+.sm-tags-card a:nth-of-type(2):hover {
+  background-color: hsla(var(--secondary-hsl) / 0.75);
+}
+
+.sm-tags-card a:nth-of-type(3):hover {
+  background-color: hsla(var(--secondary-hsl) / 0.5);
+  color: var(--element);
+}
+
+.sm-tags-card a:nth-of-type(4):hover {
+  background-color: hsla(var(--secondary-hsl) / 0.25);
+  color: var(--element);
+}
+
+.sm-tags-card a:nth-of-type(5):hover {
+  background-color: hsla(var(--secondary-hsl) / 0.05);
+  color: var(--element);
 }

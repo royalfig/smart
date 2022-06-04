@@ -9,5 +9,9 @@
 /* Layout */
 @import './layout/grid.css';
 
+/* Pages */
+@import './pages/home.css';
+
 /* Components */
 @import './components/card.css';
+@import './components/button.css';

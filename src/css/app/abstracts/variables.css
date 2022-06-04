@@ -4,23 +4,51 @@
 @custom-media --desktop (min-width: 82rem);
 
 :root {
-  --primary: hsl(127, 9%, 41%);
-  --primary-light: hsl(127, 9%, 51%);
-  --primary-dark: hsl(127, 9%, 31%);
-  --seconary: hsl(134, 12%, 49%);
+  /* Color */
+  --primary: hsl(216, 85%, 34%);
+  --primary-light: hsl(216, 85%, 54%);
+  --primary-dark: hsl(216, 85%, 14%);
+  --secondary: hsl(343, 100%, 32%);
+  --secondary-hsl: 343 100% 32%;
   --tertiary: hsl(47, 42%, 89%);
   --quaternary: hsl(34, 15%, 78%);
 
-  --surface: hsl(127, 1%, 98%);
-  --surface-light: hsl(0, 0%, 100%);
-  --surface-dark: hsl(127, 1%, 89%);
+  --surface: hsl(225, 20%, 96%);
+  --surface-light: hsl(225, 20%, 100%);
+  --surface-dark: hsl(225, 20%, 89%);
+  --surface-darker: hsl(255, 20%, 82%);
 
-  --element: hsl(127, 1%, 11%);
-  --element-light: hsl(127, 1%, 44%);
-  --element-dark: hsl(127, 1%, 5%);
+  --element: hsl(220, 23%, 5%);
+  --element-hsl: 220 23% 5%;
+  --element-light: hsl(220, 23%, 35%);
+  --element-light-hsl: 220, 23%, 35%;
+  --element-dark: hsl(220, 23%, 1%);
 
-  --radius: 1em;
+  /* Space */
+  --radius: 0.5em;
   --gap: 1rem;
+  --width: 62rem;
+  --content-width: 45rem;
+
+  /* Type */
+  --letter-spacing: 0.2px;
+  --h1: 2.488rem;
+  --h2: 2.074rem;
+  --h3: 1.728rem;
+  --h4: 1.44rem;
+  --h5: 1.2rem;
+  --h6: 1rem;
+  --small: 0.833rem;
+  --x-small: 0.694rem;
+  --xx-small: 0.579rem;
+  --button-padding: 0.25em 0.5em;
+
+  --box-shadow: 2.8px 2.8px 2.2px hsla(var(--element-hsl) / 0.02),
+    6.7px 6.7px 5.3px hsla(var(--element-hsl) / 0.028),
+    12.5px 12.5px 10px hsla(var(--element-hsl) / 0.035),
+    22.3px 22.3px 17.9px hsla(var(--element-hsl) / 0.042),
+    41.8px 41.8px 33.4px hsla(var(--element-hsl) / 0.05),
+    100px 100px 80px hsla(var(--element-hsl) / 0.07);
 }
 
 @media (--laptop) {

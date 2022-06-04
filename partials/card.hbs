@@ -1,20 +1,31 @@
-<article class="sm-card  {{slug}}">
-    <a class="sm-card__link" href="{{url}}" aria-label="{{title}}">
-        <div class="sm-card__img-container {{visibility}}">
-            {{#if feature_image}}
-            <img class="sm-card__img {{^if featured}}lazyload{{/if}}" {{^if featured}}data-{{/if}}srcset="{{img_url feature_image size="s"}} 300w,
-            {{img_url feature_image size="m"}} 600w" {{^if featured}}data-{{/if}}sizes="(max-width: 640px) 90vw,
-            600px" {{^if featured}}data-{{/if}}src="{{img_url feature_image size="m"}}" alt="{{title}}" width="1920" height="1080" />
-            {{else}}
-            <div class="sm-card__no-img"></div>
-            {{/if}}
-        </div>
-        <div class="sm-card__body">
-            <p class="sm-card__date" datetime="{{date format='YYYY-MM-DD'}}">{{date format='MMMM DD, YYYY'}}</p>
-            <h3 class="sm-card__title">{{title}}</h3>
-            {{#primary_tag}}
-            <p class="sm-tag {{slug}}">{{name}}</p>
-            {{/primary_tag}}
-        </div>
+<article class="sm-card sm-card-{{@number}} {{slug}}">
+    <a class="sm-card-link {{#if horizontal}}sm-card-horizontal{{/if}}" href="{{url}}" aria-label="{{title}}">
+        {{#if horizontal}}
+            {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
+            <div class="sm-card-body">
+                <div>
+                    <h2 class="sm-title {{^if feature_image}}large{{/if}} {{#if premiere}}large{{/if}}">{{title}}</h2>
+                    {{#if excerpt}}{{^if premiere}}{{^if feature_image}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}{{/if}}
+                    {{#if premiere}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}{{/if}}
+                </div>
+                <div class="sm-card-footer">
+                    {{#if primary_tag}}<p class="sm-tag">{{primary_tag.name}}</p>{{/if}}
+                    <p class="sm-reading-time">{{reading_time}}</p>
+                </div>
+            </div>
+        {{else}}
+            <div>
+                {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
+                <div class="sm-card-body">
+                    <h2 class="sm-title {{^if feature_image}}large{{/if}}">{{title}}</h2>
+                    {{^if feature_image}}<p class="sm-excerpt">{{excerpt}}</p>{{/if}}
+                </div>
+            </div>
+            
+            <div class="sm-card-footer sm-card-body">
+                {{#if primary_tag}}<p class="sm-tag {{primary_tag.slug}}">{{primary_tag.name}}</p>{{/if}}
+                <p class="sm-reading-time">{{reading_time}}</p>
+            </div>
+        {{/if}}
     </a>
 </article>
