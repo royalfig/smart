@@ -15,6 +15,7 @@
 
 .sm-overflow-button svg {
   height: 1em;
+  width: 1em;
   transform: translateY(0.125rem);
   fill: var(--element);
 }
@@ -25,14 +26,23 @@
   left: 50%;
   z-index: 20;
   display: none;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
+
   background-color: var(--surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   box-shadow: var(--box-shadow);
   transform: translate(-50%, 0);
+}
+
+.sm-overflow-menu > div {
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.sm-overflow-buttons {
+  display: flex;
 }
 
 .sm-overflow-button:hover {
@@ -51,15 +61,40 @@
   transform: translate(-50%, -100%);
 }
 
-.sm-show {
-  display: flex;
-  gap: 1rem;
-}
-
 [data-color-pref='light'] .sm-light-mode {
   display: none;
 }
 
 [data-color-pref='dark'] .sm-dark-mode {
+  display: none;
+}
+
+/* Follow */
+.sm-overflow-follow,
+.sm-overflow-share {
+  display: none;
+}
+
+.sm-overflow-back {
+  position: absolute;
+  top: 0.5em;
+  left: -0.5em;
+  transform: translate(-100%, 50%);
+  background-color: var(--surface-light);
+  padding: 0.25em;
+  border-radius: 50%;
+  line-height: 1;
+}
+
+.sm-overflow-back svg {
+  height: 1.1rem;
+  width: 1.1rem;
+}
+
+.sm-show {
+  display: flex;
+}
+
+.sm-hide {
   display: none;
 }

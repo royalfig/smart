@@ -25,19 +25,6 @@
   border: 1px solid var(--border-color);
 }
 
-.sm-cta-card,
-.home-template .sm-grid:nth-child(2) .sm-card {
-  /* border-color: var(--surface-darker);  */
-}
-
-.sm-card .sm-tag {
-  background-color: var(--surface-darker);
-}
-
-.home-template .sm-grid:nth-child(2) .sm-tag {
-  background-color: var(--surface-darker);
-}
-
 .sm-card img {
   width: 100%;
   aspect-ratio: 4 / 3;

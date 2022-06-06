@@ -10,7 +10,7 @@
 }
 
 .sm-button {
-  color: var(--surface-light);
+  color: var(--button-text);
   background-color: var(--primary);
 }
 
@@ -38,4 +38,5 @@
   width: 1em;
   height: 1em;
   margin-inline-end: 1em;
+  fill: var(--element);
 }

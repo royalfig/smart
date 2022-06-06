@@ -14,8 +14,6 @@
   gap: var(--gap);
   grid-column: 3 / 4;
   padding: 6rem 0;
-
-
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: auto;
 }
@@ -24,21 +22,18 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 
   grid-template-areas:
-  'card-1 card-1 card-1 card-1'
-  'card-2 card-2 card-3 card-3'
-  'card-4 card-4 card-5 card-5';
+    'card-1 card-1 card-1 card-1'
+    'card-2 card-2 card-3 card-3'
+    'card-4 card-4 card-5 card-5';
 }
 
 .sm-card-1 {
   grid-area: card-1;
 }
 
-
-
 .sm-card-2 {
   grid-area: card-2;
 }
-
 
 .sm-card-3 {
   grid-area: card-3;
@@ -52,7 +47,6 @@
 }
 
 .sm-grid-feature-left {
-
   grid-template-areas:
     'feature card-6 card-6'
     'feature card-7 card-7'
@@ -60,7 +54,6 @@
 }
 
 .sm-grid-feature-right {
-
   grid-template-areas:
     'card-11 card-11 feature'
     'card-12 card-12 feature'
@@ -74,7 +67,7 @@
 .sm-card-6 {
   grid-area: card-6;
 }
-.sm-card-7  {
+.sm-card-7 {
   grid-area: card-7;
 }
 .sm-card-8 {
@@ -101,4 +94,3 @@
 .sm-card-15 {
   grid-area: card-15;
 }
-
