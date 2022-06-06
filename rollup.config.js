@@ -14,22 +14,23 @@ const postcssConfig = postcss({
   sourceMap: true,
   plugins: [
     atImport,
-    postcssPresetEnv({ features: { 'nesting-rules': true } }),
-    process.env.NODE_ENV === 'production' && cssnano({ preset: 'default' }),
+    postcssPresetEnv({
+      features: { 'custom-properties': false },
+    }),
+    process.env.NODE_ENV === 'production' && cssnano(),
   ],
 });
 
 const plugins = [
   nodeResolve(),
   process.env.NODE_ENV === 'production' &&
-    babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
+  babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
   process.env.NODE_ENV === 'production' && terser(),
   replace({
     ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
     'process.env.NODE_ENV': JSON.stringify('production'),
     preventAssignment: true,
   }),
-  postcssConfig,
 ];
 
 export default [
@@ -40,12 +41,21 @@ export default [
       format: 'iife',
       sourcemap: true,
     },
-    plugins,
+    plugins: [...plugins, postcssConfig],
   },
   {
     input: 'src/js/post/index.js',
     output: {
       file: 'assets/built/post.js',
+      format: 'iife',
+      sourcemap: true,
+    },
+    plugins,
+  },
+  {
+    input: 'src/js/generateColorPalette.js',
+    output: {
+      file: 'assets/built/generateColorPalette.js',
       format: 'iife',
       sourcemap: true,
     },

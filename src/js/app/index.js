@@ -1,22 +1,16 @@
 import '../../css/app/index.css';
 
-// import setTabIndex from './setTabIndex';
-// import colorMode from './colorModeToggle';
-// import grid from './grid';
-// import copyInit from './copy';
-// import modalFn from './modal';
-import { getPosts } from './search';
-// import 'lazysizes';
-
-// setTabIndex();
-// grid();
-// copyInit();
-// colorMode();
-// modalFn();
+import launchModal from './launchModal';
+import { determineColorModeSupport } from './colorModeToggle';
 
 // eslint-disable-next-line no-undef
-if (typeof SEARCH_API !== 'undefined') {
-  // search();
+if (ENV === 'development') {
+    const script = document.createElement('script');
+    script.src = `http://${(location.host || 'localhost').split(':')[0]
+        }:35729/livereload.js?snipver=1`;
+    document.head.append(script);
+    console.info('Reload script added');
 }
 
-getPosts();
+launchModal();
+determineColorModeSupport();

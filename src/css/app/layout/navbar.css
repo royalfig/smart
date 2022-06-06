@@ -1,0 +1,83 @@
+.sm-navbar-container {
+  position: relative;
+  position: fixed;
+  z-index: 10;
+  width: 100%;
+
+  background-color: var(--surface-85);
+  border-bottom: 1px solid var(--border-color);
+  backdrop-filter: blur(25px);
+}
+
+.sm-navbar {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  grid-column: 3/4;
+}
+
+.sm-navbar button {
+  box-sizing: content-box;
+  font-size: var(--small);
+  line-height: 1;
+}
+
+.sm-navbar button:not(.sm-overflow-button) svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--element);
+}
+
+.sm-navbar-left {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+}
+
+.sm-site-title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.sm-navigation-container {
+  display: flex;
+  gap: 0.25rem;
+  align-items: flex-end;
+}
+
+.sm-navigation {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+.sm-navigation-item {
+  position: relative;
+  font-size: var(--small);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+}
+
+.sm-navigation-item a::before {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background-color: var(--primary);
+  border-radius: var(--radius);
+  transition: clip-path 0.3s;
+  clip-path: inset(0 100% 0 0);
+}
+
+.sm-navigation-item a:hover::before {
+  clip-path: inset(0 0 0 0);
+}
+
+.sm-navbar-right {
+  display: flex;
+  gap: 1rem;
+}

@@ -1,4 +1,4 @@
-import '../../scss/post.scss';
+import '../../css/post/index.css';
 
 import initMediumZoom from './medium_zoom';
 import fluidvids from './fluidvids';

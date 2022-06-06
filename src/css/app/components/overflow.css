@@ -1,0 +1,65 @@
+.sm-overflow-container {
+  position: relative;
+  line-height: 1;
+}
+
+.sm-overflow-button {
+  box-sizing: content-box;
+  /* transform: translateY(1px); */
+  width: 1rem;
+  height: 1rem;
+  padding: 0.25rem;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.sm-overflow-button svg {
+  height: 1em;
+  transform: translateY(0.125rem);
+  fill: var(--element);
+}
+
+.sm-overflow-menu {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  z-index: 20;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  transform: translate(-50%, 0);
+}
+
+.sm-overflow-button:hover {
+  background-color: var(--border-color);
+}
+
+.sm-overflow-menu::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  pointer-events: none;
+  content: '';
+  border-color: transparent transparent var(--border-color) transparent;
+  border-style: solid;
+  border-width: 0.5rem;
+  transform: translate(-50%, -100%);
+}
+
+.sm-show {
+  display: flex;
+  gap: 1rem;
+}
+
+[data-color-pref='light'] .sm-light-mode {
+  display: none;
+}
+
+[data-color-pref='dark'] .sm-dark-mode {
+  display: none;
+}

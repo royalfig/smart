@@ -2,24 +2,19 @@
  * Color mode toggle
  */
 
-const toggleColorBtns = document.querySelectorAll('.sm-color-mode-btn');
+export function toggleColorMode(color) {
+  document.documentElement.setAttribute('data-color-pref', color);
+  localStorage.setItem('pref', color);
+}
 
-export default function setColorMode() {
-  if (window.CSS && CSS.supports('color', 'var(--primary)')) {
-    const toggleColorMode = (e) => {
-      if (e.currentTarget.classList.contains('light')) {
-        document.documentElement.setAttribute('color-mode', 'light');
-        localStorage.setItem('pref', 'light');
-        return;
-      }
-      document.documentElement.setAttribute('color-mode', 'dark');
-      localStorage.setItem('pref', 'dark');
-    };
-    toggleColorBtns.forEach((btn) => {
-      btn.addEventListener('click', toggleColorMode);
-    });
-  } else {
-    toggleColorBtns.forEach((e) => {
+export function determineColorModeSupport() {
+  const colorPrefButtons = document.querySelectorAll('.sm-dark-mode, .sm-light-mode');
+
+  const hasSupport = window.CSS && CSS.supports('color', 'var(--primary)');
+
+  // If the browser doesn't support custom settings, hide buttons
+  if (!hasSupport) {
+    colorPrefButtons.forEach((e) => {
       e.style.display = 'none';
     });
   }

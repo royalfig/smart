@@ -23,8 +23,10 @@ into the {body} of the default.hbs template --}}
             {{#if @site.icon}}
                 <img src="{{img_url @site.icon}}">
             {{/if}}
-            <h2>Don't miss out</h2>
-            <p>Sign up for the newsletter</p>
+            <div class="sm-cta-copy">
+                <h2>Don't miss out</h2>
+                <p>Sign up for the newsletter</p>
+            </div>
 
             <form action="post">
                 <input type="email" placeholder="email">

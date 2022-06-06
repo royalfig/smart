@@ -23,8 +23,12 @@ ul {
   list-style-position: inside;
 }
 
-input, textarea, button {
-  font-size: inherit;
+input,
+ textarea,
+ button {
   font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   border: none;
+
 }

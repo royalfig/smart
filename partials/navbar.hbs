@@ -1,69 +1,39 @@
-{{!-- Navbar --}}
-<nav class="sm-navbar" aria-label="Main navbar">
-    {{!-- Navbar top  --}}
-    <div class="sm-navbar__top">
-        <div class="sm-navbar__top--left">
-            <a class="sm-navbar__brand--serif" href="{{@site.url}}" aria-labelledby="sm-site-title">
-                {{#if @site.icon}}<img src="{{@site.icon}}" alt="">{{/if}}
-                <p class="{{#is "home"}}sm-site-title{{/is}}" id="sm-site-title">{{@site.title}}</p>
-            </a>
-            
-        </div>
-        <div class="sm-navbar__top--right">
-            <button class="sm-color-mode-btn light" aria-label="Toggle light mode">
-                <svg aria-hidden="true">
-                    <use href="#sun"></use>
-                </svg>
-            </button>
-            <button class="sm-color-mode-btn dark" aria-label="Toggle dark mode">
-                <svg aria-hidden="true">
-                    <use href="#moon"></use>
-                </svg>
-            </button>
-            
-            <button class="sm-navbar__search" id="sm-search-btn" data-target="sm-search-modal" data-tt="Search"
-                aria-label="Search {{@site.title}}">
-                <svg aria-hidden="true">
-                    <use href="#search"></use>
-                </svg>
-            </button>
-        </div>
-    </div>
+{{!-- Navigation bar --}}
+<div class="sm-grid sm-navbar-container">
 
-    <div class="sm-navbar__divider"></div>
-        
-    {{!-- Navbar bottom --}}
-    <div class="sm-navbar__bottom">
-        <div class="sm-navbar__bottom--left">
-            
-        </div>
-
-        {{!-- Mobile Hamburger Menu  --}}
-        <div class="sm-navbar__bottom--right--mobile">
-            <button class="sm-navbar__hamburger-btn" id="sm-menu-btn" data-target="sm-menu" aria-label="menu">
-                <svg aria-hidden="true">
-                    <use href="#menu-icon"></use>
-                </svg>
-            </button>
-        </div>
-
-        {{!-- If the site has links, they appear below  --}}
-        {{#if @site.navigation}}
-        <div class="sm-navbar__bottom--center">
-            {{navigation}}
-        </div>
-        {{/if}}
-        
-        {{!-- Member functionality --}}
-        {{#if @custom.memberships}}
-        <div class="sm-navbar__bottom--right sm-members">
-            {{#if @member}}
-            <a href="#/portal/account" class="sm-navbar__signup">Account</a>
+    <header class="sm-navbar">
+        <div class="sm-navbar-left">
+            {{#is "home"}}
+            <h1 class="sm-site-title">{{@site.title}}</h1>
             {{else}}
-            <a href="#/portal/signin" class="sm-navbar__signin">Sign In</a>
-            <a href="#/portal/signup" class="sm-navbar__signup">Sign Up</a>
-            {{/if}}
+            <p class="sm-site-title">{{@site.title}}</p>
+            {{/is}}
+
+            <div class="sm-navigation-container">
+                {{navigation}}
+                <div class="sm-overflow-container">
+                    <button class="sm-overflow-button" aria-label="Overflow menu">
+                        <svg viewBox="0 0 24 24">
+                            <path fill="none" d="M0 0h24v24H0z" />
+                            <path
+                                d="M12 3c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
+                        </svg>
+                    </button>
+
+                    {{> "overflow"}}
+                </div>
+            </div>
+
+
         </div>
-        {{/if}}
-    </div>
-</nav>
+        <div class="sm-navbar-right">
+            <button><svg viewBox="0 0 24 24">
+                    <path fill="none" d="M0 0h24v24H0z" />
+                    <path
+                        d="M11 2c4.968 0 9 4.032 9 9s-4.032 9-9 9-9-4.032-9-9 4.032-9 9-9zm0 16c3.867 0 7-3.133 7-7 0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7zm8.485.071l2.829 2.828-1.415 1.415-2.828-2.829 1.414-1.414z" />
+                </svg></button>
+            {{^if @member}}<button class="sm-button" data-portal="signup">Subscribe</button>{{else}}<button
+                class="sm-button" data-portal="account">My Account</button>{{/if}}
+        </div>
+    </header>
+</div>

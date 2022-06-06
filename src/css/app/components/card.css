@@ -1,14 +1,14 @@
 .sm-card {
-  border-radius: var(--radius);
   /* max-width: 600px; */
   position: relative;
   overflow: hidden;
+  border-radius: var(--radius);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .sm-card:hover {
   box-shadow: var(--box-shadow);
-  transform: translate(-4px, -5px);
+  transform: translate(0, -4px);
 }
 
 .sm-card-link {
@@ -22,15 +22,19 @@
 .sm-card,
 .sm-tags-card,
 .sm-cta-card {
-  border: 1px solid var(--surface-dark);
+  border: 1px solid var(--border-color);
 }
 
-.home-template .sm-card,
-.sm-cta-card {
-  border-color: var(--surface-darker);
+.sm-cta-card,
+.home-template .sm-grid:nth-child(2) .sm-card {
+  /* border-color: var(--surface-darker);  */
 }
 
-.home-template .sm-tag {
+.sm-card .sm-tag {
+  background-color: var(--surface-darker);
+}
+
+.home-template .sm-grid:nth-child(2) .sm-tag {
   background-color: var(--surface-darker);
 }
 
@@ -45,10 +49,10 @@
 }
 
 .sm-card h2 {
+  margin: 0;
   font-size: 2rem;
 
   line-height: 1.1;
-  margin: 0;
 }
 
 .sm-card h2:not(.large) {
@@ -72,14 +76,14 @@
 }
 
 .sm-card .sm-tag {
+  display: inline-block;
+  padding: 0 0.75em;
   font-size: var(--small);
+  color: var(--element-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  padding: 0 0.75em;
   background-color: var(--surface-dark);
-  color: var(--element-light);
   border-radius: var(--radius);
-  display: inline-block;
 }
 
 .sm-card .sm-reading-time {
@@ -92,8 +96,8 @@
 }
 
 .sm-card-horizontal > .sm-card-body {
-  flex: 1;
   display: flex;
+  flex: 1;
   flex-direction: column;
   justify-content: space-between;
 }
@@ -107,18 +111,13 @@
 }
 
 .sm-card-1 .sm-card-horizontal img {
-  width: 50%;
   flex: 1;
-}
-
-.sm-card-1 .sm-excerpt {
-  font-size: 1.15rem;
+  width: 50%;
 }
 
 /* Feature cards */
 .sm-feature-card {
   border-radius: var(--radius);
-  overflow: hidden;
 }
 
 .sm-feature-card h2 {
@@ -127,19 +126,31 @@
 
 /* CTA */
 .sm-cta-card {
-  padding: 1rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 1.5rem 1rem;
+  text-align: center;
 }
 
 .sm-cta-card img {
-  max-width: 12.5rem;
+  position: absolute;
+  top: 0;
+  left: 50%;
   display: block;
+  width: 6.5rem;
+  height: 6.5rem;
+  transform: translate(-50%, -50%);
   margin-inline: auto;
 }
 
+.sm-cta-copy {
+  margin-block-start: 2.5rem;
+}
+
 .sm-cta-card h2 {
+  margin: 0 0 0.5rem;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -150,29 +161,32 @@
 }
 
 .sm-cta-card form {
-  margin-block-start: 2rem;
+  margin-block-start: 1rem;
 }
 
 .sm-cta-card input {
-  border: 1px solid hsla(var(--secondary-hsl) / 0.5);
-  padding: 0.5em;
-  color: var(--secondary);
-  transition: border-color 0.3s;
-  border-radius: var(--radius);
+  /* border-radius: var(--radius); */
   width: 100%;
+  padding: 0.5em;
+  text-align: center;
+  background-color: transparent;
+  border-bottom: 3px solid var(--border-color);
+
+  transition: border-color 0.3s;
 }
 
 .sm-cta-card input:focus-visible {
-  border-color: var(--secondary);
+  border-color: var(--element);
   outline: none;
 }
 
 .sm-cta-card input::placeholder {
-  color: var(--secondary);
+  color: hsla(var(--element-hsl) / 0.5);
+  text-align: center;
 }
 
 .sm-cta-card button {
-  margin-top: 1rem;
+  margin-block-start: 2rem;
 }
 
 /* Tags */
@@ -181,23 +195,25 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
 }
 
 .sm-tags-card > * {
   flex: 1;
 }
 
+/* Tags card */
 .sm-tags-card h2 {
   margin: 1rem;
 }
 
 .sm-tags-card a {
   padding: 1rem;
-  text-transform: uppercase;
   font-weight: 700;
+  color: var(--element-light);
+  text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
   border-bottom: 1px solid var(--surface-dark);
-  color: var(--element-light);
   transition: background-color 0.1s, color 0.1s;
 }
 
@@ -215,8 +231,8 @@
 }
 
 .sm-tags-card a:hover {
-  background-color: var(--secondary);
   color: var(--surface-light);
+  background-color: var(--secondary);
 }
 
 .sm-tags-card a:nth-of-type(2):hover {
@@ -224,16 +240,16 @@
 }
 
 .sm-tags-card a:nth-of-type(3):hover {
-  background-color: hsla(var(--secondary-hsl) / 0.5);
   color: var(--element);
+  background-color: hsla(var(--secondary-hsl) / 0.5);
 }
 
 .sm-tags-card a:nth-of-type(4):hover {
-  background-color: hsla(var(--secondary-hsl) / 0.25);
   color: var(--element);
+  background-color: hsla(var(--secondary-hsl) / 0.25);
 }
 
 .sm-tags-card a:nth-of-type(5):hover {
-  background-color: hsla(var(--secondary-hsl) / 0.05);
   color: var(--element);
+  background-color: hsla(var(--secondary-hsl) / 0.05);
 }

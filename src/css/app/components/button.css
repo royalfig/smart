@@ -1,9 +1,41 @@
+.sm-button,
+.sm-icon-button {
+  padding: var(--button-padding);
+  font-size: var(--small);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  border-radius: var(--radius);
+}
+
 .sm-button {
-    text-transform: uppercase;
-    font-size: var(--small);
-    border-radius: var(--radius);
-    background-color: var(--primary);
-    color: var(--surface-light);
-    letter-spacing: var(--letter-spacing);
-    padding: var(--button-padding);
+  color: var(--surface-light);
+  background-color: var(--primary);
+}
+
+.sm-icon-button {
+  --alpha: 0.5;
+  display: flex;
+  align-items: center;
+  color: var(--element);
+  text-align: center;
+  white-space: nowrap;
+  background-color: hsla(
+    var(--primary-h) var(--saturation) var(--lightness) / 0.15
+  );
+  transition: background-color 0.3s;
+  gap: 1em;
+}
+
+.sm-icon-button:hover {
+  background-color: hsla(
+    var(--primary-h) var(--saturation) var(--saturation) / 0.25
+  );
+}
+
+.sm-icon-button svg {
+  width: 1em;
+  height: 1em;
+  margin-inline-end: 1em;
 }

@@ -1,15 +1,11 @@
 {{^if isSecondary}}
-<ul class="sm-navigation__ul" role="menu">
-    {{#foreach navigation}}<li class="sm-navigation__li" role="menuitem">
+<ul class="sm-navigation" role="menu">
+    {{#foreach navigation}}<li class="sm-navigation-item" role="menuitem">
         <a href="{{url}}" class="sm-link {{slug}} {{#if current}}sm-nav-current{{/if}}">{{label}}</a>
     </li>{{/foreach}}
 </ul>
 {{else}}
 {{#foreach navigation}}
-<a class="sm-navigation__social-media-item {{slug}}" href="{{url}}" aria-label="{{label}}">
-    <svg aria-hidden="true">
-        <use href="#{{slug}}"></use>
-    </svg>
-</a>
+
 {{/foreach}}
 {{/if}}

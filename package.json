@@ -17,10 +17,12 @@
   },
   "scripts": {
     "dev": "NODE_ENV=development npx rollup -c",
-    "watch": "NODE_ENV=development npx rollup -c -w",
+    "watch": "npm run reload &NODE_ENV=development npx rollup -c -w",
     "build": "NODE_ENV=production npx rollup -c",
     "zip": "npm run build && node zip",
-    "check": "gscan smart.zip -z"
+    "check": "gscan smart.zip -z",
+    "css": "npx stylelint 'src/css/**/*.css' --fix",
+    "reload": "cd utils && node reload"
   },
   "keywords": [
     "ghost-theme",
@@ -36,10 +38,12 @@
     "@rollup/plugin-replace": "^4.0.0",
     "adm-zip": "^0.5.9",
     "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.11",
     "eslint": "^8.16.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.26.0",
     "gscan": "^4.30.0",
+    "livereload": "^0.9.3",
     "minisearch": "^5.0.0-beta2",
     "postcss": "^8.4.14",
     "rollup": "^2.74.1",
@@ -85,18 +89,17 @@
       "search": {
         "type": "text"
       },
+      "color_mode": {
+        "type": "select",
+        "options": [
+          "light",
+          "dark"
+        ],
+        "default": "dark"
+      },
       "disqus": {
         "type": "text",
         "group": "post"
-      },
-      "header": {
-        "type": "select",
-        "options": [
-          "small",
-          "large"
-        ],
-        "default": "large",
-        "group": "homepage"
       },
       "color_scheme": {
         "type": "select",
@@ -109,18 +112,10 @@
         ],
         "default": "smart"
       },
-      "memberships": {
-        "type": "boolean",
-        "default": true
-      },
       "syntax_highlighting": {
         "type": "boolean",
         "default": false,
         "group": "post"
-      },
-      "custom_section": {
-        "type": "text",
-        "group": "homepage"
       },
       "social_media_1": {
         "type": "select",

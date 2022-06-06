@@ -1,33 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" color-mode="dark">
+<html lang="{{@site.locale}}" data-color-pref="{{@custom.color_mode}}" data-accent-color="{{@site.accent_color}}">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{meta_title}}</title>
-    
-    {{!-- CSS and Fonts  --}}
+
+    {{!-- CSS and Fonts --}}
     <link rel="dns-prefetch" href="//fonts.googleapis.com/">
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap">
 
     {{#if @site.cover_image}}
-        {{#is "home"}}
+    {{#is "home"}}
     <link rel="preload" as="image" href="{{img_url @site.cover_image size='s'}}" media="(max-width: 299px)">
-    <link rel="preload" as="image" href="{{img_url @site.cover_image size='m'}}" media="(min-width: 300px) and (max-width: 739px)">
-    <link rel="preload" as="image" href="{{img_url @site.cover_image size='l'}}" media="(min-width: 740px) and (max-width: 1023px)">
+    <link rel="preload" as="image" href="{{img_url @site.cover_image size='m'}}"
+        media="(min-width: 300px) and (max-width: 739px)">
+    <link rel="preload" as="image" href="{{img_url @site.cover_image size='l'}}"
+        media="(min-width: 740px) and (max-width: 1023px)">
     <link rel="preload" as="image" href="{{img_url @site.cover_image size='xl'}}" media="(min-width: 1024px)">
-        {{/is}}
+    {{/is}}
     {{/if}}
 
 
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
     </noscript>
 
-    {{!-- {{> "color_scheme"}} --}}
 
     <style>
         @font-face {
@@ -76,20 +79,30 @@
         }
     </style>
 
-    {{!-- Load scripts to execute before render --}}
+    {{! Load scripts to execute before render }}
     <script>
+        const colorModePref = document.documentElement.dataset.colorPref;
+
+        const colorModePrefOpposite = colorModePref === 'dark' ? 'light' : 'dark'
+
         if (
-            localStorage.getItem('pref') === 'light' ||
-            (window.matchMedia('(prefers-color-scheme: light)').matches &&
+            localStorage.getItem('pref') === colorModePrefOpposite ||
+            (window.matchMedia(`(prefers-color-scheme: ${colorModePrefOpposite})`).matches &&
                 !localStorage.getItem('pref'))
         ) {
-            document.documentElement.setAttribute('color-mode', 'light');
+            document.documentElement.setAttribute('data-color-pref', colorModePrefOpposite);
         }
 
-        const SEARCH_API = "{{@custom.search}}"
+        {{!-- const SEARCH_API = "{{@custom.search}}" --}}
+    </script>
+    <script src="{{asset 'built/generateColorPalette.js'}}"></script>
+    <script>
+        const accentColor = "{{@site.accent_color}}"
+        
     </script>
 
-    
+    {{!-- {{> "color_scheme"}} --}}
+
 
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
@@ -104,15 +117,17 @@
 </head>
 
 <body class="{{body_class}}">
-    
+
+    {{> "navbar"}}
+
     <main id="sm-main">
         {{{body}}}
-    </main>    
-        
+    </main>
 
-   
+
+
     {{!-- Ghost footer required, right before the closing body tag --}}
     {{ghost_foot}}
 </body>
 
-</html>
+</html>{{log @site.accent_color}}
