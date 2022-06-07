@@ -1,0 +1,31 @@
+.sm-footer-container {
+  background-color: var(--surface-dark);
+  gap: 1rem var(--gap);
+}
+
+.sm-footer {
+  display: grid;
+  grid-column: 3 / 4;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: var(--gap) 0 0;
+  font-size: var(--small);
+  gap: 1rem var(--gap);
+}
+
+.sm-footer-title {
+  font-family: var(--heading-typeface);
+  font-weight: 700;
+}
+
+.sm-footer-secondary-navigation ul {
+  list-style: none;
+}
+
+.sm-footer-meta {
+  font-size: var(--x-small);
+  text-align: center;
+  grid-column: 3/4;
+  padding-block: 1rem;
+  border-top: 1px solid var(--border-color);
+  color: var(--element-light);
+}

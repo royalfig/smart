@@ -6,15 +6,19 @@
         
         {{#if primary_tag}}<p class="sm-post-tag"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
         <h1 class="sm-post-title">{{title}}</h1>
-        {{#if excerpt}}<p class="sm-post-excerpt">{{excerpt}}</p>{{/if}}
+        {{#if custom_excerpt}}<p class="sm-post-excerpt">{{custom_excerpt}}</p>{{/if}}
         <div class="sm-post-meta">
             <p>{{authors}} &mdash; <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></p>
             <p class="sm-post-reading-time">{{reading_time}}</p>
         </div>
         
+        {{#if feature_image}}
         <div class="sm-feature-image">
             <img src="{{img_url feature_image}}" alt="">
         </div>
+        {{else}}
+            <div class="sm-post-header-divider"></div>
+        {{/if}}
     </header>
 
     <article class="sm-post-content {{post_class}} {{slug}}">

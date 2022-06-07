@@ -14,8 +14,8 @@
 }
 
 .sm-overflow-button svg {
-  height: 1em;
   width: 1em;
+  height: 1em;
   transform: translateY(0.125rem);
   fill: var(--element);
 }
@@ -79,16 +79,16 @@
   position: absolute;
   top: 0.5em;
   left: -0.5em;
-  transform: translate(-100%, 50%);
-  background-color: var(--surface-light);
   padding: 0.25em;
-  border-radius: 50%;
   line-height: 1;
+  background-color: var(--surface-light);
+  border-radius: 50%;
+  transform: translate(-100%, 50%);
 }
 
 .sm-overflow-back svg {
-  height: 1.1rem;
   width: 1.1rem;
+  height: 1.1rem;
 }
 
 .sm-show {

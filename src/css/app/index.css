@@ -9,6 +9,7 @@
 /* Layout */
 @import './layout/grid.css';
 @import './layout/navbar.css';
+@import './layout/footer.css';
 
 /* Pages */
 @import './pages/home.css';

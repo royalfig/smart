@@ -132,10 +132,6 @@
   margin-inline: auto;
 }
 
-.sm-cta-copy {
-  margin-block-start: 2.5rem;
-}
-
 .sm-cta-card h2 {
   margin: 0 0 0.5rem;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
@@ -158,7 +154,7 @@
   text-align: center;
   background-color: transparent;
   border-bottom: 3px solid var(--border-color);
-
+  color: var(--element);
   transition: border-color 0.3s;
 }
 
@@ -168,8 +164,9 @@
 }
 
 .sm-cta-card input::placeholder {
-  color: hsla(var(--element-hsl) / 0.5);
+  color: var(--element-light);
   text-align: center;
+  opacity: 0.5;
 }
 
 .sm-cta-card button {
@@ -200,12 +197,12 @@
   color: var(--element-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  border-bottom: 1px solid var(--surface-dark);
+  border-bottom: 1px solid var(--border-color);
   transition: background-color 0.1s, color 0.1s;
 }
 
 .sm-tags-card a:first-of-type {
-  border-top: 1px solid var(--surface-dark);
+  border-top: 1px solid var(--border-color);
 }
 
 .sm-tags-card a:last-child {
@@ -218,25 +215,38 @@
 }
 
 .sm-tags-card a:hover {
-  color: var(--surface-light);
+  color: var(--surface);
   background-color: var(--secondary);
 }
 
+:root[data-color-pref='dark'] .sm-tags-card a:hover,
+:root[data-color-pref='dark'] .sm-tags-card a:nth-of-type(2):hover {
+  color: var(--element);
+}
+
 .sm-tags-card a:nth-of-type(2):hover {
-  background-color: hsla(var(--secondary-hsl) / 0.75);
+  background-color: hsla(
+    var(--complementary-color) var(--saturation) var(--lightness) / 0.75
+  );
 }
 
 .sm-tags-card a:nth-of-type(3):hover {
   color: var(--element);
-  background-color: hsla(var(--secondary-hsl) / 0.5);
+  background-color: hsla(
+    var(--complementary-color) var(--saturation) var(--lightness) / 0.5
+  );
 }
 
 .sm-tags-card a:nth-of-type(4):hover {
   color: var(--element);
-  background-color: hsla(var(--secondary-hsl) / 0.25);
+  background-color: hsla(
+    var(--complementary-color) var(--saturation) var(--lightness) / 0.25
+  );
 }
 
 .sm-tags-card a:nth-of-type(5):hover {
   color: var(--element);
-  background-color: hsla(var(--secondary-hsl) / 0.05);
+  background-color: hsla(
+    var(--complementary-color) var(--saturation) var(--lightness) / 0.05
+  );
 }

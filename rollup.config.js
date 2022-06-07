@@ -15,7 +15,10 @@ const postcssConfig = postcss({
   plugins: [
     atImport,
     postcssPresetEnv({
-      features: { 'custom-properties': false },
+      features: {
+        'custom-properties': false,
+        'logical-properties-and-values': false,
+      },
     }),
     process.env.NODE_ENV === 'production' && cssnano(),
   ],
@@ -24,7 +27,7 @@ const postcssConfig = postcss({
 const plugins = [
   nodeResolve(),
   process.env.NODE_ENV === 'production' &&
-  babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
+    babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
   process.env.NODE_ENV === 'production' && terser(),
   replace({
     ENV: JSON.stringify(process.env.NODE_ENV || 'production'),

@@ -5,7 +5,12 @@
     </li>{{/foreach}}
 </ul>
 {{else}}
+<ul class="sm-footer-navigation" role="menu">
 {{#foreach navigation}}
-
+    <li class="sm-footer-navigation-item" role="menuitem">
+            <a href="{{url}}" class="sm-link {{slug}} {{#if current}}sm-nav-current{{/if}}">{{label}}</a>
+    </li>
 {{/foreach}}
+</ul>
+
 {{/if}}
