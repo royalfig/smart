@@ -11,6 +11,7 @@
   --content-width: 45rem;
 
   /* Type */
+  --heading-typeface: 'Archivo', sans-serif;
   --letter-spacing: 0.2px;
   --h1: 2.488rem;
   --h2: 2.074rem;

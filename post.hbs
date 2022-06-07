@@ -1,246 +1,48 @@
-{{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
-
-{{#post}}
-
-{{!-- Post Header  --}}
-
-{{!-- Main  --}}
-<main class="sm-main" id="sm-main">
-    <div class="sm-outer-container">
-        <div class="sm-inner-container">
-            
-            {{> header-img}}
-            
-            <header class="sm-post__header">
-                    <h1 class="sm-post__title--serif">{{title}}</h1>
-                    <div class="sm-post__author">
-                        {{authors}} &middot;
-                        <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="MMM DD, YYYY"}}</time>
-                    </div>
-                        {{! Tags }}
-                        {{#if tags}}
-                    <div class="sm-post__tag-bar">
-                        {{#foreach tags}}
-                        <a href="{{url}}" class="sm-tag">{{name}}  </a>
-                        {{/foreach}}
-                    </div>
-
-                    <div class="sm-post__share">
-                    
-                    <span class="sm-post-share-bar__link">
-                                <svg aria-hidden="true">
-                                    <use href="#share"></use>
-                                </svg>
-                                </span>
-                                <a class="sm-post-share-bar__link--twitter" 
-                                href="https://twitter.com/share?url={{url absolute='true'}}&amp;text={{#if title}}{{title}}{{else}}{{name}}{{/if}}"
-                                aria-label="Share on Twitter" target="_blank" rel="noopener noreferrer">
-                                <svg>
-                                    <use href="#twitter"></use>
-                                </svg>
-                            </a>
-                            <a class="sm-post-share-bar__link--facebook" href="http://www.facebook.com/sharer.php?u={{url absolute='true'}}"
-                                aria-label="Share on Facebook" target="_blank" rel="noopener noreferrer">
-                                <svg>
-                                    <use href="#facebook"></use>
-                                </svg>
-                            </a>
-                            <a class="sm-post-share-bar__link--linkedin" data-tt="Share on LinkedIn"
-                                href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}"
-                                aria-label="Share on LinkedIn" target="_blank" rel="noopener noreferrer">
-                                <svg>
-                                    <use href="#linkedin"></use>
-                                </svg>
-                            </a>
-                            <button class="sm-post-share-bar__link--copy" aria-label="Copy to clipboard">
-                                <svg>
-                                    <use href="#copy"></use>
-                                </svg>
-                            </button> 
-                            </div>
-                    {{/if}}
-            </header>
-            
-            <article class="{{post_class}} sm-post">
-                <div class="sm-post__content">
-                    {{content}}
-                </div>
-            </article>
-            
-            <hr>
-
-            <footer class="sm-post-footer">
-                {{#has author="count:<2"}}
-                <h3 class="sm-post-footer__title-1">About the Author</h3>
-                {{else}}
-                <h3 class="sm-post-footer__title-1">About the Authors</h3>
-                {{/has}}
-                <h3 class="sm-post-footer__title-2">More to Read</h3>
-                {{#has author="count:<2"}}
-                {{#primary_author}}
-                <div class="sm-post-footer__author">
-                    <div class="sm-post-footer__author-img-container">
-                        <a href="{{url}}" class="sm-post-footer__author-img-link" aria-label="{{name}}">
-                            {{#if profile_image}}
-                            <img class="sm-post-footer__author-img" src="{{img_url profile_image size="s"}}"
-                                alt="{{name}}" />
-                            {{else}}
-                            <div class="sm-post-footer__no-author-img">
-                                <svg>
-                                    <use href="#user"/>
-                                </svg>
-                            </div>
-                            {{/if}}
-                        </a>
-                        <div>
-                            <a class="sm-post-footer__author-name" href="{{url}}">{{name}}</a>
-                            <div class="sm-post-footer__author-social">
-                                {{#if twitter}}
-                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
-                                    <svg>
-                                        <use href="#twitter"></use>
-                                    </svg>
-                                </a>
-                                {{/if}}
-                                {{#if facebook}}
-                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
-                                    <svg>
-                                        <use href="#facebook"></use>
-                                    </svg>
-                                </a>
-                                {{/if}}
-                                {{#if website}}
-                                <a class="website" href="{{website}}" aria-label="{{website}}">
-                                    <svg>
-                                        <use href="#website"></use>
-                                    </svg>
-                                </a>
-                                {{/if}}
-                            </div>
-                            {{#if location}}
-                            <div class="sm-post-footer__author-location">
-                                <svg aria-hidden="true">
-                                    <use href="#location"></use>
-                                </svg>
-                                <p>{{location}}</p>
-                            </div>
-                            {{/if}}
-                        </div>
-                    </div>
-                    {{#if bio}}
-                    <p>{{bio}}</p>
-                    {{/if}}
-                </div>
-                {{/primary_author}}
-                
-                {{! If multiple authors }}
-                {{else}}
-                <div class="sm-post-footer__author">
-                    {{#foreach authors}}
-                    <div class="sm-post-footer__author-img-container--authors">
-                        <a href="{{url}}" class="sm-post-footer__author-img-link" aria-label="{{name}}">
-                            {{#if profile_image}}
-                            <img class="sm-post-footer__author-img" src="{{img_url profile_image size="s"}}"
-                                alt="{{name}}" />
-                            {{else}}
-                            <div class="sm-post-footer__no-author-img">
-                            </div>
-                            {{/if}}
-                        </a>
-                        <div>
-                            <a class="sm-post-footer__author-name" href="{{url}}">{{name}}</a>
-                            <div class="sm-post-footer__author-social">
-                                {{#if twitter}}
-                                <a class="twitter" href="{{twitter_url}}" aria-label="Twitter">
-                                    <svg>
-                                        <use href="#twitter"></use>
-                                    </svg>
-                                </a>
-                                {{/if}}
-                                {{#if facebook}}
-                                <a class="facebook" href="{{facebook_url}}" aria-label="Facebook">
-                                    <svg>
-                                        <use href="#facebook"></use>
-                                    </svg>
-                                </a>
-                                {{/if}}
-                                {{#if website}}
-                                <a class="website" href="{{website}}" aria-label="{{website}}">
-                                    <svg>
-                                        <use href="#website"></use>
-                                    </svg>
-                                </a>
-                                {{/if}}
-                            </div>
-                            {{#if location}}
-                            <div class="sm-post-footer__author-location">
-                                <svg aria-hidden="true">
-                                    <use href="#location"></use>
-                                </svg>
-                                <p>{{location}}</p>
-                            </div>
-                            {{/if}}
-                        </div>
-                    </div>
-                    {{/foreach}}
-                </div>
-                {{/has}}
-                
-                {{#get "posts" include="tags" limit="2" filter="id:-{{id}}"}}
-                    {{#foreach posts}}
-                    <div class="sm-related-posts sm-related-posts-{{@number}}">
-                        {{> "card"}}
-                    </div>
-                    {{/foreach}}
-                {{/get}}
-
-            </footer>
-
-            {{#if @custom.disqus}}
-                <section class="sm-comments">
-                    <div id="disqus_thread"></div>
-                        <script>
-                            /*
-                            *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-                            *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
-                            
-                            var disqus_config = function () {
-                            this.page.url = "{{@site.url}}/{{slug}}";  // Replace PAGE_URL with your page's canonical URL variable
-                            this.page.identifier = "ghost-{{comment_id}}"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-                            };
-                            
-
-                            (function() { // DON'T EDIT BELOW THIS LINE
-                            var d = document, s = d.createElement('script');
-                            s.src = '{{@custom.disqus}}';
-                            s.setAttribute('data-timestamp', +new Date());
-                            (d.head || d.body).appendChild(s);
-                            })();
-                        </script>
-                        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                </section>
-            {{/if}}
+{{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
+    --}} 
+{{#post}} 
+<div class="sm-grid">
+    <header class="sm-post-header">
+        
+        {{#if primary_tag}}<p class="sm-post-tag"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
+        <h1 class="sm-post-title">{{title}}</h1>
+        {{#if excerpt}}<p class="sm-post-excerpt">{{excerpt}}</p>{{/if}}
+        <div class="sm-post-meta">
+            <p>{{authors}} &mdash; <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></p>
+            <p class="sm-post-reading-time">{{reading_time}}</p>
         </div>
-    </div>
-</main>
-{{/post}}
+        
+        <div class="sm-feature-image">
+            <img src="{{img_url feature_image}}" alt="">
+        </div>
+    </header>
 
-{{#contentFor "scripts"}}
-<script>
-    (function (window, document) {
-        var resizeImagesInGalleries = function resizeImagesInGalleries() {
-            var images = document.querySelectorAll('.kg-gallery-image img');
-            images.forEach(function (image) {
-                var container = image.closest('.kg-gallery-image');
-                var width = image.attributes.width.value;
-                var height = image.attributes.height.value;
-                var ratio = width / height;
-                container.style.flex = ratio + ' 1 0%';
-            });
-        };
-        document.addEventListener('DOMContentLoaded', resizeImagesInGalleries);
-    })(window, document);
-</script>
-{{/contentFor}}
+    <article class="sm-post-content {{post_class}} {{slug}}">
+        {{content}}
+    </article>
+    {{log tags}}
+
+
+
+    <section class="sm-related-posts">
+        {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
+            {{#if related}}
+
+            <h2>Read this next</h2>
+            <div class="sm-related-posts-grid-container">
+                
+                    {{#foreach related}}
+                        {{> "card"}}
+                    {{/foreach}}
+            </div>
+
+            {{/if}}
+        {{/get}}
+    </section>
+</div>
+
+    
+
+    
+
+{{/post}}

@@ -101,17 +101,6 @@
         "type": "text",
         "group": "post"
       },
-      "color_scheme": {
-        "type": "select",
-        "options": [
-          "smart",
-          "dracula",
-          "gruvbox",
-          "material",
-          "nord"
-        ],
-        "default": "smart"
-      },
       "syntax_highlighting": {
         "type": "boolean",
         "default": false,
@@ -126,6 +115,22 @@
           "youtube"
         ],
         "default": ""
+      },
+      "social_media_2": {
+        "type": "select",
+        "options": [
+          "linkedin",
+          "instagram",
+          "twitch",
+          "youtube"
+        ],
+        "default": ""
+      },
+      "social_media_1_url": {
+        "type": "text"
+      },
+      "social_media_2_url": {
+        "type": "text"
       }
     }
   }

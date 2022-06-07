@@ -1,36 +1,11 @@
-{{! Search Modal }}
-<aside class='sm-modal sm-search__modal' id='sm-search-modal' role='search' aria-expanded='false'>
-  <div class='sm-modal__container'>
-    <header class="sm-modal__header">
-      <button class='sm-modal__close-btn' aria-label='close' tabindex="-1">
-        <svg aria-hidden='true'>
-          <use href='#close'></use>
-        </svg>
-      </button>
-      <h2 class='sm-modal__title'>
-        Search
-      </h2>
-        <label class='sm-small-header' for='sm-search-input'>
-          Enter Query
-        </label>
-      <div class='sm-search__input-container'>
-        <input class='sm-form__input' id='sm-search-input' tabindex="-1" />
-        <button class='sm-button--color sm-search__btn' id='sm-run-search-btn' tabindex="-1">
-          <svg class='sm-search__button--content'>
-            <use href="#search"></use>
-          </svg><span class='sm-search__button--content'>
-            Search
-          </span>
-          <svg class='sm-search__button--loading' aria-label='Loading...'>
-            <use href='#loader'></use>
-          </svg>
-        </button>
-      </div>
-    </header>
-    <div class='sm-search-results'>
-      <header class='sm-search-results__header sm-small-header'></header>
-      <div class='sm-search-results__container'></div>
-    </div>
+<section class="sm-grid sm-search-form">
+  <div class="sm-search-form-container">
+    <button class="sm-search-form-close-button" aria-label="close search">
+      <svg aria-hidden="true"><use href="#sm-close-button"></use></svg>
+    </button>
+    <input id="sm-search-input" type="text" placeholder="start typing to search" aria-label="start typing to search">
   </div>
-</aside>
-{{! Search Modal }}
+  <div class="sm-search-results-container">
+
+  </div>
+</section>
