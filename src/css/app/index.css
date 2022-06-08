@@ -15,8 +15,11 @@
 @import './pages/home.css';
 @import './pages/post.css';
 @import './pages/search.css';
+@import './pages/tag.css';
 
 /* Components */
 @import './components/card.css';
 @import './components/button.css';
 @import './components/overflow.css';
+@import './components/pagination.css';
+@import './components/subscribe.css';

@@ -1,0 +1,27 @@
+.sm-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding);
+  font-size: var(--small);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  grid-column: 3/4;
+  gap: var(--gap);
+}
+
+.sm-current {
+  color: var(--primary);
+}
+
+.sm-pagination-item:hover {
+  color: var(--primary);
+}
+
+.sm-pagination .sm-circle-icon-button:first-of-type {
+  margin-inline-end: auto;
+}
+
+.sm-pagination .sm-circle-icon-button:last-of-type {
+  margin-inline-start: auto;
+}

@@ -1,5 +1,6 @@
 .sm-button,
-.sm-icon-button {
+.sm-icon-button,
+.sm-button-simple {
   padding: var(--button-padding);
   font-size: var(--small);
   font-weight: 700;
@@ -15,7 +16,6 @@
 }
 
 .sm-icon-button {
-  --alpha: 0.5;
   display: flex;
   align-items: center;
   color: var(--element);
@@ -30,13 +30,47 @@
 
 .sm-icon-button:hover {
   background-color: hsla(
-    var(--primary-h) var(--saturation) var(--saturation) / 0.25
+    var(--primary-h) var(--saturation) var(--lightness) / 0.25
   );
 }
 
 .sm-icon-button svg {
   width: 1em;
   height: 1em;
-  margin-inline-end: 1em;
   fill: var(--element);
+}
+
+.sm-circle-icon-button {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: 0.25em;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.sm-circle-icon-button svg {
+  width: 1em;
+  height: 1em;
+  fill: var(--element-light);
+}
+
+.sm-circle-icon-button:not([disabled]):hover {
+  background-color: var(--border-color);
+}
+
+.sm-circle-icon-button[disabled] {
+  opacity: 0.5;
+}
+
+.sm-button-simple {
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s;
+}
+
+.sm-button-simple:focus-visible,
+.sm-button-simple:hover {
+  background-color: var(--border-color);
+  outline: none;
 }

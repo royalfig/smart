@@ -77,14 +77,14 @@
 }
 
 .sm-post-content hr {
-  border: none;
   height: 1px;
   background-color: var(--border-color);
+  border: none;
 }
 
 .kg-card {
-  margin-inline: auto;
   width: 100%;
+  margin-inline: auto;
 }
 
 .kg-width-wide {
@@ -108,11 +108,57 @@
   aspect-ratio: auto;
 }
 
+/* Table */
+.sm-table-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  border-radius: var(--radius);
+}
+
+.sm-post-content table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.sm-post-content table {
+  /* border: 1px solid var(--border-color); */
+}
+
+.sm-post-content tbody tr {
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s;
+}
+
+.sm-post-content tbody tr:hover {
+  background-color: var(--surface-dark);
+}
+
+.sm-post-content thead th {
+  padding: var(--radius);
+  font-family: var(--heading-typeface);
+  text-align: left;
+}
+
+.sm-post-content tbody td {
+  padding: var(--radius);
+  font-size: var(--small);
+}
+
+/* Code */
+
+.sm-post-content code {
+  padding: 0 0.25em;
+  font-family: monospace;
+  font-size: var(--small);
+  background-color: var(--surface-dark);
+  border-radius: var(--radius);
+}
+
 /* Related posts */
 .sm-related-posts {
-  grid-column: 3 / 4;
-  border-top: 1px solid var(--border-color);
   margin-block: 1rem 6rem;
+  border-top: 1px solid var(--border-color);
+  grid-column: 3 / 4;
 }
 
 .sm-related-posts h2 {
@@ -126,4 +172,14 @@
 
 .sm-related-posts .sm-card {
   grid-area: auto;
+}
+
+/* Experiments */
+.sm-post-content > p:first-of-type:first-letter {
+  padding: 0.15em;
+  margin-right: 0.15em;
+  font-size: 2em;
+  font-weight: 700;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
 }

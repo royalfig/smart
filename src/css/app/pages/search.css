@@ -20,6 +20,7 @@
   position: absolute;
   top: 0.25rem;
   right: 0.25rem;
+  box-sizing: content-box;
 
   width: 1.15rem;
   height: 1.15rem;
@@ -27,7 +28,6 @@
   line-height: 1;
   border-radius: 50%;
   transition: background-color 0.3s;
-  box-sizing: content-box;
 }
 
 .sm-search-form-close-button:hover {
@@ -54,14 +54,14 @@
 }
 
 .sm-clear-search-button {
-  display: none;
   position: absolute;
-  right: 0.75em;
   top: 50%;
-  transform: translate(0, -50%);
+  right: 0.75em;
+  box-sizing: content-box;
+  display: none;
   width: 1em;
   height: 1em;
-  box-sizing: content-box;
+  transform: translate(0, -50%);
 }
 
 .sm-clear-search-button.sm-show-clear-button {
@@ -71,8 +71,8 @@
 .sm-clear-search-button svg {
   width: 1em;
   height: 1em;
-  fill: var(--element-light);
   transition: fill 0.3s;
+  fill: var(--element-light);
 }
 
 .sm-clear-search-button:hover svg {
@@ -104,8 +104,8 @@
 }
 
 .sm-search-result {
-  font-family: var(--heading-typeface);
   margin-block-end: 1rem;
+  font-family: var(--heading-typeface);
   font-size: var(--h3);
 }
 

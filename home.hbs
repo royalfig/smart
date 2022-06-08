@@ -23,14 +23,26 @@ into the {body} of the default.hbs template --}}
             {{#if @site.icon}}
                 <img src="{{img_url @site.icon}}">
             {{/if}}
-            <div class="sm-cta-copy">
-                <h2>Don't miss out</h2>
-                <p>Sign up for the newsletter</p>
-            </div>
 
-            <form action="post">
-                <input type="email" placeholder="your email">
-                <button class="sm-button">subscribe</button>
+            <form data-members-form="subscribe">
+                <div class="sm-cta-copy sm-default">
+                    <h2>Don't miss out</h2>
+                    <p>Sign up for the newsletter</p>
+                </div>
+                
+                <div class="sm-cta-copy sm-success">
+                    <h2>Nice!</h2>
+                    <p>Check your email for a sign in link</p>
+                </div>
+                <div class="sm-cta-copy sm-error">
+                    <h2>Oh, no</h2>
+                    <p>Something went wrong. Try again.</p>
+                </div>
+                <input data-members-email type="email" placeholder="your email" required>
+                <button class="sm-icon-button sm-default"><svg aria-hidden="true"><use href="#sm-mail-icon"></use></svg>subscribe</button>
+                <button class="sm-icon-button sm-loading"><svg aria-hidden="true"><use href="#sm-loading-icon"></use></svg>loading</button>
+                <button class="sm-icon-button sm-success"><svg aria-hidden="true"><use href="#sm-mail-check-icon"></use></svg>success</button>
+                <button class="sm-icon-button sm-error"><svg aria-hidden="true"><use href="#sm-error-icon"></use></svg>error</button>
             </form>
         </aside>
         {{#foreach posts from="6" to="7"}}
@@ -66,6 +78,9 @@ into the {body} of the default.hbs template --}}
     </div>
 </div>
 {{/match}}
-   
 
-</main>
+{{#match pagination.pages "!=" "1"}}
+<div class="sm-grid sm-pagination-container">
+    {{pagination}}
+</div>
+{{/match}}

@@ -2,6 +2,7 @@ import '../../css/app/index.css';
 
 import initClickHandler from './clickHandler';
 import { determineColorModeSupport } from './colorModeToggle';
+import generatePagination from './pagination';
 import search from './search';
 
 // eslint-disable-next-line no-undef
@@ -17,3 +18,4 @@ if (ENV === 'development') {
 initClickHandler();
 determineColorModeSupport();
 search();
+generatePagination();

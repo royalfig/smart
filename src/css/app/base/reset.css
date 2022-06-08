@@ -21,8 +21,8 @@ a,
 
 ul,
 ol {
-  list-style-position: inside;
   padding-inline-start: 1em;
+  list-style-position: inside;
 }
 
 input,
@@ -31,5 +31,6 @@ button {
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  color: inherit;
   border: none;
 }

@@ -55,11 +55,10 @@
 }
 
 .sm-card-footer {
-  margin-block-start: 2rem;
-
   display: flex;
-  gap: 1rem;
   justify-content: space-between;
+  margin-block-start: 2rem;
+  gap: 1rem;
 }
 
 .sm-card .sm-tag {
@@ -112,13 +111,15 @@
 }
 
 /* CTA */
-.sm-cta-card {
+.sm-cta-card form {
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   padding: 1.5rem 1rem;
   text-align: center;
+  height: 100%;
 }
 
 .sm-cta-card img {
@@ -128,12 +129,18 @@
   display: block;
   width: 6.5rem;
   height: 6.5rem;
-  transform: translate(-50%, -50%);
   margin-inline: auto;
+  transform: translate(-50%, -50%);
+}
+
+.sm-cta-copy {
+  display: flex;
+  flex-direction: column;
 }
 
 .sm-cta-card h2 {
   margin: 0 0 0.5rem;
+  line-height: 1.1;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -143,18 +150,15 @@
   font-size: 1.2rem;
 }
 
-.sm-cta-card form {
-  margin-block-start: 1rem;
-}
-
 .sm-cta-card input {
   /* border-radius: var(--radius); */
+  margin-block-start: 2rem;
   width: 100%;
-  padding: 0.5em;
+  padding: 0.25em;
+  color: var(--element);
   text-align: center;
   background-color: transparent;
   border-bottom: 3px solid var(--border-color);
-  color: var(--element);
   transition: border-color 0.3s;
 }
 

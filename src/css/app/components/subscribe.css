@@ -1,0 +1,27 @@
+.sm-loading,
+.sm-success,
+.sm-error {
+  display: none;
+}
+
+[data-members-form].loading .sm-default:not(.sm-cta-copy),
+[data-members-form].success .sm-default,
+[data-members-form].error .sm-default {
+  display: none;
+}
+
+[data-members-form].loading .sm-loading,
+[data-members-form].success .sm-success,
+[data-members-form].error .sm-error {
+  display: flex;
+}
+
+.sm-loading svg {
+  animation: sm-spin 1s infinite linear;
+}
+
+@keyframes sm-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
