@@ -1,17 +1,28 @@
 {{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
     --}} 
 {{#post}} 
-<div class="sm-grid">
+<div class="sm-post-grid">
     <header class="sm-post-header">
         
-        {{#if primary_tag}}<p class="sm-post-tag"><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
         <h1 class="sm-post-title">{{title}}</h1>
         {{#if custom_excerpt}}<p class="sm-post-excerpt">{{custom_excerpt}}</p>{{/if}}
-        <div class="sm-post-meta">
-            <p>{{authors}} &mdash; <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></p>
-            <p class="sm-post-reading-time">{{reading_time}}</p>
+        <div class="sm-post-author-block">
+            <div class="sm-post-author-profile-image">
+                {{~#foreach authors~}}
+                    {{~#if profile_image~}}
+                    <img src="{{img_url profile_image}}" alt="{{name}}">
+                    {{~/if~}}
+                {{~/foreach~}}
+            </div>
+            <div>
+                <p>by {{authors}}</p>
+                <div class="sm-post-meta">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    {{#if primary_tag}}<p><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
+                    <p class="sm-post-reading-time">{{reading_time}}</p>
+                </div>
+            </div>
         </div>
-        
         {{#if feature_image}}
         <div class="sm-feature-image">
             <img src="{{img_url feature_image}}" alt="">
@@ -20,33 +31,25 @@
             <div class="sm-post-header-divider"></div>
         {{/if}}
     </header>
-
-    <article class="sm-post-content {{post_class}} {{slug}}">
-        {{content}}
-    </article>
-    {{log tags}}
-
-
-
-    <section class="sm-related-posts">
-        {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
-            {{#if related}}
-
-            <h2>Read this next</h2>
-            <div class="sm-related-posts-grid-container">
-                
-                    {{#foreach related}}
-                        {{> "card"}}
-                    {{/foreach}}
-            </div>
-
-            {{/if}}
-        {{/get}}
-    </section>
 </div>
 
-    
+<article class="sm-content-grid sm-post-content {{post_class}} {{slug}}">
+    {{content}}
+</article>
 
-    
+<section class="sm-related-posts">
+    {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
+        {{#if related}}
 
+        <h2>Read this next</h2>
+        <div class="sm-related-posts-grid-container">
+            
+                {{#foreach related}}
+                    {{> "card"}}
+                {{/foreach}}
+        </div>
+
+        {{/if}}
+    {{/get}}
+</section>
 {{/post}}

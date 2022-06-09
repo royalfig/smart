@@ -21,8 +21,8 @@ into the {body} of the default.hbs template --}}
         {{/foreach}}
     </section>
 
-{{#match pagination.pages "!=" "1"}}
+{{#match pagination.pages ">" 1}}
     {{pagination}}
 {{/match}}
-
+{{log pagination.pages}}
 </div>

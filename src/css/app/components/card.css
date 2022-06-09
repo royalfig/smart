@@ -115,11 +115,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  height: 100%;
   padding: 1.5rem 1rem;
   text-align: center;
-  height: 100%;
 }
 
 .sm-cta-card img {
@@ -151,10 +151,10 @@
 }
 
 .sm-cta-card input {
-  /* border-radius: var(--radius); */
-  margin-block-start: 2rem;
   width: 100%;
   padding: 0.25em;
+  /* border-radius: var(--radius); */
+  margin-block-start: 2rem;
   color: var(--element);
   text-align: center;
   background-color: transparent;
