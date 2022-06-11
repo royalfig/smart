@@ -45,7 +45,7 @@ const postcssConfigSyntax = postcss({
 });
 
 const postcssConfigGhost = postcss({
-  include: 'src/css/app/vendor/index.css',
+  include: 'src/css/ghost-cards.css',
   extract: resolve('assets/built/ghost-cards.css'),
   sourceMap: true,
   plugins: [
@@ -109,13 +109,12 @@ export default [
     },
     plugins: [...plugins, postcssConfigSyntax],
   },
-  // {
-  //   input: 'src/js/ghost-cards.js',
-  //   output: {
-  //     file: 'assets/built/ghost-cards.js',
-  //     format: 'iife',
-  //     sourcemap: true,
-  //   },
-  //   plugins: postcssConfigGhost,
-  // },
+  {
+    input: 'src/js/ghost-cards.js',
+    output: {
+      file: 'assets/built/ghost-cards.css',
+      format: 'es',
+    },
+    plugins: postcssConfigGhost,
+  },
 ];

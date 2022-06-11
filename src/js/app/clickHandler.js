@@ -2,7 +2,17 @@ import { toggleColorMode } from './colorModeToggle';
 import copyToClipboard from './copy';
 
 function handleClick(e) {
-  console.log(e.target);
+  if (e.target.closest('.sm-navbar-menu-button')) {
+    document
+      .querySelector('.sm-nav-menu-container')
+      .classList.add('sm-show-menu');
+  }
+
+  if (e.target.closest('.sm-nav-menu-close-button')) {
+    document
+      .querySelector('.sm-nav-menu-container')
+      .classList.remove('sm-show-menu');
+  }
 
   if (e.target.closest('.sm-search-button')) {
     document.querySelector('.sm-search').classList.add('sm-show-search');

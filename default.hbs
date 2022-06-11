@@ -6,78 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{meta_title}}</title>
 
+    <link rel="preload" href="/assets/fonts/archivo-v16-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+     <link rel="preload" href="/assets/fonts/work-sans-v17-latin-regular.woff2" as='font' type="font/woff2" crossorigin>
+    
     {{!-- CSS and Fonts --}}
-    <link rel="dns-prefetch" href="//fonts.googleapis.com/">
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap">
-
-    {{#if @site.cover_image}}
-    {{#is "home"}}
-    <link rel="preload" as="image" href="{{img_url @site.cover_image size='s'}}" media="(max-width: 299px)">
-    <link rel="preload" as="image" href="{{img_url @site.cover_image size='m'}}"
-        media="(min-width: 300px) and (max-width: 739px)">
-    <link rel="preload" as="image" href="{{img_url @site.cover_image size='l'}}"
-        media="(min-width: 740px) and (max-width: 1023px)">
-    <link rel="preload" as="image" href="{{img_url @site.cover_image size='xl'}}" media="(min-width: 1024px)">
-    {{/is}}
-    {{/if}}
-
-
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,300;0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@700&display=swap" rel="stylesheet">
-    </noscript>
-
-
-    <style>
-        @font-face {
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Lato'),
-            url({{asset 'fonts/Lato-Regular.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-Regular.woff'}}) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Lato';
-            font-style: normal;
-            font-weight: 700;
-            font-display: swap;
-            src: local('Lato-Bold'),
-            url({{asset 'fonts/Lato-Bold.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-Bold.woff'}}) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Lato';
-            font-style: italic;
-            font-weight: 400;
-            font-display: swap;
-            src: local('Lato-Italic'),
-            url({{asset 'fonts/Lato-Italic.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-Italic.woff'}}) format('woff');
-        }
-
-        @font-face {
-            font-family: 'Lato';
-            font-style: italic;
-            font-weight: 700;
-            font-display: swap;
-            src: local('Lato-BoldItalic'),
-            url({{asset 'fonts/Lato-BoldItalic.woff2'}}) format('woff2'),
-            url({{asset 'fonts/Lato-BoldItalic.woff'}}) format('woff');
-        }
-
-        body {
-            font-family: 'Source Sans Pro', -apple-system, blinkmacsystemfont, 'Segoe UI', roboto, oxygen,
-                ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-    </style>
+    <link rel="preload" href="{{asset 'built/app.css'}}" as="style">
 
     {{! Load scripts to execute before render }}
     <script>
@@ -96,13 +29,7 @@
         {{!-- const SEARCH_API = "{{@custom.search}}" --}}
     </script>
     <script src="{{asset 'built/generateColorPalette.js'}}"></script>
-    <script>
-        const accentColor = "{{@site.accent_color}}"
-    </script>
-
-    {{!-- {{> "color_scheme"}} --}}
-
-
+    
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
     <script src="{{asset 'built/app.js'}}" defer></script>
@@ -111,20 +38,17 @@
     <script src="{{asset 'built/post.js'}}" defer></script>
     {{/is}}
 
-{{#if @custom.syntax_highlighting}}
-    {{#is "post"}}
-    <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css'}}">
-    {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/themes/prism-tomorrow.min.css" integrity="sha512-vswe+cgvic/XBoF1OcM/TeJ2FW0OofqAVdCZiEYkd6dwGXthvkSFWOoGGJgS2CW70VK5dQM5Oh+7ne47s74VTg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/prism.min.js" integrity="sha512-RDQSW3KoqJMiX0L/UBgwBmH1EmRYp8LBOiLaA8rBHIy+7OGP/7Gxg8vbt8wG4ZYd29P0Fnoq6+LOytCqx3cyoQ==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.28.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-fTl/qcO1VgvKtOMApX2PdZzkziyr2stM65GYPLGuYMnuMm1z2JLJG6XVU7C/mR+E7xBUqCivykuhlzfqxXBXbg==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script> --}}
-    <script src="{{asset 'built/syntax-highlighting.js'}}" defer></script>
-    {{/is}}
-{{/if}}
+    {{#if @custom.syntax_highlighting}}
+        {{#is "post"}}
+        <link rel="stylesheet" href="{{asset 'built/syntax-highlighting.css'}}">
+        <script src="{{asset 'built/syntax-highlighting.js'}}" defer></script>
+        {{/is}}
+    {{/if}}
 
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 
-    <link rel="stylesheet" href="{{asset '/built/ghost.css'}}">
+    <link rel="stylesheet" href="{{asset '/built/ghost-cards.css'}}">
 </head>
 
 <body class="{{body_class}}">
@@ -132,9 +56,9 @@
 
     {{> "navbar"}}
 
-    <main id="sm-main">
-        {{{body}}}
-    </main>
+    {{> "nav-menu"}}
+
+    {{{body}}}
 
     {{> "footer"}}
 

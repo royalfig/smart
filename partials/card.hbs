@@ -1,5 +1,5 @@
-<article class="sm-card sm-card-{{@number}} {{slug}}">
-    <a class="sm-card-link {{#if horizontal}}sm-card-horizontal{{/if}}" href="{{url}}" aria-label="{{title}}">
+<article class="sm-card {{#is "home"}}sm-card-{{@number}}{{/is}} {{slug}} {{#if horizontal}}sm-card-horizontal{{else}}sm-card-vertical{{/if}}">
+    <a class="sm-card-link" href="{{url}}" aria-label="{{title}}">
         {{#if horizontal}}
             {{#if feature_image}}<img src="{{feature_image}}" alt="">{{/if}}
             <div class="sm-card-body">

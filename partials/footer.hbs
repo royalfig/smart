@@ -9,11 +9,16 @@
             </div>
         </div>
         <nav class="sm-footer-secondary-navigation">{{navigation type="secondary"}}</nav>
-        <div class="sm-footer-cta">
-            <p>Sign up for the newsletter</p>
+        <form data-members-form="subscribe" class="sm-footer-cta">
+            <p class="sm-footer-default sm-footer-default-text">Sign up for the newsletter</p>
+            <p class="sm-footer-success">Nice. Check your email for a link</p>
+            <p class="sm-footer-error">Error. Please try again</p>
             <input type="email" placeholder="your email">
-            <button class="sm-button-simple">Subscribe</button>
-        </div>
+            <button class="sm-button-simple sm-footer-default"><svg aria-hidden="true"><use href="#sm-mail-icon"></use></svg>Subscribe</button>
+            <button class="sm-button-simple sm-footer-loading"><svg aria-hidden="true"><use href="#sm-loading-icon"></use></svg>Loading</button>
+            <button class="sm-button-simple sm-footer-success"><svg aria-hidden="true"><use href="#sm-mail-check-icon"></use></svg>Success</button>
+            <button class="sm-button-simple sm-footer-error"><svg aria-hidden="true"><use href="#sm-error-icon"></use></svg>Error</button>
+        </form>
     </div>
     <div class="sm-footer-meta">
          {{@site.title}} &copy {{date format="YYYY"}} – <a href="https://ryanfeigenbaum.com">Designed by RWF</a> – <a href="https://ghost.org">Powered by Ghost</a> 

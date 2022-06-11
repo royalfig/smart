@@ -38,7 +38,6 @@
 .sm-card h2 {
   margin: 0;
   font-size: 2rem;
-
   line-height: 1.1;
 }
 
@@ -63,12 +62,16 @@
 
 .sm-card .sm-tag {
   display: inline-block;
+  max-width: 50%;
   padding: 0 0.75em;
-  font-size: var(--small);
+  overflow: hidden;
+  font-size: var(--x-small);
   color: var(--element-light);
+  text-overflow: ellipsis;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  background-color: var(--surface-dark);
+  white-space: nowrap;
+  background-color: var(--border-color);
   border-radius: var(--radius);
 }
 
@@ -77,26 +80,26 @@
   color: var(--element-light);
 }
 
-.sm-card-horizontal {
+.sm-card-horizontal .sm-card-link {
   flex-direction: row;
 }
 
-.sm-card-horizontal > .sm-card-body {
+.sm-card-horizontal .sm-card-body {
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
 }
 
-.sm-grid-feature .sm-card-horizontal:first-child img {
+.sm-grid-feature .sm-card-horizontal .sm-card-link:first-child img {
   max-width: 50%;
 }
 
-.sm-card-horizontal img {
+.sm-card-horizontal .sm-card-link img {
   max-width: 12.5rem;
 }
 
-.sm-card-1 .sm-card-horizontal img {
+.sm-card-1 .sm-card-horizontal .sm-card-link img {
   flex: 1;
   width: 50%;
 }
@@ -111,8 +114,26 @@
 }
 
 /* CTA */
-.sm-cta-card form {
+.sm-cta-card {
   position: relative;
+}
+
+.sm-cta-card img + form {
+  height: auto;
+  margin-block-start: 2rem;
+}
+.sm-cta-card img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: block;
+  width: 6rem;
+  height: 6rem;
+  margin-inline: auto;
+  transform: translate(-50%, -50%);
+}
+
+.sm-cta-card form {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -120,17 +141,6 @@
   height: 100%;
   padding: 1.5rem 1rem;
   text-align: center;
-}
-
-.sm-cta-card img {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  display: block;
-  width: 6.5rem;
-  height: 6.5rem;
-  margin-inline: auto;
-  transform: translate(-50%, -50%);
 }
 
 .sm-cta-copy {

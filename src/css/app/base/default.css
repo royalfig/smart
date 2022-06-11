@@ -1,9 +1,8 @@
 html {
+  font-family: 'Work Sans', -apple-system, blinkmacsystemfont, 'Segoe UI',
+    roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   font-size: 1rem;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
-  font-size: clamp(1rem, 0.825242718446602rem + 0.48543689320388345vw, 1.25rem);
-  font-size: 1rem;
-  font-size: clamp(1rem, 0.5442307692307693rem + 0.923076923076923vw, 1.375rem);
   line-height: 1.6;
   color: var(--element);
   background-color: var(--surface);

@@ -45,23 +45,23 @@
   }
 }
 
-.sm-inner-container {
+.sm-grid-home {
   max-width: variables.$laptop;
   margin: 0 auto 1rem;
 
   &--hero {
-    @extend .sm-inner-container;
+    @extend .sm-grid-home;
     position: relative;
     height: 100%;
     margin-bottom: 0;
   }
 
   &--footer {
-    @extend .sm-inner-container;
+    @extend .sm-grid-home;
   }
 
   &--author {
-    @extend .sm-inner-container;
+    @extend .sm-grid-home;
     display: flex;
     flex-direction: column;
     align-items: center;

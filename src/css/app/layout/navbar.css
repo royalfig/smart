@@ -14,7 +14,7 @@
   align-items: baseline;
   justify-content: space-between;
   padding: 0.75rem 0;
-  grid-column: 3/4;
+  grid-column: content;
 }
 
 .sm-navbar button {
@@ -43,9 +43,19 @@
 }
 
 .sm-navigation-container {
-  display: flex;
+  display: none;
   gap: 0.25rem;
   align-items: flex-end;
+}
+
+@media (--tablet) {
+  .sm-navigation-container {
+    display: flex;
+  }
+
+  .sm-navbar-menu-button {
+    display: none;
+  }
 }
 
 .sm-navigation {

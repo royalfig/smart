@@ -15,6 +15,7 @@
   background-color: var(--primary);
 }
 
+/* Icon button */
 .sm-icon-button {
   display: flex;
   align-items: center;
@@ -40,6 +41,8 @@
   fill: var(--element);
 }
 
+/* Circle icon button 
+Used in navigation and pagination */
 .sm-circle-icon-button {
   box-sizing: content-box;
   width: 1em;
@@ -64,13 +67,50 @@
   opacity: 0.5;
 }
 
+/* Simple button
+Used in footer */
 .sm-button-simple {
+  display: flex;
+  align-items: center;
   border: 1px solid var(--border-color);
   transition: background-color 0.3s;
+  gap: 1em;
+}
+
+.sm-button-simple svg {
+  width: 1em;
+  height: 1em;
+  fill: var(--element-light);
 }
 
 .sm-button-simple:focus-visible,
 .sm-button-simple:hover {
   background-color: var(--border-color);
   outline: none;
+}
+
+/* Circle close button 
+Used in search and */
+.sm-circle-close-button {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.25rem;
+  box-sizing: content-box;
+
+  width: 1.15rem;
+  height: 1.15rem;
+  padding: 0.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.sm-circle-close-button:hover {
+  background-color: var(--border-color);
+}
+
+.sm-circle-close-button svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  fill: var(--element);
 }

@@ -4,38 +4,5 @@ into the {body} of the default.hbs template --}}
 
 {{#post}}
 
-{{!-- Main  --}}
-<main class="sm-main" id="sm-main">
-    <div class="sm-main__outer-container">
-        <div class="sm-main__inner-container">
-           {{> header-img}}
-            <article class="{{post_class}} sm-post">
-                <header class="sm-post__header">
-                    <h1 class="sm-post__title--serif">{{title}}</h1>
-                </header>
-                <div class="sm-post__content">
-                    {{content}}
-                </div>
-            </article>
-        </div>
-    </div>
-</main>
 {{/post}}
 
-{{#contentFor "scripts"}}
-<script>
-    (function (window, document) {
-        var resizeImagesInGalleries = function resizeImagesInGalleries() {
-            var images = document.querySelectorAll('.kg-gallery-image img');
-            images.forEach(function (image) {
-                var container = image.closest('.kg-gallery-image');
-                var width = image.attributes.width.value;
-                var height = image.attributes.height.value;
-                var ratio = width / height;
-                container.style.flex = ratio + ' 1 0%';
-            });
-        };
-        document.addEventListener('DOMContentLoaded', resizeImagesInGalleries);
-    })(window, document);
-</script>
-{{/contentFor}}

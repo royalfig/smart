@@ -1,0 +1,74 @@
+/* Blockquote */
+blockquote:not(.kg-blockquote-alt) {
+  padding-inline-start: 2rem;
+}
+
+.kg-blockquote-alt {
+  font-family: var(--heading-typeface);
+}
+.kg-blockquote-alt::before,
+.kg-blockquote-alt::after {
+  color: var(--secondary-light);
+}
+.kg-blockquote-alt::before {
+  padding-inline-end: 0.1em;
+  content: '\00201C';
+}
+.kg-blockquote-alt::after {
+  padding-inline-start: 0.1em;
+  content: '\00201D';
+}
+
+/* Cards and images */
+.kg-card {
+  width: 100%;
+  margin-inline: auto;
+}
+
+.kg-card,
+.kg-blockquote-alt {
+  margin-block: 1rem 2rem;
+}
+
+.kg-image,
+.sm-post-content img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-inline: auto;
+}
+
+.sm-post-content figcaption {
+  padding: 0.25rem;
+  font-size: var(--small);
+  text-align: center;
+}
+
+.kg-width-wide,
+.kg-embed-card,
+.kg-gallery-card {
+  grid-column: content;
+}
+
+@media (--tablet) {
+  .kg-width-wide,
+  .kg-embed-card,
+  .kg-gallery-card {
+    grid-column: wide;
+  }
+}
+
+.kg-width-full {
+  grid-column: start / end;
+}
+
+.kg-embed-card iframe {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.kg-embed-card iframe[src*='soundcloud'] {
+  height: auto;
+  aspect-ratio: auto;
+}

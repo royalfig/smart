@@ -14,6 +14,7 @@
 /* Pages */
 @import './pages/home.css';
 @import './pages/post.css';
+@import './pages/post-content.css';
 @import './pages/search.css';
 @import './pages/tag.css';
 
@@ -23,6 +24,7 @@
 @import './components/overflow.css';
 @import './components/pagination.css';
 @import './components/subscribe.css';
+@import './components/nav-menu.css';
 
 /* Vendor */
-/* @import './vendor/ghost.css'; */
+@import './vendor/kg.css';

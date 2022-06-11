@@ -79,16 +79,19 @@
   position: absolute;
   top: 0.5em;
   left: -0.5em;
+  width: 1rem;
+  height: 1rem;
   padding: 0.25em;
   line-height: 1;
   background-color: var(--surface-light);
   border-radius: 50%;
+  box-shadow: var(--box-shadow);
   transform: translate(-100%, 50%);
 }
 
 .sm-overflow-back svg {
-  width: 1.1rem;
-  height: 1.1rem;
+  width: inherit;
+  height: inherit;
 }
 
 .sm-show {

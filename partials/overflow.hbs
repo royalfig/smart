@@ -12,7 +12,7 @@
         </button>
     </div>
     <div class="sm-overflow-follow">
-        <button class="sm-overflow-back"><svg><use href="#sm-back-icon"></use></svg></button>
+        <button class="sm-overflow-back"><svg><use href="#sm-left-arrow-icon"></use></svg></button>
         {{#if @site.twitter}}
             <a class="sm-icon-button" href="{{twitter_url @site.twitter}}"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>Twitter</a>
         {{/if}}
@@ -27,8 +27,8 @@
         {{/if}}
     </div>
     <div class="sm-overflow-share">
-        <button class="sm-overflow-back"><svg viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10.828 12l4.95 4.95-1.414 1.414L8 12l6.364-6.364 1.414 1.414z"/></svg></button>
-        <button class="sm-icon-button sm-copy-button"><svg viewBox="0 0 24 24" ><path fill="none" d="M0 0h24v24H0z"/><path d="M7 4V2h10v2h3.007c.548 0 .993.445.993.993v16.014a.994.994 0 0 1-.993.993H3.993A.994.994 0 0 1 3 21.007V4.993C3 4.445 3.445 4 3.993 4H7zm0 2H5v14h14V6h-2v2H7V6zm2-2v2h6V4H9z"/></svg> Copy link</button>
+        <button class="sm-overflow-back"><svg><use href="#sm-left-arrow-icon"></use></svg></button>
+        <button class="sm-icon-button sm-copy-button"><svg aria-hidden="true"><use href="#sm-copy-icon"></use></svg> Copy link</button>
         <a class="sm-icon-button" href="https://twitter.com/share?url={{url absolute="true"}}" aria-label="Share on Twitter" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>Twitter</a>
         <a class="sm-icon-button" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}"
         aria-label="Share on LinkedIn" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#linkedin-icon"></use></svg>Linkedin</a>
@@ -36,5 +36,3 @@
         aria-label="Share on Facebook" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#facebook-icon"></use></svg>Facebook</a>
     </div>
 </aside>
-
-{{log meta_title}}

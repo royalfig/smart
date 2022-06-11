@@ -5,7 +5,7 @@
 
 .sm-footer {
   display: grid;
-  grid-column: 3 / 4;
+  grid-column: content;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   padding: var(--gap) 0 0;
   font-size: var(--small);
@@ -53,5 +53,5 @@
   color: var(--element-light);
   text-align: center;
   border-top: 1px solid var(--border-color);
-  grid-column: 3/4;
+  grid-column: content;
 }

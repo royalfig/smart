@@ -3,10 +3,11 @@
 
     <header class="sm-navbar">
         <div class="sm-navbar-left">
+            <button class="sm-navbar-menu-button" aria-label="menu"><svg aria-hidden="true"><use href="#sm-menu-icon"></use></svg></button>
             {{#is "home"}}
-            <h1 class="sm-site-title">{{@site.title}}</h1>
+            <h1 class="sm-site-title"><a href="{{@site.url}}">{{@site.title}}</a></h1>
             {{else}}
-            <p class="sm-site-title">{{@site.title}}</p>
+            <p class="sm-site-title"><a href="{{@site.url}}">{{@site.title}}</a></p>
             {{/is}}
 
             <div class="sm-navigation-container">

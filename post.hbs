@@ -3,7 +3,6 @@
 {{#post}} 
 <div class="sm-post-grid">
     <header class="sm-post-header">
-        
         <h1 class="sm-post-title">{{title}}</h1>
         {{#if custom_excerpt}}<p class="sm-post-excerpt">{{custom_excerpt}}</p>{{/if}}
         <div class="sm-post-author-block">
@@ -33,23 +32,24 @@
     </header>
 </div>
 
-<article class="sm-content-grid sm-post-content {{post_class}} {{slug}}">
-    {{content}}
-</article>
+<main id="sm-main">
+    <article class="sm-content-grid sm-post-content {{post_class}} {{slug}}">
+        {{content}}
+    </article>
+</main>
 
-<section class="sm-related-posts">
-    {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
-        {{#if related}}
-
-        <h2>Read this next</h2>
-        <div class="sm-related-posts-grid-container">
-            
-                {{#foreach related}}
-                    {{> "card"}}
-                {{/foreach}}
-        </div>
-
-        {{/if}}
-    {{/get}}
+<section class="sm-grid">
+    <div class="sm-related-posts">
+        {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
+            {{#if related}}
+            <h2>Read this next</h2>
+            <div class="sm-related-posts-grid-container">
+                    {{#foreach related}}
+                        {{> "card"}}
+                    {{/foreach}}
+            </div>
+            {{/if}}
+        {{/get}}
+    </div>
 </section>
 {{/post}}

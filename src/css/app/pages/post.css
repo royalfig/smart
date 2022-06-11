@@ -38,19 +38,19 @@
 }
 
 .sm-post-author-profile-image img {
+  position: relative;
+  z-index: 5;
   width: 3rem;
   height: 3rem;
+  border: 1px solid var(--border-color);
   border-radius: 50%;
   object-fit: cover;
-  z-index: 5;
-  position: relative;
-  border: 1px solid var(--border-color);
 }
 
 .sm-post-author-profile-image img + img {
-  transform: translateX(-1rem);
-  margin-inline-end: -1rem;
   z-index: 4;
+  margin-inline-end: -1rem;
+  transform: translateX(-1rem);
 }
 
 .sm-post-author-profile-image img:nth-of-type(3) {
@@ -96,115 +96,14 @@
   border-top: 1px solid var(--border-color);
 }
 
-/* Content */
-.sm-post-content {
-  margin-block-end: 3rem;
-}
-
-.sm-post-content > * {
-  grid-column: content;
-  margin-block-end: 1rem;
-}
-
-.kg-card {
-  margin-block: 2rem;
-}
-
-.kg-image,
-.sm-post-content img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin-inline: auto;
-}
-
-.sm-post-content figcaption {
-  padding: 0.25rem;
-  font-size: var(--small);
-  text-align: center;
-}
-
-.sm-post-content hr {
-  height: 1px;
-  background-color: var(--border-color);
-  border: none;
-}
-
-.kg-card {
-  width: 100%;
-  margin-inline: auto;
-}
-
-.kg-width-wide,
-.kg-embed-card {
-  grid-area: wide;
-}
-
-.kg-gallery-card,
-.kg-width-full {
-  grid-area: wide;
-}
-
-.kg-embed-card iframe {
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-}
-
-.kg-embed-card iframe[src*='soundcloud'] {
-  height: auto;
-  aspect-ratio: auto;
-}
-
-/* Table */
-.sm-table-wrapper {
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius);
-  border-radius: var(--radius);
-}
-
-.sm-post-content table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.sm-post-content tbody tr {
-  border-top: 1px solid var(--border-color);
-  transition: background-color 0.3s;
-}
-
-.sm-post-content tbody tr:hover {
-  background-color: var(--surface-dark);
-}
-
-.sm-post-content thead th {
-  padding: var(--radius);
-  font-family: var(--heading-typeface);
-  text-align: left;
-}
-
-.sm-post-content tbody td {
-  padding: var(--radius);
-  font-size: var(--small);
-}
-
-/* Code */
-.sm-post-content code:not([class*='language']) {
-  padding: 0.15em 0.25em;
-  font-family: var(--mono-typeface);
-  font-size: var(--small);
-  color: var(--primary);
-  background-color: var(--border-color);
-  border-radius: 4px;
-}
-
 /* Related posts */
 .sm-related-posts {
   margin-block: 1rem 6rem;
   border-top: 1px solid var(--border-color);
-  grid-column: 3 / 4;
+  grid-column: content;
 }
 
+/* Related posts block */
 .sm-related-posts h2 {
   margin-block-start: 1rem;
 }

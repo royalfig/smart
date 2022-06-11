@@ -1,15 +1,20 @@
-/* https://dev.to/sobhandash/media-queries-and-breakpoints-2022-4gkm */
+@custom-media --phone (min-width: 640px);
 @custom-media --tablet (min-width: 768px);
-@custom-media --laptop (min-width: 992px);
-@custom-media --desktop (min-width: 1200px);
+@custom-media --laptop (min-width: 1024px);
+@custom-media --desktop (min-width: 1280px);
+@custom-media --widescreen (min-width: 1536px);
 
 :root {
   /* Space */
-  --radius: 0.5em;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1280px;
+  --widescreen: 1536px;
   --gap: 1rem;
-  --width: 992px;
+  --width: 1024px;
   --post-width: 768px;
   --content-width: 600px;
+  --radius: 0.5em;
 
   /* Type */
   --heading-typeface: 'Archivo', sans-serif;

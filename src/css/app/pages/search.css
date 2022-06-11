@@ -16,36 +16,12 @@
   grid-auto-rows: min-content;
 }
 
-.sm-search-form-close-button {
-  position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
-  box-sizing: content-box;
-
-  width: 1.15rem;
-  height: 1.15rem;
-  padding: 0.25rem;
-  line-height: 1;
-  border-radius: 50%;
-  transition: background-color 0.3s;
-}
-
-.sm-search-form-close-button:hover {
-  background-color: var(--surface-light);
-}
-
-.sm-search-form-close-button svg {
-  width: 1.15rem;
-  height: 1.15rem;
-  fill: var(--element);
-}
-
 .sm-show-search {
   display: initial;
 }
 
 .sm-search-form-container {
-  grid-column: 3 / 4;
+  grid-column: content;
   margin-block: 2rem;
 }
 
