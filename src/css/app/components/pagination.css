@@ -3,12 +3,16 @@
   align-items: center;
   justify-content: center;
   padding: var(--button-padding);
-  margin: 6rem 0 3rem;
   font-size: var(--small);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   grid-column: content;
   gap: var(--gap);
+}
+
+.sm-pagination,
+.sm-pagination-holder {
+  margin-block: 6rem 3rem;
 }
 
 .sm-current {

@@ -62,13 +62,14 @@ blockquote:not(.kg-blockquote-alt) {
   grid-column: start / end;
 }
 
-.kg-embed-card iframe {
+.kg-embed-card iframe[src*='youtube'],
+.kg-embed-card iframe[src*='vimeo'] {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
 }
 
-.kg-embed-card iframe[src*='soundcloud'] {
-  height: auto;
-  aspect-ratio: auto;
+.kg-embed-card iframe {
+  /* stylelint-disable-next-line declaration-no-important */
+  margin-inline: auto !important;
 }

@@ -62,7 +62,16 @@
   padding: 0.15em 0.25em;
   font-family: var(--mono-typeface);
   font-size: var(--small);
-  color: var(--primary);
+  color: var(--element-light);
   background-color: var(--border-color);
   border-radius: 4px;
+}
+
+/* List */
+.sm-post-content li {
+  line-height: 1.4;
+}
+
+.sm-post-content li:not(:last-child) {
+  margin-block-end: 0.5em;
 }

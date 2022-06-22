@@ -71,7 +71,8 @@
 
 /* Follow */
 .sm-overflow-follow,
-.sm-overflow-share {
+.sm-overflow-share,
+.sm-overflow-saves {
   display: none;
 }
 

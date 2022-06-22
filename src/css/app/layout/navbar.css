@@ -3,7 +3,8 @@
   position: fixed;
   z-index: 10;
   width: 100%;
-
+  top: 0;
+  left: 0;
   background-color: var(--surface-85);
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: blur(25px);
@@ -11,7 +12,7 @@
 
 .sm-navbar {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
   grid-column: content;

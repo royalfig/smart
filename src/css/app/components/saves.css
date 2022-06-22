@@ -1,0 +1,17 @@
+.sm-love-button {
+  line-height: 0;
+  display: inline-block;
+  transform: translateY(0.25em);
+}
+
+.sm-love-button .sm-heart-fill-icon {
+  display: none;
+}
+
+.sm-love-button.sm-love-toggle .sm-heart-outline-icon {
+  display: none;
+}
+
+.sm-love-button.sm-love-toggle .sm-heart-fill-icon {
+  display: inline-block;
+}

@@ -1,11 +1,18 @@
 import { toggleColorMode } from './colorModeToggle';
 import copyToClipboard from './copy';
+import { save } from './saves';
 
 function handleClick(e) {
   if (e.target.closest('.sm-navbar-menu-button')) {
     document
       .querySelector('.sm-nav-menu-container')
       .classList.add('sm-show-menu');
+  }
+
+  if (e.target.closest('.sm-love-button')) {
+    save(e.target.closest('.sm-love-button'));
+    e.target.closest('.sm-love-button').classList.toggle('sm-love-toggle');
+    return;
   }
 
   if (e.target.closest('.sm-nav-menu-close-button')) {
@@ -59,6 +66,12 @@ function handleClick(e) {
   if (e.target.closest('.sm-share-button')) {
     document.querySelector('.sm-overflow-buttons').classList.add('sm-hide');
     document.querySelector('.sm-overflow-share').classList.add('sm-show');
+    return;
+  }
+
+  if (e.target.closest('.sm-saves-button')) {
+    document.querySelector('.sm-overflow-buttons').classList.add('sm-hide');
+    document.querySelector('.sm-overflow-saves').classList.add('sm-show');
     return;
   }
 

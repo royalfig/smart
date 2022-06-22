@@ -87,7 +87,10 @@
       }
     },
     "custom": {
-      "search": {
+      "search_key": {
+        "type": "text"
+      },
+      "search_url": {
         "type": "text"
       },
       "color_mode": {
@@ -98,10 +101,6 @@
         ],
         "default": "dark"
       },
-      "disqus": {
-        "type": "text",
-        "group": "post"
-      },
       "syntax_highlighting": {
         "type": "boolean",
         "default": false,
@@ -110,9 +109,25 @@
       "social_media_1": {
         "type": "select",
         "options": [
-          "linkedin",
+          "behance",
+          "discord",
+          "dribble",
+          "facebook",
+          "github",
           "instagram",
+          "linkedin",
+          "mastodon",
+          "patreon",
+          "pinterest",
+          "reddit",
+          "slack",
+          "snapchat",
+          "telegram",
+          "tumblr",
           "twitch",
+          "twitch",
+          "vimeo",
+          "wechat",
           "youtube"
         ],
         "default": ""
@@ -120,9 +135,25 @@
       "social_media_2": {
         "type": "select",
         "options": [
-          "linkedin",
+          "behance",
+          "discord",
+          "dribble",
+          "facebook",
+          "github",
           "instagram",
+          "linkedin",
+          "mastodon",
+          "patreon",
+          "pinterest",
+          "reddit",
+          "slack",
+          "snapchat",
+          "telegram",
+          "tumblr",
           "twitch",
+          "twitch",
+          "vimeo",
+          "wechat",
           "youtube"
         ],
         "default": ""

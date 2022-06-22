@@ -1,6 +1,7 @@
 .sm-footer-container {
   background-color: var(--surface-dark);
   gap: 1rem var(--gap);
+  margin-block-start: auto;
 }
 
 .sm-footer {

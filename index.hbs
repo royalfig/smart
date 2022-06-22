@@ -1,9 +1,7 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
-<header>
-    <h1>{{meta_title}}</h1>
-</header>
+{{> "header"}}
 
 <main class="sm-grid" id="sm-main">
     <div class="sm-grid-home">
@@ -13,6 +11,8 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
+{{#match pagination.pages ">" 1}}
 <div class="sm-grid">
-    {{pagination data=page}}
+    {{pagination}}
 </div>
+{{/match}}

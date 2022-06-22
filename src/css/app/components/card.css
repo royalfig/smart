@@ -127,8 +127,8 @@
   top: 0;
   left: 50%;
   display: block;
-  width: 6rem;
-  height: 6rem;
+  width: 4rem;
+  height: 4rem;
   margin-inline: auto;
   transform: translate(-50%, -50%);
 }
@@ -263,4 +263,16 @@
   background-color: hsla(
     var(--complementary-color) var(--saturation) var(--lightness) / 0.05
   );
+}
+
+.sm-card .sm-love-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+}
+
+.sm-card .sm-love-button svg {
+  height: 1rem;
+  width: 1rem;
+  fill: var(--primary);
 }

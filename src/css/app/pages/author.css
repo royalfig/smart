@@ -1,0 +1,50 @@
+.sm-author-profile-image {
+  width: 6.5rem;
+  height: 6.5rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--box-shadow);
+}
+
+.sm-author-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35em;
+  margin-block-end: 1rem;
+}
+
+.sm-author-location svg {
+  height: 1em;
+  width: 1em;
+  fill: var(--element-light);
+}
+
+.sm-author-socials {
+  margin-block-start: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.sm-author-posts-container > h2 span {
+  display: none;
+  vertical-align: middle;
+}
+
+.paged .sm-author-posts-container > h2 span {
+  display: initial;
+}
+
+.sm-author-posts-container > * {
+  grid-column: content;
+}
+
+.sm-author-posts-container > h2 {
+  border-top: 1px solid var(--border-color);
+  padding-block-start: 1rem;
+}
+
+.sm-author-posts-container .sm-basic-grid:last-child {
+  padding-block-end: 3rem;
+}

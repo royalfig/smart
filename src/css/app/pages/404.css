@@ -1,0 +1,7 @@
+.sm-404 {
+  grid-column: content;
+}
+
+.sm-404 a {
+  text-decoration: underline;
+}

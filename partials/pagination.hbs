@@ -1,3 +1,8 @@
-{{log this}}
-<nav class="sm-pagination" data-pages="{{pages}}" data-page="{{page}}" data-prev="{{page_url prev}}" data-next="{{page_url next}}">
-</nav>
+{{#match pagination.pages ">" 1}}
+<div class="sm-grid">
+    <nav class="sm-pagination" data-pages="{{pages}}" data-page="{{page}}" data-prev="{{page_url prev}}" data-next="{{page_url next}}">
+    </nav>
+</div>
+{{else}}
+<div class="sm-pagination-holder"></div>
+{{/match}}

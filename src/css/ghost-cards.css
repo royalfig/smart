@@ -1,10 +1,10 @@
 /* Bookmark card */
-.kg-bookmark-card .kg-bookmark-container {
+.kg-bookmark-card a.kg-bookmark-container {
   border-color: var(--border-color);
   border-radius: var(--radius);
   transition: border-color 0.3s;
 }
-.kg-bookmark-icon {
+.kg-bookmark-card .kg-bookmark-icon {
   margin-inline: 0 6px;
 }
 
@@ -25,8 +25,9 @@
   font-size: var(--small);
 }
 
-.kg-bookmark-card:hover .kg-bookmark-container {
+.kg-bookmark-card:hover a.kg-bookmark-container {
   border-color: var(--primary-light);
+  border-radius: var(--radius);
 }
 
 /* Toggle card */

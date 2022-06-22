@@ -5,44 +5,5 @@ into the {body} of the default.hbs template --}}
 {{#post}}
 
 {{!-- Main --}}
-<main class="sm-main" id="sm-main">
-    <div class="sm-main__outer-container">
-        <div class="sm-main__inner-container">
-            {{> header-img}}
-            <header class="sm-post__header">
-                <h1 class="sm-post__title--serif">{{title}}</h1>
-            </header>
-            {{/post}}
-            {{#get "tags" include="count.posts" limit="all"}}
-            <section class="sm-grid-container--tags">
-                {{#foreach tags}}
-                {{!-- Card  --}}
-                <article class="sm-card--tags {{slug}}">
-                    <a class="sm-card--tags__link" href="{{url}}" aria-label="{{name}}">
-                        <div class="sm-card--tags__img-container">
-                            {{#if feature_image}}
-                            <img class="sm-card--tags__img lazyload" data-srcset="{{img_url feature_image size="s"}} 300w,
-                            {{img_url feature_image size="m"}} 740w,
-                            {{img_url feature_image size="l"}} 1024w"
-                                data-sizes="(max-width: 300px) 300px,740px"
-                                data-src="{{img_url feature_image size="m"}}" alt="{{name}}" width="1920" height="1080"/>
-                            {{else}}
-                            <div class="sm-card--tags__no-img sm-card--tags__no-img-{{@number}}"></div>
-                            {{/if}}
-                            <div class="sm-card--tags__body">
-                                <h2 class="sm-card--tags__title">{{name}}</h2>
-                                <p class="sm-card--tags__date">{{count.posts}}
-                                </p>
-                            </div>
-                        </div>
-                    </a>
-                </article>
-                {{!-- Card  --}}
-                {{/foreach}}
-            </section>
-            {{/get}}
 
-        </div>
-    </div>
-</main>
 {{!-- Main --}}

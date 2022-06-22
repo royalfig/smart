@@ -1,0 +1,33 @@
+.sm-header {
+  grid-column: content;
+  text-align: center;
+}
+
+.sm-header > *:not(:last-child) {
+  margin-block-end: 1rem;
+}
+
+.sm-header-excerpt {
+  max-width: 66ch;
+  margin-inline: auto;
+  color: var(--element-light);
+  opacity: 0.85;
+}
+
+.sm-header-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-block: 2rem;
+}
+
+.sm-header-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.sm-header-divider {
+  margin-block: 0 3rem;
+  border-top: 1px solid var(--border-color);
+}

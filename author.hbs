@@ -3,29 +3,16 @@
 into the {body} of the default.hbs template --}}
 
 {{#author}}
-{{!-- Post Header  --}}
-<div class="sm-post-grid">
-    <header class="sm-post-header">
-        {{#if profile_image}}
-            <img src="{{img_url profile_image}}" alt="{{name}}">
-        {{/if}}
-        <h1 class="sm-author-name">{{name}}</h1>
-        <p class="sm-author-bio"></p>
-        <div class="sm-author-meta">
-            <p>{{location}}</p>
-            <section class="sm-author-socials">
-                <p><a href="{{twitter}}"></a></p>
-                <p><a href="{{facebook}}"></a></p>
-                <p><a href="{{website}}"></a></p>
-            </section>
-        </div>
-        {{#if cover_image}}
-        
-        {{/if}}
-    </header>
-</div>
+    {{> "header"}}
 {{/author}}
 {{!-- Main --}}
-<main id="sm-main">
-
+<main  class="sm-grid sm-author-posts-container" id="sm-main">
+    <h2>{{pagination.total}} articles <span class="sm-icon-button">Page {{pagination.page}}</span></h2>
+    <div class="sm-basic-grid">
+        {{#foreach posts}}
+            {{> "card"}}
+        {{/foreach}}
+    </div>
 </main>
+
+{{pagination}}

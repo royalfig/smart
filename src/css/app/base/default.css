@@ -7,4 +7,18 @@ html {
   color: var(--element);
   background-color: var(--surface);
   scroll-behavior: smooth;
+  height: 100%;
+  scroll-padding-block-start: 3.5rem;
+}
+
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+:target::before {
+  content: ' \00261E';
+  color: var(--primary);
+  margin-inline-end: 0.25em;
 }

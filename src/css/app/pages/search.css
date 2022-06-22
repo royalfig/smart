@@ -38,6 +38,7 @@
   width: 1em;
   height: 1em;
   transform: translate(0, -50%);
+  line-height: 1;
 }
 
 .sm-clear-search-button.sm-show-clear-button {

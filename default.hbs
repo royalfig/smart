@@ -45,6 +45,12 @@
         {{/is}}
     {{/if}}
 
+    {{!-- Set search config --}}
+    <script>
+        const SEARCH_KEY = "{{@custom.search_key}}";
+        const SEARCH_URL = "{{@custom.search_url}}"
+    </script>
+
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
 

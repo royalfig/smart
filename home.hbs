@@ -74,8 +74,5 @@ into the {body} of the default.hbs template --}}
     </div>
     {{/match}}
 </main>
-{{#match pagination.pages ">" 1}}
-<div class="sm-grid sm-pagination-container">
-    {{pagination}}
-</div>
-{{/match}}
+    
+{{pagination}}

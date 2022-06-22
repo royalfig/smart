@@ -1,0 +1,66 @@
+{{!-- Post, page, index, author, tag --}}
+<header class="sm-header-grid{{#if class}} {{class}}{{/if}}">
+    <div class="sm-header">
+        {{#is "tag"}}<p class="sm-tag-count">{{count}} posts</p>{{/is}}
+
+        {{#if profile_image}}
+            <img class="sm-author-profile-image" src="{{img_url profile_image}}" alt="{{name}}">
+        {{/if}}
+        
+        <h1 class="sm-header-title">{{#if title}}{{title}}{{else if name}}{{name}}{{else}}{{meta_title}}{{/if}}</h1>
+        
+        {{#if custom_excerpt}}<p class="sm-header-excerpt">{{custom_excerpt}}</p>{{/if}}
+        
+        {{#if description}}
+            <p>{{description}}</p>
+        {{/if}}
+
+        {{#if location}}<p class="sm-author-location"><svg aria-hidden="true"><use href="#sm-map-icon"></use></svg>{{location}}</p>{{/if}}
+        
+        {{#if bio}}<p class="sm-header-excerpt">{{bio}}</p>{{/if}}
+
+        {{#has any="twitter,facebook,website"}}
+        <div class="sm-header-meta">
+            <section class="sm-author-socials">
+                <a class="sm-icon-button" href="{{twitter_url}}"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>{{twitter}}</a>
+                <a class="sm-icon-button" href="{{facebook_url}}"><svg aria-hidden="true"><use href="#facebook-icon"></use></svg>{{facebook}}</a>
+                <a class="sm-icon-button sm-author-website" href="{{website}}"><svg aria-hidden="true"><use href="#sm-external-link-icon"></use></svg>{{website}}</a>
+            </section>
+        </div>
+        {{/has}}
+        
+        {{#is "post"}}
+        <div class="sm-post-author-block">
+            <div class="sm-post-author-profile-image">
+                {{~#foreach authors~}}
+                    {{~#if profile_image~}}
+                    <img src="{{img_url profile_image}}" alt="{{name}}">
+                    {{~/if~}}
+                {{~/foreach~}}
+            </div>
+            <div>
+                <p>by {{authors}}</p>
+                <div class="sm-post-meta">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    {{#if primary_tag}}<p><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
+                    <p class="sm-post-reading-time">{{reading_time}}</p>
+                </div>
+            </div>
+        </div>
+        {{/is}}
+
+        {{#if feature_image}}
+            <figure class="sm-header-image">
+                <img src="{{img_url feature_image}}" alt="">
+                <figcaption></figcaption>
+            </figure>
+        {{else if cover_image}}
+            <figure class="sm-header-image">
+                <img src="{{img_url cover_image}}" alt="">
+                <figcaption></figcaption>
+            </figure>
+        {{else}}
+            <div class="sm-header-divider"></div>
+        {{/if}}
+    </div>
+</header>

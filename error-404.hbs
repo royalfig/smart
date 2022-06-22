@@ -7,25 +7,8 @@ It's a good idea to keep this template as minimal as possible in terms of both f
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
 
-<main class="sm-main--error">
-    <div class="sm-main__outer-container">
-        <div class="sm-main__inner-container">
-            {{> header-img}}
-            <header class="sm-post__header">
-                <h1 class="sm-main--error__heading">{{statusCode}}</h1>
-                <p class="sm-main--error__text">{{message}}</p>
-            </header>
-            <hr>
-            {{#get "posts" limit="3" include="authors,tags"}}
-            <section>
-                <h2>Recent Posts</h2>
-                <div class="sm-grid-container">
-                    {{#foreach posts}}
-                    {{> "card"}}
-                    {{/foreach}}
-                </div>
-            </section>
-            {{/get}}
-        </div>
-    </div>
+{{> "header" title="404"}}
+
+<main class="sm-grid" id="sm-main">
+    <p class="sm-404">Sorry. The page can't be found. <a href="">Please head home.</a></p>
 </main>

@@ -3,6 +3,10 @@
 into the {body} of the default.hbs template --}}
 
 {{#post}}
+    {{> "header"}}
 
+    <div class="sm-grid">
+        {{content}}
+    </div>
 {{/post}}
 
