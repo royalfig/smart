@@ -102,3 +102,8 @@
 .sm-hide {
   display: none;
 }
+
+.sm-overflow-saves p {
+  max-width: 66ch;
+  width: max-content;
+}

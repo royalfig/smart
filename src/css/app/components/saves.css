@@ -1,5 +1,4 @@
 .sm-love-button {
-  line-height: 0;
   display: inline-block;
   transform: translateY(0.25em);
 }
@@ -14,4 +13,53 @@
 
 .sm-love-button.sm-love-toggle .sm-heart-fill-icon {
   display: inline-block;
+}
+
+.sm-saves {
+  max-width: 66ch;
+}
+
+.sm-saves progress {
+  appearance: none;
+  width: 100%;
+  height: 0.15rem;
+  margin-block-end: 0.5rem;
+}
+
+.sm-saves progress::-webkit-progress-bar {
+  background-color: var(--primary-light);
+  opacity: 0.5;
+  border-radius: var(--radius);
+}
+
+.sm-saves progress::-webkit-progress-value {
+  overflow: hidden;
+  background-color: var(--primary);
+  border-radius: var(--radius);
+}
+
+.sm-saves-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--gap);
+}
+
+.sm-saves-meta button {
+  font-size: 1rem;
+  transform: none;
+}
+
+.sm-saves-title {
+  font-family: var(--heading-typeface);
+  font-weight: 700;
+}
+
+.sm-saves-date {
+  font-size: var(--x-small);
+  margin-block: 0.5rem 1rem;
+}
+
+.sm-saves button span {
+  line-height: 0;
 }

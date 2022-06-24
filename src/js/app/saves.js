@@ -29,12 +29,15 @@ export class Saves {
     const items = [...this.items()];
     const itemIndex = items.findIndex((el) => this.id === el.id);
     items.splice(itemIndex, 1);
-    console.log(itemIndex, items);
     localStorage.removeItem('saves');
 
     if (items.length) {
       localStorage.setItem('saves', JSON.stringify(items));
     }
+
+    const els = document.querySelectorAll(`button[data-id=${this.id}]`);
+    console.log(els);
+    els.forEach((el) => el.classList.toggle('sm-love-toggle'));
 
     this.populateSavesMenu();
   }
@@ -45,14 +48,20 @@ export class Saves {
   }
 
   scrollStatus() {
-    if (!window.location.pathname.includes(this.id)) {
-      return { scrollPos: '', progress: '' };
+    if (this.isCurrentPageSaved()) {
+      return {
+        scrollPos: window.scrollY,
+        progress: Math.round(
+          (window.scrollY /
+            (document.body.scrollHeight - document.body.clientHeight)) *
+            100,
+        ),
+      };
     }
+
     return {
-      scrollPos: window.scrollY,
-      progress: Math.round(
-        (window.scrollY / document.documentElement.scrollHeight) * 100,
-      ),
+      scrollPos: null,
+      progress: null,
     };
   }
 
@@ -69,14 +78,19 @@ export class Saves {
   }
 
   isCurrentPageSaved() {
-    const currentPage = window.location.pathname.replace('/', '');
+    const currentPage = window.location.pathname.replace(/\//g, '');
     return this.items().find((item) => item.id === currentPage);
   }
 
   updateScrollPosition() {
     if (!this.items().length) return;
-    console.log('update');
-    // if (this.isCurrentPageSaved) {
+
+    if (!this.isCurrentPageSaved()) {
+      console.log('item is not saved');
+      return;
+    }
+
+    const int = setInterval(() => console.log(this.scrollStatus()), 1000);
     //   const { scrollPos, progress } = this.scrollStatus;
     //   this.isCurrentPageSaved.scrollPos = scrollPos;
     //   this.isCurrentPageSaved.progress = progress;
@@ -91,7 +105,31 @@ export class Saves {
   renderSavesMenu() {
     const template = this.items().map(
       (el) =>
-        `<div><p><a href="/${el.id}">${el.title}</a></p><progress value="${el.progress}" max="100">${el.progress}%</div>`,
+        `<div class="sm-saves">
+            <progress value="${el.progress}" max="100">${
+          el.progress
+        }%</progress>
+            <div class="sm-saves-meta">
+                <div>
+                    <p class="sm-saves-title"><a href="/${el.id}">${
+          el.title
+        }</a></p>
+                    <p class="sm-saves-date">${new Intl.DateTimeFormat().format(
+                      new Date(el.timestamp),
+                    )}</p>
+                </div>
+                <button class="sm-circle-icon-button sm-love-button sm-love-toggle" data-id="${
+                  el.id
+                }" data-title="${el.title}">
+                <span class="sm-heart-outline-icon">
+                <svg><use href="#sm-heart-outline-icon"></use></svg>
+                </span>
+                <span class="sm-heart-fill-icon">
+                <svg><use href="#sm-heart-fill-icon"></use></svg>
+                </span>
+                </button>
+            </div>
+        </div>`,
     );
     return template.join('');
   }
@@ -112,6 +150,7 @@ export class Saves {
   init() {
     this.identifySaves();
     this.populateSavesMenu();
+    this.updateScrollPosition();
   }
 }
 
