@@ -1,24 +1,30 @@
 html {
-  font-family: 'Work Sans', -apple-system, blinkmacsystemfont, 'Segoe UI',
-    roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  height: 100%;
+  font-family: 'Albert Sans', 'Work Sans', -apple-system, blinkmacsystemfont,
+    'Segoe UI', roboto, oxygen, ubuntu, cantarell, 'Open Sans', 'Helvetica Neue',
+    sans-serif;
   font-size: 1rem;
   font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
   line-height: 1.6;
   color: var(--element);
   background-color: var(--surface);
   scroll-behavior: smooth;
-  height: 100%;
   scroll-padding-block-start: 3.5rem;
 }
 
 body {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 :target::before {
-  content: ' \00261E';
-  color: var(--primary);
   margin-inline-end: 0.25em;
+  color: var(--primary);
+  content: ' \00261E';
+}
+
+::selection {
+  color: #000;
+  background-color: var(--primary-light);
 }

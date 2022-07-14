@@ -30,15 +30,11 @@ export class Saves {
     const itemIndex = items.findIndex((el) => this.id === el.id);
     items.splice(itemIndex, 1);
     localStorage.removeItem('saves');
-
     if (items.length) {
       localStorage.setItem('saves', JSON.stringify(items));
     }
-
     const els = document.querySelectorAll(`button[data-id=${this.id}]`);
-    console.log(els);
     els.forEach((el) => el.classList.toggle('sm-love-toggle'));
-
     this.populateSavesMenu();
   }
 
@@ -48,20 +44,19 @@ export class Saves {
   }
 
   scrollStatus() {
-    if (this.isCurrentPageSaved()) {
+    if (this.isCurrentPageSaved() < 0) {
       return {
-        scrollPos: window.scrollY,
-        progress: Math.round(
-          (window.scrollY /
-            (document.body.scrollHeight - document.body.clientHeight)) *
-            100,
-        ),
+        scrollPos: null,
+        progress: null,
       };
     }
-
     return {
-      scrollPos: null,
-      progress: null,
+      scrollPos: window.scrollY,
+      progress: Math.round(
+        (window.scrollY /
+          (document.body.scrollHeight - document.body.clientHeight)) *
+          100,
+      ),
     };
   }
 
@@ -79,42 +74,55 @@ export class Saves {
 
   isCurrentPageSaved() {
     const currentPage = window.location.pathname.replace(/\//g, '');
-    return this.items().find((item) => item.id === currentPage);
+    return this.items().findIndex((item) => item.id === currentPage);
   }
 
   updateScrollPosition() {
     if (!this.items().length) return;
 
-    if (!this.isCurrentPageSaved()) {
+    const itemIndex = this.isCurrentPageSaved();
+    if (itemIndex < 0) {
       console.log('item is not saved');
       return;
     }
 
-    const int = setInterval(() => console.log(this.scrollStatus()), 1000);
-    //   const { scrollPos, progress } = this.scrollStatus;
-    //   this.isCurrentPageSaved.scrollPos = scrollPos;
-    //   this.isCurrentPageSaved.progress = progress;
+    const int = setInterval(() => {
+      const items = this.items();
+      console.log(itemIndex, this.scrollStatus());
+      items[itemIndex].progress = this.scrollStatus().progress;
+      items[itemIndex].scrollPos = this.scrollStatus().scrollPos;
+      localStorage.removeItem('saves');
+      localStorage.setItem('saves', JSON.stringify(items));
+      this.populateSavesMenu();
+    }, 1000);
+  }
 
-    //   // Need to find the item and update its scroll property
-    //   const interval = setInterval(() => {
-    //     this.save(this.isCurrentPageSaved);
-    //   }, 500);
-    // }
+  scrollToPos() {
+    if (this.isCurrentPageSaved() > -1) {
+      const items = this.items();
+      window.scrollTo({
+        top: items[this.isCurrentPageSaved()].scrollPos,
+        behavior: 'smooth',
+      });
+    }
   }
 
   renderSavesMenu() {
     const template = this.items().map(
       (el) =>
-        `<div class="sm-saves">
-            <progress value="${el.progress}" max="100">${
-          el.progress
-        }%</progress>
+        `<div class="sm-saves" style="background-image: linear-gradient(to right, hsla(
+          var(--primary-h) var(--saturation) var(--lightness) / ${
+            el.progress ? 0.35 : 0.15
+          }
+        ) ${el.progress ? el.progress - 10 : 50}%, hsla(
+          var(--primary-h) var(--saturation) var(--lightness) / 0.15
+        ) ${el.progress ? el.progress + 10 : 50}%">
             <div class="sm-saves-meta">
                 <div>
                     <p class="sm-saves-title"><a href="/${el.id}">${
           el.title
         }</a></p>
-                    <p class="sm-saves-date">${new Intl.DateTimeFormat().format(
+                    <p class="sm-saves-date">Saved on ${new Intl.DateTimeFormat().format(
                       new Date(el.timestamp),
                     )}</p>
                 </div>
@@ -137,8 +145,6 @@ export class Saves {
   populateSavesMenu() {
     const savesMenu = document.querySelector('.sm-overflow-articles');
 
-    console.log(this.items());
-
     if (!this.items().length) {
       savesMenu.innerHTML =
         '<p>No articles saved yet. Hit the heart to get started!</p>';
@@ -150,6 +156,7 @@ export class Saves {
   init() {
     this.identifySaves();
     this.populateSavesMenu();
+    this.scrollToPos();
     this.updateScrollPosition();
   }
 }

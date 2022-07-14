@@ -267,12 +267,12 @@
 
 .sm-card .sm-love-button {
   position: absolute;
-  bottom: 1rem;
   right: 1rem;
+  bottom: 1rem;
 }
 
 .sm-card .sm-love-button svg {
-  height: 1rem;
   width: 1rem;
+  height: 1rem;
   fill: var(--primary);
 }

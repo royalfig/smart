@@ -3,6 +3,11 @@
 into the {body} of the default.hbs template --}}
 
 <main id="sm-main">
+
+    {{#match @custom.hero_title}}
+        {{> "hero"}}
+    {{/match}}
+
     <div class="sm-grid">
         <div class="sm-grid-home sm-grid-feature">
         {{#foreach posts from="1" to="5"}}

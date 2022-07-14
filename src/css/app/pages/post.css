@@ -74,6 +74,29 @@
   content: '/';
 }
 
+.sm-post-save-button {
+  display: flex;
+  align-items: center;
+  transition: color 0.3s;
+  text-transform: uppercase;
+}
+
+.sm-post-save-button.sm-love-button {
+  transform: none;
+}
+
+.sm-post-save-button:hover {
+  color: var(--primary);
+}
+
+.sm-post-save-button svg {
+  height: 1em;
+  width: 1em;
+  fill: currentColor;
+  vertical-align: text-top;
+  transform: translateY(0.05em);
+}
+
 /* Related posts */
 .sm-related-posts {
   margin-block: 1rem 6rem;

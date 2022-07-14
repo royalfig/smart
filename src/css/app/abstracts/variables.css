@@ -10,14 +10,14 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 1rem;
+  --gap: 0.5rem;
   --width: 992px;
   --post-width: 768px;
   --content-width: 600px;
   --radius: 0.5em;
 
   /* Type */
-  --heading-typeface: 'Archivo', sans-serif;
+  --heading-typeface: 'Albert Sans', 'Archivo', sans-serif;
   --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
     monospace;
   --letter-spacing: 0.2px;
@@ -35,7 +35,7 @@
 
 @media (--laptop) {
   :root {
-    --gap: 2rem;
+    --gap: 1rem;
   }
 }
 

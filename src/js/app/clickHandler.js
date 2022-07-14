@@ -21,26 +21,26 @@ function handleClick(e) {
       .classList.remove('sm-show-menu');
   }
 
-  if (e.target.closest('.sm-search-button')) {
-    document.querySelector('.sm-search').classList.add('sm-show-search');
-    document.querySelector('#sm-search-input').focus();
-    return;
-  }
+  // if (e.target.closest('.sm-search-button')) {
+  //   document.querySelector('.sm-search').classList.add('sm-show-search');
+  //   document.querySelector('#sm-search-input').focus();
+  //   return;
+  // }
 
-  if (e.target.closest('.sm-search-form-close-button')) {
-    document.querySelector('.sm-search').classList.remove('sm-show-search');
-    return;
-  }
+  // if (e.target.closest('.sm-search-form-close-button')) {
+  //   document.querySelector('.sm-search').classList.remove('sm-show-search');
+  //   return;
+  // }
 
-  if (e.target.closest('.sm-clear-search-button')) {
-    document.querySelector('.sm-search-form input').value = '';
-    document.querySelector('.sm-search-results-container').innerHTML = '';
-    document
-      .querySelector('.sm-clear-search-button')
-      .classList.remove('sm-show-clear-button');
-    document.querySelector('.sm-search-form input').focus();
-    return;
-  }
+  // if (e.target.closest('.sm-clear-search-button')) {
+  //   document.querySelector('.sm-search-form input').value = '';
+  //   document.querySelector('.sm-search-results-container').innerHTML = '';
+  //   document
+  //     .querySelector('.sm-clear-search-button')
+  //     .classList.remove('sm-show-clear-button');
+  //   document.querySelector('.sm-search-form input').focus();
+  //   return;
+  // }
 
   if (e.target.closest('.sm-copy-button')) {
     copyToClipboard();

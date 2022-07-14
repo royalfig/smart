@@ -1,19 +1,129 @@
 import MiniSearch from 'minisearch';
 
+const stopWords = new Set([
+  'a',
+  'an',
+  'another',
+  'any',
+  'certain',
+  'each',
+  'every',
+  'her',
+  'his',
+  'its',
+  'its',
+  'my',
+  'no',
+  'our',
+  'some',
+  'that',
+  'the',
+  'their',
+  'this',
+  'and',
+  'but',
+  'or',
+  'yet',
+  'for',
+  'nor',
+  'so',
+  'as',
+  'aboard',
+  'about',
+  'above',
+  'across',
+  'after',
+  'against',
+  'along',
+  'around',
+  'at',
+  'before',
+  'behind',
+  'below',
+  'beneath',
+  'beside',
+  'between',
+  'beyond',
+  'but',
+  'by',
+  'down',
+  'during',
+  'except',
+  'following',
+  'for',
+  'from',
+  'in',
+  'inside',
+  'into',
+  'like',
+  'minus',
+  'minus',
+  'near',
+  'next',
+  'of',
+  'off',
+  'on',
+  'onto',
+  'onto',
+  'opposite',
+  'out',
+  'outside',
+  'over',
+  'past',
+  'plus',
+  'round',
+  'since',
+  'since',
+  'than',
+  'through',
+  'to',
+  'toward',
+  'under',
+  'underneath',
+  'unlike',
+  'until',
+  'up',
+  'upon',
+  'with',
+  'without',
+]);
+
 const miniSearch = new MiniSearch({
-  fields: ['title', 'plaintext'], // fields to index for full-text search
+  fields: ['title', 'plaintext', 'primary_author.name', 'primary_tag.name'], // fields to index for full-text search
+  extractField: (document, fieldName) =>
+    fieldName.split('.').reduce((doc, key) => doc && doc[key], document),
   storeFields: ['title', 'url'], // fields to return with search results
   searchOptions: {
     prefix: true,
     boost: { title: 2 },
-    fuzzy: 0.2,
+    fuzzy: 0.1,
   },
+
+  // eslint-disable-next-line no-confusing-arrow
+  processTerm: (term) => (stopWords.has(term) ? null : term.toLowerCase()),
 });
+
+function renderResource(resource) {
+  switch (resource) {
+    case 'plaintext':
+      return 'text';
+    case 'primary_tag.name':
+      return 'tag';
+    case 'primary_author.name':
+      return 'author';
+    default:
+      return 'title';
+  }
+}
 
 function renderResults(searchResults) {
   const results = searchResults.map(
     (result) =>
-      `<p class="sm-search-result"><a href="${result.url}">${result.title}</a></p>`,
+      `<a class="sm-search-result-link" href="${result.url}">
+      <p class="sm-search-result">${result.title}</p>
+      <p class="sm-matching-terms"><span>${renderResource(
+        result.match[result.terms[0]][0],
+      )}</span></p></a>`,
   );
   return results.join('');
 }
@@ -35,6 +145,7 @@ function doSearch(e) {
 
   // Search with default options
   const results = miniSearch.search(e.currentTarget.value, {});
+  console.log(results);
   document.querySelector('.sm-search-results-container').innerHTML =
     results.length
       ? renderResults(results)
@@ -77,7 +188,7 @@ export default async function search() {
     posts = cache.getCache();
   } else {
     const res = await fetch(
-      `${url}/ghost/api/content/posts/?limit=all&formats=plaintext&key=${key}`,
+      `${url}/ghost/api/content/posts/?limit=all&include=authors,tags&formats=plaintext&key=${key}`,
     );
     const { posts: postData } = await res.json();
     posts = postData;

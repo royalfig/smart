@@ -24,8 +24,8 @@
 
         </div>
         <div class="sm-navbar-right">
-            <button class="sm-search-button" aria-label="search {{@site.title}}"><svg aria-hidden="true"><use href="#sm-search-icon"></use>
-                </svg></button>
+            <a class="sm-search-button" href="#/search" aria-label="search {{@site.title}}"><svg aria-hidden="true"><use href="#sm-search-icon"></use>
+                </svg></a>
             {{^if @member}}<button class="sm-button" data-portal="signup">Subscribe</button>{{else}}<button
                 class="sm-button" data-portal="account">My Account</button>{{/if}}
         </div>

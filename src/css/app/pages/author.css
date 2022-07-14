@@ -1,8 +1,8 @@
 .sm-author-profile-image {
   width: 6.5rem;
   height: 6.5rem;
-  border-radius: 50%;
   border: 1px solid var(--border-color);
+  border-radius: 50%;
   box-shadow: var(--box-shadow);
 }
 
@@ -15,15 +15,15 @@
 }
 
 .sm-author-location svg {
-  height: 1em;
   width: 1em;
+  height: 1em;
   fill: var(--element-light);
 }
 
 .sm-author-socials {
-  margin-block-start: 2rem;
   display: flex;
   justify-content: center;
+  margin-block-start: 2rem;
   gap: 1rem;
 }
 
@@ -41,8 +41,8 @@
 }
 
 .sm-author-posts-container > h2 {
-  border-top: 1px solid var(--border-color);
   padding-block-start: 1rem;
+  border-top: 1px solid var(--border-color);
 }
 
 .sm-author-posts-container .sm-basic-grid:last-child {

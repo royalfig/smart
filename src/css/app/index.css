@@ -30,6 +30,7 @@
 @import './components/nav-menu.css';
 @import './components/header.css';
 @import './components/saves.css';
+@import './components/hero.css';
 
 /* Vendor */
 @import './vendor/kg.css';

@@ -104,6 +104,6 @@
 }
 
 .sm-overflow-saves p {
-  max-width: 66ch;
   width: max-content;
+  max-width: 66ch;
 }

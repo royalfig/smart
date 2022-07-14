@@ -44,6 +44,14 @@
                     <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
                     {{#if primary_tag}}<p><a href="{{primary_tag.url}}">{{primary_tag.name}}</a></p>{{/if}}
                     <p class="sm-post-reading-time">{{reading_time}}</p>
+                    <button class="sm-post-save-button sm-love-button" data-id="{{slug}}" data-title="{{title}}">
+                        <span class="sm-heart-outline-icon">
+                            <svg><use href="#sm-heart-outline-icon"></use></svg> Save
+                        </span>
+                        <span class="sm-heart-fill-icon">
+                            <svg><use href="#sm-heart-fill-icon"></use></svg> Saved
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>

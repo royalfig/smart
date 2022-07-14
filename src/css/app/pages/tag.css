@@ -1,4 +1,4 @@
 .sm-tags-container .sm-basic-grid {
-  border-top: 1px solid var(--border-color);
   padding-block: 3rem;
+  border-top: 1px solid var(--border-color);
 }
