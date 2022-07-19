@@ -22,7 +22,6 @@ a,
 ul,
 ol {
   padding-inline-start: 2em;
-  list-style-position: inside;
 }
 
 input,

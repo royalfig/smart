@@ -4,6 +4,7 @@ export class Saves {
     this.title = (e && e.dataset.title) || null;
     this.items = () =>
       Saves.makeArray(JSON.parse(localStorage.getItem('saves')));
+    this.int = null;
   }
 
   generateItem() {
@@ -22,7 +23,14 @@ export class Saves {
       'saves',
       JSON.stringify([this.generateItem(), ...this.items()]),
     );
+
     this.populateSavesMenu();
+    this.updateScrollPosition();
+
+    const els = document.querySelectorAll(`button[data-id=${this.id}]`);
+    els.forEach((el) => {
+      el.classList.add('sm-love-toggle');
+    });
   }
 
   remove() {
@@ -33,9 +41,14 @@ export class Saves {
     if (items.length) {
       localStorage.setItem('saves', JSON.stringify(items));
     }
-    const els = document.querySelectorAll(`button[data-id=${this.id}]`);
-    els.forEach((el) => el.classList.toggle('sm-love-toggle'));
+
+    this.int = null;
     this.populateSavesMenu();
+
+    const els = document.querySelectorAll(`button[data-id=${this.id}]`);
+    els.forEach((el) => {
+      el.classList.remove('sm-love-toggle');
+    });
   }
 
   static makeArray(data) {
@@ -67,7 +80,7 @@ export class Saves {
       const { id } = el;
       const domEl = document.querySelectorAll(`button[data-id=${id}]`);
       if (domEl) {
-        domEl.forEach((button) => button.classList.toggle('sm-love-toggle'));
+        domEl.forEach((button) => button.classList.add('sm-love-toggle'));
       }
     });
   }
@@ -77,24 +90,35 @@ export class Saves {
     return this.items().findIndex((item) => item.id === currentPage);
   }
 
-  updateScrollPosition() {
-    if (!this.items().length) return;
-
+  step() {
     const itemIndex = this.isCurrentPageSaved();
     if (itemIndex < 0) {
-      console.log('item is not saved');
       return;
     }
 
-    const int = setInterval(() => {
-      const items = this.items();
-      console.log(itemIndex, this.scrollStatus());
-      items[itemIndex].progress = this.scrollStatus().progress;
-      items[itemIndex].scrollPos = this.scrollStatus().scrollPos;
-      localStorage.removeItem('saves');
-      localStorage.setItem('saves', JSON.stringify(items));
-      this.populateSavesMenu();
+    const items = this.items();
+    items[itemIndex].progress = this.scrollStatus().progress;
+    items[itemIndex].scrollPos = this.scrollStatus().scrollPos;
+    localStorage.removeItem('saves');
+    localStorage.setItem('saves', JSON.stringify(items));
+    this.populateSavesMenu();
+    // TODO check if done
+
+    setTimeout(() => {
+      window.requestAnimationFrame(this.step.bind(this));
     }, 1000);
+  }
+
+  updateScrollPosition() {
+    const items = this.items();
+    if (!items.length) return;
+    const itemIndex = this.isCurrentPageSaved();
+
+    if (itemIndex < 0) {
+      return;
+    }
+
+    window.requestAnimationFrame(this.step.bind(this));
   }
 
   scrollToPos() {
@@ -128,7 +152,9 @@ export class Saves {
                 </div>
                 <button class="sm-circle-icon-button sm-love-button sm-love-toggle" data-id="${
                   el.id
-                }" data-title="${el.title}">
+                }" data-title="${el.title}" aria-label="Remove ${
+          el.title
+        } from favorites">
                 <span class="sm-heart-outline-icon">
                 <svg><use href="#sm-heart-outline-icon"></use></svg>
                 </span>
@@ -162,15 +188,17 @@ export class Saves {
 }
 
 export function save(e) {
+  console.log(e);
   const savedItems = new Saves(e);
 
-  const { id } = savedItems;
   const items = savedItems.items();
 
   if (!items.length) {
     savedItems.save();
     return;
   }
+
+  const { id } = savedItems;
 
   if (items.find((el) => el.id === id)) {
     savedItems.remove();

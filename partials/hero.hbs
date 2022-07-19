@@ -1,13 +1,25 @@
 <section class="sm-hero sm-grid">
+    <img class="sm-hero-bg" srcset="{{img_url @custom.hero_image size="s"}} 500w,
+            {{img_url @custom.hero_image size="m"}} 800w,
+            {{img_url @custom.hero_image size="l"}} 1000w,
+            {{img_url @custom.hero_image size="xl"}} 2000w"
+            sizes="(min-width: 750px) 500px, 100vw"
+            src="{{img_url @custom.hero_image size="m"}}"
+            alt="{{@custom.hero_title}}">
     <div class="sm-hero-inner">
         <div class="sm-hero-left">
-            
             <p class="sm-hero-subtitle">{{@custom.hero_title}}</p>
             <p class="sm-hero-description">{{@custom.hero_description}}</p>
         </div>
 
         <div class="sm-hero-right">
-            <img class="sm-hero-img" src="{{img_url @custom.hero_image size="m"}}">
+            <img class="sm-hero-img" srcset="{{img_url @custom.hero_image size="s"}} 500w,
+            {{img_url @custom.hero_image size="m"}} 800w,
+            {{img_url @custom.hero_image size="l"}} 1000w,
+            {{img_url @custom.hero_image size="xl"}} 2000w"
+            sizes="(min-width: 750px) 500px, 100vw"
+            src="{{img_url @custom.hero_image size="m"}}"
+            alt="{{@custom.hero_title}}">
         </div>
     </div>
 </section>

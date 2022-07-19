@@ -15,10 +15,14 @@
   display: inline-block;
 }
 
+.sm-overflow-articles {
+  min-width: 18rem;
+  max-width: 100%;
+}
+
 .sm-saves {
-  max-width: 66ch;
-  padding: 0.5em;
   border-radius: var(--radius);
+  padding: 0.5em 1em;
 }
 
 .sm-saves:not(:last-child) {
@@ -52,6 +56,11 @@
 .sm-saves-title {
   font-family: var(--heading-typeface);
   font-weight: 700;
+  transition: 0.3s color;
+}
+
+.sm-saves-title:hover {
+  color: var(--primary);
 }
 
 .sm-saves-date {

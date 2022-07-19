@@ -35,7 +35,8 @@
 
 .sm-footer input::placeholder {
   font-size: var(--x-small);
-  color: var(--border-color);
+  color: var(--element-light);
+  opacity: 0.8;
 }
 
 .sm-footer .sm-button-simple {

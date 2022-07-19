@@ -26,12 +26,12 @@
   left: 50%;
   z-index: 20;
   display: none;
-
   background-color: var(--surface);
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   box-shadow: var(--box-shadow);
   transform: translate(-50%, 0);
+  max-width: 75vw;
 }
 
 .sm-overflow-menu > div {
@@ -104,6 +104,6 @@
 }
 
 .sm-overflow-saves p {
-  width: max-content;
-  max-width: 66ch;
+  /* width: max-content;
+  max-width: 66ch; */
 }

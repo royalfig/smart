@@ -11,7 +11,7 @@ function handleClick(e) {
 
   if (e.target.closest('.sm-love-button')) {
     save(e.target.closest('.sm-love-button'));
-    e.target.closest('.sm-love-button').classList.toggle('sm-love-toggle');
+    // e.target.closest('.sm-love-button').classList.toggle('sm-love-toggle');
     return;
   }
 

@@ -11,8 +11,4 @@ into the {body} of the default.hbs template --}}
     </div>
 </main>
 
-{{#match pagination.pages ">" 1}}
-<div class="sm-grid">
-    {{pagination}}
-</div>
-{{/match}}
+{{pagination}}

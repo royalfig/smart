@@ -10,7 +10,7 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 0.5rem;
+  --gap: 1rem;
   --width: 992px;
   --post-width: 768px;
   --content-width: 600px;
@@ -35,7 +35,7 @@
 
 @media (--laptop) {
   :root {
-    --gap: 1rem;
+    --gap: 1.5rem;
   }
 }
 

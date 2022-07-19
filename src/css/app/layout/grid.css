@@ -31,7 +31,7 @@ Index, author grid
 .sm-header-grid {
   grid-template-columns:
     [start] var(--gap) 1fr 1fr [content-start] minmax(
-      min(500px, 100%),
+      min(300px, 100%),
       var(--post-width)
     )
     [content-end]

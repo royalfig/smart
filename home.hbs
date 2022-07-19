@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
         <div class="sm-grid-home sm-grid-feature-left">
             <aside class="sm-feature-card sm-cta-card">
                 {{#if @site.icon}}
-                    <img src="{{img_url @site.icon}}">
+                    <img src="{{img_url @site.icon}}" alt="">
                 {{/if}}
 
                 <form data-members-form="subscribe">
@@ -69,7 +69,7 @@ into the {body} of the default.hbs template --}}
 
             {{#get "tags" include="count.posts" limit="5" order="count.posts desc"}}
                 <aside class="sm-feature-card sm-tags-card">
-                    <h2>Hot Topics</h2>
+                    <h2>H🔥t Topics</h2>
                     {{#foreach tags}}
                     <a href="{{url}}">{{name}} <span>{{count.posts}}</span></a>
                     {{/foreach}}

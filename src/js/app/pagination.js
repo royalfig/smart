@@ -1,17 +1,25 @@
+function pathnameParser(pathname) {
+  if (!/page/.test(pathname)) {
+    return pathname;
+  }
+
+  return pathname.split('page')[0];
+}
+
 export default function generatePagination() {
   const pagination = document.querySelector('.sm-pagination');
 
   if (!pagination) return;
-  const pathname = pathnameParser(location.pathname);
+  const pathname = pathnameParser(window.location.pathname);
   const { pages, page, prev, next } = pagination.dataset;
 
   const previousButton = document.createElement('a');
   previousButton.innerHTML =
     '<svg aria-hidden="true"><use href="#sm-left-arrow-icon"></use></svg>';
   previousButton.classList.add('sm-circle-icon-button');
-  previousButton.setAttribute('aria-label', 'previous posts');
 
   if (prev) {
+    previousButton.setAttribute('aria-label', 'previous posts');
     previousButton.setAttribute('href', prev);
   } else {
     previousButton.setAttribute('disabled', 'true');
@@ -46,20 +54,12 @@ export default function generatePagination() {
   nextButton.innerHTML =
     '<svg aria-hidden="true"><use href="#sm-right-arrow-icon"></use></svg>';
   nextButton.classList.add('sm-circle-icon-button');
-  nextButton.setAttribute('aria-label', 'next posts');
   if (next) {
+    nextButton.setAttribute('aria-label', 'next posts');
     nextButton.setAttribute('href', next);
   } else {
     nextButton.setAttribute('disabled', 'true');
   }
 
   pagination.append(nextButton);
-}
-
-function pathnameParser(pathname) {
-  if (!/page/.test(pathname)) {
-    return pathname;
-  }
-
-  return pathname.split('page')[0];
 }
