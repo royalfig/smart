@@ -77,8 +77,8 @@
 .sm-post-save-button {
   display: flex;
   align-items: center;
-  transition: color 0.3s;
   text-transform: uppercase;
+  transition: color 0.3s;
 }
 
 .sm-post-save-button.sm-love-button {
@@ -90,11 +90,11 @@
 }
 
 .sm-post-save-button svg {
-  height: 1em;
   width: 1em;
-  fill: currentColor;
+  height: 1em;
   vertical-align: text-top;
   transform: translateY(0.05em);
+  fill: currentcolor;
 }
 
 /* Related posts */

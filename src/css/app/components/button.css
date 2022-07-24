@@ -1,3 +1,4 @@
+.sm-form-button,
 .sm-button,
 .sm-icon-button,
 .sm-button-simple {
@@ -10,6 +11,7 @@
   border-radius: var(--radius);
 }
 
+.sm-form-button,
 .sm-button {
   color: var(--button-text);
   background-color: var(--primary);

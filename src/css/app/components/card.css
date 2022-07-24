@@ -7,9 +7,9 @@
 
 .sm-card:hover,
 .sm-card:focus {
-  transform: translate(0, -4px);
-  box-shadow: var(--box-shadow);
   outline: none;
+  box-shadow: var(--box-shadow);
+  transform: translate(0, -4px);
 }
 
 .sm-card-link {

@@ -22,9 +22,9 @@
         {{#has any="twitter,facebook,website"}}
         <div class="sm-header-meta">
             <section class="sm-author-socials">
-                <a class="sm-icon-button" href="{{twitter_url}}"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>{{twitter}}</a>
-                <a class="sm-icon-button" href="{{facebook_url}}"><svg aria-hidden="true"><use href="#facebook-icon"></use></svg>{{facebook}}</a>
-                <a class="sm-icon-button sm-author-website" href="{{website}}"><svg aria-hidden="true"><use href="#sm-external-link-icon"></use></svg>{{website}}</a>
+                {{#if twitter}}<a class="sm-icon-button" href="{{twitter_url}}"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>{{twitter}}</a>{{/if}}
+                {{#if facebook}}<a class="sm-icon-button" href="{{facebook_url}}"><svg aria-hidden="true"><use href="#facebook-icon"></use></svg>{{facebook}}</a>{{/if}}
+                {{#if website}}<a class="sm-icon-button sm-author-website" href="{{website}}"><svg aria-hidden="true"><use href="#sm-external-link-icon"></use></svg>{{website}}</a>{{/if}}
             </section>
         </div>
         {{/has}}

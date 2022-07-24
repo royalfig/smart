@@ -31,6 +31,7 @@
 @import './components/header.css';
 @import './components/saves.css';
 @import './components/hero.css';
+@import './components/form.css';
 
 /* Vendor */
 @import './vendor/kg.css';

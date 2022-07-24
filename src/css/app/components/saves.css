@@ -21,8 +21,8 @@
 }
 
 .sm-saves {
-  border-radius: var(--radius);
   padding: 0.5em 1em;
+  border-radius: var(--radius);
 }
 
 .sm-saves:not(:last-child) {

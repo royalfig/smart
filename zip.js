@@ -14,7 +14,6 @@ zip.addLocalFile('./home.hbs');
 zip.addLocalFile('./index.hbs');
 zip.addLocalFile('./package.json');
 zip.addLocalFile('./page.hbs');
-zip.addLocalFile('./page-tags.hbs');
 zip.addLocalFile('./post.hbs');
 zip.addLocalFile('./README.md');
 zip.addLocalFile('./tag.hbs');

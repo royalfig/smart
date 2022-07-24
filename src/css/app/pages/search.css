@@ -83,15 +83,15 @@
 .sm-search-result {
   font-family: var(--heading-typeface);
   font-size: var(--h3);
-  line-height: 1.1;
   font-weight: 700;
+  line-height: 1.1;
 }
 
 .sm-search-result-link {
-  transition: color 0.3s;
-  margin-block-end: 1rem;
   display: block;
   width: fit-content;
+  margin-block-end: 1rem;
+  transition: color 0.3s;
 }
 
 .sm-search-result-link:hover,
@@ -108,8 +108,8 @@
 }
 
 .sm-matching-terms span {
+  padding: 0 0.25em;
   background-color: var(--primary);
   border-radius: var(--radius);
-  padding: 0 0.25em;
   opacity: 0.75;
 }

@@ -1,9 +1,9 @@
 .sm-hero {
-  border-bottom: 1px solid var(--border-color);
-  padding-block-end: 3rem;
-  background-color: var(--surface-light);
   position: relative;
   min-height: 60vmin;
+  padding-block-end: 3rem;
+  background-color: var(--surface-light);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .sm-hero + .sm-grid .sm-grid-home {
@@ -11,9 +11,9 @@
 }
 
 .sm-hero-inner {
+  height: 100%;
   padding-block-start: 6rem;
   grid-column: content;
-  height: 100%;
 }
 
 @media (--tablet) {
@@ -26,49 +26,50 @@
 }
 
 .sm-hero-left {
-  padding-inline-end: 1rem;
   position: relative;
   z-index: 1;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  height: 100%;
+  padding-inline-end: 1rem;
   text-align: center;
 }
 
 .sm-hero-subtitle {
-  /* color: var(--primary); */
-  font-weight: 700;
+  margin-block-end: 1rem;
   font-family: var(--heading-typeface);
   font-size: var(--h1);
+  /* color: var(--primary); */
+  font-weight: 700;
   line-height: 1;
-  margin-block-end: 1rem;
   background-image: linear-gradient(45deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .sm-hero-description {
-  color: var(--element-dark);
   font-size: 1.15rem;
+  color: var(--element-dark);
 }
 
 .sm-hero-bg {
-  display: block;
   position: absolute;
-  height: 100%;
+  display: block;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
   opacity: 0.25;
+  object-fit: cover;
   mix-blend-mode: multiply;
 }
 
 .sm-hero-img {
-  max-width: 100%;
   display: block;
+  width: 100%;
   margin: 0 auto;
   border-radius: var(--radius);
   box-shadow: var(--box-shadow);
+  object-fit: contain;
 }
 
 .sm-hero-right {
