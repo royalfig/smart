@@ -1,0 +1,44 @@
+.sm-form {
+  display: flex;
+  margin: 2rem auto;
+  flex-direction: column;
+  max-width: var(--content-width);
+  width: 100%;
+  padding: var(--gap);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.sm-form label,
+.sm-form input,
+.sm-form textarea,
+.sm-form button {
+  /* display: inline-block; */
+}
+
+.sm-form input,
+.sm-form textarea {
+  border: 1px solid var(--border-color);
+  background-color: var(--surface);
+  color: var(--element);
+  border-radius: var(--radius);
+  padding: var(--button-padding);
+  margin-block-end: 1rem;
+}
+
+.sm-form textarea {
+  height: 10rem;
+  resize: none;
+}
+
+.sm-form input:focus-visible,
+.sm-form textarea:focus-visible {
+  border-color: var(--secondary);
+  outline: none;
+}
+
+.sm-form button:hover,
+.sm-form button:focus-visible {
+  background-color: var(--secondary);
+  outline: none;
+}
