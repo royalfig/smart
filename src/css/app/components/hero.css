@@ -2,7 +2,6 @@
   position: relative;
   min-height: 60vmin;
   padding-block-end: 3rem;
-  background-color: var(--surface-light);
   border-bottom: 1px solid var(--border-color);
 }
 

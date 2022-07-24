@@ -10,14 +10,14 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 1rem;
+  --gap: 0.75rem;
   --width: 992px;
   --post-width: 768px;
   --content-width: 600px;
   --radius: 0.5em;
 
   /* Type */
-  --heading-typeface: 'Albert Sans', 'Archivo', sans-serif;
+  --heading-typeface: 'Archivo', sans-serif;
   --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
     monospace;
   --letter-spacing: 0.2px;
@@ -31,6 +31,12 @@
   --x-small: 0.694rem;
   --xx-small: 0.579rem;
   --button-padding: 0.5em 0.75em;
+}
+
+@media (--tablet) {
+  :root {
+    --gap: 1rem;
+  }
 }
 
 @media (--laptop) {
@@ -107,9 +113,9 @@
   --element-dark: hsl(var(--primary-h) 10% 89%);
   --element-darker: hsl(var(--primary-h) 10% 82%);
 
-  --surface: hsl(var(--primary-h) 10% 15%);
+  --surface: hsl(var(--primary-h) 10% 12%);
   --surface-85: hsla(var(--primary-h) 10% 15% / 0.85);
-  --surface-light: hsl(var(--primary-h) 10% 35%);
+  --surface-light: hsl(var(--primary-h) 10% 18%);
   --surface-dark: hsl(var(--primary-h) 10% 8%);
   --surface-darker: hsl(var(--primary-h) 10% 3%);
 

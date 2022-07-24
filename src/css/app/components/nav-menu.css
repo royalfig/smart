@@ -15,6 +15,7 @@
 .sm-nav-menu-container.sm-show-menu {
   display: flex;
 }
+
 .sm-nav-menu-navigation-container {
   display: flex;
   flex-direction: column;
@@ -44,9 +45,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  flex-direction: column;
   gap: var(--gap);
 }
 
-.sm-nav-menu-navigation-container > *:last-child {
+.sm-nav-menu-navigation-container > .sm-icon-button {
   margin-block-start: auto;
 }
