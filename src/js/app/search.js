@@ -145,7 +145,6 @@ function doSearch(e) {
 
   // Search with default options
   const results = miniSearch.search(e.currentTarget.value, {});
-  console.log(results);
   document.querySelector('.sm-search-results-container').innerHTML =
     results.length
       ? renderResults(results)

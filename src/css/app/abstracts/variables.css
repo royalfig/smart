@@ -15,6 +15,7 @@
   --post-width: 768px;
   --content-width: 600px;
   --radius: 0.5em;
+  --radius-small: 3px;
 
   /* Type */
   --heading-typeface: 'Archivo', sans-serif;
@@ -42,6 +43,12 @@
 @media (--laptop) {
   :root {
     --gap: 1.5rem;
+  }
+}
+
+@media (--desktop) {
+  :root {
+    --gap: 2rem;
   }
 }
 

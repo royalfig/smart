@@ -5,9 +5,7 @@
   left: 0;
   z-index: 10;
   width: 100%;
-  background-color: var(--surface-85);
-  border-bottom: 1px solid var(--border-color);
-  backdrop-filter: blur(25px);
+  background-color: var(--surface);
 }
 
 .sm-navbar {
@@ -34,8 +32,8 @@
 
 .sm-navbar-left {
   display: flex;
-  gap: 0.5rem;
-  align-items: center;
+  gap: 1rem;
+  align-items: baseline;
 }
 
 .sm-site-title {
@@ -56,7 +54,12 @@
 .sm-navigation-container {
   display: none;
   gap: 0.25rem;
-  align-items: center;
+  align-items: flex-end;
+}
+
+.sm-navbar-menu-button {
+  align-self: flex-end;
+  line-height: 0;
 }
 
 @media (--tablet) {

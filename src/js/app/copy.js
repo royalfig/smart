@@ -1,5 +1,4 @@
 function updateCopyButtonState() {
-  console.log('copy');
   const copyButtons = document.querySelectorAll('.sm-copy-button');
   copyButtons.forEach((el) => {
     const copyButton = el;

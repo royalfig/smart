@@ -1,5 +1,4 @@
 function handleClick(e) {
-  console.log(e);
   if (e.code === 'Escape') {
     document.querySelector('[class*=show]');
   }

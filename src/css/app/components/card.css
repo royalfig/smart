@@ -2,14 +2,12 @@
   /* max-width: 600px; */
   position: relative;
   border-radius: var(--radius);
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition: border-color 0.3s;
 }
 
 .sm-card:hover,
 .sm-card:focus {
-  outline: none;
-  box-shadow: var(--box-shadow);
-  transform: translate(0, -4px);
+  border-color: var(--primary);
 }
 
 .sm-card-link {
@@ -19,6 +17,7 @@
   height: 100%;
   overflow: hidden;
   border-radius: var(--radius);
+  padding: 1rem;
 }
 
 .sm-card,
@@ -31,6 +30,7 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
+  border-radius: var(--radius-small);
 }
 
 .sm-card img + h2 {
@@ -93,8 +93,8 @@
   justify-content: space-between;
 }
 
-.sm-grid-feature .sm-card-horizontal .sm-card-link:first-child img {
-  max-width: 50%;
+.sm-grid-feature .sm-card-horizontal img {
+  width: 50%;
 }
 
 .sm-card-horizontal .sm-card-link img {

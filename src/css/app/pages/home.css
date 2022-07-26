@@ -21,7 +21,7 @@
   gap: var(--gap);
   grid-column: content;
   padding: 6rem 0;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
 }
 
 .sm-card-2.sm-card-horizontal,
@@ -39,6 +39,15 @@
 .sm-card-14.sm-card-vertical,
 .sm-card-15.sm-card-vertical {
   display: none;
+}
+
+.sm-card-1.sm-card-horizontal .sm-card-link {
+  flex-direction: column;
+}
+
+.sm-card-1.sm-card-horizontal .sm-card-link > img {
+  width: 100%;
+  max-width: 100%;
 }
 
 @media (--tablet) {
