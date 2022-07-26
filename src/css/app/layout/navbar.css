@@ -5,7 +5,8 @@
   left: 0;
   z-index: 10;
   width: 100%;
-  background-color: var(--surface);
+  background-color: var(--surface-85);
+  backdrop-filter: blur(12px);
 }
 
 .sm-navbar {
