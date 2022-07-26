@@ -38,11 +38,11 @@
 
 .sm-site-title {
   margin: 0;
+  overflow: hidden;
   font-size: 1rem;
   font-weight: 700;
   line-height: 1.1;
   white-space: nowrap;
-  overflow: hidden;
 }
 
 @media (--tablet) {

@@ -15,9 +15,9 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+  padding: 1rem;
   overflow: hidden;
   border-radius: var(--radius);
-  padding: 1rem;
 }
 
 .sm-card,

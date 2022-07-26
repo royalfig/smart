@@ -45,6 +45,12 @@
   flex-direction: column;
 }
 
+@media (--tablet) {
+  .sm-card-1.sm-card-horizontal .sm-card-link {
+    flex-direction: row;
+  }
+}
+
 .sm-card-1.sm-card-horizontal .sm-card-link > img {
   width: 100%;
   max-width: 100%;

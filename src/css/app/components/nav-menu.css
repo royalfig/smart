@@ -43,9 +43,9 @@
 
 .sm-nav-menu-section {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
   gap: var(--gap);
 }
 
