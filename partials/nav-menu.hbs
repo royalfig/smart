@@ -1,42 +1,81 @@
-<div class="sm-nav-menu-container">
-    <button class="sm-nav-menu-close-button sm-circle-close-button" aria-label="close nav menu">
-        <svg aria-hidden="true">
-            <use href="#sm-close-icon"></use>
-        </svg>
+<div class='sm-nav-menu-container'>
+  <button
+    class='sm-nav-menu-close-button sm-circle-close-button'
+    aria-label='close nav menu'
+  >
+    <svg aria-hidden='true'>
+      <use href='#sm-close-icon'></use>
+    </svg>
+  </button>
+  <div class='sm-nav-menu-navigation-container'>
+    {{navigation}}
+    {{! add overflow options }}
+    <p class='sm-nav-menu-header'>Follow</p>
+    <section class='sm-nav-menu-section'>
+      {{#if @site.twitter}}
+        <a class='sm-icon-button' href='{{twitter_url @site.twitter}}'><svg
+            aria-hidden='true'
+          ><use href='#twitter-icon'></use></svg>Twitter</a>
+      {{/if}}
+      {{#if @site.facebook}}
+        <a class='sm-icon-button' href='{{facebook_url @site.facebook}}'><svg
+            aria-hidden='true'
+          ><use href='#facebook-icon'></use></svg>Facebook</a>
+      {{/if}}
+      {{#if @custom.social_media_1_url}}
+        <a class='sm-icon-button' href='{{@custom.social_media_1_url}}'><svg
+            aria-hidden='true'
+          ><use
+              href='#{{@custom.social_media_1}}-icon'
+            ></use></svg>{{@custom.social_media_1}}</a>
+      {{/if}}
+      {{#if @custom.social_media_2_url}}
+        <a class='sm-icon-button' href='{{@custom.social_media_2_url}}'><svg
+            aria-hidden='true'
+          ><use
+              href='#{{@custom.social_media_2}}-icon'
+            ></use></svg>{{@custom.social_media_2}}</a>
+      {{/if}}
+    </section>
+    <p class='sm-nav-menu-header'>Share</p>
+    <section class='sm-nav-menu-section'>
+      <button class='sm-icon-button sm-copy-button'><svg aria-hidden='true'><use
+            href='#sm-copy-icon'
+          ></use></svg>Copy link</button>
+      <a
+        class='sm-icon-button'
+        href='https://twitter.com/share?url={{url absolute='true'}}'
+        aria-label='Share on Twitter'
+        target='_blank'
+        rel='noopener noreferrer'
+      ><svg aria-hidden='true'><use href='#twitter-icon'></use></svg>Twitter</a>
+      <a
+        class='sm-icon-button'
+        href='http://www.linkedin.com/shareArticle?mini=true&amp;url={{url
+          absolute='true'
+        }}'
+        aria-label='Share on LinkedIn'
+        target='_blank'
+        rel='noopener noreferrer'
+      ><svg aria-hidden='true'><use
+            href='#linkedin-icon'
+          ></use></svg>Linkedin</a>
+      <a
+        class='sm-icon-button'
+        href='http://www.facebook.com/sharer.php?u={{url absolute='true'}}'
+        aria-label='Share on Facebook'
+        target='_blank'
+        rel='noopener noreferrer'
+      ><svg aria-hidden='true'><use
+            href='#facebook-icon'
+          ></use></svg>Facebook</a>
+    </section>
+
+    <button class='sm-icon-button sm-dark-mode'>
+      <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>Dark mode
     </button>
-    <div class="sm-nav-menu-navigation-container">
-        {{navigation}}
-        {{!-- add overflow options --}}
-        <p class="sm-nav-menu-header">Follow</p>
-        <section class="sm-nav-menu-section">
-            {{#if @site.twitter}}
-                <a class="sm-icon-button" href="{{twitter_url @site.twitter}}"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>Twitter</a>
-            {{/if}}
-            {{#if @site.facebook}}
-                <a class="sm-icon-button" href="{{facebook_url @site.facebook}}"><svg aria-hidden="true"><use href="#facebook-icon"></use></svg>Facebook</a>
-            {{/if}}
-            {{#if @custom.social_media_1_url}}
-                <a class="sm-icon-button" href="{{@custom.social_media_1_url}}"><svg aria-hidden="true"><use href="#{{@custom.social_media_1}}-icon"></use></svg>{{@custom.social_media_1}}</a>
-            {{/if}}
-            {{#if @custom.social_media_2_url}}
-                <a class="sm-icon-button" href="{{@custom.social_media_1_url}}"><svg aria-hidden="true"><use href="#{{@custom.social_media_2}}-icon"></use></svg>{{@custom.social_media_2}}</a>
-            {{/if}}
-        </section>
-        <p class="sm-nav-menu-header">Share</p>
-        <section class="sm-nav-menu-section">
-            <button class="sm-icon-button sm-copy-button"><svg aria-hidden="true"><use href="#sm-copy-icon"></use></svg>Copy link</button>
-            <a class="sm-icon-button" href="https://twitter.com/share?url={{url absolute="true"}}" aria-label="Share on Twitter" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#twitter-icon"></use></svg>Twitter</a>
-            <a class="sm-icon-button" href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{url absolute='true'}}"
-            aria-label="Share on LinkedIn" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#linkedin-icon"></use></svg>Linkedin</a>
-            <a class="sm-icon-button" href="http://www.facebook.com/sharer.php?u={{url absolute='true'}}"
-            aria-label="Share on Facebook" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true"><use href="#facebook-icon"></use></svg>Facebook</a>
-        </section>
-      
-        <button class="sm-icon-button sm-dark-mode">
-            <svg aria-hidden="true"><use href="#sm-moon-icon"></use></svg>Dark mode
-        </button>
-        <button class="sm-icon-button sm-light-mode">
-            <svg aria-hidden="true"><use href="#sm-sun-icon"></use></svg>Light mode
-        </button>
-    </div>
+    <button class='sm-icon-button sm-light-mode'>
+      <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>Light mode
+    </button>
+  </div>
 </div>
