@@ -42,7 +42,7 @@
     "eslint": "8.17.0",
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-plugin-import": "2.26.0",
-    "gscan": "4.31.2",
+    "gscan": "4.33.0",
     "livereload": "0.9.3",
     "minisearch": "5.0.0",
     "postcss": "8.4.14",
