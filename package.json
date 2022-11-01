@@ -60,7 +60,7 @@
     "js-search": "^2.0.0",
     "lazysizes": "^5.3.2",
     "medium-zoom": "^1.0.6",
-    "postcss-import": "^14.1.0",
+    "postcss-import": "^15.0.0",
     "postcss-preset-env": "^7.7.0",
     "prismjs": "^1.28.0"
   },
