@@ -4,7 +4,7 @@
   "description": "An elegant Ghost theme",
   "main": "index.js",
   "engines": {
-    "ghost": ">=4.0.0"
+    "ghost": ">=5.0.0"
   },
   "screenshots": {
     "desktop": "assets/screenshot-desktop.png",
@@ -34,7 +34,7 @@
     "@babel/core": "7.19.6",
     "@babel/preset-env": "7.19.4",
     "@rollup/plugin-babel": "6.0.2",
-    "@rollup/plugin-node-resolve": "13.3.0",
+    "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-replace": "5.0.1",
     "adm-zip": "0.5.9",
     "autoprefixer": "10.4.13",
@@ -56,13 +56,13 @@
     "stylelint-order": "5.0.0"
   },
   "dependencies": {
-    "@tryghost/content-api": "^1.9.8",
+    "@tryghost/content-api": "^1.11.4",
     "js-search": "^2.0.0",
     "lazysizes": "^5.3.2",
     "medium-zoom": "^1.0.6",
     "postcss-import": "^15.0.0",
-    "postcss-preset-env": "^7.7.0",
-    "prismjs": "^1.28.0"
+    "postcss-preset-env": "^7.8.2",
+    "prismjs": "^1.29.0"
   },
   "config": {
     "posts_per_page": 15,
@@ -177,5 +177,6 @@
         "type": "text"
       }
     }
-  }
+  },
+  "type": "module"
 }

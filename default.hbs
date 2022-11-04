@@ -9,7 +9,15 @@
 
     {{!-- CSS and Fonts --}}
 
-
+{{#post}} {{! Only run this code when on a post page }}
+  {{#has tag="pokedex"}} {{! Only run on a post with tag pokedek}}
+    <style>
+       .post-template {
+          background-image: url({{asset "/img/glossy-lines-5.png"}});
+        }
+    </style>
+  {{/has}}
+{{/post}}
     {{! Load scripts to execute before render }}
     <script>
         const colorModePref = document.documentElement.dataset.colorPref;

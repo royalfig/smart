@@ -100,7 +100,6 @@
 /* Related posts */
 .sm-related-posts {
   margin-block: 1rem 6rem;
-  border-top: 1px solid var(--border-color);
   grid-column: content;
 }
 
@@ -135,4 +134,10 @@
 
 .sm-related-posts .sm-card {
   grid-area: auto;
+}
+
+/* Comments */
+/* stylelint-disable-next-line selector-max-id */
+#ghost-comments-root {
+  grid-column: content;
 }

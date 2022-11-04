@@ -7,9 +7,12 @@
     <article class="sm-content-grid sm-post-content {{post_class}} {{slug}}">
         {{content}}
     </article>
-</main>                 
+</main>       
+
+
 
 <section class="sm-grid">
+    {{comments}}
     <div class="sm-related-posts">
         {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
             {{#if related}}
