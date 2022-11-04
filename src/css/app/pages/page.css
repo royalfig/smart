@@ -1,3 +1,7 @@
 .page-template .sm-grid > * {
   grid-column: content;
 }
+
+.page-template .sm-footer-container {
+  margin-block-start: 3rem;
+}
