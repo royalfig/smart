@@ -140,9 +140,10 @@
           "twitch",
           "vimeo",
           "wechat",
-          "youtube"
+          "youtube",
+          "none"
         ],
-        "default": ""
+        "default": "none"
       },
       "social_media_2": {
         "type": "select",
@@ -166,9 +167,10 @@
           "twitch",
           "vimeo",
           "wechat",
-          "youtube"
+          "youtube",
+          "none"
         ],
-        "default": ""
+        "default": "none"
       },
       "social_media_1_url": {
         "type": "text"
