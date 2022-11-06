@@ -38,7 +38,7 @@
 }
 
 .sm-card h2 {
-  margin: 0;
+  margin: 0.5rem 0 0;
   font-size: 2rem;
   line-height: 1.1;
 }
@@ -46,8 +46,9 @@
 .sm-card h2:not(.large) {
   font-size: 1.35rem;
 }
+
 .sm-card-body {
-  padding: 1rem;
+  padding: 0;
 }
 
 .sm-card .sm-excerpt {
@@ -64,7 +65,7 @@
 
 .sm-card .sm-tag {
   display: inline-block;
-  max-width: 50%;
+  max-width: 70%;
   padding: 0 0.75em;
   overflow: hidden;
   font-size: var(--x-small);
@@ -80,6 +81,10 @@
 .sm-card .sm-reading-time {
   font-size: var(--x-small);
   color: var(--element-light);
+}
+
+.sm-card-horizontal .sm-card-link {
+  gap: 1rem;
 }
 
 @media (--tablet) {
@@ -191,7 +196,6 @@
 }
 
 /* Tags */
-
 .sm-tags-card {
   display: flex;
   flex-direction: column;
@@ -296,7 +300,7 @@
 .sm-card .sm-love-button {
   position: absolute;
   right: 1rem;
-  bottom: 2rem;
+  bottom: 1rem;
 }
 
 .sm-card .sm-love-button svg {

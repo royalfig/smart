@@ -61,13 +61,13 @@
   mix-blend-mode: multiply;
 }
 
-.sm-hero-img {
+.sm-hero-img img {
   display: block;
   width: 100%;
   margin: 0 auto;
   border-radius: var(--radius);
   box-shadow: var(--box-shadow);
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .sm-hero-right {

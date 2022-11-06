@@ -69,9 +69,13 @@
   opacity: 0.75;
 }
 
-.sm-post-meta > * + *::before {
-  margin-inline-end: 0.5em;
-  content: '/';
+.sm-post-meta > *:not(:last-child):after {
+  margin-inline-start: 0.5em;
+  content: '\002301';
+}
+
+.sm-post-meta > a:hover::after {
+  color: var(--element-light);
 }
 
 .sm-post-save-button {
@@ -85,6 +89,7 @@
   transform: none;
 }
 
+.sm-post-meta a:hover,
 .sm-post-save-button:hover {
   color: var(--primary);
 }

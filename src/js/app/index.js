@@ -5,7 +5,6 @@ import { determineColorModeSupport } from './colorModeToggle';
 import keyClickHandler from './keyHandler';
 import generatePagination from './pagination';
 import { Saves } from './saves';
-import search from './search';
 
 // eslint-disable-next-line no-undef
 if (ENV === 'development') {
@@ -19,7 +18,6 @@ if (ENV === 'development') {
 
 initClickHandler();
 determineColorModeSupport();
-search();
 generatePagination();
 keyClickHandler();
 new Saves().init();

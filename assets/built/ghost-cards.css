@@ -1,2 +1,69 @@
-.kg-bookmark-card a.kg-bookmark-container{border-color:var(--border-color);border-radius:var(--radius);transition:border-color .3s}.kg-bookmark-card .kg-bookmark-icon{margin-inline:0 6px}.kg-bookmark-title{font-size:1rem}.kg-bookmark-content{padding:1rem}.kg-bookmark-description{color:var(--element-light);font-size:var(--small)}.kg-bookmark-metadata{font-size:var(--small)}.kg-bookmark-card:hover a.kg-bookmark-container{border-color:var(--primary-light);border-radius:var(--radius)}.kg-toggle-card{border:1px solid var(--border-color);border-radius:var(--radius);box-shadow:none;padding:1rem}.kg-toggle-heading svg{color:var(--primary-light)}.kg-toggle-card:hover .kg-toggle-heading svg{color:var(--primary)}.kg-button-card{font-family:inherit;font-weight:700;text-transform:uppercase}.kg-btn,.kg-button-card{border-radius:var(--radius)}.kg-btn{height:auto;padding:var(--button-padding)}.kg-btn-accent{background-color:var(--primary);color:var(--button-text);transition:background-color .3s}.kg-btn-accent:hover{background-color:var(--primary-light);opacity:1}.kg-callout-card{background-color:var(--border-color);border-radius:var(--radius);padding:1rem}
+/* Bookmark card */
+.kg-bookmark-card a.kg-bookmark-container {
+  border-color: var(--border-color);
+  border-radius: var(--radius);
+  transition: border-color 0.3s;
+}
+.kg-bookmark-card .kg-bookmark-icon {
+  margin-inline: 0 6px;
+}
+.kg-bookmark-title {
+  font-size: 1rem;
+}
+.kg-bookmark-content {
+  padding: 1rem;
+}
+.kg-bookmark-description {
+  font-size: var(--small);
+  color: var(--element-light);
+}
+.kg-bookmark-metadata {
+  font-size: var(--small);
+}
+.kg-bookmark-card:hover a.kg-bookmark-container {
+  border-color: var(--primary-light);
+  border-radius: var(--radius);
+}
+/* Toggle card */
+.kg-toggle-card {
+  padding: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: none;
+}
+.kg-toggle-heading svg {
+  color: var(--primary-light);
+}
+.kg-toggle-card:hover .kg-toggle-heading svg {
+  color: var(--primary);
+}
+/* Button */
+.kg-button-card {
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+}
+.kg-btn {
+  height: auto;
+  height: initial;
+  padding: var(--button-padding);
+  border-radius: var(--radius);
+}
+.kg-btn-accent {
+  color: var(--button-text);
+  background-color: var(--primary);
+  transition: background-color 0.3s;
+}
+.kg-btn-accent:hover {
+  background-color: var(--primary-light);
+  opacity: 1;
+}
+/* Callout card */
+.kg-callout-card {
+  padding: 1rem;
+  background-color: var(--border-color);
+  border-radius: var(--radius);
+}
+
 /*# sourceMappingURL=ghost-cards.css.map */
