@@ -2,6 +2,42 @@
   position: relative;
   min-height: 60vmin;
   padding-block-end: 3rem;
+  background-color: var(--primary);
+  background-image: radial-gradient(
+      at 40% 20%,
+      hsla(calc(var(--primary-h) + 90), 100%, 74%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 0%,
+      hsla(calc(var(--primary-h) + 180), 100%, 56%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 50%,
+      hsla(calc(var(--primary-h) + 270), 100%, 93%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 50%,
+      hsla(calc(var(--primary-h) + 40), 100%, 76%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 100%,
+      hsla(calc(var(--primary-h) + 140), 100%, 77%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 80% 100%,
+      hsla(calc(var(--primary-h) + 230), 100%, 70%, 1) 0px,
+      transparent 50%
+    ),
+    radial-gradient(
+      at 0% 0%,
+      hsla(var(--primary-h), 100%, 76%, 1) 0px,
+      transparent 50%
+    );
 }
 
 .sm-hero + .sm-grid .sm-grid-home {

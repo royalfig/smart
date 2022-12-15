@@ -1,7 +1,10 @@
-const livereload = require('livereload');
+import { createServer } from 'livereload';
 
-const path = require('path');
+import { resolve } from 'path';
 
-const server = livereload.createServer({ extraExts: ['hbs'], exclusions: [path.resolve('../src')] });
-server.watch(path.resolve('../'));
-console.info(`Reload server started. Watching ${path.resolve('../')}`);
+const server = createServer({
+  extraExts: ['hbs'],
+  exclusions: [resolve('../src')],
+});
+server.watch(resolve('../'));
+console.info(`Reload server started. Watching ${resolve('../')}`);

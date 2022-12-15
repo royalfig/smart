@@ -2,7 +2,7 @@ import { resolve } from 'path';
 
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import babel from '@rollup/plugin-babel';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 import replace from '@rollup/plugin-replace';
 
 // CSS
@@ -14,7 +14,6 @@ import cssnano from 'cssnano';
 const postcssConfig = postcss({
   include: 'src/css/app/index.css',
   extract: resolve('assets/built/app.css'),
-
   sourceMap: true,
   plugins: [
     atImport,

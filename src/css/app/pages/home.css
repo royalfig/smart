@@ -21,7 +21,7 @@
   gap: var(--gap);
   grid-column: content;
   padding: 6rem 0;
-  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21.875rem, 1fr));
 }
 
 .sm-card-2.sm-card-horizontal,
