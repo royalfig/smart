@@ -9,7 +9,7 @@
         {{^if @member}}
         {{#if @site.members_enabled}}<a
             class='sm-button sm-hero-cta'
-            href='{{@site.signup_rul}}'
+            href='{{@site.signup_url}}'
           >Subscribe</a>{{/if}}{{/if}}
         
         {{#get "posts" fitler="featured:true" limit="1" as |featured|}}
