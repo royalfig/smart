@@ -1,0 +1,13 @@
+.sm-gradient-divider {
+  height: 5rem;
+  background-image: linear-gradient(0deg, var(--surface), var(--surface-dark));
+}
+
+.sm-gradient-divider-reverse {
+  height: 5rem;
+  background-image: linear-gradient(
+    180deg,
+    var(--surface),
+    var(--surface-dark)
+  );
+}

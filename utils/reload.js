@@ -6,5 +6,7 @@ const server = createServer({
   extraExts: ['hbs'],
   exclusions: [resolve('../src')],
 });
+
 server.watch(resolve('../'));
+
 console.info(`Reload server started. Watching ${resolve('../')}`);
