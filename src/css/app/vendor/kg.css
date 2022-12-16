@@ -52,7 +52,6 @@ blockquote:not(.kg-blockquote-alt) {
 
 @media (--tablet) {
   .kg-width-wide,
-  .kg-embed-card,
   .kg-gallery-card {
     grid-column: wide;
   }
