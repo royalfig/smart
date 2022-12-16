@@ -4,7 +4,42 @@
         {{#is "tag"}}<p class="sm-tag-count">{{count}} posts</p>{{/is}}
 
         {{#if profile_image}}
-            <img class="sm-author-profile-image" src="{{img_url profile_image}}" alt="{{name}}">
+            <picture class="sm-author-profile-image">
+                <source 
+                    srcset="
+                    {{img_url profile_image size="xxs" format="avif"}} 100w,
+                    {{img_url profile_image size="xs" format="avif"}} 300w,
+                    {{img_url profile_image size="s" format="avif"}} 500w,
+                    {{img_url profile_image size="m" format="avif"}} 800w,
+                    {{img_url profile_image size="l" format="avif"}} 1000w,
+                    {{img_url profile_image size="xl" format="avif"}} 2000w"
+                    sizes="55px" 
+                    type="image/avif"
+                >
+                <source 
+                    srcset="
+                    {{img_url profile_image size="xxs" format="webp"}} 100w,
+                    {{img_url profile_image size="xs" format="webp"}} 300w,
+                    {{img_url profile_image size="s" format="webp"}} 500w,
+                    {{img_url profile_image size="m" format="webp"}} 800w,
+                    {{img_url profile_image size="l" format="webp"}} 1000w,
+                    {{img_url profile_image size="xl" format="webp"}} 2000w"
+                    sizes="55px" 
+                    type="image/webp"
+                >
+                <img
+                    srcset="
+                    {{img_url profile_image size="xxs"}} 100w,
+                    {{img_url profile_image size="xs"}} 300w,
+                    {{img_url profile_image size="s"}} 500w,
+                    {{img_url profile_image size="m"}} 800w,
+                    {{img_url profile_image size="l"}} 1000w,
+                    {{img_url profile_image size="xl"}} 2000w"
+                    sizes="55px" 
+                    src="{{img_url profile_image size="xxs"}}"
+                    alt="{{name}}"
+                >
+            </picture>
         {{/if}}
         
         <h1 class="sm-header-title">{{#if title}}{{title}}{{else if name}}{{name}}{{else}}{{meta_title}}{{/if}}</h1>
@@ -34,7 +69,42 @@
             <div class="sm-post-author-profile-image">
                 {{~#foreach authors~}}
                     {{~#if profile_image~}}
-                    <img src="{{img_url profile_image}}" alt="{{name}}">
+                     <picture>
+                        <source 
+                            srcset="
+                            {{img_url profile_image size="xxs" format="avif"}} 100w,
+                            {{img_url profile_image size="xs" format="avif"}} 300w,
+                            {{img_url profile_image size="s" format="avif"}} 500w,
+                            {{img_url profile_image size="m" format="avif"}} 800w,
+                            {{img_url profile_image size="l" format="avif"}} 1000w,
+                            {{img_url profile_image size="xl" format="avif"}} 2000w"
+                            sizes="55px" 
+                            type="image/avif"
+                        >
+                        <source 
+                            srcset="
+                            {{img_url profile_image size="xxs" format="webp"}} 100w,
+                            {{img_url profile_image size="xs" format="webp"}} 300w,
+                            {{img_url profile_image size="s" format="webp"}} 500w,
+                            {{img_url profile_image size="m" format="webp"}} 800w,
+                            {{img_url profile_image size="l" format="webp"}} 1000w,
+                            {{img_url profile_image size="xl" format="webp"}} 2000w"
+                            sizes="55px" 
+                            type="image/webp"
+                        >
+                        <img
+                            srcset="
+                            {{img_url profile_image size="xxs"}} 100w,
+                            {{img_url profile_image size="xs"}} 300w,
+                            {{img_url profile_image size="s"}} 500w,
+                            {{img_url profile_image size="m"}} 800w,
+                            {{img_url profile_image size="l"}} 1000w,
+                            {{img_url profile_image size="xl"}} 2000w"
+                            sizes="55px" 
+                            src="{{img_url profile_image size="xxs"}}"
+                            alt="{{name}}"
+                        >
+                    </picture>
                     {{~/if~}}
                 {{~/foreach~}}
             </div>
