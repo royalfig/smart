@@ -1,23 +1,65 @@
-<section class='sm-hero'>
-  <div class='sm-hero-bg-container'>
-    <img
-      class='sm-hero-bg'
-      srcset='{{img_url @custom.hero_image size='s'}} 500w,
-              {{img_url @custom.hero_image size='m'}} 800w,
-              {{img_url @custom.hero_image size='l'}} 1000w,
-              {{img_url @custom.hero_image size='xl'}} 2000w'
-      sizes='100vw'
-      src='{{img_url @custom.hero_image size='m'}}'
-      alt='{{@custom.hero_title}}'
-    />
-  </div>
-  <div class='sm-hero-inner'>
+<section class='sm-hero sm-grid'>
 
-    <p class='sm-hero-subtitle'>{{@custom.hero_title}}</p>
-    <p class='sm-hero-description'>{{@custom.hero_description}}</p>
-    <div class='sm-hero-cta-button-container'>
-      <a href='#/portal/' class='sm-hero-cta'>Become a member</a>
-      <a href='#/portal/' class='sm-hero-cta--outline'>Start reading</a>
+  <div class='sm-hero-inner'>
+    <div class='sm-hero-left'>
+      <p class='sm-hero-subtitle'>{{@custom.hero_title}}</p>
+      <p class='sm-hero-description'>{{@custom.hero_description}}</p>
+
+      <div class='sm-hero-button-container'>
+        {{^if @member}}
+        {{#if @site.members_enabled}}<a
+            class='sm-button sm-hero-cta'
+            href='{{@site.signup_rul}}'
+          >Subscribe</a>{{/if}}{{/if}}
+        
+        {{#get "posts" fitler="featured:true" limit="1" as |featured|}}
+          {{#if featured}}
+          {{#foreach featured}}
+            <a class='sm-button sm-hero-cta-2' href='{{url}}'>Start reading</a>
+            {{/foreach}}
+          {{/if}}
+        {{/get}}
+      </div>
+    </div>
+
+    <div class='sm-hero-right'>
+      <picture class='sm-hero-img'>
+        <source
+          srcset='
+                {{img_url @custom.hero_image size='xxs' format='avif'}} 100w,
+                {{img_url @custom.hero_image size='xs' format='avif'}} 300w,
+                {{img_url @custom.hero_image size='s' format='avif'}} 500w,
+                {{img_url @custom.hero_image size='m' format='avif'}} 800w,
+                {{img_url @custom.hero_image size='l' format='avif'}} 1000w,
+                {{img_url @custom.hero_image size='xl' format='avif'}} 2000w'
+          sizes='(min-width: 750px) 500px, 100vw'
+          type='image/avif'
+        />
+        <source
+          srcset='
+                {{img_url @custom.hero_image size='xxs' format='webp'}} 100w,
+                {{img_url @custom.hero_image size='xs' format='webp'}} 300w,
+                {{img_url @custom.hero_image size='s' format='webp'}} 500w,
+                {{img_url @custom.hero_image size='m' format='webp'}} 800w,
+                {{img_url @custom.hero_image size='l' format='webp'}} 1000w,
+                {{img_url @custom.hero_image size='xl' format='webp'}} 2000w'
+          sizes='(min-width: 750px) 500px, 100vw'
+          type='image/webp'
+        />
+        <img
+          srcset='
+                {{img_url @custom.hero_image size='xxs'}} 100w,
+                {{img_url @custom.hero_image size='xs'}} 300w,
+                {{img_url @custom.hero_image size='s'}} 500w,
+                {{img_url @custom.hero_image size='m'}} 800w,
+                {{img_url @custom.hero_image size='l'}} 1000w,
+                {{img_url @custom.hero_image size='xl'}} 2000w'
+          sizes='(min-width: 750px) 500px, 100vw'
+          src='{{img_url @custom.hero_image size='xxs'}}'
+          alt='{{@site.title}}'
+        />
+      </picture>
+
     </div>
   </div>
 </section>
