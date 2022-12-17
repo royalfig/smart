@@ -51,7 +51,7 @@
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-scss": "4.0.0",
-    "sass": "1.56.1",
+    "sass": "1.57.0",
     "stylelint": "14.16.0",
     "stylelint-order": "5.0.0"
   },
