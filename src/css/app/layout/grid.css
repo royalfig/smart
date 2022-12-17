@@ -59,6 +59,11 @@ Index, author grid
   grid-column: content;
 }
 
+.sm-basic-grid > article:first-child {
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+}
+
 @media (--phone) {
   .sm-basic-grid {
     grid-template-columns: 1fr 1fr;
