@@ -27,7 +27,7 @@ into the {body} of the default.hbs template --}}
         <div class="sm-grid-home sm-grid-feature-left">
             <aside class="sm-feature-card sm-cta-card">
                 {{#if @site.icon}}
-                    <img src="{{img_url @site.icon}}" alt="">
+                    <img src="{{img_url @site.icon size="xxs"}}" alt="">
                 {{/if}}
 
                 <form data-members-form="subscribe">
@@ -60,7 +60,6 @@ into the {body} of the default.hbs template --}}
     {{/match}}
 
     {{#match posts.length ">" "10"}}
-
     <div class="sm-grid">
         <div class="sm-grid-home sm-grid-feature-right">
             {{#foreach posts from="11" to="15"}}

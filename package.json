@@ -99,12 +99,6 @@
         "type": "image",
         "group": "homepage"
       },
-      "search_key": {
-        "type": "text"
-      },
-      "search_url": {
-        "type": "text"
-      },
       "color_mode": {
         "type": "select",
         "options": [
@@ -137,7 +131,7 @@
           "telegram",
           "tumblr",
           "twitch",
-          "twitch",
+          "twitter",
           "vimeo",
           "wechat",
           "youtube",
@@ -164,7 +158,7 @@
           "telegram",
           "tumblr",
           "twitch",
-          "twitch",
+          "twitter",
           "vimeo",
           "wechat",
           "youtube",
