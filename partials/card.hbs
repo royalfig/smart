@@ -51,6 +51,11 @@
                         {{/if}}
                         {{#if premiere}}<p class="sm-excerpt">{{custom_excerpt}}</p>
                         {{/if}}
+                        {{^if premiere}}
+                        {{#if @first}}
+                            <p class="sm-excerpt">{{custom_excerpt}}</p>
+                        {{/if}}
+                        {{/if}}
                     {{/if}}
                 </div>
                 <div class="sm-card-footer">
