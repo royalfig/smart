@@ -109,7 +109,7 @@
   .sm-card-horizontal .sm-card-link {
     flex-direction: row;
   }
-  .sm-grid-feature .sm-card-horizontal img {
+  .sm-grid-feature .sm-card-horizontal .sm-card-link img {
     max-width: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
