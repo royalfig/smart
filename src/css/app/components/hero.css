@@ -75,15 +75,15 @@
 }
 
 .sm-hero-button-container:not(:empty) {
-  margin-block-start: 2rem;
   display: flex;
-  gap: 1rem;
   justify-content: center;
+  margin-block-start: 2rem;
+  gap: 1rem;
 }
 
 .sm-hero-cta-2 {
-  background-color: transparent;
   color: var(--primary);
+  background-color: transparent;
   border: 1px solid;
 }
 

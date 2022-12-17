@@ -19,9 +19,15 @@
 }
 
 .sm-header-image {
+  display: block;
   width: 100%;
-  aspect-ratio: 16 / 9;
   margin-block: 2rem;
+  aspect-ratio: 16 / 9;
+}
+
+.sm-header-image figcaption {
+  font-size: var(--small);
+  opacity: 0.8;
 }
 
 .sm-header-image img {

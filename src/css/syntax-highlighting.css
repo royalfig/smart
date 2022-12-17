@@ -125,12 +125,12 @@ pre[class*='language-'] {
 }
 
 .token.id {
-  font-weight: bold;
+  font-weight: 700;
   color: #c792ea;
 }
 
 .token.important {
-  font-weight: bold;
+  font-weight: 700;
   color: #c792ea;
 }
 
