@@ -25,9 +25,9 @@
 }
 
 .sm-header-image figcaption {
+  margin-block-start: 3px;
   font-size: var(--small);
   opacity: 0.8;
-  margin-block-start: 3px;
 }
 
 .sm-header-image img {

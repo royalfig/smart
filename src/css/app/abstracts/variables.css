@@ -10,7 +10,7 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 0.75rem;
+  --gap: 1rem;
   --width: 992px;
   --post-width: 768px;
   --content-width: 600px;
@@ -32,18 +32,6 @@
   --x-small: 0.694rem;
   --xx-small: 0.579rem;
   --button-padding: 0.5em 0.75em;
-}
-
-@media (--tablet) {
-  :root {
-    --gap: 0.75rem;
-  }
-}
-
-@media (--laptop) {
-  :root {
-    --gap: 1rem;
-  }
 }
 
 /* Color scheme */
