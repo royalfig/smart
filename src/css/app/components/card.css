@@ -109,6 +109,11 @@
   .sm-card-horizontal .sm-card-link {
     flex-direction: row;
   }
+
+  .sm-grid-feature .sm-card-horizontal picture {
+    max-width: 50%;
+  }
+
   .sm-grid-feature .sm-card-horizontal img {
     max-width: none;
   }
