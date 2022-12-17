@@ -48,9 +48,11 @@
 
 .sm-card img {
   width: 100%;
+  height: 100%;
+  border-top-left-radius: var(--radius-small);
+  border-top-right-radius: var(--radius-small);
   aspect-ratio: 16 / 9;
   object-fit: cover;
-  border-radius: var(--radius-small);
 }
 
 .sm-card h2 {
@@ -109,6 +111,8 @@
   }
   .sm-grid-feature .sm-card-horizontal img {
     width: 50%;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   .sm-card-horizontal .sm-card-link img {
