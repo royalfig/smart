@@ -5,9 +5,8 @@
 }
 
 .sm-footer {
-  padding: var(--gap) 0 0;
+  padding: 2rem 0 0;
   font-size: var(--small);
-
   color: var(--element-dark);
   grid-column: content;
 }
