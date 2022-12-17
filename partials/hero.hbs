@@ -12,7 +12,7 @@
             href='{{@site.signup_url}}'
           >Subscribe</a>{{/if}}{{/if}}
         
-        {{#get "posts" fitler="featured:true" limit="1" as |featured|}}
+        {{#get "posts" filter="featured:true" limit="1" as |featured|}}
           {{#if featured}}
           {{#foreach featured}}
             <a class='sm-button sm-hero-cta-2' href='{{url}}'>Start reading</a>
