@@ -110,7 +110,7 @@
     flex-direction: row;
   }
   .sm-grid-feature .sm-card-horizontal img {
-    width: 50%;
+    max-width: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
   }
