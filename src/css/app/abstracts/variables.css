@@ -1,4 +1,4 @@
-@custom-media --phone (min-width: 576px);
+@custom-media --phone (min-width: 500px);
 @custom-media --tablet (min-width: 768px);
 @custom-media --laptop (min-width: 992px);
 @custom-media --desktop (min-width: 1200px);
@@ -13,7 +13,7 @@
   --gap: 1rem;
   --width: 992px;
   --post-width: 768px;
-  --content-width: 600px;
+  --content-width: 700px;
   --radius: 0.5em;
   --radius-small: 3px;
 

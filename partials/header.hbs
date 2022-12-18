@@ -4,7 +4,7 @@
         {{#is "tag"}}<p class="sm-tag-count">{{count}} posts</p>{{/is}}
 
         {{#if profile_image}}
-            <picture class="sm-author-profile-image">
+            <picture >
                 <source 
                     srcset="
                     {{img_url profile_image size="xxs" format="avif"}} 100w,
@@ -27,7 +27,7 @@
                     sizes="55px" 
                     type="image/webp"
                 >
-                <img
+                <img class="sm-author-profile-image"
                     srcset="
                     {{img_url profile_image size="xxs"}} 100w,
                     {{img_url profile_image size="xs"}} 300w,
@@ -92,7 +92,7 @@
                             sizes="55px" 
                             type="image/webp"
                         >
-                        <img
+                        <img 
                             srcset="
                             {{img_url profile_image size="xxs"}} 100w,
                             {{img_url profile_image size="xs"}} 300w,

@@ -1,22 +1,3 @@
-/* Grid inventory
-Basic page grid -> 
-gutter gap gutter
-
-Homepage grid ->
-basic grid
- Layouts
-
-Header grid
-  -> Author, tag, post, page
-
-Content grid
-
-Index, author grid
-
-
-
-*/
-
 [class*='grid'] {
   display: grid;
 }
@@ -57,11 +38,6 @@ Index, author grid
 
 .sm-grid > .sm-basic-grid {
   grid-column: content;
-}
-
-.sm-basic-grid > article:first-child {
-  grid-column: 1 / 3;
-  grid-row: 1 / 3;
 }
 
 @media (--phone) {
