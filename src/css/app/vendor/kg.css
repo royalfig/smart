@@ -6,18 +6,22 @@ blockquote:not(.kg-blockquote-alt) {
 
 .kg-blockquote-alt {
   font-family: var(--heading-typeface);
+  line-height: 1.2;
 }
+
 .kg-blockquote-alt::before,
 .kg-blockquote-alt::after {
-  color: var(--secondary-light);
+  color: var(--secondary);
 }
+
 .kg-blockquote-alt::before {
   padding-inline-end: 0.1em;
-  content: '\00201C';
+  content: '\002301';
 }
+
 .kg-blockquote-alt::after {
   padding-inline-start: 0.1em;
-  content: '\00201D';
+  content: '\002301';
 }
 
 /* Cards and images */

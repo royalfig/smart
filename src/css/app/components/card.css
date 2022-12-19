@@ -151,10 +151,11 @@
   position: relative;
 }
 
-.sm-cta-card img + form {
+.sm-cta-card picture + form {
   height: auto;
   margin-block-start: 2rem;
 }
+
 .sm-cta-card img {
   position: absolute;
   top: 0;
