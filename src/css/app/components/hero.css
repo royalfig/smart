@@ -82,9 +82,18 @@
 }
 
 .sm-hero-cta-2 {
+  position: relative;
   color: var(--primary);
   background-color: transparent;
-  border: 1px solid;
+}
+
+.sm-hero-cta-2 svg {
+  position: absolute;
+  top: 33%;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
 }
 
 @media (--tablet) {
