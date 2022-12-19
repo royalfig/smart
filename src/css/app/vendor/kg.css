@@ -1,6 +1,7 @@
 /* Blockquote */
 blockquote:not(.kg-blockquote-alt) {
   padding-inline-start: 2rem;
+  border-left: 3px solid var(--border-color);
 }
 
 .kg-blockquote-alt {
