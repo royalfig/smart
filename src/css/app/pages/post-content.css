@@ -11,6 +11,7 @@
 /* Links */
 .sm-post-content a {
   text-decoration: underline;
+  text-decoration-thickness: 2px;
   transition: text-decoration-color 0.1s;
 }
 
@@ -69,7 +70,7 @@
 
 /* List */
 .sm-post-content li {
-  line-height: 1.4;
+  line-height: inherit;
 }
 
 .sm-post-content li:not(:last-child) {
