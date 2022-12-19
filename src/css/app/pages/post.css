@@ -61,12 +61,13 @@
 
 .sm-post-meta {
   display: flex;
+  flex-wrap: wrap;
   font-size: var(--x-small);
   color: var(--element-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  gap: 0.5em;
   opacity: 0.75;
+  gap: 0 0.5em;
 }
 
 .sm-post-meta > *:not(:last-child):after {

@@ -1,40 +1,54 @@
 <article class="sm-card {{#is "home"}}sm-card-{{@number}}{{/is}} {{slug}} {{#if horizontal}}sm-card-horizontal{{else}}sm-card-vertical{{/if}}">
     <a class="sm-card-link" href="{{url}}" aria-label="{{title}}">
             {{#if feature_image}}
-            <picture class="">
+            <picture>
               <source 
                 srcset="
-                {{img_url feature_image size="xxs" format="avif"}} 100w,
-                {{img_url feature_image size="xs" format="avif"}} 300w,
-                {{img_url feature_image size="s" format="avif"}} 500w,
-                {{img_url feature_image size="m" format="avif"}} 800w,
-                {{img_url feature_image size="l" format="avif"}} 1000w,
-                {{img_url feature_image size="xl" format="avif"}} 2000w"
-                sizes="(min-width: 750px) 500px, 100vw" 
+                {{img_url feature_image size="48" format="avif"}} 48w,
+                {{img_url feature_image size="80" format="avif"}} 80w,
+                {{img_url feature_image size="160" format="avif"}} 160w,
+                {{img_url feature_image size="240" format="avif"}} 240w,
+                {{img_url feature_image size="528" format="avif"}} 528w,
+                {{img_url feature_image size="800" format="avif"}} 800w,
+                {{img_url feature_image size="1200" format="avif"}} 1200w,
+                {{img_url feature_image size="1600" format="avif"}} 1600w,
+                {{img_url feature_image size="1920" format="avif"}} 1920w,
+                {{img_url feature_image size="2000" format="avif"}} 2000w"
+                sizes="(min-width: 767px) 528px, 100vw" 
                 type="image/avif"
               >
               <source 
                 srcset="
-                {{img_url feature_image size="xxs" format="webp"}} 100w,
-                {{img_url feature_image size="xs" format="webp"}} 300w,
-                {{img_url feature_image size="s" format="webp"}} 500w,
-                {{img_url feature_image size="m" format="webp"}} 800w,
-                {{img_url feature_image size="l" format="webp"}} 1000w,
-                {{img_url feature_image size="xl" format="webp"}} 2000w"
-                sizes="(min-width: 750px) 500px, 100vw" 
+                {{img_url feature_image size="48" format="webp"}} 48w,
+                {{img_url feature_image size="80" format="webp"}} 80w,
+                {{img_url feature_image size="160" format="webp"}} 160w,
+                {{img_url feature_image size="240" format="webp"}} 240w,
+                {{img_url feature_image size="528" format="webp"}} 528w,
+                {{img_url feature_image size="800" format="webp"}} 800w,
+                {{img_url feature_image size="1200" format="webp"}} 1200w,
+                {{img_url feature_image size="1600" format="webp"}} 1600w,
+                {{img_url feature_image size="1920" format="webp"}} 1920w,
+                {{img_url feature_image size="2000" format="webp"}} 2000w"
+                sizes="(min-width: 767px) 528px, 100vw" 
                 type="image/webp"
               >
               <img
                 srcset="
-                {{img_url feature_image size="xxs"}} 100w,
-                {{img_url feature_image size="xs"}} 300w,
-                {{img_url feature_image size="s"}} 500w,
-                {{img_url feature_image size="m"}} 800w,
-                {{img_url feature_image size="l"}} 1000w,
-                {{img_url feature_image size="xl"}} 2000w"
-                sizes="(min-width: 750px) 500px, 100vw" 
-                src="{{img_url feature_image size="s"}}"
+                {{img_url feature_image size="48"}} 48w,
+                {{img_url feature_image size="80"}} 80w,
+                {{img_url feature_image size="160"}} 160w,
+                {{img_url feature_image size="240"}} 240w,
+                {{img_url feature_image size="528"}} 528w,
+                {{img_url feature_image size="800"}} 800w,
+                {{img_url feature_image size="1200"}} 1200w,
+                {{img_url feature_image size="1600"}} 1600w,
+                {{img_url feature_image size="1920"}} 1920w,
+                {{img_url feature_image size="2000"}} 2000w"
+                sizes="(min-width: 767px) 528px, 100vw" 
+                src="{{img_url feature_image size="528"}}"
                 alt="{{#if feature_image_alt}}{{feature_image_alt}}{{else}}{{title}}{{/if}}"
+                {{^if @first}}loading="lazy"{{/if}}
+                width="528" height="297"
               >
             </picture>
            {{/if}}
