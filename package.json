@@ -1,6 +1,6 @@
 {
   "name": "smart",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "An elegant Ghost theme",
   "main": "index.js",
   "engines": {
@@ -67,35 +67,35 @@
   "config": {
     "posts_per_page": 15,
     "image_sizes": {
-      "2000": {
-        "width": 2000
-      },
-      "1920": {
-        "width": 1920
-      },
-      "1600": {
-        "width": 1600
-      },
-      "1200": {
-        "width": 1200
-      },
-      "800": {
-        "width": 800
-      },
-      "528": {
-        "width": 528
-      },
-      "240": {
-        "width": 240
-      },
-      "160": {
-        "width": 160
+      "48": {
+        "width": 48
       },
       "80": {
         "width": 80
       },
-      "48": {
-        "width": 48
+      "160": {
+        "width": 160
+      },
+      "240": {
+        "width": 240
+      },
+      "528": {
+        "width": 528
+      },
+      "800": {
+        "width": 800
+      },
+      "1200": {
+        "width": 1200
+      },
+      "1600": {
+        "width": 1600
+      },
+      "1920": {
+        "width": 1920
+      },
+      "2000": {
+        "width": 2000
       }
     },
     "custom": {
