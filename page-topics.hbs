@@ -1,0 +1,15 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{> "header"}}
+
+<main class="sm-grid" id="sm-main">
+    <div class="sm-basic-grid">
+        {{#get "tags" limit="all"  include="count.posts" order="count.posts desc"}}
+            {{#foreach tags}}
+                {{> "card-tag"}}
+            {{/foreach}}
+        {{/get}}
+    </div>
+</main>
+
