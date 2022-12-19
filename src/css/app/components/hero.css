@@ -40,7 +40,7 @@
   font-size: var(--h1);
   /* color: var(--primary); */
   font-weight: 700;
-  line-height: 1;
+  line-height: 1.2;
   background-image: linear-gradient(45deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -64,9 +64,9 @@
 .sm-hero-img img {
   display: block;
   width: 100%;
+  height: auto;
   margin: 0 auto;
   border-radius: var(--radius);
-  /* box-shadow: var(--box-shadow); */
   object-fit: cover;
 }
 
