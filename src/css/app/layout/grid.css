@@ -17,7 +17,7 @@
     [content-end]
     1fr 1fr var(--gutter) [end];
   margin-block: 6rem 3rem;
-  row-gap: 1rem;
+  row-gap: 2rem;
 }
 
 .sm-content-grid {
@@ -34,7 +34,7 @@
 .sm-basic-grid {
   grid-template-columns: 1fr;
   gap: var(--gap);
-  padding-block: 5rem 6rem;
+  padding-block: 3rem 6rem;
 }
 
 .sm-grid > .sm-basic-grid {

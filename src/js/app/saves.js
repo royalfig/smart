@@ -170,13 +170,17 @@ export class Saves {
 
   populateSavesMenu() {
     const savesMenu = document.querySelector('.sm-overflow-articles');
+    const navSavesMenu = document.querySelector('.sm-nav-menu-saves');
 
     if (!this.items().length) {
-      savesMenu.innerHTML =
+      const noSavesText =
         '<p>No articles saved yet. Hit the heart to get started!</p>';
+      savesMenu.innerHTML = noSavesText;
+      navSavesMenu.innerHTML = noSavesText;
       return;
     }
     savesMenu.innerHTML = this.renderSavesMenu();
+    navSavesMenu.innerHTML = this.renderSavesMenu();
   }
 
   init() {

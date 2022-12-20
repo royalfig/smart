@@ -35,3 +35,33 @@ body {
   color: #000;
   background-color: var(--primary-light);
 }
+
+.sm-grid > .sm-zap {
+  grid-column: content;
+}
+
+.sm-zap {
+  position: relative;
+  color: var(--border-color);
+  text-align: center;
+  opacity: 0.8;
+}
+
+.sm-zap::before,
+.sm-zap::after {
+  position: absolute;
+  top: 50%;
+  width: 48%;
+  height: 1px;
+  content: '';
+}
+
+.sm-zap::before {
+  left: 0;
+  background-image: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+.sm-zap::after {
+  right: 0;
+  background-image: linear-gradient(-90deg, var(--border-color), transparent);
+}
