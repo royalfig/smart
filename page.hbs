@@ -5,7 +5,7 @@ into the {body} of the default.hbs template --}}
 {{#post}}
     {{> "header"}}
 
-    <main class="sm-grid" id="sm-main">
+    <main class="sm-content-grid sm-post-content {{post_class}} {{slug}}" id="sm-main">
         {{content}}
     </main>
 {{/post}}
