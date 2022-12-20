@@ -12,16 +12,6 @@
     {{! add overflow options }}
     <p class='sm-nav-menu-header'>Follow</p>
     <section class='sm-nav-menu-section'>
-      {{#if @site.twitter}}
-        <a class='sm-icon-button' href='{{twitter_url @site.twitter}}'><svg
-            aria-hidden='true'
-          ><use href='#twitter-icon'></use></svg>Twitter</a>
-      {{/if}}
-      {{#if @site.facebook}}
-        <a class='sm-icon-button' href='{{facebook_url @site.facebook}}'><svg
-            aria-hidden='true'
-          ><use href='#facebook-icon'></use></svg>Facebook</a>
-      {{/if}}
       {{#if @custom.social_media_1_url}}
         <a class='sm-icon-button' href='{{@custom.social_media_1_url}}'><svg
             aria-hidden='true'
@@ -35,6 +25,20 @@
           ><use
               href='#{{@custom.social_media_2}}-icon'
             ></use></svg>{{@custom.social_media_2}}</a>
+      {{/if}}
+      {{#if @custom.social_media_3_url}}
+        <a class='sm-icon-button' href='{{@custom.social_media_3_url}}'><svg
+            aria-hidden='true'
+          ><use
+              href='#{{@custom.social_media_3}}-icon'
+            ></use></svg>{{@custom.social_media_3}}</a>
+      {{/if}}
+      {{#if @custom.social_media_4_url}}
+        <a class='sm-icon-button' href='{{@custom.social_media_4_url}}'><svg
+            aria-hidden='true'
+          ><use
+              href='#{{@custom.social_media_4}}-icon'
+            ></use></svg>{{@custom.social_media_4}}</a>
       {{/if}}
     </section>
     <p class='sm-nav-menu-header'>Share</p>

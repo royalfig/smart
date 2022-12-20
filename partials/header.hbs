@@ -55,7 +55,7 @@
     {{/if}}
 
     <h1 class="sm-header-title">{{~#if title~}}{{title}}
-    {{~else if name~}}{{~name~}}
+    {{~else if name~}}{{~name~}} <span class="sm-tag-count">{{plural author-count empty="" singular="% post" plural="% posts"}}</span>
     {{~else~}}{{~@site.title~}}
     {{~#match pagination.page ">" 1~}}<span class="sm-tag-count">Page {{pagination.page}}</span>{{~/match~}}
     {{~/if~}}

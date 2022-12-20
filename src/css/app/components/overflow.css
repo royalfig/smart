@@ -5,18 +5,25 @@
 
 .sm-overflow-button {
   box-sizing: content-box;
-  /* transform: translateY(1px); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 1rem;
   height: 1rem;
   padding: 0.25rem;
+  line-height: 0;
+  line-height: 0;
   border-radius: 50%;
   transition: background-color 0.3s;
+  transform: translateY(10%);
 }
 
 .sm-overflow-button svg {
+  display: inline-block;
   width: 1em;
   height: 1em;
-  transform: translateY(0.125rem);
+  line-height: 0;
+  /* transform: translateY(0.125rem); */
   fill: var(--element);
 }
 
@@ -80,10 +87,14 @@
   position: absolute;
   top: 0.5em;
   left: -0.5em;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 1rem;
   height: 1rem;
   padding: 0.25em;
-  line-height: 1;
+  line-height: 0;
   background-color: var(--surface-light);
   border-radius: 50%;
   box-shadow: var(--box-shadow);
@@ -91,6 +102,7 @@
 }
 
 .sm-overflow-back svg {
+  display: inline-block;
   width: inherit;
   height: inherit;
 }

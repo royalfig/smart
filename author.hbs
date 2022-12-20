@@ -3,11 +3,10 @@
 into the {body} of the default.hbs template --}}
 
 {{#author}}
-    {{> "header"}}
+    {{> "header" author-count=../pagination.total}}
 {{/author}}
 {{!-- Main --}}
 <main  class="sm-grid sm-author-posts-container" id="sm-main">
-    <h2>{{pagination.total}} articles <span class="sm-icon-button">Page {{pagination.page}}</span></h2>
     <div class="sm-basic-grid">
         {{#foreach posts}}
             {{> "card"}}
