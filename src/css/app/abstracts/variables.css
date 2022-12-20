@@ -11,7 +11,7 @@
   --desktop: 1200px;
   --widescreen: 1400px;
   --gap: 1rem;
-  --gutter: max(1rem, 3vw);
+  --gutter: max(20px, 3vw);
   --width: 992px;
   --post-width: 768px;
   --content-width: 700px;

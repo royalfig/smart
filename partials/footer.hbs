@@ -1,26 +1,45 @@
-<footer class="sm-grid sm-footer-container">
-    <div class="sm-footer">
-        <div class="sm-footer-info">
-            <p class="sm-footer-title">{{@site.title}}</p>
-            {{#if @site.description}}<p class="sm-footer-description">{{@site.description}}</p>{{/if}}
-            
-            <div class="sm-footer-copyright">
-                
-            </div>
-        </div>
-        <nav class="sm-footer-secondary-navigation">{{navigation type="secondary"}}</nav>
-        <form data-members-form="subscribe" class="sm-footer-cta">
-            <p class="sm-footer-default sm-footer-default-text">Sign up for the newsletter</p>
-            <p class="sm-footer-success">Nice. Check your email for a link</p>
-            <p class="sm-footer-error">Error. Please try again</p>
-            <input type="email" placeholder="your email">
-            <button class="sm-button-simple sm-footer-default"><svg aria-hidden="true"><use href="#sm-mail-icon"></use></svg>Subscribe</button>
-            <button class="sm-button-simple sm-footer-loading"><svg aria-hidden="true"><use href="#sm-loading-icon"></use></svg>Loading</button>
-            <button class="sm-button-simple sm-footer-success"><svg aria-hidden="true"><use href="#sm-mail-check-icon"></use></svg>Success</button>
-            <button class="sm-button-simple sm-footer-error"><svg aria-hidden="true"><use href="#sm-error-icon"></use></svg>Error</button>
-        </form>
+<footer class='sm-grid sm-footer-container'>
+  <div class='sm-footer'>
+    <div class='sm-footer-info'>
+      <p class='sm-footer-title'>{{@site.title}}</p>
+      {{#if @site.description}}<p
+          class='sm-footer-description'
+        >{{@site.description}}</p>{{/if}}
+
+      <div class='sm-footer-copyright'>
+
+      </div>
     </div>
-    <div class="sm-footer-meta">
-         {{@site.title}} &copy {{date format="YYYY"}} – <a href="https://ryanfeigenbaum.com">Designed by Feigenbaum</a> – <a href="https://ghost.org">Powered by Ghost</a> 
-    </div>
+    <nav class='sm-footer-secondary-navigation'>{{navigation
+        type='secondary'
+      }}</nav>
+    <form data-members-form='subscribe' class='sm-footer-cta'>
+      <p class='sm-footer-default sm-footer-default-text'>Sign up for the
+        newsletter</p>
+      <p class='sm-footer-success'>Nice. Check your email for a link</p>
+      <p class='sm-footer-error'>Error. Please try again</p>
+      <input type='email' placeholder='your email' />
+      <button class='sm-button-simple sm-footer-default'><svg
+          aria-hidden='true'
+        ><use href='#sm-mail-icon'></use></svg>Subscribe</button>
+      <button class='sm-button-simple sm-footer-loading'><svg
+          aria-hidden='true'
+        ><use href='#sm-loading-icon'></use></svg>Loading</button>
+      <button class='sm-button-simple sm-footer-success'><svg
+          aria-hidden='true'
+        ><use href='#sm-mail-check-icon'></use></svg>Success</button>
+      <button class='sm-button-simple sm-footer-error'><svg
+          aria-hidden='true'
+        ><use href='#sm-error-icon'></use></svg>Error</button>
+    </form>
+  </div>
+  <p class='sm-footer-meta'>
+    {{@site.title}}
+    &copy
+    {{date format='YYYY'}}
+    ⌁
+    <a href='https://ryanfeigenbaum.com'>Designed by Feigenbaum</a>
+    ⌁
+    <a href='https://ghost.org'>Powered by Ghost</a>
+  </p>
 </footer>

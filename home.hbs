@@ -117,7 +117,7 @@ into the {body} of the default.hbs template --}}
 
             {{#get "tags" include="count.posts" limit="5" order="count.posts desc"}}
                 <aside class="sm-feature-card sm-tags-card">
-                    <h2>Topics</h2>
+                    <h2><a href="topics">Topics</a></h2>
                     {{#foreach tags}}
                     <a href="{{url}}">{{name}} <span>{{count.posts}}</span></a>
                     {{/foreach}}

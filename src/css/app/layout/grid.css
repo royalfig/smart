@@ -3,7 +3,6 @@
 }
 
 .sm-grid {
-  /* gap: var(--gap); */
   grid-template-columns:
     [start] var(--gutter) [content-start] 1fr [content-end] var(--gutter)
     [end];

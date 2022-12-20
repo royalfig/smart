@@ -10,7 +10,9 @@ html {
     0.9285714285714286rem + 0.35714285714285715vw,
     1.25rem
   );
-  line-height: 1.6;
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  line-height: 1.5;
   color: var(--element);
   background-color: var(--surface);
   scroll-behavior: smooth;

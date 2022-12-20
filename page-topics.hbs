@@ -1,7 +1,9 @@
 {{!< default}}
 {{!-- The tag above means: insert everything in this file
 into the {body} of the default.hbs template --}}
-{{> "header"}}
+{{#post}}
+    {{> "header"}}
+{{/post}}
 
 <main class="sm-grid" id="sm-main">
     <div class="sm-basic-grid">
@@ -12,4 +14,3 @@ into the {body} of the default.hbs template --}}
         {{/get}}
     </div>
 </main>
-

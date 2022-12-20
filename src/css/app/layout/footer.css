@@ -5,7 +5,7 @@
 }
 
 .sm-footer {
-  padding: 2rem 0 0;
+  padding-block: 2rem;
   font-size: var(--small);
   color: var(--element-dark);
   grid-column: content;
@@ -66,10 +66,14 @@
 }
 
 .sm-footer-meta {
-  padding-block: 1rem;
+  padding-block: 2rem;
   font-size: var(--x-small);
   color: var(--element-light);
   text-align: center;
   border-top: 1px solid var(--border-color);
   grid-column: content;
+}
+
+.sm-footer-meta a {
+  white-space: nowrap;
 }

@@ -235,7 +235,15 @@
   margin: 1rem;
 }
 
-.sm-tags-card a {
+.sm-tags-card > h2 > a {
+  transition: color var(--transition);
+}
+
+.sm-tags-card > h2 > a:hover {
+  color: var(--primary);
+}
+
+.sm-tags-card > a {
   padding: 1rem;
   font-weight: 700;
   color: var(--element-light);
@@ -245,11 +253,11 @@
   transition: background-color 0.1s, color 0.1s;
 }
 
-.sm-tags-card a:first-of-type {
+.sm-tags-card > a:first-of-type {
   border-top: 1px solid var(--border-color);
 }
 
-.sm-tags-card a:last-child {
+.sm-tags-card > a:last-child {
   border-bottom: none;
 }
 
@@ -258,39 +266,39 @@
   font-variant-numeric: tabular-nums;
 }
 
-.sm-tags-card a:hover {
+.sm-tags-card > a:hover {
   color: var(--surface);
   background-color: var(--secondary);
 }
 
-.sm-tags-card a:nth-of-type(2):hover {
+.sm-tags-card > a:nth-of-type(2):hover {
   background-color: hsla(
     var(--complementary-color) var(--saturation) var(--lightness) / 0.75
   );
 }
 
-.sm-tags-card a:nth-of-type(3):hover {
+.sm-tags-card > a:nth-of-type(3):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) var(--lightness) / 0.5
   );
 }
 
-.sm-tags-card a:nth-of-type(4):hover {
+.sm-tags-card > a:nth-of-type(4):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) var(--lightness) / 0.25
   );
 }
 
-.sm-tags-card a:nth-of-type(5):hover {
+.sm-tags-card > a:nth-of-type(5):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) var(--lightness) / 0.05
   );
 }
 
-:root[data-color-pref='dark'] .sm-tags-card a:nth-of-type(2):hover {
+:root[data-color-pref='dark'] .sm-tags-card > a:nth-of-type(2):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5) /
@@ -298,21 +306,21 @@
   );
 }
 
-:root[data-color-pref='dark'] .sm-tags-card a:nth-of-type(3):hover {
+:root[data-color-pref='dark'] .sm-tags-card > a:nth-of-type(3):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5) /
       0.5
   );
 }
-:root[data-color-pref='dark'] .sm-tags-card a:nth-of-type(4):hover {
+:root[data-color-pref='dark'] .sm-tags-card > a:nth-of-type(4):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5) /
       0.25
   );
 }
-:root[data-color-pref='dark'] .sm-tags-card a:nth-of-type(5):hover {
+:root[data-color-pref='dark'] .sm-tags-card > a:nth-of-type(5):hover {
   color: var(--element);
   background-color: hsla(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5) /

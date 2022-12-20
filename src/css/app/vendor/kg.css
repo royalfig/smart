@@ -20,7 +20,6 @@ blockquote:not(.kg-blockquote-alt) {
 }
 
 .kg-blockquote-alt::after {
-  padding-inline-start: 0.1em;
   content: '\002301';
 }
 
@@ -53,6 +52,10 @@ blockquote:not(.kg-blockquote-alt) {
 .kg-embed-card,
 .kg-gallery-card {
   grid-column: content;
+}
+
+.kg-embed-card .twitter-tweet {
+  margin-inline: auto;
 }
 
 @media (--tablet) {

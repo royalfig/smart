@@ -95,12 +95,12 @@ Used in footer */
 Used in search and */
 .sm-circle-close-button {
   position: absolute;
-  top: 0.25rem;
-  right: 0.25rem;
+  top: 1rem;
+  right: 1rem;
   box-sizing: content-box;
 
-  width: 1.15rem;
-  height: 1.15rem;
+  width: max(1rem, 30px);
+  height: max(1rem, 30px);
   padding: 0.25rem;
   line-height: 1;
   border-radius: 50%;
@@ -112,7 +112,7 @@ Used in search and */
 }
 
 .sm-circle-close-button svg {
-  width: 1.15rem;
-  height: 1.15rem;
+  width: max(1rem, 30px);
+  height: max(1rem, 30px);
   fill: var(--element);
 }

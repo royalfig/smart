@@ -178,10 +178,70 @@
         ],
         "default": "none"
       },
+      "social_media_3": {
+        "type": "select",
+        "options": [
+          "behance",
+          "discord",
+          "dribble",
+          "facebook",
+          "github",
+          "instagram",
+          "linkedin",
+          "mastodon",
+          "patreon",
+          "pinterest",
+          "reddit",
+          "slack",
+          "snapchat",
+          "telegram",
+          "tumblr",
+          "twitch",
+          "twitter",
+          "vimeo",
+          "wechat",
+          "youtube",
+          "none"
+        ],
+        "default": "none"
+      },
+      "social_media_4": {
+        "type": "select",
+        "options": [
+          "behance",
+          "discord",
+          "dribble",
+          "facebook",
+          "github",
+          "instagram",
+          "linkedin",
+          "mastodon",
+          "patreon",
+          "pinterest",
+          "reddit",
+          "slack",
+          "snapchat",
+          "telegram",
+          "tumblr",
+          "twitch",
+          "twitter",
+          "vimeo",
+          "wechat",
+          "youtube",
+          "none"
+        ],
+        "default": "none"
+      },
       "social_media_1_url": {
         "type": "text"
       },
       "social_media_2_url": {
+        "type": "text"
+      },
+      "social_media_3_url": {
+        "type": "text"
+      },
+      "social_media_4_url": {
         "type": "text"
       }
     }
