@@ -54,14 +54,14 @@
         </picture> 
     {{/if}}
 
-    <h1 class="sm-header-title">{{~#if title~}}{{title}}
-    {{~else if name~}}{{~name~}} <span class="sm-tag-count">{{plural author-count empty="" singular="% post" plural="% posts"}}</span>
+    <h1 class="sm-header-title">{{~#if title~}}{{title}}{{~#is "tag"~}}
+    <span class="sm-tag-count">{{plural count empty="" singular="% post" plural="% posts"}}</span>
+    {{~/is~}}
+    {{~else if name~}}{{~name~}}<span class="sm-tag-count">{{plural author-count empty="" singular="% post" plural="% posts"}}</span>
     {{~else~}}{{~@site.title~}}
     {{~#match pagination.page ">" 1~}}<span class="sm-tag-count">Page {{pagination.page}}</span>{{~/match~}}
     {{~/if~}}
-    {{~#is "tag"~}}
-    <span class="sm-tag-count">{{plural count empty="" singular="% post" plural="% posts"}}</span>
-    {{~/is~}}</h1>
+    </h1>
     
 
     {{#if custom_excerpt}}<p class="sm-header-excerpt">{{custom_excerpt}}</p>{{/if}}
