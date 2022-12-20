@@ -69,8 +69,8 @@ blockquote:not(.kg-blockquote-alt) {
   grid-column: start / end;
 }
 
-.kg-embed-card iframe[src*='youtube'],
-.kg-embed-card iframe[src*='vimeo'] {
+.kg-embed-card [src*='youtube'],
+.kg-embed-card [src*='vimeo'] {
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;

@@ -44,7 +44,6 @@ body {
   position: relative;
   color: var(--border-color);
   text-align: center;
-  opacity: 0.8;
 }
 
 .sm-zap::before,

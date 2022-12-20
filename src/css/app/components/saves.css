@@ -16,9 +16,9 @@
 }
 
 .sm-overflow-articles {
+  display: grid;
   min-width: 18rem;
   max-width: 100%;
-  display: grid;
   gap: var(--gap);
 }
 
@@ -54,8 +54,8 @@
 .sm-saves-title {
   font-family: var(--heading-typeface);
   font-weight: 700;
-  transition: 0.3s color;
   text-align: left;
+  transition: 0.3s color;
 }
 
 .sm-saves-title:hover {

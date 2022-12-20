@@ -1,3 +1,5 @@
+/* stylelint-disable selector-no-qualifying-type */
+
 code[class*='language-'],
 pre[class*='language-'] {
   font-family: var(--mono-typeface);
@@ -18,13 +20,6 @@ pre[class*='language-'] {
   white-space: pre;
   background: hsl(var(--primary-h) 10% 8%);
   border-radius: var(--radius);
-}
-
-code[class*='language-']::selection,
-pre[class*='language-']::selection,
-code[class*='language-'] ::selection,
-pre[class*='language-'] ::selection {
-  background: hsl(0, 0%, 21%);
 }
 
 code[class*='language-']::selection,
