@@ -18,6 +18,8 @@
 .sm-overflow-articles {
   min-width: 18rem;
   max-width: 100%;
+  display: grid;
+  gap: var(--gap);
 }
 
 .sm-saves {
@@ -53,6 +55,7 @@
   font-family: var(--heading-typeface);
   font-weight: 700;
   transition: 0.3s color;
+  text-align: left;
 }
 
 .sm-saves-title:hover {

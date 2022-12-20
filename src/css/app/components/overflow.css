@@ -114,8 +114,3 @@
 .sm-hide {
   display: none;
 }
-
-.sm-overflow-saves p {
-  /* width: max-content;
-  max-width: 66ch; */
-}
