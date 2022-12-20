@@ -14,9 +14,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-block: 2rem 3rem;
   text-align: left;
   gap: 0.5rem;
+}
+
+.sm-post-author-block p {
+  text-align: left;
 }
 
 .sm-post-author-profile-image {
@@ -66,7 +69,7 @@
   color: var(--element-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  opacity: 0.75;
+  opacity: 0.8;
   gap: 0 0.5em;
 }
 

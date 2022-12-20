@@ -3,32 +3,33 @@
 }
 
 .sm-grid {
-  gap: var(--gap);
+  /* gap: var(--gap); */
   grid-template-columns:
-    [start] var(--gap) [content-start] 1fr [content-end] var(--gap)
+    [start] var(--gutter) [content-start] 1fr [content-end] var(--gutter)
     [end];
 }
 
 .sm-header-grid {
   grid-template-columns:
-    [start] var(--gap) 1fr 1fr [content-start] minmax(
+    [start] var(--gutter) 1fr 1fr [content-start] minmax(
       min(300px, 100%),
       var(--post-width)
     )
     [content-end]
-    1fr 1fr var(--gap) [end];
-  margin-block-start: 6rem;
+    1fr 1fr var(--gutter) [end];
+  margin-block: 6rem 3rem;
+  row-gap: 1rem;
 }
 
 .sm-content-grid {
   grid-template-columns:
-    [start] var(--gap)
+    [start] var(--gutter)
     [full-start] 1fr [wide-start] 1fr [content-start] minmax(
       min(300px, 100%),
       var(--content-width)
     )
     [content-end]
-    1fr [wide-end] 1fr [full-end] var(--gap) [end];
+    1fr [wide-end] 1fr [full-end] var(--gutter) [end];
 }
 
 .sm-basic-grid {
@@ -49,11 +50,11 @@
 @media (--tablet) {
   .sm-grid {
     grid-template-columns:
-      [start] var(--gap) 1fr [content-start] minmax(
+      [start] var(--gutter) 1fr [content-start] minmax(
         min(100%, 600px),
         var(--width)
       )
-      [content-end] 1fr var(--gap)
+      [content-end] 1fr var(--gutter)
       [end];
   }
 

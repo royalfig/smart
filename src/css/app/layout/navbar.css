@@ -27,8 +27,8 @@
 
 .sm-navbar button:not(.sm-overflow-button) svg,
 .sm-search-button svg {
-  width: 1rem;
-  height: 1rem;
+  width: max(1rem, 20px);
+  height: max(1rem, 20px);
   fill: var(--element);
 }
 
@@ -59,7 +59,7 @@
   align-items: flex-end;
 }
 
-.sm-navbar-menu-button {
+.sm-navbar .sm-navbar-menu-button {
   align-self: flex-end;
   line-height: 0;
 }
