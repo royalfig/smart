@@ -33,6 +33,8 @@
   --x-small: 0.694rem;
   --xx-small: 0.579rem;
   --button-padding: 0.5em 0.75em;
+
+  --transition: 0.3s;
 }
 
 /* Color scheme */
