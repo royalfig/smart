@@ -1,5 +1,5 @@
 
-[Smart Ghost Theme](/splash.png)
+![Smart Ghost Theme](/splash.png)
 # Smart: A Ghost Theme
 
 Smart is a theme for the open-source publishing platform [Ghost](https://ghost.org/). It is compatible with >=Ghost v5.
