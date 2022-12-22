@@ -6,10 +6,6 @@
   "engines": {
     "ghost": ">=5.0.0"
   },
-  "screenshots": {
-    "desktop": "assets/screenshot-desktop.png",
-    "mobile": "assets/screenshot-mobile.png"
-  },
   "author": {
     "name": "Ryan Feigenbaum",
     "email": "ryan.feigenbaum@gmail.com",
