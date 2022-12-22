@@ -20,13 +20,13 @@
     "watch": "npm run reload & NODE_ENV=development npx rollup -c -w",
     "prebuild": "npm run css",
     "build": "NODE_ENV=production npx rollup -c",
-    "prerelease": "npm run build",
-    "release": "git commit -a -m $npm_config_message && npm version patch && git push --tags",
+    "preversion": "npm run build",
+    "version": "git add .",
+    "postversion": "git push && git push --tags",
     "zip": "node zip",
     "check": "gscan smart.zip -z",
     "css": "npx stylelint 'src/css/**/*.css' --fix",
-    "reload": "cd utils && node reload",
-    "version": "echo $npm_package_version"
+    "reload": "cd utils && node reload"
   },
   "keywords": [
     "ghost-theme",
