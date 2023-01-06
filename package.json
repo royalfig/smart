@@ -46,7 +46,7 @@
     "gscan": "4.36.0",
     "livereload": "0.9.3",
     "minisearch": "6.0.0",
-    "postcss": "8.4.19",
+    "postcss": "8.4.21",
     "rollup": "3.9.1",
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-postcss": "4.0.2",
