@@ -36,7 +36,7 @@
     "@rollup/plugin-babel": "6.0.3",
     "@rollup/plugin-node-resolve": "15.0.1",
     "@rollup/plugin-replace": "5.0.2",
-    "@rollup/plugin-terser": "^0.2.0",
+    "@rollup/plugin-terser": "^0.3.0",
     "adm-zip": "0.5.10",
     "autoprefixer": "10.4.13",
     "cssnano": "5.1.14",
