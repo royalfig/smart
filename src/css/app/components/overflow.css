@@ -15,6 +15,7 @@
   line-height: 0;
   border-radius: 50%;
   transition: background-color var(--transition);
+  transform: translate(0, 0.15em);
 }
 
 .sm-overflow-button svg {
