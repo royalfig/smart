@@ -1,6 +1,6 @@
 {
   "name": "smart",
-  "version": "2.1.1",
+  "version": "2.1.3",
   "description": "An elegant Ghost theme",
   "main": "index.js",
   "engines": {
@@ -19,7 +19,7 @@
     "preversion": "npm run build",
     "version": "git add .",
     "postversion": "git push && git push --tags",
-    "zip": "node zip",
+    "zip": "cd utils && node zip",
     "check": "gscan smart.zip -z",
     "css": "npx stylelint 'src/css/**/*.css' --fix",
     "reload": "cd utils && node reload"

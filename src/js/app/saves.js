@@ -18,7 +18,6 @@ export class Saves {
   }
 
   save() {
-    // also need to update menu
     localStorage.setItem(
       'saves',
       JSON.stringify([this.generateItem(), ...this.items()]),
@@ -102,7 +101,6 @@ export class Saves {
     localStorage.removeItem('saves');
     localStorage.setItem('saves', JSON.stringify(items));
     this.populateSavesMenu();
-    // TODO check if done
 
     setTimeout(() => {
       window.requestAnimationFrame(this.step.bind(this));
@@ -192,7 +190,6 @@ export class Saves {
 }
 
 export function save(e) {
-  console.log(e);
   const savedItems = new Saves(e);
 
   const items = savedItems.items();
