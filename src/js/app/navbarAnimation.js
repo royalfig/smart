@@ -2,7 +2,7 @@ export default function animateNavbar() {
   const height = document.documentElement.clientHeight;
   const scrollHeight = document.documentElement.scrollHeight;
   const navbar = document.querySelector('.sm-navbar-container');
-  navbar.style.transition = 'background-color var(--transition)';
+  navbar.style.transition = 'background-color .6s';
 
   document.addEventListener('scroll', () => {
     const scrollPercentage =
