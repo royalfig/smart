@@ -47,7 +47,7 @@
     "livereload": "0.9.3",
     "minisearch": "6.0.1",
     "postcss": "8.4.21",
-    "rollup": "3.13.0",
+    "rollup": "3.14.0",
     "rollup-plugin-node-builtins": "2.1.2",
     "rollup-plugin-postcss": "4.0.2",
     "rollup-plugin-scss": "4.0.0",
