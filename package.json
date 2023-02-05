@@ -1,6 +1,6 @@
 {
   "name": "smart",
-  "version": "2.1.5",
+  "version": "2.1.6",
   "description": "An elegant Ghost theme",
   "main": "index.js",
   "engines": {
