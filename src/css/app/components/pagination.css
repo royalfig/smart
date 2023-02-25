@@ -23,10 +23,18 @@
   color: var(--primary);
 }
 
-.sm-pagination .sm-circle-icon-button:first-of-type {
+.sm-prev {
   margin-inline-end: auto;
 }
 
-.sm-pagination .sm-circle-icon-button:last-of-type {
+.sm-next {
   margin-inline-start: auto;
+}
+
+.sm-nav-disabled {
+  opacity: 0.3;
+}
+
+.sm-circle-icon-button.sm-nav-disabled:hover {
+  background-color: transparent;
 }

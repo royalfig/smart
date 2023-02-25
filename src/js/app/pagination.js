@@ -6,26 +6,35 @@ function pathnameParser(pathname) {
   return pathname.split('page')[0];
 }
 
+function navButtonFormatter(nextOrPrevEl, nextOrPrevName, paginationEl) {
+  const icon = nextOrPrevName === 'previous' ? 'left' : 'right';
+  const className = nextOrPrevName === 'previous' ? 'sm-prev' : 'sm-next';
+
+  const navButton = nextOrPrevEl
+    ? document.createElement('a')
+    : document.createElement('span');
+  navButton.innerHTML = `<svg aria-hidden="true"><use href="#sm-${icon}-arrow-icon"></use></svg>`;
+  navButton.classList.add('sm-circle-icon-button', className);
+
+  if (nextOrPrevEl) {
+    navButton.setAttribute('aria-label', `${nextOrPrevName} posts`);
+    navButton.setAttribute('href', nextOrPrevEl);
+  } else {
+    navButton.classList.add('sm-circle-icon-button', 'sm-nav-disabled');
+  }
+
+  paginationEl.append(navButton);
+}
+
 export default function generatePagination() {
   const pagination = document.querySelector('.sm-pagination');
 
   if (!pagination) return;
   const pathname = pathnameParser(window.location.pathname);
   const { pages, page, prev, next } = pagination.dataset;
+  console.log({ pages, page, prev, next });
 
-  const previousButton = document.createElement('a');
-  previousButton.innerHTML =
-    '<svg aria-hidden="true"><use href="#sm-left-arrow-icon"></use></svg>';
-  previousButton.classList.add('sm-circle-icon-button');
-
-  if (prev) {
-    previousButton.setAttribute('aria-label', 'previous posts');
-    previousButton.setAttribute('href', prev);
-  } else {
-    previousButton.setAttribute('disabled', 'true');
-  }
-
-  pagination.append(previousButton);
+  navButtonFormatter(prev, 'previous', pagination);
 
   for (let index = 0; index < pages; index += 1) {
     let urlPath;
@@ -50,16 +59,6 @@ export default function generatePagination() {
     div.append(a);
     pagination.append(div);
   }
-  const nextButton = document.createElement('a');
-  nextButton.innerHTML =
-    '<svg aria-hidden="true"><use href="#sm-right-arrow-icon"></use></svg>';
-  nextButton.classList.add('sm-circle-icon-button');
-  if (next) {
-    nextButton.setAttribute('aria-label', 'next posts');
-    nextButton.setAttribute('href', next);
-  } else {
-    nextButton.setAttribute('disabled', 'true');
-  }
 
-  pagination.append(nextButton);
+  navButtonFormatter(next, 'next', pagination);
 }
