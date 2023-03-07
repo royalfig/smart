@@ -53,7 +53,7 @@
     "rollup-plugin-scss": "4.0.0",
     "sass": "1.58.3",
     "stylelint": "15.2.0",
-    "stylelint-order": "6.0.2"
+    "stylelint-order": "6.0.3"
   },
   "dependencies": {
     "@tryghost/content-api": "^1.11.5",
