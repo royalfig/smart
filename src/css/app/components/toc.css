@@ -24,13 +24,13 @@
 
 .sm-post-toc-btn::before {
   position: absolute;
-  inset: -3px;
-  border-radius: 50%;
-  background-image: conic-gradient(var(--conic-gradient));
-  content: '';
   z-index: -1;
+  content: '';
+  background-image: conic-gradient(var(--conic-gradient));
+  border-radius: 50%;
   opacity: 0.5;
   transition: background-image var(--transition);
+  inset: -3px;
 }
 
 .sm-post-toc-btn:hover,
@@ -55,10 +55,10 @@
   /* font-size: var(--small); */
   pointer-events: none;
   background: var(--surface-light);
-  border-radius: 0 var(--radius) var(--radius) var(--radius);
   filter: drop-shadow(
     0 4px 1rem hsl(var(--primary-h) var(--saturation) 9% / 0.1)
   );
+  border-radius: 0 var(--radius) var(--radius) var(--radius);
   opacity: 0;
   transition: scale 0.2s ease-out, opacity 0.2s 0.1s ease-out,
     translate 0.2s 0.1s ease-out;
@@ -72,14 +72,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  translate: 0 -100%;
-  background: var(--primary-dark);
-  color: var(--surface-dark);
   padding: 0.15rem 0.75rem;
   font-size: var(--x-small);
+  color: var(--surface-dark);
   text-transform: uppercase;
-  border-radius: var(--radius) var(--radius) 0 0;
   letter-spacing: var(--letter-spacing);
+  background: var(--primary-dark);
+  border-radius: var(--radius) var(--radius) 0 0;
+  translate: 0 -100%;
 }
 
 .toc-show {
