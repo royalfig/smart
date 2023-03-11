@@ -1,3 +1,9 @@
+function getScrollProgress() {
+  const scrollableHeight =
+    document.documentElement.scrollHeight - window.innerHeight;
+  return window.scrollY / scrollableHeight;
+}
+
 export default function toc() {
   const postContainer = document.querySelector('.post');
   const tocContainer = document.querySelector('.sm-post-toc');
@@ -59,5 +65,18 @@ export default function toc() {
 
   headings.forEach((heading) => {
     observer.observe(heading);
+  });
+
+  document.addEventListener('scroll', () => {
+    const scrollPos = getScrollProgress();
+
+    btn.style.setProperty(
+      '--conic-gradient',
+      `var(--primary-light) 0deg 0%, var(--primary-light) 0deg ${
+        scrollPos * 100
+      }%, var(--surface-light) 0deg ${
+        1 - scrollPos * 100
+      }%, var(--surface-light) 0deg 360deg`,
+    );
   });
 }
