@@ -98,11 +98,18 @@
   color: var(--primary);
 }
 
+.sm-post-save-button span {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+.sm-post-save-button.sm-love-button.sm-love-toggle .sm-heart-fill-icon {
+  display: flex;
+}
+
 .sm-post-save-button svg {
   width: 1em;
   height: 1em;
-  vertical-align: text-top;
-  transform: translateY(0.05em);
   fill: currentcolor;
 }
 

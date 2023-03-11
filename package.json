@@ -140,6 +140,7 @@
           "reddit",
           "slack",
           "snapchat",
+          "substack",
           "telegram",
           "tumblr",
           "twitch",
@@ -167,6 +168,7 @@
           "reddit",
           "slack",
           "snapchat",
+          "substack",
           "telegram",
           "tumblr",
           "twitch",
@@ -194,6 +196,7 @@
           "reddit",
           "slack",
           "snapchat",
+          "substack",
           "telegram",
           "tumblr",
           "twitch",
@@ -221,6 +224,7 @@
           "reddit",
           "slack",
           "snapchat",
+          "substack",
           "telegram",
           "tumblr",
           "twitch",
@@ -243,6 +247,11 @@
       },
       "social_media_4_url": {
         "type": "text"
+      },
+      "show_table_of_contents": {
+        "type": "boolean",
+        "default": false,
+        "group": "post"
       }
     }
   },

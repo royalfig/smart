@@ -1,6 +1,6 @@
 export default function animateNavbar() {
   const height = document.documentElement.clientHeight;
-  const scrollHeight = document.documentElement.scrollHeight;
+  const { scrollHeight } = document.documentElement;
   const navbar = document.querySelector('.sm-navbar-container');
   navbar.style.transition = 'background-color .6s';
 
@@ -9,9 +9,9 @@ export default function animateNavbar() {
       Math.round(window.scrollY) / (scrollHeight - height);
 
     if (scrollPercentage > 0.15) {
-      navbar.style.backgroundColor = `var(--surface-light)`;
+      navbar.style.backgroundColor = 'var(--surface-light)';
     } else {
-      navbar.style.backgroundColor = `var(--surface)`;
+      navbar.style.backgroundColor = 'var(--surface)';
     }
   });
 }

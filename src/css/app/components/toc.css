@@ -1,0 +1,88 @@
+.sm-post-toc {
+  position: fixed;
+  bottom: 28px;
+  left: 28px;
+  z-index: 2;
+  transition: opacity 0.5s;
+  pointer-events: none;
+  isolation: isolate;
+}
+
+.sm-post-toc-btn {
+  border-radius: var(--radius);
+  background: var(--surface-light);
+  box-sizing: content-box;
+  padding: 0.75rem;
+  height: 30px;
+  width: 30px;
+  box-shadow: var(--box-shadow);
+  pointer-events: all;
+}
+
+.sm-post-toc-btn svg {
+  fill: currentColor;
+  height: 100%;
+  width: 100%;
+}
+
+.sm-post-toc-contents {
+  display: flex;
+  border-radius: var(--radius);
+  background: var(--surface-light);
+  margin-block-end: 1rem;
+  padding: 0.75rem;
+  pointer-events: none;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: var(--small);
+  max-width: min(500px, calc(100vw - 56px));
+  opacity: 0;
+  scale: 0;
+  translate: 15px 10%;
+  transition: scale 0.2s ease-out, opacity 0.2s 0.1s ease-out,
+    translate 0.2s 0.1s ease-out;
+  transform-origin: bottom left;
+  box-shadow: var(--box-shadow);
+  align-items: flex-start;
+}
+
+.toc-show {
+  scale: 1;
+  opacity: 1;
+  translate: 0 0;
+  pointer-events: all;
+  transition: scale 0.2s ease-in, opacity 0.2s ease-in, translate 0.2s ease-in;
+}
+
+.sm-toc-h3 {
+  padding-inline-start: 0.5rem;
+}
+
+.sm-toc-h4 {
+  padding-inline-start: 1rem;
+}
+
+.sm-toc-h5 {
+  padding-inline-start: 1.5rem;
+}
+
+.sm-toc-h6 {
+  padding-inline-start: 2rem;
+}
+
+.sm-toc-link {
+  transition: color var(--transition);
+}
+
+.sm-toc-link:hover,
+.sm-toc-link:focus {
+  color: var(--primary);
+}
+
+.sm-toc-active {
+  color: var(--primary);
+}
+
+.toc-hide {
+  opacity: 0;
+}

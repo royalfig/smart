@@ -1,5 +1,6 @@
 {{!< default}} {{!-- The tag above means: insert everything in this file into the {body} of the default.hbs template
     --}} 
+    
 {{#post}} 
 {{> "header"}}
 
@@ -7,6 +8,14 @@
     <article class="sm-content-grid sm-post-content {{post_class}} {{slug}}">
         {{content}}
     </article>
+    {{#if @custom.show_table_of_contents}}
+        <div class="sm-post-toc">
+            <div class="sm-post-toc-contents toc-show"></div>
+            <button class="sm-post-toc-btn">
+               <svg aria-hidden="true"><use href="#sm-toc-icon"></use></svg>
+            </button>
+        </div>
+    {{/if}}
 </main>       
 
 <section class="sm-grid">

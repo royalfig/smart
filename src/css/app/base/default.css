@@ -28,7 +28,7 @@ body {
 :target::before {
   margin-inline-end: 0.25em;
   color: var(--primary);
-  content: ' \00261E';
+  content: '➠';
 }
 
 ::selection {

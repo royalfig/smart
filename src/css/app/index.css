@@ -32,6 +32,7 @@
 @import './components/hero.css';
 @import './components/form.css';
 @import './components/gradient.css';
+@import './components/toc.css';
 
 /* Vendor */
 @import './vendor/kg.css';

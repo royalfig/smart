@@ -31,12 +31,17 @@ export default function generatePagination() {
 
   if (!pagination) return;
   const pathname = pathnameParser(window.location.pathname);
-  const { pages, page, prev, next } = pagination.dataset;
-  console.log({ pages, page, prev, next });
+  const { page, prev, next } = pagination.dataset;
 
   navButtonFormatter(prev, 'previous', pagination);
 
-  for (let index = 0; index < pages; index += 1) {
+  const paginationStart = page - 2 > 0 ? page - 2 : 1;
+
+  for (
+    let index = paginationStart - 1;
+    index < paginationStart + 4;
+    index += 1
+  ) {
     let urlPath;
 
     if (index === 0 && pathname === '/') {
