@@ -3,55 +3,55 @@
   bottom: 28px;
   left: 28px;
   z-index: 2;
-  transition: opacity 0.5s;
   pointer-events: none;
+  transition: opacity 0.5s;
   isolation: isolate;
 }
 
 .sm-post-toc-btn {
-  border-radius: var(--radius);
-  background: var(--surface-light);
   box-sizing: content-box;
-  padding: 0.75rem;
-  height: 30px;
   width: 30px;
-  box-shadow: var(--box-shadow);
+  height: 30px;
+  padding: 0.75rem;
   pointer-events: all;
+  background: var(--surface-light);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
 }
 
 .sm-post-toc-btn svg {
-  fill: currentColor;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  fill: currentcolor;
 }
 
 .sm-post-toc-contents {
   display: flex;
-  border-radius: var(--radius);
-  background: var(--surface-light);
-  margin-block-end: 1rem;
-  padding: 0.75rem;
-  pointer-events: none;
   flex-direction: column;
-  gap: 0.5rem;
-  font-size: var(--small);
+  align-items: flex-start;
   max-width: min(500px, calc(100vw - 56px));
+  padding: 0.75rem;
+  margin-block-end: 1rem;
+  font-size: var(--small);
+  pointer-events: none;
+  background: var(--surface-light);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
   opacity: 0;
-  scale: 0;
-  translate: 15px 10%;
   transition: scale 0.2s ease-out, opacity 0.2s 0.1s ease-out,
     translate 0.2s 0.1s ease-out;
   transform-origin: bottom left;
-  box-shadow: var(--box-shadow);
-  align-items: flex-start;
+  gap: 0.5rem;
+  scale: 0;
+  translate: 15px 10%;
 }
 
 .toc-show {
-  scale: 1;
-  opacity: 1;
-  translate: 0 0;
   pointer-events: all;
+  opacity: 1;
   transition: scale 0.2s ease-in, opacity 0.2s ease-in, translate 0.2s ease-in;
+  scale: 1;
+  translate: 0 0;
 }
 
 .sm-toc-h3 {
