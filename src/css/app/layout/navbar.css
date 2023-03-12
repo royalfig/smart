@@ -17,15 +17,13 @@
   grid-column: content;
 }
 
-.sm-navbar button,
-.sm-search-button {
+.sm-navbar button {
   box-sizing: content-box;
-  font-size: var(--small);
+  font-size: var(--x-small);
   line-height: 1;
 }
 
-.sm-navbar button:not(.sm-overflow-button) svg,
-.sm-search-button svg {
+.sm-navbar button:not(.sm-overflow-button) svg {
   width: max(1rem, 20px);
   height: max(1rem, 20px);
   fill: var(--element);
@@ -108,6 +106,5 @@
 
 .sm-navbar-right {
   display: flex;
-  gap: 1rem;
   align-items: center;
 }
