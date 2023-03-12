@@ -187,14 +187,9 @@
   -webkit-text-fill-color: transparent;
 }
 
-.sm-cta-card p {
-  font-size: 1.2rem;
-}
-
 .sm-cta-card input {
   width: 100%;
   padding: 0.25em;
-  /* border-radius: var(--radius); */
   margin-block-start: 2rem;
   color: var(--element);
   text-align: center;
