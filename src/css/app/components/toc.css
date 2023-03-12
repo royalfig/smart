@@ -50,8 +50,10 @@
   flex-direction: column;
   align-items: flex-start;
   max-width: min(500px, calc(100vw - 56px));
+  max-height: 70vh;
   padding: 1rem 0.75rem;
   margin-block-end: 1rem;
+  overflow-y: auto;
   pointer-events: none;
   background: var(--surface-light);
   filter: drop-shadow(
@@ -65,8 +67,6 @@
   gap: 0.5rem;
   scale: 0;
   translate: 15px 10%;
-  max-height: 70vh;
-  overflow-y: auto;
 }
 
 .sm-post-toc-contents::before {
@@ -78,8 +78,8 @@
   color: var(--element-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
-  opacity: 0.5;
   content: 'Contents';
+  opacity: 0.5;
 }
 
 .toc-show {
