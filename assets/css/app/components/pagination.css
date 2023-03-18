@@ -1,0 +1,40 @@
+.sm-pagination {
+  display: flex;
+  grid-column: content;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding);
+  font-size: var(--small);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+}
+
+.sm-pagination,
+.sm-pagination-holder {
+  margin-block: 6rem 3rem;
+}
+
+.sm-current {
+  color: var(--primary);
+}
+
+.sm-pagination-item:hover {
+  color: var(--primary);
+}
+
+.sm-prev {
+  margin-inline-end: auto;
+}
+
+.sm-next {
+  margin-inline-start: auto;
+}
+
+.sm-nav-disabled {
+  opacity: 0.3;
+}
+
+.sm-circle-icon-button.sm-nav-disabled:hover {
+  background-color: transparent;
+}

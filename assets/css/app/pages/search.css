@@ -1,0 +1,115 @@
+.sm-search {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 35;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: var(--surface-85);
+  backdrop-filter: blur(15px);
+}
+
+.sm-search-form {
+  grid-auto-rows: min-content;
+  margin-block-start: 1.5rem;
+}
+
+.sm-show-search {
+  display: initial;
+}
+
+.sm-search-form-container {
+  grid-column: content;
+  margin-block: 2rem;
+}
+
+.sm-search-input-container {
+  position: relative;
+}
+
+.sm-clear-search-button {
+  position: absolute;
+  top: 50%;
+  right: 0.75em;
+  box-sizing: content-box;
+  display: none;
+  width: 1em;
+  height: 1em;
+  line-height: 1;
+  transform: translate(0, -50%);
+}
+
+.sm-clear-search-button.sm-show-clear-button {
+  display: initial;
+}
+
+.sm-clear-search-button svg {
+  width: 1em;
+  height: 1em;
+  fill: var(--element-light);
+  transition: fill 0.3s;
+}
+
+.sm-clear-search-button:hover svg {
+  fill: var(--secondary);
+}
+
+.sm-search-form input {
+  width: 100%;
+  padding: var(--button-padding);
+  color: var(--element);
+  background-color: var(--surface-dark);
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  caret-color: var(--secondary);
+}
+
+.sm-search-form input::placeholder {
+  color: var(--element-dark);
+}
+
+.sm-search-form input:focus-visible {
+  border-color: var(--primary);
+  outline: 0;
+}
+
+.sm-search-results-container {
+  grid-column: content;
+  padding-block-end: 3rem;
+}
+
+.sm-search-result {
+  font-family: var(--heading-typeface);
+  font-size: var(--h3);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.sm-search-result-link {
+  display: block;
+  width: fit-content;
+  margin-block-end: 1rem;
+  transition: color 0.3s;
+}
+
+.sm-search-result-link:hover,
+.sm-search-result-link:focus {
+  color: var(--secondary);
+  outline: 0;
+}
+
+.sm-matching-terms {
+  display: flex;
+  gap: 0.5em;
+  font-size: var(--small);
+  color: var(--surface);
+}
+
+.sm-matching-terms span {
+  padding: 0 0.25em;
+  background-color: var(--primary);
+  border-radius: var(--radius);
+  opacity: 0.75;
+}

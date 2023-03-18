@@ -1,0 +1,114 @@
+.sm-overflow-container {
+  position: relative;
+  line-height: 1;
+}
+
+.sm-overflow-button {
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.25rem;
+  line-height: 0;
+  border-radius: 50%;
+  transition: background-color var(--transition);
+  transform: translate(0, 0.15em);
+}
+
+.sm-overflow-button svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 0;
+  fill: var(--element);
+}
+
+.sm-overflow-menu {
+  position: absolute;
+  top: 2rem;
+  left: 50%;
+  z-index: 20;
+  display: none;
+  max-width: 75vw;
+  background-color: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  transform: translate(-50%, 0);
+}
+
+.sm-overflow-menu > div {
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.sm-overflow-buttons {
+  display: flex;
+}
+
+.sm-overflow-button:hover {
+  background-color: var(--border-color);
+}
+
+.sm-overflow-menu::before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  pointer-events: none;
+  content: '';
+  border-color: transparent transparent var(--border-color) transparent;
+  border-style: solid;
+  border-width: 0.5rem;
+  transform: translate(-50%, -100%);
+}
+
+[data-color-pref='light'] .sm-light-mode {
+  display: none;
+}
+
+[data-color-pref='dark'] .sm-dark-mode {
+  display: none;
+}
+
+/* Follow */
+.sm-overflow-follow,
+.sm-overflow-share,
+.sm-overflow-saves {
+  display: none;
+}
+
+.sm-overflow-back {
+  position: absolute;
+  top: 0.5em;
+  left: -0.5em;
+  box-sizing: content-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  padding: 0.25em;
+  line-height: 0;
+  background-color: var(--surface-light);
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  transform: translate(-100%, 50%);
+}
+
+.sm-overflow-back svg {
+  display: inline-block;
+  width: inherit;
+  height: inherit;
+}
+
+.sm-show {
+  display: flex;
+}
+
+.sm-hide {
+  display: none;
+}

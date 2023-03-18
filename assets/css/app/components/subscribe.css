@@ -1,0 +1,37 @@
+.sm-loading,
+.sm-footer-loading,
+.sm-success,
+.sm-footer-success,
+.sm-error,
+.sm-footer-error {
+  display: none;
+}
+
+[data-members-form].success .sm-default,
+[data-members-form].error .sm-default,
+[data-members-form].loading .sm-default:not(.sm-cta-copy),
+[data-members-form].success .sm-footer-default,
+[data-members-form].error .sm-footer-default,
+[data-members-form].loading .sm-footer-default:not(.sm-footer-default-text) {
+  display: none;
+}
+
+[data-members-form].loading .sm-loading,
+[data-members-form].success .sm-success,
+[data-members-form].error .sm-error,
+[data-members-form].loading .sm-footer-loading,
+[data-members-form].success .sm-footer-success,
+[data-members-form].error .sm-footer-error {
+  display: flex;
+}
+
+.sm-loading svg,
+.sm-footer-loading svg {
+  animation: sm-spin 1s infinite linear;
+}
+
+@keyframes sm-spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

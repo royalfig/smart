@@ -1,0 +1,60 @@
+html {
+  height: 100%;
+  font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: clamp(1rem, 0.9268rem + 0.3571vw, 1.25rem);
+  font-size: 1rem;
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  line-height: 1.5;
+  color: var(--element);
+  background-color: var(--surface);
+  scroll-behavior: smooth;
+  scroll-padding-block-start: 3.5rem;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+:target::before {
+  margin-inline-end: 0.25em;
+  color: var(--primary);
+  content: '➠';
+}
+
+::selection {
+  color: #000;
+  background-color: var(--primary-light);
+}
+
+.sm-zap {
+  position: relative;
+  color: var(--border-color);
+  text-align: center;
+}
+
+.sm-grid > .sm-zap {
+  grid-column: content;
+}
+
+.sm-zap::before,
+.sm-zap::after {
+  position: absolute;
+  top: 50%;
+  width: 48%;
+  height: 1px;
+  content: '';
+}
+
+.sm-zap::before {
+  left: 0;
+  background-image: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+.sm-zap::after {
+  right: 0;
+  background-image: linear-gradient(-90deg, var(--border-color), transparent);
+}

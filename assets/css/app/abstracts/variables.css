@@ -1,0 +1,114 @@
+@custom-media --phone (min-width: 500px);
+@custom-media --tablet (min-width: 768px);
+@custom-media --laptop (min-width: 992px);
+@custom-media --desktop (min-width: 1200px);
+@custom-media --widescreen (min-width: 1400px);
+
+:root {
+  /* Space */
+  --tablet: 768px;
+  --laptop: 992px;
+  --desktop: 1200px;
+  --widescreen: 1400px;
+  --gap: 1rem;
+  --gutter: max(20px, 3vw);
+  --width: 992px;
+  --post-width: 768px;
+  --content-width: 700px;
+  --radius: 0.5em;
+  --radius-small: 3px;
+
+  /* Type */
+  --heading-typeface: 'Archivo', sans-serif;
+  --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
+    monospace;
+  --letter-spacing: 0.2px;
+  --h1: 2.488rem;
+  --h2: 2.074rem;
+  --h3: 1.728rem;
+  --h4: 1.44rem;
+  --h5: 1.2rem;
+  --h6: 1rem;
+  --small: 0.833rem;
+  --x-small: 0.694rem;
+  --xx-small: 0.579rem;
+  --button-padding: 0.5em 0.75em;
+  --transition: 0.3s;
+}
+
+/* Color scheme */
+:root[data-color-pref='light'] {
+  --primary: hsl(var(--primary-h) var(--saturation) var(--lightness));
+  --primary-light: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --primary-dark: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 0.5)
+  );
+  --secondary: hsl(
+    var(--complementary-color) var(--saturation) var(--lightness)
+  );
+  --secondary-light: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --secondary-dark: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 0.5)
+  );
+  --surface: hsl(var(--primary-h) 10% 96%);
+  --surface-85: hsla(var(--primary-h) 10% 96% / 85%);
+  --surface-light: hsl(var(--primary-h) 10% 100%);
+  --surface-dark: hsl(var(--primary-h) 10% 89%);
+  --surface-darker: hsl(var(--primary-h) 10% 82%);
+  --element: hsl(var(--primary-h) 10% 5%);
+  --element-light: hsl(var(--primary-h) 10% 35%);
+  --element-dark: hsl(var(--primary-h) 10% 1%);
+  --border-color: hsla(var(--primary-h) 10% 82% / 50%);
+  --border-color-accent: hsla(var(--primary-h) 10% 72% / 50%);
+  --button-text: hsl(var(--primary-h) 10% 100%);
+  --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 9% / 2%),
+    0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 9% / 2.8%),
+    0 3px 10px hsla(var(--primary-h) var(--saturation) 9% / 3.5%),
+    0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 9% / 4.2%),
+    0 10px 33.4px hsla(var(--primary-h) var(--saturation) 9% / 5%),
+    0 24px 80px hsla(var(--primary-h) var(--saturation) 9% / 7%);
+}
+
+:root[data-color-pref='dark'] {
+  /* Color */
+  --primary: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --primary-light: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.75)
+  );
+  --primary-dark: hsl(
+    var(--primary-h) var(--saturation) calc(var(--lightness) * 1.15)
+  );
+  --secondary: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.5)
+  );
+  --secondary-light: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.75)
+  );
+  --secondary-dark: hsl(
+    var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.15)
+  );
+  --element: hsl(var(--primary-h) 10% 96%);
+  --element-light: hsl(var(--primary-h) 10% 100%);
+  --element-dark: hsl(var(--primary-h) 10% 89%);
+  --element-darker: hsl(var(--primary-h) 10% 82%);
+  --surface: hsl(var(--primary-h) 10% 12%);
+  --surface-85: hsla(var(--primary-h) 10% 15% / 85%);
+  --surface-light: hsl(var(--primary-h) 10% 18%);
+  --surface-dark: hsl(var(--primary-h) 10% 8%);
+  --surface-darker: hsl(var(--primary-h) 10% 3%);
+  --border-color: hsla(var(--primary-h) 10% 35% / 50%);
+  --border-color-accent: hsla(var(--primary-h) 10% 25% / 50%);
+  --button-text: hsl(var(--primary-h) 10% 3%);
+  --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 1% / 2%),
+    0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 1% / 4.8%),
+    0 3px 10px hsla(var(--primary-h) var(--saturation) 1% / 5.5%),
+    0 5.4px 17.9px hsla(var(--primary-h) var(--saturation) 1% / 6.2%),
+    0 10px 33.4px hsla(var(--primary-h) var(--saturation) 1% / 7%),
+    0 24px 80px hsla(var(--primary-h) var(--saturation) 1% / 9%);
+}
