@@ -1,13 +1,13 @@
 .sm-navbar-container {
-  position: relative;
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
   width: 100%;
-  background-color: var(--surface);
+  background-color: var(--border-color);
+  backdrop-filter: blur(20px) saturate(180%);
 
-  /* box-shadow: 0 1px 1em rgb(0 0 0 / 0.15); */
+  /* border-bottom: 1px solid var(--border-color-accent); */
 }
 
 .sm-navbar {
@@ -16,6 +16,8 @@
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
+  font-size: var(--small);
+  line-height: 1.1;
 }
 
 .sm-navbar button {
@@ -24,7 +26,11 @@
   line-height: 1;
 }
 
-.sm-navbar button:not(.sm-overflow-button) svg {
+.sm-navbar button:not(.sm-button) {
+  line-height: 0;
+}
+
+.sm-navbar button svg {
   width: max(1rem, 20px);
   height: max(1rem, 20px);
   fill: var(--element);
@@ -33,57 +39,29 @@
 .sm-navbar-left {
   display: flex;
   gap: 1rem;
-  align-items: baseline;
+  align-items: center;
 }
 
 .sm-site-title {
   margin: 0;
   overflow: hidden;
-  font-family: var(--heading-typeface);
   font-size: 1rem;
   font-weight: 800;
-  line-height: 1.1;
   white-space: nowrap;
 }
 
-@media (--tablet) {
-  .sm-site-title {
-    font-size: 1.15rem;
-  }
-}
-
-.sm-navigation-container {
-  display: none;
-  gap: 0.25rem;
-  align-items: flex-end;
-}
-
-.sm-navbar .sm-navbar-menu-button {
-  align-self: flex-end;
-  line-height: 0;
-}
-
-@media (--tablet) {
-  .sm-navigation-container {
-    display: flex;
-  }
-
-  .sm-navbar-menu-button {
-    display: none;
-  }
-}
-
 .sm-navigation {
-  display: flex;
+  display: none;
   gap: 1rem;
+  align-items: center;
   padding-inline-start: 0;
   list-style-type: none;
 }
 
 .sm-navigation-item {
   position: relative;
-  font-size: var(--small);
-  text-transform: uppercase;
+
+  /* text-transform: uppercase; */
   letter-spacing: var(--letter-spacing);
 }
 
@@ -106,6 +84,22 @@
 }
 
 .sm-navbar-right {
-  display: flex;
+  display: none;
+  gap: 0.75rem;
   align-items: center;
+}
+
+@media (--tablet) {
+  .sm-navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .sm-navbar-menu-button {
+    display: none;
+  }
+
+  .sm-navbar-right {
+    display: flex;
+  }
 }

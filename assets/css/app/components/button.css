@@ -47,26 +47,25 @@
 Used in navigation and pagination */
 .sm-circle-icon-button {
   box-sizing: content-box;
-  width: 1em;
-  height: 1em;
-  padding: 0.25em;
-  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  padding: 5px;
+  line-height: 0;
   border-radius: 50%;
   transition: background-color 0.3s;
 }
 
-.sm-circle-icon-button svg {
-  width: 1em;
-  height: 1em;
-  fill: var(--element-light);
-}
-
-.sm-circle-icon-button:not([disabled]):hover {
+.sm-circle-icon-button:where(:hover, :focus-visible) {
   background-color: var(--border-color);
 }
 
-.sm-circle-icon-button[disabled] {
-  opacity: 0.5;
+.sm-circle-icon-button svg {
+  width: inherit;
+  height: inherit;
+  fill: currentcolor;
 }
 
 /* Simple button

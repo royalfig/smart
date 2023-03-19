@@ -2,7 +2,7 @@
   position: fixed;
   bottom: 28px;
   left: 28px;
-  z-index: 5;
+  z-index: 9;
   pointer-events: none;
   isolation: isolate;
   transition: opacity 0.5s;
@@ -68,6 +68,20 @@
   transform-origin: bottom left;
   scale: 0;
   translate: 15px 10%;
+}
+
+.sm-post-toc-contents::-webkit-scrollbar {
+  width: 0.75rem;
+}
+
+.sm-post-toc-contents::-webkit-scrollbar-track {
+  background: var(--surface-light);
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.sm-post-toc-contents::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 0.25rem;
 }
 
 .sm-post-toc-contents::before {

@@ -11,7 +11,7 @@
 
 .sm-tags-card > a {
   padding: 1rem;
-  font-weight: 700;
+  font-weight: 500;
   color: var(--element-light);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
@@ -146,10 +146,16 @@
 
 .sm-cta-card h2 {
   margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 900;
   line-height: 1.1;
   background: linear-gradient(45deg, var(--primary), var(--secondary));
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.sm-cta-card h2 ~ p {
+  font-size: var(--small);
 }
 
 .sm-cta-card input {
@@ -235,7 +241,7 @@
 
 .sm-card h2 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: 1.1;
 }
 
@@ -266,15 +272,14 @@
 .sm-card .sm-tag {
   display: inline-block;
   max-width: 70%;
-  padding: 0 0.75em;
   overflow: hidden;
   font-size: var(--x-small);
+  font-weight: 500;
   color: var(--element-light);
   text-overflow: ellipsis;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
   white-space: nowrap;
-  background-color: var(--border-color);
   border-radius: var(--radius);
 }
 
@@ -334,7 +339,5 @@
 }
 
 .sm-card .sm-love-button svg {
-  width: 1rem;
-  height: 1rem;
   fill: var(--primary);
 }

@@ -1,3 +1,17 @@
+pre[class*='language-']::-webkit-scrollbar {
+  width: 0.75em;
+}
+
+pre[class*='language-']::-webkit-scrollbar-track {
+  background: hsl(var(--primary-h) 12% 8%);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+pre[class*='language-']::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--primary-h) 15% 15%);
+  border-radius: var(--radius);
+}
+
 code[class*='language-'],
 pre[class*='language-'] {
   font-family: var(--mono-typeface);

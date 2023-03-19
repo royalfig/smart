@@ -153,6 +153,7 @@
                     </span>
                 </button>
             </div>
+            
         </div>
     </div>
     {{/is}}
@@ -261,7 +262,46 @@
               >
             </picture>
         </figure>
-    {{else}}
-        {{#is "post"}}<div class="sm-header-divider"></div>{{/is}}
     {{/if}}
+
+    {{#is "post"}}
+        <div class="sm-post-share">
+            <p>Share</p>
+            <a class='sm-circle-icon-button'
+                href='https://twitter.com/intent/tweet?text={{url absolute='true'}}'
+                aria-label='Share on Twitter'
+                target='_blank'
+                rel='noopener noreferrer'
+            >
+                <svg aria-hidden='true'><use href='#twitter-icon'></use></svg>
+            </a>
+            <a
+                class='sm-circle-icon-button'
+                href='http://www.linkedin.com/shareArticle?mini=true&amp;url={{url
+                absolute='true'
+                }}'
+                aria-label='Share on LinkedIn'
+                target='_blank'
+                rel='noopener noreferrer'
+            ><svg aria-hidden='true'><use
+                    href='#linkedin-icon'
+                ></use></svg></a>
+            <a
+                class='sm-circle-icon-button'
+                href='http://www.facebook.com/sharer.php?u={{url absolute='true'}}'
+                aria-label='Share on Facebook'
+                target='_blank'
+                rel='noopener noreferrer'
+            ><svg aria-hidden='true'><use
+                    href='#facebook-icon'
+                ></use></svg></a>
+            <button class='sm-circle-icon-button sm-copy-button' aria-label="Copy link">
+                <svg aria-hidden='true'
+                ><use href='#sm-copy-icon'></use></svg>
+                <svg aria-hidden='true'
+                ><use href='#sm-check-icon'></use></svg>
+            </button>
+        </div>
+    {{/is}}
+
 </header>

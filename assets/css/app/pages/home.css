@@ -2,15 +2,6 @@
   background-color: var(--surface-dark);
 }
 
-.sm-home-accent .sm-card,
-.sm-home-accent .sm-cta-card {
-  border-color: var(--border-color-accent);
-}
-
-.sm-home-accent .sm-card .sm-tag {
-  background-color: var(--surface-darker);
-}
-
 .home-template .sm-pagination {
   margin-block: var(--gap) 3rem;
 }

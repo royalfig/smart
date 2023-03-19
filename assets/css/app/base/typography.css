@@ -64,6 +64,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: public;
+  font-weight: 100 900;
+  src: url('/assets/fonts/PublicSans[wght].woff2') format('woff2');
+  font-display: swap;
+}
+
 h1,
 h2,
 h3,
@@ -71,7 +78,7 @@ h4,
 h5,
 h6 {
   margin: 3rem 0 1.38rem;
-  font-family: Archivo, sans-serif;
+  font-family: var(--heading-typeface);
   font-weight: 700;
   line-height: 1.3;
 }

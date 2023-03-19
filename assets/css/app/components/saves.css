@@ -1,5 +1,6 @@
 .sm-love-button {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   transform: translateY(0.25em);
 }
 
@@ -12,7 +13,8 @@
 }
 
 .sm-love-button.sm-love-toggle .sm-heart-fill-icon {
-  display: inline-block;
+  display: flex;
+  align-items: center;
 }
 
 .sm-overflow-articles {

@@ -1,34 +1,60 @@
-{{!-- Navigation bar --}}
-<div class="sm-grid sm-navbar-container">
+{{! Navigation bar }}
+<div class='sm-grid sm-navbar-container'>
+  <header class='sm-navbar'>
+    <div class='sm-navbar-left'>
 
-    <header class="sm-navbar">
-        <div class="sm-navbar-left">
-            <button class="sm-navbar-menu-button" aria-label="menu"><svg aria-hidden="true"><use href="#sm-menu-icon"></use></svg></button>
-            {{#is "home"}}
-            <h1 class="sm-site-title"><a href="{{@site.url}}">{{@site.title}}</a></h1>
-            {{else}}
-            <p class="sm-site-title"><a href="{{@site.url}}">{{@site.title}}</a></p>
-            {{/is}}
+      {{#is 'home'}}
+        <h1 class='sm-site-title'><a
+            href='{{@site.url}}'
+          >{{@site.title}}</a></h1>
+      {{else}}
+        <p class='sm-site-title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
+      {{/is}}
 
-            <div class="sm-navigation-container">
-                {{navigation}}
-                <div class="sm-overflow-container">
-                    <button class="sm-overflow-button" aria-label="Overflow menu">
-                        <svg aria-hidden="true"><use href="#sm-overflow-menu-icon"></use></svg>
-                    </button>
+      {{navigation}}
+    </div>
 
-                    {{> "overflow"}}
-                </div>
-            </div>
+    <div class='sm-navbar-right'>
+      <button data-ghost-search aria-label='search'>
+        <svg aria-hidden='true'><use href='#sm-search-icon'></use></svg>
+      </button>
+      <button class='sm-dark-mode' aria-label='Turn on dark mode'>
+        <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
+      </button>
+      <button class='sm-light-mode' aria-label='Turn on light mode'>
+        <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
+      </button>
 
+      <button class='sm-saves-button' aria-label='Open saves menu'>
+        <svg aria-hidden='true'>
+          <use href='#sm-heart-fill-icon'></use>
+        </svg>
+      </button>
 
-        </div>
-        <div class="sm-navbar-right">
-            {{search}}
-            {{#if @site.members_enabled}}
-            {{^if @member}}<button class="sm-button" data-portal="signup">Subscribe</button>{{else}}<button
-                class="sm-button" data-portal="account">Account</button>{{/if}}
-            {{/if}}
-        </div>
-    </header>
+      {{#if @site.members_enabled}}
+        {{#if @member}}<button
+            class='sm-button'
+            data-portal='account'
+          >Account</button>{{else}}<button
+            class='sm-button'
+            data-portal='signup'
+          >Subscribe</button>
+        {{/if}}
+      {{/if}}
+    </div>
+
+    <button
+      class='sm-circle-icon-button sm-navbar-menu-button'
+      aria-label='menu'
+    ><svg aria-hidden='true'><use href='#sm-menu-icon'></use></svg></button>
+  </header>
+</div>
+
+<div class='sm-navbar-saves'>
+  <button class='sm-navbar-close-saves' aria-label='close saves menu'>
+    <svg aria-hidden='true'>
+      <use href='#sm-close-icon'></use>
+    </svg>
+  </button>
+  <div class='sm-overflow-articles'></div>
 </div>

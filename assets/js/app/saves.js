@@ -153,12 +153,8 @@ export class Saves {
                 }" data-title="${el.title}" aria-label="Remove ${
           el.title
         } from favorites">
-                <span class="sm-heart-outline-icon">
-                <svg><use href="#sm-heart-outline-icon"></use></svg>
-                </span>
-                <span class="sm-heart-fill-icon">
-                <svg><use href="#sm-heart-fill-icon"></use></svg>
-                </span>
+                <svg class="sm-heart-outline-icon"><use href="#sm-heart-outline-icon"></use></svg>
+                <svg class="sm-heart-fill-icon"><use href="#sm-heart-fill-icon"></use></svg>
                 </button>
             </div>
         </div>`,
@@ -168,17 +164,14 @@ export class Saves {
 
   populateSavesMenu() {
     const savesMenu = document.querySelector('.sm-overflow-articles');
-    const navSavesMenu = document.querySelector('.sm-nav-menu-saves');
 
     if (!this.items().length) {
       const noSavesText =
         '<p>No articles saved yet. Hit the heart to get started!</p>';
       savesMenu.innerHTML = noSavesText;
-      navSavesMenu.innerHTML = noSavesText;
       return;
     }
     savesMenu.innerHTML = this.renderSavesMenu();
-    navSavesMenu.innerHTML = this.renderSavesMenu();
   }
 
   init() {

@@ -19,7 +19,8 @@
   --radius-small: 3px;
 
   /* Type */
-  --heading-typeface: 'Archivo', sans-serif;
+  --body-typeface: 'public', system-ui, sans-serif;
+  --heading-typeface: 'public', system-ui, sans-serif;
   --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
     monospace;
   --letter-spacing: 0.2px;
@@ -34,6 +35,18 @@
   --xx-small: 0.579rem;
   --button-padding: 0.5em 0.75em;
   --transition: 0.3s;
+}
+
+@media (--tablet) {
+  :root {
+    --gap: 1.5rem;
+  }
+}
+
+@media (--laptop) {
+  :root {
+    --gap: 2rem;
+  }
 }
 
 /* Color scheme */

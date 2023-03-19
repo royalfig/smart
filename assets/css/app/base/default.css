@@ -1,10 +1,10 @@
 html {
   height: 100%;
-  font-family: Lato, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: clamp(1rem, 0.9268rem + 0.3571vw, 1.25rem);
+  font-family: var(--body-typeface);
   font-size: 1rem;
-  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.25rem);
+  font-size: clamp(1rem, 0.9268rem + 0.3571vw, 1.25rem);
+  font-feature-settings: 'kern';
+  font-kerning: normal;
   line-height: 1.5;
   color: var(--element);
   background-color: var(--surface);

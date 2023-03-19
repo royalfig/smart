@@ -7,90 +7,51 @@
       <use href='#sm-close-icon'></use>
     </svg>
   </button>
+
   <div class='sm-nav-menu-navigation-container'>
     {{navigation}}
-    <div class='sm-nav-menu-grid-container'>
-      <div>
-        <p class='sm-nav-menu-header'>Follow</p>
-        <section class='sm-nav-menu-section'>
-          {{#if @custom.social_media_1_url}}
-            <a class='sm-icon-button' href='{{@custom.social_media_1_url}}'><svg
-                aria-hidden='true'
-              ><use
-                  href='#{{@custom.social_media_1}}-icon'
-                ></use></svg>{{@custom.social_media_1}}</a>
-          {{/if}}
-          {{#if @custom.social_media_2_url}}
-            <a class='sm-icon-button' href='{{@custom.social_media_2_url}}'><svg
-                aria-hidden='true'
-              ><use
-                  href='#{{@custom.social_media_2}}-icon'
-                ></use></svg>{{@custom.social_media_2}}</a>
-          {{/if}}
-          {{#if @custom.social_media_3_url}}
-            <a class='sm-icon-button' href='{{@custom.social_media_3_url}}'><svg
-                aria-hidden='true'
-              ><use
-                  href='#{{@custom.social_media_3}}-icon'
-                ></use></svg>{{@custom.social_media_3}}</a>
-          {{/if}}
-          {{#if @custom.social_media_4_url}}
-            <a class='sm-icon-button' href='{{@custom.social_media_4_url}}'><svg
-                aria-hidden='true'
-              ><use
-                  href='#{{@custom.social_media_4}}-icon'
-                ></use></svg>{{@custom.social_media_4}}</a>
-          {{/if}}
-        </section>
-      </div>
-      <div>
-        <p class='sm-nav-menu-header'>Share</p>
-        <section class='sm-nav-menu-section'>
-          <button class='sm-icon-button sm-copy-button'><svg
-              aria-hidden='true'
-            ><use href='#sm-copy-icon'></use></svg>Copy link</button>
-          <a
-            class='sm-icon-button'
-            href='https://twitter.com/intent/tweet?text={{url absolute='true'}}'
-            aria-label='Share on Twitter'
-            target='_blank'
-            rel='noopener noreferrer'
-          ><svg aria-hidden='true'><use
-                href='#twitter-icon'
-              ></use></svg>Twitter</a>
-          <a
-            class='sm-icon-button'
-            href='http://www.linkedin.com/shareArticle?mini=true&amp;url={{url
-              absolute='true'
-            }}'
-            aria-label='Share on LinkedIn'
-            target='_blank'
-            rel='noopener noreferrer'
-          ><svg aria-hidden='true'><use
-                href='#linkedin-icon'
-              ></use></svg>Linkedin</a>
-          <a
-            class='sm-icon-button'
-            href='http://www.facebook.com/sharer.php?u={{url absolute='true'}}'
-            aria-label='Share on Facebook'
-            target='_blank'
-            rel='noopener noreferrer'
-          ><svg aria-hidden='true'><use
-                href='#facebook-icon'
-              ></use></svg>Facebook</a>
-        </section>
-      </div>
-    </div>
-    <div>
-      <p class='sm-nav-menu-header'>Saves</p>
-      <section class='sm-nav-menu-section sm-nav-menu-saves'></section>
-    </div>
 
-    <button class='sm-icon-button sm-dark-mode'>
-      <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>Dark mode
-    </button>
-    <button class='sm-icon-button sm-light-mode'>
-      <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>Light mode
-    </button>
+    <div class='sm-nav-menu-actions'>
+      <button
+        class='sm-circle-icon-button'
+        data-ghost-search
+        aria-label='search'
+      >
+        <svg aria-hidden='true'><use href='#sm-search-icon'></use></svg>
+      </button>
+      <button
+        class='sm-circle-icon-button sm-dark-mode'
+        aria-label='Turn on dark mode'
+      >
+        <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
+      </button>
+      <button
+        sm-circle-icon-button
+        class='sm-circle-icon-button sm-light-mode'
+        aria-label='Turn on light mode'
+      >
+        <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
+      </button>
+
+      <button
+        class='sm-circle-icon-button sm-saves-button'
+        aria-label='Open saves menu'
+      >
+        <svg aria-hidden='true'>
+          <use href='#sm-heart-fill-icon'></use>
+        </svg>
+      </button>
+
+    </div>
+    {{#if @site.members_enabled}}
+      {{#if @member}}<button
+          class='sm-button'
+          data-portal='account'
+        >Account</button>{{else}}<button
+          class='sm-button'
+          data-portal='signup'
+        >Subscribe</button>
+      {{/if}}
+    {{/if}}
   </div>
 </div>

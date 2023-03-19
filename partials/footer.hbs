@@ -2,9 +2,47 @@
   <div class='sm-footer'>
     <div class='sm-footer-info'>
       <p class='sm-footer-title'>{{@site.title}}</p>
-      {{#if @site.description}}<p
-          class='sm-footer-description'
-        >{{@site.description}}</p>{{/if}}
+      {{#if @site.description}}
+        <p class='sm-footer-description'>{{@site.description}}</p>
+      {{/if}}
+      <div class='sm-footer-socials'>
+        {{#if @custom.social_media_1_url}}
+          <a
+            class='sm-circle-icon-button'
+            href='{{@custom.social_media_1_url}}'
+            aria-label='{{@custom.social_media_1}}'
+          ><svg aria-hidden='true'><use
+                href='#{{@custom.social_media_1}}-icon'
+              ></use></svg></a>
+        {{/if}}
+        {{#if @custom.social_media_2_url}}
+          <a
+            class='sm-circle-icon-button'
+            href='{{@custom.social_media_2_url}}'
+            aria-label='{{@custom.social_media_2}}'
+          ><svg aria-hidden='true'><use
+                href='#{{@custom.social_media_2}}-icon'
+              ></use></svg></a>
+        {{/if}}
+        {{#if @custom.social_media_3_url}}
+          <a
+            class='sm-circle-icon-button'
+            href='{{@custom.social_media_3_url}}'
+            aria-label='{{@custom.social_media_3}}'
+          ><svg aria-hidden='true'><use
+                href='#{{@custom.social_media_3}}-icon'
+              ></use></svg></a>
+        {{/if}}
+        {{#if @custom.social_media_4_url}}
+          <a
+            class='sm-circle-icon-button'
+            href='{{@custom.social_media_4_url}}'
+            aria-label='{{@custom.social_media_4}}'
+          ><svg aria-hidden='true'><use
+                href='#{{@custom.social_media_4}}-icon'
+              ></use></svg></a>
+        {{/if}}
+      </div>
 
       <div class='sm-footer-copyright'>
 

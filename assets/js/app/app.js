@@ -8,7 +8,7 @@ import generatePagination from './pagination';
 import { Saves } from './saves';
 
 initClickHandler();
-animateNavbar();
+// animateNavbar();
 determineColorModeSupport();
 generatePagination();
 keyClickHandler();
