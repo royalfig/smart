@@ -3,7 +3,6 @@
   inset: 0;
   z-index: 35;
   display: none;
-
   align-items: center;
   justify-content: center;
   width: 100%;
@@ -22,6 +21,7 @@
 
 body:has(.sm-show-menu) {
   position: fixed;
+  inset: 0;
 }
 
 .sm-show-menu .sm-navigation {
@@ -31,9 +31,8 @@ body:has(.sm-show-menu) {
 .sm-nav-menu-navigation-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-
   gap: 3rem;
+  justify-content: space-between;
 }
 
 .sm-nav-menu-navigation-container .sm-navigation {
@@ -43,7 +42,7 @@ body:has(.sm-show-menu) {
 
 .sm-nav-menu-actions {
   display: flex;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
 }

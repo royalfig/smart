@@ -1,15 +1,21 @@
 import '../../css/app/index.css';
 
 import initClickHandler from './clickHandler';
-import animateNavbar from './navbarAnimation';
 import { determineColorModeSupport } from './colorModeToggle';
 import keyClickHandler from './keyHandler';
 import generatePagination from './pagination';
 import { Saves } from './saves';
+import initMediumZoom from './medium_zoom';
+import responsiveTableInit from './responsiveTables';
+import writeAuthorWebsite from './authorWebsite';
+import toc from './toc';
 
 initClickHandler();
-// animateNavbar();
 determineColorModeSupport();
 generatePagination();
 keyClickHandler();
 new Saves().init();
+initMediumZoom();
+responsiveTableInit();
+writeAuthorWebsite();
+toc();

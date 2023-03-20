@@ -1,3 +1,4 @@
+/* stylelint-disable selector-class-pattern */
 .sm-post-title {
   margin-block-end: 1rem;
 }
@@ -64,14 +65,13 @@
 
 .sm-post-share {
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
   align-items: center;
   justify-content: center;
   line-height: 1;
 }
 
 .sm-post-share p {
-  margin-inline-end: 0.5rem;
   font-size: var(--small);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
@@ -96,6 +96,12 @@
 .sm-share-icon svg {
   width: 100%;
   height: 100%;
+}
+
+.sm-post-save-button svg {
+  width: 1em;
+  height: 1em;
+  fill: currentcolor;
 }
 
 .sm-copy-button svg:not(:first-child) {
@@ -155,12 +161,6 @@
 
 .sm-post-save-button.sm-love-button.sm-love-toggle .sm-heart-fill-icon {
   display: flex;
-}
-
-.sm-post-save-button svg {
-  width: 1em;
-  height: 1em;
-  fill: currentcolor;
 }
 
 /* Related posts */

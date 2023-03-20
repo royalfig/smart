@@ -8,13 +8,8 @@
 
     {{!-- Preloads and preconnects --}}
     <link rel="preconnect" href="https://cdn.jsdelivr.net/">
-    <link rel="preload" href="/assets/fonts/archivo-v18-latin-900.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/LatoLatin-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/LatoLatin-Bold.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/assets/fonts/archivo-v18-latin-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
 
-
-<link href="https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&f[]=supreme@400&f[]=technor@600&display=swap" rel="stylesheet">
     {{!-- CSS and Fonts --}}
 
     {{! Load scripts to execute before render }}
@@ -38,9 +33,6 @@
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
     <script src="{{asset 'built/app.js'}}" type="module" defer></script>
-    {{^is "home"}}
-    <script src="{{asset 'built/post.js'}}" type="module" defer></script>
-    {{/is}}
 
     {{#if @custom.syntax_highlighting}}
         {{#is "post"}}

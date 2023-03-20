@@ -9,7 +9,7 @@ html {
   color: var(--element);
   background-color: var(--surface);
   scroll-behavior: smooth;
-  scroll-padding-block-start: 3.5rem;
+  scroll-padding-block-start: 4rem;
   text-rendering: optimizelegibility;
 }
 

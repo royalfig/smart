@@ -1,73 +1,15 @@
-/* work-sans-regular - latin */
 @font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 400;
-  src: local(''), url('/assets/fonts/LatoLatin-Regular.woff2') format('woff2');
-  font-display: swap;
-}
-
-/* work-sans-700 - latin */
-@font-face {
-  font-family: Lato;
-  font-style: normal;
-  font-weight: 700;
-  src: local(''), url('/assets/fonts/LatoLatin-Bold.woff2') format('woff2');
-  font-display: swap;
-}
-
-/* work-sans-italic - latin */
-@font-face {
-  font-family: Lato;
-  font-style: italic;
-  font-weight: 400;
-  src: local(''), url('/assets/fonts/LatoLatin-Italic.woff2') format('woff2');
-  font-display: swap;
-}
-
-/* work-sans-700italic - latin */
-@font-face {
-  font-family: Lato;
-  font-style: italic;
-  font-weight: 700;
-  src: local(''),
-    url('/assets/fonts/LatoLatin-BoldItalic.woff2') format('woff2');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Archivo;
-  font-style: normal;
-  font-weight: 700;
-  src: local(''),
-    url('/assets/fonts/archivo-v18-latin-700.woff2') format('woff2'),
-    url('/assets/fonts/archivo-v18-latin-700.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Archivo;
-  font-style: italic;
-  font-weight: 700;
-  src: local(''),
-    url('/assets/fonts/archivo-v18-latin-700italic.woff2') format('woff2'),
-    url('/assets/fonts/archivo-v18-latin-700italic.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: Archivo;
-  font-weight: 900;
-  src: local(''),
-    url('/assets/fonts/archivo-v18-latin-900.woff2') format('woff2'),
-    url('/assets/fonts/archivo-v18-latin-900.woff') format('woff');
+  font-family: public;
+  font-weight: 100 900;
+  src: url('/assets/fonts/public-sans.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
   font-family: public;
+  font-style: italic;
   font-weight: 100 900;
-  src: url('/assets/fonts/PublicSans[wght].woff2') format('woff2');
+  src: url('/assets/fonts/public-sans-italic.woff2') format('woff2');
   font-display: swap;
 }
 

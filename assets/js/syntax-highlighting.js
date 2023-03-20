@@ -1,4 +1,3 @@
-import '../css/syntax-highlighting.css';
 import 'prismjs/prism';
 import 'prismjs/plugins/autoloader/prism-autoloader';
 
