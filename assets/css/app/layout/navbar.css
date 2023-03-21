@@ -43,6 +43,7 @@
 
 .sm-navigation-item {
   position: relative;
+  line-height: 1.3;
   letter-spacing: var(--letter-spacing);
 }
 

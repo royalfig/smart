@@ -50,8 +50,8 @@ export default defineConfig([
     input: 'assets/js/app/app.js',
     output,
     plugins: [
-      ...plugins,
       css,
+      ...plugins,
       process.env.BUILD !== 'production' &&
         livereload({
           watch: resolve('.'),

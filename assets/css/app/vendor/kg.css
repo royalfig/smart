@@ -5,22 +5,24 @@ blockquote:not(.kg-blockquote-alt) {
 }
 
 .kg-blockquote-alt {
-  font-family: var(--heading-typeface);
+  padding: 0;
+  margin-block: 3rem 4rem;
+  font-size: 3rem;
+  font-weight: 800;
   line-height: 1.2;
 }
 
 .kg-blockquote-alt::before,
 .kg-blockquote-alt::after {
-  color: var(--secondary);
+  color: var(--secondary-light);
 }
 
 .kg-blockquote-alt::before {
-  padding-inline-end: 0.1em;
-  content: '\002301';
+  content: open-quote;
 }
 
 .kg-blockquote-alt::after {
-  content: '\002301';
+  content: close-quote;
 }
 
 /* Cards and images */

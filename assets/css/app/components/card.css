@@ -336,6 +336,8 @@
   position: absolute;
   right: 1rem;
   bottom: 1rem;
+  width: 1em;
+  height: 1em;
 }
 
 .sm-card .sm-love-button svg {

@@ -4,7 +4,7 @@
 .sm-button-simple {
   padding: var(--button-padding);
   font-size: var(--small);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);
@@ -51,8 +51,8 @@ Used in navigation and pagination */
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.35rem;
+  height: 1.35rem;
   line-height: 0;
   border-radius: 50%;
   transition: background-color 0.3s;
@@ -67,7 +67,7 @@ Used in navigation and pagination */
 
 .sm-circle-icon-button::after {
   position: absolute;
-  inset: -0.5rem;
+  inset: -0.35em;
   z-index: -1;
   content: '';
   border-radius: 50%;
