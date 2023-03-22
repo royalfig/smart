@@ -6,8 +6,20 @@ on:
       - master
       - main
 jobs:
+  build:
+    runs-on: ubuntu-latest
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
+     steps:
+    - uses: actions/checkout@v3
+    - name: Use Node.js 18.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+    - run: npm run build --if-present
   deploy:
-    runs-on: ubuntu-22.04
+    needs: build
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
       - name: Deploy Ghost Theme
@@ -15,3 +27,23 @@ jobs:
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
           api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
+  demo:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1
+        with:
+          api-url: ${{ secrets.GHOST_DEMO_URL }}
+          api-key: ${{ secrets.GHOST_DEMO_KEY }}
+  demo:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1
+        with:
+          api-url: ${{ secrets.GHOST_ME_URL }}
+          api-key: ${{ secrets.GHOST_ME_KEY }}

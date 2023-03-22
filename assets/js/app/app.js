@@ -1,4 +1,4 @@
-import '../../css/app/index.css';
+import '../../css/index.css';
 
 import initClickHandler from './clickHandler';
 import { determineColorModeSupport } from './colorModeToggle';

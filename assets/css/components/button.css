@@ -1,0 +1,131 @@
+.sm-form-button,
+.sm-button,
+.sm-icon-button,
+.sm-button-simple {
+  padding: var(--button-padding);
+  font-size: var(--small);
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing);
+  border-radius: var(--radius);
+}
+
+.sm-form-button,
+.sm-button {
+  color: var(--button-text);
+  background-color: var(--primary);
+}
+
+/* Icon button */
+.sm-icon-button {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  color: var(--element);
+  text-align: center;
+  white-space: nowrap;
+  background-color: hsla(
+    var(--primary-h) var(--saturation) var(--lightness) / 15%
+  );
+  transition: background-color 0.3s;
+}
+
+.sm-icon-button:hover {
+  background-color: hsla(
+    var(--primary-h) var(--saturation) var(--lightness) / 25%
+  );
+}
+
+.sm-icon-button svg {
+  width: 1em;
+  height: 1em;
+  fill: var(--element);
+}
+
+/* Circle icon button 
+Used in navigation and pagination */
+.sm-circle-icon-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.35rem;
+  height: 1.35rem;
+  line-height: 0;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+@media (--tablet) {
+  .sm-circle-icon-button {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.sm-circle-icon-button::after {
+  position: absolute;
+  inset: -0.35em;
+  z-index: -1;
+  content: '';
+  border-radius: 50%;
+  transition: background-color var(--transition);
+}
+
+.sm-circle-icon-button:where(:hover, :focus-visible)::after {
+  background-color: var(--border-color);
+}
+
+.sm-circle-icon-button svg {
+  width: inherit;
+  height: inherit;
+  fill: currentcolor;
+}
+
+/* Simple button
+Used in footer */
+.sm-button-simple {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  border: 1px solid var(--border-color);
+  transition: background-color 0.3s;
+}
+
+.sm-button-simple svg {
+  width: 1em;
+  height: 1em;
+  fill: var(--element-light);
+}
+
+.sm-button-simple:focus-visible,
+.sm-button-simple:hover {
+  background-color: var(--border-color);
+  outline: none;
+}
+
+/* Circle close button 
+Used in search and */
+.sm-circle-close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  box-sizing: content-box;
+  width: max(1rem, 30px);
+  height: max(1rem, 30px);
+  padding: 0.25rem;
+  line-height: 1;
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.sm-circle-close-button:hover {
+  background-color: var(--border-color);
+}
+
+.sm-circle-close-button svg {
+  width: max(1rem, 30px);
+  height: max(1rem, 30px);
+  fill: var(--element);
+}
