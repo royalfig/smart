@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
      steps:
     - uses: actions/checkout@v3
     - name: Use Node.js 18.x
@@ -17,12 +16,12 @@ jobs:
         node-version: 18.x
         cache: 'npm'
     - run: npm run build --if-present
-  deploy:
+  mc:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Deploy Ghost Theme
+      - name: Deploy mc site
         uses: TryGhost/action-deploy-theme@v1
         with:
           api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
@@ -32,17 +31,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Deploy Ghost Theme
+      - name: Deploy demo site
         uses: TryGhost/action-deploy-theme@v1
         with:
           api-url: ${{ secrets.GHOST_DEMO_URL }}
           api-key: ${{ secrets.GHOST_DEMO_KEY }}
-  demo:
+  me:
     needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Deploy Ghost Theme
+      - name: Deploy my site
         uses: TryGhost/action-deploy-theme@v1
         with:
           api-url: ${{ secrets.GHOST_ME_URL }}
