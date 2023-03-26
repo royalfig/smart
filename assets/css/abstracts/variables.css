@@ -67,18 +67,18 @@
   --secondary-dark: hsl(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 0.5)
   );
-  --surface: hsl(var(--primary-h) 10% 96%);
-  --surface-85: hsla(var(--primary-h) 10% 96% / 85%);
-  --surface-light: hsl(var(--primary-h) 10% 100%);
-  --surface-dark: hsl(var(--primary-h) 10% 89%);
-  --surface-darker: hsl(var(--primary-h) 10% 82%);
-  --element: hsl(var(--primary-h) 10% 5%);
-  --element-light: hsl(var(--primary-h) 10% 35%);
-  --element-dark: hsl(var(--primary-h) 10% 1%);
-  --border-color: hsl(var(--primary-h) 10% 82% / 50%);
-  --navbar-color: hsl(var(--primary-h) 10% 82% / 80%);
-  --border-color-accent: hsla(var(--primary-h) 10% 72% / 50%);
-  --button-text: hsl(var(--primary-h) 10% 100%);
+  --surface: hsl(var(--primary-h) 7% 96%);
+  --surface-85: hsla(var(--primary-h) 7% 96% / 85%);
+  --surface-light: hsl(var(--primary-h) 7% 100%);
+  --surface-dark: hsl(var(--primary-h) 7% 89%);
+  --surface-darker: hsl(var(--primary-h) 7% 82%);
+  --element: hsl(var(--primary-h) 7% 5%);
+  --element-light: hsl(var(--primary-h) 7% 35%);
+  --element-dark: hsl(var(--primary-h) 7% 1%);
+  --border-color: hsl(var(--primary-h) 7% 82% / 50%);
+  --navbar-color: hsl(var(--primary-h) 7% 82% / 80%);
+  --border-color-accent: hsla(var(--primary-h) 7% 72% / 50%);
+  --button-text: hsl(var(--primary-h) 7% 100%);
   --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 9% / 2%),
     0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 9% / 2.8%),
     0 3px 10px hsla(var(--primary-h) var(--saturation) 9% / 3.5%),
@@ -107,19 +107,19 @@
   --secondary-dark: hsl(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.15)
   );
-  --element: hsl(var(--primary-h) 10% 96%);
-  --element-light: hsl(var(--primary-h) 10% 100%);
-  --element-dark: hsl(var(--primary-h) 10% 89%);
-  --element-darker: hsl(var(--primary-h) 10% 82%);
-  --surface: hsl(var(--primary-h) 10% 12%);
-  --surface-85: hsla(var(--primary-h) 10% 15% / 85%);
-  --surface-light: hsl(var(--primary-h) 10% 18%);
-  --surface-dark: hsl(var(--primary-h) 10% 8%);
-  --surface-darker: hsl(var(--primary-h) 10% 3%);
-  --border-color: hsl(var(--primary-h) 10% 35% / 50%);
-  --navbar-color: hsl(var(--primary-h) 10% 35% / 80%);
-  --border-color-accent: hsla(var(--primary-h) 10% 25% / 50%);
-  --button-text: hsl(var(--primary-h) 10% 3%);
+  --element: hsl(var(--primary-h) 7% 96%);
+  --element-light: hsl(var(--primary-h) 7% 100%);
+  --element-dark: hsl(var(--primary-h) 7% 89%);
+  --element-darker: hsl(var(--primary-h) 7% 82%);
+  --surface: hsl(var(--primary-h) 7% 12%);
+  --surface-85: hsla(var(--primary-h) 7% 15% / 85%);
+  --surface-light: hsl(var(--primary-h) 7% 18%);
+  --surface-dark: hsl(var(--primary-h) 7% 8%);
+  --surface-darker: hsl(var(--primary-h) 7% 3%);
+  --border-color: hsl(var(--primary-h) 7% 35% / 50%);
+  --navbar-color: hsl(var(--primary-h) 7% 35% / 80%);
+  --border-color-accent: hsla(var(--primary-h) 7% 25% / 50%);
+  --button-text: hsl(var(--primary-h) 7% 3%);
   --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 1% / 2%),
     0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 1% / 4.8%),
     0 3px 10px hsla(var(--primary-h) var(--saturation) 1% / 5.5%),
