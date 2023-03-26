@@ -11,6 +11,7 @@ html {
   scroll-behavior: smooth;
   scroll-padding-block-start: 4rem;
   text-rendering: optimizelegibility;
+  text-size-adjust: 100%;
 }
 
 body {

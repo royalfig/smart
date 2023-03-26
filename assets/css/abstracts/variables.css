@@ -11,7 +11,7 @@
   --desktop: 1200px;
   --widescreen: 1400px;
   --gap: 1rem;
-  --gutter: max(20px, 3vw);
+  --gutter: 40px;
   --width: 992px;
   --post-width: 768px;
   --content-width: 700px;
@@ -19,8 +19,8 @@
   --radius-small: 3px;
 
   /* Type */
-  --body-typeface: system-ui, sans-serif;
-  --heading-typeface: system-ui, sans-serif;
+  --body-typeface: 'public', system-ui, sans-serif;
+  --heading-typeface: 'public', system-ui, sans-serif;
   --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
     monospace;
   --letter-spacing: 0.2px;
