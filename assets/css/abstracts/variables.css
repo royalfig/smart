@@ -11,7 +11,7 @@
   --desktop: 1200px;
   --widescreen: 1400px;
   --gap: 1rem;
-  --gutter: 40px;
+  --gutter: 20px;
   --width: 992px;
   --post-width: 768px;
   --content-width: 700px;
@@ -40,6 +40,7 @@
 @media (--tablet) {
   :root {
     --gap: 1.5rem;
+    --gutter: 40px;
   }
 }
 
