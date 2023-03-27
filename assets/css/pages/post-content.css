@@ -1,6 +1,7 @@
 /* Content */
 .sm-post-content {
   margin-block-end: 3rem;
+  overflow-wrap: break-word;
 }
 
 .sm-post-content > * {
