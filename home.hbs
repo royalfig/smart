@@ -102,8 +102,11 @@ into the {body} of the default.hbs template --}}
             </aside>
             {{/if}}
             {{/if}}
+           
+            {{^if @site.members_enabled}}
+            {{!-- {{#if @site.members_invite_only}} --}}
             <aside class="sm-feature-card sm-cta-card">
-                 {{#if @site.icon}}
+                {{#if @site.icon}}
                     <picture>
                       <source 
                         srcset="
@@ -157,11 +160,9 @@ into the {body} of the default.hbs template --}}
                     <p>{{@site.description}}</p>
                 </div>
             </aside>
-            {{^if @site.members_enabled}}
-            {{#if @site.members_invite_only}}
+            {{!-- {{/if}} --}}
+            {{/if}}
 
-            {{/if}}
-            {{/if}}
             {{#foreach posts from="6" to="10"}}
                 {{> "card"}}
                 {{> "card" horizontal="true"}}
