@@ -55,15 +55,21 @@
             
             <div class="sm-card-body">
                 <div>
-                    <h2 class="sm-title {{^if feature_image}}large{{/if}} {{#if premiere}}large{{/if}}">{{title}}</h2>
+                    <h2 class="sm-title{{^if feature_image}} large{{/if}}{{#if premiere}} large{{/if}}">{{^if access}}<svg aria-label="premium content"><use href="#sm-lock-icon"></use></svg>{{/if}}{{title}}</h2>
                     {{#if custom_excerpt}}
                         {{^if premiere}}
                             {{^if feature_image}}
                             <p class="sm-excerpt">{{custom_excerpt}}</p>
                             {{/if}}
                         {{/if}}
+                        {{#if comments}}
+                          {{comment_count singular="comment" plural="comments" class="sm-comment-count"
+                          autowrap="p"}}
+                        {{/if}}
                         {{#if premiere}}<p class="sm-excerpt">{{custom_excerpt}}</p>
                         {{/if}}
+                        
+                       
                     {{/if}}
                 </div>
                 <div class="sm-card-footer">
@@ -74,8 +80,14 @@
                 </div>
             </div>
     </a>
-    <button class="sm-circle-icon-button sm-love-button" data-id="{{slug}}" data-title="{{title}}" aria-label="Save {{title}} to favorites">
+    <div class="sm-card-meta">
+      {{#if featured}}
+        <svg class="sm-card-featured-icon" aria-label="featured post"><use href="#sm-fire-icon"></use></svg>
+      {{/if}}
+      <button class="sm-circle-icon-button sm-love-button" data-id="{{slug}}" data-title="{{title}}" aria-label="Save {{title}} to favorites">
         <svg class="sm-heart-outline-icon"><use href="#sm-heart-outline-icon"></use></svg>
         <svg class="sm-heart-fill-icon"><use href="#sm-heart-fill-icon"></use></svg>
-    </button>
+      </button>
+    </div>
+    
 </article>

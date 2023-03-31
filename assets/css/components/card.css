@@ -123,6 +123,11 @@
   text-align: center;
 }
 
+.sm-feature-card-text {
+  padding: 1rem;
+  font-size: 1.15rem;
+}
+
 .sm-cta-card picture + form {
   height: auto;
   margin-block-start: 2rem;
@@ -142,6 +147,23 @@
 .sm-cta-copy {
   display: flex;
   flex-direction: column;
+}
+
+.sm-card-meta svg,
+.sm-card .sm-love-button svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: var(--primary);
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.sm-card h2 > svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-inline-end: 2px;
+  fill: var(--primary);
+  translate: 0 3px;
 }
 
 .sm-cta-card h2 {
@@ -232,11 +254,6 @@
 
 picture ~ .sm-feature-card-text {
   margin-block-start: 2rem;
-}
-
-.sm-feature-card-text {
-  padding: 1rem;
-  font-size: 1.15rem;
 }
 
 .sm-card img {
@@ -341,14 +358,20 @@ picture ~ .sm-feature-card-text {
   flex: 1;
 }
 
-.sm-card .sm-love-button {
+.sm-card-meta {
   position: absolute;
   right: 1rem;
   bottom: 1rem;
-  width: 1em;
-  height: 1em;
+  z-index: 2;
+  display: flex;
+  gap: 0.25em;
+  align-items: center;
 }
 
-.sm-card .sm-love-button svg {
-  fill: var(--primary);
+.sm-comment-count {
+  margin-block-start: 0.25rem;
+  font-size: var(--x-small);
+  font-weight: 300;
+  color: var(--element-light);
+  text-transform: uppercase;
 }
