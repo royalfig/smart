@@ -24,6 +24,9 @@ into the {body} of the default.hbs template --}}
     {{#match posts.length ">" "5"}}
     <div class="sm-grid sm-home-accent">
         <div class="sm-grid-home sm-grid-feature-left">
+
+            {{#if @site.members_enabled}}
+            {{^if @site.members_invite_only}}
             <aside class="sm-feature-card sm-cta-card">
                 {{#if @site.icon}}
                     <picture>
@@ -74,9 +77,8 @@ into the {body} of the default.hbs template --}}
                         alt="{{@site.title}} icon"
                       >
                     </picture>
-
                 {{/if}}
-
+              
                 <form data-members-form="subscribe">
                     <div class="sm-cta-copy sm-default">
                         <h2>Don't miss out</h2>
@@ -98,6 +100,68 @@ into the {body} of the default.hbs template --}}
                     <button class="sm-icon-button sm-error"><svg aria-hidden="true"><use href="#sm-error-icon"></use></svg>error</button>
                 </form>
             </aside>
+            {{/if}}
+            {{/if}}
+            <aside class="sm-feature-card sm-cta-card">
+                 {{#if @site.icon}}
+                    <picture>
+                      <source 
+                        srcset="
+                        {{img_url @site.icon size="48" format="avif"}} 48w,
+                        {{img_url @site.icon size="80" format="avif"}} 80w,
+                        {{img_url @site.icon size="160" format="avif"}} 160w,
+                        {{img_url @site.icon size="240" format="avif"}} 240w,
+                        {{img_url @site.icon size="528" format="avif"}} 528w,
+                        {{img_url @site.icon size="800" format="avif"}} 800w,
+                        {{img_url @site.icon size="1200" format="avif"}} 1200w,
+                        {{img_url @site.icon size="1600" format="avif"}} 1600w,
+                        {{img_url @site.icon size="1920" format="avif"}} 1920w,
+                        {{img_url @site.icon size="2000" format="avif"}} 2000w"
+                        sizes="80px" 
+                        type="image/avif"
+                      >
+                      <source 
+                        srcset="
+                        {{img_url @site.icon size="48" format="webp"}} 48w,
+                        {{img_url @site.icon size="80" format="webp"}} 80w,
+                        {{img_url @site.icon size="160" format="webp"}} 160w,
+                        {{img_url @site.icon size="240" format="webp"}} 240w,
+                        {{img_url @site.icon size="528" format="webp"}} 528w,
+                        {{img_url @site.icon size="800" format="webp"}} 800w,
+                        {{img_url @site.icon size="1200" format="webp"}} 1200w,
+                        {{img_url @site.icon size="1600" format="webp"}} 1600w,
+                        {{img_url @site.icon size="1920" format="webp"}} 1920w,
+                        {{img_url @site.icon size="2000" format="webp"}} 2000w"
+                        sizes="80px" 
+                        type="image/webp"
+                      >
+                      <img
+                        srcset="
+                        {{img_url @site.icon size="48"}} 48w,
+                        {{img_url @site.icon size="80"}} 80w,
+                        {{img_url @site.icon size="160"}} 160w,
+                        {{img_url @site.icon size="240"}} 240w,
+                        {{img_url @site.icon size="528"}} 528w,
+                        {{img_url @site.icon size="800"}} 800w,
+                        {{img_url @site.icon size="1200"}} 1200w,
+                        {{img_url @site.icon size="1600"}} 1600w,
+                        {{img_url @site.icon size="1920"}} 1920w,
+                        {{img_url @site.icon size="2000"}} 2000w"
+                        sizes="80px" 
+                        src="{{img_url @site.icon size="80"}}"
+                        alt="{{@site.title}} icon"
+                      >
+                    </picture>
+                {{/if}}
+                <div class="sm-feature-card-text">
+                    <p>{{@site.description}}</p>
+                </div>
+            </aside>
+            {{^if @site.members_enabled}}
+            {{#if @site.members_invite_only}}
+
+            {{/if}}
+            {{/if}}
             {{#foreach posts from="6" to="10"}}
                 {{> "card"}}
                 {{> "card" horizontal="true"}}

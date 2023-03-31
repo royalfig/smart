@@ -51,6 +51,8 @@
     <nav class='sm-footer-secondary-navigation'>{{navigation
         type='secondary'
       }}</nav>
+    {{#if @site.members_enabled}}
+    {{^if @site.members_invite_only}}
     <form data-members-form='subscribe' class='sm-footer-cta'>
       <p class='sm-footer-default sm-footer-default-text'>Sign up for the
         newsletter</p>
@@ -70,6 +72,8 @@
           aria-hidden='true'
         ><use href='#sm-error-icon'></use></svg>Error</button>
     </form>
+    {{/if}}
+    {{/if}}
   </div>
   <p class='sm-footer-meta'>
     {{@site.title}}
