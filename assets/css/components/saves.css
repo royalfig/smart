@@ -1,7 +1,8 @@
 .sm-love-button {
   display: flex;
   align-items: center;
-  transform: translateY(0.25em);
+
+  /* transform: translateY(0.25em); */
 }
 
 .sm-love-button .sm-heart-fill-icon {
