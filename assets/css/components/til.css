@@ -30,6 +30,11 @@
   padding-block: 0 6rem;
 }
 
+.sm-micro-header,
+.sm-micro-grid {
+  margin-block-start: 0;
+}
+
 .sm-micro-grid > *,
 .sm-micro-header > * {
   text-align: left;
@@ -71,6 +76,7 @@
   vertical-align: middle;
   background: var(--border-color);
   border-radius: var(--radius);
+  margin-inline-start: 0.5rem;
 }
 
 .sm-micro-date {

@@ -9,7 +9,7 @@ into the {body} of the default.hbs template --}}
         {{content}}
     </main>
 
-    {{#get "posts" limit="all" include="tags" filter="tags:hash-{{slug}}" as |micro|}}
+    {{#get "posts" limit="all" include="tags"  as |micro|}}
 
     {{#if micro}}
     <section class="sm-header-grid sm-micro-grid">

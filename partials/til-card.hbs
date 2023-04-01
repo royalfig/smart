@@ -2,7 +2,8 @@
   <h2 class='sm-micro-heading'>{{date format='YYYY'}}</h2>
   <article class='sm-micro-article'>
     <a href='{{url}}'>
-      <h3>{{title}} <span>{{primary_tag.name}}</span></h3>
+      <h3>{{title}}{{#if primary_tag}}<span
+          >{{primary_tag.name}}</span>{{/if}}</h3>
       <div class='sm-micro-date'>
         <p class='sm-micro-month'>{{date format='MMM'}}</p>
         <p class='sm-micro-day'>{{date format='DD'}}</p>
