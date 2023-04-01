@@ -35,6 +35,7 @@
 @import 'components/form.css';
 @import 'components/gradient.css';
 @import 'components/toc.css';
+@import 'components/micro.css';
 
 /* Vendo"r */
 @import 'vendor/kg.css';
