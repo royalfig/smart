@@ -1,0 +1,14 @@
+<div data-date='{{date format='YY'}}'>
+  <h2 class='sm-archive-heading'>{{date format='YYYY'}}</h2>
+  <article class='sm-archive-article'>
+    <a href='{{url}}'>
+      <h3>{{title}}{{#if primary_tag}}<span
+          >{{primary_tag.name}}</span>{{/if}}</h3>
+      <div class='sm-archive-date'>
+        <p class='sm-archive-month'>{{date format='MMM'}}</p>
+        <p class='sm-archive-day'>{{date format='DD'}}</p>
+      </div>
+      <p class='sm-archive-excerpt'>{{excerpt}}</p>
+    </a>
+  </article>
+</div>
