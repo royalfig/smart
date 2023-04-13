@@ -229,7 +229,7 @@
 .sm-card:hover,
 .sm-card:focus {
   outline: none;
-  translate: 0 3px;
+  translate: 0 -3px;
 }
 
 .sm-card:hover::before,
