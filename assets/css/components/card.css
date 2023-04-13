@@ -210,7 +210,7 @@
 .sm-card {
   position: relative;
   border-radius: var(--radius);
-  transition: background 3s;
+  transition: translate var(--transition);
 }
 
 .sm-card::before {
@@ -229,6 +229,7 @@
 .sm-card:hover,
 .sm-card:focus {
   outline: none;
+  translate: 0 3px;
 }
 
 .sm-card:hover::before,
