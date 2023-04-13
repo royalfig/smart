@@ -18,7 +18,7 @@
     "version": "git add .",
     "postversion": "git push && git push --tags",
     "zip": "npm run build && bestzip $npm_package_name.zip assets/* partials/* *.hbs package.json",
-    "test": "gscan .",
+    "test": "npx gscan .",
     "css": "npx stylelint 'assets/css/**/*.css' --fix"
   },
   "keywords": [
@@ -39,7 +39,6 @@
     "eslint-config-airbnb-base": "15.0.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "2.27.5",
-    "gscan": "^4.36.1",
     "postcss-import": "^15.1.0",
     "postcss-preset-env": "^8.0.1",
     "rollup": "^3.18.0",
