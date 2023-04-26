@@ -1,0 +1,62 @@
+/* Author card */
+.sm-archive-grid.sm-author-grid {
+  row-gap: 0;
+}
+
+.sm-authors-card {
+  padding: var(--button-padding);
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+}
+
+.sm-authors-card:hover,
+.sm-authors-card:focus-visible {
+  background-color: var(--surface-light);
+  outline: none;
+}
+
+.sm-authors-card:first-child {
+  border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.sm-authors-card:last-child {
+  border-bottom: 1px solid var(--border-color);
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.sm-authors-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sm-author-image {
+  display: flex;
+  gap: 0.65rem;
+  align-items: center;
+}
+
+.sm-author-image img {
+  border-radius: 50%;
+}
+
+.sm-authors-link p {
+  display: flex;
+  align-items: center;
+  font-size: 1.15rem;
+}
+
+.sm-authors-link .sm-tag-count {
+  translate: none;
+}
+
+.sm-authors-meta {
+  display: flex;
+  align-items: center;
+}
+
+.sm-authors-link svg {
+  width: 1rem;
+  height: 1rem;
+  fill: var(--element-light);
+}

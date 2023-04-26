@@ -72,6 +72,7 @@
 
 .sm-archive-article span {
   padding: 0.25rem 0.5rem;
+  margin-inline-start: 0.5rem;
   font-size: var(--x-small);
   font-weight: 300;
   color: var(--element-light);
@@ -80,7 +81,6 @@
   vertical-align: middle;
   background: var(--border-color);
   border-radius: var(--radius);
-  margin-inline-start: 0.5rem;
 }
 
 .sm-archive-date {
