@@ -1,0 +1,83 @@
+{{!< default}}
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{#post}}
+    {{> "header"}}
+
+    <main class="sm-header-grid sm-post-content sm-archive-header {{post_class}} {{slug}}" id="sm-main">
+        {{content}}
+    </main>
+
+    {{#get "authors" limit="all" include="count.posts" limit="all" as |authors|}}
+
+    {{#if authors}}
+    <section class="sm-header-grid sm-archive-grid sm-author-grid">
+        {{#foreach authors}}
+            <div class="sm-authors-card">
+                <a href="{{url}}" class="sm-authors-link">
+                    <div class="sm-author-image">
+                        <picture class="">
+                          <source
+                            srcset="
+                            {{img_url profile_image size="48" format="avif"}} 48w,
+                            {{img_url profile_image size="80" format="avif"}} 80w,
+                            {{img_url profile_image size="160" format="avif"}} 160w,
+                            {{img_url profile_image size="240" format="avif"}} 240w,
+                            {{img_url profile_image size="528" format="avif"}} 528w,
+                            {{img_url profile_image size="800" format="avif"}} 800w,
+                            {{img_url profile_image size="1200" format="avif"}} 1200w,
+                            {{img_url profile_image size="1600" format="avif"}} 1600w,
+                            {{img_url profile_image size="1920" format="avif"}} 1920w,
+                            {{img_url profile_image size="2000" format="avif"}} 2000w"
+                            sizes="80px"
+                            type="image/avif"
+                          >
+                          <source
+                            srcset="
+                            {{img_url profile_image size="48" format="webp"}} 48w,
+                            {{img_url profile_image size="80" format="webp"}} 80w,
+                            {{img_url profile_image size="160" format="webp"}} 160w,
+                            {{img_url profile_image size="240" format="webp"}} 240w,
+                            {{img_url profile_image size="528" format="webp"}} 528w,
+                            {{img_url profile_image size="800" format="webp"}} 800w,
+                            {{img_url profile_image size="1200" format="webp"}} 1200w,
+                            {{img_url profile_image size="1600" format="webp"}} 1600w,
+                            {{img_url profile_image size="1920" format="webp"}} 1920w,
+                            {{img_url profile_image size="2000" format="webp"}} 2000w"
+                            sizes="80px"
+                            type="image/webp"
+                          >
+                          <img
+                            srcset="
+                            {{img_url profile_image size="48"}} 48w,
+                            {{img_url profile_image size="80"}} 80w,
+                            {{img_url profile_image size="160"}} 160w,
+                            {{img_url profile_image size="240"}} 240w,
+                            {{img_url profile_image size="528"}} 528w,
+                            {{img_url profile_image size="800"}} 800w,
+                            {{img_url profile_image size="1200"}} 1200w,
+                            {{img_url profile_image size="1600"}} 1600w,
+                            {{img_url profile_image size="1920"}} 1920w,
+                            {{img_url profile_image size="2000"}} 2000w"
+                            sizes="80px"
+                            src="{{img_url profile_image size="80"}}"
+                            alt="{{name}}"
+                            width="80"
+                            height="80"
+                          >
+                        </picture>
+                        <p>{{name}}</p>
+                    </div>
+                    <div class="sm-authors-meta">
+                        <span class="sm-tag-count">{{count.posts}}</span>
+                    </div>
+                </a>
+            </div>
+            
+        {{/foreach}}
+    </section>
+    {{/if}}
+
+    {{/get}}
+{{/post}}
