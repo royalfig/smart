@@ -3,7 +3,9 @@
  */
 
 export function toggleColorMode(color) {
-  const commentsIframe = document.querySelector('iframe[title="comments-box"]');
+  const commentsIframe = document.querySelector(
+    'iframe[title="comments-frame"]',
+  );
 
   // Reload comments iframe when toggling color mode
   if (commentsIframe) {
