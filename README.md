@@ -1,4 +1,6 @@
 
+⚠️ I will no longer actively be updating this theme. However, I still welcome PRs.
+
 ![Smart Ghost Theme](/splash.png)
 # Smart: A Ghost Theme
 
