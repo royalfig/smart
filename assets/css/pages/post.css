@@ -176,7 +176,7 @@
 
 .sm-related-posts-grid-container {
   grid-template-columns: 1fr;
-  gap: var(--gap);
+  gap: 10px;
 }
 
 @media (--phone) {

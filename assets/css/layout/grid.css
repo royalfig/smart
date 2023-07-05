@@ -33,7 +33,7 @@
 
 .sm-basic-grid {
   grid-template-columns: 1fr;
-  gap: var(--gap);
+  gap: 10px;
   padding-block: 3rem 6rem;
 }
 
