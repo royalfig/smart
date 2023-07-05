@@ -51,6 +51,7 @@ export default function toc() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       const id = entry.target.getAttribute('id');
+      if (!id) return;
       const activeLink = tocContainer.querySelector(`a[href="#${id}"]`);
       if (entry.isIntersecting) {
         activeLink.classList.add('sm-toc-active');
