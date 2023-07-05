@@ -13,7 +13,7 @@ export default function toc() {
     return;
   }
 
-  const headings = postContainer.querySelectorAll('h2, h3, h4, h5, h6');
+  const headings = postContainer.querySelectorAll(':where(h2,h3,h4,h5,h6)[id]');
 
   //   If there are fewer than 3 headings, don't show the table of contents.
   if (headings.length < 3) {
