@@ -210,6 +210,7 @@
 .sm-card {
   position: relative;
   border-radius: var(--radius);
+  border: 1px solid var(--border-color);
   transition: translate var(--transition);
 }
 
@@ -244,13 +245,14 @@
   justify-content: space-between;
   height: 100%;
   overflow: hidden;
-  background-color: var(--surface-light);
+  background-image: radial-gradient(farthest-corner at 50% 0, var(--surface-light), transparent);
   border-radius: var(--radius);
 }
 
 .sm-cta-card,
 .sm-tags-card {
-  background-color: var(--surface-light);
+  border: 1px solid var(--border-color);
+  background-image: radial-gradient(farthest-corner at 50% 0, var(--surface-light), transparent);
 }
 
 picture ~ .sm-feature-card-text {
