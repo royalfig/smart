@@ -17,6 +17,56 @@
             {{#foreach tags}}
             {{log this}}
                 <article class="sm-tag-card {{@number}} {{^if feature_image}}sm-background-color{{/if}}">
+                    <picture class="">
+                      <source 
+                        srcset="
+                        {{img_url feature_image size="48" format="avif"}} 48w,
+                        {{img_url feature_image size="80" format="avif"}} 80w,
+                        {{img_url feature_image size="160" format="avif"}} 160w,
+                        {{img_url feature_image size="240" format="avif"}} 240w,
+                        {{img_url feature_image size="528" format="avif"}} 528w,
+                        {{img_url feature_image size="800" format="avif"}} 800w,
+                        {{img_url feature_image size="1200" format="avif"}} 1200w,
+                        {{img_url feature_image size="1600" format="avif"}} 1600w,
+                        {{img_url feature_image size="1920" format="avif"}} 1920w,
+                        {{img_url feature_image size="2000" format="avif"}} 2000w"
+                        sizes="240px" 
+                        type="image/avif"
+                      >
+                      <source 
+                        srcset="
+                        {{img_url feature_image size="48" format="webp"}} 48w,
+                        {{img_url feature_image size="80" format="webp"}} 80w,
+                        {{img_url feature_image size="160" format="webp"}} 160w,
+                        {{img_url feature_image size="240" format="webp"}} 240w,
+                        {{img_url feature_image size="528" format="webp"}} 528w,
+                        {{img_url feature_image size="800" format="webp"}} 800w,
+                        {{img_url feature_image size="1200" format="webp"}} 1200w,
+                        {{img_url feature_image size="1600" format="webp"}} 1600w,
+                        {{img_url feature_image size="1920" format="webp"}} 1920w,
+                        {{img_url feature_image size="2000" format="webp"}} 2000w"
+                        sizes="240px" 
+                        type="image/webp"
+                      >
+                      <img
+                        srcset="
+                        {{img_url feature_image size="48"}} 48w,
+                        {{img_url feature_image size="80"}} 80w,
+                        {{img_url feature_image size="160"}} 160w,
+                        {{img_url feature_image size="240"}} 240w,
+                        {{img_url feature_image size="528"}} 528w,
+                        {{img_url feature_image size="800"}} 800w,
+                        {{img_url feature_image size="1200"}} 1200w,
+                        {{img_url feature_image size="1600"}} 1600w,
+                        {{img_url feature_image size="1920"}} 1920w,
+                        {{img_url feature_image size="2000"}} 2000w"
+                        sizes="240px" 
+                        src="{{img_url feature_image size="240"}}"
+                        alt="{{name}}"
+                      >
+                    </picture>
+                    
+                    
                     {{#if feature_image}}<img src="{{img_url feature_image}}">{{/if}}
                     
                     <div class="sm-tag-card-body">
