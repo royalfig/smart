@@ -8,6 +8,10 @@
     [end];
 }
 
+.sm-grid > * {
+  grid-column: content;
+}
+
 .sm-header-grid {
   grid-template-columns:
     [start] var(--gutter) 1fr 1fr [content-start] minmax(
