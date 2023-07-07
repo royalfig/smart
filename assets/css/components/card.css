@@ -76,7 +76,7 @@
 
 /* Feature image card */
 .sm-feature-image-card {
-  grid-row: span 6;
+  grid-row: span 18;
   grid-column: span 12;
 }
 
@@ -105,14 +105,14 @@
 
 /* Featured card */
 .sm-featured-card {
-  grid-row: span 8;
+  grid-row: span 24;
   grid-column: span 12;
 }
 
 /* Tags card */
 .sm-tag-card {
   position: relative;
-  grid-row: span 3;
+  grid-row: span 6;
   grid-column: span 6;
   padding: 1rem;
   overflow: hidden;
@@ -169,7 +169,7 @@
 .sm-cta-card {
   display: flex;
   flex-direction: column;
-  grid-row: span 6;
+  grid-row: span 12;
   grid-column: span 12;
   justify-content: space-between;
   padding: 1rem;
