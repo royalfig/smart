@@ -76,13 +76,13 @@
 
 /* Feature image card */
 .sm-feature-image-card {
-  grid-row: span 18;
+  grid-row: span 16;
   grid-column: span 12;
 }
 
 /* No image card */
 .sm-no-image-card {
-  grid-row: span 6;
+  grid-row: span 12;
   grid-column: span 12;
   color: var(--element);
   background-color: var(--surface-light);
@@ -105,7 +105,7 @@
 
 /* Featured card */
 .sm-featured-card {
-  grid-row: span 24;
+  grid-row: span 18;
   grid-column: span 12;
 }
 
