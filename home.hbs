@@ -1,195 +1,38 @@
 {{!< default}}
-{{!-- The tag above means: insert everything in this file
-into the {body} of the default.hbs template --}}
 
 <main id="sm-main">
-
     {{#match @custom.hero_title}}
         {{> "hero"}}
     {{/match}}
 
     <div class="sm-grid">
-        <div class="sm-grid-home sm-grid-feature">
-        {{#foreach posts from="1" to="5"}}
-            {{#if @first}}
-                {{> "card" horizontal="true" premiere="true"}}
-            {{else}}
-                {{> "card"}}
-                {{> "card" horizontal="true"}}
-            {{/if}}
+        <div class="sm-grid-home">
+        {{#foreach posts}}
+            {{> "card"}}
         {{/foreach}}
-        </div>
-    </div>
 
-    {{#match posts.length ">" "5"}}
-    <div class="sm-grid sm-home-accent">
-        <div class="sm-grid-home sm-grid-feature-left">
-
-            {{#if @site.members_enabled}}
-            {{^if @site.members_invite_only}}
-            <aside class="sm-feature-card sm-cta-card">
-                {{#if @site.icon}}
-                    <picture>
-                      <source 
-                        srcset="
-                        {{img_url @site.icon size="48" format="avif"}} 48w,
-                        {{img_url @site.icon size="80" format="avif"}} 80w,
-                        {{img_url @site.icon size="160" format="avif"}} 160w,
-                        {{img_url @site.icon size="240" format="avif"}} 240w,
-                        {{img_url @site.icon size="528" format="avif"}} 528w,
-                        {{img_url @site.icon size="800" format="avif"}} 800w,
-                        {{img_url @site.icon size="1200" format="avif"}} 1200w,
-                        {{img_url @site.icon size="1600" format="avif"}} 1600w,
-                        {{img_url @site.icon size="1920" format="avif"}} 1920w,
-                        {{img_url @site.icon size="2000" format="avif"}} 2000w"
-                        sizes="80px" 
-                        type="image/avif"
-                      >
-                      <source 
-                        srcset="
-                        {{img_url @site.icon size="48" format="webp"}} 48w,
-                        {{img_url @site.icon size="80" format="webp"}} 80w,
-                        {{img_url @site.icon size="160" format="webp"}} 160w,
-                        {{img_url @site.icon size="240" format="webp"}} 240w,
-                        {{img_url @site.icon size="528" format="webp"}} 528w,
-                        {{img_url @site.icon size="800" format="webp"}} 800w,
-                        {{img_url @site.icon size="1200" format="webp"}} 1200w,
-                        {{img_url @site.icon size="1600" format="webp"}} 1600w,
-                        {{img_url @site.icon size="1920" format="webp"}} 1920w,
-                        {{img_url @site.icon size="2000" format="webp"}} 2000w"
-                        sizes="80px" 
-                        type="image/webp"
-                      >
-                      <img
-                        srcset="
-                        {{img_url @site.icon size="48"}} 48w,
-                        {{img_url @site.icon size="80"}} 80w,
-                        {{img_url @site.icon size="160"}} 160w,
-                        {{img_url @site.icon size="240"}} 240w,
-                        {{img_url @site.icon size="528"}} 528w,
-                        {{img_url @site.icon size="800"}} 800w,
-                        {{img_url @site.icon size="1200"}} 1200w,
-                        {{img_url @site.icon size="1600"}} 1600w,
-                        {{img_url @site.icon size="1920"}} 1920w,
-                        {{img_url @site.icon size="2000"}} 2000w"
-                        sizes="80px" 
-                        src="{{img_url @site.icon size="80"}}"
-                        alt="{{@site.title}} icon"
-                      >
-                    </picture>
-                {{/if}}
-              
-                <form data-members-form="subscribe">
-                    <div class="sm-cta-copy sm-default">
-                        <h2>Don't miss out</h2>
-                        <p>Sign up for the newsletter</p>
-                    </div>
+        {{> "cta-card"}}
+       
+        {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
+            {{#foreach tags}}
+            {{log this}}
+                <article class="sm-tag-card {{@number}} {{^if feature_image}}sm-background-color{{/if}}">
+                    {{#if feature_image}}<img src="{{img_url feature_image}}">{{/if}}
                     
-                    <div class="sm-cta-copy sm-success">
-                        <h2>Nice!</h2>
-                        <p>Check your email for a sign in link</p>
+                    <div class="sm-tag-card-body">
+                        <a href="{{url}}">{{name}}</a>
+                        <div class="sm-card-tag-meta">
+                            <p>{{plural count.posts empty="" singular="% post" plural="% posts"}}</p>
+                            <a class="sm-arrow-link" href="{{url}}" aria-label="Read posts about {{name}}">
+                                <svg class="sm-arrow-icon"><use href="#sm-right-arrow-icon"></use></svg>
+                            </a>
+                        </div>
                     </div>
-                    <div class="sm-cta-copy sm-error">
-                        <h2>Oh, no</h2>
-                        <p>Something went wrong. Try again.</p>
-                    </div>
-                    <input data-members-email type="email" placeholder="your email" required>
-                    <button class="sm-icon-button sm-default"><svg aria-hidden="true"><use href="#sm-mail-icon"></use></svg>subscribe</button>
-                    <button class="sm-icon-button sm-loading"><svg aria-hidden="true"><use href="#sm-loading-icon"></use></svg>loading</button>
-                    <button class="sm-icon-button sm-success"><svg aria-hidden="true"><use href="#sm-mail-check-icon"></use></svg>success</button>
-                    <button class="sm-icon-button sm-error"><svg aria-hidden="true"><use href="#sm-error-icon"></use></svg>error</button>
-                </form>
-            </aside>
-            {{/if}}
-            {{/if}}
-           
-            {{^if @site.members_enabled}}
-            {{!-- {{#if @site.members_invite_only}} --}}
-            <aside class="sm-feature-card sm-cta-card">
-                {{#if @site.icon}}
-                    <picture>
-                      <source 
-                        srcset="
-                        {{img_url @site.icon size="48" format="avif"}} 48w,
-                        {{img_url @site.icon size="80" format="avif"}} 80w,
-                        {{img_url @site.icon size="160" format="avif"}} 160w,
-                        {{img_url @site.icon size="240" format="avif"}} 240w,
-                        {{img_url @site.icon size="528" format="avif"}} 528w,
-                        {{img_url @site.icon size="800" format="avif"}} 800w,
-                        {{img_url @site.icon size="1200" format="avif"}} 1200w,
-                        {{img_url @site.icon size="1600" format="avif"}} 1600w,
-                        {{img_url @site.icon size="1920" format="avif"}} 1920w,
-                        {{img_url @site.icon size="2000" format="avif"}} 2000w"
-                        sizes="80px" 
-                        type="image/avif"
-                      >
-                      <source 
-                        srcset="
-                        {{img_url @site.icon size="48" format="webp"}} 48w,
-                        {{img_url @site.icon size="80" format="webp"}} 80w,
-                        {{img_url @site.icon size="160" format="webp"}} 160w,
-                        {{img_url @site.icon size="240" format="webp"}} 240w,
-                        {{img_url @site.icon size="528" format="webp"}} 528w,
-                        {{img_url @site.icon size="800" format="webp"}} 800w,
-                        {{img_url @site.icon size="1200" format="webp"}} 1200w,
-                        {{img_url @site.icon size="1600" format="webp"}} 1600w,
-                        {{img_url @site.icon size="1920" format="webp"}} 1920w,
-                        {{img_url @site.icon size="2000" format="webp"}} 2000w"
-                        sizes="80px" 
-                        type="image/webp"
-                      >
-                      <img
-                        srcset="
-                        {{img_url @site.icon size="48"}} 48w,
-                        {{img_url @site.icon size="80"}} 80w,
-                        {{img_url @site.icon size="160"}} 160w,
-                        {{img_url @site.icon size="240"}} 240w,
-                        {{img_url @site.icon size="528"}} 528w,
-                        {{img_url @site.icon size="800"}} 800w,
-                        {{img_url @site.icon size="1200"}} 1200w,
-                        {{img_url @site.icon size="1600"}} 1600w,
-                        {{img_url @site.icon size="1920"}} 1920w,
-                        {{img_url @site.icon size="2000"}} 2000w"
-                        sizes="80px" 
-                        src="{{img_url @site.icon size="80"}}"
-                        alt="{{@site.title}} icon"
-                      >
-                    </picture>
-                {{/if}}
-                <div class="sm-feature-card-text">
-                    <p>{{@site.description}}</p>
-                </div>
-            </aside>
-            {{!-- {{/if}} --}}
-            {{/if}}
-
-            {{#foreach posts from="6" to="10"}}
-                {{> "card"}}
-                {{> "card" horizontal="true"}}
+                </article>
             {{/foreach}}
+        {{/get}}
         </div>
     </div>
-    {{/match}}
-
-    {{#match posts.length ">" "10"}}
-    <div class="sm-grid">
-        <div class="sm-grid-home sm-grid-feature-right">
-            {{#foreach posts from="11" to="15"}}
-                {{> "card" horizontal="true"}}
-                {{> "card"}}
-            {{/foreach}}
-
-            {{#get "tags" include="count.posts" limit="5" order="count.posts desc"}}
-                <aside class="sm-feature-card sm-tags-card">
-                    <h2><a href="topics">Topics</a></h2>
-                    {{#foreach tags}}
-                    <a href="{{url}}">{{name}} <span>{{count.posts}}</span></a>
-                    {{/foreach}}
-                </aside>
-            {{/get}}
-        </div>
-    </div>
-    {{/match}}
 </main>
     
 {{pagination}}
