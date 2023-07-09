@@ -86,7 +86,6 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  justify-content: space-between;
 }
 
 .sm-no-image-card svg {
