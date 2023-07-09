@@ -40,12 +40,6 @@
   text-wrap: balance;
 }
 
-.sm-excerpt {
-  margin: 0 0 1em;
-  font-size: var(--small);
-  line-height: 1.4;
-}
-
 .sm-card-tag {
   font-size: var(--x-small);
   text-transform: uppercase;
@@ -93,10 +87,6 @@
   flex: 1;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.sm-no-image-card .sm-card-title {
-  font-size: 1.2rem;
 }
 
 .sm-no-image-card svg {
