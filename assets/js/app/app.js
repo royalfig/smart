@@ -34,7 +34,7 @@ function animateOnScroll() {
       entries.forEach((entry) => {
         const el = entry.target;
         const ratio = entry.intersectionRatio;
-        el.style.opacity = ratio + 0.25;
+        el.style.opacity = ratio > 0.5 ? ratio + 0.25 : ratio - 0.5;
       });
     },
     { threshold: [0, 0.25, 0.5, 0.75, 1] },
