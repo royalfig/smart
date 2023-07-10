@@ -169,38 +169,14 @@
   margin-block: 1rem 6rem;
 }
 
+.sm-related-posts .sm-grid-home {
+  padding: 0;
+  margin-block: 0;
+}
+
 /* Related posts block */
 .sm-related-posts h2 {
   margin-block-start: 1rem;
-}
-
-.sm-related-posts-grid-container {
-  grid-template-columns: 1fr;
-  gap: 10px;
-}
-
-@media (--phone) {
-  .sm-related-posts-grid-container {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .sm-related-posts-grid-container > article:last-child {
-    display: none;
-  }
-}
-
-@media (--tablet) {
-  .sm-related-posts-grid-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .sm-related-posts-grid-container > article:last-child {
-    display: initial;
-  }
-}
-
-.sm-related-posts .sm-card {
-  grid-area: auto;
 }
 
 /* Comments */

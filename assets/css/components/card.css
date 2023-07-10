@@ -60,26 +60,20 @@
 .sm-arrow-link {
   padding: 0.35rem;
   line-height: 0;
-  background-color: var(--border-color);
+  background-color: var(--primary);
   border-radius: 50%;
 }
 
 .sm-arrow-link svg {
-  fill: var(--element-dark);
+  fill: var(--surface);
 }
 
-/* Feature image card */
-.sm-feature-image-card {
-  grid-row: span 16;
-  grid-column: span 12;
-}
-
-/* No image card */
 .sm-no-image-card {
-  grid-row: span 12;
-  grid-column: span 12;
-  color: var(--element);
-  background-color: var(--surface-light);
+  background-image: radial-gradient(
+    at 50% 0,
+    var(--surface-light),
+    var(--surface-dark)
+  );
 }
 
 .sm-no-image-card .sm-card-body {
@@ -89,26 +83,12 @@
   justify-content: flex-end;
 }
 
-.sm-no-image-card svg {
-  fill: var(--element);
-}
-
-/* Featured card */
-.sm-featured-card {
-  grid-row: span 18;
-  grid-column: span 12;
-}
-
-/* Tags card */
-.sm-tag-card {
-  position: relative;
-  grid-row: span 6;
-  grid-column: span 6;
-  padding: 1rem;
+.sm-card-excerpt {
+  display: -webkit-box;
+  margin-block-end: 1rem;
   overflow: hidden;
-  color: #fff;
-  background-color: var(--surface-light);
-  border-radius: var(--radius);
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
 
 .sm-tag-card.sm-background-color {
@@ -155,24 +135,11 @@
   justify-content: space-between;
 }
 
-/* CTA card */
-.sm-cta-card {
-  display: flex;
-  flex-direction: column;
-  grid-row: span 12;
-  grid-column: span 12;
-  justify-content: space-between;
-  padding: 1rem;
-  color: var(--surface-dark);
-  background-color: var(--primary);
-  border-radius: var(--radius);
-}
-
 .sm-cta-card h2 {
   margin: 0;
   font-weight: 900;
   line-height: 1.1;
-  color: inherit;
+  color: var(--surface-light);
   background-image: none !important;
 }
 
@@ -230,6 +197,57 @@
   background-color: var(--secondary-dark);
 }
 
+/* Card sizing */
+
+/* Feature image card */
+.sm-feature-image-card {
+  grid-row: span 16;
+  grid-column: span 12;
+}
+
+/* No image card */
+.sm-no-image-card {
+  grid-row: span 12;
+  grid-column: span 12;
+  color: var(--element);
+  background-color: var(--surface-light);
+}
+
+.sm-no-image-card .sm-card-title {
+  margin-block-end: 0.5rem;
+}
+
+/* CTA card */
+.sm-cta-card {
+  display: flex;
+  flex-direction: column;
+  grid-row: span 12;
+  grid-column: span 12;
+  justify-content: space-between;
+  padding: 1rem;
+  color: var(--surface-dark);
+  background-color: var(--primary);
+  border-radius: var(--radius);
+}
+
+/* Featured card */
+.sm-featured-card {
+  grid-row: span 18;
+  grid-column: span 12;
+}
+
+/* Tags card */
+.sm-tag-card {
+  position: relative;
+  grid-row: span 6;
+  grid-column: span 6;
+  padding: 1rem;
+  overflow: hidden;
+  color: #fff;
+  background-color: var(--surface-light);
+  border-radius: var(--radius);
+}
+
 @media (--tablet) {
   .sm-feature-image-card {
     grid-row: span 6;
@@ -242,7 +260,7 @@
   }
 
   .sm-no-image-card {
-    grid-row: span 3;
+    grid-row: span 6;
     grid-column: span 9;
   }
 
@@ -251,7 +269,7 @@
   }
 
   .sm-cta-card {
-    grid-row: span 3;
+    grid-row: span 6;
     grid-column: span 6;
   }
 
