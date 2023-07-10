@@ -8,7 +8,7 @@
   color: #fff;
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 0.35s linear;
+  transition: opacity 0.5s linear;
 }
 
 @supports (prefers-reduced-motion: reduce) {
@@ -251,7 +251,7 @@
   background-color: var(--surface-light);
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 0.35s linear;
+  transition: opacity 0.5s linear;
 }
 
 @media (--tablet) {
@@ -287,4 +287,5 @@
 
 .sm-observed {
   opacity: 1;
+  transition: opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

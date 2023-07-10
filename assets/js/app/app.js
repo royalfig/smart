@@ -34,18 +34,23 @@ function animateOnScroll() {
         const el = entry.target;
         const ratio = entry.intersectionRatio;
 
-        if (ratio > 0.5) {
-          // remove from observation
-          el.classList.add('sm-observed');
-          observer.unobserve(el);
-        }
+        // if (ratio > 0.5) {
+        //   // remove from observation
+
+        //   el.classList.add('sm-observed');
+        //   observer.unobserve(el);
+        // }
 
         const calculatedRatio = (num) => {
-          if (num < 0.25) {
+          if (num < 0.2) {
             return 0;
           }
 
-          return 1;
+          if (num >= 0.4) {
+            return 1;
+          }
+
+          return ratio;
         };
         el.style.opacity = calculatedRatio(ratio);
       });
