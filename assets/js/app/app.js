@@ -22,7 +22,6 @@ toc();
 
 function animateOnScroll() {
   // Fade in elements on scroll
-
   const els = document.querySelectorAll('.sm-grid-home > *');
 
   if (!els) {
@@ -34,10 +33,21 @@ function animateOnScroll() {
       entries.forEach((entry) => {
         const el = entry.target;
         const ratio = entry.intersectionRatio;
-        el.style.opacity = ratio > 0.5 ? ratio + 0.25 : ratio - 0.5;
+        const calculatedRatio = (num) => {
+          if (num < 0.1) {
+            return 0;
+          }
+
+          if (num > 0.6) {
+            return 1;
+          }
+
+          return num;
+        };
+        el.style.opacity = calculatedRatio(ratio);
       });
     },
-    { threshold: [0, 0.25, 0.5, 0.75, 1] },
+    { threshold: [0, 0.1, 0.2, 0.3, 0.5, 0.6, 0.7, 0.8, 0.9, 1] },
   );
 
   els.forEach((el) => {
