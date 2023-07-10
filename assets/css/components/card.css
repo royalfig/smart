@@ -8,7 +8,7 @@
   color: #fff;
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 0.5s linear;
+  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 @supports (prefers-reduced-motion: reduce) {
@@ -251,7 +251,7 @@
   background-color: var(--surface-light);
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 0.5s linear;
+  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
 @media (--tablet) {
@@ -283,9 +283,4 @@
     grid-row: span 6;
     grid-column: span 12;
   }
-}
-
-.sm-observed {
-  opacity: 1;
-  transition: opacity 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
 }

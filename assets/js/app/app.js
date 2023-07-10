@@ -34,12 +34,13 @@ function animateOnScroll() {
         const el = entry.target;
         const ratio = entry.intersectionRatio;
 
-        // if (ratio > 0.5) {
-        //   // remove from observation
+        if (ratio > 0.4) {
+          // remove from observation
 
-        //   el.classList.add('sm-observed');
-        //   observer.unobserve(el);
-        // }
+          el.style.opacity = 1;
+          observer.unobserve(el);
+          return;
+        }
 
         const calculatedRatio = (num) => {
           if (num < 0.2) {
