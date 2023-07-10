@@ -33,16 +33,19 @@ function animateOnScroll() {
       entries.forEach((entry) => {
         const el = entry.target;
         const ratio = entry.intersectionRatio;
+
+        if (ratio > 0.5) {
+          // remove from observation
+          el.classList.add('sm-observed');
+          observer.unobserve(el);
+        }
+
         const calculatedRatio = (num) => {
-          if (num < 0.1) {
+          if (num < 0.25) {
             return 0;
           }
 
-          if (num > 0.6) {
-            return 1;
-          }
-
-          return num;
+          return 1;
         };
         el.style.opacity = calculatedRatio(ratio);
       });
