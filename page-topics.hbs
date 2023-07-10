@@ -10,10 +10,10 @@ into the {body} of the default.hbs template --}}
 </div>
 
 <main class="sm-grid" id="sm-main">
-    <div class="sm-home-grid">
+    <div class="sm-grid-home">
         {{#get "tags" limit="all"  include="count.posts" order="count.posts desc"}}
             {{#foreach tags}}
-                {{> "card-tag"}}
+                {{> "card"}}
             {{/foreach}}
         {{/get}}
     </div>
