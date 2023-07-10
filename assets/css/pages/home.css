@@ -2,12 +2,18 @@
   margin-block: var(--gap) 3rem;
 }
 
+.sm-grid {
+  container-type: inline-size;
+  container-name: home;
+}
+
 /* Grid */
 .sm-grid-home {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   grid-column: content;
   grid-auto-rows: calc((100vw - 220px - (var(--gutter) * 2)) / 12);
+  grid-auto-rows: calc((100cqw - 220px - (var(--gutter) * 2)) / 12);
   grid-auto-flow: dense;
   gap: 20px;
   padding: 6rem 0;

@@ -232,7 +232,7 @@
 
 /* Featured card */
 .sm-featured-card {
-  grid-row: span 18;
+  grid-row: span 16;
   grid-column: span 12;
 }
 
