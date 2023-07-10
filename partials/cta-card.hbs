@@ -1,6 +1,8 @@
+{{#if @site.members_enabled}}
+{{^if @site.members_invite_only}}
 <aside class='sm-cta-card'>
   <header class=''>
-    <h2>Don't miss out</h2>
+    <h2>Never miss an update!</h2>
     <p>Sign up for the newsletter</p>
   </header>
 
@@ -34,3 +36,5 @@
 
   </form>
 </aside>
+{{/if}}
+{{/if}}
