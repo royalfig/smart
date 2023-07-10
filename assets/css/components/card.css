@@ -119,13 +119,13 @@
   object-fit: cover;
 }
 
-.sm-tag-card a {
+.sm-tag-card-body > p {
   position: relative;
   font-size: var(--h4);
   font-weight: 900;
 }
 
-.sm-tag-card p {
+.sm-card-tag-meta p {
   font-size: var(--x-small);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing);

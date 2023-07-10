@@ -34,9 +34,8 @@ function animateOnScroll() {
         const el = entry.target;
         const ratio = entry.intersectionRatio;
 
-        if (ratio > 0.4) {
-          // remove from observation
-
+        // remove from observation
+        if (ratio >= 0.6) {
           el.style.opacity = 1;
           observer.unobserve(el);
           return;
@@ -47,7 +46,7 @@ function animateOnScroll() {
             return 0;
           }
 
-          if (num >= 0.4) {
+          if (num >= 0.6) {
             return 1;
           }
 
