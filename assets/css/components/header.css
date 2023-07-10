@@ -6,6 +6,7 @@
 .sm-header-title {
   margin: 0;
   font-weight: 900;
+  text-wrap: balance;
 }
 
 .sm-header-excerpt {

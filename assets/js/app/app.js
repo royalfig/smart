@@ -19,3 +19,30 @@ initMediumZoom();
 responsiveTableInit();
 writeAuthorWebsite();
 toc();
+
+function animateOnScroll() {
+  // Fade in elements on scroll
+
+  const els = document.querySelectorAll('.sm-grid-home > *');
+
+  if (!els) {
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const el = entry.target;
+        const ratio = entry.intersectionRatio;
+        el.style.opacity = ratio + 0.25;
+      });
+    },
+    { threshold: [0, 0.25, 0.5, 0.75, 1] },
+  );
+
+  els.forEach((el) => {
+    observer.observe(el);
+  });
+}
+
+animateOnScroll();

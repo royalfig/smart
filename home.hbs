@@ -15,8 +15,8 @@
        
         {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
             {{#foreach tags}}
-            {{log this}}
                 <article class="sm-tag-card {{@number}} {{^if feature_image}}sm-background-color{{/if}}">
+                    {{#if feature_image}}
                     <picture class="">
                       <source 
                         srcset="
@@ -65,9 +65,7 @@
                         alt="{{name}}"
                       >
                     </picture>
-                    
-                    
-                    {{#if feature_image}}<img src="{{img_url feature_image}}">{{/if}}
+                    {{/if}}
                     
                     <div class="sm-tag-card-body">
                         <a href="{{url}}">{{name}}</a>

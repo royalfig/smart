@@ -7,6 +7,15 @@
   overflow: hidden;
   color: #fff;
   border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity 0.2s linear;
+}
+
+@supports (prefers-reduced-motion: reduce) {
+  .sm-card {
+    opacity: 1;
+    transition: none;
+  }
 }
 
 .sm-card picture {
@@ -38,12 +47,6 @@
   font-size: 1.728rem;
   line-height: 1.1;
   text-wrap: balance;
-}
-
-.sm-card-tag {
-  font-size: var(--x-small);
-  text-transform: uppercase;
-  opacity: 0.8;
 }
 
 .sm-card-meta,
@@ -228,6 +231,7 @@
   color: var(--surface-dark);
   background-color: var(--primary);
   border-radius: var(--radius);
+  opacity: 0;
 }
 
 /* Featured card */
@@ -246,6 +250,8 @@
   color: #fff;
   background-color: var(--surface-light);
   border-radius: var(--radius);
+  opacity: 0;
+  transition: opacity 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 @media (--tablet) {
@@ -277,4 +283,8 @@
     grid-row: span 6;
     grid-column: span 12;
   }
+}
+
+.fade-in {
+  opacity: 1;
 }
