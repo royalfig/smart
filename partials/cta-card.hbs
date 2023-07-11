@@ -1,3 +1,4 @@
+{{^if @member}}
 {{#if @site.members_enabled}}
 {{^if @site.members_invite_only}}
 <aside class='sm-cta-card'>
@@ -36,5 +37,6 @@
 
   </form>
 </aside>
+{{/if}}
 {{/if}}
 {{/if}}
