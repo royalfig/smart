@@ -7,11 +7,15 @@
 
     <div class="sm-grid">
         <div class="sm-grid-home">
-        {{#foreach posts}}
+        {{#foreach posts from="1" to="8"}}
             {{> "card"}}
         {{/foreach}}
 
         {{> "cta-card"}}
+
+        {{#foreach posts from="9" to="15"}}
+            {{> "card"}}
+        {{/foreach}}
        
         {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
             {{#foreach tags}}
