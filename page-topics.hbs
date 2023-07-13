@@ -13,7 +13,7 @@ into the {body} of the default.hbs template --}}
     <div class="sm-grid-home">
         {{#get "tags" limit="all"  include="count.posts" order="count.posts desc"}}
             {{#foreach tags}}
-                {{> "card"}}
+                {{> "cards/card-tag"}}
             {{/foreach}}
         {{/get}}
     </div>

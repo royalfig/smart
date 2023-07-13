@@ -23,12 +23,12 @@
 <section class="sm-grid">
     {{comments}}
     <div class="sm-related-posts">
-        {{#get "posts" limit="3" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
+        {{#get "posts" limit="4" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
             {{#if related}}
             <h2>Read this next</h2>
             <div class="sm-grid-home">
                 {{#foreach related}}
-                    {{> "card"}}
+                    {{> "cards/card-base"}}
                 {{/foreach}}
             </div>
             {{/if}}

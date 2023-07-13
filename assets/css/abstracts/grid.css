@@ -62,3 +62,51 @@
     grid-template-columns: 1fr 1fr 1fr;
   }
 }
+
+/* Grid cards */
+.sm-card-large-square {
+  grid-row: span 12;
+  grid-column: span 12;
+}
+
+.sm-card-small-square {
+  grid-row: span 6;
+  grid-column: span 6;
+}
+
+.sm-card-landscape {
+  grid-row: span 16;
+  grid-column: span 12;
+}
+
+.sm-card-short-landscape {
+  grid-row: 16;
+  grid-column: span 9;
+}
+
+.sm-card-portrait {
+  grid-row: span 9;
+  grid-column: span 6;
+}
+
+@media (--tablet) {
+  .sm-card-large-square {
+    grid-row: span 6;
+    grid-column: span 6;
+  }
+
+  .sm-card-small-square {
+    grid-row: span 3;
+    grid-column: span 3;
+  }
+
+  .sm-card-landscape {
+    grid-row: span 6;
+    grid-column: span 12;
+  }
+
+  .sm-card-short-landscape {
+    grid-row: span 6;
+    grid-column: span 9;
+  }
+}

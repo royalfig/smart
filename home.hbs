@@ -1,28 +1,99 @@
 {{!< default}}
 
 <main id="sm-main">
-    {{#match @custom.hero_title}}
-        {{> "hero"}}
-    {{/match}}
+    
 
     <div class="sm-grid">
         <div class="sm-grid-home">
+        {{#match @custom.hero_title}}
+            {{> "hero"}}
+        {{/match}}
+
         {{#foreach posts from="1" to="8"}}
-            {{> "card"}}
+            {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
         {{/foreach}}
 
-        {{> "cta-card"}}
+        {{> "cards/card-cta"}}
+
+        {{#if @custom.social_media_1_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media">
+                <a class="sm-flex-v" href="{{@custom.social_media_1_url}}" aria-label="Follow me on {{@custom.social_media_1 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_1}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
+        {{#if @custom.social_media_2_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media">
+                <a class="sm-flex-v" href="{{@custom.social_media_2_url}}" aria-label="Follow me on {{@custom.social_media_2 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_2}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
+        {{#if @custom.social_media_3_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media">
+                <a class="sm-flex-v" href="{{@custom.social_media_3_url}}" aria-label="Follow me on {{@custom.social_media_3 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_3}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
+
+        {{#if @custom.social_media_4_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media">
+                <a class="sm-flex-v" href="{{@custom.social_media_4_url}}" aria-label="Follow me on {{@custom.social_media_4 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_4}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
 
         {{#foreach posts from="9" to="15"}}
-            {{> "card"}}
+           {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
         {{/foreach}}
+
+        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
+           <p class="sm-card-number-focus">{{pagination.total}}</p>
+           <p class="sm-card-number-description">{{plural pagination.total empty="" singular="post published" plural="total posts published"}}</p>
+        </article>
        
         {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
             {{#foreach tags}}
-                <article class="sm-tag-card {{@number}} {{^if feature_image}}sm-background-color{{/if}}">
+               {{> "cards/card-tag"}}
+            {{/foreach}}
+        {{/get}}
+
+        {{#get "posts" limit="1" order="published_at asc"}}
+            {{#foreach posts}}
+                <article class="sm-card sm-card-number sm-card-number-reversed sm-card-small-square sm-flex-v">
+                    <p class="sm-card-number-description">The first post was published on</p>
+                    <p class="sm-card-number-focus">{{date published_at}}</p>
+                </article>
+            {{/foreach}}
+        {{/get}}
+
+        {{#get "tags" limit="all"}} 
+        {{#if tags}}
+            <article class="sm-card-topics sm-card-landscape">
+                <a href="/topics">
+                    <h2>There are {{tags.length}} topics to check out &rarr;</h2>
+                {{#foreach tags limit="12"}}
                     {{#if feature_image}}
-                    <picture class="">
-                      <source 
+                         <picture class="">
+                    <source 
                         srcset="
                         {{img_url feature_image size="48" format="avif"}} 48w,
                         {{img_url feature_image size="80" format="avif"}} 80w,
@@ -34,10 +105,10 @@
                         {{img_url feature_image size="1600" format="avif"}} 1600w,
                         {{img_url feature_image size="1920" format="avif"}} 1920w,
                         {{img_url feature_image size="2000" format="avif"}} 2000w"
-                        sizes="528px" 
+                        sizes="240px" 
                         type="image/avif"
-                      >
-                      <source 
+                    >
+                    <source 
                         srcset="
                         {{img_url feature_image size="48" format="webp"}} 48w,
                         {{img_url feature_image size="80" format="webp"}} 80w,
@@ -49,10 +120,10 @@
                         {{img_url feature_image size="1600" format="webp"}} 1600w,
                         {{img_url feature_image size="1920" format="webp"}} 1920w,
                         {{img_url feature_image size="2000" format="webp"}} 2000w"
-                        sizes="528px" 
+                        sizes="240px" 
                         type="image/webp"
-                      >
-                      <img
+                    >
+                    <img
                         srcset="
                         {{img_url feature_image size="48"}} 48w,
                         {{img_url feature_image size="80"}} 80w,
@@ -64,27 +135,26 @@
                         {{img_url feature_image size="1600"}} 1600w,
                         {{img_url feature_image size="1920"}} 1920w,
                         {{img_url feature_image size="2000"}} 2000w"
-                        sizes="528px" 
-                        src="{{img_url feature_image size="528"}}"
+                        sizes="240px" 
+                        src="{{img_url feature_image size="240"}}"
                         alt="{{name}}"
-                        loading="lazy"
-                        width="528" height="297"
-                      >
+                    >
                     </picture>
                     {{/if}}
-                    
-                    <div class="sm-tag-card-body">
-                        <p>{{name}}</p>
-                        <div class="sm-card-tag-meta">
-                            <p>{{plural count.posts empty="" singular="% post" plural="% posts"}}</p>
-                            <a class="sm-arrow-link" href="{{url}}" aria-label="Read posts about {{name}}">
-                                <svg class="sm-arrow-icon"><use href="#sm-right-arrow-icon"></use></svg>
-                            </a>
-                        </div>
-                    </div>
-                </article>
-            {{/foreach}}
+                   
+                {{/foreach}}
+            </a>
+            </article>
+        {{/if}}
+
         {{/get}}
+
+     
+        {{!-- <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
+           <p>{{total_members}}</p>
+           <p>{{plural total_members empty="" singular="member" plural="total members"}}</p>
+        </article> --}}
+       
         </div>
     </div>
 </main>

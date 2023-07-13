@@ -1,0 +1,24 @@
+.flex-h {
+  display: flex;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sm-flex-v {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sm-absolute {
+  position: absolute;
+  inset: 0;
+  content: '';
+}
+
+.sm-relative {
+  position: relative;
+}

@@ -10,13 +10,36 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --gap: 1rem;
-  --gutter: 20px;
   --width: 992px;
   --post-width: 768px;
   --content-width: 700px;
   --radius: 0.5em;
   --radius-small: 3px;
+  --spacing-01: 0.25rem;
+  --spacing-02: 0.5rem;
+  --spacing-03: 0.75rem;
+  --spacing-04: 1rem;
+  --spacing-06: 1.5rem;
+  --spacing-08: 2rem;
+  --spacing-10: 2.5rem;
+  --spacing-12: 3rem;
+  --spacing-14: 3.5rem;
+  --spacing-16: 4rem;
+  --spacing-18: 4.5rem;
+  --spacing-20: 5rem;
+  --spacing-22: 5.5rem;
+  --spacing-24: 6rem;
+  --spacing-26: 6.5rem;
+  --spacing-28: 7rem;
+  --spacing-30: 7.5rem;
+  --spacing-32: 8rem;
+  --spacing-34: 8.5rem;
+  --spacing-36: 9rem;
+  --gap: var(--spacing-04);
+  --gutter: var(--spacing-06);
+  --bento-gap: var(--spacing-03);
+  --box-padding: var(--spacing-06);
+  --button-padding: var(--spacing-02) var(--spacing-03);
 
   /* Type */
   --body-typeface: 'public', system-ui, sans-serif;
@@ -24,6 +47,7 @@
   --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
     monospace;
   --letter-spacing: 0.2px;
+  --letter-spacing-contract: -0.2px;
   --h1: 2.488rem;
   --h2: 2.074rem;
   --h3: 1.728rem;
@@ -33,25 +57,25 @@
   --small: 0.833rem;
   --x-small: 0.694rem;
   --xx-small: 0.579rem;
-  --button-padding: 0.5em 0.75em;
   --transition: 0.3s;
 }
 
 @media (--tablet) {
   :root {
-    --gap: 1.5rem;
-    --gutter: 40px;
+    --gap: var(--spacing-06);
+    --gutter: var(--spacing-08);
   }
 }
 
 @media (--laptop) {
   :root {
-    --gap: 2rem;
+    --gap: var(--spacing-08);
   }
 }
 
 /* Color scheme */
 :root[data-color-pref='light'] {
+  /* Primary color */
   --primary: hsl(var(--primary-h) var(--saturation) var(--lightness));
   --primary-light: hsl(
     var(--primary-h) var(--saturation) calc(var(--lightness) * 1.5)
@@ -59,6 +83,8 @@
   --primary-dark: hsl(
     var(--primary-h) var(--saturation) calc(var(--lightness) * 0.5)
   );
+
+  /* Secondary color */
   --secondary: hsl(
     var(--complementary-color) var(--saturation) var(--lightness)
   );
@@ -68,11 +94,15 @@
   --secondary-dark: hsl(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 0.5)
   );
+
+  /* Surface */
   --surface: hsl(var(--primary-h) 7% 96%);
   --surface-85: hsla(var(--primary-h) 7% 96% / 85%);
   --surface-light: hsl(var(--primary-h) 7% 100%);
   --surface-dark: hsl(var(--primary-h) 7% 89%);
-  --surface-darker: hsl(var(--primary-h) 7% 82%);
+  --surface-darker: hsl(var(--primary-h) 17% 82%);
+
+  /* Element */
   --element: hsl(var(--primary-h) 7% 5%);
   --element-light: hsl(var(--primary-h) 7% 35%);
   --element-dark: hsl(var(--primary-h) 7% 1%);

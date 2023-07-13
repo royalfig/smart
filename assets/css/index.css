@@ -2,6 +2,8 @@
 
 /* Abstracts */
 @import 'abstracts/variables.css';
+@import 'abstracts/grid.css';
+@import 'abstracts/utilities.css';
 
 /* Base */
 @import 'base/reset.css';
@@ -9,7 +11,6 @@
 @import 'base/typography.css';
 
 /* Layou"t */
-@import 'layout/grid.css';
 @import 'layout/navbar.css';
 @import 'layout/footer.css';
 
@@ -17,12 +18,11 @@
 @import 'pages/home.css';
 @import 'pages/post.css';
 @import 'pages/post-content.css';
-@import 'pages/search.css';
 @import 'pages/author.css';
 @import 'pages/404.css';
 @import 'pages/page.css';
 
-/* Compo"nents */
+/* Components */
 @import 'components/card.css';
 @import 'components/button.css';
 @import 'components/overflow.css';
@@ -38,7 +38,7 @@
 @import 'components/archive.css';
 @import 'components/authors.css';
 
-/* Vendo"r */
+/* Vendor */
 @import 'vendor/kg.css';
 @import 'vendor/medium-zoom.css';
 @import 'vendor/syntax-highlighting.css';

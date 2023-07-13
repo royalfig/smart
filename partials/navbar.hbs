@@ -1,5 +1,5 @@
 {{! Navigation bar }}
-<div class='sm-grid sm-navbar-container'>
+<div class='sm-grid'>
   <header class='sm-navbar'>
     <div class='sm-navbar-left'>
 
@@ -11,55 +11,18 @@
         <p class='sm-site-title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
       {{/is}}
 
+    </div>
+
+    <div class='sm-navbar-center'>
       {{navigation}}
     </div>
 
     <div class='sm-navbar-right'>
       <button
-        class='sm-circle-icon-button'
-        data-ghost-search
-        aria-label='search'
-      >
-        <svg aria-hidden='true'><use href='#sm-search-icon'></use></svg>
-      </button>
-      <button
-        class='sm-circle-icon-button sm-dark-mode'
-        aria-label='Turn on dark mode'
-      >
-        <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
-      </button>
-      <button
-        class='sm-circle-icon-button sm-light-mode'
-        aria-label='Turn on light mode'
-      >
-        <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
-      </button>
-
-      <button
-        class='sm-circle-icon-button sm-saves-button'
-        aria-label='Open saves menu'
-      >
-        <svg aria-hidden='true'>
-          <use href='#sm-heart-outline-icon'></use>
-        </svg>
-      </button>
-
-      {{#if @site.members_enabled}}
-        {{#if @member}}<button
-            class='sm-button'
-            data-portal='account'
-          >Account</button>{{else}}<button
-            class='sm-button'
-            data-portal='signup'
-          >Subscribe</button>
-        {{/if}}
-      {{/if}}
+        class='sm-circle-icon-button sm-navbar-menu-button'
+        aria-label='menu'
+      ><svg aria-hidden='true'><use href='#sm-menu-icon'></use></svg></button>
     </div>
-
-    <button
-      class='sm-circle-icon-button sm-navbar-menu-button'
-      aria-label='menu'
-    ><svg aria-hidden='true'><use href='#sm-menu-icon'></use></svg></button>
   </header>
 </div>
 

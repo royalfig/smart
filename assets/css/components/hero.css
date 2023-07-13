@@ -1,26 +1,13 @@
 .sm-hero {
   position: relative;
-  min-height: 60vmin;
-  padding-block-end: 3rem;
-}
-
-.sm-hero + .sm-grid .sm-grid-home {
-  padding-block-start: 3rem;
+  grid-column: content;
+  margin-block: var(--bento-box);
 }
 
 .sm-hero-inner {
-  grid-column: content;
-  height: 100%;
-  padding-block-start: 6rem;
-}
-
-@media (--tablet) {
-  .sm-hero-inner {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--gap);
-    align-items: center;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--bento-gap);
 }
 
 .sm-hero-left {
@@ -28,53 +15,24 @@
   z-index: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  padding-inline-end: 1rem;
-  text-align: center;
-}
-
-.sm-hero-subtitle {
-  margin-block-end: 1rem;
-  font-family: var(--heading-typeface);
-  font-size: var(--h1);
-  font-weight: 900;
-  line-height: 1;
-  background-image: linear-gradient(45deg, var(--primary), var(--secondary));
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-@supports (color: color(display-p3 1 0.5 0)) {
-  .sm-hero-subtitle,
-  .sm-cta-card h2 {
-    background-image: linear-gradient(
-      45deg,
-      color(display-p3 var(--r) var(--g) var(--b)),
-      color(display-p3 var(--cr) var(--cg) var(--cb))
-    );
-  }
-
-  :root[data-color-pref='dark'] :where(.sm-hero-subtitle, .sm-cta-card h2) {
-    filter: brightness(1.5);
-  }
+  justify-content: space-between;
+  padding: var(--box-padding);
+  background-color: var(--surface-darker);
+  border-radius: var(--radius);
 }
 
 .sm-hero-description {
-  font-size: 1.15rem;
-  font-weight: 300;
-  line-height: 1.3;
+  font-size: var(--h5);
+  font-weight: 600;
   color: var(--element-dark);
 }
 
-.sm-hero-bg {
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: 100%;
-  mix-blend-mode: multiply;
-  opacity: 0.25;
-  object-fit: cover;
+/* Hero image */
+.sm-hero-right {
+  display: none;
+  padding: var(--box-padding);
+  background-color: var(--surface-darker);
+  border-radius: var(--radius);
 }
 
 .sm-hero-img img {
@@ -84,10 +42,6 @@
   margin: 0 auto;
   border-radius: var(--radius);
   object-fit: cover;
-}
-
-.sm-hero-right {
-  display: none;
 }
 
 .sm-hero-button-container:not(:empty) {

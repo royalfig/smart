@@ -15,8 +15,8 @@
   grid-auto-rows: calc((100vw - 220px - (var(--gutter) * 2)) / 12);
   grid-auto-rows: calc((100cqw - 220px - (var(--gutter) * 2)) / 12);
   grid-auto-flow: dense;
-  gap: 20px;
-  padding: 6rem 0;
+  gap: var(--bento-gap);
+  margin-block: var(--bento-gap);
 }
 
 @media (width >= 1072px) {

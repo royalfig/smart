@@ -10,7 +10,11 @@ into the {body} of the default.hbs template --}}
 <main class="sm-grid" id="sm-main">
     <div class="sm-grid-home">
         {{#foreach posts}}
-            {{> "card"}}
+            {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
         {{/foreach}}
     </div>
 </main>
