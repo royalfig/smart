@@ -38,10 +38,11 @@
 .sm-hero-img img {
   display: block;
   width: 100%;
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   border-radius: var(--radius);
-  object-fit: cover;
+  object-fit: contain;
+  transform: scaleX(-1);
 }
 
 .sm-hero-button-container:not(:empty) {
