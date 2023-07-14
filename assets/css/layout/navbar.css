@@ -1,8 +1,5 @@
 .sm-navbar {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-column: content;
-  gap: var(--gap);
   align-items: center;
   padding: calc(var(--box-padding) / 2) var(--box-padding);
   margin-block-start: var(--bento-gap);
@@ -12,24 +9,31 @@
   border-radius: var(--radius);
 }
 
-.sm-navbar-center {
-  justify-self: center;
+.sm-site-icon {
+  width: 1rem;
+  height: 1rem;
 }
 
 .sm-site-title {
   margin: 0;
+  margin-inline: var(--spacing-01) var(--spacing-02);
   overflow: hidden;
   font-size: inherit;
-  font-size: 1rem;
+  font-size: var(--small);
   font-weight: 600;
+  line-height: 1.3rem;
   text-transform: uppercase;
   letter-spacing: -0.2px;
   white-space: nowrap;
 }
 
+.sm-navbar-left {
+  gap: 0;
+}
+
 .sm-navigation {
   display: none;
-  gap: 0.75rem;
+  gap: var(--spacing-02);
   align-items: center;
   padding-inline-start: 0;
   list-style-type: none;
@@ -66,15 +70,52 @@
 
 .sm-navbar-right {
   display: flex;
-  gap: 0.75rem;
+  gap: var(--spacing-02);
   align-items: center;
   justify-self: flex-end;
   line-height: inherit;
+
+  & svg {
+    display: block;
+    width: 1rem;
+    height: 1rem;
+    fill: var(--element);
+  }
+}
+
+.sm-sub-button {
+  display: flex;
+  gap: var(--spacing-01);
+  align-items: center;
+  padding: 0 var(--spacing-02);
+  font-weight: 600;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), color var(--transition),
+    background-color var(--transition);
+
+  &:hover {
+    color: var(--surface);
+    background-color: var(--primary);
+    border-color: var(--primary);
+  }
+}
+
+.sm-navbar-right > a {
+  display: none;
 }
 
 @media (--tablet) {
   .sm-navigation {
     display: flex;
     align-items: center;
+  }
+
+  .sm-navbar-right > a {
+    display: initial;
+  }
+
+  .sm-navbar-right .sm-navbar-menu-button {
+    display: none;
   }
 }

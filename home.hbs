@@ -20,7 +20,7 @@
         {{> "cards/card-cta"}}
 
         {{#if @custom.social_media_1_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media">
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_1}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_1_url}}" aria-label="Follow me on {{@custom.social_media_1 }}">
                     <svg aria-hidden="true">
                         <use href="#{{@custom.social_media_1}}-icon"></use>
@@ -29,7 +29,7 @@
             </article>
         {{/if}}
         {{#if @custom.social_media_2_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media">
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_2}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_2_url}}" aria-label="Follow me on {{@custom.social_media_2 }}">
                     <svg aria-hidden="true">
                         <use href="#{{@custom.social_media_2}}-icon"></use>
@@ -38,7 +38,7 @@
             </article>
         {{/if}}
         {{#if @custom.social_media_3_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media">
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_3}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_3_url}}" aria-label="Follow me on {{@custom.social_media_3 }}">
                     <svg aria-hidden="true">
                         <use href="#{{@custom.social_media_3}}-icon"></use>
@@ -48,7 +48,7 @@
         {{/if}}
 
         {{#if @custom.social_media_4_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media">
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_4}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_4_url}}" aria-label="Follow me on {{@custom.social_media_4 }}">
                     <svg aria-hidden="true">
                         <use href="#{{@custom.social_media_4}}-icon"></use>
@@ -56,36 +56,7 @@
                 </a>
             </article>
         {{/if}}
-
-        {{#foreach posts from="9" to="15"}}
-           {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
-        {{/foreach}}
-
-        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
-           <p class="sm-card-number-focus">{{pagination.total}}</p>
-           <p class="sm-card-number-description">{{plural pagination.total empty="" singular="post published" plural="total posts published"}}</p>
-        </article>
-       
-        {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
-            {{#foreach tags}}
-               {{> "cards/card-tag"}}
-            {{/foreach}}
-        {{/get}}
-
-        {{#get "posts" limit="1" order="published_at asc"}}
-            {{#foreach posts}}
-                <article class="sm-card sm-card-number sm-card-number-reversed sm-card-small-square sm-flex-v">
-                    <p class="sm-card-number-description">The first post was published on</p>
-                    <p class="sm-card-number-focus">{{date published_at}}</p>
-                </article>
-            {{/foreach}}
-        {{/get}}
-
-        {{#get "tags" limit="all"}} 
+{{#get "tags" limit="all"}} 
         {{#if tags}}
             <article class="sm-card-topics sm-card-landscape">
                 <a href="/topics">
@@ -146,8 +117,36 @@
             </a>
             </article>
         {{/if}}
-
         {{/get}}
+        {{#foreach posts from="9" to="15"}}
+           {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
+        {{/foreach}}
+
+        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
+           <p class="sm-card-number-focus">{{pagination.total}}</p>
+           <p class="sm-card-number-description">{{plural pagination.total empty="" singular="post published" plural="total posts published"}}</p>
+        </article>
+       
+        {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
+            {{#foreach tags}}
+               {{> "cards/card-tag"}}
+            {{/foreach}}
+        {{/get}}
+
+        {{#get "posts" limit="1" order="published_at asc"}}
+            {{#foreach posts}}
+                <article class="sm-card sm-card-number sm-card-number-reversed sm-card-small-square sm-flex-v">
+                    <p class="sm-card-number-description">The first post was published on</p>
+                    <p class="sm-card-number-focus">{{date published_at}}</p>
+                </article>
+            {{/foreach}}
+        {{/get}}
+
+        
 
      
         {{!-- <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">

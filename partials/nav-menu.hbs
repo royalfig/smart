@@ -1,57 +1,32 @@
-<div class='sm-nav-menu-container'>
-  <button
-    class='sm-nav-menu-close-button sm-circle-close-button'
-    aria-label='close nav menu'
-  >
-    <svg aria-hidden='true'>
-      <use href='#sm-close-icon'></use>
-    </svg>
-  </button>
+<div class='sm-nav-menu sm-grid' id='sm-nav-menu'>
 
-  <div class='sm-nav-menu-navigation-container'>
+  <div class='sm-nav-menu-inner'>
     {{navigation}}
 
-    <div class='sm-nav-menu-actions'>
-      <button
-        class='sm-circle-icon-button'
-        data-ghost-search
-        aria-label='search'
-      >
+    <div class='sm-nav-menu-actions sm-flex-v'>
+      <button class='sm-icon-button' data-ghost-search>
         <svg aria-hidden='true'><use href='#sm-search-icon'></use></svg>
+        Search
       </button>
-      <button
-        class='sm-circle-icon-button sm-dark-mode'
-        aria-label='Turn on dark mode'
-      >
+      <button class='sm-icon-button sm-dark-mode'>
         <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
+        Dark mode
       </button>
-      <button
-        sm-circle-icon-button
-        class='sm-circle-icon-button sm-light-mode'
-        aria-label='Turn on light mode'
-      >
+      <button class='sm-icon-button sm-light-mode'>
         <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
+        Light mode
       </button>
 
-      <button
-        class='sm-circle-icon-button sm-saves-button'
-        aria-label='Open saves menu'
-      >
-        <svg aria-hidden='true'>
-          <use href='#sm-heart-outline-icon'></use>
-        </svg>
-      </button>
-
-    </div>
-    {{#if @site.members_enabled}}
-      {{#if @member}}<button
-          class='sm-button'
-          data-portal='account'
-        >Account</button>{{else}}<button
-          class='sm-button'
-          data-portal='signup'
-        >Subscribe</button>
+      {{#if @site.members_enabled}}
+        {{#if @member}}<button class='sm-icon-button' data-portal='account'><svg
+              aria-hidden='true'
+            ><use href='#sm-person-icon'></use></svg>Account</button>{{else}}
+          <button class='sm-icon-button' data-portal='signup'>
+            <svg aria-hidden='true'><use href='#sm-mail-icon'></use></svg>
+            Subscribe</button>
+          <a href='#/portal/signin'>Login</a>
+        {{/if}}
       {{/if}}
-    {{/if}}
+    </div>
   </div>
 </div>

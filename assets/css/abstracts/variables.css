@@ -54,7 +54,7 @@
   --h4: 1.44rem;
   --h5: 1.2rem;
   --h6: 1rem;
-  --small: 0.833rem;
+  --small: min(0.833rem, 15px);
   --x-small: 0.694rem;
   --xx-small: 0.579rem;
   --transition: 0.3s;

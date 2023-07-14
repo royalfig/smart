@@ -6,13 +6,13 @@
   justify-content: center;
   padding: var(--button-padding);
   font-size: var(--small);
-  border: 1px solid var(--border-color);
+  background-color: var(--surface-darker);
   border-radius: var(--radius);
 }
 
 .sm-pagination,
 .sm-pagination-holder {
-  margin-block: 6rem 3rem;
+  margin-block: 0 var(--spacing-20);
 }
 
 .sm-current {

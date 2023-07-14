@@ -56,9 +56,16 @@
       
       <div class="sm-card-body">
         <h2 class="sm-card-title">{{^if access}}<svg aria-label="premium content"><use href="#sm-lock-icon"></use></svg>{{/if}}{{title}}</h2>
-        <p class="sm-card-excerpt">
-          {{excerpt}}
-        </p>
+        <div class="sm-flex-h">
+                <p class="sm-card-excerpt">
+                  {{excerpt}}
+                </p>
+                <div class="sm-card-navigation">
+                    <svg aria-hidden="true">
+                        <use href="#sm-chevron-icon"></use>
+                    </svg>
+                </div>
+            </div>
       </div>
     </a>
 </article>

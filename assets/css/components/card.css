@@ -8,12 +8,37 @@
   transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.sm-card-navigation {
+.sm-card > a:focus-visible .sm-card-title {
+  text-decoration: underline solid var(--primary);
+}
+
+.sm-card-meta {
   margin-block-start: 0.5rem;
-  font-size: var(--small);
+  font-size: var(--x-small);
   font-weight: 600;
+  line-height: var(--small);
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-expand);
+}
+
+.sm-card-navigation {
+  box-sizing: content-box;
+  flex-shrink: 0;
+  width: var(--spacing-04);
+  height: var(--spacing-04);
+  padding: var(--spacing-02);
+  line-height: 1;
+  background-color: var(--surface-85);
+  border-radius: 50%;
+  transition: background-color var(--transition), translate var(--transition);
+}
+
+.sm-card-navigation svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  fill: var(--element);
 }
 
 @supports (prefers-reduced-motion: reduce) {
@@ -27,12 +52,7 @@
   position: relative;
   padding: var(--box-padding);
   margin-inline: auto;
-}
-
-:where(.sm-card-body, .sm-tag-card) svg {
-  width: 1.15rem;
-  height: 1.15rem;
-  fill: hsl(0deg 0% 98%);
+  overflow: hidden;
 }
 
 .sm-card-title {
@@ -65,11 +85,12 @@
 
 /* Feature image card */
 
-.sm-feature-image-card:not:where(:hover, :focus-visible) img {
+.sm-feature-image-card:where(:hover, :focus-visible) img {
   translate: 0 -0.5rem;
 }
 
 .sm-feature-image-card img {
+  height: 115%;
   transition: translate var(--transition);
 }
 
@@ -87,8 +108,6 @@
 .sm-cta-card {
   display: flex;
   flex-direction: column;
-  grid-row: span 12;
-  grid-column: span 12;
   gap: var(--gap);
   align-items: center;
   justify-content: center;
@@ -169,12 +188,18 @@
 
 .sm-card-base .sm-card-body {
   display: grid;
-  gap: var(--gap);
+  gap: var(--spacing-01);
   height: 100%;
 }
 
-.sm-card-base.sm-feature-image-card .sm-card-body {
+.sm-feature-image-card:not(.sm-featured-card) .sm-card-body {
   grid-template-rows: 50% 50%;
+  padding-block-end: 0;
+}
+
+.sm-card:hover .sm-card-navigation {
+  background-color: var(--surface-light);
+  translate: 3px 0;
 }
 
 .sm-card-base a {
@@ -185,7 +210,6 @@
 .sm-card-base img {
   display: block;
   width: 100%;
-  height: 100%;
   border-radius: var(--radius) var(--radius) 0 0;
   object-fit: cover;
 }
@@ -298,14 +322,102 @@
 
 /* Social media card */
 .sm-card-social-media {
-  padding: var(--box-padding);
   background-color: var(--surface-darker);
+}
+
+.sm-card-social-media a {
+  padding: var(--box-padding);
+}
+
+.sm-card-social-media.behance:hover svg {
+  fill: #1769ff; /* Behance brand color */
+}
+
+.sm-card-social-media.discord:hover svg {
+  fill: #7289da; /* Discord brand color */
+}
+
+.sm-card-social-media.dribble:hover svg {
+  fill: #ea4c89; /* Dribbble brand color */
+}
+
+.sm-card-social-media.facebook:hover svg {
+  fill: #1877f2; /* Facebook brand color */
+}
+
+.sm-card-social-media.github:hover svg {
+  fill: #4078c0; /* GitHub brand color */
+}
+
+.sm-card-social-media.instagram:hover svg {
+  fill: #c13584; /* Instagram brand color */
+}
+
+.sm-card-social-media.linkedin:hover svg {
+  fill: #0a66c2; /* LinkedIn brand color */
+}
+
+.sm-card-social-media.mastodon:hover svg {
+  fill: #3088d4; /* Mastodon brand color */
+}
+
+.sm-card-social-media.patreon:hover svg {
+  fill: #ff424d; /* Patreon brand color */
+}
+
+.sm-card-social-media.pinterest:hover svg {
+  fill: #bd081c; /* Pinterest brand color */
+}
+
+.sm-card-social-media.reddit:hover svg {
+  fill: #ff4500; /* Reddit brand color */
+}
+
+.sm-card-social-media.slack:hover svg {
+  fill: #4a154b; /* Slack brand color */
+}
+
+.sm-card-social-media.snapchat:hover svg {
+  fill: #fffc00; /* Snapchat brand color */
+}
+
+.sm-card-social-media.substack:hover svg {
+  fill: #ff4a7d; /* Substack brand color */
+}
+
+.sm-card-social-media.telegram:hover svg {
+  fill: #08c; /* Telegram brand color */
+}
+
+.sm-card-social-media.tumblr:hover svg {
+  fill: #35465c; /* Tumblr brand color */
+}
+
+.sm-card-social-media.twitch:hover svg {
+  fill: #9146ff; /* Twitch brand color */
+}
+
+.sm-card-social-media.twitter:hover svg {
+  fill: #1da1f2; /* Twitter brand color */
+}
+
+.sm-card-social-media.vimeo:hover svg {
+  fill: #1ab7ea; /* Vimeo brand color */
+}
+
+.sm-card-social-media.wechat:hover svg {
+  fill: #7bb32e; /* WeChat brand color */
+}
+
+.sm-card-social-media.youtube:hover svg {
+  fill: #f00; /* YouTube brand color */
 }
 
 .sm-card-social-media svg {
   width: 100%;
   aspect-ratio: 1;
   fill: var(--element-light);
+  transition: fill var(--transition);
 }
 
 /* Count card */

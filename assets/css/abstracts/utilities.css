@@ -1,4 +1,4 @@
-.flex-h {
+.sm-flex-h {
   display: flex;
   gap: var(--gap);
   align-items: center;

@@ -1,8 +1,10 @@
 {{! Navigation bar }}
 <div class='sm-grid'>
-  <header class='sm-navbar'>
-    <div class='sm-navbar-left'>
-
+  <header class='sm-navbar sm-flex-h'>
+    <div class='sm-navbar-left sm-flex-h'>
+      {{#if @site.icon}}
+        <img class='sm-site-icon' src='{{img_url @site.icon}}' alt='' />
+      {{/if}}
       {{#is 'home'}}
         <h1 class='sm-site-title'><a
             href='{{@site.url}}'
@@ -10,27 +12,36 @@
       {{else}}
         <p class='sm-site-title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
       {{/is}}
-
-    </div>
-
-    <div class='sm-navbar-center'>
       {{navigation}}
+
     </div>
 
     <div class='sm-navbar-right'>
+      {{#if @site.members_enabled}}
+      {{#if @member}}
+      <a href="#/portal/account">
+      <svg aria-hidden='true'>
+        <use href='#sm-person-icon'></use>
+      </a>{{else}}
+      <a href='#/portal/signin'>Login</a>
+      <a class='sm-sub-button' href='#/portal/signup'>Subscribe</a>
+      {{/if}}
+      {{/if}}
+      <a href='#/search'>
+        <svg aria-hidden='true'>
+          <use href='#sm-search-icon'></use>
+        </svg>
+      </a>
       <button
         class='sm-circle-icon-button sm-navbar-menu-button'
         aria-label='menu'
-      ><svg aria-hidden='true'><use href='#sm-menu-icon'></use></svg></button>
+        aria-expanded='false'
+        aria-controls='sm-nav-menu'
+      ><svg aria-hidden='true'><use href='#sm-menu-icon'></use></svg>
+      </button>
     </div>
   </header>
+
 </div>
 
-<div class='sm-navbar-saves'>
-  <button class='sm-navbar-close-saves' aria-label='close saves menu'>
-    <svg aria-hidden='true'>
-      <use href='#sm-close-icon'></use>
-    </svg>
-  </button>
-  <div class='sm-overflow-articles'></div>
-</div>
+  {{> "nav-menu"}}
