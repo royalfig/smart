@@ -22,3 +22,7 @@
 .sm-relative {
   position: relative;
 }
+
+.sm-overflow-hidden {
+  overflow: hidden;
+}

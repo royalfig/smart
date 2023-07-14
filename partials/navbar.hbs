@@ -74,7 +74,14 @@
       <a class='sm-sub-button' href='#/portal/signup'>Subscribe</a>
       {{/if}}
       {{/if}}
-      <a href='#/search'>
+     
+      <button class='sm-dark-mode'>
+        <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
+      </button>
+      <button class='sm-light-mode'>
+        <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
+      </button>
+       <a href='#/search' aria-label="Search {{@site.title}}">
         <svg aria-hidden='true'>
           <use href='#sm-search-icon'></use>
         </svg>

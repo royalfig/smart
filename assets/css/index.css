@@ -15,7 +15,6 @@
 @import 'layout/footer.css';
 
 /* Pages" */
-@import 'pages/home.css';
 @import 'pages/post.css';
 @import 'pages/post-content.css';
 @import 'pages/author.css';

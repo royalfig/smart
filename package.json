@@ -87,10 +87,6 @@
       }
     },
     "custom": {
-      "hero_title": {
-        "type": "text",
-        "group": "homepage"
-      },
       "hero_description": {
         "type": "text",
         "group": "homepage"

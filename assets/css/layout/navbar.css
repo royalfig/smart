@@ -106,7 +106,7 @@
   }
 }
 
-.sm-navbar-right > a {
+.sm-navbar-right > :where(a, button:not(.sm-navbar-menu-button)) {
   display: none;
 }
 
@@ -116,7 +116,7 @@
     align-items: center;
   }
 
-  .sm-navbar-right > a {
+  .sm-navbar-right > :where(a, button) {
     display: initial;
   }
 

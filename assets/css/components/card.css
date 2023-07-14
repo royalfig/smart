@@ -73,14 +73,6 @@
   -webkit-box-orient: vertical;
 }
 
-.sm-no-image-card .sm-card-body {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-}
-
 /* Card sizing */
 
 /* Feature image card */
@@ -100,8 +92,12 @@
   background-color: var(--surface-light);
 }
 
-.sm-no-image-card .sm-card-title {
-  margin-block-end: 0.5rem;
+.sm-no-image-card .sm-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 /* CTA card */
@@ -282,7 +278,7 @@
   transition: var(--transition);
 }
 
-.sm-tag-card:where(:hover, :focus-visible) picture::after {
+.sm-tag-card a:where(:hover, :focus-visible) picture::after {
   opacity: 0;
 }
 
@@ -329,95 +325,95 @@
   padding: var(--box-padding);
 }
 
-.sm-card-social-media.behance:hover svg {
-  fill: #1769ff; /* Behance brand color */
-}
-
-.sm-card-social-media.discord:hover svg {
-  fill: #7289da; /* Discord brand color */
-}
-
-.sm-card-social-media.dribble:hover svg {
-  fill: #ea4c89; /* Dribbble brand color */
-}
-
-.sm-card-social-media.facebook:hover svg {
-  fill: #1877f2; /* Facebook brand color */
-}
-
-.sm-card-social-media.github:hover svg {
-  fill: #4078c0; /* GitHub brand color */
-}
-
-.sm-card-social-media.instagram:hover svg {
-  fill: #c13584; /* Instagram brand color */
-}
-
-.sm-card-social-media.linkedin:hover svg {
-  fill: #0a66c2; /* LinkedIn brand color */
-}
-
-.sm-card-social-media.mastodon:hover svg {
-  fill: #3088d4; /* Mastodon brand color */
-}
-
-.sm-card-social-media.patreon:hover svg {
-  fill: #ff424d; /* Patreon brand color */
-}
-
-.sm-card-social-media.pinterest:hover svg {
-  fill: #bd081c; /* Pinterest brand color */
-}
-
-.sm-card-social-media.reddit:hover svg {
-  fill: #ff4500; /* Reddit brand color */
-}
-
-.sm-card-social-media.slack:hover svg {
-  fill: #4a154b; /* Slack brand color */
-}
-
-.sm-card-social-media.snapchat:hover svg {
-  fill: #fffc00; /* Snapchat brand color */
-}
-
-.sm-card-social-media.substack:hover svg {
-  fill: #ff4a7d; /* Substack brand color */
-}
-
-.sm-card-social-media.telegram:hover svg {
-  fill: #08c; /* Telegram brand color */
-}
-
-.sm-card-social-media.tumblr:hover svg {
-  fill: #35465c; /* Tumblr brand color */
-}
-
-.sm-card-social-media.twitch:hover svg {
-  fill: #9146ff; /* Twitch brand color */
-}
-
-.sm-card-social-media.twitter:hover svg {
-  fill: #1da1f2; /* Twitter brand color */
-}
-
-.sm-card-social-media.vimeo:hover svg {
-  fill: #1ab7ea; /* Vimeo brand color */
-}
-
-.sm-card-social-media.wechat:hover svg {
-  fill: #7bb32e; /* WeChat brand color */
-}
-
-.sm-card-social-media.youtube:hover svg {
-  fill: #f00; /* YouTube brand color */
-}
-
 .sm-card-social-media svg {
   width: 100%;
   aspect-ratio: 1;
   fill: var(--element-light);
   transition: fill var(--transition);
+}
+
+.sm-card-social-media.behance a:where(:hover, :focus-visible) svg {
+  fill: #1769ff; /* Behance brand color */
+}
+
+.sm-card-social-media.discord a:where(:hover, :focus-visible) svg {
+  fill: #7289da; /* Discord brand color */
+}
+
+.sm-card-social-media.dribble a:where(:hover, :focus-visible) svg {
+  fill: #ea4c89; /* Dribbble brand color */
+}
+
+.sm-card-social-media.facebook a:where(:hover, :focus-visible) svg {
+  fill: #1877f2; /* Facebook brand color */
+}
+
+.sm-card-social-media.github a:where(:hover, :focus-visible) svg {
+  fill: #4078c0; /* GitHub brand color */
+}
+
+.sm-card-social-media.instagram a:where(:hover, :focus-visible) svg {
+  fill: #c13584; /* Instagram brand color */
+}
+
+.sm-card-social-media.linkedin a:where(:hover, :focus-visible) svg {
+  fill: #0a66c2; /* LinkedIn brand color */
+}
+
+.sm-card-social-media.mastodon a:where(:hover, :focus-visible) svg {
+  fill: #3088d4; /* Mastodon brand color */
+}
+
+.sm-card-social-media.patreon a:where(:hover, :focus-visible) svg {
+  fill: #ff424d; /* Patreon brand color */
+}
+
+.sm-card-social-media.pinterest a:where(:hover, :focus-visible) svg {
+  fill: #bd081c; /* Pinterest brand color */
+}
+
+.sm-card-social-media.reddit a:where(:hover, :focus-visible) svg {
+  fill: #ff4500; /* Reddit brand color */
+}
+
+.sm-card-social-media.slack a:where(:hover, :focus-visible) svg {
+  fill: #4a154b; /* Slack brand color */
+}
+
+.sm-card-social-media.snapchat a:where(:hover, :focus-visible) svg {
+  fill: #fffc00; /* Snapchat brand color */
+}
+
+.sm-card-social-media.substack a:where(:hover, :focus-visible) svg {
+  fill: #ff4a7d; /* Substack brand color */
+}
+
+.sm-card-social-media.telegram a:where(:hover, :focus-visible) svg {
+  fill: #08c; /* Telegram brand color */
+}
+
+.sm-card-social-media.tumblr a:where(:hover, :focus-visible) svg {
+  fill: #35465c; /* Tumblr brand color */
+}
+
+.sm-card-social-media.twitch a:where(:hover, :focus-visible) svg {
+  fill: #9146ff; /* Twitch brand color */
+}
+
+.sm-card-social-media.twitter a:where(:hover, :focus-visible) svg {
+  fill: #1da1f2; /* Twitter brand color */
+}
+
+.sm-card-social-media.vimeo a:where(:hover, :focus-visible) svg {
+  fill: #1ab7ea; /* Vimeo brand color */
+}
+
+.sm-card-social-media.wechat a:where(:hover, :focus-visible) svg {
+  fill: #7bb32e; /* WeChat brand color */
+}
+
+.sm-card-social-media.youtube a:where(:hover, :focus-visible) svg {
+  fill: #f00; /* YouTube brand color */
 }
 
 /* Count card */
@@ -465,6 +461,10 @@
   height: 100%;
 }
 
+.sm-card-topics a:where(:focus-visible, :hover) h2 {
+  color: var(--secondary);
+}
+
 .sm-card-topics h2 {
   position: relative;
   z-index: 1;
@@ -477,6 +477,7 @@
   text-align: center;
   text-wrap: balance;
   background-color: var(--surface-darker);
+  transition: color var(--transition);
 }
 
 .sm-card-topics img {
