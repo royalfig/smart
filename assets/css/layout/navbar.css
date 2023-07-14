@@ -9,6 +9,11 @@
   border-radius: var(--radius);
 }
 
+.sm-navbar-left picture {
+  display: flex;
+  align-items: center;
+}
+
 .sm-site-icon {
   width: 1rem;
   height: 1rem;
