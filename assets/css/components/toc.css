@@ -93,7 +93,7 @@
   font-size: var(--x-small);
   color: var(--element-light);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
+  letter-spacing: var(--letter-spacing-expand);
   content: 'Contents';
   opacity: 0.5;
 }

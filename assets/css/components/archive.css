@@ -106,6 +106,6 @@
 
   .sm-archive-month {
     font-size: 1.15rem;
-    letter-spacing: 0.3px;
+    letter-spacing: var(--letter-spacing-expand);
   }
 }

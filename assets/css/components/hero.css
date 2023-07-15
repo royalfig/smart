@@ -8,7 +8,7 @@
   text-decoration: underline;
   text-decoration-thickness: 3px;
 
-  :where(:hover, :focus-visible) {
+  &:where(:hover, :focus-visible) {
     text-decoration-color: var(--primary);
   }
 }

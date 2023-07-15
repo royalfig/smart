@@ -1,27 +1,27 @@
 @font-face {
-  font-family: cabinet;
+  font-family: clash;
+  font-style: normal;
+  font-weight: 200 700;
+  src: url('/assets/fonts/ClashDisplay-Variable.woff2') format('woff2'),
+    url('/assets/fonts/ClashDisplay-Variable.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: archivo;
   font-style: normal;
   font-weight: 100 900;
-  src: url('/assets/fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
-    url('/assets/fonts/CabinetGrotesk-Variable.woff') format('woff');
+  src: url('/assets/fonts/Archivo-Variable.woff2') format('woff2'),
+    url('/assets/fonts/Archivo-Variable.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: satoshi;
-  font-style: normal;
-  font-weight: 300 900;
-  src: url('/assets/fonts/Satoshi-Variable.woff2') format('woff2'),
-    url('/assets/fonts/Satoshi-Variable.woff') format('woff');
-  font-display: swap;
-}
-
-@font-face {
-  font-family: satoshi-italic;
+  font-family: archivo-italic;
   font-style: italic;
-  font-weight: 300 900;
-  src: url('/assets/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
-    url('/assets/fonts/Satoshi-VariableItalic.woff') format('woff');
+  font-weight: 100 900;
+  src: url('/assets/fonts/Archivo-VariableItalic.woff2') format('woff2'),
+    url('/assets/fonts/Archivo-VariableItalic.woff') format('woff');
   font-display: swap;
 }
 
@@ -33,8 +33,8 @@ h5,
 h6 {
   margin: 3rem 0 1.38rem;
   font-family: var(--heading-typeface);
-  font-weight: 700;
-  line-height: 1.3;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 h1 {

@@ -4,7 +4,7 @@
   padding: calc(var(--box-padding) / 2) var(--box-padding);
   margin-block-start: var(--bento-gap);
   font-size: var(--small);
-  line-height: 1.3rem;
+  line-height: 1.5rem;
   background-color: var(--surface-darker);
   border-radius: var(--radius);
 }
@@ -20,15 +20,13 @@
 }
 
 .sm-site-title {
-  margin: 0;
-  margin-inline: var(--spacing-01) var(--spacing-02);
-  overflow: hidden;
+  margin: 0 var(--spacing-02) 0 var(--spacing-01);
+  font-family: var(--body-typeface);
   font-size: inherit;
-  font-size: var(--small);
-  font-weight: 600;
-  line-height: 1.3rem;
+  font-weight: 500;
+  line-height: inherit;
   text-transform: uppercase;
-  letter-spacing: -0.2px;
+  letter-spacing: 0.2px;
   white-space: nowrap;
 }
 

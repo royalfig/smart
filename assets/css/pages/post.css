@@ -75,7 +75,7 @@
 .sm-post-share p {
   font-size: var(--small);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
+  letter-spacing: var(--letter-spacing-expand);
   opacity: 0.5;
 }
 
@@ -124,7 +124,7 @@
   font-size: var(--x-small);
   color: var(--element-light);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
+  letter-spacing: var(--letter-spacing-expand);
   opacity: 0.8;
 }
 

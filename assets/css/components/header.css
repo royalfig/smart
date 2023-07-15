@@ -5,7 +5,6 @@
 
 .sm-header-title {
   margin: 0;
-  font-weight: 900;
   text-wrap: balance;
 }
 
@@ -47,7 +46,7 @@
   line-height: 1;
   color: var(--element-light);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing);
+  letter-spacing: var(--letter-spacing-expand);
   background-color: var(--border-color);
   border-radius: var(--radius);
   translate: 0 -0.5em;
