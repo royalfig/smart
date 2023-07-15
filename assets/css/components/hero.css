@@ -55,7 +55,6 @@
 .sm-hero-button-container:not(:empty) {
   display: flex;
   gap: 1rem;
-  justify-content: center;
   margin-block-start: 2rem;
 }
 

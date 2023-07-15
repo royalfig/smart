@@ -42,8 +42,8 @@
   --button-padding: var(--spacing-02) var(--spacing-03);
 
   /* Type */
-  --body-typeface: 'public', system-ui, sans-serif;
-  --heading-typeface: 'public', system-ui, sans-serif;
+  --body-typeface: satoshi, system-ui, sans-serif;
+  --heading-typeface: cabinet, system-ui, sans-serif;
   --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
     monospace;
   --letter-spacing: 0.2px;

@@ -33,7 +33,11 @@
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
     <script src="{{asset 'built/app.js'}}" type="module" defer></script>
+   
+   <link href="https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&f[]=supreme@400&f[]=technor@600&f[]=satoshi@500&f[]=cabinet-grotesk@800&f[]=gambetta@400&f[]=general-sans@600&display=swap" rel="stylesheet">
 
+   
+   
     {{#if @custom.syntax_highlighting}}
     {{#is "post"}}
     <script src="{{asset 'built/syntax-highlighting.js'}}" type="module" defer></script>

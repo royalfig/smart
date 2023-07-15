@@ -1,15 +1,27 @@
 @font-face {
-  font-family: public;
+  font-family: cabinet;
+  font-style: normal;
   font-weight: 100 900;
-  src: url('/assets/fonts/public-sans.woff2') format('woff2');
+  src: url('/assets/fonts/CabinetGrotesk-Variable.woff2') format('woff2'),
+    url('/assets/fonts/CabinetGrotesk-Variable.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: public;
+  font-family: satoshi;
+  font-style: normal;
+  font-weight: 300 900;
+  src: url('/assets/fonts/Satoshi-Variable.woff2') format('woff2'),
+    url('/assets/fonts/Satoshi-Variable.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: satoshi-italic;
   font-style: italic;
-  font-weight: 100 900;
-  src: url('/assets/fonts/public-sans-italic.woff2') format('woff2');
+  font-weight: 300 900;
+  src: url('/assets/fonts/Satoshi-VariableItalic.woff2') format('woff2'),
+    url('/assets/fonts/Satoshi-VariableItalic.woff') format('woff');
   font-display: swap;
 }
 
