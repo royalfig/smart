@@ -89,7 +89,7 @@
 }
 
 .sm-card-large-square {
-  grid-row: span 12;
+  grid-row: span 16;
   grid-column: span 12;
 }
 
