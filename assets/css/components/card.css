@@ -184,7 +184,7 @@
 
 .sm-card-base .sm-card-body {
   display: grid;
-  gap: var(--gap);
+  gap: var(--spacing-06);
   height: 100%;
 }
 
