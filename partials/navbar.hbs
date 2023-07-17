@@ -68,7 +68,7 @@
     <div class='sm-navbar-right'>
       {{#if @site.members_enabled}}
       {{#if @member}}
-      <a href="#/portal/account">
+      <a href="#/portal/account" aria-label="View account">
       <svg aria-hidden='true'>
         <use href='#sm-person-icon'></use>
       </a>{{else}}
@@ -77,10 +77,10 @@
       {{/if}}
       {{/if}}
      
-      <button class='sm-dark-mode'>
+      <button class='sm-dark-mode' aria-label="Set dark mode">
         <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
       </button>
-      <button class='sm-light-mode'>
+      <button class='sm-light-mode' aria-label="Set light mode">
         <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
       </button>
        <a href='#/search' aria-label="Search {{@site.title}}">
