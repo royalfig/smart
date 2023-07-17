@@ -28,9 +28,9 @@ function navButtonFormatter(nextOrPrevEl, nextOrPrevName, paginationEl) {
 
 export default function generatePagination() {
   const pagination = document.querySelector(".sm-pagination");
-  pagination.setAttribute("aria-label", "page selector");
-
+  
   if (!pagination) return;
+  pagination.setAttribute("aria-label", "page selector");
   const pathname = pathnameParser(window.location.pathname);
   const { page, prev, next, pages } = pagination.dataset;
 
