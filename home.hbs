@@ -182,6 +182,16 @@
                {{> "cards/card-tag"}}
             {{/foreach}}
         {{/get}}
+
+        {{#if @custom.social_media_4_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_4}}">
+                <a class="sm-flex-v" href="{{@custom.social_media_4_url}}" aria-label="Follow me on {{@custom.social_media_4 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_4}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
        
         {{#foreach posts from="14" to="15"}}
            {{#if featured}}
