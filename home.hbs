@@ -9,15 +9,13 @@
             {{> "hero"}}
         {{/match}}
 
-        {{#foreach posts from="1" to="4"}}
+        {{#foreach posts from="1" to="3"}}
             {{#if featured}}
                 {{> "cards/card-featured"}}
             {{else}}
                 {{> "cards/card-base"}}
             {{/if}}
         {{/foreach}}
-
-        {{> "cards/card-cta"}}
 
         {{#if @custom.social_media_1_url}}
             <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_1}}">
@@ -29,59 +27,13 @@
             </article>
         {{/if}}
 
-        {{#if @custom.social_media_2_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_2}}">
-                <a class="sm-flex-v" href="{{@custom.social_media_2_url}}" aria-label="Follow me on {{@custom.social_media_2 }}">
-                    <svg aria-hidden="true">
-                        <use href="#{{@custom.social_media_2}}-icon"></use>
-                    </svg>
-                </a>
-            </article>
-        {{/if}}
-
-        {{#foreach posts from="5" to="8"}}
-            {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
-        {{/foreach}}
-
-        {{#get "posts" limit="1" order="published_at asc"}}
-            {{#foreach posts}}
-                <article class="sm-card sm-card-number sm-card-number-reversed sm-card-small-square sm-flex-v">
-                    <p class="sm-card-number-description">The first post was published on</p>
-                    <p class="sm-card-number-focus">{{date published_at}}</p>
-                </article>
+        {{#get "tags" include="count.posts" limit="2" order="count.posts" as |tags|}}
+            {{#foreach tags}}
+               {{> "cards/card-tag"}}
             {{/foreach}}
         {{/get}}
 
-        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
-           <p class="sm-card-number-focus">{{pagination.total}}</p>
-           <p class="sm-card-number-description">{{plural pagination.total empty="" singular="post published" plural="total posts published"}}</p>
-        </article>
-
-        {{#if @custom.social_media_3_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_3}}">
-                <a class="sm-flex-v" href="{{@custom.social_media_3_url}}" aria-label="Follow me on {{@custom.social_media_3 }}">
-                    <svg aria-hidden="true">
-                        <use href="#{{@custom.social_media_3}}-icon"></use>
-                    </svg>
-                </a>
-            </article>
-        {{/if}}
-
-        {{#if @custom.social_media_4_url}}
-            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_4}}">
-                <a class="sm-flex-v" href="{{@custom.social_media_4_url}}" aria-label="Follow me on {{@custom.social_media_4 }}">
-                    <svg aria-hidden="true">
-                        <use href="#{{@custom.social_media_4}}-icon"></use>
-                    </svg>
-                </a>
-            </article>
-        {{/if}}
-
-        {{#foreach posts from="9" to="12"}}
+        {{#foreach posts from="4" to="5"}}
             {{#if featured}}
                 {{> "cards/card-featured"}}
             {{else}}
@@ -89,13 +41,7 @@
             {{/if}}
         {{/foreach}}
 
-         {{#if @site.members_enabled}}
-        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
-           <p class="sm-card-number-focus">{{total_members}}</p>
-           <p class="sm-card-number-description">members</p>
-        </article>
-        {{/if}}
-
+        {{!-- End section 1 --}}
 
         {{#get "tags" limit="all"}}
         {{#if tags}}
@@ -162,8 +108,51 @@
             </article>
         {{/if}}
         {{/get}}
-         
-        {{#foreach posts from="13" to="15"}}
+
+        {{!-- Start section 2 --}}
+
+        {{#foreach posts from="6" to="8"}}
+            {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
+        {{/foreach}}
+
+        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
+           <p class="sm-card-number-focus">{{pagination.total}}</p>
+           <p class="sm-card-number-description">{{plural pagination.total empty="" singular="post published" plural="total posts published"}}</p>
+        </article>
+
+        {{#if @custom.social_media_2_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_2}}">
+                <a class="sm-flex-v" href="{{@custom.social_media_2_url}}" aria-label="Follow me on {{@custom.social_media_2 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_2}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
+
+        {{#get "tags" include="count.posts" limit="4" order="count.posts" as |tags|}}
+            {{#foreach tags from="3" to="4"}}
+               {{> "cards/card-tag"}}
+            {{/foreach}}
+        {{/get}}
+
+        {{#foreach posts from="9" to="10"}}
+            {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
+        {{/foreach}}
+
+        {{> "cards/card-cta"}}
+
+        {{!-- start section 3 --}}
+        
+        {{#foreach posts from="11" to="13"}}
            {{#if featured}}
                 {{> "cards/card-featured"}}
             {{else}}
@@ -171,13 +160,37 @@
             {{/if}}
         {{/foreach}}
 
+        {{#if @custom.social_media_3_url}}
+            <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_3}}">
+                <a class="sm-flex-v" href="{{@custom.social_media_3_url}}" aria-label="Follow me on {{@custom.social_media_3 }}">
+                    <svg aria-hidden="true">
+                        <use href="#{{@custom.social_media_3}}-icon"></use>
+                    </svg>
+                </a>
+            </article>
+        {{/if}}
+        
+         {{#if @site.members_enabled}}
+        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
+           <p class="sm-card-number-focus">{{total_members}}</p>
+           <p class="sm-card-number-description">members</p>
+        </article>
+        {{/if}}
        
         {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
-            {{#foreach tags}}
+            {{#foreach tags from="5" to="6"}}
                {{> "cards/card-tag"}}
             {{/foreach}}
         {{/get}}
        
+        {{#foreach posts from="14" to="15"}}
+           {{#if featured}}
+                {{> "cards/card-featured"}}
+            {{else}}
+                {{> "cards/card-base"}}
+            {{/if}}
+        {{/foreach}}
+
         </div>
     </div>
 </main>
