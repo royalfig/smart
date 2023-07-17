@@ -8,7 +8,8 @@
 
     {{!-- Preloads and preconnects --}}
     <link rel="preconnect" href="https://cdn.jsdelivr.net/">
-    <link rel="preload" href="/assets/fonts/public-sans.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/ClashDisplay-Variable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/Archivo-Variable.woff2" as="font" type="font/woff2" crossorigin>
 
     {{!-- CSS and Fonts --}}
 
@@ -33,10 +34,6 @@
     {{!-- Scripts and styles for after load --}}
     <link rel="stylesheet" href="{{asset 'built/app.css'}}">
     <script src="{{asset 'built/app.js'}}" type="module" defer></script>
-   
-   <link href="https://api.fontshare.com/v2/css?f[]=archivo@400&f[]=clash-display@600&f[]=supreme@400&f[]=technor@600&f[]=satoshi@500&f[]=cabinet-grotesk@800&f[]=gambetta@400&f[]=general-sans@600&display=swap" rel="stylesheet">
-
-   
    
     {{#if @custom.syntax_highlighting}}
     {{#is "post"}}

@@ -189,7 +189,7 @@
 }
 
 .sm-feature-image-card:not(.sm-featured-card) .sm-card-body {
-  grid-template-rows: 50% 50%;
+  grid-template-rows: auto 1fr;
   padding-block-end: 0;
 }
 
