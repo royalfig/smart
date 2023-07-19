@@ -59,7 +59,7 @@
   margin: 0 0 0.5rem;
   font-size: var(--h4);
   line-height: 1.2;
-  text-wrap: balance;
+  text-wrap: pretty;
   letter-spacing: var(--letter-spacing-contract);
 }
 
@@ -68,7 +68,7 @@
   overflow: hidden;
   font-size: var(--small);
   color: var(--element-light);
-  text-wrap: balance;
+  text-wrap: pretty;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
@@ -119,7 +119,7 @@
   font-size: var(--h4);
   font-weight: 900;
   line-height: 1.1;
-  text-wrap: balance;
+  text-wrap: pretty;
   background-image: none !important;
 }
 
@@ -313,7 +313,7 @@
   line-height: 1.2;
   text-align: center;
   text-transform: lowercase;
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 /* Social media card */
@@ -443,7 +443,7 @@
   line-height: 1.2;
 
   /* text-transform: lowercase; */
-  text-wrap: balance;
+  text-wrap: pretty;
 }
 
 /* Topics card */
@@ -475,7 +475,7 @@
   margin: 0;
   font-size: var(--h4);
   text-align: center;
-  text-wrap: balance;
+  text-wrap: pretty;
   background-color: var(--surface-darker);
   transition: color var(--transition);
 }
