@@ -17,6 +17,7 @@
 }
 
 .sm-header-image {
+  grid-column: 2 / -2;
   width: 100%;
   aspect-ratio: 16 / 9;
 }

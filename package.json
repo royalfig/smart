@@ -31,7 +31,7 @@
     "@babel/core": "^7.21.0",
     "@babel/preset-env": "^7.20.2",
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.1",
+    "@rollup/plugin-commonjs": "^25.0.3",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.0",
     "bestzip": "^2.2.1",
@@ -40,13 +40,13 @@
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-import": "2.27.5",
     "postcss-import": "^15.1.0",
-    "postcss-preset-env": "^8.0.1",
+    "postcss-preset-env": "^9.0.0",
     "rollup": "^3.18.0",
     "rollup-plugin-livereload": "^2.0.5",
     "rollup-plugin-postcss": "^4.0.2",
     "stylelint": "15.10.1",
     "stylelint-config-recess-order": "^4.0.0",
-    "stylelint-config-standard": "^33.0.0"
+    "stylelint-config-standard": "^34.0.0"
   },
   "dependencies": {
     "medium-zoom": "^1.0.8",

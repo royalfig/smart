@@ -1,24 +1,3 @@
-.sm-hero {
-  position: relative;
-  grid-column: content;
-  margin-block: var(--bento-box);
-}
-
-.sm-hero a {
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-
-  &:where(:hover, :focus-visible) {
-    text-decoration-color: var(--primary);
-  }
-}
-
-.sm-hero-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--bento-gap);
-}
-
 .sm-hero-left {
   position: relative;
   z-index: 1;
@@ -34,6 +13,15 @@
   font-size: var(--h5);
   font-weight: 600;
   color: var(--element-dark);
+
+  & a {
+    text-decoration: underline;
+    text-decoration-thickness: 3px;
+
+    &:hover {
+      text-decoration-color: var(--primary);
+    }
+  }
 }
 
 /* Hero image */

@@ -19,7 +19,11 @@
     [content-end]
     1fr 1fr var(--gutter) [end];
   row-gap: 2rem;
-  margin-block: 3rem;
+  margin-block: var(--spacing-10) var(--bento-gap);
+}
+
+.post-template .sm-header-grid {
+  margin-block: var(--spacing-10);
 }
 
 .sm-content-grid {
