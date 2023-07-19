@@ -206,7 +206,7 @@
 .sm-card-base img {
   display: block;
   width: 100%;
-  border-radius: var(--radius) var(--radius) 0 0;
+  border-radius: calc(var(--radius) * 0.8) calc(var(--radius) * 0.8) 0 0;
   object-fit: cover;
 }
 
