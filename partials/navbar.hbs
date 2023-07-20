@@ -1,5 +1,5 @@
 {{! Navigation bar }}
-<div class='sm-grid'>
+<div class='sm-grid sm-navbar-wrapper'>
   <header class='sm-navbar sm-flex-h'>
     <div class='sm-navbar-left sm-flex-h'>
       {{#if @site.icon}}
@@ -66,16 +66,15 @@
     </div>
 
     <div class='sm-navbar-right'>
-      {{#if @site.members_enabled}}
-      {{#if @member}}
+      {{#match @site.members_enabled}}
+      {{#match @member}}
       <a href="#/portal/account" aria-label="View account">
       <svg aria-hidden='true'>
         <use href='#sm-person-icon'></use>
       </a>{{else}}
       <a href='#/portal/signin'>Login</a>
-      <a class='sm-sub-button' href='#/portal/signup'>Subscribe</a>
-      {{/if}}
-      {{/if}}
+      {{/match}}
+      {{/match}}
      
       <button class='sm-dark-mode' aria-label="Set dark mode">
         <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>

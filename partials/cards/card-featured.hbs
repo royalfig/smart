@@ -1,5 +1,5 @@
 
-<article class="sm-card sm-card-landscape {{#is "home"}}sm-card-{{@number}}{{/is}} {{slug}} {{#if featured}}sm-featured-card{{/if}} {{#if feature_image}}sm-feature-image-card{{else}}sm-no-image-card{{/if}}">
+<article class="sm-card sm-card-landscape {{#is "home"}}sm-card-{{@number}}{{/is}} {{slug}} sm-featured-card {{#if feature_image}}sm-feature-image-card{{else}}sm-no-image-card{{/if}}">
     <a href="{{url}}">
       {{#if feature_image}}
       <picture>
@@ -55,7 +55,7 @@
       {{/if}}
       
       <div class="sm-card-body">
-        <h2 class="sm-card-title">{{^if access}}<svg aria-label="premium content"><use href="#sm-lock-icon"></use></svg>{{/if}}{{title}}</h2>
+        <h3 class="sm-card-title">{{^if access}}<svg aria-label="premium content"><use href="#sm-lock-icon"></use></svg>{{/if}}{{title}}</h3>
         <div class="sm-flex-h">
                 <p class="sm-card-excerpt">
                   {{excerpt}}

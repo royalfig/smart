@@ -1,12 +1,15 @@
 .sm-nav-menu {
-  --navbar-width: calc(var(--bento-gap) * 2 + (var(--box-padding) * 2));
+  --navbar-width: calc(1);
 
   position: fixed;
-  top: var(--navbar-width);
+  top: 3rem;
   z-index: 35;
   display: none;
   width: 100%;
-  height: calc(100dvh - var(--navbar-width) - var(--bento-gap));
+  height: calc(100dvh - 3rem);
+  font-family: var(--ui-typeface);
+  background-color: var(--surface-85);
+  backdrop-filter: blur(8px);
 }
 
 .sm-nav-menu.sm-show-nav-menu {
@@ -15,9 +18,7 @@
 
 .sm-nav-menu-inner {
   grid-column: content;
-  padding: var(--box-padding);
-  background-color: var(--surface-darker);
-  border-radius: var(--radius);
+  padding-block: var(--spacing-06);
 
   .sm-navigation {
     display: flex;
