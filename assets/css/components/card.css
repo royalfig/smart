@@ -109,7 +109,7 @@
   justify-content: center;
   padding: var(--box-padding);
   text-align: center;
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
   border-radius: var(--radius);
   opacity: 0;
 }
@@ -179,7 +179,7 @@
 
 /* Base carsd */
 .sm-card-base {
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
 }
 
 .sm-card-base .sm-card-body {
@@ -319,7 +319,7 @@
 
 /* Social media card */
 .sm-card-social-media {
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
 }
 
 .sm-card-social-media a {
@@ -424,7 +424,7 @@
   justify-content: center;
   padding: var(--box-padding);
   text-align: center;
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
   border-radius: var(--radius);
 }
 
@@ -450,7 +450,7 @@
 /* Topics card */
 .sm-card-topics {
   overflow: hidden;
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
   border-radius: var(--radius);
 }
 
@@ -477,7 +477,7 @@
   font-size: var(--h4);
   text-align: center;
   text-wrap: pretty;
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
   transition: color var(--transition);
 }
 
