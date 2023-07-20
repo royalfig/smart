@@ -14,11 +14,12 @@
 }
 
 .sm-post-content > p:first-of-type::first-letter {
-  font-size: 7.5rem;
   float: left;
   margin-inline-end: var(--spacing-04);
-  font-weight: 500;
   font-family: var(--heading-typeface);
+  font-size: 7.5rem;
+  font-weight: 500;
+  line-height: 0.75;
 }
 
 /* Links */

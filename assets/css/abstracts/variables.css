@@ -104,10 +104,11 @@
   --surface-darker: hsl(var(--primary-h) 17% 82%);
 
   /* Element */
-  --element: hsl(var(--primary-h) 7% 5%);
-  --element-light: hsl(var(--primary-h) 7% 35%);
-  --element-dark: hsl(var(--primary-h) 7% 1%);
-  --border-color: hsl(var(--primary-h) 7% 82% / 50%);
+  --element: hsl(var(--primary-h) 7% 1.5%);
+  --element-light: hsl(var(--primary-h) 0.9% 7.4%);
+  --element-dark: hsl(var(--primary-h) 7% 0%);
+  --element-darker: hsl(var(--primary-h) 3% 0%);
+  --border-color: hsl(var(--primary-h) 0.6% 87%);
   --navbar-color: hsl(var(--primary-h) 7% 92% / 80%);
   --border-color-accent: hsla(var(--primary-h) 7% 72% / 50%);
   --button-text: hsl(var(--primary-h) 100% 90%);
@@ -139,18 +140,20 @@
   --secondary-dark: hsl(
     var(--complementary-color) var(--saturation) calc(var(--lightness) * 1.15)
   );
-  --element: hsl(var(--primary-h) 7% 96%);
+
+  /* Element */
+  --element: hsl(var(--primary-h) 7% 99%);
   --element-light: hsl(var(--primary-h) 7% 100%);
-  --element-dark: hsl(var(--primary-h) 7% 89%);
-  --element-darker: hsl(var(--primary-h) 7% 82%);
+  --element-dark: hsl(var(--primary-h) 1.9% 96%);
+  --element-darker: hsl(var(--primary-h) 1.1% 93%);
 
   /* Surface */
+  --surface-darker: hsl(var(--primary-h) 0% 0%);
+  --surface-dark: hsl(var(--primary-h) 6.5% 1.4%);
   --surface: hsl(var(--primary-h) 0.8% 7.3%);
   --surface-85: hsla(var(--primary-h) 0.8% 7.3% / 85%);
   --surface-light: hsl(var(--primary-h) 0.4% 11%);
-  --surface-dark: hsl(var(--primary-h) 6.5% 1.4%);
-  --surface-darker: hsl(var(--primary-h) 0% 0%);
-  --border-color: hsl(var(--primary-h) 7% 35% / 50%);
+  --border-color: hsl(var(--primary-h) 0.4% 15%);
   --navbar-color: hsl(var(--primary-h) 7% 15% / 80%);
   --border-color-accent: hsla(var(--primary-h) 7% 25% / 50%);
   --button-text: hsl(var(--primary-h) 100% 10%);

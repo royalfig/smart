@@ -16,6 +16,11 @@
 .sm-button {
   color: var(--button-text);
   background-color: var(--primary);
+  transition: background-color var(--transition)
+
+  &:hover {
+    background-color: var(--primary-light);
+  }
 }
 
 /* Icon button */
