@@ -71,7 +71,7 @@
         </div>
 
         <h2 class="sm-home-header">A Short History of This Site</h2>
-        <p class="sm-home-history">I published the first post on this site {{#get "posts" limit="1" order="asc"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then, I&rsquo;ve racked up {{pagination.total}} posts. If you&rsquo;re the type who loves good quality content or randomly likes to sign up for things, consider <a href="#/portal/signup">subscribing</a>. It&rsquo;s free, it&rsquo;s spamless, and you can unsub at any time.</p>
+        <p class="sm-home-history">I published the first post on this site {{#get "posts" limit="1" order="published_at asc"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then, I&rsquo;ve racked up {{pagination.total}} posts and {{total_members}} members. If you&rsquo;re the type who is interested in building things on the web or just randomly likes to sign up for things, consider <a href="#/portal/signup">subscribing</a>. It&rsquo;s free, spamless, and you can unsub at any time.</p>
 
         <h2 class="sm-home-header">Let's Keep Things Topical</h2>
         <div class="sm-grid-home">

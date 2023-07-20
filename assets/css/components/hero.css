@@ -47,7 +47,12 @@
   justify-content: flex-start;
   margin-block-start: 2rem;
 
-  a:last-child:hover {
-    color: var(--secondary);
+  a:last-child {
+    font-weight: 600;
+    transition: color var(--transition);
+
+    &:hover {
+      color: var(--secondary);
+    }
   }
 }

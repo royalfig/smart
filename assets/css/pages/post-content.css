@@ -10,14 +10,14 @@
 }
 
 .sm-post-content > p:first-of-type {
-  font-size: 120%;
+  font-size: 1.25rem;
 }
 
 .sm-post-content > p:first-of-type::first-letter {
   float: left;
-  margin-inline-end: var(--spacing-04);
+  margin-inline-end: var(--spacing-03);
   font-family: var(--heading-typeface);
-  font-size: 7.5rem;
+  font-size: 7.25rem;
   font-weight: 500;
   line-height: 0.75;
 }
