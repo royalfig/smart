@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
   padding: var(--button-padding);
+  font-family: var(--ui-typeface);
   font-size: var(--small);
   background-color: var(--surface-darker);
   border-radius: var(--radius);
