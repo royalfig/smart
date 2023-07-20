@@ -9,6 +9,18 @@
   margin-block-end: 1rem;
 }
 
+.sm-post-content > p:first-of-type {
+  font-size: 120%;
+}
+
+.sm-post-content > p:first-of-type::first-letter {
+  font-size: 7.5rem;
+  float: left;
+  margin-inline-end: var(--spacing-04);
+  font-weight: 500;
+  font-family: var(--heading-typeface);
+}
+
 /* Links */
 .sm-post-content a {
   text-decoration: underline;
