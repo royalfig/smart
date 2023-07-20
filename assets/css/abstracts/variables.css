@@ -36,7 +36,7 @@
   --spacing-34: 8.5rem;
   --spacing-36: 9rem;
   --gap: var(--spacing-04);
-  --gutter: var(--spacing-04);
+  --gutter: var(--spacing-06);
   --bento-gap: var(--spacing-03);
   --box-padding: var(--spacing-06);
   --button-padding: var(--spacing-02) var(--spacing-03);
@@ -64,14 +64,13 @@
 @media (--tablet) {
   :root {
     --gap: var(--spacing-06);
-    --gutter: var(--spacing-06);
+    --gutter: var(--spacing-08);
   }
 }
 
 @media (--laptop) {
   :root {
     --gap: var(--spacing-08);
-    --gutter: var(--spacing-08);
   }
 }
 
