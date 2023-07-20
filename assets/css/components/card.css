@@ -248,7 +248,6 @@
 .sm-tag-card {
   position: relative;
   overflow: hidden;
-  font-family: var(ui-typeface);
   color: #fff;
   background-color: var(--surface-light);
   border-radius: var(--radius);

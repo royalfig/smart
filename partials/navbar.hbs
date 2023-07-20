@@ -54,13 +54,7 @@
           >
         </picture>
       {{/if}}
-      {{#is 'home'}}
-        <h1 class='sm-site-title'><a
-            href='{{@site.url}}'
-          >{{@site.title}}</a></h1>
-      {{else}}
-        <p class='sm-site-title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
-      {{/is}}
+      <p class='sm-site-title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
       {{navigation}}
 
     </div>

@@ -7,12 +7,9 @@
   grid-column: content;
 }
 
-.sm-hero-text {
-}
-
 .sm-hero-description {
   font-family: var(--ui-typeface);
-  font-size: var(--h1);
+  font-size: var(--h2);
   font-weight: 400;
   line-height: 1.2;
   color: var(--element-dark);
@@ -24,6 +21,12 @@
     &:hover {
       text-decoration-color: var(--primary);
     }
+  }
+}
+
+@media (--tablet) {
+  .sm-hero-description {
+    font-size: var(--h1);
   }
 }
 
@@ -40,7 +43,11 @@
 }
 
 .sm-hero-button-container:not(:empty) {
-  display: flex;
-  gap: 1rem;
+  gap: var(--spacing-04);
+  justify-content: flex-start;
   margin-block-start: 2rem;
+
+  a:last-child:hover {
+    color: var(--secondary);
+  }
 }

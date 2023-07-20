@@ -196,7 +196,7 @@
 .sm-home-header {
   grid-column: content;
   margin-block: var(--spacing-22) var(--spacing-02);
-  font-size: var(--h3);
+  font-weight: 400;
 }
 
 .sm-home-history {

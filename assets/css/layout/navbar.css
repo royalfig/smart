@@ -74,7 +74,8 @@
   transition: clip-path 0.3s;
 }
 
-.sm-navigation-item a:hover::before {
+.sm-navigation-item a:hover::before,
+a.sm-nav-current::before {
   clip-path: inset(0 0 0 0);
 }
 
