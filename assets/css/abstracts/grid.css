@@ -178,8 +178,8 @@
   }
 
   .sm-card-short-landscape {
-    grid-row: span 3;
-    grid-column: span 9;
+    grid-row: span 6;
+    grid-column: span 6;
   }
 
   .sm-card-landscape {
@@ -190,5 +190,23 @@
   .sm-card-portrait {
     grid-row: span 6;
     grid-column: span 6;
+  }
+}
+
+.sm-home-header {
+  grid-column: content;
+  margin-block: var(--spacing-22) var(--spacing-02);
+  font-size: var(--h3);
+}
+
+.sm-home-history {
+  grid-column: content;
+
+  a {
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration-color: var(--primary);
+    }
   }
 }

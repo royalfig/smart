@@ -1,12 +1,20 @@
+.home-template .sm-navbar-wrapper {
+  background-color: var(--surface-dark);
+}
+
 .sm-navbar {
   grid-column: content;
   align-items: center;
-  padding: calc(var(--box-padding) / 2) var(--box-padding);
-  margin-block-start: var(--bento-gap);
+  padding-block: calc(var(--box-padding) / 2);
+  font-family: var(--ui-typeface);
   font-size: var(--small);
   line-height: 1.5rem;
-  background-color: var(--surface-darker);
-  border-radius: var(--radius);
+
+  .sm-button {
+    padding: var(--spacing-01) var(--spacing-02);
+    font-size: inherit;
+    font-weight: 600;
+  }
 }
 
 .sm-navbar-left picture {
@@ -21,7 +29,6 @@
 
 .sm-site-title {
   margin: 0 var(--spacing-02) 0 var(--spacing-01);
-  font-family: var(--body-typeface);
   font-size: inherit;
   font-weight: 500;
   line-height: inherit;
@@ -90,8 +97,6 @@
   display: flex;
   gap: var(--spacing-01);
   align-items: center;
-  padding: 0 var(--spacing-02);
-  font-weight: 600;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
   transition: border-color var(--transition), color var(--transition),

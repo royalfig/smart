@@ -3,6 +3,7 @@
 .sm-icon-button,
 .sm-button-simple {
   padding: var(--button-padding);
+  font-family: var(--ui-typeface);
   font-size: var(--small);
   font-weight: 600;
   line-height: 1;

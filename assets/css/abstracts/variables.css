@@ -10,9 +10,9 @@
   --laptop: 992px;
   --desktop: 1200px;
   --widescreen: 1400px;
-  --width: 992px;
+  --width: 1200px;
   --post-width: 768px;
-  --content-width: 700px;
+  --content-width: 600px;
   --radius: 0.5em;
   --radius-small: 3px;
   --spacing-01: 0.25rem;
@@ -42,10 +42,11 @@
   --button-padding: var(--spacing-02) var(--spacing-03);
 
   /* Type */
-  --body-typeface: archivo, system-ui, sans-serif;
-  --heading-typeface: clash, system-ui, sans-serif;
-  --mono-typeface: 'JetBrains Mono', 'Cascadia Code', 'Fira Code', 'Menlo',
-    monospace;
+  --ui-typeface: archivo, system-ui, sans-serif;
+  --body-typeface: lora, 'Bitstream Charter', 'Sitka Text', cambria, serif;
+  --heading-typeface: archivo, sans-serif;
+  --mono-typeface: ui-monospace, 'Cascadia Code', 'Source Code Pro', menlo,
+    consolas, 'DejaVu Sans Mono', monospace;
   --letter-spacing-expand: 0.2px;
   --letter-spacing-contract: -0.2px;
   --h1: 2.488rem;
@@ -109,7 +110,7 @@
   --border-color: hsl(var(--primary-h) 7% 82% / 50%);
   --navbar-color: hsl(var(--primary-h) 7% 92% / 80%);
   --border-color-accent: hsla(var(--primary-h) 7% 72% / 50%);
-  --button-text: hsl(var(--primary-h) 7% 100%);
+  --button-text: hsl(var(--primary-h) 100% 90%);
   --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 9% / 2%),
     0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 9% / 2.8%),
     0 3px 10px hsla(var(--primary-h) var(--saturation) 9% / 3.5%),
@@ -142,15 +143,17 @@
   --element-light: hsl(var(--primary-h) 7% 100%);
   --element-dark: hsl(var(--primary-h) 7% 89%);
   --element-darker: hsl(var(--primary-h) 7% 82%);
-  --surface: hsl(var(--primary-h) 7% 12%);
-  --surface-85: hsla(var(--primary-h) 7% 15% / 85%);
-  --surface-light: hsl(var(--primary-h) 7% 18%);
-  --surface-dark: hsl(var(--primary-h) 7% 8%);
-  --surface-darker: hsl(var(--primary-h) 7% 3%);
+
+  /* Surface */
+  --surface: hsl(var(--primary-h) 0.8% 7.3%);
+  --surface-85: hsla(var(--primary-h) 0.8% 7.3% / 85%);
+  --surface-light: hsl(var(--primary-h) 0.4% 11%);
+  --surface-dark: hsl(var(--primary-h) 6.5% 1.4%);
+  --surface-darker: hsl(var(--primary-h) 0% 0%);
   --border-color: hsl(var(--primary-h) 7% 35% / 50%);
   --navbar-color: hsl(var(--primary-h) 7% 15% / 80%);
   --border-color-accent: hsla(var(--primary-h) 7% 25% / 50%);
-  --button-text: hsl(var(--primary-h) 7% 3%);
+  --button-text: hsl(var(--primary-h) 100% 10%);
   --box-shadow: 0 0.7px 2.2px hsla(var(--primary-h) var(--saturation) 1% / 2%),
     0 1.6px 5.3px hsla(var(--primary-h) var(--saturation) 1% / 4.8%),
     0 3px 10px hsla(var(--primary-h) var(--saturation) 1% / 5.5%),

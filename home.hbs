@@ -1,23 +1,27 @@
 {{!< default}}
 
 <main id="sm-main">
+    {{#match @custom.hero_description}}
+        {{> "hero"}}
+    {{/match}}
+
     
 
     <div class="sm-grid">
+        <h2 class="sm-home-header">These Are the Latest Posts</h2>
         <div class="sm-grid-home">
-        {{#match @custom.hero_description}}
-            {{> "hero"}}
-        {{/match}}
+            {{#foreach posts from="1" to="5"}}
+                {{#if @first}}
+                    {{> "cards/card-featured"}}
+                {{else}}
+                    {{> "cards/card-base"}}
+                {{/if}}
+            {{/foreach}}
+        </div>
 
-        {{#foreach posts from="1" to="3"}}
-            {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
-        {{/foreach}}
-
-        {{#if @custom.social_media_1_url}}
+        <h2 class="sm-home-header">Check It Out. I'm online</h2>
+        <div class="sm-grid-home">
+            {{#if @custom.social_media_1_url}}
             <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_1}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_1_url}}" aria-label="Follow me on {{@custom.social_media_1 }}">
                     <svg aria-hidden="true">
@@ -25,15 +29,8 @@
                     </svg>
                 </a>
             </article>
-        {{/if}}
-
-        {{#get "tags" include="count.posts" limit="2" order="count.posts" as |tags|}}
-            {{#foreach tags}}
-               {{> "cards/card-tag"}}
-            {{/foreach}}
-        {{/get}}
-
-        {{#if @custom.social_media_2_url}}
+            {{/if}}
+            {{#if @custom.social_media_2_url}}
             <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_2}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_2_url}}" aria-label="Follow me on {{@custom.social_media_2 }}">
                     <svg aria-hidden="true">
@@ -41,100 +38,8 @@
                     </svg>
                 </a>
             </article>
-        {{/if}}
-
-        {{#foreach posts from="4" to="5"}}
-            {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
             {{/if}}
-        {{/foreach}}
-
-        {{!-- End section 1 --}}
-
-        {{#get "tags" limit="all"}}
-        {{#if tags}}
-            <article class="sm-card-topics sm-card-landscape">
-                <a href="/topics">
-                    <h2>Explore {{tags.length}} topics&nbsp;&rarr;</h2>
-                {{#foreach tags limit="12"}}
-                    {{#if feature_image}}
-                         <picture class="">
-                    <source 
-                        srcset="
-                        {{img_url feature_image size="48" format="avif"}} 48w,
-                        {{img_url feature_image size="80" format="avif"}} 80w,
-                        {{img_url feature_image size="160" format="avif"}} 160w,
-                        {{img_url feature_image size="240" format="avif"}} 240w,
-                        {{img_url feature_image size="528" format="avif"}} 528w,
-                        {{img_url feature_image size="800" format="avif"}} 800w,
-                        {{img_url feature_image size="1200" format="avif"}} 1200w,
-                        {{img_url feature_image size="1600" format="avif"}} 1600w,
-                        {{img_url feature_image size="1920" format="avif"}} 1920w,
-                        {{img_url feature_image size="2000" format="avif"}} 2000w"
-                        sizes="240px" 
-                        type="image/avif"
-                    >
-                    <source 
-                        srcset="
-                        {{img_url feature_image size="48" format="webp"}} 48w,
-                        {{img_url feature_image size="80" format="webp"}} 80w,
-                        {{img_url feature_image size="160" format="webp"}} 160w,
-                        {{img_url feature_image size="240" format="webp"}} 240w,
-                        {{img_url feature_image size="528" format="webp"}} 528w,
-                        {{img_url feature_image size="800" format="webp"}} 800w,
-                        {{img_url feature_image size="1200" format="webp"}} 1200w,
-                        {{img_url feature_image size="1600" format="webp"}} 1600w,
-                        {{img_url feature_image size="1920" format="webp"}} 1920w,
-                        {{img_url feature_image size="2000" format="webp"}} 2000w"
-                        sizes="240px" 
-                        type="image/webp"
-                    >
-                    <img
-                        srcset="
-                        {{img_url feature_image size="48"}} 48w,
-                        {{img_url feature_image size="80"}} 80w,
-                        {{img_url feature_image size="160"}} 160w,
-                        {{img_url feature_image size="240"}} 240w,
-                        {{img_url feature_image size="528"}} 528w,
-                        {{img_url feature_image size="800"}} 800w,
-                        {{img_url feature_image size="1200"}} 1200w,
-                        {{img_url feature_image size="1600"}} 1600w,
-                        {{img_url feature_image size="1920"}} 1920w,
-                        {{img_url feature_image size="2000"}} 2000w"
-                        sizes="240px" 
-                        src="{{img_url feature_image size="240"}}"
-                        alt="{{name}}"
-                        loading="lazy"
-                        width="240"
-                        height="135"
-                    >
-                    </picture>
-                    {{/if}}
-                   
-                {{/foreach}}
-            </a>
-            </article>
-        {{/if}}
-        {{/get}}
-
-        {{!-- Start section 2 --}}
-
-        {{#foreach posts from="6" to="8"}}
-            {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
-        {{/foreach}}
-
-        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
-           <p class="sm-card-number-focus">{{pagination.total}}</p>
-           <p class="sm-card-number-description">{{plural pagination.total empty="" singular="post published" plural="total posts published"}}</p>
-        </article>
-
-        {{#if @custom.social_media_3_url}}
+            {{#if @custom.social_media_3_url}}  
             <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_3}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_3_url}}" aria-label="Follow me on {{@custom.social_media_3 }}">
                     <svg aria-hidden="true">
@@ -142,35 +47,8 @@
                     </svg>
                 </a>
             </article>
-        {{/if}}
-
-        {{#get "tags" include="count.posts" limit="4" order="count.posts" as |tags|}}
-            {{#foreach tags from="3" to="4"}}
-               {{> "cards/card-tag"}}
-            {{/foreach}}
-        {{/get}}
-
-        {{#foreach posts from="9" to="10"}}
-            {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
             {{/if}}
-        {{/foreach}}
-
-        {{> "cards/card-cta"}}
-
-        {{!-- start section 3 --}}
-        
-        {{#foreach posts from="11" to="13"}}
-           {{#if featured}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
-        {{/foreach}}
-
-        {{#if @custom.social_media_4_url}}
+            {{#if @custom.social_media_4_url}}
             <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_4}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_4_url}}" aria-label="Follow me on {{@custom.social_media_4 }}">
                     <svg aria-hidden="true">
@@ -178,27 +56,43 @@
                     </svg>
                 </a>
             </article>
-        {{/if}}
+            {{/if}}
+        </div>
 
-        {{#get "tags" include="count.posts" limit="6" order="count.posts" as |tags|}}
-            {{#foreach tags from="5" to="6"}}
+        <h2 class="sm-home-header">The Good Posts Keep On Rollin'</h2>
+        <div class="sm-grid-home">
+            {{#foreach posts from="6" to="10"}}
+                {{#if @first}}
+                    {{> "cards/card-featured"}}
+                {{else}}
+                    {{> "cards/card-base"}}
+                {{/if}}
+            {{/foreach}}
+        </div>
+
+        <h2 class="sm-home-header">A Short History of This Site</h2>
+        <p class="sm-home-history">I published the first post on this site {{#get "posts" limit="1" order="asc"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then, I&rsquo;ve racked up {{pagination.total}} posts. If you&rsquo;re the type who loves good quality content or randomly likes to sign up for things, consider <a href="#/portal/signup">subscribing</a>. It&rsquo;s free, it&rsquo;s spamless, and you can unsub at any time.</p>
+
+        <h2 class="sm-home-header">Let's Keep Things Topical</h2>
+        <div class="sm-grid-home">
+        {{#get "tags" include="count.posts" limit="8" order="count.posts desc" filter="visibility:public" as |tags|}}
+        {{log tags}}
+            {{#foreach tags}}
                {{> "cards/card-tag"}}
             {{/foreach}}
         {{/get}}
-      
-        <article class="sm-card sm-card-number sm-card-small-square sm-flex-v">
-           <p class="sm-card-number-focus">{{total_members}}</p>
-           <p class="sm-card-number-description">members</p>
-        </article>
-       
-        {{#foreach posts from="14" to="15"}}
-           {{#if featured}}
+        </div>
+        
+        <h2 class="sm-home-header">A Smidge More Posts</h2>
+        <div class="sm-grid-home">
+        {{#foreach posts from="11" to="15"}}
+            {{#if @first}}
                 {{> "cards/card-featured"}}
             {{else}}
                 {{> "cards/card-base"}}
             {{/if}}
         {{/foreach}}
-
+        </div>
         </div>
     </div>
 </main>

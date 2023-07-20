@@ -18,6 +18,10 @@
   align-items: center;
   justify-content: center;
   text-align: left;
+
+  div {
+    font-family: var(--ui-typeface);
+  }
 }
 
 .sm-post-author-block p {
@@ -69,6 +73,7 @@
   gap: 1rem;
   align-items: center;
   justify-content: center;
+  font-family: var(--ui-typeface);
   line-height: 1;
 }
 
