@@ -97,7 +97,7 @@
   );
 
   /* Surface */
-  --surface: hsl(var(--primary-h) 7% 96%);
+  --surface: hsl(var(--primary-h) 7% 99%);
   --surface-85: hsla(var(--primary-h) 7% 96% / 85%);
   --surface-light: hsl(var(--primary-h) 7% 100%);
   --surface-dark: hsl(var(--primary-h) 7% 89%);
@@ -150,7 +150,7 @@
   /* Surface */
   --surface-darker: hsl(var(--primary-h) 0% 0%);
   --surface-dark: hsl(var(--primary-h) 6.5% 1.4%);
-  --surface: hsl(var(--primary-h) 0.8% 7.3%);
+  --surface: hsl(var(--primary-h) 6.8% 4.3%);
   --surface-85: hsla(var(--primary-h) 0.8% 7.3% / 85%);
   --surface-light: hsl(var(--primary-h) 0.4% 11%);
   --border-color: hsl(var(--primary-h) 0.4% 15%);
