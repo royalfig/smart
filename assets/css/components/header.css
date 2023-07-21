@@ -67,6 +67,7 @@ dialog {
 
   > .sm-flex-h {
     justify-content: space-between;
+    margin-block-end: var(--spacing-04);
   }
 
   &[open] {
