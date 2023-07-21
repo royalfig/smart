@@ -56,7 +56,9 @@ dialog {
   top: 50%;
   left: 50%;
   width: calc(100vw - (2 * var(--gutter)));
+  max-width: 31.25rem;
   padding: var(--box-padding);
+  color: inherit;
   background: none;
   background-color: var(--surface-light);
   border: none;
@@ -71,15 +73,15 @@ dialog {
   &[open] {
     display: flex;
     flex-direction: column;
-    gap: var(--gap);
+    gap: var(--var-spacing-02);
   }
 
   .sm-icon-button {
-    width: 9rem;
+    width: max-content;
   }
 
   h2 {
-    margin-block: 0 var(--spacin-02);
+    margin-block: 0 var(--spacing-04);
     text-transform: uppercase;
   }
 }
