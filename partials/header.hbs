@@ -86,67 +86,75 @@
 
     {{#is "post"}}
     <div class="sm-post-author-block">
-        <div class="sm-post-author-profile-image">
-            {{~#foreach authors~}}
-                {{~#if profile_image~}}
-                <picture class="">
-                    <source 
-                    srcset="{{img_url profile_image size="48" format="avif"}} 48w,
-                    {{img_url profile_image size="80" format="avif"}} 80w,
-                    {{img_url profile_image size="160" format="avif"}} 160w,
-                    {{img_url profile_image size="240" format="avif"}} 240w,
-                    {{img_url profile_image size="528" format="avif"}} 528w,
-                    {{img_url profile_image size="800" format="avif"}} 800w,
-                    {{img_url profile_image size="1200" format="avif"}} 1200w,
-                    {{img_url profile_image size="1600" format="avif"}} 1600w,
-                    {{img_url profile_image size="1920" format="avif"}} 1920w,
-                    {{img_url profile_image size="2000" format="avif"}} 2000w"
-                    sizes="80px" 
-                    type="image/avif"
-                    >
-                    <source 
-                    srcset="{{img_url profile_image size="48" format="webp"}} 48w,
-                    {{img_url profile_image size="80" format="webp"}} 80w,
-                    {{img_url profile_image size="160" format="webp"}} 160w,
-                    {{img_url profile_image size="240" format="webp"}} 240w,
-                    {{img_url profile_image size="528" format="webp"}} 528w,
-                    {{img_url profile_image size="800" format="webp"}} 800w,
-                    {{img_url profile_image size="1200" format="webp"}} 1200w,
-                    {{img_url profile_image size="1600" format="webp"}} 1600w,
-                    {{img_url profile_image size="1920" format="webp"}} 1920w,
-                    {{img_url profile_image size="2000" format="webp"}} 2000w"
-                    sizes="80px" 
-                    type="image/webp"
-                    >
-                    <img
-                    srcset="{{img_url profile_image size="48"}} 48w,
-                    {{img_url profile_image size="80"}} 80w,
-                    {{img_url profile_image size="160"}} 160w,
-                    {{img_url profile_image size="240"}} 240w,
-                    {{img_url profile_image size="528"}} 528w,
-                    {{img_url profile_image size="800"}} 800w,
-                    {{img_url profile_image size="1200"}} 1200w,
-                    {{img_url profile_image size="1600"}} 1600w,
-                    {{img_url profile_image size="1920"}} 1920w,
-                    {{img_url profile_image size="2000"}} 2000w"
-                    sizes="80px" 
-                    src="{{img_url profile_image size="80"}}"
-                    alt="{{name}}"
-                    width="80" height="80"
-                    >
-                </picture>
-                {{~/if~}}
-            {{~/foreach~}}
-        </div>
         <div>
-            <p>by {{authors}}</p>
-            <div class="sm-post-meta">
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
-                {{#if primary_tag}}<a href="{{primary_tag.url}}">{{primary_tag.name}}</a>{{/if}}
-                <p class="sm-post-reading-time">{{reading_time}}</p>
+            <div class="sm-post-author-profile-image">
+                {{~#foreach authors~}}
+                    {{~#if profile_image~}}
+                    <picture class="">
+                        <source
+                        srcset="{{img_url profile_image size="48" format="avif"}} 48w,
+                        {{img_url profile_image size="80" format="avif"}} 80w,
+                        {{img_url profile_image size="160" format="avif"}} 160w,
+                        {{img_url profile_image size="240" format="avif"}} 240w,
+                        {{img_url profile_image size="528" format="avif"}} 528w,
+                        {{img_url profile_image size="800" format="avif"}} 800w,
+                        {{img_url profile_image size="1200" format="avif"}} 1200w,
+                        {{img_url profile_image size="1600" format="avif"}} 1600w,
+                        {{img_url profile_image size="1920" format="avif"}} 1920w,
+                        {{img_url profile_image size="2000" format="avif"}} 2000w"
+                        sizes="80px"
+                        type="image/avif"
+                        >
+                        <source
+                        srcset="{{img_url profile_image size="48" format="webp"}} 48w,
+                        {{img_url profile_image size="80" format="webp"}} 80w,
+                        {{img_url profile_image size="160" format="webp"}} 160w,
+                        {{img_url profile_image size="240" format="webp"}} 240w,
+                        {{img_url profile_image size="528" format="webp"}} 528w,
+                        {{img_url profile_image size="800" format="webp"}} 800w,
+                        {{img_url profile_image size="1200" format="webp"}} 1200w,
+                        {{img_url profile_image size="1600" format="webp"}} 1600w,
+                        {{img_url profile_image size="1920" format="webp"}} 1920w,
+                        {{img_url profile_image size="2000" format="webp"}} 2000w"
+                        sizes="80px"
+                        type="image/webp"
+                        >
+                        <img
+                        srcset="{{img_url profile_image size="48"}} 48w,
+                        {{img_url profile_image size="80"}} 80w,
+                        {{img_url profile_image size="160"}} 160w,
+                        {{img_url profile_image size="240"}} 240w,
+                        {{img_url profile_image size="528"}} 528w,
+                        {{img_url profile_image size="800"}} 800w,
+                        {{img_url profile_image size="1200"}} 1200w,
+                        {{img_url profile_image size="1600"}} 1600w,
+                        {{img_url profile_image size="1920"}} 1920w,
+                        {{img_url profile_image size="2000"}} 2000w"
+                        sizes="80px"
+                        src="{{img_url profile_image size="80"}}"
+                        alt="{{name}}"
+                        width="80" height="80"
+                        >
+                    </picture>
+                    {{~/if~}}
+                {{~/foreach~}}
             </div>
-            
+            <div>
+                <p>by {{authors}}</p>
+                <div class="sm-post-meta">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
+                    {{#if primary_tag}}<a href="{{primary_tag.url}}">{{primary_tag.name}}</a>{{/if}}
+                    <p class="sm-post-reading-time">{{reading_time}}</p>
+                </div>
+            </div>
         </div>
+
+        {{#is "post"}}
+        <button class="sm-post-share sm-icon-button">
+            Share
+            <svg aria-hidden='true'><use href='#sm-share-icon'></use></svg>
+        </button>
+        {{/is}}
     </div>
     {{/is}}
 
@@ -255,45 +263,49 @@
             </picture>
         </figure>
     {{/if}}
-
-    {{#is "post"}}
-        <div class="sm-post-share">
-            <p>Share</p>
-            <a class='sm-circle-icon-button'
-                href='https://twitter.com/intent/tweet?text={{url absolute='true'}}'
-                aria-label='Share on Twitter'
-                target='_blank'
-                rel='noopener noreferrer'
-            >
-                <svg aria-hidden='true'><use href='#twitter-icon'></use></svg>
-            </a>
-            <a
-                class='sm-circle-icon-button'
-                href='http://www.linkedin.com/shareArticle?mini=true&amp;url={{url
-                absolute='true'
-                }}'
-                aria-label='Share on LinkedIn'
-                target='_blank'
-                rel='noopener noreferrer'
-            ><svg aria-hidden='true'><use
-                    href='#linkedin-icon'
-                ></use></svg></a>
-            <a
-                class='sm-circle-icon-button'
-                href='http://www.facebook.com/sharer.php?u={{url absolute='true'}}'
-                aria-label='Share on Facebook'
-                target='_blank'
-                rel='noopener noreferrer'
-            ><svg aria-hidden='true'><use
-                    href='#facebook-icon'
-                ></use></svg></a>
-            <button class='sm-circle-icon-button sm-copy-button' aria-label="Copy link">
-                <svg aria-hidden='true'
-                ><use href='#sm-copy-icon'></use></svg>
-                <svg aria-hidden='true'
-                ><use href='#sm-check-icon'></use></svg>
-            </button>
-        </div>
-    {{/is}}
-
 </header>
+<dialog class="sm-share-menu">
+    <div class="sm-flex-h">
+        <h2>Share it up</h2>
+         <button class="sm-circle-icon-button sm-share-close">
+            <svg aria-hidden='true'><use href='#sm-close-icon'></use></svg>
+        </button>
+    </div>
+    <a
+        class='sm-icon-button twitter'
+        href='https://twitter.com/intent/tweet?text={{url absolute='true'}}'
+        aria-label='Share on Twitter'
+        target='_blank'
+        rel='noopener noreferrer'
+    ><svg aria-hidden='true'><use
+            href='#twitter-icon'
+        ></use></svg> Twitter</a>
+    
+    <a
+        class='sm-icon-button'
+        href='http://www.linkedin.com/shareArticle?mini=true&amp;url={{url
+        absolute='true'
+        }}'
+        aria-label='Share on LinkedIn'
+        target='_blank'
+        rel='noopener noreferrer'
+    ><svg aria-hidden='true'><use
+            href='#linkedin-icon'
+        ></use></svg> Linkedin</a>
+    <a
+        class='sm-icon-button'
+        href='http://www.facebook.com/sharer.php?u={{url absolute='true'}}'
+        aria-label='Share on Facebook'
+        target='_blank'
+        rel='noopener noreferrer'
+    ><svg aria-hidden='true'><use
+            href='#facebook-icon'
+        ></use></svg> Facebook</a>
+    <button class='sm-icon-button sm-copy-button' aria-label="Copy link">
+        <svg aria-hidden='true'
+        ><use href='#sm-copy-icon'></use></svg>
+        <svg aria-hidden='true'
+        ><use href='#sm-check-icon'></use></svg>
+        Copy link
+    </button>
+</dialog>

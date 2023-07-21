@@ -9,6 +9,7 @@ import responsiveTableInit from './responsiveTables';
 import writeAuthorWebsite from './authorWebsite';
 import toc from './toc';
 import animateOnScroll from './homePageAnimation';
+import toggleShareMenu from './toggleShareMenu';
 
 initClickHandler();
 determineColorModeSupport();
@@ -19,3 +20,4 @@ responsiveTableInit();
 writeAuthorWebsite();
 toc();
 animateOnScroll();
+toggleShareMenu();

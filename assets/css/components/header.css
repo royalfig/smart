@@ -1,6 +1,5 @@
 .sm-header-grid > * {
   grid-column: content;
-  text-align: center;
 }
 
 .sm-header-title {
@@ -50,4 +49,42 @@
   background-color: var(--border-color);
   border-radius: var(--radius);
   translate: 0 -0.5em;
+}
+
+dialog {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: calc(100vw - (2 * var(--gutter)));
+  padding: var(--box-padding);
+  background: none;
+  background-color: var(--surface-light);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  translate: -50% -50%;
+
+  > .sm-flex-h {
+    justify-content: space-between;
+  }
+
+  &[open] {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+  }
+
+  .sm-icon-button {
+    width: 9rem;
+  }
+
+  h2 {
+    margin-block: 0 var(--spacin-02);
+    text-transform: uppercase;
+  }
+}
+
+::backdrop {
+  background-color: var(--surface-85);
+  backdrop-filter: blur(12px);
 }
