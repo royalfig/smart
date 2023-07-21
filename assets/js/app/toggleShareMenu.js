@@ -1,6 +1,7 @@
 export default function toggleShareMenu() {
-  const shareMenu = document.querySelector('.sm-share-menu');
   const shareButton = document.querySelector('.sm-post-share');
+  if (!shareButton) return;
+  const shareMenu = document.querySelector('.sm-share-menu');
   const closeButton = document.querySelector('.sm-share-close');
 
   shareButton.addEventListener('click', () => {
