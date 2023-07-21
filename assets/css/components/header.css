@@ -55,7 +55,6 @@ dialog {
   position: relative;
   top: 50%;
   left: 50%;
-  width: calc(100vw - (2 * var(--gutter)));
   max-width: 31.25rem;
   padding: var(--box-padding);
   color: inherit;
