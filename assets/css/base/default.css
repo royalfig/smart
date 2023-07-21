@@ -3,6 +3,8 @@ html {
   font-family: var(--body-typeface);
   font-size: 1.0625rem;
   font-size: clamp(1.0625rem, 1.006rem + 0.278vw, 1.25rem);
+  font-size: 1.125rem;
+  font-size: clamp(1.125rem, 0.821rem + 0.633vw, 1.375rem);
   font-feature-settings: 'kern';
   font-kerning: normal;
   line-height: 1.5;
