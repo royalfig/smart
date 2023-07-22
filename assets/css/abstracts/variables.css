@@ -36,7 +36,7 @@
   --spacing-34: 8.5rem;
   --spacing-36: 9rem;
   --gap: var(--spacing-04);
-  --gutter: var(--spacing-06);
+  --gutter: 20px;
   --bento-gap: var(--spacing-03);
   --box-padding: var(--spacing-06);
   --button-padding: var(--spacing-02) var(--spacing-03);

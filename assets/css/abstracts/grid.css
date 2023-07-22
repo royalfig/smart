@@ -184,12 +184,17 @@
 
   .sm-card-landscape {
     grid-row: span 6;
-    grid-column: span 12;
+    grid-column: span 6;
+
+    + .sm-card-portrait {
+      grid-row: span 6;
+      grid-column: span 6;
+    }
   }
 
   .sm-card-portrait {
     grid-row: span 6;
-    grid-column: span 6;
+    grid-column: span 4;
   }
 }
 
