@@ -264,48 +264,5 @@
         </figure>
     {{/if}}
 </header>
-<dialog class="sm-share-menu">
-    <div class="sm-flex-h">
-        <h2>Share it up</h2>
-         <button class="sm-circle-icon-button sm-share-close">
-            <svg aria-hidden='true' aria-label="close share menu"><use href='#sm-close-icon'></use></svg>
-        </button>
-    </div>
-    <a
-        class='sm-icon-button twitter'
-        href='https://twitter.com/intent/tweet?text={{url absolute='true'}}'
-        aria-label='Share on Twitter'
-        target='_blank'
-        rel='noopener noreferrer'
-    ><svg aria-hidden='true'><use
-            href='#twitter-icon'
-        ></use></svg> Twitter</a>
-    
-    <a
-        class='sm-icon-button'
-        href='http://www.linkedin.com/shareArticle?mini=true&amp;url={{url
-        absolute='true'
-        }}'
-        aria-label='Share on LinkedIn'
-        target='_blank'
-        rel='noopener noreferrer'
-    ><svg aria-hidden='true'><use
-            href='#linkedin-icon'
-        ></use></svg> Linkedin</a>
-    <a
-        class='sm-icon-button'
-        href='http://www.facebook.com/sharer.php?u={{url absolute='true'}}'
-        aria-label='Share on Facebook'
-        target='_blank'
-        rel='noopener noreferrer'
-    ><svg aria-hidden='true'><use
-            href='#facebook-icon'
-        ></use></svg> Facebook</a>
-    <button class='sm-icon-button sm-copy-button' aria-label="Copy link">
-        <svg aria-hidden='true'
-        ><use href='#sm-copy-icon'></use></svg>
-        <svg aria-hidden='true'
-        ><use href='#sm-check-icon'></use></svg>
-        Copy link
-    </button>
-</dialog>
+
+{{> "share"}}

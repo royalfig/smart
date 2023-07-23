@@ -1,0 +1,107 @@
+dialog {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 90vw;
+  max-width: 31.25rem;
+  font-family: var(--ui-typeface);
+  color: inherit;
+  background: none;
+  background-color: var(--surface-light);
+  border: none;
+  border-radius: var(--radius);
+  box-shadow: var(--box-shadow);
+  translate: -50% -50%;
+
+  > header {
+    justify-content: space-between;
+    padding: var(--spacing-03) var(--spacing-03) var(--spacing-02);
+    border-bottom: 1px solid var(--border-color);
+
+    p {
+      margin: 0;
+      text-transform: uppercase;
+    }
+  }
+}
+
+::backdrop {
+  background-color: var(--surface-85);
+  backdrop-filter: blur(12px);
+}
+
+.sm-share-options {
+  gap: 0;
+  align-items: flex-start;
+  align-self: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+
+  .sm-icon-button {
+    flex: 1;
+    width: 9rem;
+    padding: var(--spacing-03);
+    background-color: transparent;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .twitter:hover {
+    background-color: var(--twitter);
+  }
+
+  .facebook:hover {
+    background-color: var(--facebook);
+  }
+
+  .linkedin:hover {
+    background-color: var(--linkedin);
+  }
+
+  button:hover {
+    background-color: var(--border-color);
+  }
+}
+
+.sm-grid-share {
+  grid-template-columns: auto 1fr;
+}
+
+.sm-preview {
+  display: none;
+  padding: var(--spacing-08) var(--spacing-08) 0;
+  overflow: hidden;
+  font-weight: 600;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: var(--letter-spacing-contract);
+}
+
+@media (--tablet) {
+  .sm-preview {
+    display: unset;
+  }
+}
+
+.sm-preview-inner {
+  display: grid;
+  grid-template-rows: max-content auto;
+  padding: var(--spacing-03) var(--spacing-03) 0;
+  margin-inline: auto;
+  background-color: var(--surface-dark);
+  border-radius: var(--radius) var(--radius) 0 0;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 1;
+    margin-block-start: var(--spacing-04);
+    border-radius: var(--radius) var(--radius) 0 0;
+    object-fit: cover;
+  }
+}

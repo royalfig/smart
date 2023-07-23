@@ -59,6 +59,9 @@
   --x-small: 0.694rem;
   --xx-small: 0.579rem;
   --transition: 0.3s;
+  --twitter: #1da1f2;
+  --facebook: #3b5998;
+  --linkedin: #0077b5;
 }
 
 @media (--tablet) {
