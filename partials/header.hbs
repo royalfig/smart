@@ -150,7 +150,7 @@
         </div>
 
         {{#is "post"}}
-        <button class="sm-post-share sm-icon-button">
+        <button class="sm-post-share sm-icon-button" data-url="{{url absolute="true"}}" data-title="{{encode title}}" data-twitter="{{@site.twitter}}">
             Share
             <svg aria-hidden='true'><use href='#sm-share-icon'></use></svg>
         </button>

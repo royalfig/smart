@@ -73,19 +73,12 @@ dialog {
 }
 
 .sm-preview {
-  display: none;
   padding: var(--spacing-08) var(--spacing-08) 0;
   overflow: hidden;
   font-weight: 600;
   line-height: 1.2;
   text-transform: none;
   letter-spacing: var(--letter-spacing-contract);
-}
-
-@media (--tablet) {
-  .sm-preview {
-    display: unset;
-  }
 }
 
 .sm-preview-inner {
