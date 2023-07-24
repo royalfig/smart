@@ -10,7 +10,7 @@
 }
 
 .sm-post-content > p:first-of-type {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
 }
 
 .sm-post-content > p:first-of-type::first-letter {
@@ -19,7 +19,7 @@
   font-family: var(--heading-typeface);
   font-size: 7.25rem;
   font-weight: 500;
-  line-height: 0.75;
+  line-height: 0.65;
 }
 
 /* Links */

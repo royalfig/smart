@@ -1,9 +1,8 @@
 html {
   height: 100%;
   font-family: var(--body-typeface);
-  font-size: clamp(1.0625rem, 1.006rem + 0.278vw, 1.25rem);
-  font-size: 1.125rem;
-  font-size: clamp(1.125rem, 0.969rem + 0.325vw, 1.375rem);
+  font-size: 1.1875rem;
+  font-size: clamp(1.1875rem, 1.0625rem + 0.26041666666666663vw, 1.375rem);
   font-feature-settings: 'kern';
   font-kerning: normal;
   line-height: 1.5;
