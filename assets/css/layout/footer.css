@@ -1,7 +1,7 @@
 .sm-footer-container {
   margin-block-start: auto;
   font-family: var(--ui-typeface);
-  background-color: var(--surface-darker);
+  background-color: var(--surface-dark);
 }
 
 .sm-footer {
