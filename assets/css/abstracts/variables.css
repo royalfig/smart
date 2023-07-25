@@ -100,11 +100,11 @@
   );
 
   /* Surface */
-  --surface: hsl(var(--primary-h) 7% 99%);
-  --surface-85: hsla(var(--primary-h) 7% 96% / 85%);
-  --surface-light: hsl(var(--primary-h) 7% 100%);
-  --surface-dark: hsl(var(--primary-h) 7% 89%);
-  --surface-darker: hsl(var(--primary-h) 17% 82%);
+  --surface: hsl(var(--primary-h) 8% 99%);
+  --surface-85: hsla(var(--primary-h) 8% 99% / 85%);
+  --surface-light: hsl(var(--primary-h) 3% 100%);
+  --surface-dark: hsl(var(--primary-h) 15% 89%);
+  --surface-darker: hsl(var(--primary-h) 8% 82%);
 
   /* Element */
   --element: hsl(var(--primary-h) 7% 1.5%);
@@ -151,11 +151,11 @@
   --element-darker: hsl(var(--primary-h) 1.1% 93%);
 
   /* Surface */
-  --surface-darker: hsl(var(--primary-h) 0% 0%);
-  --surface-dark: hsl(var(--primary-h) 6.5% 1.4%);
-  --surface: hsl(var(--primary-h) 6.8% 4.3%);
-  --surface-85: hsla(var(--primary-h) 0.8% 7.3% / 85%);
-  --surface-light: hsl(var(--primary-h) 0.4% 11%);
+  --surface-darker: hsl(var(--primary-h) .5% 15%);
+  --surface-dark: hsl(var(--primary-h) .5% 11%);
+  --surface: hsl(var(--primary-h) 16% 4.3%);
+  --surface-85: hsla(var(--primary-h) 16% 4.3% / 85%);
+  --surface-light: hsl(var(--primary-h) 0% 0%);
   --border-color: hsl(var(--primary-h) 0.4% 15%);
   --navbar-color: hsl(var(--primary-h) 7% 15% / 80%);
   --border-color-accent: hsla(var(--primary-h) 7% 25% / 50%);
