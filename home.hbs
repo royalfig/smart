@@ -5,17 +5,11 @@
         {{> "hero"}}
     {{/match}}
 
-    
-
     <div class="sm-grid">
         <h2 class="sm-home-header">These Are the Latest Posts</h2>
         <div class="sm-grid-home">
-            {{#foreach posts from="1" to="5"}}
-                {{#if @first}}
-                    {{> "cards/card-featured"}}
-                {{else}}
-                    {{> "cards/card-base"}}
-                {{/if}}
+            {{#foreach posts from="1" to="6"}}
+               {{> "cards/card-base"}}
             {{/foreach}}
         </div>
 
@@ -61,12 +55,8 @@
 
         <h2 class="sm-home-header">The Good Posts Keep On Rollin'</h2>
         <div class="sm-grid-home">
-            {{#foreach posts from="6" to="10"}}
-                {{#if @first}}
-                    {{> "cards/card-featured"}}
-                {{else}}
-                    {{> "cards/card-base"}}
-                {{/if}}
+            {{#foreach posts from="7" to="12"}}
+               {{> "cards/card-base"}}
             {{/foreach}}
         </div>
 
@@ -85,12 +75,8 @@
         
         <h2 class="sm-home-header">A Smidge More Posts</h2>
         <div class="sm-grid-home">
-        {{#foreach posts from="11" to="15"}}
-            {{#if @first}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
+        {{#foreach posts from="13" to="18"}}
+            {{> "cards/card-base"}}
         {{/foreach}}
         </div>
         </div>

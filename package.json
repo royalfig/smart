@@ -53,7 +53,7 @@
     "prismjs": "^1.29.0"
   },
   "config": {
-    "posts_per_page": 15,
+    "posts_per_page": 18,
     "image_sizes": {
       "48": {
         "width": 48

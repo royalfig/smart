@@ -20,8 +20,8 @@
 .sm-form textarea {
   padding: var(--button-padding);
   margin-block-end: 1rem;
-  color: var(--element);
-  background-color: var(--surface);
+  color: hsl(var(--element));
+  background-color: hsl(var(--surface));
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
 }
@@ -33,12 +33,12 @@
 
 .sm-form input:focus-visible,
 .sm-form textarea:focus-visible {
-  border-color: var(--secondary);
+  border-color: hsl(var(--secondary));
   outline: none;
 }
 
 .sm-form button:hover,
 .sm-form button:focus-visible {
-  background-color: var(--secondary);
+  background-color: hsl(var(--secondary));
   outline: none;
 }

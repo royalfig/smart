@@ -46,7 +46,7 @@
 }
 
 .kg-toggle-card:hover .kg-toggle-heading svg {
-  color: var(--primary);
+  color: hsl(var(--primary));
 }
 
 /* Button */
@@ -65,7 +65,7 @@
 
 .kg-btn-accent {
   color: var(--button-text);
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
   transition: background-color 0.3s;
 }
 
@@ -79,4 +79,5 @@
   padding: 1rem;
   background-color: var(--border-color);
   border-radius: var(--radius);
+}
 }

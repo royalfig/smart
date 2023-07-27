@@ -41,10 +41,10 @@
     background-color: transparent;
 
     &:hover {
-      color: var(--secondary);
+      color: hsl(var(--secondary));
 
       & svg {
-        fill: var(--secondary);
+        fill: hsl(var(--secondary));
       }
     }
   }

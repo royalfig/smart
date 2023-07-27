@@ -30,7 +30,7 @@
 }
 
 .sm-post-content a:hover {
-  text-decoration-color: var(--primary);
+  text-decoration-color: hsl(var(--primary));
 }
 
 /* Divider */

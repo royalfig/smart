@@ -15,7 +15,7 @@
 .sm-form-button,
 .sm-button {
   color: var(--button-text);
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
   transition: background-color var(--transition);
 
   &:hover {
@@ -28,7 +28,7 @@
   display: flex;
   gap: 1em;
   align-items: center;
-  color: var(--element);
+  color: hsl(var(--element));
   text-align: center;
   white-space: nowrap;
   background-color: hsla(
@@ -46,7 +46,7 @@
 .sm-icon-button svg {
   width: 1em;
   height: 1em;
-  fill: var(--element);
+  fill: hsl(var(--element));
 }
 
 /* Circle icon button 
@@ -105,8 +105,7 @@ Used in footer */
   fill: var(--element-light);
 }
 
-.sm-button-simple:focus-visible,
-.sm-button-simple:hover {
+.sm-button-simple:focus-visible .sm-button-simple:hover {
   background-color: var(--border-color);
   outline: none;
 }
@@ -133,5 +132,5 @@ Used in search and */
 .sm-circle-close-button svg {
   width: max(1rem, 30px);
   height: max(1rem, 30px);
-  fill: var(--element);
+  fill: hsl(var(--element));
 }

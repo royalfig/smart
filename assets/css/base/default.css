@@ -6,8 +6,8 @@ html {
   font-feature-settings: 'kern';
   font-kerning: normal;
   line-height: 1.5;
-  color: var(--element);
-  background-color: var(--surface);
+  color: hsl(var(--element));
+  background-color: hsl(var(--surface));
   scroll-behavior: smooth;
   scroll-padding-block-start: 4rem;
   text-rendering: optimizelegibility;
@@ -22,7 +22,7 @@ body {
 
 :target::before {
   margin-inline-end: 0.25em;
-  color: var(--primary);
+  color: hsl(var(--primary));
   content: '➠';
 }
 
@@ -41,8 +41,7 @@ body {
   grid-column: content;
 }
 
-.sm-zap::before,
-.sm-zap::after {
+.sm-zap::before .sm-zap::after {
   position: absolute;
   top: 50%;
   width: 48%;

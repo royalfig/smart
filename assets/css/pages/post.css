@@ -150,7 +150,7 @@
 
 .sm-post-meta a:hover,
 .sm-post-save-button:hover {
-  color: var(--primary);
+  color: hsl(var(--primary));
 }
 
 /* Related posts */

@@ -69,13 +69,12 @@
   height: 35%;
   clip-path: inset(0 100% 0 0);
   content: '';
-  background-color: var(--primary);
+  background-color: hsl(var(--primary));
   opacity: 0.5;
   transition: clip-path 0.3s;
 }
 
-.sm-navigation-item a:hover::before,
-a.sm-nav-current::before {
+.sm-navigation-item a:hover::before a.sm-nav-current::before {
   clip-path: inset(0 0 0 0);
 }
 
@@ -90,7 +89,7 @@ a.sm-nav-current::before {
     display: block;
     width: 1rem;
     height: 1rem;
-    fill: var(--element);
+    fill: hsl(var(--element));
   }
 }
 
@@ -100,13 +99,13 @@ a.sm-nav-current::before {
   align-items: center;
   border: 1px solid var(--border-color);
   border-radius: var(--radius);
-  transition: border-color var(--transition), color var(--transition),
+  transition: border-color var(--transition) color var(--transition) /
     background-color var(--transition);
 
   &:hover {
-    color: var(--surface);
-    background-color: var(--primary);
-    border-color: var(--primary);
+    color: hsl(var(--surface));
+    background-color: hsl(var(--primary));
+    border-color: hsl(var(--primary));
   }
 }
 

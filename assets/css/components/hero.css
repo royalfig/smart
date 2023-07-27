@@ -19,7 +19,7 @@
     text-decoration-thickness: 3px;
 
     &:hover {
-      text-decoration-color: var(--primary);
+      text-decoration-color: hsl(var(--primary));
     }
   }
 }
@@ -54,7 +54,7 @@
     transition: color var(--transition);
 
     &:hover {
-      color: var(--secondary);
+      color: hsl(var(--secondary));
     }
   }
 }

@@ -54,7 +54,7 @@
   display: block;
   width: 100%;
   margin-block: 0.25em 0.75em;
-  color: var(--primary);
+  color: hsl(var(--primary));
   background-color: transparent;
   border-bottom: 1px solid var(--border-color);
   transition: border-color 0.3s;
