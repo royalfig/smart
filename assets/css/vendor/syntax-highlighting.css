@@ -29,13 +29,6 @@ pre[class*='language-'] {
   word-spacing: normal;
 }
 
-code[class*='language-']::selection,
-pre[class*='language-']::selection,
-code[class*='language-'] ::selection,
-pre[class*='language-'] ::selection {
-  background: #363636;
-}
-
 :not(pre) > code[class*='language-'] {
   padding: 0.1em;
   white-space: normal;
