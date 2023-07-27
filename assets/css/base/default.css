@@ -22,18 +22,18 @@ body {
 
 :target::before {
   margin-inline-end: 0.25em;
-  color: hsl(var(--primary));
+  color: hsl(var(--color-1));
   content: '➠';
 }
 
 ::selection {
   color: #000;
-  background-color: var(--primary-light);
+  background-color: hsl(var(--color-1-light));
 }
 
 .sm-zap {
   position: relative;
-  color: var(--border-color);
+  color: hsl(var(--border-color));
   text-align: center;
 }
 
@@ -51,12 +51,20 @@ body {
 
 .sm-zap::before {
   left: 0;
-  background-image: linear-gradient(90deg, var(--border-color), transparent);
+  background-image: linear-gradient(
+    90deg,
+    hsl(var(--border-color)),
+    transparent
+  );
 }
 
 .sm-zap::after {
   right: 0;
-  background-image: linear-gradient(-90deg, var(--border-color), transparent);
+  background-image: linear-gradient(
+    -90deg,
+    hsl(var(--border-color)),
+    transparent
+  );
 }
 
 [data-color-pref='light'] .sm-light-mode {

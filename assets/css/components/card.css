@@ -2,7 +2,7 @@
 .sm-card {
   overflow: hidden;
   text-align: center;
-  background-color: var(--surface-dark);
+  background-color: hsl(var(--surface-dark));
   border-radius: var(--radius);
   opacity: 0;
   transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -37,7 +37,7 @@
   color: #fff;
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-expand);
-  background-color: var(--bg, hsl(var(--primary)));
+  background-color: var(--bg, hsl(var(--color-1)));
   border-radius: var(--radius);
 
   &.code {
@@ -78,7 +78,7 @@
   overflow: hidden;
   font-size: var(--small);
   line-height: 1.4;
-  color: var(--element-light);
+  color: hsl(var(--element-light));
   text-wrap: pretty;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
@@ -115,7 +115,7 @@
   justify-content: center;
   padding: var(--box-padding);
   text-align: center;
-  background-color: var(--surface-dark);
+  background-color: hsl(var(--surface-dark));
   border-radius: var(--radius);
   opacity: 0;
 }
@@ -162,7 +162,7 @@
   flex: 1;
   justify-content: center;
   color: hsl(var(--surface));
-  background-color: hsl(var(--secondary));
+  background-color: hsl(var(--color-2));
   border-radius: 0 var(--radius-small) var(--radius-small) 0;
 }
 
@@ -171,7 +171,7 @@
 }
 
 .sm-inputs:focus-within {
-  outline: 2px dotted var(--secondary-light);
+  outline: 2px dotted var(--color-2-light);
   outline-offset: 2px;
 }
 
@@ -180,7 +180,7 @@
 }
 
 .sm-inputs button:where(:hover, :focus-visible) {
-  background-color: var(--secondary-dark);
+  background-color: var(--color-2-dark);
 }
 
 .sm-card-base a {
@@ -205,7 +205,7 @@
   overflow: hidden;
   font-family: var(--ui-typeface);
   color: #fff;
-  background-color: var(--surface-light);
+  background-color: hsl(var(--surface-light));
   border-radius: var(--radius);
   opacity: 0;
   transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
@@ -219,11 +219,11 @@
 
 .sm-tag-card.sm-background-color {
   color: hsl(var(--surface));
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--color-1));
 }
 
 .sm-tag-card.sm-background-color:nth-of-type(2n) {
-  background-color: hsl(var(--secondary));
+  background-color: hsl(var(--color-2));
 }
 
 .sm-tag-card picture::after {
@@ -273,7 +273,7 @@
 }
 
 .sm-card-social-media {
-  background-color: var(--surface-dark);
+  background-color: hsl(var(--surface-dark));
 }
 
 .sm-card-social-media a {
@@ -283,7 +283,7 @@
 .sm-card-social-media svg {
   width: 100%;
   aspect-ratio: 1;
-  fill: var(--element-light);
+  fill: hsl(var(--element-light));
   transition: fill var(--transition);
 }
 

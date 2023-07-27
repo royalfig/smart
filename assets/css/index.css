@@ -2,6 +2,7 @@
 
 /* Abstracts */
 @import 'abstracts/variables.css';
+@import 'abstracts/color.css';
 @import 'abstracts/grid.css';
 @import 'abstracts/utilities.css';
 

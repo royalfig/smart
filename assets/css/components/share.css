@@ -7,7 +7,7 @@ dialog {
   font-family: var(--ui-typeface);
   color: inherit;
   background: none;
-  background-color: var(--surface-light);
+  background-color: hsl(var(--surface-light));
   border: none;
   border-radius: var(--radius);
   box-shadow: var(--box-shadow);
@@ -16,7 +16,7 @@ dialog {
   > header {
     justify-content: space-between;
     padding: var(--spacing-03) var(--spacing-03) var(--spacing-02);
-    border-bottom: 1px solid var(--border-color);
+    border-bottom: 1px solid hsl(var(--border-color));
 
     p {
       margin: 0;
@@ -42,8 +42,8 @@ dialog {
     width: 9rem;
     padding: var(--spacing-03);
     background-color: transparent;
-    border-right: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
+    border-right: 1px solid hsl(var(--border-color));
+    border-bottom: 1px solid hsl(var(--border-color));
     border-radius: 0;
 
     &:last-child {
@@ -64,7 +64,7 @@ dialog {
   }
 
   button:hover {
-    background-color: var(--border-color);
+    background-color: hsl(var(--border-color));
   }
 }
 
@@ -86,7 +86,7 @@ dialog {
   grid-template-rows: max-content auto;
   padding: var(--spacing-03) var(--spacing-03) 0;
   margin-inline: auto;
-  background-color: var(--surface-dark);
+  background-color: hsl(var(--surface-dark));
   border-radius: var(--radius) var(--radius) 0 0;
 
   img {

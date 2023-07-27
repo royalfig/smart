@@ -5,7 +5,7 @@
   max-width: var(--content-width);
   padding: var(--gap);
   margin: 2rem auto;
-  border: 1px solid var(--border-color);
+  border: 1px solid hsl(var(--border-color));
   border-radius: var(--radius);
 }
 
@@ -22,7 +22,7 @@
   margin-block-end: 1rem;
   color: hsl(var(--element));
   background-color: hsl(var(--surface));
-  border: 1px solid var(--border-color);
+  border: 1px solid hsl(var(--border-color));
   border-radius: var(--radius);
 }
 
@@ -33,12 +33,12 @@
 
 .sm-form input:focus-visible,
 .sm-form textarea:focus-visible {
-  border-color: hsl(var(--secondary));
+  border-color: hsl(var(--color-2));
   outline: none;
 }
 
 .sm-form button:hover,
 .sm-form button:focus-visible {
-  background-color: hsl(var(--secondary));
+  background-color: hsl(var(--color-2));
   outline: none;
 }

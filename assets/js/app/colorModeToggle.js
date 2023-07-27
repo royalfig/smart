@@ -21,7 +21,7 @@ export function determineColorModeSupport() {
     '.sm-dark-mode, .sm-light-mode',
   );
 
-  const hasSupport = window.CSS && CSS.supports('color', 'hsl(var(--primary))');
+  const hasSupport = window.CSS && CSS.supports('color', 'hsl(var(--color-1))');
 
   // If the browser doesn't support custom settings, hide buttons
   if (!hasSupport) {

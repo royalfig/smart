@@ -90,7 +90,7 @@
     text-decoration: underline;
 
     &:hover {
-      text-decoration-color: hsl(var(--primary));
+      text-decoration-color: hsl(var(--color-1));
     }
   }
 }

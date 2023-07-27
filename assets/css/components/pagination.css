@@ -17,11 +17,11 @@
 }
 
 .sm-current {
-  color: hsl(var(--primary));
+  color: hsl(var(--color-1));
 }
 
 .sm-pagination-item:hover {
-  color: hsl(var(--primary));
+  color: hsl(var(--color-1));
 }
 
 .sm-prev {

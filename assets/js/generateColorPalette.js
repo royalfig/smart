@@ -64,7 +64,7 @@ function generateColorPalette() {
   const [h, s, l] = rgbToHSL([r, g, b]);
 
   const complementaryColor = h + 180 > 360 ? h - 180 : h + 180;
-  document.documentElement.style.setProperty('--primary-h', h);
+  document.documentElement.style.setProperty('--color-1-h', h);
   document.documentElement.style.setProperty('--saturation', `${s}%`);
   document.documentElement.style.setProperty('--lightness', `${l}%`);
   document.documentElement.style.setProperty(

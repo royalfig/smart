@@ -1,7 +1,7 @@
 .sm-footer-container {
   margin-block-start: auto;
   font-family: var(--ui-typeface);
-  background-color: var(--surface-dark);
+  background-color: hsl(var(--surface-dark));
 }
 
 .sm-footer {
@@ -42,7 +42,7 @@
   display: flex;
   gap: 1rem;
   margin-block-start: 1rem;
-  color: var(--element-light);
+  color: hsl(var(--element-light));
 }
 
 .sm-footer-secondary-navigation ul {
@@ -54,15 +54,15 @@
   display: block;
   width: 100%;
   margin-block: 0.25em 0.75em;
-  color: hsl(var(--primary));
+  color: hsl(var(--color-1));
   background-color: transparent;
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 1px solid hsl(var(--border-color));
   transition: border-color 0.3s;
 }
 
 .sm-footer input::placeholder {
   font-size: var(--x-small);
-  color: var(--element-light);
+  color: hsl(var(--element-light));
   opacity: 0.5;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .sm-footer input:focus-visible {
-  border-color: var(--element-light);
+  border-color: hsl(var(--element-light));
   outline: 0;
 }
 
@@ -80,9 +80,9 @@
   grid-column: content;
   padding-block: 2rem;
   font-size: var(--x-small);
-  color: var(--element-light);
+  color: hsl(var(--element-light));
   text-align: center;
-  border-top: 1px solid var(--border-color);
+  border-top: 1px solid hsl(var(--border-color));
 }
 
 .sm-footer-meta a {
