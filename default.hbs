@@ -29,12 +29,10 @@
     
     {{!-- Scripts and styles for after load --}}
     <script src="{{asset 'built/app.js'}}" type="module" defer></script>
-   
-    {{#if @custom.syntax_highlighting}}
+  
     {{#is "post"}}
     <script src="{{asset 'built/syntax-highlighting.js'}}" type="module" defer></script>
     {{/is}}
-    {{/if}}
 
     {{!-- Output SEO + Meta data and other settings by Ghost --}}
     {{ghost_head}}
