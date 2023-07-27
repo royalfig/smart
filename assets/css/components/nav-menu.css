@@ -8,7 +8,7 @@
   width: 100%;
   height: calc(100dvh - 3rem);
   font-family: var(--ui-typeface);
-  background-color: hsl(var(--surface) / 85%);
+  background-color: hsl(var(--surface-dark) / 85%);
   backdrop-filter: blur(8px);
 }
 
