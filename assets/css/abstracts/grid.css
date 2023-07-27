@@ -6,8 +6,6 @@
   grid-template-columns:
     [start] var(--gutter) [content-start] 1fr [content-end] var(--gutter)
     [end];
-  container-type: inline-size;
-  container-name: home;
 }
 
 .sm-header-grid {
@@ -37,17 +35,7 @@
     1fr [wide-end] 1fr [full-end] var(--gutter) [end];
 }
 
-.sm-basic-grid {
-  grid-template-columns: 1fr;
-  gap: 10px;
-  padding-block: 3rem 6rem;
-}
-
-.sm-grid > .sm-basic-grid {
-  grid-column: content;
-}
-
-.sm-grid-home {
+.sm-home-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-column: content;
@@ -55,10 +43,8 @@
   margin-block: var(--spacing-04);
 }
 
-@media (--phone) {
-  .sm-basic-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.sm-social-media-container {
+  grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 }
 
 @media (--tablet) {
@@ -71,12 +57,9 @@
       [content-end] 1fr var(--gutter)
       [end];
   }
-
-  .sm-basic-grid {
-    grid-template-columns: 1fr 1fr 1fr;
-  }
 }
 
+/* TODO move to separate file */
 .sm-home-header {
   grid-column: content;
   margin-block: var(--spacing-22) var(--spacing-02);

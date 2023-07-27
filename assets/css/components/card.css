@@ -20,9 +20,33 @@
 }
 
 .sm-card.featured {
-  &.tag-code {
+  .sm-card-tag {
+    border: 1px solid;
+  }
+
+  &.code {
     color: #fff;
-    background-color: rgb(58 29 29);
+    background-color: hsl(var(--color-2));
+  }
+
+  &.design {
+    color: #fff;
+    background-color: hsl(var(--color-3));
+  }
+
+  &.projects {
+    color: #fff;
+    background-color: hsl(var(--color-4));
+  }
+
+  &.essays {
+    color: #fff;
+    background-color: hsl(var(--color-5));
+  }
+
+  &.philosophy {
+    color: #fff;
+    background-color: hsl(var(--color-1));
   }
 }
 
@@ -34,39 +58,95 @@
   font-family: var(--ui-typeface);
   font-size: var(--xx-small);
   font-weight: 500;
-  color: #fff;
+  color: hsl(var(--color-1-light));
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-expand);
-  background-color: var(--bg, hsl(var(--color-1)));
+  background-color: hsl(var(--color-1));
   border-radius: var(--radius);
 
   &.code {
-    color: hsl(0deg 86% 81%);
-    background-color: rgb(58 29 29);
+    color: hsl(var(--color-2-light));
+    background-color: hsl(var(--color-2));
   }
 
-  &.ghost-tag {
-    color: rgb(201 175 245);
-    background-color: rgb(53 38 70);
+  &.design {
+    color: hsl(var(--color-3-light));
+    background-color: hsl(var(--color-3));
+  }
+
+  &.projects {
+    color: hsl(var(--color-4-light));
+    background-color: hsl(var(--color-4));
+  }
+
+  &.essays {
+    color: hsl(var(--color-5-light));
+    background-color: hsl(var(--color-5));
+  }
+
+  &.philosophy {
+    color: hsl(var(--color-1-light));
+    background-color: hsl(var(--color-1));
   }
 }
 
-[data-color-pref='dark'] .sm-card-tag {
-  &.code {
-    color: rgb(253 171 171);
-    background-color: rgb(65 37 37);
+[data-color-pref='dark'] {
+  .sm-card.featured {
+    &.code {
+      color: #000;
+      background-color: hsl(var(--color-2));
+    }
+
+    &.design {
+      color: #000;
+      background-color: hsl(var(--color-3));
+    }
+
+    &.projects {
+      color: #000;
+      background-color: hsl(var(--color-4));
+    }
+
+    &.essays {
+      color: #000;
+      background-color: hsl(var(--color-5));
+    }
+
+    &.philosophy {
+      color: #000;
+      background-color: hsl(var(--color-1));
+    }
   }
 
-  &.ghost-tag {
-    color: rgb(233 192 252);
-    background-color: rgb(78 50 75);
+  .sm-card-tag {
+    color: hsl(var(--color-1-dark));
+
+    &.code {
+      color: hsl(var(--color-2-dark));
+    }
+
+    &.design {
+      color: hsl(var(--color-3-dark));
+    }
+
+    &.projects {
+      color: hsl(var(--color-4-dark));
+    }
+
+    &.essays {
+      color: hsl(var(--color-5-dark));
+    }
+
+    &.philosophy {
+      color: hsl(var(--color-1-dark));
+    }
   }
 }
 
 .sm-card-title {
   margin: 0 0 var(--spacing-06);
   font-size: var(--h4);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
   text-wrap: pretty;
   letter-spacing: var(--letter-spacing-contract);
@@ -76,10 +156,10 @@
   display: -webkit-box;
   margin-block: var(--spacing-06) var(--spacing-06);
   overflow: hidden;
-  font-size: var(--small);
+  font-size: 0.9rem;
   line-height: 1.4;
-  color: hsl(var(--element-light));
   text-wrap: pretty;
+  opacity: 0.8;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
@@ -202,40 +282,24 @@
 
 .sm-tag-card {
   position: relative;
+  aspect-ratio: 3 / 2;
   overflow: hidden;
   font-family: var(--ui-typeface);
   color: #fff;
   background-color: hsl(var(--surface-light));
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+  container-type: inline-size;
 }
 
 .sm-tag-card a {
   display: block;
   height: 100%;
-  padding: var(--box-padding);
-}
 
-.sm-tag-card.sm-background-color {
-  color: hsl(var(--surface));
-  background-color: hsl(var(--color-1));
-}
-
-.sm-tag-card.sm-background-color:nth-of-type(2n) {
-  background-color: hsl(var(--color-2));
-}
-
-.sm-tag-card picture::after {
-  position: absolute;
-  inset: 0;
-  content: '';
-  background-color: rgb(0 0 0 / 50%);
-  transition: var(--transition);
-}
-
-.sm-tag-card a:where(:hover, :focus-visible) picture::after {
-  opacity: 0;
+  :where(:hover, :focus-visible) .sm-tag-card-count {
+    color: hsl(var(--color-1));
+    outline: none;
+  }
 }
 
 .sm-tag-card img {
@@ -248,43 +312,64 @@
 
 .sm-tag-card-body {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   height: 100%;
 }
 
 .sm-tag-card-count {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   font-size: var(--h1);
-  font-weight: 700;
-  font-variant-numeric: oldstyle-nums;
+  font-size: 75cqi;
+  font-weight: 900;
+  font-variant: tabular-nums;
   line-height: 1;
+  color: hsl(var(--surface));
+  text-align: right;
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-contract);
+  letter-spacing: -0.05em;
+  transition: color var(--transition);
+  translate: -10% 20%;
 }
 
 .sm-tag-card-text {
+  position: absolute;
+  right: var(--spacing-04);
+  bottom: var(--spacing-04);
   font-size: var(--small);
+  font-weight: 300;
   line-height: 1.2;
+  color: hsl(var(--color-1-light));
   text-align: center;
-  text-transform: lowercase;
-  text-wrap: pretty;
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-expand);
+  transform-origin: right;
+  rotate: 90deg;
+  translate: 0 100%;
 }
 
 .sm-card-social-media {
-  background-color: hsl(var(--surface-dark));
-}
+  background-color: transparent;
+  border: 1px solid hsl(var(--element) / 20%);
+  border-radius: var(--radius-round);
 
-.sm-card-social-media a {
-  padding: var(--box-padding);
-}
+  a {
+    justify-content: center;
+    padding: var(--spacing-02) var(--spacing-06);
 
-.sm-card-social-media svg {
-  width: 100%;
-  aspect-ratio: 1;
-  fill: hsl(var(--element-light));
-  transition: fill var(--transition);
+    @media (--tablet) {
+      padding: var(--spacing-04) var(--spacing-12);
+    }
+  }
+
+  svg {
+    width: 100%;
+    min-width: 2.5rem;
+    max-width: 4rem;
+    aspect-ratio: 1;
+    fill: hsl(var(--element-light) / 80%);
+    transition: fill var(--transition);
+  }
 }
 
 .sm-card-social-media.behance a:where(:hover, :focus-visible) svg {

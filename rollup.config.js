@@ -60,9 +60,4 @@ export default defineConfig([
         }),
     ],
   },
-  {
-    input: 'assets/js/syntax-highlighting.js',
-    output,
-    plugins,
-  },
 ]);

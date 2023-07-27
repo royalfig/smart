@@ -7,14 +7,14 @@
 
     <div class="sm-grid">
         <h2 class="sm-home-header">These Are the Latest Posts</h2>
-        <div class="sm-grid-home">
+        <div class="sm-home-grid">
             {{#foreach posts from="1" to="6"}}
                {{> "cards/card-base"}}
             {{/foreach}}
         </div>
 
         <h2 class="sm-home-header">Check It Out. I'm Online</h2>
-        <div class="sm-grid-home">
+        <div class="sm-home-grid sm-social-media-container">
             {{#if @custom.social_media_1_url}}
             <article class="sm-card sm-card-small-square sm-card-social-media {{@custom.social_media_1}}">
                 <a class="sm-flex-v" href="{{@custom.social_media_1_url}}" aria-label="Follow me on {{@custom.social_media_1 }}">
@@ -54,7 +54,7 @@
         </div>
 
         <h2 class="sm-home-header">The Good Posts Keep On Rollin'</h2>
-        <div class="sm-grid-home">
+        <div class="sm-home-grid">
             {{#foreach posts from="7" to="12"}}
                {{> "cards/card-base"}}
             {{/foreach}}
@@ -64,7 +64,7 @@
         <p class="sm-home-history">I published the first post on this site {{#get "posts" limit="1" order="published_at asc"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then, I&rsquo;ve racked up {{pagination.total}} posts and {{total_members}} members. If you&rsquo;re the type who is interested in building things on the web or just randomly likes to sign up for things, consider <a href="#/portal/signup">subscribing</a>. It&rsquo;s free, spamless, and you can unsub at any time.</p>
 
         <h2 class="sm-home-header">Let's Keep Things Topical</h2>
-        <div class="sm-grid-home">
+        <div class="sm-home-grid">
         {{#get "tags" include="count.posts" limit="8" order="count.posts desc" filter="visibility:public" as |tags|}}
         {{log tags}}
             {{#foreach tags}}
@@ -74,7 +74,7 @@
         </div>
         
         <h2 class="sm-home-header">A Smidge More Posts</h2>
-        <div class="sm-grid-home">
+        <div class="sm-home-grid">
         {{#foreach posts from="13" to="18"}}
             {{> "cards/card-base"}}
         {{/foreach}}
