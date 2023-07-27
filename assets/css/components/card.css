@@ -52,7 +52,7 @@
 
 .sm-card-tag {
   width: max-content;
-  padding: var(--spacing-01) var(--spacing-04);
+  padding: var(--spacing-02) var(--spacing-04);
   margin-block-end: var(--spacing-04);
   margin-inline: auto;
   font-family: var(--ui-typeface);
@@ -63,6 +63,7 @@
   letter-spacing: var(--letter-spacing-expand);
   background-color: hsl(var(--color-1));
   border-radius: var(--radius);
+  line-height: 1;
 
   &.code {
     color: hsl(var(--color-2-light));
