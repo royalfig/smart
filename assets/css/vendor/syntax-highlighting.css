@@ -24,7 +24,7 @@ pre[class*='language-'] {
   word-wrap: normal;
   tab-size: 4;
   white-space: pre;
-  background: hsl(var(--surface-darker));
+  background: hsl(200 7% 0%);
   border-radius: var(--radius);
   word-spacing: normal;
 }
