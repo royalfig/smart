@@ -3,12 +3,12 @@ pre[class*='language-']::-webkit-scrollbar {
 }
 
 pre[class*='language-']::-webkit-scrollbar-track {
-  background: hsl(var(--primary-h) 12% 8%);
+  background: hsl(var(--color-1-h) 12% 8%);
   border-radius: 0 0 var(--radius) var(--radius);
 }
 
 pre[class*='language-']::-webkit-scrollbar-thumb {
-  background-color: hsl(var(--primary-h) 15% 15%);
+  background-color: hsl(var(--color-1-h) 15% 15%);
   border-radius: var(--radius);
 }
 
@@ -24,7 +24,7 @@ pre[class*='language-'] {
   word-wrap: normal;
   tab-size: 4;
   white-space: pre;
-  background: hsl(var(--primary-h) 10% 8%);
+  background: hsl(var(--color-1-h) 10% 8%);
   border-radius: var(--radius);
   word-spacing: normal;
 }

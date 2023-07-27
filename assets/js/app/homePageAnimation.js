@@ -1,6 +1,6 @@
 export default function animateOnScroll() {
   // Fade in elements on scroll
-  const els = document.querySelectorAll('.sm-grid-home > *');
+  const els = document.querySelectorAll('.sm-home-grid > *');
 
   if (!els) {
     return;

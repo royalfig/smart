@@ -12,13 +12,9 @@ into the {body} of the default.hbs template --}}
 
 {{!-- Main --}}
 <main  class="sm-grid sm-author-posts-container" id="sm-main">
-    <div class="sm-grid-home">
+    <div class="sm-home-grid">
         {{#foreach posts}}
-            {{#if @first}}
-                {{> "cards/card-featured"}}
-            {{else}}
-                {{> "cards/card-base"}}
-            {{/if}}
+            {{> "cards/card-base"}}
         {{/foreach}}
     </div>
 </main>

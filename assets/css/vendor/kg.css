@@ -1,7 +1,7 @@
 /* Blockquote */
 blockquote:not(.kg-blockquote-alt) {
   padding-inline-start: 2rem;
-  border-left: 3px solid var(--border-color);
+  border-left: 3px solid hsl(var(--border-color));
 }
 
 .kg-blockquote-alt {
@@ -14,7 +14,7 @@ blockquote:not(.kg-blockquote-alt) {
 
 .kg-blockquote-alt::before,
 .kg-blockquote-alt::after {
-  color: var(--secondary-light);
+  color: var(--color-2-light);
 }
 
 .kg-blockquote-alt::before {

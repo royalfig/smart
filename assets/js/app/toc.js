@@ -73,11 +73,11 @@ export default function toc() {
 
     btn.style.setProperty(
       '--conic-gradient',
-      `var(--primary-light) 0deg 0%, var(--primary-light) 0deg ${
+      `hsl(var(--color-1-light)) 0deg 0%, hsl(var(--color-1-light)) 0deg ${
         scrollPos * 100
-      }%, var(--surface-light) 0deg ${
+      }%, hsl(var(--surface-light)) 0deg ${
         1 - scrollPos * 100
-      }%, var(--surface-light) 0deg 360deg`,
+      }%, hsl(var(--surface-light)) 0deg 360deg`,
     );
   });
 }

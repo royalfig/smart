@@ -2,6 +2,7 @@
 
 /* Abstracts */
 @import 'abstracts/variables.css';
+@import 'abstracts/color.css';
 @import 'abstracts/grid.css';
 @import 'abstracts/utilities.css';
 
@@ -33,8 +34,6 @@
 @import 'components/form.css';
 @import 'components/gradient.css';
 @import 'components/toc.css';
-@import 'components/archive.css';
-@import 'components/authors.css';
 
 /* Vendor */
 @import 'vendor/kg.css';

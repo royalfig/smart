@@ -7,21 +7,21 @@
   padding: var(--button-padding);
   font-family: var(--ui-typeface);
   font-size: var(--small);
-  background-color: var(--surface-darker);
-  border-radius: var(--radius);
+  border: 1px solid hsl(var(--border-color));
+  border-radius: var(--radius-round);
 }
 
 .sm-pagination,
 .sm-pagination-holder {
-  margin-block: 0 var(--spacing-20);
+  margin-block: var(--spacing-20);
 }
 
 .sm-current {
-  color: var(--primary);
+  color: hsl(var(--color-1));
 }
 
 .sm-pagination-item:hover {
-  color: var(--primary);
+  color: hsl(var(--color-1));
 }
 
 .sm-prev {

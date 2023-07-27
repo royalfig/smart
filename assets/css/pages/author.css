@@ -1,7 +1,7 @@
 .sm-author-profile-image {
   width: 6.5rem;
   height: 6.5rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid hsl(var(--border-color));
   border-radius: 50%;
   box-shadow: var(--box-shadow);
 }
@@ -17,7 +17,7 @@
 .sm-author-location svg {
   width: 1em;
   height: 1em;
-  fill: var(--element-light);
+  fill: hsl(var(--element-light));
 }
 
 .sm-author-socials {
@@ -43,7 +43,7 @@
 .sm-author-posts-container > h2 {
   margin: 3rem 0 0;
 
-  /* border-top: 1px solid var(--border-color); */
+  /* border-top: 1px solid hsl(var(--border-color)); */
 }
 
 .sm-author-posts-container .sm-basic-grid:last-child {

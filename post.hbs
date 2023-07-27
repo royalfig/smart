@@ -26,7 +26,7 @@
         {{#get "posts" limit="4" include="tags" filter="id:-{{id}}+tag:[{{tags.[*].slug}}]" as |related|}}
             {{#if related}}
             <h2>Read this next</h2>
-            <div class="sm-grid-home">
+            <div class="sm-home-grid">
                 {{#foreach related}}
                     {{> "cards/card-base"}}
                 {{/foreach}}

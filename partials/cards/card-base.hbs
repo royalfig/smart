@@ -1,20 +1,11 @@
 
-<article class="sm-card sm-card-base  {{#is "home"}}sm-card-{{@number}}{{/is}} {{slug}} {{#if feature_image}}sm-feature-image-card sm-card-portrait{{else}}sm-no-image-card sm-card-short-landscape{{/if}}">
+<article class="sm-card sm-card-base sm-card-short-landscape {{post_class}} {{primary_tag.slug}}">
     <a href="{{url}}">
-      <div class="sm-card-body">
-        <div>
-            <h3 class="sm-card-title">{{^if access}}<svg aria-label="premium content"><use href="#sm-lock-icon"></use></svg>{{/if}}{{title}}</h3>
-            <div class="sm-flex-h">
-                <p class="sm-card-excerpt">
-                  {{excerpt}}
-                </p>
-                <div class="sm-card-navigation">
-                    <svg aria-hidden="true">
-                        <use href="#sm-chevron-icon"></use>
-                    </svg>
-                </div>
-            </div>
-        </div>
+
+      {{#if primary_tag}}<p class="sm-card-tag {{primary_tag.slug}}">{{primary_tag.name}}</p>{{/if}}
+
+      <h3 class="sm-card-title">{{^if access}}<svg aria-label="premium content"><use href="#sm-lock-icon"></use></svg>{{/if}}{{title}}</h3>
+      
       {{#if feature_image}}
       <picture>
         <source
@@ -67,7 +58,11 @@
         >
       </picture>
       {{/if}}
-       </div>
-       
+    
+      <p class="sm-card-excerpt">{{excerpt}}</p>
+
+      <p href="{{url}}" class="sm-card-read-more">Read<svg aria-hidden='true'>
+          <use href='#sm-chevron-icon'></use>
+        </svg></p>
     </a>
 </article>

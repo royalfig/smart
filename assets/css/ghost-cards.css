@@ -1,7 +1,7 @@
 /* Bookmark card */
 /* stylelint-disable-next-line selector-no-qualifying-type */
 .kg-bookmark-card a.kg-bookmark-container {
-  border-color: var(--border-color);
+  border-color: hsl(var(--border-color));
   border-radius: var(--radius);
   transition: border-color 0.3s;
 }
@@ -20,7 +20,7 @@
 
 .kg-bookmark-description {
   font-size: var(--small);
-  color: var(--element-light);
+  color: hsl(var(--element-light));
 }
 
 .kg-bookmark-metadata {
@@ -29,24 +29,24 @@
 
 /* stylelint-disable-next-line selector-no-qualifying-type */
 .kg-bookmark-card:hover a.kg-bookmark-container {
-  border-color: var(--primary-light);
+  border-color: hsl(var(--color-1-light));
   border-radius: var(--radius);
 }
 
 /* Toggle card */
 .kg-toggle-card {
   padding: 1rem;
-  border: 1px solid var(--border-color);
+  border: 1px solid hsl(var(--border-color));
   border-radius: var(--radius);
   box-shadow: none;
 }
 
 .kg-toggle-heading svg {
-  color: var(--primary-light);
+  color: hsl(var(--color-1-light));
 }
 
 .kg-toggle-card:hover .kg-toggle-heading svg {
-  color: var(--primary);
+  color: hsl(var(--color-1));
 }
 
 /* Button */
@@ -65,18 +65,19 @@
 
 .kg-btn-accent {
   color: var(--button-text);
-  background-color: var(--primary);
+  background-color: hsl(var(--color-1));
   transition: background-color 0.3s;
 }
 
 .kg-btn-accent:hover {
-  background-color: var(--primary-light);
+  background-color: hsl(var(--color-1-light));
   opacity: 1;
 }
 
 /* Callout card */
 .kg-callout-card {
   padding: 1rem;
-  background-color: var(--border-color);
+  background-color: hsl(var(--border-color));
   border-radius: var(--radius);
+}
 }

@@ -15,12 +15,13 @@
   height: 30px;
   padding: 0.75rem;
   pointer-events: all;
-  background: var(--surface-light);
+  background: hsl(var(--surface-light));
   border-radius: 50%;
-  box-shadow: 0 4px 1rem hsl(var(--primary-h) var(--saturation) 9% / 10%);
+  box-shadow: 0 4px 1rem hsl(var(--color-1-h) var(--saturation) 9% / 10%);
   transition: color var(--transition);
 
-  --conic-gradient: var(--surface-light) 0deg 0%, var(--surface-light) 0deg 100%;
+  --conic-gradient: hsl(var(--surface-light)) 0deg 0%,
+    hsl(var(--surface-light)) 0deg 100%;
 }
 
 .sm-post-toc-btn::before {
@@ -36,7 +37,7 @@
 
 .sm-post-toc-btn:hover,
 .sm-post-toc-btn:focus-visible {
-  color: var(--primary);
+  color: hsl(var(--color-1));
 }
 
 .sm-post-toc-btn svg {
@@ -57,14 +58,14 @@
   margin-block-end: 1rem;
   overflow-y: auto;
   pointer-events: none;
-  background: var(--surface-light);
+  background: hsl(var(--surface-light));
   filter: drop-shadow(
-    0 4px 1rem hsl(var(--primary-h) var(--saturation) 9% / 10%)
+    0 4px 1rem hsl(var(--color-1-h) var(--saturation) 9% / 10%)
   );
   border-radius: var(--radius);
   opacity: 0;
-  transition: scale 0.2s ease-out, opacity 0.2s 0.1s ease-out,
-    translate 0.2s 0.1s ease-out;
+  transition: scale 0.2s ease-out opacity 0.2s 0.1s ease-out translate 0.2s 0.1s
+    ease-out;
   transform-origin: bottom left;
   scale: 0;
   translate: 15px 10%;
@@ -75,12 +76,12 @@
 }
 
 .sm-post-toc-contents::-webkit-scrollbar-track {
-  background: var(--surface-light);
+  background: hsl(var(--surface-light));
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 
 .sm-post-toc-contents::-webkit-scrollbar-thumb {
-  background: var(--border-color);
+  background: hsl(var(--border-color));
   border-radius: 0.25rem;
 }
 
@@ -90,7 +91,7 @@
   left: 0.75rem;
   font-family: var(--ui-typeface);
   font-size: var(--x-small);
-  color: var(--element-light);
+  color: hsl(var(--element-light));
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-expand);
   content: 'Contents';
@@ -100,7 +101,7 @@
 .toc-show {
   pointer-events: all;
   opacity: 1;
-  transition: scale 0.2s ease-in, opacity 0.2s ease-in, translate 0.2s ease-in;
+  transition: scale 0.2s ease-in / opacity 0.2s ease-in / translate 0.2s ease-in;
   scale: 1;
   translate: 0 0;
 }
@@ -127,11 +128,11 @@
 
 .sm-toc-link:hover,
 .sm-toc-link:focus {
-  color: var(--primary);
+  color: hsl(var(--color-1));
 }
 
 .sm-toc-active {
-  color: var(--primary);
+  color: hsl(var(--color-1));
 }
 
 .toc-hide {
