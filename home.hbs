@@ -107,38 +107,37 @@
             </div>
         </section>
 
-
         <h2 class="sm-home-header">The Good Posts Keep On Rollin'</h2>
-        <div class="sm-home-grid">
+        <section class="sm-home-grid">
             {{#foreach posts from="7" to="12"}}
             {{> "cards/card-base"}}
             {{/foreach}}
-        </div>
+        </section>
 
         <h2 class="sm-home-header">A Short History of This Site</h2>
-        <p class="sm-home-history">I published the first post on this site {{#get "posts" limit="1" order="published_at
-            asc"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then, I&rsquo;ve racked up
+        <p class="sm-home-history">I published the first post on this site {{#get "posts" order="published_at asc" limit="1"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then,
+            I&rsquo;ve
+            racked up
             {{pagination.total}} posts and {{total_members}} members. If you&rsquo;re the type who is interested in
             building things on the web or just randomly likes to sign up for things, consider <a
                 href="#/portal/signup">subscribing</a>. It&rsquo;s free, spamless, and you can unsub at any time.</p>
 
         <h2 class="sm-home-header">Let's Keep Things Topical</h2>
-        <div class="sm-home-grid">
+        <section class="sm-home-grid">
             {{#get "tags" include="count.posts" limit="8" order="count.posts desc" filter="visibility:public" as
             |tags|}}
             {{#foreach tags}}
             {{> "cards/card-tag"}}
             {{/foreach}}
             {{/get}}
-        </div>
+        </section>
 
         <h2 class="sm-home-header">A Smidge More Posts</h2>
-        <div class="sm-home-grid">
+        <section class="sm-home-grid">
             {{#foreach posts from="13" to="18"}}
             {{> "cards/card-base"}}
             {{/foreach}}
-        </div>
-    </div>
+        </section>
     </div>
     </main>
 

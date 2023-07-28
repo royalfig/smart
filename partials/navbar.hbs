@@ -3,56 +3,54 @@
   <header class='sm-navbar sm-flex-h'>
     <div class='sm-navbar-left sm-flex-h'>
       {{#if @site.icon}}
-        <picture>
-          <source 
-            srcset="
-          {{img_url @site.icon size="48" format="avif"}} 48w,
-          {{img_url @site.icon size="80" format="avif"}} 80w,
-          {{img_url @site.icon size="160" format="avif"}} 160w,
-          {{img_url @site.icon size="240" format="avif"}} 240w,
-          {{img_url @site.icon size="528" format="avif"}} 528w,
-          {{img_url @site.icon size="800" format="avif"}} 800w,
-          {{img_url @site.icon size="1200" format="avif"}} 1200w,
-          {{img_url @site.icon size="1600" format="avif"}} 1600w,
-          {{img_url @site.icon size="1920" format="avif"}} 1920w,
-          {{img_url @site.icon size="2000" format="avif"}} 2000w"
-            sizes="24px" 
-            type="image/avif"
-          >
-          <source 
-            srcset="
-          {{img_url @site.icon size="48" format="webp"}} 48w,
-          {{img_url @site.icon size="80" format="webp"}} 80w,
-          {{img_url @site.icon size="160" format="webp"}} 160w,
-          {{img_url @site.icon size="240" format="webp"}} 240w,
-          {{img_url @site.icon size="528" format="webp"}} 528w,
-          {{img_url @site.icon size="800" format="webp"}} 800w,
-          {{img_url @site.icon size="1200" format="webp"}} 1200w,
-          {{img_url @site.icon size="1600" format="webp"}} 1600w,
-          {{img_url @site.icon size="1920" format="webp"}} 1920w,
-          {{img_url @site.icon size="2000" format="webp"}} 2000w"
-            sizes="24px" 
-            type="image/webp"
-          >
-          <img
-            srcset="
-          {{img_url @site.icon size="48"}} 48w,
-          {{img_url @site.icon size="80"}} 80w,
-          {{img_url @site.icon size="160"}} 160w,
-          {{img_url @site.icon size="240"}} 240w,
-          {{img_url @site.icon size="528"}} 528w,
-          {{img_url @site.icon size="800"}} 800w,
-          {{img_url @site.icon size="1200"}} 1200w,
-          {{img_url @site.icon size="1600"}} 1600w,
-          {{img_url @site.icon size="1920"}} 1920w,
-          {{img_url @site.icon size="2000"}} 2000w"
-            sizes="24px" 
-            src="{{img_url @site.icon size="48"}}"
-            alt=""
-            width="24"
-            height="24"
-          >
-        </picture>
+      <picture class="">
+        <source 
+          srcset="
+        {{img_url @site.icon size="48" format="avif"}} 48w,
+        {{img_url @site.icon size="80" format="avif"}} 80w,
+        {{img_url @site.icon size="160" format="avif"}} 160w,
+        {{img_url @site.icon size="240" format="avif"}} 240w,
+        {{img_url @site.icon size="528" format="avif"}} 528w,
+        {{img_url @site.icon size="800" format="avif"}} 800w,
+        {{img_url @site.icon size="1200" format="avif"}} 1200w,
+        {{img_url @site.icon size="1600" format="avif"}} 1600w,
+        {{img_url @site.icon size="1920" format="avif"}} 1920w,
+        {{img_url @site.icon size="2000" format="avif"}} 2000w"
+          sizes="24px" 
+          type="image/avif"
+        >
+        <source 
+          srcset="
+        {{img_url @site.icon size="48" format="webp"}} 48w,
+        {{img_url @site.icon size="80" format="webp"}} 80w,
+        {{img_url @site.icon size="160" format="webp"}} 160w,
+        {{img_url @site.icon size="240" format="webp"}} 240w,
+        {{img_url @site.icon size="528" format="webp"}} 528w,
+        {{img_url @site.icon size="800" format="webp"}} 800w,
+        {{img_url @site.icon size="1200" format="webp"}} 1200w,
+        {{img_url @site.icon size="1600" format="webp"}} 1600w,
+        {{img_url @site.icon size="1920" format="webp"}} 1920w,
+        {{img_url @site.icon size="2000" format="webp"}} 2000w"
+          sizes="24px" 
+          type="image/webp"
+        >
+        <img
+          srcset="
+        {{img_url @site.icon size="48"}} 48w,
+        {{img_url @site.icon size="80"}} 80w,
+        {{img_url @site.icon size="160"}} 160w,
+        {{img_url @site.icon size="240"}} 240w,
+        {{img_url @site.icon size="528"}} 528w,
+        {{img_url @site.icon size="800"}} 800w,
+        {{img_url @site.icon size="1200"}} 1200w,
+        {{img_url @site.icon size="1600"}} 1600w,
+        {{img_url @site.icon size="1920"}} 1920w,
+        {{img_url @site.icon size="2000"}} 2000w"
+          sizes="24px" 
+          src="{{img_url @site.icon size="48"}}"
+          alt="{{@site.title}}"
+        >
+      </picture>
       {{/if}}
       <p class='sm-site-title'><a href='{{@site.url}}'>{{@site.title}}</a></p>
       {{navigation}}
@@ -63,34 +61,36 @@
       {{#match @site.members_enabled}}
       {{#match @member}}
       <a href="#/portal/account" aria-label="View account">
-      <svg aria-hidden='true'>
-        <use href='#sm-person-icon'></use>
+        <svg aria-hidden='true'>
+          <use href='#sm-person-icon'></use>
       </a>{{else}}
       <a href='#/portal/signin'>Login</a>
       {{/match}}
       {{/match}}
-     
+
       <button class='sm-dark-mode' aria-label="Set dark mode">
-        <svg aria-hidden='true'><use href='#sm-moon-icon'></use></svg>
+        <svg aria-hidden='true'>
+          <use href='#sm-moon-icon'></use>
+        </svg>
       </button>
       <button class='sm-light-mode' aria-label="Set light mode">
-        <svg aria-hidden='true'><use href='#sm-sun-icon'></use></svg>
+        <svg aria-hidden='true'>
+          <use href='#sm-sun-icon'></use>
+        </svg>
       </button>
-       <a href='#/search' aria-label="Search {{@site.title}}">
+      <a href='#/search' aria-label="Search {{@site.title}}">
         <svg aria-hidden='true'>
           <use href='#sm-search-icon'></use>
         </svg>
       </a>
-      <button
-        class='sm-circle-icon-button sm-navbar-menu-button'
-        aria-label='menu'
-        aria-expanded='false'
-        aria-controls='sm-nav-menu'
-      ><svg aria-hidden='true'><use href='#sm-menu-icon'></use></svg>
+      <button class='sm-circle-icon-button sm-navbar-menu-button' aria-label='menu' aria-expanded='false'
+        aria-controls='sm-nav-menu'><svg aria-hidden='true'>
+          <use href='#sm-menu-icon'></use>
+        </svg>
       </button>
     </div>
   </header>
 
 </div>
 
-  {{> "nav-menu"}}
+{{> "nav-menu"}}
