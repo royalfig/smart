@@ -5,10 +5,17 @@
   background-color: hsl(var(--surface-dark));
   border-radius: var(--radius);
   opacity: 0;
-  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: opacity 1s cubic-bezier(0.19, 1, 0.22, 1),
+    translate var(--transition);
 
   > a {
     padding: var(--spacing-08) var(--spacing-04);
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      translate: 0 -10px;
+    }
   }
 }
 
@@ -16,37 +23,6 @@
   .sm-card {
     opacity: 1;
     transition: none;
-  }
-}
-
-.sm-card.featured {
-  .sm-card-tag {
-    border: 1px solid;
-  }
-
-  &.code {
-    color: #fff;
-    background-color: hsl(var(--color-2));
-  }
-
-  &.design {
-    color: #fff;
-    background-color: hsl(var(--color-3));
-  }
-
-  &.projects {
-    color: #fff;
-    background-color: hsl(var(--color-4));
-  }
-
-  &.essays {
-    color: #fff;
-    background-color: hsl(var(--color-5));
-  }
-
-  &.philosophy {
-    color: #fff;
-    background-color: hsl(var(--color-1));
   }
 }
 
@@ -87,6 +63,37 @@
 
   &.philosophy {
     color: hsl(var(--color-1-light));
+    background-color: hsl(var(--color-1));
+  }
+}
+
+.sm-card.featured {
+  .sm-card-tag {
+    border: 1px solid;
+  }
+
+  &.code {
+    color: #fff;
+    background-color: hsl(var(--color-2));
+  }
+
+  &.design {
+    color: #fff;
+    background-color: hsl(var(--color-3));
+  }
+
+  &.projects {
+    color: #fff;
+    background-color: hsl(var(--color-4));
+  }
+
+  &.essays {
+    color: #fff;
+    background-color: hsl(var(--color-5));
+  }
+
+  &.philosophy {
+    color: #fff;
     background-color: hsl(var(--color-1));
   }
 }
@@ -290,7 +297,13 @@
   background-color: hsl(var(--surface-light));
   border-radius: var(--radius);
   opacity: 0;
-  container-type: inline-size;
+  transition: translate var(--transition);
+
+  @media (hover: hover) {
+    &:hover {
+      translate: 0 -10px;
+    }
+  }
 }
 
 .sm-tag-card a {
