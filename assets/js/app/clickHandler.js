@@ -6,10 +6,12 @@ function handleClick(e) {
     const navbarBtn = document.querySelector('.sm-navbar-menu-button');
     const navMenu = document.querySelector('.sm-nav-menu');
     navMenu.classList.toggle('sm-show-nav-menu');
+
     if (navbarBtn.getAttribute('aria-expanded') === 'false') {
       navbarBtn.setAttribute('aria-expanded', 'true');
       return;
     }
+
     navbarBtn.setAttribute('aria-expanded', 'false');
 
     return;

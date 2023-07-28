@@ -26,7 +26,7 @@ dialog {
 }
 
 ::backdrop {
-  background-color: var(--surface-85);
+  background-color: hsl(var(--surface) / 85%);
   backdrop-filter: blur(12px);
 }
 

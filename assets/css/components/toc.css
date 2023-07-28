@@ -58,10 +58,11 @@
   margin-block-end: 1rem;
   overflow-y: auto;
   pointer-events: none;
-  background: hsl(var(--surface-light));
+  background: hsl(var(--surface-light) / 85%);
   filter: drop-shadow(
     0 4px 1rem hsl(var(--color-1-h) var(--saturation) 9% / 10%)
   );
+  backdrop-filter: blur(10px);
   border-radius: var(--radius);
   opacity: 0;
   transition: scale 0.2s ease-out opacity 0.2s 0.1s ease-out translate 0.2s 0.1s

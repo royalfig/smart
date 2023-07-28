@@ -128,3 +128,17 @@ a.sm-nav-current::before {
     display: none;
   }
 }
+
+.sm-navbar-menu-button svg:last-child {
+  display: none;
+}
+
+.sm-navbar-menu-button[aria-expanded='true'] {
+  svg:first-child {
+    display: none;
+  }
+
+  svg:last-child {
+    display: unset;
+  }
+}
