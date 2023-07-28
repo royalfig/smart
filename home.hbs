@@ -118,7 +118,7 @@
         <p class="sm-home-history">I published the first post on this site {{#get "posts" order="published_at asc" limit="1"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then,
             I&rsquo;ve
             racked up
-            {{pagination.total}} posts and {{total_members}} members. {{#match @member}}If you&rsquo;re the type who is interested in
+            {{pagination.total}} posts and {{total_members}} members. {{^match @member}}If you&rsquo;re the type who is interested in
             building things on the web or just randomly likes to sign up for things, consider <a
                 href="#/portal/signup">subscribing</a>. It&rsquo;s free, spamless, and you can unsub at any time.</p>{{else}}And thank you for being one of them. Let&rsquo;s have a beer sometime 🍻{{/match}}
 
