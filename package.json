@@ -103,11 +103,6 @@
         ],
         "default": "dark"
       },
-      "syntax_highlighting": {
-        "type": "boolean",
-        "default": false,
-        "group": "post"
-      },
       "social_media_1": {
         "type": "select",
         "options": [

@@ -126,7 +126,6 @@
         <div class="sm-home-grid">
             {{#get "tags" include="count.posts" limit="8" order="count.posts desc" filter="visibility:public" as
             |tags|}}
-            {{log tags}}
             {{#foreach tags}}
             {{> "cards/card-tag"}}
             {{/foreach}}
