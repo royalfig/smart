@@ -10,6 +10,7 @@ import writeAuthorWebsite from './authorWebsite';
 import toc from './toc';
 import animateOnScroll from './homePageAnimation';
 import toggleShareMenu from './toggleShareMenu';
+import createMusicToggle from './musicPages';
 
 initClickHandler();
 determineColorModeSupport();
@@ -21,3 +22,4 @@ writeAuthorWebsite();
 toc();
 animateOnScroll();
 toggleShareMenu();
+createMusicToggle();

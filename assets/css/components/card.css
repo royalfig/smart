@@ -58,12 +58,12 @@
   font-family: var(--ui-typeface);
   font-size: var(--xx-small);
   font-weight: 500;
+  line-height: 1;
   color: hsl(var(--color-1-light));
   text-transform: uppercase;
   letter-spacing: var(--letter-spacing-expand);
   background-color: hsl(var(--color-1));
   border-radius: var(--radius);
-  line-height: 1;
 
   &.code {
     color: hsl(var(--color-2-light));
@@ -316,23 +316,6 @@
   height: 100%;
 }
 
-.sm-tag-card-count {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  font-size: var(--h1);
-  font-size: 75cqi;
-  font-weight: 900;
-  font-variant: tabular-nums;
-  line-height: 1;
-  color: hsl(var(--surface));
-  text-align: right;
-  text-transform: uppercase;
-  letter-spacing: -0.05em;
-  transition: color var(--transition);
-  translate: -10% 20%;
-}
-
 .sm-tag-card-text {
   position: absolute;
   right: var(--spacing-04);
@@ -347,6 +330,11 @@
   transform-origin: right;
   rotate: 90deg;
   translate: 0 100%;
+
+  span {
+    margin-inline-start: 5px;
+    color: hsl(var(--color-2));
+  }
 }
 
 .sm-card-social-media {

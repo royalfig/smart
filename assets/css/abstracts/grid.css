@@ -36,11 +36,24 @@
 }
 
 .sm-home-grid {
-  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-column: content;
   gap: var(--spacing-06);
   margin-block: var(--spacing-04);
+}
+
+.sm-music-grid {
+  grid-template-columns: 1fr;
+  grid-column: content;
+  gap: var(--spacing-06);
+  margin-block: var(--spacing-04);
+  overflow: hidden;
+  background-color: hsl(var(--surface-dark));
+  border-radius: var(--radius);
+
+  @media (--tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .sm-social-media-container {
@@ -56,24 +69,5 @@
       )
       [content-end] 1fr var(--gutter)
       [end];
-  }
-}
-
-/* TODO move to separate file */
-.sm-home-header {
-  grid-column: content;
-  margin-block: var(--spacing-22) var(--spacing-02);
-  font-weight: 400;
-}
-
-.sm-home-history {
-  grid-column: content;
-
-  a {
-    text-decoration: underline;
-
-    &:hover {
-      text-decoration-color: hsl(var(--color-1));
-    }
   }
 }
