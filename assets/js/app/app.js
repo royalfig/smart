@@ -1,16 +1,16 @@
-import '../../css/index.css';
+import "../../css/index.css";
 
-import initClickHandler from './clickHandler';
-import { determineColorModeSupport } from './colorModeToggle';
-import keyClickHandler from './keyHandler';
-import generatePagination from './pagination';
-import initMediumZoom from './medium_zoom';
-import responsiveTableInit from './responsiveTables';
-import writeAuthorWebsite from './authorWebsite';
-import toc from './toc';
-import animateOnScroll from './homePageAnimation';
-import toggleShareMenu from './toggleShareMenu';
-import createMusicToggle from './musicPages';
+import initClickHandler from "./clickHandler";
+import { determineColorModeSupport } from "./colorModeToggle";
+import keyClickHandler from "./keyHandler";
+import generatePagination from "./pagination";
+import initMediumZoom from "./medium_zoom";
+import responsiveTableInit from "./responsiveTables";
+import writeAuthorWebsite from "./authorWebsite";
+import toc from "./toc";
+import animateOnScroll from "./homePageAnimation";
+import toggleShareMenu from "./toggleShareMenu";
+import { createMusicToggle, playlistFacadeGenerator } from "./musicPages";
 
 initClickHandler();
 determineColorModeSupport();
@@ -23,3 +23,4 @@ toc();
 animateOnScroll();
 toggleShareMenu();
 createMusicToggle();
+playlistFacadeGenerator();
