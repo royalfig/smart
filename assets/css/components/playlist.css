@@ -1,0 +1,85 @@
+.sm-music-grid {
+  position: relative;
+  align-items: center;
+  overflow: hidden;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: '';
+    background-image: var(--bg);
+    filter: blur(25px);
+    background-position-x: center;
+    opacity: 0;
+    transition: opacity 1500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    scale: 1.5;
+  }
+
+  &.sm-playing::before {
+    opacity: 1;
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--body-typeface);
+    font-size: var(--h4);
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  p {
+    margin-block-end: var(--spacing-04);
+    font-family: var(--ui-typeface);
+    font-size: var(--xx-small);
+    font-weight: 300;
+    color: hsl(var(--element-light) / 80%);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-expand);
+  }
+
+  ol {
+    min-height: 16rem;
+    margin-block-end: var(--spacing-04);
+    font-size: var(--small);
+  }
+
+  .sm-playlist-iframe {
+    display: none;
+  }
+}
+
+.sm-playlist-item {
+  text-align: left;
+}
+
+.sm-playlist-item-artist::before {
+  content: '— ';
+}
+
+.sm-music-text {
+  position: relative;
+  padding: var(--spacing-04);
+}
+
+.sm-playing .sm-music-text {
+  color: white;
+  background-image: linear-gradient(to right, black, transparent);
+  background-blend-mode: multiply;
+}
+
+.sm-music-pager-controls {
+  gap: var(--spacing-02);
+  justify-content: flex-start;
+
+  .sm-circle-icon-button {
+    border: 1px solid hsl(var(--element-light) / 80%);
+  }
+}
+
+.sm-music-page {
+  display: none;
+
+  &.sm-music-active {
+    display: block;
+  }
+}

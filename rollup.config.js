@@ -24,7 +24,11 @@ const output = {
   dir: 'assets/built/',
   sourcemap: true,
   format: 'es',
-  plugins: [terser()],
+  // plugins: [terser()],
+  globals: {
+    youtube: 'onYouTubeIframeAPIReady',
+    YT: 'YT',
+  },
 };
 
 const plugins = [commonjs(), nodeResolve(), babel({ babelHelpers: 'bundled' })];
