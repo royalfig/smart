@@ -1,6 +1,6 @@
 .sm-playlist-grid {
   position: relative;
-  align-items: center;
+  padding: var(--spacing-08);
   overflow: hidden;
 
   &.sm-playing {
@@ -12,7 +12,7 @@
     inset: 0;
     content: '';
     background-image: var(--bg);
-    filter: blur(25px);
+    filter: blur(15px);
     background-position-x: center;
     opacity: 0;
     transition: opacity 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
@@ -36,7 +36,6 @@
     font-family: var(--ui-typeface);
     font-size: var(--xx-small);
     font-weight: 300;
-    color: hsl(var(--element-light) / 80%);
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-expand);
   }
@@ -60,7 +59,7 @@
 
   .sm-active::before {
     color: hsl(var(--color-1));
-    content: '▸';
+    content: '▶️';
   }
 
   .sm-playlist-iframe {
@@ -81,21 +80,15 @@
 
 .sm-playlist-text {
   position: relative;
-  padding: var(--spacing-04);
-}
-
-.sm-playing .sm-playlist-text {
-  color: white;
 }
 
 .sm-playlist-controls {
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-04);
+  gap: var(--spacing-02);
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-04) var(--spacing-06);
 }
 
 .sm-playlist-buttons {
@@ -140,6 +133,20 @@
   }
 }
 
+.sm-playing {
+  [data-control='pause'] {
+    display: initial;
+  }
+
+  [data-control='play'] {
+    display: none;
+  }
+
+  .sm-playlist-text {
+    color: white;
+  }
+}
+
 .sm-playlist-cover-art {
   width: 100%;
   max-width: 15rem;
@@ -151,12 +158,9 @@
 }
 
 .sm-playlist-progress {
-  position: relative;
-  width: 100%;
-  max-width: 15rem;
-
   span {
     position: absolute;
+    top: -3px;
     font-size: var(--xx-small);
     opacity: 0.7;
 
@@ -164,6 +168,44 @@
       right: 0;
     }
   }
+}
+
+.sm-playlist-volume {
+  display: flex;
+  gap: var(--spacing-01);
+  align-items: center;
+  line-height: 1;
+
+  svg {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    fill: currentcolor;
+  }
+}
+
+[data-volume='high'] {
+  :where(.sm-muted, .sm-low-volume) {
+    display: none;
+  }
+}
+
+[data-volume='low'] {
+  :where(.sm-muted, .sm-high-volume) {
+    display: none;
+  }
+}
+
+[data-volume='muted'] {
+  :where(.sm-low-volume, .sm-high-volume) {
+    display: none;
+  }
+}
+
+:where(.sm-playlist-progress, .sm-playlist-volume) {
+  position: relative;
+  width: 100%;
+  max-width: 15rem;
 
   input {
     width: 100%;
