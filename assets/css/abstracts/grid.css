@@ -42,7 +42,7 @@
   margin-block: var(--spacing-04);
 }
 
-.sm-music-grid {
+.sm-playlist-grid {
   grid-template-columns: 1fr;
   grid-column: content;
   gap: var(--spacing-06);
@@ -52,7 +52,7 @@
   border-radius: var(--radius);
 
   @media (--tablet) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: max-content 1fr;
   }
 }
 
