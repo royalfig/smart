@@ -20,8 +20,8 @@ export function createPlaylist() {
   let prevSong;
 
   const playlistContainer = document.querySelector('.sm-playlist-grid');
-  const { playlistId } = playlistContainer.dataset;
   if (!playlistContainer) return;
+  const { playlistId } = playlistContainer.dataset;
   const progressBar = document.querySelector('#progress');
   const volumeSlider = document.querySelector('#volume');
   const startTime = document.querySelector('.sm-start-time');
