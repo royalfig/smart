@@ -42,17 +42,18 @@
   margin-block: var(--spacing-04);
 }
 
-.sm-music-grid {
+.sm-playlist-grid {
   grid-template-columns: 1fr;
   grid-column: content;
   gap: var(--spacing-06);
   margin-block: var(--spacing-04);
   overflow: hidden;
-  background-color: hsl(var(--surface-dark));
+  color: #fff;
+  background-color: #000314;
   border-radius: var(--radius);
 
   @media (--tablet) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: max-content 1fr;
   }
 }
 
