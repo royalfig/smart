@@ -75,7 +75,11 @@ export function createPlaylist() {
         });
       });
     }
-
+    function parseSeconds(elapsed) {
+      const minutes = Math.floor(elapsed / 60);
+      const seconds = elapsed % 60;
+      return `${minutes}:${seconds}`;
+    }
     function showSongProgress() {
       const currentTime = player.getCurrentTime();
       const ratio = currentTime / player.getDuration();
@@ -84,7 +88,7 @@ export function createPlaylist() {
         ratio,
       );
       progressBar.value = ratio * 100;
-      startTime.textContent = currentTime;
+      startTime.textContent = parseSeconds(currentTime);
     }
 
     function onPlayerStateChange(event) {
@@ -120,7 +124,7 @@ export function createPlaylist() {
         playlistContainer.classList.add('sm-playing');
         coverArtcontainer.style.backgroundImage = `url(${imageSrc})`;
         prevSong = currentSong;
-        nIntervId = setInterval(showSongProgress, 800);
+        nIntervId = setInterval(showSongProgress, 500);
       } else {
         clearInterval(nIntervId);
         nIntervId = null;
