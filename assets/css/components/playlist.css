@@ -24,7 +24,7 @@
   }
 
   h3 {
-    margin: 0;
+    margin-block: 0 var(--spacing-01);
     font-family: var(--body-typeface);
     font-size: var(--h4);
     font-style: italic;
@@ -50,6 +50,8 @@
   }
 
   li::before {
+    display: inline-block;
+    width: 24px;
     margin-inline-end: var(--spacing-01);
     font-variant-numeric: tabular-nums;
     content: counter(li, decimal-leading-zero) '.';
@@ -58,8 +60,9 @@
   }
 
   .sm-active::before {
-    color: hsl(var(--color-1));
+    color: var(--color, hsl(var(--color-1)));
     content: '▶️';
+    translate: 1px 0;
   }
 
   .sm-playlist-iframe {
@@ -210,7 +213,7 @@
   input {
     width: 100%;
     height: 5px;
-    accent-color: hsl(var(--color-1));
+    accent-color: var(--color, hsl(var(--color-1)));
   }
 }
 

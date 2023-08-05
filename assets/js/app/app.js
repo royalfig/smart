@@ -10,7 +10,7 @@ import writeAuthorWebsite from './authorWebsite';
 import toc from './toc';
 import animateOnScroll from './homePageAnimation';
 import toggleShareMenu from './toggleShareMenu';
-import { createPlaylist } from './musicPages';
+import createPlaylist from './playlist';
 
 initClickHandler();
 determineColorModeSupport();
