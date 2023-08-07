@@ -36,7 +36,7 @@
 }
 
 .sm-home-grid {
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   grid-column: content;
   gap: var(--spacing-06);
   margin-block: var(--spacing-04);
