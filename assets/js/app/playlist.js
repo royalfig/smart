@@ -11,6 +11,7 @@ export default function createPlaylist() {
   const coverArtcontainer = document.querySelector('.sm-playlist-cover-art');
   let nIntervId;
   let prevSong;
+  let isPlaying = false;
   const tag = document.createElement('script');
   tag.src = 'https://www.youtube.com/iframe_api';
 
@@ -116,7 +117,10 @@ export default function createPlaylist() {
       });
 
       function showSongProgress() {
-        handleSongProgress(player, parseSeconds);
+        if (isPlaying) {
+          handleSongProgress(player, parseSeconds);
+          window.requestAnimationFrame(showSongProgress);
+        }
       }
 
       function onPlayerReady() {
@@ -151,10 +155,12 @@ export default function createPlaylist() {
 
       function onPlayerStateChange(event) {
         if (event.data === 2) {
+          isPlaying = false;
           window.cancelAnimationFrame(nIntervId);
 
           setSongState(false);
         } else if (event.data === 1) {
+          isPlaying = true;
           setSongState(true, player);
 
           if (nIntervId) {
@@ -167,6 +173,7 @@ export default function createPlaylist() {
             prevSong.parentElement.classList.remove('sm-active');
           }
         } else {
+          isPlaying = false;
           window.cancelAnimationFrame(nIntervId);
         }
       }
