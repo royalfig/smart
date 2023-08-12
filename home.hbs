@@ -67,6 +67,7 @@
             {{/foreach}}
         </section>
 
+
         <h2 class="sm-home-header">A Short History of This Site</h2>
         <p class="sm-home-history">I published the first post on this site {{#get "posts" order="published_at asc" limit="1"}}{{#foreach posts}}{{date timeago="true"}}{{/foreach}}{{/get}}. Since then,
             I&rsquo;ve
@@ -91,6 +92,11 @@
             {{> "cards/card-base"}}
             {{/foreach}}
         </section>
+
+        <h2 class="sm-home-header">What I'm reading</h2>
+        <div class="sm-reading-list">
+            {{> "reading"}}
+        </div>
     </div>
     </main>
 

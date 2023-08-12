@@ -36,6 +36,7 @@
 @import 'components/gradient.css';
 @import 'components/toc.css';
 @import 'components/playlist.css';
+@import 'components/reading.css';
 
 /* Vendor */
 @import 'vendor/kg.css';
