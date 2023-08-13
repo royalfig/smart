@@ -76,7 +76,7 @@
 
 .sm-playlist-item-artist {
   &::before {
-    content: '— ';
+    content: '⌁ ';
     opacity: 0.5;
   }
 }
@@ -104,7 +104,6 @@
   aspect-ratio: 1;
   padding: var(--spacing-01);
   line-height: 1;
-  color: #fff;
   border-radius: 50%;
   transition: background-color var(--transition);
 
@@ -137,16 +136,14 @@
 }
 
 .sm-playing {
+  color: #fff;
+
   [data-control='pause'] {
     display: initial;
   }
 
   [data-control='play'] {
     display: none;
-  }
-
-  .sm-playlist-text {
-    color: white;
   }
 }
 

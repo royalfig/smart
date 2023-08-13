@@ -48,8 +48,7 @@
   gap: var(--spacing-06);
   margin-block: var(--spacing-04);
   overflow: hidden;
-  color: #fff;
-  background-color: #000314;
+  background-color: hsl(var(--surface-dark));
   border-radius: var(--radius);
 
   @media (--tablet) {
