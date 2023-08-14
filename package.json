@@ -53,6 +53,7 @@
     "prismjs": "^1.29.0"
   },
   "config": {
+    "docs": "https://github.com/royalfig/smart/",
     "posts_per_page": 18,
     "image_sizes": {
       "48": {
