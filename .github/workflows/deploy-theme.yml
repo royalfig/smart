@@ -17,16 +17,6 @@ jobs:
           cache: 'npm'
       - run: npm ci
       - run: npm run build
-      - name: Deploy mc site
-        uses: TryGhost/action-deploy-theme@v1
-        with:
-          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
-          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}
-      - name: Deploy demo site
-        uses: TryGhost/action-deploy-theme@v1
-        with:
-          api-url: ${{ secrets.GHOST_DEMO_URL }}
-          api-key: ${{ secrets.GHOST_DEMO_KEY }}
       - name: Deploy my site
         uses: TryGhost/action-deploy-theme@v1
         with:
