@@ -48,6 +48,7 @@
     "stylelint-config-recess-order": "^4.3.0",
     "stylelint-config-standard": "^34.0.0"
   },
+  "docs": "https://github.com/royalfig/smart/",
   "dependencies": {
     "medium-zoom": "^1.0.8",
     "prismjs": "^1.29.0"
