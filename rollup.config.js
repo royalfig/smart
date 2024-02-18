@@ -24,14 +24,13 @@ const output = {
   dir: 'assets/built/',
   sourcemap: true,
   format: 'es',
-  // plugins: [terser()],
   globals: {
     youtube: 'onYouTubeIframeAPIReady',
     YT: 'YT',
   },
 };
 
-const plugins = [commonjs(), nodeResolve(), babel({ babelHelpers: 'bundled' })];
+const plugins = [commonjs(), nodeResolve(), babel({ babelHelpers: 'bundled' }), terser()];
 
 const css = postcss({
   extract: true,
