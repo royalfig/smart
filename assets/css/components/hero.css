@@ -24,7 +24,7 @@
   }
 }
 
-@media (--tablet) {
+@media (width >= 768px) {
   .sm-hero-description {
     font-size: var(--h1);
   }
@@ -40,8 +40,8 @@
   max-height: 50vh;
   max-height: 50dvh;
   margin: 0 auto;
-  border-radius: var(--radius);
   object-fit: contain;
+  border-radius: var(--radius);
 }
 
 .sm-hero-button-container:not(:empty) {

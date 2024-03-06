@@ -43,7 +43,7 @@
   gap: var(--spacing-04);
   height: inherit;
 
-  @media (--tablet) {
+  @media (width >= 768px) {
     flex-direction: row;
   }
 

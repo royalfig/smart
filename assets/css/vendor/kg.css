@@ -60,7 +60,7 @@ blockquote:not(.kg-blockquote-alt) {
   margin-inline: auto;
 }
 
-@media (--tablet) {
+@media (width >= 768px) {
   .kg-width-wide,
   .kg-gallery-card {
     grid-column: wide;

@@ -1,8 +1,8 @@
-@custom-media --phone (min-width: 500px);
+/* @custom-media --phone (min-width: 500px);
 @custom-media --tablet (min-width: 768px);
 @custom-media --laptop (min-width: 992px);
 @custom-media --desktop (min-width: 1200px);
-@custom-media --widescreen (min-width: 1400px);
+@custom-media --widescreen (min-width: 1400px); */
 
 :root {
   /* Space */
@@ -65,14 +65,14 @@
   --linkedin: #0077b5;
 }
 
-@media (--tablet) {
+@media (width >= 768px) {
   :root {
     --gap: var(--spacing-06);
     --gutter: var(--spacing-08);
   }
 }
 
-@media (--laptop) {
+@media (width >= 992px) {
   :root {
     --gap: var(--spacing-08);
   }

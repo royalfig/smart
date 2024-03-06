@@ -114,7 +114,7 @@ a.sm-nav-current::before {
   display: none;
 }
 
-@media (--tablet) {
+@media (width >= 768px) {
   .sm-navigation {
     display: flex;
     align-items: center;

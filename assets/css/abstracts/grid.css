@@ -51,7 +51,7 @@
   background-color: hsl(var(--surface-dark));
   border-radius: var(--radius);
 
-  @media (--tablet) {
+  @media (width >= 768px) {
     grid-template-columns: max-content 1fr;
   }
 }
@@ -60,7 +60,7 @@
   grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
 }
 
-@media (--tablet) {
+@media (width >= 768px) {
   .sm-grid {
     grid-template-columns:
       [start] var(--gutter) 1fr [content-start] minmax(

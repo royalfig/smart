@@ -284,8 +284,8 @@
   width: 100%;
   height: auto;
   aspect-ratio: 16 / 9;
-  border-radius: calc(var(--radius) * 0.8);
   object-fit: cover;
+  border-radius: calc(var(--radius) * 0.8);
 }
 
 .sm-tag-card {
@@ -359,7 +359,7 @@
     justify-content: center;
     padding: var(--spacing-02) var(--spacing-06);
 
-    @media (--tablet) {
+    @media (width >= 768px) {
       padding: var(--spacing-04) var(--spacing-12);
     }
   }
