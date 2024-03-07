@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import chokidar from 'chokidar';
 import * as esbuild from 'esbuild';
 import { readdir, stat, writeFile, mkdir } from 'fs/promises';
@@ -94,12 +95,15 @@ async function findEntryPoints(entryPointPath, exts) {
   }
 }
 
-function outputFileWrite(content, firstTime = false) {
+function printCompilationDetails(content, change, firstTime = false) {
   if (firstTime) {
     console.log(chalk.dim(`┏━`), ' Compiling...');
     console.log(chalk.dim('┃'));
   } else {
-    console.log(chalk.dim(`┏━`), ' Recompiling...');
+    console.log(
+      chalk.dim(`┏━`),
+      ` ${change ? `${change} changed. ` : ''}Recompiling...`,
+    );
     console.log(chalk.dim('┃'));
   }
 
@@ -118,7 +122,7 @@ async function init() {
   if (isWatch) {
     initWs(jsEntryPoints, cssEntryPoints, res);
   } else {
-    outputFileWrite(res);
+    printCompilationDetails(res);
     console.log(chalk.green('⬥'), '  Files built successfully. Exiting...');
     process.exit(0);
   }
@@ -126,7 +130,7 @@ async function init() {
 
 async function writeAssets(jsEntryPoints) {
   const start = performance.now();
-  const footerScript = `if (!WebSocket.readyState){ const socket = new WebSocket('ws://localhost:3000');
+  const footerScript = `const socket = new WebSocket('ws://localhost:3000');
   socket.addEventListener("open", (event) => {
       const url = window.location.href;
       const title = document.title;
@@ -141,7 +145,7 @@ async function writeAssets(jsEntryPoints) {
         console.log(event.data)
         window.location.reload();
       }
-  };}`;
+  };`;
 
   const buildOptions = {
     entryPoints: jsEntryPoints,
@@ -184,43 +188,6 @@ async function writeAssets(jsEntryPoints) {
 
   const end = performance.now();
   return { results, time: end - start };
-
-  // for (let index = 0; index < jsEntryPoints.length; index++) {
-  //     const element = jsEntryPoints[index];
-  //     const dir = dirname(element).replace("assets/js", "assets/built");
-  //     const buildOptions = {
-  //         entryPoints: [element],
-  //         bundle: true,
-  //         outdir: dir,
-  //         minify: isWatch ? false : true,
-  //         sourcemap: true,
-  //         metafile: true,
-  //         target: ['es2020', 'edge88', 'firefox78', 'chrome87', 'safari14']
-  //     };
-
-  //     if (index === 0 && isWatch) {
-  //         buildOptions.footer = { js: footerScript };
-  //     }
-
-  //     try {
-  //         const res = await esbuild.build(buildOptions);
-  //         const { inputs, outputs } = res.metafile;
-  //         const i = Object.values(inputs).reduce((acc, val) => {
-  //             return acc + val.bytes;
-  //         }, 0);
-  //         const o = Object.values(outputs)[1].bytes;
-  //         const p = ((i - o) / o) * 100;
-  //         console.log(
-  //             chalk.yellow(
-  //                 `\nBuilt ${dir}/index.js (${formatBytes(o)}) @ ${p.toFixed(
-  //                     2
-  //                 )}%`
-  //             )
-  //         );
-  //     } catch (error) {
-  //         console.log(error);
-  //     }
-  // }
 }
 let siteData = false;
 
@@ -255,7 +222,7 @@ function printHeader(connectionError = false, firstConnection = false) {
 }
 async function initWs(jsEntry, cssEntry, res) {
   printHeader();
-  outputFileWrite(res, true);
+  printCompilationDetails(res, null, true);
 
   // await open(url);
   const wss = new WebSocketServer({
@@ -277,8 +244,6 @@ async function initWs(jsEntry, cssEntry, res) {
     }
 
     if (path.endsWith('.css') || path.endsWith('.js') || path.endsWith('.ts')) {
-      console.log(path + ' changed');
-
       let rootFile = path;
 
       if (!/index\.(css|js|ts)$/.test(path)) {
@@ -290,7 +255,7 @@ async function initWs(jsEntry, cssEntry, res) {
       const res = await writeAssets([rootFile]);
 
       printHeader(false, false);
-      outputFileWrite(res);
+      printCompilationDetails(res, path);
 
       wss.clients.forEach((client) => {
         if (client.readyState === WebSocket.OPEN) {
