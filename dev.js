@@ -2,11 +2,9 @@
 import chokidar from 'chokidar';
 import * as esbuild from 'esbuild';
 import { readdir, stat, writeFile, mkdir } from 'fs/promises';
-import { Features, bundle } from 'lightningcss';
 import { join, dirname, extname } from 'path';
 import WebSocket, { WebSocketServer } from 'ws';
 import chalk from 'chalk';
-import open from 'open';
 import { execSync } from 'child_process';
 
 function runCommand(command) {
@@ -97,21 +95,27 @@ async function findEntryPoints(entryPointPath, exts) {
 
 function printCompilationDetails(content, change, firstTime = false) {
   if (firstTime) {
-    console.log(chalk.dim(`┏━`), ' Compiling...');
+    console.log(chalk.dim(`┏━ Building...`));
     console.log(chalk.dim('┃'));
   } else {
-    console.log(
-      chalk.dim(`┏━`),
-      ` ${change ? `${change} changed. ` : ''}Recompiling...`,
-    );
+    console.log(chalk.dim(`┏━ Change detected. Rebuilding... `));
     console.log(chalk.dim('┃'));
   }
 
   content.results.forEach(({ file, value }) => {
-    console.log(chalk.dim(`┃  ${file} (${chalk.bold.magenta(value)})`));
+    console.log(
+      chalk.dim(`┃`),
+      ` ${
+        change ? change + chalk.bold.magenta(' → ') : ''
+      }${file} (${chalk.bold.magenta(value)})`,
+    );
   });
   console.log(chalk.dim('┃'));
-  console.log(`${chalk.dim('┗━')}  ${content.time.toFixed(2)}ms\n`);
+  console.log(
+    `${chalk.dim('┗━ Done in')} ${content.time.toFixed(2)}ms ${chalk.dim(
+      'at',
+    )} ${new Date().toLocaleTimeString(undefined, 'short')}\n`,
+  );
 }
 
 async function init() {
@@ -127,6 +131,8 @@ async function init() {
     process.exit(0);
   }
 }
+
+const tree = new Map();
 
 async function writeAssets(jsEntryPoints) {
   const start = performance.now();
@@ -172,6 +178,11 @@ async function writeAssets(jsEntryPoints) {
     }
 
     const res = await esbuild.build(buildOptionsClone);
+
+    Object.keys(res.metafile.inputs).forEach((input) => {
+      tree.set(input, entry);
+    });
+
     const vals = Object.entries(res.metafile.outputs).reduce(
       (acc, [key, value]) => {
         if (key.includes('map')) {
@@ -193,7 +204,7 @@ let siteData = false;
 
 function printHeader(connectionError = false, firstConnection = false) {
   console.clear();
-  console.log(`${chalk.bold.green('✔︎')}  Ghost dev server running...`);
+  console.log(`${chalk.bold.green('●')}  Ghost theme dev server running...`);
 
   if (connectionError) {
     console.log(
@@ -202,19 +213,19 @@ function printHeader(connectionError = false, firstConnection = false) {
     );
   } else if (firstConnection) {
     console.log(
-      chalk.blueBright.bold('▶'),
+      chalk.blueBright.bold('➜'),
       ` Connected to ${chalk.underline.blue(url)}.`,
     );
   } else if (siteData.version) {
     console.log(
-      chalk.blueBright.bold('▶'),
-      ` Connected to ${chalk.underline.blue(siteData.url)} ${chalk.dim('on')} ${
-        siteData.version
-      }.`,
+      chalk.blueBright.bold('➜'),
+      ` Connected to ${chalk.underline.blue(siteData.url)} ${chalk.dim(
+        `(${siteData.version})`,
+      )}`,
     );
   } else {
     console.log(
-      chalk.blueBright.bold('▶'),
+      chalk.blueBright.bold('➜'),
       ` Visit ${chalk.underline.blue(url)} to see your changes live.`,
     );
   }
@@ -247,9 +258,7 @@ async function initWs(jsEntry, cssEntry, res) {
       let rootFile = path;
 
       if (!/index\.(css|js|ts)$/.test(path)) {
-        const dir = dirname(path);
-        const ext = extname(path);
-        rootFile = `./${dir}/index${ext}`;
+        rootFile = tree.get(path);
       }
 
       const res = await writeAssets([rootFile]);
