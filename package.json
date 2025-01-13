@@ -46,7 +46,7 @@
     "rollup-plugin-postcss": "^4.0.2",
     "stylelint": "15.11.0",
     "stylelint-config-recess-order": "^4.3.0",
-    "stylelint-config-standard": "^34.0.0"
+    "stylelint-config-standard": "^37.0.0"
   },
   "docs": "https://github.com/royalfig/smart/",
   "dependencies": {
